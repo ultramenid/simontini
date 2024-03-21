@@ -25,8 +25,8 @@
         transparent: true,
         format: 'image/png'
     });
-    var burnarea = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-        layers: 'simontini:Burn_Area_2015',
+    var deforestasi2023 = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+        layers: 'simontini:def_test 4326 v Thresholded',
         transparent: true,
         format: 'image/png'
     });
@@ -84,13 +84,13 @@
             map.removeLayer(kawasanhutan);
         }
     });
-    $('#burnarea:checkbox').on('change', function() {
+    $('#deforestasi2023:checkbox').on('change', function() {
         var checkbox = $(this);
         // toggle the layer
         if ($(checkbox).is(':checked')) {
-            map.addLayer(burnarea);
+            map.addLayer(deforestasi2023);
         } else {
-            map.removeLayer(burnarea);
+            map.removeLayer(deforestasi2023);
         }
     });
     $('#kantonghabitat:checkbox').on('change', function() {

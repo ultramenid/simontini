@@ -38,8 +38,8 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open2'" style="display: none !important">
-                    <x-checkbox idAttr="burnarea" >
-                        Burn Area
+                    <x-checkbox idAttr="deforestasi2023" >
+                        Deforestasi 2023
                     </x-checkbox>
 
                 </div>
