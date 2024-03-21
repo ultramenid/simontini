@@ -47,6 +47,18 @@
         format: 'image/png'
     });
 
+    var pbph = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+        layers: 'simontini:PBPH_AR_50K_DESEMBER_2023',
+        transparent: true,
+        format: 'image/png'
+    });
+
+    var iup = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+        layers: 'simontini:2024 Momi Minerba 6 February',
+        transparent: true,
+        format: 'image/png'
+    });
+
     // checkbox section
     $('#adminkabkota:checkbox').on('change', function() {
         var checkbox = $(this);
@@ -100,6 +112,25 @@
             map.addLayer(kantonghabitat);
         } else {
             map.removeLayer(kantonghabitat);
+        }
+    });
+    $('#pbph:checkbox').on('change', function() {
+        var checkbox = $(this);
+        // toggle the layer
+        if ($(checkbox).is(':checked')) {
+            map.addLayer(pbph);
+        } else {
+            map.removeLayer(pbph);
+        }
+    });
+
+    $('#iup:checkbox').on('change', function() {
+        var checkbox = $(this);
+        // toggle the layer
+        if ($(checkbox).is(':checked')) {
+            map.addLayer(iup);
+        } else {
+            map.removeLayer(iup);
         }
     });
 

@@ -5,7 +5,7 @@ use App\Http\Controllers\MapndataController;
 use App\Http\Middleware\setLanguage;
 use Illuminate\Support\Facades\Route;
 
-Route::redirect('/', '/en');
+Route::redirect('/', '/id');
 
 
 Route::middleware([setLanguage::class])->group(function () {
