@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class checkbox extends Component
+class Checkbox extends Component
 {
     public $idAttribute;
     public $layer;
