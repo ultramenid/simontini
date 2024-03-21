@@ -24,27 +24,10 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col" x-show="open === 'open1'" style="display: none !important">
-                    <x-checkbox idAttr="adminkabkota" layerName="simontini:Forest_estate_adm">
+                    <x-checkbox idAttr="adminkabkota" >
                         Batas Administrasi Kab/Kota
                     </x-checkbox>
-                    <x-checkbox idAttr="bataslaut" layerName="simontini:Forest_estate_adm">
-                        Batas Laut Negara
-                    </x-checkbox>
-                    {{-- <x-checkbox idAttr="batadaratnegara">
-                        Batas Darat Negara
-                    </x-checkbox>
-                    <x-checkbox idAttr="batasprovinsi">
-                        Batas Administrasi Provinsi
-                    </x-checkbox>
-                    <x-checkbox idAttr="bataskecamatan">
-                        Batas Administrasi Kecamatan
-                    </x-checkbox>
-                    <x-checkbox idAttr="batasadmindesa">
-                        Batas Administrasi Desa
-                    </x-checkbox>
-                    <x-checkbox idAttr="garispantai">
-                        Garis Pantai
-                    </x-checkbox> --}}
+
                 </div>
             </div>
             <div :class="(open === 'open2') ? 'h-filter overflow-y-auto border-black border px-4 py-1'  : 'border-black border px-4 py-1 select-none cursor-pointer'" >
@@ -55,23 +38,9 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open2'" style="display: none !important">
-                    <label for="burnarea" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="burnarea" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Burn Area</span>
-                    </label>
-                    <label for="tatabatas" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="tatabatas" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Deforestation</span>
-                    </label>
-                    <label for="tatabatas" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="tatabatas" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Forest Degradation </span>
-                    </label>
-
-
+                    <x-checkbox idAttr="burnarea" >
+                        Burn Area
+                    </x-checkbox>
 
                 </div>
             </div>
@@ -83,32 +52,9 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open3'" style="display: none !important">
-
-                    <label for="hutanalam" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="hutanalam" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-xs font-medium text-gray-300 peer-checked:text-black ">Hutan Alam</span>
-                    </label>
-                    <label for="mapbiomas" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="mapbiomas" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-xs font-medium text-gray-300 peer-checked:text-black ">Mapbiomas </span>
-                    </label>
-                    <label for="komoditas" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="komoditas" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-xs font-medium text-gray-300 peer-checked:text-black ">Komoditas </span>
-                    </label>
-                    <label for="infrastruktur" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="infrastruktur" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-xs font-medium text-gray-300 peer-checked:text-black ">Infrastruktur </span>
-                    </label>
-                    <label for="pemukiman" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="pemukiman" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-xs font-medium text-gray-300 peer-checked:text-black ">Pemukiman </span>
-                    </label>
+                    <x-checkbox idAttr="hutanalam" >
+                        Hutan Alam
+                    </x-checkbox>
 
 
                 </div>
@@ -121,27 +67,10 @@
                     </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open4'" style="display: none !important">
-                    <label for="hgu" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="hgu" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Hak Guna Usaha</span>
-                    </label>
-                    <label for="perizinan" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="perizinan" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Perizinan</span>
-                    </label>
-                    <label for="konsesi" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="konsesi" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Konsesi </span>
-                    </label>
-                    <label for="haktanah" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="haktanah" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Hak atas tanah </span>
-                    </label>
 
+                    <x-checkbox idAttr="hgu" >
+                        Hak Guna Usaha
+                    </x-checkbox>
 
 
                 </div>
@@ -154,41 +83,11 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open5'" style="display: none !important">
-                    <label for="kawasanhutan" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="kawasanhutan" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Kawasan Hutan </span>
-                    </label>
-                    <label for="perancanganruang" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="perancanganruang" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Perancangan Ruang</span>
-                    </label>
-                    <label for="kawasanhutan" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="kawasanhutan" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Kawasan Hutan </span>
-                    </label>
-                    <label for="haktanah" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="haktanah" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Moratorium Hutan dan Gambut </span>
-                    </label>
-                    <label for="haktanah" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="haktanah" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Protected Areas </span>
-                    </label>
-                    <label for="haktanah" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="haktanah" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Das </span>
-                    </label>
-                    <label for="haktanah" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="haktanah" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">KLHS </span>
-                    </label>
+
+                    <x-checkbox idAttr="kawasanhutan" >
+                        Kawasan Hutan
+                    </x-checkbox>
+
 
                 </div>
             </div>
@@ -200,23 +99,9 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open6'" style="display: none !important">
-
-                    <label for="kantonghabitat" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="kantonghabitat" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Kantong Habitat Gajah</span>
-                    </label>
-                    <label for="konfliksatwa" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="konfliksatwa" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Sebaran Konflik Satwa </span>
-                    </label>
-                    <label for="haktanah" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="haktanah" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">HCV/HCS </span>
-                    </label>
-
+                    <x-checkbox idAttr="kantonghabitat" >
+                        Hutan Alam
+                    </x-checkbox>
 
                 </div>
             </div>
@@ -228,38 +113,7 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open7'" style="display: none !important">
-
-                    <label for="potensiminerba" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="potensiminerba" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Potensi Pertambangan Minerba</span>
-                    </label>
-                    <label for="potensibanjir" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="potensibanjir" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Potensi Banjir </span>
-                    </label>
-                    <label for="potensierosi" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="potensierosi" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Potensi Erosi </span>
-                    </label>
-                    <label for="potensilongsor" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="potensilongsor" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Potensi Longsor </span>
-                    </label>
-                    <label for="potensitsunami" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="potensitsunami" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Potensi Tsunami </span>
-                    </label>
-                    <label for="potensigempa" class="inline-flex relative lg:flex-row flex-col  mb-2 cursor-pointer items-center">
-                        <input type="checkbox" value="" id="potensigempa" class="sr-only peer">
-                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none   rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        <span class="ml-1 text-sm font-medium text-gray-300 peer-checked:text-black ">Potensi Gempa </span>
-                    </label>
-
+                    [coming soon]
 
                 </div>
             </div>
