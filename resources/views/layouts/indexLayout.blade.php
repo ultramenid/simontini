@@ -18,7 +18,7 @@
     gtag('config', 'G-DNGJ48QE13');
     </script>
 </head>
-<body>
+<body class="font-sans">
     @yield('content')
 
     @stack('scripts')
