@@ -43,7 +43,7 @@
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">
-                    <a   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">map & data<a>
+                    <a  href="{{ route('mapndata', app()->getLocale()) }}" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">map & data<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
 

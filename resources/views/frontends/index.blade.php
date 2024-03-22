@@ -38,12 +38,12 @@
         </div>
         <div class="relative w-56 h-64 sm:flex-shrink flex-shrink-0 snap-center rounded-lg shadow-simontini py-12 px-4">
             <img src="{{ asset('assets/map&data.png') }}" alt="simontini" class="h-16 mb-2">
-            <a class="text-simontini font-bold">MAP & DATA</a>
+            <a href="{{ route('mapndata', app()->getLocale()) }}" class="text-simontini font-bold">MAP & DATA</a>
             <p class="text-sm mt-4">Memuat peta & data tutupan lahan dan izin.</p>
         </div>
         <div class="relative w-56 h-64 sm:flex-shrink flex-shrink-0 snap-center rounded-lg shadow-simontini py-12 px-4">
             <img src="{{ asset('assets/donlot.png') }}" alt="simontini" class="h-16 mb-2">
-            <a class="text-simontini font-bold">DOWNLOAD</a>
+            <a href="{{ route('downloads', app()->getLocale()) }}" class="text-simontini font-bold">DOWNLOAD</a>
             <p class="text-sm mt-4">Peta & data tutupan lahan atau izin yang dapat diakses.</p>
         </div>
 
