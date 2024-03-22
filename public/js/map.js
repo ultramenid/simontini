@@ -35,7 +35,7 @@
       ], { position: 'bottomleft' }).addTo(map);
 
     var deforestasi2023 = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-        layers: 'simontini:def_test 4326 v Thresholded',
+        layers: 'simontini:Auriga - Deforestasi 2023',
         transparent: true,
         format: 'image/png'
     });
