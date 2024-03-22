@@ -9,9 +9,9 @@
         </div>
     </div> --}}
     <div class=" max-w-7xl  mx-auto flex w-full justify-between mt-3">
-        <div class="text-simontini">
+        <a href="{{ route('index', app()->getLocale()) }}" class="text-simontini">
             <img src="{{ asset('assets/logo-simontinus.png') }}" alt="Simontini" class="h-12">
-        </div>
+        </a>
         <div class="space-x-6 flex justify-end items-center text-simontini">
 
             <div class="py-2 hover:border-b hover:border-simontini">

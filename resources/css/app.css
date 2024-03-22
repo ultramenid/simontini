@@ -36,35 +36,67 @@
 }
 
 .bg-hpk{
-    background-color: #f57a7a;
-    opacity: 0.5;
+    background-color: #ff5eff;
 }
 .bg-kk{
-    background-color: #ad3fff;
-    opacity: 0.5;
+    background-color: #ad40ff;
 }
 
 .bg-hl{
-    background-color: #29ba29;
-    opacity: 0.5;
+    background-color: #01ad00;
 }
 .bg-hpt{
-    background-color: #a3ff73;
-    opacity: 0.5;
+    background-color: #8af200;
 }
 
 .bg-hp{
-    background-color: #ffff73;
-    opacity: 0.5;
+    background-color: #ffff00;
 }
 
 .bg-apl{
-    background-color: #fff;
+    background-color: #fef9f1;
 }
 .bg-tubuhair{
-    background-color: #60bfed;
+    background-color: #0000ff;
+}
+
+.bg-deforestasi2023{
+    background-color: #F03A47;
+}
+
+.border-kantonghabitat{
+    --tw-border-opacity: 1;
+    border-color: #ff7f7f;
+}
+.bg-pbph-ht{
+    background-color: #e9c46a;
+}
+
+.bg-pbph-ha{
+    background-color: #2a9d8f;
+}
+
+.bg-pbph-re{
+    background-color: #264653;
+}
+
+.bg-iup{
+    background-color: #e76f51;
+}
+
+.bg-hgu{
+    background-color: #406eb3;
+}
+
+.bg-hutan-alam{
+    background-color: #006a4e;
     opacity: 0.5;
 }
+
+
+
+
+
 
 .bmHidden{
 	display: none;

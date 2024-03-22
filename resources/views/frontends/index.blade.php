@@ -7,6 +7,7 @@
     {{-- hero --}}
     <div class="h-[70vh] w-full bg-simontini sm:flex hidden items-center z-20" >
         <div class="flex sm:flex-row flex-col items-center">
+
             <img src="{{ asset('assets/simontini-wave-icon.png') }}" alt="Simontini" class="sm:h-[55vh] h-44 sm:-ml-56 -ml-32">
             <div class="sm:w-4/12 w-full flex flex-col gap-6 px-4 mt-24">
                 <a class="text-white sm:text-4xl text-2xl font-bold ">SISTEM INFORMASI TUTUPAN DAN IZIN DI INDONESIA</a>

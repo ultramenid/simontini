@@ -99,8 +99,12 @@
         // toggle the layer
         if ($(checkbox).is(':checked')) {
             map.addLayer(hutanalam);
+            document.getElementById("hutanalamlegend").style.display = 'block';
+
         } else {
             map.removeLayer(hutanalam);
+            document.getElementById("hutanalamlegend").style.display = 'block';
+
         }
     });
     $('#hgu:checkbox').on('change', function() {
@@ -108,8 +112,12 @@
         // toggle the layer
         if ($(checkbox).is(':checked')) {
             map.addLayer(hgu);
+            document.getElementById("hgulegend").style.display = 'block';
+
         } else {
             map.removeLayer(hgu);
+            document.getElementById("hgulegend").style.display = 'none';
+
         }
     });
     $('#kawasanhutan:checkbox').on('change', function() {
@@ -117,8 +125,11 @@
         // toggle the layer
         if ($(checkbox).is(':checked')) {
             map.addLayer(kawasanhutan);
+            document.getElementById("kawasanhutanlegend").style.display = 'block';
         } else {
             map.removeLayer(kawasanhutan);
+            document.getElementById("kawasanhutanlegend").style.display = 'none';
+
         }
     });
     $('#deforestasi2023:checkbox').on('change', function() {
@@ -126,8 +137,11 @@
         // toggle the layer
         if ($(checkbox).is(':checked')) {
             map.addLayer(deforestasi2023);
+            document.getElementById("deforestasi2023legend").style.display = 'block';
         } else {
             map.removeLayer(deforestasi2023);
+            document.getElementById("deforestasi2023legend").style.display = 'none';
+
         }
     });
     $('#kantonghabitat:checkbox').on('change', function() {
@@ -135,8 +149,12 @@
         // toggle the layer
         if ($(checkbox).is(':checked')) {
             map.addLayer(kantonghabitat);
+            document.getElementById("katonghabitatlegend").style.display = 'block';
+
         } else {
             map.removeLayer(kantonghabitat);
+            document.getElementById("katonghabitatlegend").style.display = 'none';
+
         }
     });
     $('#pbph:checkbox').on('change', function() {
@@ -144,8 +162,12 @@
         // toggle the layer
         if ($(checkbox).is(':checked')) {
             map.addLayer(pbph);
+            document.getElementById("pbphlegend").style.display = 'block';
+
         } else {
             map.removeLayer(pbph);
+            document.getElementById("pbphlegend").style.display = 'none';
+
         }
     });
 
@@ -154,8 +176,10 @@
         // toggle the layer
         if ($(checkbox).is(':checked')) {
             map.addLayer(iup);
+            document.getElementById("iuplegend").style.display = 'block';
         } else {
             map.removeLayer(iup);
+            document.getElementById("iuplegend").style.display = 'block';
         }
     });
 
