@@ -99,7 +99,7 @@
             <a href="{{ route('index', app()->getLocale()) }}" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">beranda</a>
             <a href="#" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">about</a>
             <a href="#" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">insight</a>
-            <a href="#" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">download</a>
+            <a href="{{ route('downloads', app()->getLocale()) }}" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">download</a>
         </div>
         <div class="py-6 flex flex-col gap-2" x-data="{open:'open1', test:[]}" >
             <div :class="(open === 'open1') ? 'h-filter overflow-y-auto border-black border px-4 py-1' : 'border-black border px-4 py-1 select-none cursor-pointer'"  @click="open='open1'">
