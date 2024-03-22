@@ -9,6 +9,7 @@
 }
 
 .bg-simontini{
+    --tw-bg-opacity: 1;
     background-color: #376A64;
 }
 
@@ -32,4 +33,35 @@
 
 .text-atas{
     color: #499786;
+}
+
+.bg-hpk{
+    background-color: #f57a7a;
+    opacity: 0.5;
+}
+.bg-kk{
+    background-color: #ad3fff;
+    opacity: 0.5;
+}
+
+.bg-hl{
+    background-color: #29ba29;
+    opacity: 0.5;
+}
+.bg-hpt{
+    background-color: #a3ff73;
+    opacity: 0.5;
+}
+
+.bg-hp{
+    background-color: #ffff73;
+    opacity: 0.5;
+}
+
+.bg-apl{
+    background-color: #fff;
+}
+.bg-tubuhair{
+    background-color: #60bfed;
+    opacity: 0.5;
 }

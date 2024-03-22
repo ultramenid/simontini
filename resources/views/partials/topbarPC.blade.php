@@ -25,8 +25,8 @@
                 <a href="{{ route('mapndata', app()->getlocale() )}}" class="font-normal ">MAP & DATA</a>
             </div>
 
-            <div class="py-2 hover:border-b hover:border-simontini">
-                <a href="#" class="font-normal ">DOWNLOAD</a>
+            <div class="py-2 hover:border-b hover:border-simontini @if($nav == 'downloads') border-b border-simontini @endif">
+                <a href="{{ route('downloads', app()->getLocale()) }}" class="font-normal ">DOWNLOAD</a>
             </div>
         </div>
     </div>

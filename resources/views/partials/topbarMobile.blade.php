@@ -6,11 +6,11 @@
                 <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
               </svg>
 
-              {{-- <div class="flex gap-2 z-50">
+              <div class="flex gap-2 z-50">
                 <a href="{{ route(Route::currentRouteName(), 'en') }}"  class="cursor-pointer  @if(App::getLocale() == 'en') text-white font-bold @else text-gray-700 @endif ">EN</a>
                 <div class="border-l border-white"></div>
                 <a href="{{ route(Route::currentRouteName(), 'id') }}"  class="cursor-pointer @if(App::getLocale() == 'id') text-white font-bold @else text-gray-700 @endif ">ID</a>
-            </div> --}}
+            </div>
         </div>
 
 
@@ -31,37 +31,28 @@
 
             <div class="mt-16 space-y-3">
                 <div class=" px-6">
-                    <a href="https://auriga.or.id/"   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">home<a>
+                    <a href="{{ route('index', app()->getLocale()) }}"   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">home<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">
-                    <a href="https://auriga.or.id/who_we_are"  class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">who we are<a>
+                    <a   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">about<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
-                <div class=" px-6" x-data="{open1: false}">
-                    <div class="flex items-center py-1   px-4 mb-2" @click=" open1 =! open1">
-                        <a class=" leading-5 text-white text-xl font-semibold ">our work </a>
-                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open1, 'rotate-0': !open1}" class="inline w-6 h-6 text-white items-center mt-1 ml-1 transition-transform duration-200 transform "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </div>
-                    <div class="bg-white px-4 py-3 mb-4 flex flex-col space-y-2 rounded" x-show="open1" style="display: none !important;">
-                            <a href="https://auriga.or.id/our_work/event" class=" mr-6 text-auriga-biru">event</a>
-                            <a href="https://auriga.or.id/our_work/activities" class=" mr-6 text-auriga-biru">activities</a>
-                    </div>
+                <div class=" px-6">
+                    <a   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
+                    <p class="border-b border-gray-300"></p>
+                </div>
+                <div class=" px-6">
+                    <a   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">map & data<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
 
-                <div class=" px-6" x-data="{open1: false}">
-                    <div class="flex items-center py-1   px-4 mb-2" @click=" open1 =! open1">
-                        <a class=" leading-5 text-white text-xl font-semibold ">resources </a>
-                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open1, 'rotate-0': !open1}" class="inline w-6 h-6 text-white items-center mt-1 ml-1 transition-transform duration-200 transform "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </div>
-                    <div class="bg-white px-4 py-3 mb-4 flex flex-col space-y-2 rounded" x-show="open1" style="display: none !important;">
-                            <a href="https://auriga.or.id/resources/report" class=" mr-6 text-auriga-biru">reports</a>
-                            <a href="https://auriga.or.id/resources/related" class=" mr-6 text-auriga-biru">related</a>
-                            <a href="https://auriga.or.id/resources/press_release" class=" mr-6 text-auriga-biru">press release</a>
-                    </div>
+                <div class=" px-6">
+                    <a href="{{ route('downloads', app()->getLocale()) }}" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">downloads<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
+
+
 
 
 
