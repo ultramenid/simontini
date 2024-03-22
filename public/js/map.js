@@ -1,14 +1,38 @@
     var map = L.map('map', {
-    center: [0.7893, 120.9213],
+    center: [0.7893, 118.9213],
     zoom: 5,
     // attributionControl: false,
     zoomControl: false
     });
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Auriga Nusantara'
-    }).addTo(map);
-
+    new L.bmSwitcher([
+        {
+          layer:  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
+            detectRetina: true,
+            attribution: 'Auriga Nusantara',
+            maxNativeZoom: 17}),
+          icon: '../assets/esri-satelit.png',
+          name: ''
+        },
+        {
+          layer: L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{
+            maxZoom: 20,
+            subdomains:['mt0','mt1','mt2','mt3'],
+            attribution: 'Auriga Nusantara'
+        }),
+          icon: '../assets/dark.jpeg',
+          name: ''
+        },
+        {
+          layer: L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            detectRetina: true,
+            attribution: 'Auriga Nusantara',
+            maxNativeZoom: 17
+        }).addTo(map),
+          icon: '../assets/osm.png',
+          name: ''
+        },
+      ], { position: 'bottomleft' }).addTo(map);
 
     var deforestasi2023 = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
         layers: 'simontini:def_test 4326 v Thresholded',

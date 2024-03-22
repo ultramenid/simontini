@@ -6,11 +6,11 @@
                 <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
               </svg>
 
-              <div class="flex gap-2 z-50">
+              {{-- <div class="flex gap-2 z-50">
                 <a href="{{ route(Route::currentRouteName(), 'en') }}"  class="cursor-pointer  @if(App::getLocale() == 'en') text-white font-bold @else text-gray-700 @endif ">EN</a>
                 <div class="border-l border-white"></div>
                 <a href="{{ route(Route::currentRouteName(), 'id') }}"  class="cursor-pointer @if(App::getLocale() == 'id') text-white font-bold @else text-gray-700 @endif ">ID</a>
-            </div>
+            </div> --}}
         </div>
 
 
