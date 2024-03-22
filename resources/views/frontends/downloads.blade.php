@@ -19,6 +19,7 @@
             <div class="flex gap-4">
                 [
                     <a target="_blank" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:def_test 4326 v Thresholded&outputFormat=SHAPE-ZIP" x-show="download" class=" flex items-center cursor-pointer text-atas">SHP</a>
+                    <a target="_blank" href="{{ asset('presentation/simontinislide.pdf') }}" x-show="download" class=" flex items-center cursor-pointer text-atas">Presentation</a>
                 ]
             </div>
             <p class="text-sm mt-4">SITASI: <br> Auriga Nusantara. 2024. <a class="underline" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:def_test 4326 v Thresholded&outputFormat=SHAPE-ZIP">Deforestasi Indonesia 2023</a>, diakses pada [DD/MM/YYYY] melalui tautan [LINK].</p>
