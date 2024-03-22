@@ -82,7 +82,7 @@
                 <a class="text-xl  ">Hutan Alam</a>
                 <div class="flex items-center space-x-2 mt-2">
                     <div class="h-4 w-4 bg-hutan-alam"></div>
-                    <a class="text-black">Hak Guna usaha</a>
+                    <a class="text-black">Hutan Alam</a>
                 </div>
 
             </div>
