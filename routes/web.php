@@ -15,3 +15,5 @@ Route::middleware([setLanguage::class])->group(function () {
     });
 });
 
+
+Route::get('/download/{layername}', [MapndataController::class, 'download'])->name('download');

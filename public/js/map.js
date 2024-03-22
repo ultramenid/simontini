@@ -10,6 +10,11 @@
     }).addTo(map);
 
 
+    var deforestasi2023 = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+        layers: 'simontini:def_test 4326 v Thresholded',
+        transparent: true,
+        format: 'image/png'
+    });
     var kawasanhutan = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
         layers: 'simontini:Forest_estate_adm',
         transparent: true,
@@ -25,11 +30,7 @@
         transparent: true,
         format: 'image/png'
     });
-    var deforestasi2023 = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-        layers: 'simontini:def_test 4326 v Thresholded',
-        transparent: true,
-        format: 'image/png'
-    });
+
     var hgu = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
         layers: 'kpa:HGU_BPN_2019',
         transparent: true,
