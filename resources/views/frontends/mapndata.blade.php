@@ -50,6 +50,29 @@
                     </div>
 
                 </div>
+                <div class="flex flex-col py-4  text-sm border-b border-simontini" id="pbphlegend" style="color: black !important; display:none">
+                    <a class="text-xl  ">PBPH</a>
+                    <div class="flex items-center space-x-2 mt-2">
+                        <div class="h-4 w-4 bg-pbph-ht"></div>
+                        <a class="text-black">PBPH-HT</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2">
+                        <div class="h-4 w-4 bg-pbph-ha"></div>
+                        <a class="text-black">PBPH-HA</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2">
+                        <div class="h-4 w-4 bg-pbph-re"></div>
+                        <a class="text-black">PBPH-RE</a>
+                    </div>
+
+                </div>
+                <div class="flex flex-col py-4  text-sm border-b border-simontini" id="iuplegend" style="color: black !important; display:none">
+                    <a class="text-xl  ">Izin Usaha Pertambangan</a>
+                    <div class="flex items-center space-x-2 mt-2">
+                        <div class="h-4 w-4 bg-iup"></div>
+                        <a class="text-black">Izin Usaha Pertambangan</a>
+                    </div>
+                </div>
 
                 <div class="flex flex-col py-4  text-sm border-b border-simontini" id="hgulegend" style="color: black !important; display:none">
                     <a class="text-xl  ">Hak Guna Usaha</a>
@@ -77,29 +100,7 @@
 
                 </div>
 
-                <div class="flex flex-col py-4  text-sm border-b border-simontini" id="pbphlegend" style="color: black !important; display:none">
-                    <a class="text-xl  ">PBPH</a>
-                    <div class="flex items-center space-x-2 mt-2">
-                        <div class="h-4 w-4 bg-pbph-ht"></div>
-                        <a class="text-black">PBPH-HT</a>
-                    </div>
-                    <div class="flex items-center space-x-2 mt-2">
-                        <div class="h-4 w-4 bg-pbph-ha"></div>
-                        <a class="text-black">PBPH-HA</a>
-                    </div>
-                    <div class="flex items-center space-x-2 mt-2">
-                        <div class="h-4 w-4 bg-pbph-re"></div>
-                        <a class="text-black">PBPH-RE</a>
-                    </div>
 
-                </div>
-                <div class="flex flex-col py-4  text-sm border-b border-simontini" id="iuplegend" style="color: black !important; display:none">
-                    <a class="text-xl  ">Izin Usaha Pertambangan</a>
-                    <div class="flex items-center space-x-2 mt-2">
-                        <div class="h-4 w-4 bg-iup"></div>
-                        <a class="text-black">Izin Usaha Pertambangan</a>
-                    </div>
-                </div>
 
 
             </div>
