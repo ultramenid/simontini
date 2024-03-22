@@ -24,7 +24,7 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col" x-show="open === 'open1'" style="display: none !important">
-                    <x-checkbox idAttr="adminkabkota" >
+                    <x-checkbox idAttr="adminkabkota" layerName="administrative_boundaries">
                         Batas Administrasi Kab/Kota
                     </x-checkbox>
 
@@ -38,7 +38,7 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open2'" style="display: none !important">
-                    <x-checkbox idAttr="deforestasi2023" >
+                    <x-checkbox idAttr="deforestasi2023" layerName="simontini:def_test 4326 v Thresholded">
                         Deforestasi 2023
                     </x-checkbox>
 
@@ -52,7 +52,7 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open3'" style="display: none !important">
-                    <x-checkbox idAttr="hutanalam" >
+                    <x-checkbox idAttr="hutanalam" layerName="simontini:Hutan_Alam_adm">
                         Hutan Alam
                     </x-checkbox>
 
@@ -68,7 +68,7 @@
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open4'" style="display: none !important">
 
-                    <x-checkbox idAttr="hgu" >
+                    <x-checkbox idAttr="hgu" layerName="kpa:HGU_BPN_2019">
                         Hak Guna Usaha
                     </x-checkbox>
 
@@ -84,7 +84,7 @@
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open5'" style="display: none !important">
 
-                    <x-checkbox idAttr="kawasanhutan" >
+                    <x-checkbox idAttr="kawasanhutan" layerName="simontini:Forest_estate_adm">
                         Kawasan Hutan
                     </x-checkbox>
 
@@ -99,7 +99,7 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open6'" style="display: none !important">
-                    <x-checkbox idAttr="kantonghabitat" >
+                    <x-checkbox idAttr="kantonghabitat" layerName="simontini:KantongGajah2018RTM">
                         Kantong Habitat Gajah
                     </x-checkbox>
 
@@ -113,7 +113,7 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open7'" style="display: none !important">
-                    <x-checkbox idAttr="pbph" >
+                    <x-checkbox idAttr="pbph" layerName="simontini:PBPH_AR_50K_DESEMBER_2023">
                         <div class="bg-search flex items-center space-x-1 -ml-1" x-data="{ tooltip: 'Perizinan Berusaha Pemanfaatan Hutan' }">
                             <a class="">PBPH</a>
                             <svg xmlns="http://www.w3.org/2000/svg" x-tooltip="tooltip" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 cursor-pointer active:outline-none focus:outline-none">
@@ -122,7 +122,7 @@
 
                         </div>
                     </x-checkbox>
-                    <x-checkbox idAttr="iup" layer="">
+                    <x-checkbox idAttr="iup" layerName="simontini:2024 Momi Minerba 6 February">
                         Izin Usaha Pertambangan
                     </x-checkbox>
 

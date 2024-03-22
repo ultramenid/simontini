@@ -9,12 +9,14 @@ use Illuminate\View\Component;
 class Checkbox extends Component
 {
     public $idAttribute;
+    public $layerName;
     /**
      * Create a new component instance.
      */
-    public function __construct($idAttr)
+    public function __construct($idAttr, $layerName)
     {
         $this->idAttribute = $idAttr;
+        $this->layerName = $layerName;
     }
 
     /**
