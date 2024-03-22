@@ -90,8 +90,11 @@
         // toggle the layer
         if ($(checkbox).is(':checked')) {
             map.addLayer(adminkabkota);
+            document.getElementById("administrasikabkotalegend").style.display = 'block';
         } else {
             map.removeLayer(adminkabkota);
+            document.getElementById("administrasikabkotalegend").style.display = 'none';
+
         }
     });
     $('#hutanalam:checkbox').on('change', function() {

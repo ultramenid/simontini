@@ -26,7 +26,7 @@
             </div>
 
             <div class="py-2 hover:border-b hover:border-simontini @if($nav == 'downloads') border-b border-simontini @endif">
-                <a href="{{ route('downloads', app()->getLocale()) }}" class="font-normal ">DOWNLOAD</a>
+                <a href="{{ route('downloads', app()->getLocale()) }}" class="font-normal ">DOWNLOADS</a>
             </div>
         </div>
     </div>
