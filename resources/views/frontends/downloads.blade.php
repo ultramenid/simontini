@@ -30,7 +30,7 @@
                     @endif
                 ]
             </div>
-            <p class="sm:text-sm text-xs mt-4">{{__('SITASI')}}: <br> Auriga Nusantara. 2024. <a class="underline" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP">{{__('Deforestasi Indonesia 2023')}}</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
+            <p class="sm:text-sm text-xs mt-4">{{__('SITASI:')}} <br> Auriga Nusantara. 2024. <a class="underline" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP">{{__('Deforestasi Indonesia 2023')}}</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
         </div>
     </div>
 @endsection
