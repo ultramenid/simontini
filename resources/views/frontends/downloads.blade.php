@@ -24,9 +24,9 @@
                 [
                     <a target="_blank" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP" x-show="download" class=" flex items-center cursor-pointer text-atas">{{('peta digital')}}</a>
                     @if (app()->getLocale() == 'id')
-                        <a target="_blank" href="{{ asset('presentation/simontinislide_id.pdf') }}"  class=" flex items-center cursor-pointer text-atas">Presentasi</a>
+                        <a target="_blank" href="{{ asset('presentation/Deforestasi_Indonesia-2023-paparan.pdf') }}"  class=" flex items-center cursor-pointer text-atas">Presentasi</a>
                     @else
-                        <a target="_blank" href="{{ asset('presentation/simontinislide_en.pdf') }}"  class=" flex items-center cursor-pointer text-atas">Presentation</a>
+                        <a target="_blank" href="{{ asset('presentation/Indonesia_deforestation_2023-presentation.pdf') }}"  class=" flex items-center cursor-pointer text-atas">Presentation</a>
                     @endif
                 ]
             </div>
