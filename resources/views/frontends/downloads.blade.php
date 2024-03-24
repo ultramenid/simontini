@@ -22,7 +22,7 @@
             <a class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Deforestasi Indonesia 2023')}}</a>
             <div class="flex gap-4">
                 [
-                    <a target="_blank" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP" x-show="download" class=" flex items-center cursor-pointer text-atas">{{('peta digital')}}</a>
+                    <a target="_blank" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP" x-show="download" class=" flex items-center cursor-pointer text-atas">{{__('peta digital')}}</a>
                     |
                     @if (app()->getLocale() == 'id')
                         <a target="_blank" href="{{ asset('presentation/Deforestasi_Indonesia-2023-paparan.pdf') }}"  class=" flex items-center cursor-pointer text-atas">presentasi</a>
