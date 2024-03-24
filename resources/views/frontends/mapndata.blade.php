@@ -14,7 +14,7 @@
     <div class="w-3/12 h-full px-6" >
         @include('partials.langSwitchPC')
         <div class="w-full flex justify-center">
-            <img src="{{ asset('assets/logo-simontinus.png') }}" alt="Simontini" class="h-12 mt-12">
+            <a href="{{ route('index', app()->getLocale()) }}"><img src="{{ asset('assets/logo-simontinus.png') }}" alt="Simontini" class="h-12 mt-12"></a>
 
         </div>
         <div class=" overflow-x-auto scrollbar-hide  justify-between px-4 flex gap-4  mt-6 border-b border-gray-300 z-30">

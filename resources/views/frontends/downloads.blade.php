@@ -22,15 +22,15 @@
             <a class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Deforestasi Indonesia 2023')}}</a>
             <div class="flex gap-4">
                 [
-                    <a target="_blank" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP" x-show="download" class=" flex items-center cursor-pointer text-atas">SHP</a>
+                    <a target="_blank" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP" x-show="download" class=" flex items-center cursor-pointer text-atas">{{('peta digital')}}</a>
                     @if (app()->getLocale() == 'id')
-                        <a target="_blank" href="{{ asset('presentation/simontinislide_id.pdf') }}"  class=" flex items-center cursor-pointer text-atas">Presentation</a>
+                        <a target="_blank" href="{{ asset('presentation/simontinislide_id.pdf') }}"  class=" flex items-center cursor-pointer text-atas">Presentasi</a>
                     @else
                         <a target="_blank" href="{{ asset('presentation/simontinislide_en.pdf') }}"  class=" flex items-center cursor-pointer text-atas">Presentation</a>
                     @endif
                 ]
             </div>
-            <p class="sm:text-sm text-xs mt-4">{{__('SITASI:')}} <br> Auriga Nusantara. 2024. <a class="underline" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP">{{__('Deforestasi Indonesia 2023')}}</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
+            <p class="sm:text-sm text-xs mt-4">{{__('Sitasi:')}} <br> Auriga Nusantara. 2024. <a class="underline" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP">Deforestasi Indonesia 2023</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
         </div>
     </div>
 @endsection
