@@ -1,5 +1,9 @@
 @extends('layouts.mapLayout')
 
+@section('meta')
+    @include('partials.indexMeta')
+@endsection
+
 @section('content')
 <div class="sm:flex hidden" x-data=" {legend:true}">
     @include('partials.legend')
@@ -8,6 +12,7 @@
 
     </div>
     <div class="w-3/12 h-full px-6" >
+        @include('partials.langSwitchPC')
         <div class="w-full flex justify-center">
             <img src="{{ asset('assets/logo-simontinus.png') }}" alt="Simontini" class="h-12 mt-12">
 
@@ -29,7 +34,7 @@
                 </div>
                 <div class="w-full mt-2 flex flex-col" x-show="open === 'open1'" style="display: none !important">
                     <x-checkbox idAttr="adminkabkota" layerName="administrative_boundaries">
-                        Batas Administrasi Kab/Kota
+                        {{__('Batas Administrasi Kab/Kota')}}
                     </x-checkbox>
 
                 </div>
@@ -43,7 +48,7 @@
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open2'" style="display: none !important">
                     <x-checkbox idAttr="deforestasi2023" layerName="simontini:def_test 4326 v Thresholded">
-                        Deforestasi 2023
+                        {{__('Deforestasi 2023')}}
                     </x-checkbox>
 
                 </div>
@@ -57,7 +62,7 @@
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open3'" style="display: none !important">
                     <x-checkbox idAttr="hutanalam" layerName="simontini:Hutan_Alam_adm">
-                        Hutan Alam
+                        {{__('Hutan Alam')}}
                     </x-checkbox>
 
 
@@ -73,7 +78,7 @@
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open4'" style="display: none !important">
 
                     <x-checkbox idAttr="hgu" layerName="kpa:HGU_BPN_2019">
-                        Hak Guna Usaha
+                        {{__('Hak Guna Usaha')}}
                     </x-checkbox>
 
 
@@ -89,7 +94,7 @@
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open5'" style="display: none !important">
 
                     <x-checkbox idAttr="kawasanhutan" layerName="simontini:Forest_estate_adm">
-                        Kawasan Hutan
+                        {{__('Kawasan Hutan')}}
                     </x-checkbox>
 
 
@@ -104,7 +109,7 @@
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open6'" style="display: none !important">
                     <x-checkbox idAttr="kantonghabitat" layerName="simontini:KantongGajah2018RTM">
-                        Kantong Habitat Gajah
+                        {{__('Kantong Habitat Gajah')}}
                     </x-checkbox>
 
                 </div>
@@ -119,7 +124,7 @@
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open7'" style="display: none !important">
                     <x-checkbox idAttr="pbph" layerName="simontini:PBPH_AR_50K_DESEMBER_2023">
                         <div class="bg-search flex items-center space-x-1 -ml-1" x-data="{ tooltip: 'Perizinan Berusaha Pemanfaatan Hutan' }">
-                            <a class="">PBPH</a>
+                            <a class="">{{__('PBPH')}}</a>
                             <svg xmlns="http://www.w3.org/2000/svg" x-tooltip="tooltip" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 cursor-pointer active:outline-none focus:outline-none">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                               </svg>
@@ -127,7 +132,7 @@
                         </div>
                     </x-checkbox>
                     <x-checkbox idAttr="iup" layerName="simontini:2024 Momi Minerba 6 February">
-                        Izin Usaha Pertambangan
+                        {{__('Izin Usaha Pertambangan')}}
                     </x-checkbox>
 
                 </div>

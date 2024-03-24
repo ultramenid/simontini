@@ -1,5 +1,9 @@
 @extends('layouts.indexLayout')
 
+@section('meta')
+    @include('partials.indexMeta')
+@endsection
+
 @section('content')
     {{-- topbar --}}
     @include('partials.topbarPC')
@@ -10,7 +14,7 @@
 
             <img src="{{ asset('assets/simontini-wave-icon.png') }}" alt="Simontini" class="sm:h-[55vh] h-44 sm:-ml-56 -ml-32">
             <div class="sm:w-4/12 w-full flex flex-col gap-6 px-4 mt-24">
-                <a class="text-white sm:text-4xl text-2xl font-bold ">SISTEM INFORMASI TUTUPAN DAN IZIN DI INDONESIA</a>
+                <a class="text-white sm:text-4xl text-2xl font-bold ">{{__('SISTEM INFORMASI TUTUPAN DAN IZIN DI INDONESIA')}}</a>
                 {{-- <p class="text-white">Menyajikan data, informasi, dan analisis tutupan lahan dan izin di Indonesia.</p> --}}
             </div>
         </div>
@@ -20,7 +24,7 @@
     <section class="max-w-4xl mx-auto mt-12 px-4">
         <div class="flex justify-center flex-col gap-6  items-center">
             <h2 class="text-4xl text-center font-bold text-simontini">SIMONTINI</h2>
-            <p class="sm:w-8/12 w-full text-center text-xl">Menyajikan data, informasi, dan analisis tutupan lahan dan izin di Indonesia.</p>
+            <p class="sm:w-8/12 w-full text-center text-xl">{{__('Menyajikan data, informasi, dan analisis tutupan lahan dan izin di Indonesia.')}}</p>
         </div>
 
     </section>
@@ -29,22 +33,22 @@
         <div class="relative w-56 h-64 sm:flex-shrink flex-shrink-0 snap-center rounded-lg shadow-simontini py-12 px-4">
             <img src="{{ asset('assets/about.png') }}" alt="simontini" class="h-16 mb-2">
             <a class="text-simontini font-bold">ABOUT</a>
-            <p class="text-sm mt-4">Seluk-beluk Sistem Informasi Tutupan dan Izin.  </p>
+            <p class="text-sm mt-4">{{__('Seluk-beluk Sistem Informasi Tutupan dan Izin.')}}  </p>
         </div>
         <div class="relative w-56 h-64 sm:flex-shrink flex-shrink-0 snap-center rounded-lg shadow-simontini py-12 px-4">
             <img src="{{ asset('assets/insight.png') }}" alt="simontini" class="h-16 mb-2">
             <a class="text-simontini font-bold">INSIGHT</a>
-            <p class="text-sm mt-4">Analisis hal-hal spesifik perihal tutupan dan izin.</p>
+            <p class="text-sm mt-4">{{__('Analisis hal-hal spesifik perihal tutupan dan izin.')}}</p>
         </div>
         <div class="relative w-56 h-64 sm:flex-shrink flex-shrink-0 snap-center rounded-lg shadow-simontini py-12 px-4">
             <img src="{{ asset('assets/map&data.png') }}" alt="simontini" class="h-16 mb-2">
             <a href="{{ route('mapndata', app()->getLocale()) }}" class="text-simontini font-bold">MAP & DATA</a>
-            <p class="text-sm mt-4">Memuat peta & data tutupan lahan dan izin.</p>
+            <p class="text-sm mt-4">{{__('Memuat peta & data tutupan lahan dan izin.')}}</p>
         </div>
         <div class="relative w-56 h-64 sm:flex-shrink flex-shrink-0 snap-center rounded-lg shadow-simontini py-12 px-4">
             <img src="{{ asset('assets/donlot.png') }}" alt="simontini" class="h-16 mb-2">
             <a href="{{ route('downloads', app()->getLocale()) }}" class="text-simontini font-bold">DOWNLOAD</a>
-            <p class="text-sm mt-4">Peta & data tutupan lahan atau izin yang dapat diakses.</p>
+            <p class="text-sm mt-4">{{__('Peta & data tutupan lahan atau izin yang dapat diakses.')}}</p>
         </div>
 
 
@@ -62,23 +66,23 @@
             </div>
             <div class="px-4 sm:col-span-2 col-span-1">
 
-                <h1 class=" mt-5 sm:text-3xl text-xl font-bold text-simontini">
-                    <a href="https://www.youtube.com/watch?v=8Bicu7p6ZgY" class="text-sm text-rilisdata font-light">RILIS DATA</a>
-                    <p>Deforestasi Indonesia 2023</p>
+                <h1 class=" sm:text-3xl text-xl font-bold text-simontini">
+                    <a href="https://www.youtube.com/watch?v=8Bicu7p6ZgY" class="text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</a>
+                    <p>{{__('Deforestasi Indonesia 2023')}}</p>
                 </h1>
                 <div class=" mt-5 text-simontini">
-                    <a class="font-bold">Maret 2024</a><span> | </span><a> Deforestasi di konsesi kebun kayu Mayawana Persada, Kalimantan Barat, mematikan asa tiadanya deforestasi di Indonesia pada 2023.
+                    <a class="font-bold">{{__('Maret')}} 2024</a><span> | </span><a> {{__('Deforestasi di konsesi kebun kayu Mayawana Persada, Kalimantan Barat, mematikan asa tiadanya deforestasi di Indonesia pada 2023.')}}
                     </a>
                 </div>
                 <div class=" mt-2 text-simontini">
-                    <a>Lantas, sepanjang 2023:</a>
+                    <a>{{__('Lantas, sepanjang 2023:')}}</a>
                     <ul class="list-disc  px-4">
-                        <li>Berapa luas deforestasi di Indonesia?</li>
-                        <li>Di mana saja?</li>
-                        <li>Berapa luas di kawasan hutan dan APL</li>
-                        <li>Adakah di kawasan konservasi?</li>
-                        <li>Konsesi dan perusahaan apa saja?</li>
-                        <li>Siapa deforester terbesar?</li>
+                        <li>{{__('Berapa luas deforestasi di Indonesia?')}}</li>
+                        <li>{{__('Di mana saja?')}}</li>
+                        <li>{{__('Berapa luas di kawasan hutan dan APL')}}</li>
+                        <li>{{__('Adakah di kawasan konservasi?')}}</li>
+                        <li>{{__('Konsesi dan perusahaan apa saja?')}}</li>
+                        <li>{{__('Siapa deforester terbesar?')}}</li>
                     </ul>
                 </div>
             </div>

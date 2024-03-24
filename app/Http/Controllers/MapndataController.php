@@ -7,10 +7,18 @@ use Illuminate\Support\Facades\Http;
 
 class MapndataController extends Controller
 {
+    public function getDescription(){
+        if(app()->getLocale() == 'id'){
+            return 'Memuat peta & data tutupan lahan dan izin.';
+        }else{
+            return 'Contains land cover and license maps and data.';
+        }
+    }
     public function index(){
         $title = 'Map & Data - Simontini';
         $nav = 'map';
-        return view('frontends.mapndata', compact('title', 'nav'));
+        $description = $this->getDescription();
+        return view('frontends.mapndata', compact('title', 'nav', 'description'));
     }
 
 
