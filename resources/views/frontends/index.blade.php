@@ -67,8 +67,8 @@
             <div class="px-4 sm:col-span-2 col-span-1">
 
                 <h1 class=" sm:text-3xl text-xl font-bold text-simontini">
-                    <p href="https://www.youtube.com/watch?v=8Bicu7p6ZgY" class="text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</p>
-                    <a href="https://www.youtube.com/watch?v=8Bicu7p6ZgY" >{{__('Deforestasi Indonesia 2023')}}</a>
+                    <p href="https://www.youtube.com/live/bz_nxXMTgeU?si=CfwYK2h0pZZ3bguJ" class="text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</p>
+                    <a href="https://www.youtube.com/live/bz_nxXMTgeU?si=CfwYK2h0pZZ3bguJ" >{{__('Deforestasi Indonesia 2023')}}</a>
                 </h1>
                 <div class=" mt-5 text-simontini">
                     <a  class="font-bold">{{__('Maret')}} 2024</a><span> | </span><a> {{__('Deforestasi di konsesi kebun kayu Mayawana Persada, Kalimantan Barat, mematikan asa tiadanya deforestasi di Indonesia pada 2023.')}}
