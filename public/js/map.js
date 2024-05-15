@@ -182,7 +182,7 @@
             document.getElementById("iuplegend").style.display = 'block';
         } else {
             map.removeLayer(iup);
-            document.getElementById("iuplegend").style.display = 'block';
+            document.getElementById("iuplegend").style.display = 'none';
         }
     });
 
