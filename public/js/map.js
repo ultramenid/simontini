@@ -106,7 +106,7 @@
 
         } else {
             map.removeLayer(hutanalam);
-            document.getElementById("hutanalamlegend").style.display = 'block';
+            document.getElementById("hutanalamlegend").style.display = 'none';
 
         }
     });
