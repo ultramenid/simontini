@@ -1,21 +1,47 @@
 @extends('layouts.stadiLayout')
 
 @section('content')
-    <!-- Single Sticky Text -->
-    <div class="fixed bottom-36 left-[15%] w-[35%] text-4xl  text-white z-10 " id="stickyText" >Tahun lalu Auriga merilis data deforestasi
-        2023 pada Maret. Mulai tahun ini, deforestasi
-        tahunan akan dirilis setiap Januari.
+
+    <!-- topbar -->
+    <div class="bg-white py-4 top-0 sticky z-30">
+        <div class="max-w-7xl mx-auto relative z-10 px-6   flex  gap-10 items-center" >
+          <a href="https://simontini.id" class="md:w-2/12 w-4/12"><img src="{{ asset('assets/logo-simontinus.png') }}" alt="betahita" class=" md:h-8 h-full"></a>
+          <div class=" w-10/12  flex gap-6 items-center overflow-auto no-scrollbar">
+            <a class="font-light md:text-base text-sm text-nowrap" href="#pendahuluan">Pendahuluan</a>
+            <a class="font-light md:text-base text-sm text-nowrap" href="#metodologi">Methodology</a>
+            <a class="font-light md:text-base text-sm text-nowrap" href="#deforestasi2024">Deforestasi 2024</a>
+            <a class="font-light md:text-base text-sm text-nowrap" href="#diskusi">Diskusi</a>
+            <a class="font-light md:text-base text-sm text-nowrap" href="#rekomendasi">Rekomendasi</a>
+          </div>
+        </div>
     </div>
 
-    <div id="parallax1" class="parallaxParent">
-        <video autoplay loop muted playsinline class="object-center h-screen">
+    <div id="loader" class=" px-6 fixed w-full min-h-screen z-50 overflow-hidden bg-white mx-auto inset-0 top-0 flex items-center justify-center">
+        <img src="{{ asset('assets/logo-simontinus.png') }}" alt="betahita" class="animate-pulse h-20">
+    </div>
+    <!-- Single Sticky Text -->
+    <div class="fixed z-10 md:bottom-36 bottom-1/4 md:left-[16%] left-5 md:w-[35%] w-[70%]"  id="stickyText" >
+        <a class="text-white md:text-4xl text-xl"> Tahun lalu Auriga merilis data deforestasi
+            2023 pada Maret. Mulai tahun ini, deforestasi
+            tahunan akan dirilis setiap Januari.</a>
+
+    </div>
+
+    <div id="parallax1" class="md:block hidden h-screen overflow-hidden parallaxParent">
+        <video autoplay loop muted playsinline class="h-[200%] relative top-[-130%] w-full object-center">
+            <source src="https://simontini.id/assets/stadi2024/hero-1.MP4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="parallax1" class="md:hidden relative h-screen overflow-hidden parallaxParent">
+        <video autoplay loop muted playsinline class="h-[200%] relative top-[-130%] w-full object-cover">
             <source src="https://simontini.id/assets/stadi2024/hero-1.MP4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <div id="parallax2" class="parallaxParent">
-        <video autoplay loop muted playsinline class="object-center h-screen">
+    <div id="parallax2" class="md:block hidden h-screen overflow-hidden parallaxParent">
+        <video autoplay loop muted playsinline class="h-[200%] relative top-[-130%] w-full object-center">
             <source src="https://simontini.id/assets/stadi2024/hero-3.MP4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -24,20 +50,22 @@
 
 
 
+
     {{-- <div id="parallax2" class="parallaxParent">
         <div style="background-image: url({{asset('assets/google-satelit.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat;z-index: 20;"></div>
     </div> --}}
 
-    <div class="max-w-2xl mx-auto px-4 mb-20">
-        <div id="pendahuluan">
-            <h1  class="text-3xl font-bold mt-12 text-simontini">PENDAHULUAN</h1>
+    <div class="max-w-2xl mx-auto px-4 mb-20 z-20 relative">
+
+        <div id="pendahuluan" class="pt-[45px] -mt-[45px]" >
+            <h1  class="text-3xl font-bold mt-12 text-simontini block">PENDAHULUAN</h1>
             <p class="mt-6 leading-relaxed">Meski cenderung enggan–terlihat dari berbagai pernyataan penyelenggara negara, penolakan penggunaan terma, utak-atik definisi hutan, berbagai kebijakan yang masih membuka ruang–Pemerintah Indonesia pada dasarnya berupaya menekan deforestasi di Indonesia. Moratorium izin baru di hutan primer dan gambut dan FOLU Net Sink 2030 adalah contoh upaya tersebut.</p>
             <p class="mt-4 leading-relaxed">Namun demikian, data deforestasi tahunan Indonesia sejauh ini belum tersedia secara berkala, kecuali yang dipublikasi oleh Global Forest Watch kolaborasi Universitas Maryland dan World Resources Institute. Data deforestasi yang dirilis Pemerintah Indonesia melalui Kementerian Kehutanan, sebelumnya Kementerian Lingkungan Hidup dan Kehutanan, sejauh ini belum dapat disebut tahunan karena periodenya Juli-Juni sehingga, meski sepanjang 12 bulan, selalu mencakup bulan-bulan pada 2 tahun bersanding. Data deforestasi 12-bulan-an ini dipublikasi sejak 2012, setelah delapan publikasi sebelumnya per lintas-tahun (2012, 2009, 2006, 2003, 2000, 1996, dan 1990).</p>
             <p class="mt-4 leading-relaxed">Namun demikian, Pemerintah Indonesia hanya merilis data statistik deforestasi tersebut, tanpa disertai peta, sehingga menyulitkan untuk diverifikasi secara independen atau menyerap partisipasi publik. </p>
             <p class="mt-4 leading-relaxed">Perkembangan teknologi, terutama machine learning dan komputasi seperti Google Earth Engine, beserta tersedianya beragam citra satelit secara terbuka, seperti Landsat, Sentinel, dan Planet, mengakibatkan penyediaan data deforestasi tahunan, atau bahkan nyaris-kini (near real-time). Semangat transparansi dan partisipasi publik, guna menghentikan deforestasi, menjadi landasan Auriga Nusantara, yang juga menginisiasi dan mengkoordinir <a href="https://mapbiomas.id" target="_blank" class="underline text-simontini">MapBiomas Indonesia</a>, menghadirkan data deforestasi tahunan di setiap awal tahun.
             </p>
         </div>
-        <div id="metodologi">
+        <div id="metodologi" class="pt-[45px] -mt-[45px]">
             <h1  class="text-3xl font-bold mt-12 text-simontini">METODOLOGI</h1>
             <p class="mt-6 leading-relaxed">Deforestasi yang dimaksud dalam kajian ini adalah hilangnya tutupan hutan alam, sehingga tidak menghitung kehilangan pada kebun kayu dan/atau hutan tanaman. Hutan alam merupakan asosiasi vegetasi yang didominasi tumbuhan berkayu yang tumbuh secara alami. Dengan demikian, hutan alam dalam terminologi ini mencakup baik hutan sekunder maupun hutan primer.</p>
             <p class="mt-4 leading-relaxed">Kebun kayu sendiri merupakan hamparan yang berisi tanaman berkayu yang dipanen secara periodik dalam rentang di bawah 10 tahun, sementara hutan tanaman adalah hamparan berisi tanaman berkayu namun tidak ditebang secara periodik di bawah 10 tahun.</p>
@@ -75,7 +103,7 @@
                 </ul>
             </p>
         </div>
-        <div id="deforestasi2024">
+        <div id="deforestasi2024" class="pt-[45px] -mt-[45px]">
             <h1  class="text-3xl font-bold mt-12 text-simontini">DEFORESTASI 2024</h1>
             <p class="mt-6 leading-relaxed">
                 Deforestasi Indonesia pada 2024 teridentifikasi seluas 261.575 hektare, meningkat 4.191 hektare dari deforestasi tahun sebelumnya yang tercatat seluas <a href="https://simontini.id/presentation/Deforestasi_Indonesia-2023-paparan.pdf" target="_blank" class="underline text-simontini">257.384</a> hektare. Deforestasi terjadi di seluruh pulau besar di Indonesia. Peningkatan deforestasi terjadi di Kalimantan dan Sumatera, sementara deforestasi di Sulawesi, Papua, Kepulauan Maluku, Jawa, Bali, dan Nusa Tenggara menurun.
@@ -118,7 +146,7 @@
                 <img src="https://simontini.id/assets/stadi2024/Stadi202411.jpg" alt="Simontini - stadi 2024"  class="w-full h-full mt-4"/>
             </a>
         </div>
-        <div id="diskusi">
+        <div id="diskusi" class="pt-[45px] -mt-[45px]">
             <h1  class="text-3xl font-bold mt-20 text-simontini">DISKUSI</h1>
             <ul class="list-decimal pl-5 mt-6">
                 {{-- diskusi-1 --}}
@@ -224,7 +252,7 @@
             </ul>
         </div>
 
-        <div id="rekomendasi">
+        <div id="rekomendasi" class="pt-[45px] -mt-[45px]">
             <h1  class="text-3xl font-bold mt-12 text-simontini">REKOMENDASI</h1>
             <p class="mt-6 leading-relaxed">
                 Saat ini, perlindungan hukum terhadap hutan alam di Indonesia hanya terdapat pada hutan-hutan alam yang berada di kawasan konservasi, karena perbuatan mengkonversi tutupan dan/atau bentang alam tidak diperbolehkan dilakukan di dalamnya. Dari total 22,4 juta hektare kawasan konservasi di Indonesia, 17,3 juta hektare berupa tutupan hutan alam.
@@ -259,6 +287,10 @@
 
 @push('scripts')
 <script>
+    $(window).on('load', function(){
+      $('#loader').hide();
+      $('#content').show();
+    });
     $(function () {
 
         function createLightbox(selectorID) {
