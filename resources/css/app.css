@@ -270,3 +270,15 @@
     -webkit-animation: spinner 1.5s linear infinite;
     animation: spinner 1.5s linear infinite;
 }
+
+
+.parallaxParent {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+.parallaxParent > * {
+    height: 200%;
+    position: relative;
+    top: -130%;
+}
