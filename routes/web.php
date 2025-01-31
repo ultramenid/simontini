@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/id');
 Route::get('/id/stadi2024', [InsightContoller::class, 'stadi2024'])->name('stadi2024');
+Route::get('/en/stadi2024', [InsightContoller::class, 'stadi2024EN'])->name('stadi2024EN');
 
 
 Route::middleware([setLanguage::class])->group(function () {

@@ -2,11 +2,18 @@
 
 @section('content')
 
+
     <!-- topbar -->
     <div class="bg-white py-4 top-0 sticky z-30">
+
         <div class="max-w-7xl mx-auto relative z-10 px-6   flex  gap-10 items-center" >
-          <a href="https://simontini.id" class="md:w-2/12 w-4/12"><img src="{{ asset('assets/logo-simontinus.png') }}" alt="betahita" class=" md:h-8 h-full"></a>
-          <div class=" w-10/12  flex gap-6 items-center overflow-auto no-scrollbar">
+            <div class="flex space-x-2 text-gray-300 text-sm">
+                <a href="{{ url('/en/stadi2024')}}"  class="cursor-pointer">EN</a>
+                <div class="border-l border-gray-300"></div>
+                <a href="{{ url('/id/stadi2024') }}"  class="cursor-pointer text-simontini font-bold ">ID</a>
+            </div>
+          <a href="https://simontini.id" class="md:w-2/12 w-4/12"><img src="{{ asset('assets/logo-simontinus.png') }}" alt="betahita" class=" md:h-8 h-6"></a>
+          <div class=" w-8/12  flex gap-6 items-center overflow-auto no-scrollbar">
             <a class="font-light md:text-base text-sm text-nowrap" href="#pendahuluan">Pendahuluan</a>
             <a class="font-light md:text-base text-sm text-nowrap" href="#metodologi">Methodology</a>
             <a class="font-light md:text-base text-sm text-nowrap" href="#deforestasi2024">Deforestasi 2024</a>
@@ -17,28 +24,23 @@
     </div>
 
     <div id="loader" class=" px-6 fixed w-full min-h-screen z-50 overflow-hidden bg-white mx-auto inset-0 top-0 flex items-center justify-center">
-        <img src="{{ asset('assets/logo-simontinus.png') }}" alt="betahita" class="animate-pulse h-20">
+        <img src="{{ asset('assets/logo-simontinus.png') }}" alt="simontini - stadi 2024" class="animate-pulse h-20">
     </div>
     <!-- Single Sticky Text -->
-    <div class="fixed z-10 md:bottom-36 bottom-1/4 md:left-[16%] left-5 md:w-[35%] w-[70%]"  id="stickyText" >
-        <a class="text-white md:text-4xl text-xl"> Tahun lalu Auriga merilis data deforestasi
+    <div class="fixed z-10 md:bottom-36 bottom-2/3 md:left-[16%] left-5 md:w-[35%] w-[70%]"  id="stickyText" >
+        <a class="text-white md:text-4xl text-sm"> Tahun lalu Auriga merilis data deforestasi
             2023 pada Maret. Mulai tahun ini, deforestasi
             tahunan akan dirilis setiap Januari.</a>
-
     </div>
 
-    <div id="parallax1" class="md:block hidden h-screen overflow-hidden parallaxParent">
-        <video autoplay loop muted playsinline class="h-[200%] relative top-[-130%] w-full object-center">
-            <source src="https://simontini.id/assets/stadi2024/hero-1.MP4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div id="parallax1" class="md:hidden relative h-screen overflow-hidden parallaxParent">
+
+    <div id="parallax1" class="md:hidden block md:h-screen h-[350px] overflow-hidden parallaxParent">
         <video autoplay loop muted playsinline class="h-[200%] relative top-[-130%] w-full object-cover">
-            <source src="https://simontini.id/assets/stadi2024/hero-1.MP4" type="video/mp4">
+            <source src="https://simontini.id/assets/stadi2024/hero-3.MP4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
+
 
     <div id="parallax2" class="md:block hidden h-screen overflow-hidden parallaxParent">
         <video autoplay loop muted playsinline class="h-[200%] relative top-[-130%] w-full object-center">
@@ -46,14 +48,20 @@
             Your browser does not support the video tag.
         </video>
     </div>
+    <div id="parallax3" class="md:block hidden h-screen overflow-hidden parallaxParent">
+        <video autoplay loop muted playsinline class="h-[200%] relative top-[-130%] w-full object-center">
+            <source src="https://simontini.id/assets/stadi2024/hero-1.MP4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
+    <div id="parallax1" class="md:hidden hidden h-screen overflow-hidden parallaxParent">
+        <video autoplay loop muted playsinline class="h-[200%] relative top-[-130%] w-full object-center">
+            <source src="#" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
-
-
-
-    {{-- <div id="parallax2" class="parallaxParent">
-        <div style="background-image: url({{asset('assets/google-satelit.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat;z-index: 20;"></div>
-    </div> --}}
 
     <div class="max-w-2xl mx-auto px-4 mb-20 z-20 relative">
 
@@ -307,6 +315,8 @@
 
         var controller1 = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
 
+
+
         new ScrollMagic.Scene({triggerElement: "#parallax1"})
             .setTween("#parallax1 video", {y: "80%", ease: Linear.easeNone})
             // .addIndicators()
@@ -314,6 +324,11 @@
 
         new ScrollMagic.Scene({triggerElement: "#parallax2"})
             .setTween("#parallax2 video", {y: "80%", ease: Linear.easeNone})
+            // .addIndicators()
+            .addTo(controller1);
+
+            new ScrollMagic.Scene({triggerElement: "#parallax3"})
+            .setTween("#parallax3 video", {y: "80%", ease: Linear.easeNone})
             // .addIndicators()
             .addTo(controller1);
 
