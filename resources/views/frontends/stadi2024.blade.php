@@ -1,5 +1,9 @@
 @extends('layouts.stadiLayout')
 
+@section('meta')
+    @include('partials.insightMeta')
+@endsection
+
 @section('content')
 
 
@@ -134,23 +138,23 @@
             <p class="mt-12 leading-relaxed">
                 Dilihat dari segi status penguasaan lahan, 57% deforestasi terjadi pada lahan yang dikuasai negara atau kawasan hutan.
             </p>
-            <a href="https://simontini.id/assets/stadi2024/Stadi20245.jpg" class="glightbox4 mt-4">
+            <a href="https://simontini.id/assets/stadi2024/Stadi20245.jpg" class="glightbox5 mt-4">
                 <img src="https://simontini.id/assets/stadi2024/Stadi20245.jpg" alt="Simontini - stadi 2024"  class="w-full h-full mt-4"/>
             </a>
-            <a href="https://simontini.id/assets/stadi2024/Stadi20246.jpg" class="glightbox5 mt-4">
+            <a href="https://simontini.id/assets/stadi2024/Stadi20246.jpg" class="glightbox6 mt-4">
                 <img src="https://simontini.id/assets/stadi2024/Stadi20246.jpg" alt="Simontini - stadi 2024"  class="w-full h-full mt-2"/>
             </a>
-            <a href="https://simontini.id/assets/stadi2024/Stadi20247.jpg" class="glightbox6 mt-4">
+            <a href="https://simontini.id/assets/stadi2024/Stadi20247.jpg" class="glightbox7 mt-4">
                 <img src="https://simontini.id/assets/stadi2024/Stadi20247.jpg" alt="Simontini - stadi 2024"  class="w-full h-full mt-2"/>
             </a>
-            <a href="https://simontini.id/assets/stadi2024/Stadi20248.jpg" class="glightbox7 mt-4">
+            <a href="https://simontini.id/assets/stadi2024/Stadi20248.jpg" class="glightbox8 mt-4">
                 <img src="https://simontini.id/assets/stadi2024/Stadi20248.jpg" alt="Simontini - stadi 2024"  class="w-full h-full mt-2"/>
             </a>
-            <a href="https://simontini.id/assets/stadi2024/Stadi20249.jpg" class="glightbox7 mt-4">
+            <a href="https://simontini.id/assets/stadi2024/Stadi20249.jpg" class="glightbox9 mt-4">
                 <img src="https://simontini.id/assets/stadi2024/Stadi20249.jpg" alt="Simontini - stadi 2024"  class="w-full h-full mt-2"/>
             </a>
             <p class="mt-12 leading-relaxed">Sebagian besar hutan alam yang hilang pada 2024 merupakan habitat spesies langka dan dilindungi di Indonesia. Tabel berikut memperlihatkan luas habitat megafauna ikonik (flagship species) yang dilindungi oleh regulasi di Indonesia.</p>
-            <a href="https://simontini.id/assets/stadi2024/Stadi202411.jpg" class="glightbox4 mt-4">
+            <a href="https://simontini.id/assets/stadi2024/Stadi202411.jpg" class="glightbox10 mt-4">
                 <img src="https://simontini.id/assets/stadi2024/Stadi202411.jpg" alt="Simontini - stadi 2024"  class="w-full h-full mt-4"/>
             </a>
         </div>
@@ -173,7 +177,7 @@
                 <li class="font-bold mt-12">Deforestasi terbesar kembali terjadi di Kalimantan</li>
                 <div id="diskusi-2">
                     <p class="mt-4 leading-relaxed">Kalimantan kembali menjadi pulau pemilik deforestasi tahunan terluas pada 2024. Pulau ini mengalami deforestasi tahunan terluas secara beruntun pada sebelas tahun terakhir. Bahkan, berbeda dengan pulau lainnya yang relatif stagnan, deforestasi Kalimantan justru meningkat drastis setiap tahun sejak 2021.</p>
-                    <a href="https://simontini.id/assets/stadi2024/Stadi202412.jpg" class="glightbox9 mt-4">
+                    <a href="https://simontini.id/assets/stadi2024/Stadi202412.jpg" class="glightbox11 mt-4">
                         <img src="https://simontini.id/assets/stadi2024/Stadi202412.jpg" alt="Simontini - stadi 2024"  class="w-full h-full mt-4"/>
                     </a>
                     <p class="mt-4 leading-relaxed">
@@ -182,7 +186,7 @@
                     <p class="mt-4 leading-relaxed">
                         Ditilik secara komoditas, deforestasi akibat pengembangan kebun kayu (29.898 ha), tambang (23.583 ha), dan sawit (23.430 ha) menjadi musabab utama deforestasi di Kalimantan. Deforestasi oleh ketiga komoditas ini mencakup 59% deforestasi di seluruh Pulau Kalimantan. Sepuluh teratas area deforestasi oleh pengembangan ketiga komoditas tersebut di Pulau Kalimantan pada 2024 adalah sebagai berikut:
                     </p>
-                    <a href="https://simontini.id/assets/stadi2024/Stadi202410.jpg" class="glightbox10 mt-4">
+                    <a href="https://simontini.id/assets/stadi2024/Stadi202410.jpg" class="glightbox12 mt-4">
                         <img src="https://simontini.id/assets/stadi2024/Stadi202410.jpg" alt="Simontini - stadi 2024"  class="w-full h-full mt-4"/>
                     </a>
                 </div>
@@ -274,7 +278,7 @@
             <p class="mt-4 leading-relaxed">
                 Sementara, sebagaimana Koleksi 3 MapBiomas Indonesia, hutan alam di Indonesia saat ini seluas 94,9 juta hektare, yang 52,9 juta hektare di antaranya berada di area PIPPIB. Artinya, 42 juta hektare hutan alam tersebut tidak memiliki perlindungan hukum atau kebijakan. Bahkan, agregat 9 juta hektare di antaranya berada di dalam konsesi konversi, seperti sawit (2,3 juta ha), tambang (3,2 juta ha), kebun kayu (3,5 juta ha).
             </p>
-            <a href="https://simontini.id/assets/stadi2024/Stadi202413.jpg" class="glightbox11 mt-4">
+            <a href="https://simontini.id/assets/stadi2024/Stadi202413.jpg" class="glightbox13 mt-4">
                 <img src="https://simontini.id/assets/stadi2024/Stadi202413.jpg" alt="Simontini - stadi 2024"  class="w-full h-full mt-10"/>
             </a>
             <p class="mt-4 leading-relaxed">
@@ -307,7 +311,7 @@
                 touchNavigation: true,
             });
         }
-        for (let i = 1; i <= 11; i++) {
+        for (let i = 1; i <= 13; i++) {
             createLightbox(`.glightbox${i}`);
         }
 

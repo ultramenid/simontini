@@ -1,5 +1,9 @@
 @extends('layouts.stadiLayout')
 
+@section('meta')
+    @include('partials.insightMeta')
+@endsection
+
 @section('content')
 
 
