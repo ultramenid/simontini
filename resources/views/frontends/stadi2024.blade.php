@@ -1469,8 +1469,7 @@
     </div>
     <!-- Slides -->
     <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/5-surya-cahaya-mineral.jpg" class="glightbox8 mt-4 gbox" data-glightbox=" description: Jalan menuju lokasi tambang eksisting di dalam konsesi tambang nikel PT Surya Cahaya Mineral di Konawe Utara, Sulawesi Tenggara. Tampak sekilas pada latar daerah terbuka akibat deforestasi untuk menambang nikel dalam konsesi perusahaan ini. Foto: Desember 2024, @Auriga Nusantara
-">
+        <a href="https://simontini.id/assets/stadi2024/5-surya-cahaya-mineral.jpg" class="glightbox8 mt-4 gbox" data-glightbox="description: Jalan menuju lokasi tambang eksisting di dalam konsesi tambang nikel PT Surya Cahaya Mineral di Konawe Utara, Sulawesi Tenggara. Tampak sekilas pada latar daerah terbuka akibat deforestasi untuk menambang nikel dalam konsesi perusahaan ini. Foto: Desember 2024, @Auriga Nusantara">
             <img src="https://simontini.id/assets/stadi2024/5-surya-cahaya-mineral.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
         </a>
         <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Jalan menuju lokasi tambang eksisting di dalam konsesi tambang nikel PT Surya Cahaya Mineral di Konawe Utara, Sulawesi Tenggara. Tampak sekilas pada latar daerah terbuka akibat deforestasi untuk menambang nikel dalam konsesi perusahaan ini. Foto: Desember 2024, @Auriga Nusantara </p>
@@ -1845,21 +1844,22 @@
 <div class="swiper-wrapper">
     <!-- Slides -->
     <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/5-bintang-delapan.jpg" class="glightbox10 mt-4 gbox" data-glightbox=" description: Deforestasi dalam konsesi tambang nikel PT Bintang Delapan Mineral di Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/5-bintang-delapan.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+        <a href="https://simontini.id/assets/stadi2024/7-rawa-singkil.jpg" class="glightbox10 mt-4 gbox" data-glightbox="description: Deforestasi untuk pembangunan kebun sawit di dalam Suaka Margasatwa Rawa Singkil di Aceh. Foto: Februari 2024, @Auriga Nusantara">
+            <img src="https://simontini.id/assets/stadi2024/7-rawa-singkil.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
         </a>
         <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi dalam konsesi tambang nikel PT Bintang Delapan Mineral di Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara</p>
+            Deforestasi untuk pembangunan kebun sawit di dalam Suaka Margasatwa Rawa Singkil di Aceh. Foto: Februari 2024, @Auriga Nusantara
+        </p>
     </div>
     <!-- Slides -->
     <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/5-hengjaya.jpg" class="glightbox10 mt-4 gbox" data-glightbox="description: Deforestasi di dalam konsesi tambang nikel PT Hengjaya Mineralindo di Morowali, Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/5-hengjaya.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+        <a href="https://simontini.id/assets/stadi2024/7-tesso-nilo.jpg" class="glightbox10 mt-4 gbox" data-glightbox=" description: Deforestasi untuk pembangunan kebun sawit di dalam Taman Nasional Tesso Nilo di Riau. Foto: Februari 2024, @Auriga Nusantara">
+            <img src="https://simontini.id/assets/stadi2024/7-tesso-nilo.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
         </a>
         <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi di dalam konsesi tambang nikel PT Hengjaya Mineralindo di Morowali, Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara
-        </p>
+            Deforestasi untuk pembangunan kebun sawit di dalam Taman Nasional Tesso Nilo di Riau. Foto: Februari 2024, @Auriga Nusantara</p>
     </div>
+
 
 
 </div>
