@@ -12,7 +12,7 @@
 
     <div class="max-w-7xl mx-auto relative z-10 px-6   flex  sm:gap-10 gap-6 items-center">
         <div class="flex space-x-2 text-gray-300 text-sm">
-            <a href="{{ url('/en/status-deforestasi-indonesia-2024')}}" class="cursor-pointer">EN</a>
+            <a href="{{ url('/en/status-of-deforestation-in-indonesia-2024')}}" class="cursor-pointer">EN</a>
             <div class="border-l border-gray-300"></div>
             <a href="{{ url('/id/status-deforestasi-indonesia-2024') }}" class="cursor-pointer text-simontini font-bold ">ID</a>
         </div>
@@ -61,7 +61,7 @@
 
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
     <div class="flex w-full justify-center">
-        <p class=" md:text-base text-sm mt-2 italic">
+        <p class=" md:text-xl text-base mt-2 italic text-center max-w-1xl">
             Tahun lalu Auriga merilis data deforestasi 2023 pada Maret. Mulai tahun ini, deforestasi tahunan akan dirilis setiap Januari.</p>
     </div>
 
@@ -125,6 +125,7 @@
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative mt-6">
     {{-- table-1 --}}
+    <h3 class="text-simontini mt-6 font-bold mb-2">HASIL INSPEKSI/VERIFIKASI</h3>
     <div class="overflow-x-auto w-full">
         <table class="border h-[200px] w-full border-black text-sm text-white">
             <thead>

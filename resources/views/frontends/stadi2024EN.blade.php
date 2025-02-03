@@ -6,7 +6,7 @@
 
     <div class="max-w-7xl mx-auto relative z-10 px-6   flex  gap-10 items-center">
         <div class="flex space-x-2 text-gray-300 text-sm">
-            <a href="{{ url('/en/status-deforestasi-indonesia-2024')}}" class="cursor-pointer text-simontini font-bold  ">EN</a>
+            <a href="{{ url('/en/status-of-deforestation-in-indonesia-2024')}}" class="cursor-pointer text-simontini font-bold  ">EN</a>
             <div class="border-l border-gray-300"></div>
             <a href="{{ url('/id/status-deforestasi-indonesia-2024') }}" class="cursor-pointer   ">ID</a>
         </div>
@@ -26,8 +26,8 @@
 </div>
 
 
-<div class="fixed z-10 md:bottom-56 bottom-2/3 md:left-[16%] left-5 md:w-[30%] w-[90%]" id="stickyText">
-    <a class="md:text-5xl text-2xl text-white font-bold">Deforestation Status in Indonesia 2024</a>
+<div class="fixed z-10 md:bottom-56 bottom-2/3 md:left-[16%] left-5 md:w-[34%] w-[90%]" id="stickyText">
+    <a class="md:text-5xl text-2xl text-white font-bold">Status of Deforestation in Indonesia 2024</a>
 </div>
 
 
@@ -54,7 +54,7 @@
 
 <div class="max-w-2xl mx-auto px-4 z-20 relative mt-12">
     <div class="flex w-full justify-center">
-        <p class=" md:text-base text-sm mt-2 italic">Auriga released deforestation data for 2023 in March last year. Commencing this year, it will release annual deforestation data each January.</p>
+        <p class=" md:text-xl text-base mt-2 italic text-center max-w-1xl">Auriga released deforestation data for 2023 in March last year. Commencing this year, it will release annual deforestation data each January.</p>
     </div>
     <div id="pendahuluan" class="pt-[45px] -mt-[45px]">
         <h1 class="text-3xl font-bold mt-12 text-simontini block">INTRODUCTION</h1>
@@ -118,19 +118,20 @@
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative mt-6">
     {{-- table-1 --}}
+    <h3 class="text-simontini mt-6 font-bold mb-2">INSPECTION/VERIFICATION RESULT</h3>
     <div class="overflow-x-auto w-full">
         <table class="border h-[200px] w-full border-black text-sm text-white">
             <thead>
                 <tr class="bg-gray-800 text-white">
-                    <th rowspan="2" class="border border-black px-4 py-2">AREA CLASS (ha)</th>
-                    <th colspan="2" class="border border-black px-4 py-2">ALLEGED DEFORESTATION</th>
-                    <th colspan="4" class="border border-black px-4 py-2">INSPECTION/VERIFICATION RESULT</th>
+                    <th rowspan="2" class="border border-black px-4 py-2">CATEGORY</th>
+                    <th colspan="2" class="border border-black px-4 py-2">SUSPECTED DEFORESTATION</th>
+                    <th colspan="4" class="border border-black px-4 py-2">INSPECTION/VERIFICATION RESULTS</th>
                 </tr>
                 <tr class="bg-gray-800 text-white">
-                    <th class="border border-black px-4 py-2">POLYGON</th>
+                    <th class="border border-black px-4 py-2">POLYGONS</th>
                     <th class="border border-black px-4 py-2">AREA (ha)</th>
-                    <th class="border border-black px-4 py-2">POLYGON TRUE</th>
-                    <th class="border border-black px-4 py-2">POLYGON FALSE</th>
+                    <th class="border border-black px-4 py-2">POLYGONS TRUE</th>
+                    <th class="border border-black px-4 py-2">POLYGONS FALSE</th>
                     <th class="border border-black px-4 py-2">AREA TRUE (ha)</th>
                     <th class="border border-black px-4 py-2">AREA FALSE (ha)</th>
                 </tr>
@@ -141,10 +142,10 @@
                         < 1</td>
                             <td class="border border-black px-4 py-2 text-right">351.718</td>
                             <td class="border border-black px-4 py-2 text-right">72.762</td>
-                            <td class="border border-black px-4 py-2 text-right">351.718*</td>
-                            <td class="border-t border-b border-l border-black px-4 py-2"></td>
-                            <td class="border-t border-b border-black px-4 py-2">72.762*</td>
-                            <td class="border-t border-r border-b border-black px-4 py-2"></td>
+                            <td class="border border-black px-4 py-2 text-right">351.718</td>
+                            <td class="border border-black px-4 py-2">*</td>
+                            <td class="border border-black px-4 py-2">72.762</td>
+                            <td class="border border-b border-black px-4 py-2">*</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">1 - 5</td>
@@ -202,8 +203,7 @@
     <h2 class="leading-relaxed mt-4">
             <p><b>3. Field monitoring: </b> Monitoring was carried out on specific areas throughout 2024. Choices of monitoring area were based on representative categories, i.e., geography, forest estate typology, government projects, and land-based concessions (mining, timber plantation, logging, and oil palm).</h2>
     <p class="mt-4 leading-relaxed">
-        Sepanjang 2024, tim peneliti Auriga Nusantara mengunjungi area-area deforestasi di Aceh, Sumatera Utara, Riau, Jambi, Bengkulu, Sumatera Selatan, Kalimantan Barat, Kalimantan Tengah, Kalimantan Timur, Kalimantan Utara, Sulawesi Tengah, Gorontalo, Maluku
-        Utara, Papua Barat Daya, dan Provinsi Papua. Secara keseluruhan, area deforestasi 2024 yang dikunjungi tim peneliti Auriga Nusantara merepresentasi area deforestasi seluas 22.350 hektare.
+        Throughout 2024, the Auriga Nusantara research team visited deforestation areas in Aceh, North Sumatra, Riau, Jambi, Bengkulu, South Sumatra, West Kalimantan, Central Kalimantan, East Kalimantan, North Kalimantan, Central Sulawesi, Gorontalo, North Maluku, Southwest Papua, and Papua provinces. In total, the Auriga Nusantara research team visited areas representing 22,350 ha of deforestation in 2024.
     </p>
 </div>
 </div>
@@ -355,12 +355,12 @@
     </p>
 
     {{-- table-3 --}}
-    <h3 class="mt-6 text-simontini font-bold mb-2">TOP TEN DEFORESTED DISTRICTS, 2024</h3>
+    <h3 class="mt-6 text-simontini font-bold mb-2">TOP TEN DEFORESTED REGENCY, 2024</h3>
     <div class="text-white  mb-4 w-full overflow-auto">
         <table class="border border-black text-white  w-full">
             <thead class="bg-black">
                 <tr>
-                    <th class="border border-black px-6 py-2 font-bold text-left">DISTRICT</th>
+                    <th class="border border-black px-6 py-2 font-bold text-left">REGENCY</th>
                     <th class="border border-black px-6 py-2 font-bold text-left">PROVINCE</th>
                     <th class="border border-black px-6 py-2 font-bold text-right">DEFORESTATION (HA)</th>
                 </tr>
@@ -417,7 +417,7 @@
                     <td class="border border-black px-6 py-2 text-right">4.809</td>
                 </tr>
                 <tr class="bg-black">
-                    <td class="border border-black px-6 py-2 font-bold text-sm">18 other districts</td>
+                    <td class="border border-black px-6 py-2 font-bold text-sm">18 other regency</td>
                     <td class="border border-black px-6 py-2"></td>
                     <td class="border border-black px-6 py-2 text-right font-bold">180.663</td>
                 </tr>
