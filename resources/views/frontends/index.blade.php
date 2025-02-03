@@ -62,7 +62,11 @@
                 <img src="assets/elemen-light.png" alt="auriga nusantara" class="z-10">
             </div> --}}
             <div class="sm:col-span-3 col-span-1">
-                <img src="https://i.ytimg.com/vi/avXNUj9EgEI/hq720.jpg" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                @if (App::getLocale() == 'en')
+                    <img src="https://i.ytimg.com/vi/avXNUj9EgEI/hq720.jpg" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                @else
+                    <img src="https://youtu.be/GLXnYIbkzHo?si=vSqxKfb0ejGqec5I" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                @endif
             </div>
             <div class="px-4 sm:col-span-2 col-span-1">
 
@@ -72,7 +76,7 @@
                 </h1>
                 <div class=" mt-5 text-simontini">
 
-                    <a  class="font-bold">{{__('Januari')}} 2025</a><span> | </span><a>{{__('Deforestasi Indonesia pada 2024 teridentifikasi seluas 261.575 hektare, meningkat 4.191 hetare dari deforestasi tahun sebelumnya yang tercatat seluas 257.384 hektare. ')}}</a>
+                    <a  class="font-bold">{{__('Januari')}} 2025</a><span> | </span><a>{{__('Deforestasi Indonesia pada 2024 teridentifikasi seluas 261.575 hektare, meningkat 4.191 hetare dari deforestasi tahun sebelumnya yang tercatat seluas 257.384 hektare.')}}</a>
                     <p class="mt-2">{{__('Diperlukan terobosan hukum untuk melindungi hutan alam tersisa. Saatnya Presiden Prabowo Subianto menerbitkan peraturan presiden yang memberikan perlindungan hukum terhadap seluruh hutan alam Indonesia, di mana pun berada.')}}</p>
                 </div>
 
