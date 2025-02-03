@@ -773,114 +773,51 @@
                 Hanya 3% deforestasi 2024 yang terjadi di kawasan konservasi, sementara 5% terjadi di hutan lindung, 49% di hutan produksi, dan 43% di luar kawasan hutan. Ditelisik lebih dalam, sebagian besar deforestasi di hutan lindung dan hutan produksi terjadi di
                 daerah berizin, baik sebagai pemanfaatan atau pengusahaan hutan (baca: konsesi) maupun program pemerintah, seperti proyek strategis nasional (PSN). Artinya, 97% deforestasi yang terjadi pada 2024 adalah dapat berupa deforestasi legal.
             </p>
-            {{--
-            <a href="https://simontini.id/assets/stadi2024/raden-3.jpg" class="glightbox18 mt-4" data-glightbox=" description: Kunjungan tim Auriga Nusantara memverifikasi adanya penebangan hutan alam di konsesi PT Mayawan Persada. Foto di ambil Desember 2024. ">
-                <img src="https://simontini.id/assets/stadi2024/raden-3.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-10" />
-                <p class=" text-xs mt-2">Kunjungan tim Auriga Nusantara memverifikasi adanya penebangan hutan alam di konsesi PT Mayawan Persada. Foto di ambil Desember 2024. </p>
-            </a> --}}
         </div>
     </div>
 </div>
-{{-- image --}}
-<div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 1,
-    centeredSlides: true,
-    centeredSlidesBounds: true,
-    centeredSlides: true,
-    pagination: {
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-    },
-    breakpoints: {
-    640: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 0,
-    },
-    768: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 0,
-    },
-    1024: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 1,
-    },
-    },
-})" class="relative flex flex-row mt-10 z-20">
-<div class="absolute inset-y-0 sm:left-5 left-1 z-30 flex items-center ">
-<button @click="swiper.slidePrev()" class="bg-black bg-nav-slide text-white sm:-ml-2 lg:-ml-4 flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-    {{--
-    <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-8 h-8">
-        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-    </svg> --}}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-    </svg>
-
-</button>
-</div>
-{{--
-<div class="sm:block hidden sm:h-[505px] h-56 w-[25%] mt-16 bg-black absolute bg-opacity-70 z-20 -ml-4 rounded">
-<div class="inset-y-0 left-0">
-</div>
-</div> --}}
-
-<div class="swiper-container relative" x-ref="container">
-<div class="sm:block hidden bottom-0 w-[24%] bg-gray-100 lg:h-[10rem] h-[17rem] absolute z-40"></div>
-<div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/1-biomassa-mhl.jpg" class="glightbox6 mt-4 gbox" data-glightbox=" description: Deforestasi untuk pembangunan kebun kayu energi dalam konsesi PT Malinau Hijau Lestari di Kalimantan Utara. Deforestasi ini berpotensi legal karena kawasan tersebut telah dilepaskan Kementerian Lingkungan Hidup dan Kehutanan dari kawasan hutan sehingga menjadi Area Penggunaan Lain (APL). Foto: Mei 2024 @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/1-biomassa-mhl.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi untuk pembangunan kebun kayu energi dalam konsesi PT Malinau Hijau Lestari di Kalimantan Utara. Deforestasi ini berpotensi legal karena kawasan tersebut telah dilepaskan Kementerian Lingkungan Hidup dan Kehutanan dari kawasan hutan sehingga menjadi Area Penggunaan Lain (APL). Foto: Mei 2024 @Auriga Nusantara</p>
+{{-- slide-1 --}}
+<div x-data="{ currentSlide: 0, totalSlides: 3 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
+    <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/1-biomassa-mhl.jpg" class="glightbox6 mt-4 gbox" data-glightbox=" description: Deforestasi untuk pembangunan kebun kayu energi dalam konsesi PT Malinau Hijau Lestari di Kalimantan Utara. Deforestasi ini berpotensi legal karena kawasan tersebut telah dilepaskan Kementerian Lingkungan Hidup dan Kehutanan dari kawasan hutan sehingga menjadi Area Penggunaan Lain (APL). Foto: Mei 2024 @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/1-biomassa-mhl.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforestasi untuk pembangunan kebun kayu energi dalam konsesi PT Malinau Hijau Lestari di Kalimantan Utara. Deforestasi ini berpotensi legal karena kawasan tersebut telah dilepaskan Kementerian Lingkungan Hidup dan Kehutanan dari kawasan hutan sehingga menjadi Area Penggunaan Lain (APL). Foto: Mei 2024 @Auriga Nusantara</p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/1-biomassa-gorontalo.jpg" class="glightbox6 mt-4 gbox" data-glightbox="description: Deforestasi untuk pembangunan kebun kayu energi/biomassa di PT Banyan Tumbuh Lestari dan PT Inti Global Laksana di Gorontalo. Deforestasi ini berpotensi legal karena sebelumnya hutan alam tersebut telah dilepaskan oleh Kementerian Lingkungan Hidup dan Kehutanan untuk pembangunan kebun sawit atas nama kedua perusahaan tersebut. Namun, dokumentasi lapangan menunjukkan yang dibangun bukan kebun sawit, tapi kebun kayu energi untuk memasok pabrik PT Biomasa Jaya Abadi yang ada di dalam salah salah satu konsesi tersebut. Foto: Mei 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/1-biomassa-gorontalo.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforestasi untuk pembangunan kebun kayu energi/biomassa di PT Banyan Tumbuh Lestari dan PT Inti Global Laksana di Gorontalo. Deforestasi ini berpotensi legal karena sebelumnya hutan alam tersebut telah dilepaskan oleh Kementerian Lingkungan Hidup dan Kehutanan untuk pembangunan kebun sawit atas nama kedua perusahaan tersebut. Namun, dokumentasi lapangan menunjukkan yang dibangun bukan kebun sawit, tapi kebun kayu energi untuk memasok pabrik PT Biomasa Jaya Abadi yang ada di dalam salah salah satu konsesi tersebut. Foto: Mei 2024, @Auriga Nusantara
+            </p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/1-imip.jpg" class="glightbox6 mt-4 gbox" data-glightbox=" description: Lokasi ini berada dalam konsesi logging PT Diamond Raya Timber di Riau. Namun, kesaksian masyarakat setempat maupun dokumentasi kunjungan lapangan menunjukkan bahwa deforestasi ini untuk pembangunan kebun sawit. Pembangunan kebun sawit di dalam konsesi logging juga ditemukan dalam konsesi PT Anugerah Pratama Inspirasi di Bengkulu yang dikunjungi pada Februari 2024. Foto: Desember 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/1-imip.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi untuk penambangan dan pembangunan kawasan industri nikel Indonesia Morowali Industrial Park di Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara</p>
+        </div>
     </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/1-biomassa-gorontalo.jpg" class="glightbox6 mt-4 gbox" data-glightbox="description: Deforestasi untuk pembangunan kebun kayu energi/biomassa di PT Banyan Tumbuh Lestari dan PT Inti Global Laksana di Gorontalo. Deforestasi ini berpotensi legal karena sebelumnya hutan alam tersebut telah dilepaskan oleh Kementerian Lingkungan Hidup dan Kehutanan untuk pembangunan kebun sawit atas nama kedua perusahaan tersebut. Namun, dokumentasi lapangan menunjukkan yang dibangun bukan kebun sawit, tapi kebun kayu energi untuk memasok pabrik PT Biomasa Jaya Abadi yang ada di dalam salah salah satu konsesi tersebut. Foto: Mei 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/1-biomassa-gorontalo.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi untuk pembangunan kebun kayu energi/biomassa di PT Banyan Tumbuh Lestari dan PT Inti Global Laksana di Gorontalo. Deforestasi ini berpotensi legal karena sebelumnya hutan alam tersebut telah dilepaskan oleh Kementerian Lingkungan Hidup dan Kehutanan untuk pembangunan kebun sawit atas nama kedua perusahaan tersebut. Namun, dokumentasi lapangan menunjukkan yang dibangun bukan kebun sawit, tapi kebun kayu energi untuk memasok pabrik PT Biomasa Jaya Abadi yang ada di dalam salah salah satu konsesi tersebut. Foto: Mei 2024, @Auriga Nusantara
-        </p>
-    </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/1-imip.jpg" class="glightbox6 mt-4 gbox" data-glightbox=" description: Lokasi ini berada dalam konsesi logging PT Diamond Raya Timber di Riau. Namun, kesaksian masyarakat setempat maupun dokumentasi kunjungan lapangan menunjukkan bahwa deforestasi ini untuk pembangunan kebun sawit. Pembangunan kebun sawit di dalam konsesi logging juga ditemukan dalam konsesi PT Anugerah Pratama Inspirasi di Bengkulu yang dikunjungi pada Februari 2024. Foto: Desember 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/1-imip.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Deforestasi untuk penambangan dan pembangunan kawasan industri nikel Indonesia Morowali Industrial Park di Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara</p>
-    </div>
+
+    <!-- Navigation Buttons -->
+    <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0"
+        x-show="currentSlide > 0"
+        class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+        </svg>
+    </button>
+    <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
+            x-show="currentSlide < totalSlides - 1"
+            class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
 </div>
-<div class="sm:block hidden bottom-0 right-0 w-[25%] bg-gray-100 lg:h-[10rem] h-[17rem] absolute z-40"></div>
-
-<div class="swiper-pagination"></div>
-</div>
-
-{{--
-<div class="sm:block hidden sm:h-[35rem] h-56 w-[24%]  rounded mt-12 bg-black absolute bg-opacity-70  inset-y-0 right-0 z-20">
-</div> --}}
-
-<div class="absolute inset-y-0  right-1 z-30 flex items-center">
-<button @click="swiper.slideNext()" class="bg-black text-white flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-    {{--
-    <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-8 h-8">
-        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-    </svg> --}}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-    </svg>
-
-</button>
-</div>
-
-</div>
-
 
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
 
@@ -989,120 +926,61 @@
         </table>
     </div>
 </div>
-{{-- image --}}
-<div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 1,
-    centeredSlides: true,
-    centeredSlidesBounds: true,
-    centeredSlides: true,
-    pagination: {
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-    },
-    breakpoints: {
-    640: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 0,
-    },
-    768: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 0,
-    },
-    1024: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 1,
-    },
-    },
-})" class="relative flex flex-row mt-10 z-20">
-<div class="absolute inset-y-0 sm:left-5 left-1 z-30 flex items-center ">
-<button @click="swiper.slidePrev()" class="bg-black bg-nav-slide text-white sm:-ml-2 lg:-ml-4 flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-    {{--
-    <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-8 h-8">
-        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-    </svg> --}}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-    </svg>
-
-</button>
-</div>
-{{--
-<div class="sm:block hidden sm:h-[505px] h-56 w-[25%] mt-16 bg-black absolute bg-opacity-70 z-20 -ml-4 rounded">
-<div class="inset-y-0 left-0">
-</div>
-</div> --}}
-
-<div class="swiper-container relative" x-ref="container">
-<div class="sm:block hidden bottom-0 w-[24%] bg-gray-100 lg:h-[7rem] h-[17rem] absolute z-40"></div>
-<div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/2-meranti-laksana.jpg" class="glightbox7 mt-4 gbox" data-glightbox=" description: Deforestasi untuk pembangunan kebun kayu dalam konsesi PT Meranti Laksana di Kalimantan Barat. Foto: Desember 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/2-meranti-laksana.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi untuk pembangunan kebun kayu dalam konsesi PT Meranti Laksana di Kalimantan Barat. Foto: Desember 2024, @Auriga Nusantara</p>
+{{-- slide-2 --}}
+<div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
+    <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/2-meranti-laksana.jpg" class="glightbox7 mt-4 gbox" data-glightbox=" description: Deforestasi untuk pembangunan kebun kayu dalam konsesi PT Meranti Laksana di Kalimantan Barat. Foto: Desember 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/2-meranti-laksana.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforestasi untuk pembangunan kebun kayu dalam konsesi PT Meranti Laksana di Kalimantan Barat. Foto: Desember 2024, @Auriga Nusantara</p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/2-berau-prima-nusantara.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Deforestasi di dalam konsesi tambang batubara PT Berau Prima Nusantara di Kalimantan Utara. Foto: Desember 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/2-berau-prima-nusantara.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforestasi di dalam konsesi tambang batubara PT Berau Prima Nusantara di Kalimantan Utara. Foto: Desember 2024, @Auriga Nusantara
+            </p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/2-kurnisa-sejahtera.jpg" class="glightbox7 mt-4 gbox" data-glightbox=" description: Deforestasi di dalam konsesi tambang batubara PT Kurnia Sejahtera di Kalimantan Utara. Foto: Desember 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/2-kurnisa-sejahtera.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi di dalam konsesi tambang batubara PT Kurnia Sejahtera di Kalimantan Utara. Foto: Desember 2024, @Auriga Nusantara </p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/2-kayan-kaltara-coal.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Deforestasi di dalam konsesi tambang batubara PT Kayan Kaltara Coal di Kalimantan Utara. Foto: Desember 2024 @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/2-kayan-kaltara-coal.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi di dalam konsesi tambang batubara PT Kayan Kaltara Coal di Kalimantan Utara. Foto: Desember 2024 @Auriga Nusantara        </p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/2-phoenix-mill.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Pabrik pulp raksasa PT Phoenix Resources International di Tarakan, Kalimantan Utara. Berdasarkan data pemenuhan bahan bakunya, pabrik ini telah berproduksi pada 2024 dengan pasokan dari konsesi-konsesi yang membabat hutan alam. Foto: Desember 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/2-phoenix-mill.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Pabrik pulp raksasa PT Phoenix Resources International di Tarakan, Kalimantan Utara. Berdasarkan data pemenuhan bahan bakunya, pabrik ini telah berproduksi pada 2024 dengan pasokan dari konsesi-konsesi yang membabat hutan alam. Foto: Desember 2024, @Auriga Nusantara</p>
+        </div>
     </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/2-berau-prima-nusantara.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Deforestasi di dalam konsesi tambang batubara PT Berau Prima Nusantara di Kalimantan Utara. Foto: Desember 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/2-berau-prima-nusantara.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi di dalam konsesi tambang batubara PT Berau Prima Nusantara di Kalimantan Utara. Foto: Desember 2024, @Auriga Nusantara
-        </p>
-    </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/2-kurnisa-sejahtera.jpg" class="glightbox7 mt-4 gbox" data-glightbox=" description: Deforestasi di dalam konsesi tambang batubara PT Kurnia Sejahtera di Kalimantan Utara. Foto: Desember 2024, @Auriga Nusantara
-">
-            <img src="https://simontini.id/assets/stadi2024/2-kurnisa-sejahtera.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Deforestasi di dalam konsesi tambang batubara PT Kurnia Sejahtera di Kalimantan Utara. Foto: Desember 2024, @Auriga Nusantara </p>
-    </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/2-kayan-kaltara-coal.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Deforestasi di dalam konsesi tambang batubara PT Kayan Kaltara Coal di Kalimantan Utara. Foto: Desember 2024 @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/2-kayan-kaltara-coal.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Deforestasi di dalam konsesi tambang batubara PT Kayan Kaltara Coal di Kalimantan Utara. Foto: Desember 2024 @Auriga Nusantara        </p>
-    </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/2-phoenix-mill.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Pabrik pulp raksasa PT Phoenix Resources International di Tarakan, Kalimantan Utara. Berdasarkan data pemenuhan bahan bakunya, pabrik ini telah berproduksi pada 2024 dengan pasokan dari konsesi-konsesi yang membabat hutan alam. Foto: Desember 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/2-phoenix-mill.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Pabrik pulp raksasa PT Phoenix Resources International di Tarakan, Kalimantan Utara. Berdasarkan data pemenuhan bahan bakunya, pabrik ini telah berproduksi pada 2024 dengan pasokan dari konsesi-konsesi yang membabat hutan alam. Foto: Desember 2024, @Auriga Nusantara</p>
-    </div>
-</div>
-<div class="sm:block hidden bottom-0 right-0 w-[25%] bg-gray-100 lg:h-[7rem] h-[17rem] absolute z-40"></div>
 
-<div class="swiper-pagination"></div>
+    <!-- Navigation Buttons -->
+    <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0"
+        x-show="currentSlide > 0"
+        class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+        </svg>
+    </button>
+    <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
+            x-show="currentSlide < totalSlides - 1"
+            class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
 </div>
 
-{{--
-<div class="sm:block hidden sm:h-[35rem] h-56 w-[24%]  rounded mt-12 bg-black absolute bg-opacity-70  inset-y-0 right-0 z-20">
-</div> --}}
-
-<div class="absolute inset-y-0  right-1 z-30 flex items-center">
-<button @click="swiper.slideNext()" class="bg-black text-white flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-    {{--
-    <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-8 h-8">
-        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-    </svg> --}}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-    </svg>
-
-</button>
-</div>
-
-</div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
     <div>
 
@@ -1126,121 +1004,63 @@
         </div>
     </div>
 </div>
-{{-- image --}}
-<div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 1,
-            centeredSlides: true,
-            centeredSlidesBounds: true,
-            centeredSlides: true,
-            pagination: {
-                el: '.swiper-pagination',
-                dynamicBullets: true,
-            },
-            breakpoints: {
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 0,
-                initialSlide: 0,
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 0,
-                initialSlide: 0,
-            },
-            1024: {
-                slidesPerView: 2,
-                spaceBetween: 0,
-                initialSlide: 1,
-            },
-            },
-        })" class="relative flex flex-row mt-10 z-20">
-    <div class="absolute inset-y-0 sm:left-5 left-1 z-30 flex items-center ">
-        <button @click="swiper.slidePrev()" class="bg-black bg-nav-slide text-white sm:-ml-2 lg:-ml-4 flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-            {{--
-            <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-8 h-8">
-                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg> --}}
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-            </svg>
-
-        </button>
-    </div>
-    {{--
-    <div class="sm:block hidden sm:h-[505px] h-56 w-[25%] mt-16 bg-black absolute bg-opacity-70 z-20 -ml-4 rounded">
-        <div class="inset-y-0 left-0">
+{{-- slide-3 --}}
+<div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
+    <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/3-mayawana.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Pada awal 2024 koalisi masyarakat sipil Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International, dan Greenpeace International mengungkap deforestasi masif dalam konsesi kebun kayu PT Mayawana Persada di Kalimantan Barat. Tapi, setidaknya hingga Desember 2024, perusahaan ini terus membabat hutan alam tersisa di dalam konsesinya. Foto: Desember 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/3-mayawana.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Pada awal 2024 koalisi masyarakat sipil Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International, dan Greenpeace International mengungkap deforestasi masif dalam konsesi kebun kayu PT Mayawana Persada di
+                Kalimantan Barat. Tapi, setidaknya hingga Desember 2024, perusahaan ini terus membabat hutan alam tersisa di dalam konsesinya. Foto: Desember 2024, @Auriga Nusantara</p>
         </div>
-    </div> --}}
-
-    <div class="swiper-container relative" x-ref="container">
-        <div class="sm:block hidden bottom-0 w-[24%] bg-gray-100 lg:h-[8rem] h-[17rem] absolute z-40"></div>
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-                <a href="https://simontini.id/assets/stadi2024/3-mayawana.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Pada awal 2024 koalisi masyarakat sipil Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International, dan Greenpeace International mengungkap deforestasi masif dalam konsesi kebun kayu PT Mayawana Persada di Kalimantan Barat. Tapi, setidaknya hingga Desember 2024, perusahaan ini terus membabat hutan alam tersisa di dalam konsesinya. Foto: Desember 2024, @Auriga Nusantara">
-                    <img src="https://simontini.id/assets/stadi2024/3-mayawana.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-                </a>
-                <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-                    Pada awal 2024 koalisi masyarakat sipil Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International, dan Greenpeace International mengungkap deforestasi masif dalam konsesi kebun kayu PT Mayawana Persada di
-                    Kalimantan Barat. Tapi, setidaknya hingga Desember 2024, perusahaan ini terus membabat hutan alam tersisa di dalam konsesinya. Foto: Desember 2024, @Auriga Nusantara</p>
-            </div>
-            <!-- Slides -->
-            <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-                <a href="https://simontini.id/assets/stadi2024/3-lahan-cakrawala.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforestasi demi pembangunan kebun kayu dalam konsesi PT Lahan Cakrawala di Kalimantan Barat. Foto: Desember 2024, @Auriga Nusantara.">
-                    <img src="https://simontini.id/assets/stadi2024/3-lahan-cakrawala.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-                </a>
-                <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-                    Deforestasi demi pembangunan kebun kayu dalam konsesi PT Lahan Cakrawala di Kalimantan Barat. Foto: Desember 2024, @Auriga Nusantara.
-                </p>
-            </div>
-            <!-- Slides -->
-            <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-                <a href="https://simontini.id/assets/stadi2024/3-IFP.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Deforestasi demi perluasan kebun kayu PT Industrial Forest Plantation di Kalimantan Tengah. Pada 2023 koalisi masyarakat sipil Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International, dan Greenpeace International telah mengungkap deforestasi masif dalam konsesi ini. Tapi, setidaknya hingga 2024, perusahaan ini terus membabat hutan alam tersisa di dalam konsesinya. Foto: November 2024, @Auriga Nusantara/Earthsight">
-                    <img src="https://simontini.id/assets/stadi2024/3-IFP.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-                </a>
-                <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Deforestasi demi perluasan kebun kayu PT Industrial Forest Plantation di Kalimantan Tengah. Pada 2023 koalisi masyarakat sipil Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International, dan
-                    Greenpeace International telah mengungkap deforestasi masif dalam konsesi ini. Tapi, setidaknya hingga 2024, perusahaan ini terus membabat hutan alam tersisa di dalam konsesinya. Foto: November 2024, @Auriga Nusantara/Earthsight</p>
-            </div>
-            <!-- Slides -->
-            <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-                <a href="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Pembabatan hutan alam demi pembangunan kebun kayu energi di dalam konsesi PT Jaya Bumi Paser di Kalimantan Timur. Foto: Mei 2024, @Auriga Nusantara">
-                    <img src="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-                </a>
-                <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Pembabatan hutan alam demi pembangunan kebun kayu energi di dalam konsesi PT Jaya Bumi Paser di Kalimantan Timur. Foto: Mei 2024, @Auriga Nusantara</p>
-            </div>
-            <!-- Slides -->
-            <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-                <a href="https://simontini.id/assets/stadi2024/3-babugus.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Pembangunan jaringan jalan persiapan pembabatan hutan alam demi pengembangan kebun kayu energi/biomassa dalam konsesi PT Babugus Wahana Lestari di Kalimantan Tengah. Foto: Agustus 2024 @Auriga Nusantara/Earthsight">
-                    <img src="https://simontini.id/assets/stadi2024/3-babugus.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-                </a>
-                <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Pembangunan jaringan jalan persiapan pembabatan hutan alam demi pengembangan kebun kayu energi/biomassa dalam konsesi PT Babugus Wahana Lestari di Kalimantan Tengah. Foto: Agustus 2024 @Auriga Nusantara/Earthsight</p>
-            </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/3-lahan-cakrawala.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforestasi demi pembangunan kebun kayu dalam konsesi PT Lahan Cakrawala di Kalimantan Barat. Foto: Desember 2024, @Auriga Nusantara.">
+                <img src="https://simontini.id/assets/stadi2024/3-lahan-cakrawala.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforestasi demi pembangunan kebun kayu dalam konsesi PT Lahan Cakrawala di Kalimantan Barat. Foto: Desember 2024, @Auriga Nusantara.
+            </p>
         </div>
-        <div class="sm:block hidden bottom-0 right-0 w-[25%] bg-gray-100 lg:h-[8rem] h-[17rem] absolute z-40"></div>
-
-        <div class="swiper-pagination"></div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/3-IFP.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Deforestasi demi perluasan kebun kayu PT Industrial Forest Plantation di Kalimantan Tengah. Pada 2023 koalisi masyarakat sipil Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International, dan Greenpeace International telah mengungkap deforestasi masif dalam konsesi ini. Tapi, setidaknya hingga 2024, perusahaan ini terus membabat hutan alam tersisa di dalam konsesinya. Foto: November 2024, @Auriga Nusantara/Earthsight">
+                <img src="https://simontini.id/assets/stadi2024/3-IFP.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi demi perluasan kebun kayu PT Industrial Forest Plantation di Kalimantan Tengah. Pada 2023 koalisi masyarakat sipil Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International, dan
+                Greenpeace International telah mengungkap deforestasi masif dalam konsesi ini. Tapi, setidaknya hingga 2024, perusahaan ini terus membabat hutan alam tersisa di dalam konsesinya. Foto: November 2024, @Auriga Nusantara/Earthsight</p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Pembabatan hutan alam demi pembangunan kebun kayu energi di dalam konsesi PT Jaya Bumi Paser di Kalimantan Timur. Foto: Mei 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Pembabatan hutan alam demi pembangunan kebun kayu energi di dalam konsesi PT Jaya Bumi Paser di Kalimantan Timur. Foto: Mei 2024, @Auriga Nusantara</p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/3-babugus.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Pembangunan jaringan jalan persiapan pembabatan hutan alam demi pengembangan kebun kayu energi/biomassa dalam konsesi PT Babugus Wahana Lestari di Kalimantan Tengah. Foto: Agustus 2024 @Auriga Nusantara/Earthsight">
+                <img src="https://simontini.id/assets/stadi2024/3-babugus.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Pembangunan jaringan jalan persiapan pembabatan hutan alam demi pengembangan kebun kayu energi/biomassa dalam konsesi PT Babugus Wahana Lestari di Kalimantan Tengah. Foto: Agustus 2024 @Auriga Nusantara/Earthsight</p>
+        </div>
     </div>
 
-    {{--
-    <div class="sm:block hidden sm:h-[35rem] h-56 w-[24%]  rounded mt-12 bg-black absolute bg-opacity-70  inset-y-0 right-0 z-20">
-    </div> --}}
-
-    <div class="absolute inset-y-0  right-1 z-30 flex items-center">
-        <button @click="swiper.slideNext()" class="bg-black text-white flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-            {{--
-            <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-8 h-8">
-                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-            </svg> --}}
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-            </svg>
-
-        </button>
-    </div>
-
+    <!-- Navigation Buttons -->
+    <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0"
+        x-show="currentSlide > 0"
+        class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+        </svg>
+    </button>
+    <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
+            x-show="currentSlide < totalSlides - 1"
+            class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
 </div>
+
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
     <div>
         {{-- diskusi-4 --}}
@@ -1257,119 +1077,62 @@
         </div>
     </div>
 </div>
-{{-- image --}}
-<div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 1,
-    centeredSlides: true,
-    centeredSlidesBounds: true,
-    centeredSlides: true,
-    pagination: {
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-    },
-    breakpoints: {
-    640: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 0,
-    },
-    768: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 0,
-    },
-    1024: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 1,
-    },
-    },
-})" class="relative flex flex-row mt-10 z-20">
-<div class="absolute inset-y-0 sm:left-5 left-1 z-30 flex items-center ">
-<button @click="swiper.slidePrev()" class="bg-black bg-nav-slide text-white sm:-ml-2 lg:-ml-4 flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-    {{--
-    <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-8 h-8">
-        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-    </svg> --}}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-    </svg>
 
-</button>
-</div>
-{{--
-<div class="sm:block hidden sm:h-[505px] h-56 w-[25%] mt-16 bg-black absolute bg-opacity-70 z-20 -ml-4 rounded">
-<div class="inset-y-0 left-0">
-</div>
-</div> --}}
-
-<div class="swiper-container relative" x-ref="container">
-<div class="sm:block hidden bottom-0 w-[24%] bg-gray-100 lg:h-[8rem] h-[17rem] absolute z-40"></div>
-<div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/4-subussalam.jpg" class="glightbox20 mt-4 gbox" data-glightbox=" description: Deforestasi untuk pembangunan kebun sawit. Tidak ditemukan izin sawit di lokasi yang berdekatan dengan kebun sawit PT Laot Bangko dan PT Indo Sawit Perkasa di Kabupaten Subussalam, Aceh ini. Foto: Februari 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/4-subussalam.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi untuk pembangunan kebun sawit. Tidak ditemukan izin sawit di lokasi yang berdekatan dengan kebun sawit PT Laot Bangko dan PT Indo Sawit Perkasa di Kabupaten Subussalam, Aceh ini. Foto: Februari 2024, @Auriga Nusantara</p>
+{{-- slide-4 --}}
+<div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
+    <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/4-subussalam.jpg" class="glightbox20 mt-4 gbox" data-glightbox=" description: Deforestasi untuk pembangunan kebun sawit. Tidak ditemukan izin sawit di lokasi yang berdekatan dengan kebun sawit PT Laot Bangko dan PT Indo Sawit Perkasa di Kabupaten Subussalam, Aceh ini. Foto: Februari 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/4-subussalam.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforestasi untuk pembangunan kebun sawit. Tidak ditemukan izin sawit di lokasi yang berdekatan dengan kebun sawit PT Laot Bangko dan PT Indo Sawit Perkasa di Kabupaten Subussalam, Aceh ini. Foto: Februari 2024, @Auriga Nusantara</p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/4-anugerah-langkat-makmur.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestasi untuk pembangunan kebun sawit di konsesi PT Anugerah Langkat Makmur di Kabupaten Mandailing Natal, Sumatera Utara. Foto: Februari 2024, @Auriga Nusantara/Konsorsium Pembaruan Agraria">
+                <img src="https://simontini.id/assets/stadi2024/4-anugerah-langkat-makmur.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4 ">
+                Deforestasi untuk pembangunan kebun sawit di konsesi PT Anugerah Langkat Makmur di Kabupaten Mandailing Natal, Sumatera Utara. Foto: Februari 2024, @Auriga Nusantara/Konsorsium Pembaruan Agraria
+            </p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/4-DRT.jpg" class="glightbox20 mt-4 gbox" data-glightbox=" description: Lokasi ini berada dalam konsesi logging PT Diamond Raya Timber di Riau. Namun, kesaksian masyarakat setempat maupun dokumentasi kunjungan lapangan menunjukkan bahwa deforestasi ini untuk pembangunan kebun sawit. Pembangunan kebun sawit di dalam konsesi logging juga ditemukan dalam konsesi PT Anugerah Pratama Inspirasi di Bengkulu yang dikunjungi pada Februari 2024. Foto: Desember 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/4-DRT.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Lokasi ini berada dalam konsesi logging PT Diamond Raya Timber di Riau. Namun, kesaksian masyarakat setempat maupun dokumentasi kunjungan lapangan menunjukkan bahwa deforestasi ini untuk pembangunan kebun sawit. Pembangunan kebun sawit di dalam konsesi logging juga ditemukan dalam konsesi PT Anugerah Pratama Inspirasi di Bengkulu yang dikunjungi pada Februari 2024. Foto: Desember 2024, @Auriga Nusantara</p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/4-bssu.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestasi untuk pembangunan kebun sawit dalam konsesi PT Bina Sawit Sarana Utama di Kalimantan Tengah. Foto: November 2024, @Auriga Nusantara/Earthsight">
+                <img src="https://simontini.id/assets/stadi2024/4-bssu.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi untuk pembangunan kebun sawit dalam konsesi PT Bina Sawit Sarana Utama di Kalimantan Tengah. Foto: November 2024, @Auriga Nusantara/Earthsight</p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/4-pulau-lau-kalsel.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Pembangunan jaringan jalan persiapan pembabatan hutan alam demi pengembangan kebun kayu energi/biomassa dalam konsesi PT Babugus Wahana Lestari di Kalimantan Tengah. Foto: Agustus 2024 @Auriga Nusantara/Earthsight">
+                <img src="https://simontini.id/assets/stadi2024/4-pulau-lau-kalsel.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi untuk pembangunan kebun sawit dalam konsesi PT Bersama Sejahtera Sakti di Pulau Laut, Kalimantan Selatan. Foto: Mei 2024, @Auriga Nusantara</p>
+        </div>
     </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/4-anugerah-langkat-makmur.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestasi untuk pembangunan kebun sawit di konsesi PT Anugerah Langkat Makmur di Kabupaten Mandailing Natal, Sumatera Utara. Foto: Februari 2024, @Auriga Nusantara/Konsorsium Pembaruan Agraria">
-            <img src="https://simontini.id/assets/stadi2024/4-anugerah-langkat-makmur.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi untuk pembangunan kebun sawit di konsesi PT Anugerah Langkat Makmur di Kabupaten Mandailing Natal, Sumatera Utara. Foto: Februari 2024, @Auriga Nusantara/Konsorsium Pembaruan Agraria
-        </p>
-    </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/4-DRT.jpg" class="glightbox20 mt-4 gbox" data-glightbox=" description: Lokasi ini berada dalam konsesi logging PT Diamond Raya Timber di Riau. Namun, kesaksian masyarakat setempat maupun dokumentasi kunjungan lapangan menunjukkan bahwa deforestasi ini untuk pembangunan kebun sawit. Pembangunan kebun sawit di dalam konsesi logging juga ditemukan dalam konsesi PT Anugerah Pratama Inspirasi di Bengkulu yang dikunjungi pada Februari 2024. Foto: Desember 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/4-DRT.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Lokasi ini berada dalam konsesi logging PT Diamond Raya Timber di Riau. Namun, kesaksian masyarakat setempat maupun dokumentasi kunjungan lapangan menunjukkan bahwa deforestasi ini untuk pembangunan kebun sawit. Pembangunan kebun sawit di dalam konsesi logging juga ditemukan dalam konsesi PT Anugerah Pratama Inspirasi di Bengkulu yang dikunjungi pada Februari 2024. Foto: Desember 2024, @Auriga Nusantara</p>
-    </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/4-bssu.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestasi untuk pembangunan kebun sawit dalam konsesi PT Bina Sawit Sarana Utama di Kalimantan Tengah. Foto: November 2024, @Auriga Nusantara/Earthsight">
-            <img src="https://simontini.id/assets/stadi2024/4-bssu.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Deforestasi untuk pembangunan kebun sawit dalam konsesi PT Bina Sawit Sarana Utama di Kalimantan Tengah. Foto: November 2024, @Auriga Nusantara/Earthsight</p>
-    </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/4-pulau-lau-kalsel.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Pembangunan jaringan jalan persiapan pembabatan hutan alam demi pengembangan kebun kayu energi/biomassa dalam konsesi PT Babugus Wahana Lestari di Kalimantan Tengah. Foto: Agustus 2024 @Auriga Nusantara/Earthsight">
-            <img src="https://simontini.id/assets/stadi2024/4-pulau-lau-kalsel.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Deforestasi untuk pembangunan kebun sawit dalam konsesi PT Bersama Sejahtera Sakti di Pulau Laut, Kalimantan Selatan. Foto: Mei 2024, @Auriga Nusantara</p>
-    </div>
-</div>
-<div class="sm:block hidden bottom-0 right-0 w-[25%] bg-gray-100 lg:h-[8rem] h-[17rem] absolute z-40"></div>
 
-<div class="swiper-pagination"></div>
+    <!-- Navigation Buttons -->
+    <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0"
+        x-show="currentSlide > 0"
+        class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+        </svg>
+    </button>
+    <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
+            x-show="currentSlide < totalSlides - 1"
+            class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
 </div>
 
-{{--
-<div class="sm:block hidden sm:h-[35rem] h-56 w-[24%]  rounded mt-12 bg-black absolute bg-opacity-70  inset-y-0 right-0 z-20">
-</div> --}}
-
-<div class="absolute inset-y-0  right-1 z-30 flex items-center">
-<button @click="swiper.slideNext()" class="bg-black text-white flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-    {{--
-    <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-8 h-8">
-        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-    </svg> --}}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-    </svg>
-
-</button>
-</div>
-
-</div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
     <div>
         {{-- diskusi-5 --}}
@@ -1399,106 +1162,51 @@
         </div>
     </div>
 </div>
-{{-- image --}}
-<div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 1,
-    centeredSlides: true,
-    centeredSlidesBounds: true,
-    centeredSlides: true,
-    pagination: {
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-    },
-    breakpoints: {
-    640: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 0,
-    },
-    768: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 0,
-    },
-    1024: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 1,
-    },
-    },
-})" class="relative flex flex-row mt-10 z-20">
-<div class="absolute inset-y-0 sm:left-5 left-1 z-30 flex items-center ">
-<button @click="swiper.slidePrev()" class="bg-black bg-nav-slide text-white sm:-ml-2 lg:-ml-4 flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-    {{--
-    <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-8 h-8">
-        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-    </svg> --}}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-    </svg>
 
-</button>
-</div>
-{{--
-<div class="sm:block hidden sm:h-[505px] h-56 w-[25%] mt-16 bg-black absolute bg-opacity-70 z-20 -ml-4 rounded">
-<div class="inset-y-0 left-0">
-</div>
-</div> --}}
+{{-- slide-5 --}}
+<div x-data="{ currentSlide: 0, totalSlides: 3 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
+    <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/5-bintang-delapan.jpg" class="glightbox8 mt-4 gbox" data-glightbox=" description: Deforestasi dalam konsesi tambang nikel PT Bintang Delapan Mineral di Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/5-bintang-delapan.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforestasi dalam konsesi tambang nikel PT Bintang Delapan Mineral di Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara</p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/5-hengjaya.jpg" class="glightbox8 mt-4 gbox" data-glightbox="description: Deforestasi di dalam konsesi tambang nikel PT Hengjaya Mineralindo di Morowali, Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/5-hengjaya.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforestasi di dalam konsesi tambang nikel PT Hengjaya Mineralindo di Morowali, Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara
+            </p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/5-surya-cahaya-mineral.jpg" class="glightbox8 mt-4 gbox" data-glightbox="description: Jalan menuju lokasi tambang eksisting di dalam konsesi tambang nikel PT Surya Cahaya Mineral di Konawe Utara, Sulawesi Tenggara. Tampak sekilas pada latar daerah terbuka akibat deforestasi untuk menambang nikel dalam konsesi perusahaan ini. Foto: Desember 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/5-surya-cahaya-mineral.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Jalan menuju lokasi tambang eksisting di dalam konsesi tambang nikel PT Surya Cahaya Mineral di Konawe Utara, Sulawesi Tenggara. Tampak sekilas pada latar daerah terbuka akibat deforestasi untuk menambang nikel dalam konsesi perusahaan ini. Foto: Desember 2024, @Auriga Nusantara </p>
+        </div>
 
-<div class="swiper-container relative" x-ref="container">
-<div class="sm:block hidden bottom-0 w-[24%] bg-gray-100 lg:h-[7rem] h-[17rem] absolute z-40"></div>
-<div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/5-bintang-delapan.jpg" class="glightbox8 mt-4 gbox" data-glightbox=" description: Deforestasi dalam konsesi tambang nikel PT Bintang Delapan Mineral di Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/5-bintang-delapan.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi dalam konsesi tambang nikel PT Bintang Delapan Mineral di Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara</p>
-    </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/5-hengjaya.jpg" class="glightbox8 mt-4 gbox" data-glightbox="description: Deforestasi di dalam konsesi tambang nikel PT Hengjaya Mineralindo di Morowali, Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/5-hengjaya.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi di dalam konsesi tambang nikel PT Hengjaya Mineralindo di Morowali, Sulawesi Tengah. Foto: Desember 2024, @Auriga Nusantara
-        </p>
-    </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/5-surya-cahaya-mineral.jpg" class="glightbox8 mt-4 gbox" data-glightbox="description: Jalan menuju lokasi tambang eksisting di dalam konsesi tambang nikel PT Surya Cahaya Mineral di Konawe Utara, Sulawesi Tenggara. Tampak sekilas pada latar daerah terbuka akibat deforestasi untuk menambang nikel dalam konsesi perusahaan ini. Foto: Desember 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/5-surya-cahaya-mineral.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Jalan menuju lokasi tambang eksisting di dalam konsesi tambang nikel PT Surya Cahaya Mineral di Konawe Utara, Sulawesi Tenggara. Tampak sekilas pada latar daerah terbuka akibat deforestasi untuk menambang nikel dalam konsesi perusahaan ini. Foto: Desember 2024, @Auriga Nusantara </p>
     </div>
 
-</div>
-<div class="sm:block hidden bottom-0 right-0 w-[25%] bg-gray-100 lg:h-[7rem] h-[17rem] absolute z-40"></div>
-
-<div class="swiper-pagination"></div>
-</div>
-
-{{--
-<div class="sm:block hidden sm:h-[35rem] h-56 w-[24%]  rounded mt-12 bg-black absolute bg-opacity-70  inset-y-0 right-0 z-20">
-</div> --}}
-
-<div class="absolute inset-y-0  right-1 z-30 flex items-center">
-<button @click="swiper.slideNext()" class="bg-black text-white flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-    {{--
-    <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-8 h-8">
-        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-    </svg> --}}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-    </svg>
-
-</button>
+    <!-- Navigation Buttons -->
+    <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0"
+        x-show="currentSlide > 0"
+        class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+        </svg>
+    </button>
+    <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
+            x-show="currentSlide < totalSlides - 1"
+            class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
 </div>
 
-</div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
 
         {{-- diskusi-6 --}}
@@ -1574,126 +1282,67 @@
         </table>
     </div>
 </div>
-    {{-- image --}}
-    <div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 1,
-        centeredSlides: true,
-        centeredSlidesBounds: true,
-        centeredSlides: true,
-        pagination: {
-            el: '.swiper-pagination',
-            dynamicBullets: true,
-        },
-        breakpoints: {
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 0,
-            initialSlide: 0,
-        },
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 0,
-            initialSlide: 0,
-        },
-        1024: {
-            slidesPerView: 2,
-            spaceBetween: 0,
-            initialSlide: 1,
-        },
-        },
-    })" class="relative flex flex-row mt-10 z-20">
-    <div class="absolute inset-y-0 sm:left-5 left-1 z-30 flex items-center ">
-    <button @click="swiper.slidePrev()" class="bg-black bg-nav-slide text-white sm:-ml-2 lg:-ml-4 flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-        {{--
-        <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-8 h-8">
-            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-        </svg> --}}
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-        </svg>
 
-    </button>
-    </div>
-    {{--
-    <div class="sm:block hidden sm:h-[505px] h-56 w-[25%] mt-16 bg-black absolute bg-opacity-70 z-20 -ml-4 rounded">
-    <div class="inset-y-0 left-0">
-    </div>
-    </div> --}}
-
-    <div class="swiper-container relative" x-ref="container">
-    <div class="sm:block hidden bottom-0 w-[25%] bg-gray-100 lg:h-[6rem] h-[8rem] absolute z-40"></div>
-    <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
+{{-- slide-6 --}}
+<div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
+    <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+        <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/6-gag-nikel.jpg" class="glightbox9 mt-4 gbox" data-glightbox=" description:  Deforestasi oleh tambang nikel PT Gag Nikel di pulau kecil Gag di Raja Ampat, Papua Barat Daya. Foto: Desember 2024, @Auriga Nusantara">
-                <img src="https://simontini.id/assets/stadi2024/6-gag-nikel.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+                <img src="https://simontini.id/assets/stadi2024/6-gag-nikel.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestasi oleh tambang nikel PT Gag Nikel di pulau kecil Gag di Raja Ampat, Papua Barat Daya. Foto: Desember 2024, @Auriga Nusantara</p>
         </div>
-        <!-- Slides -->
-        <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
+        <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/6-pt-ksm.jpg" class="glightbox9 mt-4 gbox" data-glightbox="description: Deforestasi oleh penambangan nikel PT Kawei Sejahtera Mining di pulau kecil Kawei di Raja Ampat. Foto: Desember 2024, @Auriga Nusantara">
-                <img src="https://simontini.id/assets/stadi2024/6-pt-ksm.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+                <img src="https://simontini.id/assets/stadi2024/6-pt-ksm.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestasi oleh penambangan nikel PT Kawei Sejahtera Mining di pulau kecil Kawei di Raja Ampat. Foto: Desember 2024, @Auriga Nusantara
             </p>
         </div>
-        <!-- Slides -->
-        <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
+        <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/6-pt-ksp.jpg" class="glightbox9 mt-4 gbox" data-glightbox=" description: Deforestasi oleh penambangan nikel PT Anugerah Surya Pratama di pulau kecil Manuram, Raja Ampat. Foto: Desember 2024, @Auriga Nusantara">
-                <img src="https://simontini.id/assets/stadi2024/6-pt-ksp.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+                <img src="https://simontini.id/assets/stadi2024/6-pt-ksp.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Deforestasi oleh penambangan nikel PT Anugerah Surya Pratama di pulau kecil Manuram, Raja Ampat. Foto: Desember 2024, @Auriga Nusantara
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi oleh penambangan nikel PT Anugerah Surya Pratama di pulau kecil Manuram, Raja Ampat. Foto: Desember 2024, @Auriga Nusantara
             </p>
         </div>
-        <!-- Slides -->
-        <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
+        <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/6-batang-pele.jpg" class="glightbox9 mt-4 gbox" data-glightbox="description: Di pulau kecil Batang Pele di Raja Ampat ini telah diterbitkan izin tambang nikel PT Mulya Raymond Perkasa. Foto: Desember 2024, @Auriga Nusantara">
-                <img src="https://simontini.id/assets/stadi2024/6-batang-pele.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+                <img src="https://simontini.id/assets/stadi2024/6-batang-pele.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Di pulau kecil Batang Pele di Raja Ampat ini telah diterbitkan izin tambang nikel PT Mulya Raymond Perkasa. Foto: Desember 2024, @Auriga Nusantara
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Di pulau kecil Batang Pele di Raja Ampat ini telah diterbitkan izin tambang nikel PT Mulya Raymond Perkasa. Foto: Desember 2024, @Auriga Nusantara
             </p>
         </div>
-        <!-- Slides -->
-        <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
+        <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/6-imm-sarmi.jpeg" class="glightbox9 mt-4 gbox" data-glightbox="description: Danau dan hutan alam ini terancam hilang karena di lahan ini telah diterbitkan izin tambang nikel PT Iriana Mutiara Mining. Foto: Desember 2024, @Auriga Nusantara">
-                <img src="https://simontini.id/assets/stadi2024/6-imm-sarmi.jpeg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+                <img src="https://simontini.id/assets/stadi2024/6-imm-sarmi.jpeg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">Danau dan hutan alam ini terancam hilang karena di lahan ini telah diterbitkan izin tambang nikel PT Iriana Mutiara Mining. Foto: Desember 2024, @Auriga Nusantara</p>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Danau dan hutan alam ini terancam hilang karena di lahan ini telah diterbitkan izin tambang nikel PT Iriana Mutiara Mining. Foto: Desember 2024, @Auriga Nusantara</p>
         </div>
-    </div>
-    <div class="sm:block hidden bottom-0 right-0 w-[25%] bg-gray-100 lg:h-[6rem] h-[8rem] absolute z-40"></div>
 
-    <div class="swiper-pagination"></div>
     </div>
 
-    {{--
-    <div class="sm:block hidden sm:h-[35rem] h-56 w-[24%]  rounded mt-12 bg-black absolute bg-opacity-70  inset-y-0 right-0 z-20">
-    </div> --}}
-
-    <div class="absolute inset-y-0  right-1 z-30 flex items-center">
-    <button @click="swiper.slideNext()" class="bg-black text-white flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-        {{--
-        <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-8 h-8">
-            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-        </svg> --}}
+    <!-- Navigation Buttons -->
+    <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0"
+        x-show="currentSlide > 0"
+        class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+        </svg>
+    </button>
+    <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
+            x-show="currentSlide < totalSlides - 1"
+            class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
         </svg>
-
     </button>
-    </div>
-
 </div>
+
+
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
-
-
-
-
         {{-- diskusi-7 --}}
         <h2 class="font-bold mt-12">7. Deforestasi juga massif di kawasan konservasi</h2>
         <div id="diskusi-7" class="pl-5">
@@ -1714,7 +1363,7 @@
         </div>
     </div>
 
-    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+<div class="max-w-5xl mx-auto px-4 z-20 relative">
         {{-- table-10 --}}
         <h3 class="text-simontini mt-6 font-bold mb-2">SEPULUH TERATAS DEFORESTASI KAWASAN KONSERVASI PADA 2024</h3>
         <div class="w-full overflow-auto bg-gray-800">
@@ -1790,102 +1439,46 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    {{-- image --}}
-<div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
-    loop: false,
-    slidesPerView: 1,
-    spaceBetween: 1,
-    centeredSlides: true,
-    centeredSlidesBounds: true,
-    centeredSlides: true,
-    pagination: {
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-    },
-    breakpoints: {
-    640: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 0,
-    },
-    768: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 0,
-    },
-    1024: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        initialSlide: 2,
-    },
-    },
-})" class="relative flex flex-row mt-10 z-20">
-<div class="absolute inset-y-0 sm:left-5 left-1 z-30 md:hidden flex items-center ">
-<button @click="swiper.slidePrev()" class="bg-black bg-nav-slide text-white sm:-ml-2 lg:-ml-4 flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-    {{--
-    <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-8 h-8">
-        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-    </svg> --}}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-    </svg>
-
-</button>
 </div>
-{{--
-<div class="sm:block hidden sm:h-[505px] h-56 w-[25%] mt-16 bg-black absolute bg-opacity-70 z-20 -ml-4 rounded">
-<div class="inset-y-0 left-0">
-</div>
-</div> --}}
+{{-- slide-7 --}}
+<div x-data="{ currentSlide: 0, totalSlides: 2 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
+    <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/7-rawa-singkil.jpg" class="glightbox10 mt-4 gbox" data-glightbox="description: Deforestasi untuk pembangunan kebun sawit di dalam Suaka Margasatwa Rawa Singkil di Aceh. Foto: Februari 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/7-rawa-singkil.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforestasi untuk pembangunan kebun sawit di dalam Suaka Margasatwa Rawa Singkil di Aceh. Foto: Februari 2024, @Auriga Nusantara
+            </p>
+        </div>
+        <div class="swiper-slide w-full flex-shrink-0">
+            <a href="https://simontini.id/assets/stadi2024/7-tesso-nilo.jpg" class="glightbox10 mt-4 gbox" data-glightbox=" description: Deforestasi untuk pembangunan kebun sawit di dalam Taman Nasional Tesso Nilo di Riau. Foto: Februari 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/7-tesso-nilo.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            </a>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforestasi untuk pembangunan kebun sawit di dalam Taman Nasional Tesso Nilo di Riau. Foto: Februari 2024, @Auriga Nusantara</p>
+        </div>
 
-<div class="swiper-container relative" x-ref="container">
-{{-- <div class="sm:block hidden bottom-0 w-[24%] bg-gray-100 lg:h-[7rem] h-[17rem] absolute z-40"></div> --}}
-<div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/7-rawa-singkil.jpg" class="glightbox10 mt-4 gbox" data-glightbox="description: Deforestasi untuk pembangunan kebun sawit di dalam Suaka Margasatwa Rawa Singkil di Aceh. Foto: Februari 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/7-rawa-singkil.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi untuk pembangunan kebun sawit di dalam Suaka Margasatwa Rawa Singkil di Aceh. Foto: Februari 2024, @Auriga Nusantara
-        </p>
-    </div>
-    <!-- Slides -->
-    <div class="swiper-slide px-4 py-12 flex flex-col  bg-gray-100 relative">
-        <a href="https://simontini.id/assets/stadi2024/7-tesso-nilo.jpg" class="glightbox10 mt-4 gbox" data-glightbox=" description: Deforestasi untuk pembangunan kebun sawit di dalam Taman Nasional Tesso Nilo di Riau. Foto: Februari 2024, @Auriga Nusantara">
-            <img src="https://simontini.id/assets/stadi2024/7-tesso-nilo.jpg" alt="Simontini - stadi 2024" class="h-[50vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-        </a>
-        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed">
-            Deforestasi untuk pembangunan kebun sawit di dalam Taman Nasional Tesso Nilo di Riau. Foto: Februari 2024, @Auriga Nusantara</p>
+
     </div>
 
-
-
-</div>
-{{-- <div class="sm:block hidden bottom-0 right-0 w-[25%] bg-gray-100 lg:h-[7rem] h-[17rem] absolute z-40"></div> --}}
-
-<div class="swiper-pagination"></div>
-</div>
-
-{{--
-<div class="sm:block hidden sm:h-[35rem] h-56 w-[24%]  rounded mt-12 bg-black absolute bg-opacity-70  inset-y-0 right-0 z-20">
-</div> --}}
-
-<div class="absolute inset-y-0  right-1 z-30 md:hidden flex items-center">
-<button @click="swiper.slideNext()" class="bg-black text-white flex justify-center items-center sm:w-14 sm:h-14 w-12 h-12  shadow focus:outline-none">
-    {{--
-    <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-8 h-8">
-        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-    </svg> --}}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-    </svg>
-
-</button>
+    <!-- Navigation Buttons -->
+    <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0"
+        x-show="currentSlide > 0"
+        class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+        </svg>
+    </button>
+    <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
+            x-show="currentSlide < totalSlides - 1"
+            class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
 </div>
 
-</div>
         <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
 
 
@@ -1935,6 +1528,7 @@
 
             @endsection @push('scripts')
             <script>
+
                 function createLightbox(selectorID) {
                         const lightbox = GLightbox({
                             selector: selectorID,
