@@ -149,10 +149,10 @@
                         < 1</td>
                             <td class="border border-black px-4 py-2 text-right">351.718</td>
                             <td class="border border-black px-4 py-2 text-right">72.762</td>
-                            <td class="border border-black px-4 py-2 text-right">351.718*</td>
-                            <td class="border-t border-b border-l border-black px-4 py-2"></td>
-                            <td class="border-t border-b border-black px-4 py-2">72.762*</td>
-                            <td class="border-t border-r border-b border-black px-4 py-2"></td>
+                            <td class="border border-black px-4 py-2 text-right">351.718</td>
+                            <td class="border border-black px-4 py-2">*</td>
+                            <td class="border border-black px-4 py-2">72.762</td>
+                            <td class="border border-black px-4 py-2">*</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">1 - 5</td>
@@ -1432,11 +1432,7 @@
                         <td class="border border-black px-6 py-2"></td>
                         <td class="border border-black px-6 py-2 text-right">2.933</td>
                     </tr>
-                    <tr class="bg-black">
-                        <td class="border border-black px-6 py-2 font-bold">Total</td>
-                        <td class="border border-black px-6 py-2 font-bold"></td>
-                        <td class="border border-black px-6 py-2 font-bold text-right">37.483</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>

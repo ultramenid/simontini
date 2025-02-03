@@ -139,58 +139,58 @@
             <tbody class="bg-gray-700">
                 <tr>
                     <td class="border border-black px-4 py-2">
-                        < 1</td>
-                            <td class="border border-black px-4 py-2 text-right">351.718</td>
-                            <td class="border border-black px-4 py-2 text-right">72.762</td>
-                            <td class="border border-black px-4 py-2 text-right">351.718</td>
+                            </td>
+                            <td class="border border-black px-4 py-2 text-right">351,718</td>
+                            <td class="border border-black px-4 py-2 text-right">72,762</td>
+                            <td class="border border-black px-4 py-2 text-right">351,718</td>
                             <td class="border border-black px-4 py-2">*</td>
-                            <td class="border border-black px-4 py-2">72.762</td>
+                            <td class="border border-black px-4 py-2">72,762</td>
                             <td class="border border-b border-black px-4 py-2">*</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">1 - 5</td>
-                    <td class="border border-black px-4 py-2 text-right">35.533</td>
-                    <td class="border border-black px-4 py-2 text-right">73.345</td>
-                    <td class="border border-black px-4 py-2 text-right">28.756</td>
-                    <td class="border border-black px-4 py-2 text-right">6.777</td>
-                    <td class="border border-black px-4 py-2 text-right">60.077</td>
-                    <td class="border border-black px-4 py-2 text-right">13.268</td>
+                    <td class="border border-black px-4 py-2 text-right">35,533</td>
+                    <td class="border border-black px-4 py-2 text-right">73,345</td>
+                    <td class="border border-black px-4 py-2 text-right">28,756</td>
+                    <td class="border border-black px-4 py-2 text-right">6,777</td>
+                    <td class="border border-black px-4 py-2 text-right">60,077</td>
+                    <td class="border border-black px-4 py-2 text-right">13,268</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">5 - 10</td>
-                    <td class="border border-black px-4 py-2 text-right">5.195</td>
-                    <td class="border border-black px-4 py-2 text-right">35.471</td>
-                    <td class="border border-black px-4 py-2 text-right">4.434</td>
+                    <td class="border border-black px-4 py-2 text-right">5,195</td>
+                    <td class="border border-black px-4 py-2 text-right">35,471</td>
+                    <td class="border border-black px-4 py-2 text-right">4,434</td>
                     <td class="border border-black px-4 py-2 text-right">761</td>
-                    <td class="border border-black px-4 py-2 text-right">30.306</td>
-                    <td class="border border-black px-4 py-2 text-right">5.166</td>
+                    <td class="border border-black px-4 py-2 text-right">30,306</td>
+                    <td class="border border-black px-4 py-2 text-right">5,166</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">10 - 50</td>
-                    <td class="border border-black px-4 py-2 text-right">3.117</td>
-                    <td class="border border-black px-4 py-2 text-right">57.626</td>
-                    <td class="border border-black px-4 py-2 text-right">2.566</td>
+                    <td class="border border-black px-4 py-2 text-right">3,117</td>
+                    <td class="border border-black px-4 py-2 text-right">57,626</td>
+                    <td class="border border-black px-4 py-2 text-right">2,566</td>
                     <td class="border border-black px-4 py-2 text-right">551</td>
-                    <td class="border border-black px-4 py-2 text-right">47.563</td>
-                    <td class="border border-black px-4 py-2 text-right">10.063</td>
+                    <td class="border border-black px-4 py-2 text-right">47,563</td>
+                    <td class="border border-black px-4 py-2 text-right">10,063</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">> 50</td>
                     <td class="border border-black px-4 py-2 text-right">408</td>
-                    <td class="border border-black px-4 py-2 text-right">58.746</td>
+                    <td class="border border-black px-4 py-2 text-right">58,746</td>
                     <td class="border border-black px-4 py-2 text-right">344</td>
                     <td class="border border-black px-4 py-2 text-right">64</td>
-                    <td class="border border-black px-4 py-2 text-right">50.868</td>
-                    <td class="border border-black px-4 py-2 text-right">7.879</td>
+                    <td class="border border-black px-4 py-2 text-right">50,868</td>
+                    <td class="border border-black px-4 py-2 text-right">7,879</td>
                 </tr>
                 <tr class="bg-gray-800 font-bold">
                     <td class="border border-black px-4 py-2">TOTAL</td>
-                    <td class="border border-black px-4 py-2 text-right">395.971</td>
-                    <td class="border border-black px-4 py-2 text-right">297.950</td>
-                    <td class="border border-black px-4 py-2 text-right">387.818</td>
-                    <td class="border border-black px-4 py-2 text-right">8.153</td>
-                    <td class="border border-black px-4 py-2 text-right font-bold text-xl underline">261.575</td>
-                    <td class="border border-black px-4 py-2 text-right">36.375</td>
+                    <td class="border border-black px-4 py-2 text-right">395,971</td>
+                    <td class="border border-black px-4 py-2 text-right">297,950</td>
+                    <td class="border border-black px-4 py-2 text-right">387,818</td>
+                    <td class="border border-black px-4 py-2 text-right">8,153</td>
+                    <td class="border border-black px-4 py-2 text-right font-bold text-xl underline">261,575</td>
+                    <td class="border border-black px-4 py-2 text-right">36,375</td>
                 </tr>
             </tbody>
         </table>
@@ -246,47 +246,47 @@
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">West Kalimantan</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">35.162</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">35,162</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">Central Kalimantan</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">30.433</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">30,433</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">East Kalimantan</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">28.633</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">28,633</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">Central Sulawesi</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">16.679</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">16,679</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">South Kalimantan</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">16.067</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">16,067</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">North Kalimantan</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">14.316</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">14,316</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">Riau</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">13.268</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">13,268</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">South Papua</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">12.640</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">12,640</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">Central Papua</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">11.336</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">11,336</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">West Papua</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">10.990</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">10,990</td>
                     </tr>
                     <tr class="bg-black">
                         <td class="border border-black px-4 py-2 text-sm font-bold sm:text-base">27 other provinces</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm font-bold sm:text-base">67.858</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm font-bold sm:text-base">67,858</td>
                     </tr>
                 </tbody>
             </table>
@@ -302,47 +302,47 @@
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">East Kalimantan</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">44.483</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">44,483</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">West Kalimantan</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">39.598</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">39,598</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">Central Kalimantan</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">33.389</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">33,389</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">Riau</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">20.812</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">20,812</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">Sumatera Selatan</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">20.184</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">20,184</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">Jambi</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">14.839</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">14,839</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">Aceh</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">8.962</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">8,962</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">North Kalimantan</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">8.767</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">8,767</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">Bangka Belitung</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">7.956</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">7,956</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-4 py-2 text-sm sm:text-base">North Sumatra</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">7.303</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">7,303</td>
                     </tr>
                     <tr class="bg-black">
                         <td class="border border-black px-4 py-2 text-sm font-bold sm:text-base">27 other provinces</td>
-                        <td class="border border-black px-4 py-2 text-right text-sm font-bold sm:text-base">55.282</td>
+                        <td class="border border-black px-4 py-2 text-right text-sm font-bold sm:text-base">55,282</td>
                     </tr>
                 </tbody>
             </table>
@@ -369,57 +369,57 @@
                 <tr>
                     <td class="border border-black px-6 py-2 ">East Kutai</td>
                     <td class="border border-black px-6 py-2">East Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">16.578</td>
+                    <td class="border border-black px-6 py-2 text-right">16,578</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2 ">Berau</td>
                     <td class="border border-black px-6 py-2">East Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">9.378</td>
+                    <td class="border border-black px-6 py-2 text-right">9,378</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2 ">Ketapang</td>
                     <td class="border border-black px-6 py-2">West Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">9.115</td>
+                    <td class="border border-black px-6 py-2 text-right">9,115</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">Musi Banyuasin</td>
                     <td class="border border-black px-6 py-2">South Sumatra</td>
-                    <td class="border border-black px-6 py-2 text-right">8.517</td>
+                    <td class="border border-black px-6 py-2 text-right">8,517</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">Kutai Kartanegara</td>
                     <td class="border border-black px-6 py-2">East Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">7.887</td>
+                    <td class="border border-black px-6 py-2 text-right">7,887</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">Kapuas Hulu</td>
                     <td class="border border-black px-6 py-2">West Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">7.340</td>
+                    <td class="border border-black px-6 py-2 text-right">7,340</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">West Kutai</td>
                     <td class="border border-black px-6 py-2">East Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">6.364</td>
+                    <td class="border border-black px-6 py-2 text-right">6,364</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">Kapuas</td>
                     <td class="border border-black px-6 py-2">Central Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">5.589</td>
+                    <td class="border border-black px-6 py-2 text-right">5,589</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">Sanggau</td>
                     <td class="border border-black px-6 py-2">West Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">5.336</td>
+                    <td class="border border-black px-6 py-2 text-right">5,336</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">Katingan</td>
                     <td class="border border-black px-6 py-2">Central Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">4.809</td>
+                    <td class="border border-black px-6 py-2 text-right">4,809</td>
                 </tr>
                 <tr class="bg-black">
                     <td class="border border-black px-6 py-2 font-bold text-sm">18 other regency</td>
                     <td class="border border-black px-6 py-2"></td>
-                    <td class="border border-black px-6 py-2 text-right font-bold">180.663</td>
+                    <td class="border border-black px-6 py-2 text-right font-bold">180,663</td>
                 </tr>
             </tbody>
         </table>
@@ -448,32 +448,32 @@
                 <tr>
                     <td class="border border-black px-4 py-2">PT Panambangan</td>
                     <td class="border border-black px-4 py-2">East Kalimantan</td>
-                    <td class="border border-black px-4 py-2 text-right">5.485</td>
+                    <td class="border border-black px-4 py-2 text-right">5,485</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Kiani Lestari</td>
                     <td class="border border-black px-4 py-2">East Kalimantan</td>
-                    <td class="border border-black px-4 py-2 text-right">3.304</td>
+                    <td class="border border-black px-4 py-2 text-right">3,304</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Daya Maju Lestari (d.h. PT Marimun Timber IDS)</td>
                     <td class="border border-black px-4 py-2">East Kalimantan</td>
-                    <td class="border border-black px-4 py-2 text-right">2.641</td>
+                    <td class="border border-black px-4 py-2 text-right">2,641</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2 ">PT Putra Duta Indah Wood</td>
                     <td class="border border-black px-4 py-2 ">Jambi</td>
-                    <td class="border border-black px-4 py-2 text-right">2.053</td>
+                    <td class="border border-black px-4 py-2 text-right">2,053</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2 ">PT Diamond Raya Timber</td>
                     <td class="border border-black px-4 py-2">Riau</td>
-                    <td class="border border-black px-4 py-2 text-right">1.264</td>
+                    <td class="border border-black px-4 py-2 text-right">1,264</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Inhutani I (Unit Labanan)</td>
                     <td class="border border-black px-4 py-2">East Kalimantan</td>
-                    <td class="border border-black px-4 py-2 text-right">1.166</td>
+                    <td class="border border-black px-4 py-2 text-right">1,166</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Dasa Intiga</td>
@@ -498,12 +498,12 @@
                 <tr>
                     <td class="border border-black px-4 py-2">244 other logging concessions</td>
                     <td class="border border-black px-4 py-2"></td>
-                    <td class="border border-black px-4 py-2 text-right">17.124</td>
+                    <td class="border border-black px-4 py-2 text-right">17,124</td>
                 </tr>
                 <tr class="bg-black">
                     <td class="border border-black px-4 py-2 font-bold">Total</td>
                     <td class="border border-black px-4 py-2 font-bold"></td>
-                    <td class="border border-black px-4 py-2 font-bold text-right">36.068</td>
+                    <td class="border border-black px-4 py-2 font-bold text-right">36,068</td>
                 </tr>
             </tbody>
         </table>
@@ -524,22 +524,22 @@
                 <tr>
                     <td class="border border-black px-6 py-2">PT Mayawana Persada</td>
                     <td class="border border-black px-6 py-2">West Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">6.145</td>
+                    <td class="border border-black px-6 py-2 text-right">6,145</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Finnantara Intiga</td>
                     <td class="border border-black px-6 py-2">West Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">1.551</td>
+                    <td class="border border-black px-6 py-2 text-right">1,551</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Sendawar Adhi Karya</td>
                     <td class="border border-black px-6 py-2">East Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">1.170</td>
+                    <td class="border border-black px-6 py-2 text-right">1,170</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Industrial Forest Plantation</td>
                     <td class="border border-black px-6 py-2">Central Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">1.105</td>
+                    <td class="border border-black px-6 py-2 text-right">1,105</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Meranti Laksana</td>
@@ -574,12 +574,12 @@
                 <tr>
                     <td class="border border-black px-6 py-2">270 other timber plantation concessions</td>
                     <td class="border border-black px-6 py-2"></td>
-                    <td class="border border-black px-6 py-2 text-right">26.800</td>
+                    <td class="border border-black px-6 py-2 text-right">26,800</td>
                 </tr>
                 <tr class="bg-black">
                     <td class="border border-black px-6 py-2 font-bold">Total</td>
                     <td class="border border-black px-6 py-2 font-bold"></td>
-                    <td class="border border-black px-6 py-2 text-right font-bold">41.332</td>
+                    <td class="border border-black px-6 py-2 text-right font-bold">41,332</td>
                 </tr>
             </tbody>
         </table>
@@ -600,17 +600,17 @@
                 <tr>
                     <td class="border border-black px-6 py-2">PT Berau Coal</td>
                     <td class="border border-black px-6 py-2">Coal</td>
-                    <td class="border border-black px-6 py-2 text-right">2.039</td>
+                    <td class="border border-black px-6 py-2 text-right">2,039</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Cita Mineral Investindo Tbk</td>
                     <td class="border border-black px-6 py-2">Bauxite</td>
-                    <td class="border border-black px-6 py-2 text-right">1.442</td>
+                    <td class="border border-black px-6 py-2 text-right">1,442</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Timah Tbk</td>
                     <td class="border border-black px-6 py-2">Tin</td>
-                    <td class="border border-black px-6 py-2 text-right">1.070</td>
+                    <td class="border border-black px-6 py-2 text-right">1,070</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Sumber Sentosa Bersama</td>
@@ -650,12 +650,12 @@
                 <tr>
                     <td class="border border-black px-6 py-2">1580 other mining business permit</td>
                     <td class="border border-black px-6 py-2">Mineral & Coal</td>
-                    <td class="border border-black px-6 py-2 text-right">29.635</td>
+                    <td class="border border-black px-6 py-2 text-right">29,635</td>
                 </tr>
                 <tr class="bg-black">
                     <td class="border border-black px-6 py-2 font-bold">Total mining deforestation</td>
                     <td class="border border-black px-6 py-2 font-bold"></td>
-                    <td class="border border-black px-6 py-2 text-right font-bold">38.615</td>
+                    <td class="border border-black px-6 py-2 text-right font-bold">38,615</td>
                 </tr>
             </tbody>
         </table>
@@ -676,37 +676,37 @@
                 <tr>
                     <td class="border border-black px-6 py-2">PT Borneo International Anugerah</td>
                     <td class="border border-black px-6 py-2">West Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">2.019</td>
+                    <td class="border border-black px-6 py-2 text-right">2,019</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Mitra Kapuas Agro</td>
                     <td class="border border-black px-6 py-2">West Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">1.534</td>
+                    <td class="border border-black px-6 py-2 text-right">1,534</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Banyan Tumbuh Lestari</td>
                     <td class="border border-black px-6 py-2">Gorontalo</td>
-                    <td class="border border-black px-6 py-2 text-right">1.521</td>
+                    <td class="border border-black px-6 py-2 text-right">1,521</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Uniseraya</td>
                     <td class="border border-black px-6 py-2">Riau</td>
-                    <td class="border border-black px-6 py-2 text-right">1.408</td>
+                    <td class="border border-black px-6 py-2 text-right">1,408</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Alam Lestari Indah</td>
                     <td class="border border-black px-6 py-2">Central Kalimantan</td>
-                    <td class="border border-black px-6 py-2 text-right">1.347</td>
+                    <td class="border border-black px-6 py-2 text-right">1,347</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Inti Kebun Sawit</td>
                     <td class="border border-black px-6 py-2">Southwest Papua</td>
-                    <td class="border border-black px-6 py-2 text-right">1.115</td>
+                    <td class="border border-black px-6 py-2 text-right">1,115</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Inti Kebun Sejahtera</td>
                     <td class="border border-black px-6 py-2">Southwest Papua</td>
-                    <td class="border border-black px-6 py-2 text-right">1.057</td>
+                    <td class="border border-black px-6 py-2 text-right">1,057</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Archipelago Timur Abadi</td>
@@ -724,14 +724,14 @@
                     <td class="border border-black px-6 py-2 text-right">783</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">1.082 other palm oil concessions</td>
+                    <td class="border border-black px-6 py-2">1,082 other palm oil concessions</td>
                     <td class="border border-black px-6 py-2"></td>
-                    <td class="border border-black px-6 py-2 text-right">24.948</td>
+                    <td class="border border-black px-6 py-2 text-right">24,948</td>
                 </tr>
                 <tr class="bg-black">
                     <td class="border border-black px-6 py-2 font-bold">Total</td>
                     <td class="border border-black px-6 py-2 font-bold"></td>
-                    <td class="border border-black px-6 py-2 text-right font-bold">37.483</td>
+                    <td class="border border-black px-6 py-2 text-right font-bold">37,483</td>
                 </tr>
             </tbody>
         </table>
@@ -860,55 +860,55 @@
                         <td class="border border-black px-6 py-2">PT Mayawana Persada</td>
                         <td class="border border-black px-6 py-2">Timber Plantation</td>
                         <td class="border border-black px-6 py-2">West Kalimantan</td>
-                        <td class="border border-black px-6 py-2 text-right">6.145</td>
+                        <td class="border border-black px-6 py-2 text-right">6,145</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Berau Coal</td>
                         <td class="border border-black px-6 py-2">Coal Mine</td>
                         <td class="border border-black px-6 py-2">East Kalimantan</td>
-                        <td class="border border-black px-6 py-2 text-right">2.039</td>
+                        <td class="border border-black px-6 py-2 text-right">2,039</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Borneo International Anugerah</td>
                         <td class="border border-black px-6 py-2">Palm</td>
                         <td class="border border-black px-6 py-2">West Kalimantan</td>
-                        <td class="border border-black px-6 py-2 text-right">2.019</td>
+                        <td class="border border-black px-6 py-2 text-right">2,019</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Finnantara Intiga</td>
                         <td class="border border-black px-6 py-2">Timber Plantation</td>
                         <td class="border border-black px-6 py-2">West Kalimantan</td>
-                        <td class="border border-black px-6 py-2 text-right">1.551</td>
+                        <td class="border border-black px-6 py-2 text-right">1,551</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Mitra Kapuas Agro</td>
                         <td class="border border-black px-6 py-2">Palm</td>
                         <td class="border border-black px-6 py-2">West Kalimantan</td>
-                        <td class="border border-black px-6 py-2 text-right">1.534</td>
+                        <td class="border border-black px-6 py-2 text-right">1,534</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Cita Mineral Investindo Tbk</td>
                         <td class="border border-black px-6 py-2">Bauxite mine</td>
                         <td class="border border-black px-6 py-2">West Kalimantan</td>
-                        <td class="border border-black px-6 py-2 text-right">1.442</td>
+                        <td class="border border-black px-6 py-2 text-right">1,442</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Alam Lestari Indah</td>
                         <td class="border border-black px-6 py-2">Palm</td>
                         <td class="border border-black px-6 py-2">Central Kalimantan</td>
-                        <td class="border border-black px-6 py-2 text-right">1.347</td>
+                        <td class="border border-black px-6 py-2 text-right">1,347</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Sendawar Adhi Karya</td>
                         <td class="border border-black px-6 py-2">Timber Plantation</td>
                         <td class="border border-black px-6 py-2">East Kalimantan</td>
-                        <td class="border border-black px-6 py-2 text-right">1.170</td>
+                        <td class="border border-black px-6 py-2 text-right">1,170</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Industrial Forest Plantation</td>
                         <td class="border border-black px-6 py-2">Timber Plantation</td>
                         <td class="border border-black px-6 py-2">Central Kalimantan</td>
-                        <td class="border border-black px-6 py-2 text-right">1.105</td>
+                        <td class="border border-black px-6 py-2 text-right">1,105</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Archipelago Timur Abadi</td>
@@ -1233,38 +1233,38 @@
                 <tr>
                     <td class="border border-black px-6 py-2">PT Anugerah Surya Pratama</td>
                     <td class="border border-black px-6 py-2">Raja Ampat, Southwest Papua</td>
-                    <td class="border border-black px-6 py-2 text-right">1.167</td>
+                    <td class="border border-black px-6 py-2 text-right">1,167</td>
                     <td class="border border-black px-6 py-2 text-right">209</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Kawei Sejahtera Mining</td>
                     <td class="border border-black px-6 py-2">Raja Ampat, Southwest Papua</td>
-                    <td class="border border-black px-6 py-2 text-right">5.691</td>
-                    <td class="border border-black px-6 py-2 text-right">2.361</td>
+                    <td class="border border-black px-6 py-2 text-right">5,691</td>
+                    <td class="border border-black px-6 py-2 text-right">2,361</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Mulia Raymond Perkasa</td>
                     <td class="border border-black px-6 py-2">Raja Ampat, West Papua</td>
-                    <td class="border border-black px-6 py-2 text-right">2.194</td>
+                    <td class="border border-black px-6 py-2 text-right">2,194</td>
                     <td class="border border-black px-6 py-2 text-right">874</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Gag Nikel</td>
                     <td class="border border-black px-6 py-2">Raja Ampat, West Papua</td>
-                    <td class="border border-black px-6 py-2 text-right">13.078</td>
-                    <td class="border border-black px-6 py-2 text-right">2.838</td>
+                    <td class="border border-black px-6 py-2 text-right">13,078</td>
+                    <td class="border border-black px-6 py-2 text-right">2,838</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Iriana Mutiara Mining</td>
                     <td class="border border-black px-6 py-2">Sarmi, Papua</td>
-                    <td class="border border-black px-6 py-2 text-right">16.399</td>
-                    <td class="border border-black px-6 py-2 text-right">16.170</td>
+                    <td class="border border-black px-6 py-2 text-right">16,399</td>
+                    <td class="border border-black px-6 py-2 text-right">16,170</td>
                 </tr>
                 <tr class="bg-black">
                     <td class="border border-black px-6 py-2 font-bold">TOTAL</td>
                     <td class="border border-black px-6 py-2 font-bold"></td>
-                    <td class="border border-black px-6 py-2 text-right font-bold">38.529</td>
-                    <td class="border border-black px-6 py-2 text-right font-bold">22.452</td>
+                    <td class="border border-black px-6 py-2 text-right font-bold">38,529</td>
+                    <td class="border border-black px-6 py-2 text-right font-bold">22,452</td>
                 </tr>
             </tbody>
         </table>
@@ -1361,7 +1361,7 @@
                     <tr>
                         <td class="border border-black px-6 py-2">Kerinci Seblat National Park</td>
                         <td class="border border-black px-6 py-2">Bengkulu, Jambi, West Sumatra dan South Sumatra</td>
-                        <td class="border border-black px-6 py-2 text-right">1.283</td>
+                        <td class="border border-black px-6 py-2 text-right">1,283</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">Lorentz National Park</td>
@@ -1411,12 +1411,7 @@
                     <tr>
                         <td class="border border-black px-6 py-2">188 other conservation area</td>
                         <td class="border border-black px-6 py-2"></td>
-                        <td class="border border-black px-6 py-2 text-right">2.933</td>
-                    </tr>
-                    <tr class="bg-black">
-                        <td class="border border-black px-6 py-2 font-bold">Total</td>
-                        <td class="border border-black px-6 py-2 font-bold"></td>
-                        <td class="border border-black px-6 py-2 text-right font-bold">37.483</td>
+                        <td class="border border-black px-6 py-2 text-right">2,933</td>
                     </tr>
                 </tbody>
             </table>
