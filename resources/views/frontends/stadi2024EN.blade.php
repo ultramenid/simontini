@@ -1482,6 +1482,8 @@
     </div>
     <div class="max-w-5xl mx-auto px-4 z-20 relative mt-12">
         <iframe src='https://flo.uri.sh/visualisation/21408542/embed' title='Simontini - stadi 2024' class='flourish-embed-iframe w-full h-full' frameborder='0' scrolling='no' style="height: 500px" sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+        <p class="text-sm mt-2">Deforestation in 2001-2022 gathered by overlaying University of Maryland's Lossyear data against forest cover in 2000 by Ministry of Forestry</p>
+        <p class="text-sm -mt-1">Deforestation in 2023 and 2024 using Auriga Nusantara STADI (Indonesia Deforestation Status) which available on https://simontini.id/</p>
     </div>
     <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
         <div>

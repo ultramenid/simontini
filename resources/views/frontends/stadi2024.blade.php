@@ -1505,6 +1505,8 @@
         </div>
         <div class="max-w-5xl mx-auto px-4 z-20 relative mt-12">
             <iframe src='https://flo.uri.sh/visualisation/21401008/embed' title='Simontini - stadi 2024' class='flourish-embed-iframe w-full h-full' frameborder='0' scrolling='no' style="height: 500px" sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+            <p class="text-sm mt-2">Deforestasi 2001-2022 diperoleh dengan mengoverlay University of Maryland's Lossyear dengan tutupan hutan 2000 Kementerian Kehutanan</p>
+            <p class="text-sm -mt-1">Deforestasi 2023 dan 2024 menggunakan Auriga Nusantara's STADI (Status Deforestasi Indonesia) yang tersedia pada https://simontini.id </p>
         </div>
         <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
             <div>
