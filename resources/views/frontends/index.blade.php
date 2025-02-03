@@ -62,17 +62,19 @@
                 <img src="assets/elemen-light.png" alt="auriga nusantara" class="z-10">
             </div> --}}
             <div class="sm:col-span-3 col-span-1">
-                @if (App::getLocale() == 'en')
-                    <img src="https://i.ytimg.com/vi/avXNUj9EgEI/hq720.jpg" alt="" class="w-full sm:h-96 h-full object-cover z-20">
-                @else
-                    <img src="https://youtu.be/GLXnYIbkzHo?si=vSqxKfb0ejGqec5I" alt="" class="w-full sm:h-96 h-full object-cover z-20">
-                @endif
+                <img src="https://i.ytimg.com/vi/avXNUj9EgEI/hq720.jpg" alt="" class="w-full sm:h-96 h-full object-cover z-20">
             </div>
             <div class="px-4 sm:col-span-2 col-span-1">
 
                 <h1 class=" sm:text-3xl text-xl font-bold text-simontini">
-                    <p href="https://youtu.be/avXNUj9EgEI?si=gRV0rh-LQN1MF3-D" class="text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</p>
-                    <a href="https://youtu.be/avXNUj9EgEI?si=gRV0rh-LQN1MF3-D" >{{__('Deforestasi Indonesia')}} 2024</a>
+                    @if (App::getLocale() == 'en')
+                        <p href="https://youtu.be/avXNUj9EgEI?si=gRV0rh-LQN1MF3-D" class="text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</p>
+                        <a href="https://youtu.be/avXNUj9EgEI?si=gRV0rh-LQN1MF3-D" >{{__('Deforestasi Indonesia')}} 2024</a>
+                    @else
+                        <p href="https://youtu.be/GLXnYIbkzHo?si=d05fjQ0z2pSoFGNS" class="text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</p>
+                        <a href="https://youtu.be/GLXnYIbkzHo?si=d05fjQ0z2pSoFGNS" >{{__('Deforestasi Indonesia')}} 2024</a>
+                    @endif
+
                 </h1>
                 <div class=" mt-5 text-simontini">
 
