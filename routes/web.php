@@ -12,8 +12,8 @@ use App\Http\Middleware\setLanguage;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/id');
-Route::get('/id/stadi2024', [InsightContoller::class, 'stadi2024'])->name('stadi2024');
-Route::get('/en/stadi2024', [InsightContoller::class, 'stadi2024EN'])->name('stadi2024EN');
+Route::get('/id/status-deforestasi-indonesia-2024', [InsightContoller::class, 'stadi2024'])->name('stadi2024');
+Route::get('/en/status-of-deforestation-in-indonesia-2024', [InsightContoller::class, 'stadi2024EN'])->name('stadi2024EN');
 
 
 Route::middleware([setLanguage::class])->group(function () {
@@ -21,6 +21,7 @@ Route::middleware([setLanguage::class])->group(function () {
         Route::get('/', [IndexController::class, 'index'])->name('index');
         Route::get('/mapndata', [MapndataController::class, 'index'])->name('mapndata');
         Route::get('/download', [DownloadController::class, 'index'])->name('downloads');
+        Route::get('/insight', [InsightContoller::class, 'index'])->name('insight');
 
     });
 });

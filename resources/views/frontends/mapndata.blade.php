@@ -21,10 +21,10 @@
             <a class="whitespace-nowrap text-xs font-medium uppercase py-1 border-b-2 border-simontini">map</a>
             <a href="{{ route('index', app()->getLocale()) }}" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">home</a>
             <a href="#" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">about</a>
-            <a href="#" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">insight</a>
+            <a href="{{ route('insight', app()->getLocale()) }}" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">insight</a>
             <a href="{{ route('downloads', app()->getLocale()) }}" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">downloads</a>
         </div>
-        <div class="py-6 flex flex-col gap-2" x-data="{open:'open1', test:[]}" >
+        <div class="py-6 flex flex-col gap-2" x-data="{open:'open2', test:[]}" >
             <div :class="(open === 'open1') ? 'h-filter overflow-y-auto border-black border px-4 py-1' : 'border-black border px-4 py-1 select-none cursor-pointer'"  @click="open='open1'">
                 <div class="flex w-full justify-between items-center py-1">
                     <a class="font font-semibold text-sm ">Administration Boundaries</a>
@@ -47,6 +47,9 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open2'" style="display: none !important">
+                    <x-checkbox idAttr="deforestasi2024" layerName="simontini:2024_stadi_c2_adm">
+                        {{__('Deforestasi 2024')}}
+                    </x-checkbox>
                     <x-checkbox idAttr="deforestasi2023" layerName="simontini:def_test 4326 v Thresholded">
                         {{__('Deforestasi 2023')}}
                     </x-checkbox>

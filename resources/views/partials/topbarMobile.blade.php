@@ -39,7 +39,7 @@
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">
-                    <a   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
+                    <a  href="{{ route('insight', app()->getLocale()) }}" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">

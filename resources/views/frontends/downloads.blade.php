@@ -17,9 +17,25 @@
         </div>
     </div>
     <div class="max-w-3xl mx-auto  sm:px-12 px-4 h-screen  py-12">
+        <div class="pb-4 border-b border-simontini mb-12">
+            <a class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Deforestasi Indonesia')}} 2024</a>
+            <div class="flex gap-4">
+                [
+                    <a target="_blank" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:2024_stadi_c2_adm&outputFormat=SHAPE-ZIP" x-show="download" class=" flex items-center cursor-pointer text-atas">{{__('peta digital')}}</a>
+                    |
+                    @if (app()->getLocale() == 'id')
+                        <a target="_blank" href="{{ route('stadi2024' ) }}"  class=" flex items-center cursor-pointer text-atas">insight</a>
+                    @else
+                        <a target="_blank" href="{{ route('stadi2024EN') }}"  class=" flex items-center cursor-pointer text-atas">insight</a>
+                    @endif
+
+                ]
+            </div>
+            <p class="sm:text-sm text-xs mt-4">{{__('Sitasi:')}} <br> Auriga Nusantara. 2025. <a class="underline font-semibold" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP">Status Deforestasi Indonesia 2024</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
+        </div>
 
         <div class="pb-4 border-b border-simontini">
-            <a class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Deforestasi Indonesia 2023')}}</a>
+            <a class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Deforestasi Indonesia')}} 2023</a>
             <div class="flex gap-4">
                 [
                     <a target="_blank" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP" x-show="download" class=" flex items-center cursor-pointer text-atas">{{__('peta digital')}}</a>
@@ -31,7 +47,8 @@
                     @endif
                 ]
             </div>
-            <p class="sm:text-sm text-xs mt-4">{{__('Sitasi:')}} <br> Auriga Nusantara. 2024. <a class="underline" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP">Deforestasi Indonesia 2023</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
+            <p class="sm:text-sm text-xs mt-4">{{__('Sitasi:')}} <br> Auriga Nusantara. 2024. <a class="underline font-semibold" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP">Deforestasi Indonesia 2023</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
         </div>
     </div>
+
 @endsection

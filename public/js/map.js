@@ -39,6 +39,11 @@
         transparent: true,
         format: 'image/png'
     });
+    var deforestasi2024 = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+        layers: 'simontini:2024_stadi_c2_adm',
+        transparent: true,
+        format: 'image/png'
+    });
     var kawasanhutan = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
         layers: 'simontini:Forest_estate_adm',
         transparent: true,
@@ -79,7 +84,7 @@
     });
 
     var iup = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-        layers: 'simontini:2024 Momi Minerba 6 February',
+        layers: 'simontini:mining_concession_2025_01_27',
         transparent: true,
         format: 'image/png'
     });
@@ -147,6 +152,20 @@
 
         }
     });
+
+    $('#deforestasi2024:checkbox').on('change', function() {
+        var checkbox = $(this);
+        // toggle the layer
+        if ($(checkbox).is(':checked')) {
+            map.addLayer(deforestasi2024);
+            document.getElementById("deforestasi2024legend").style.display = 'block';
+        } else {
+            map.removeLayer(deforestasi2024);
+            document.getElementById("deforestasi2024legend").style.display = 'none';
+
+        }
+    });
+
     $('#kantonghabitat:checkbox').on('change', function() {
         var checkbox = $(this);
         // toggle the layer

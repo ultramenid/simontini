@@ -9,8 +9,8 @@
             <div class="py-2 hover:border-b hover:border-simontini">
                 <a href="#" class="font-normal ">ABOUT</a>
             </div>
-            <div class="py-2 hover:border-b hover:border-simontini">
-                <a href="#" class="font-normal ">INSIGHT</a>
+            <div class="py-2 hover:border-b hover:border-simontini @if($nav == 'insight') border-b border-simontini @endif">
+                <a href="{{ route('insight', app()->getLocale()) }}" class="font-normal ">INSIGHT</a>
             </div>
 
             <div class="py-2 hover:border-b hover:border-simontini @if($nav == 'map') border-b border-simontini @endif">

@@ -1069,7 +1069,7 @@
         <div id="diskusi-4" class="pl-5">
             <p class="mt-4 leading-relaxed">
                 <i>“.. ke depan kita harus tambah tanam kelapa sawit. Enggak usah takut .. membahayakan deforestation,”</i> <a href="https://youtu.be/faoo-qTC9Rg?si=MgZGUFJDCbtoQStH" target="_blank" class="underline text-simontini">demikian Presiden Prabowo</a>                pada pengarahan Musyawarah Pembangunan Nasional (Musrenbangnas) 30 Desember 2024. Entahlah karena sejalan dengan pemikiran ini, atau malah sebaliknya Prabowo sedang membangun pembenaran pada ekspansi sawit yang mengkonversi hutan alam.
-                Yang jelas, pada 2024 deforestasi oleh pembangunan kebun sawit tetap tinggi di Indonesia, terutama di Sumatera dan Kalimantan. Deforestasi oleh pembangunan kebun sawit pada 2024 teridentifikasi seluas 37.483hektare, atau mencakup 14% dari
+                Yang jelas, pada 2024 deforestasi oleh pembangunan kebun sawit tetap tinggi di Indonesia, terutama di Sumatera dan Kalimantan. Deforestasi oleh pembangunan kebun sawit pada 2024 teridentifikasi seluas 37.483 hektare, atau mencakup 14% dari
                 keseluruhan deforestasi.
             </p>
             <p class="mt-4 leading-relaxed">Deforestasi oleh sawit cenderung terjadi secara besar-besaran di hampir setiap titik deforestasi sawit pada 2024, mengindikasikan bahwa pembangunan sawit-sawit ini dilakukan oleh korporasi atau ditopang oleh pemodal besar. Bukan oleh pekebun
@@ -1504,7 +1504,7 @@
             </div>
         </div>
         <div class="max-w-5xl mx-auto px-4 z-20 relative mt-12">
-            <iframe src='https://flo.uri.sh/visualisation/21408542/embed' title='Simontini - stadi 2024' class='flourish-embed-iframe w-full h-full' frameborder='0' scrolling='no' style="height: 500px" sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+            <iframe src='https://flo.uri.sh/visualisation/21401008/embed' title='Simontini - stadi 2024' class='flourish-embed-iframe w-full h-full' frameborder='0' scrolling='no' style="height: 500px" sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
         </div>
         <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
             <div>

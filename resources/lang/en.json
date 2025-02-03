@@ -6,8 +6,9 @@
     "Memuat peta & data tutupan lahan dan izin." : "Contains land cover and license maps and data.",
     "Peta & data tutupan lahan atau izin yang dapat diakses." : "Access land cover or license maps and data.",
     "RILIS DATA" : "DATA RELEASE",
-    "Deforestasi Indonesia 2023" : "Indonesia Deforestation 2023",
+    "Deforestasi Indonesia 2023" : "Indonesia Deforestation",
     "Maret" : "March",
+    "Janiari" : "January",
     "Deforestasi di konsesi kebun kayu Mayawana Persada, Kalimantan Barat, mematikan asa tiadanya deforestasi di Indonesia pada 2023." : "Deforestation in the PT Mayawana Persada timber plantation concession, West Kalimantan, killed any hope of there being no deforestation in Indonesia in 2023.",
     "Lantas, sepanjang 2023:" : "So, throughout 2023",
     "Berapa luas deforestasi di Indonesia?": "What was the extent of deforestation in Indonesia?",
@@ -18,6 +19,7 @@
     "Siapa deforester terbesar?" : "Who were the largest deforesters?",
     "Batas Administrasi Kab/Kota" : "Regency/Municipality Administrative Boundaries",
     "Deforestasi 2023" : "Deforestation 2023",
+    "Deforestasi 2024" : "Deforestation 2024",
     "Hutan Alam" : "Natural Forest",
     "Hak Guna Usaha" : "Cultivation Rights Permits",
     "Kawasan Hutan" : "Forest Estate",
@@ -28,5 +30,8 @@
     "Sitasi:": "Citation:",
     "diakses pada" : "accessed on",
     "melalui tautan" : "through",
-    "peta digital" : "digital map"
+    "peta digital" : "digital map",
+    "Deforestasi Indonesia" : "Indonesia Deforestation",
+    "Status Deforestasi Indonesia": "Deforestation Status in Indonesia",
+    "Tahun lalu Auriga merilis data deforestasi 2023 pada Maret. Mulai tahun ini, deforestasi tahunan akan dirilis setiap Januari." : "Auriga released deforestation data for 2023 in March last year. Commencing this year, it will release annual deforestation data each January."
  }
