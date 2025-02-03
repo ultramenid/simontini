@@ -31,7 +31,7 @@
 
                 ]
             </div>
-            <p class="sm:text-sm text-xs mt-4">{{__('Sitasi:')}} <br> Auriga Nusantara. 2025. <a class="underline font-semibold" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP">Status Deforestasi Indonesia 2024</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
+            <p class="sm:text-sm text-xs mt-4">{{__('Sitasi:')}} <br> Auriga Nusantara. 2025. <a class="underline font-semibold" href="https://aws.simontini.id/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=simontini:Auriga - Deforestasi 2023&outputFormat=SHAPE-ZIP">{{__('Status Deforestasi Indonesia 2024')}}</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
         </div>
 
         <div class="pb-4 border-b border-simontini">
