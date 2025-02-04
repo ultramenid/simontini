@@ -1501,6 +1501,59 @@
 
                 </div>
             </div>
+            <div class="border-b border-t py-4 border-black mt-6">
+                <div class="mb-4">
+                    <a class="text-simontini font-semibold mb-1 text-xl">Authors: </a>
+                    <ul class="list-disc pl-12">
+                        <li>Timer Manurung</li>
+                        <li>Dedy Sukmara</li>
+                        <li>Andhika Younastya</li>
+                    </ul>
+
+
+                </div>
+                <div class="mt-6">
+                    <a class="text-simontini font-semibold text-xl">Data and processing </a>
+                    <ul class="list-disc pl-12 mt-1">
+                        <li>Andhika Younastya</li>
+                        <li>Anggun Detrina Napitupulu</li>
+                        <li>Bagus Sugiarto</li>
+                        <li>Cecilinia Tika Laura</li>
+                        <li>Dedy Sukmara</li>
+                        <li>M. Alichamdan</li>
+                        <li>M. Dendi Al Fitrah</li>
+                        <li>Sesilia Maharani Putri</li>
+                        <li>Wahyu Ananta Nugraha</li>
+                        <li>Yustinus Seno</li>
+                    </ul>
+
+                </div>
+
+                <div class="mt-6">
+                    <a class=" text-simontini font-semibold text-xl">On-ground verification: </a>
+                    <ul class="list-disc pl-12 mt-1">
+                        <li>Bagus Sugiarto</li>
+                        <li>Fajar Simanjuntak</li>
+                        <li>Gilang Ekselsa</li>
+                        <li>Hafid Azi Darma</li>
+                        <li>Hilman Afif</li>
+                        <li>Riszki Is Hardianto</li>
+                        <li>Robby Eebor</li>
+                        <li>Supintri Yohar</li>
+                        <li>Yudi Nofiandi</li>
+                        <li>Sulih Primara Putra</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="flex flex-col w-full text-center justify-center mb-24 mt-4">
+                <a class="text-simontini font-semibold mb-2">Suggested citation:</a>
+                <p>Auriga Nusantara. 2025. Status of Deforestation in Indonesia 2024, accessed on [DD/MM/YYYY] through [LINK].</p>
+            </div>
+
+
+            </div>
         </div>
 
         @endsection @push('scripts')
