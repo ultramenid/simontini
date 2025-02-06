@@ -926,11 +926,11 @@
 <div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
     <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/2-meranti-laksana.jpg" class="glightbox7 mt-4 gbox" data-glightbox=" description: Deforestation for biomass plantation within PT. Meranti Laksana in West Kalimantan. Photo: December 2024, @AurigaNusantara">
+            <a href="https://simontini.id/assets/stadi2024/2-meranti-laksana.jpg" class="glightbox7 mt-4 gbox" data-glightbox=" description: Deforestation for timber plantation within PT. Meranti Laksana in West Kalimantan. Photo: December 2024, @AurigaNusantara">
                 <img src="https://simontini.id/assets/stadi2024/2-meranti-laksana.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                Deforestation for biomass plantation within PT. Meranti Laksana in West Kalimantan. Photo: December 2024, @AurigaNusantara</p>
+                Deforestation for timber plantation within PT. Meranti Laksana in West Kalimantan. Photo: December 2024, @AurigaNusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/2-berau-prima-nusantara.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Deforestation within coal mining concession of PT. Berau Prima Nusantara in North Kalimantan. Photo: December 2024, @AurigaNusantara">
@@ -947,10 +947,10 @@
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation within coal mining concession of PT. Kurnia Sejahtera in North Kalimantan. Photo: December 2024, @AurigaNusantara </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/2-kayan-kaltara-coal.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Kayan Kaltara Coal: Deforestation within coal mining concession of PT. Kayan Kaltara Coal in North Kalimantan. Photo: December 2024 @AurigaNusantara">
+            <a href="https://simontini.id/assets/stadi2024/2-kayan-kaltara-coal.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description:  Deforestation within coal mining concession of PT. Kayan Kaltara Coal in North Kalimantan. Photo: December 2024 @AurigaNusantara">
                 <img src="https://simontini.id/assets/stadi2024/2-kayan-kaltara-coal.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Kayan Kaltara Coal: Deforestation within coal mining concession of PT. Kayan Kaltara Coal in North Kalimantan. Photo: December 2024 @AurigaNusantara        </p>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4"> Deforestation within coal mining concession of PT. Kayan Kaltara Coal in North Kalimantan. Photo: December 2024 @AurigaNusantara        </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/2-phoenix-mill.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Giant pulp paper of PT. Phoenix Resources International in Tarakan Regency of North Kalimantan. Based on it raw material fulfilment data, the factory has been operating since 2024 by sourcing from concessions which deforested natural forest.">
@@ -1004,37 +1004,40 @@
 <div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
     <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/3-mayawana.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Natural forest cutting for road line of biomass plantation development within the concession of PT. Babugus Wahana Lestari in Central Kalimantan. Photo: August 2024 @AurigaNusantara/Earthsight">
+            <a href="https://simontini.id/assets/stadi2024/3-mayawana.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: In 2024, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the timber plantation of PT. Mayawana Persada in West Kalimantan. Up to December 2024, the company continuously deforested the remaining natural forest within its concession. Photo: December 2024, @AurigaNusantara">
                 <img src="https://simontini.id/assets/stadi2024/3-mayawana.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                Natural forest cutting for road line of biomass plantation development within the concession of PT. Babugus Wahana Lestari in Central Kalimantan. Photo: August 2024 @AurigaNusantara/Earthsight</p>
+                In 2024, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the timber plantation of PT. Mayawana Persada in West Kalimantan. Up to December 2024, the company continuously deforested the remaining natural forest within its concession. Photo: December 2024, @AurigaNusantara
+                </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/3-lahan-cakrawala.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforestation for biomass plantation within the concession of PT. Lahan Cakrawala in West Kalimantan. Photo: December 2024, @AurigaNusantara">
+            <a href="https://simontini.id/assets/stadi2024/3-lahan-cakrawala.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforestation for timber plantation within the concession of PT. Lahan Cakrawala in West Kalimantan. Photo: December 2024, @AurigaNusantara">
                 <img src="https://simontini.id/assets/stadi2024/3-lahan-cakrawala.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                Deforestation for biomass plantation within the concession of PT. Lahan Cakrawala in West Kalimantan. Photo: December 2024, @AurigaNusantara
+                Deforestation for timber plantation within the concession of PT. Lahan Cakrawala in West Kalimantan. Photo: December 2024, @AurigaNusantara
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/3-IFP.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Deforestation for biomass plantation expansion of PT. Industrial Forest Plantation in Central Kalimantan. In 2023, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the concession. Up to 2024, the company continuously deforested the remaining natural forest within its concession.">
                 <img src="https://simontini.id/assets/stadi2024/3-IFP.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation for biomass plantation expansion of PT. Industrial Forest Plantation in Central Kalimantan. In 2023, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the concession. Up to 2024, the company continuously deforested the remaining natural forest within its concession.</p>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation for biomass plantation expansion of PT. Industrial Forest Plantation in Central Kalimantan. In 2023, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the concession. Up to 2024, the company continuously deforested the remaining natural forest within its concession. @AurigaNusantara/Earthsight</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: In 2024, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the timber plantation of PT. Mayawana Persada in West Kalimantan. Up to December 2024, the company continuously deforested the remaining natural forest within its concession. Photo: December 2024, @AurigaNusantara">
+            <a href="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforesting natural forest for biomass plantation within the PT. Jaya Bumi Paser in East Kalimantan. Photo: May 2024, @AurigaNusantara">
                 <img src="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">In 2024, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the timber plantation of PT. Mayawana Persada in West Kalimantan. Up to December 2024, the company continuously deforested the remaining natural forest within its concession. Photo: December 2024, @AurigaNusantara</p>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                Deforesting natural forest for biomass plantation within the PT. Jaya Bumi Paser in East Kalimantan. Photo: May 2024, @AurigaNusantara
+                </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/3-babugus.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforesting natural forest for biomass plantation within the PT. Jaya Bumi Paser in East Kalimantan. Photo: May 2024, @AurigaNusantara">
+            <a href="https://simontini.id/assets/stadi2024/3-babugus.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Natural forest cutting for road line of biomass plantation development within the concession of PT. Babugus Wahana Lestari in Central Kalimantan. Photo: August 2024 @AurigaNusantara/Earthsight">
                 <img src="https://simontini.id/assets/stadi2024/3-babugus.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforesting natural forest for biomass plantation within the PT. Jaya Bumi Paser in East Kalimantan. Photo: May 2024, @AurigaNusantara</p>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Natural forest cutting for road line of biomass plantation development within the concession of PT. Babugus Wahana Lestari in Central Kalimantan. Photo: August 2024 @AurigaNusantara/Earthsight</p>
         </div>
     </div>
 
