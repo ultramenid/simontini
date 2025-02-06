@@ -1516,18 +1516,13 @@
                         waktu lama, terutama oleh kerumitan dan kompleksitas memperoleh persetujuan lintas kementerian, sebuah prasyarat yang diperlukan oleh satu peraturan pemerintah.
                     </p>
                     <p class="mt-4 leading-relaxed">
-                        Karena itu, terobosan hukum yang bisa dilakukan dalam waktu cepat adalah dalam bentuk peraturan presiden, yang kekuatannya relatif setara dengan peraturan pemerintah. Oleh karena itu, saatnya <b>Presiden Prabowo Subianto menerbitkan peraturan presiden yang memberikan perlindungan hukum terhadap seluruh hutan alam tersisa di Indonesia.</b>
+                        Karena itu, terobosan hukum yang bisa dilakukan dalam waktu cepat adalah dalam bentuk peraturan presiden, yang kekuatannya relatif setara dengan peraturan pemerintah. Oleh karena itu, saatnya <b>Presiden Prabowo Subianto menerbitkan peraturan presiden yang memberikan perlindungan hukum terhadap seluruh hutan alam tersisa di Indonesia.</b> <span class="bg-red-500 h-3 w-3 inline-flex"></span>
                     </p>
-                    <div class="flex w-full justify-center mt-6">
-                        <a>[ t e r i m a  k a s i h ]</a>
 
-                    </div>
                 </div>
 
                 <div class="text-center border-black mt-24">
                     <div class="mb-4">
-                        <a class=" mb-1  font-semibold">Pengarah dan penanggung jawab: </a>
-                        <p class="mb-4">Timer Manurung</p>
 
                         <a class=" font-semibold mb-1 ">Penulis: </a>
                         <p >Timer Manurung, Dedy Sukmara, Andhika Younastya</p>

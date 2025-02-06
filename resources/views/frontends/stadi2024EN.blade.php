@@ -1497,12 +1497,9 @@
                 </p>
                 <p class="mt-4 leading-relaxed">
                     For that reason, a legal breakthrough could be undertaken in a short time in the form of a presidential regulation, which has similar force to a government regulation. Therefore, it is time for President Prabowo Subianto to issue a presidential regulation
-                    that provides legal protection for all remaining natural forest in Indonesia.</b>
+                    that provides legal protection for all remaining natural forest in Indonesia. </b><span class="bg-red-500 h-3 w-3 inline-flex"></span>
                 </p>
-                <div class="flex w-full justify-center mt-6">
-                    <a>[ t h a n k  y o u ]</a>
 
-                </div>
             </div>
 
             <div class="text-center border-black mt-24">
