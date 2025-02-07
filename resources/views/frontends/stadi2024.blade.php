@@ -1025,11 +1025,10 @@
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/3-IFP.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Deforestasi demi perluasan kebun kayu PT Industrial Forest Plantation di Kalimantan Tengah. Pada 2023 koalisi masyarakat sipil Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International, dan Greenpeace International telah mengungkap deforestasi masif dalam konsesi ini. Tapi, setidaknya hingga 2024, perusahaan ini terus membabat hutan alam tersisa di dalam konsesinya. Foto: November 2024, @Auriga Nusantara/Earthsight">
-                <img src="https://simontini.id/assets/stadi2024/3-IFP.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="https://simontini.id/assets/stadi2024/mayawana-maret.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Ekskavator sedang menghabisi hutan alam di dalam konsesi kebun kayu PT Mayawana Persada di Kalimantan Barat. Foto: Maret 2024 @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/mayawana-maret.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi demi perluasan kebun kayu PT Industrial Forest Plantation di Kalimantan Tengah. Pada 2023 koalisi masyarakat sipil Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International, dan
-                Greenpeace International telah mengungkap deforestasi masif dalam konsesi ini. Tapi, setidaknya hingga 2024, perusahaan ini terus membabat hutan alam tersisa di dalam konsesinya. Foto: November 2024, @Auriga Nusantara/Earthsight</p>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Ekskavator sedang menghabisi hutan alam di dalam konsesi kebun kayu PT Mayawana Persada di Kalimantan Barat. Foto: Maret 2024 @Auriga Nusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Pembabatan hutan alam demi pembangunan kebun kayu energi di dalam konsesi PT Jaya Bumi Paser di Kalimantan Timur. Foto: Mei 2024, @Auriga Nusantara">
@@ -1104,10 +1103,10 @@
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Lokasi ini berada dalam konsesi logging PT Diamond Raya Timber di Riau. Namun, kesaksian masyarakat setempat maupun dokumentasi kunjungan lapangan menunjukkan bahwa deforestasi ini untuk pembangunan kebun sawit. Pembangunan kebun sawit di dalam konsesi logging juga ditemukan dalam konsesi PT Anugerah Pratama Inspirasi di Bengkulu yang dikunjungi pada Februari 2024. Foto: Desember 2024, @Auriga Nusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/4-bssu.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestasi untuk pembangunan kebun sawit dalam konsesi PT Bina Sawit Sarana Utama di Kalimantan Tengah. Foto: November 2024, @Auriga Nusantara/Earthsight">
-                <img src="https://simontini.id/assets/stadi2024/4-bssu.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="https://simontini.id/assets/stadi2024/hph-bentara-arga-timber.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestasi di dalam konsesi logging PT Bentara Arga Timber di Bengkulu. Keterangan masyarakat setempat, pun dokumentasi lapangan, mengindikasikan pembabatan hutan alam ini demi pembangunan dan perluasan kebun sawit. Foto: Februari 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/hph-bentara-arga-timber.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi untuk pembangunan kebun sawit dalam konsesi PT Bina Sawit Sarana Utama di Kalimantan Tengah. Foto: November 2024, @Auriga Nusantara/Earthsight</p>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi di dalam konsesi logging PT Bentara Arga Timber di Bengkulu. Keterangan masyarakat setempat, pun dokumentasi lapangan, mengindikasikan pembabatan hutan alam ini demi pembangunan dan perluasan kebun sawit. Foto: Februari 2024, @Auriga Nusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/4-pulau-lau-kalsel.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Pembangunan jaringan jalan persiapan pembabatan hutan alam demi pengembangan kebun kayu energi/biomassa dalam konsesi PT Babugus Wahana Lestari di Kalimantan Tengah. Foto: Agustus 2024 @Auriga Nusantara/Earthsight">

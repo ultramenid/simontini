@@ -1020,10 +1020,10 @@
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/3-IFP.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Deforestation for biomass plantation expansion of PT. Industrial Forest Plantation in Central Kalimantan. In 2023, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the concession. Up to 2024, the company continuously deforested the remaining natural forest within its concession.">
-                <img src="https://simontini.id/assets/stadi2024/3-IFP.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="https://simontini.id/assets/stadi2024/mayawana-maret.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Excavators are clearing natural forest in PT Mayawana Persada's timber plantation concession in West Kalimantan. Photo: March 2024 @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/mayawana-maret.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation for biomass plantation expansion of PT. Industrial Forest Plantation in Central Kalimantan. In 2023, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the concession. Up to 2024, the company continuously deforested the remaining natural forest within its concession. @AurigaNusantara/Earthsight</p>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Excavators are clearing natural forest in PT Mayawana Persada's timber plantation concession in West Kalimantan. Photo: March 2024 @Auriga Nusantara </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforesting natural forest for biomass plantation within the PT. Jaya Bumi Paser in East Kalimantan. Photo: May 2024, @AurigaNusantara">
@@ -1097,10 +1097,10 @@
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Location within the logging concession of PT. Diamond Raya Timber in Riau. However, local testimonies and ground truthing exposed that the deforestation was for palm oil expansion. Ground truthing in February 2024 exposed similar case also found within the concession of PT. Anugerah Pratama Inspirasi in Bengkulu. Photo: December 2024, @AurigaNusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/4-bssu.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestation for palm oil expansion within the concession of PT. Bina Sawit Sarana Utara in Central Kalimantan. Photo: November 2024, @AurigaNusantara/Earthsight">
-                <img src="https://simontini.id/assets/stadi2024/4-bssu.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="https://simontini.id/assets/stadi2024/hph-bentara-arga-timber.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestation inside PT Bentara Arga Timber’s logging concession in Bengkulu. The locals’ testimonies and ground-truth’s documentation indicated the deforestation are for oil palm plantations. Photo: February 2024, @Auriga Nusantara">
+                <img src="https://simontini.id/assets/stadi2024/hph-bentara-arga-timber.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
-            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation for palm oil expansion within the concession of PT. Bina Sawit Sarana Utara in Central Kalimantan. Photo: November 2024, @AurigaNusantara/Earthsight</p>
+            <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation inside PT Bentara Arga Timber’s logging concession in Bengkulu. The locals’ testimonies and ground-truth’s documentation indicated the deforestation are for oil palm plantations. Photo: February 2024, @Auriga Nusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
             <a href="https://simontini.id/assets/stadi2024/4-pulau-lau-kalsel.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestation for palm oil expansion within the concession of PT. Bersama Sejahtera Sakti in Pulau Laut, Kotabaru Regency, South Kalimantan. Photo: May 2024, @AurigaNusantara">
