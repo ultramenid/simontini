@@ -73,7 +73,7 @@
 <div class="max-w-5xl mx-auto px-4 z-20 relative">
     <a href="https://simontini.id/assets/stadi2024/raden-1-2.jpg" class="glightbox1 z-20" data-glightbox=" description: An aerial photo shows a cleared natural forest in the PT Anugerah Langkat Makmur concession. This photo was taken in February 2024.">
         <img src="https://simontini.id/assets/stadi2024/raden-1-2.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out" />
-        <p class=" text-xs mt-2">An aerial photo shows a cleared natural forest in the PT Anugerah Langkat Makmur concession. This photo was taken in February 2024.</p>
+        <p class=" text-xs mt-2">An aerial photo shows a cleared natural forest in the PT Anugerah Langkat Makmur concession in Mandailing Natal of North Sumatra Province. photo: February 2024, ©Auriga Nusantara.</p>
     </a>
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">

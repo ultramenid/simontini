@@ -80,9 +80,9 @@
     </div>
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative">
-    <a href="https://simontini.id/assets/stadi2024/raden-1-2.jpg" class="glightbox1 mt-4" data-glightbox=" description: Tampak dari ketinggian bekas hutan alam yang ditebang di konsesi PT Anugerah Langkat Makmur. Foto ini diambil pada Februari 2024.">
+    <a href="https://simontini.id/assets/stadi2024/raden-1-2.jpg" class="glightbox1 mt-4" data-glightbox=" description: Tampak dari ketinggian bekas hutan alam yang ditebang di konsesi PT Anugerah Langkat Makmur. Foto: Februari 2024, ©Auriga Nusantara.">
         <img src="https://simontini.id/assets/stadi2024/raden-1-2.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out" />
-        <p class=" text-xs mt-2">Tampak dari ketinggian bekas hutan alam yang ditebang di konsesi PT Anugerah Langkat Makmur. Foto ini diambil pada Februari 2024.</p>
+        <p class=" text-xs mt-2">Deforestasi untuk pembangunan kebun sawit PT Anugerah Langkat Makmur di Mandailing Natal, Sumatera Utara. Foto: Februari 2024, ©Auriga Nusantara.</p>
     </a>
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
