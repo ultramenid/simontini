@@ -142,10 +142,10 @@
                             < 1</td>
                             <td class="border border-black px-4 py-2 text-right">351,718</td>
                             <td class="border border-black px-4 py-2 text-right">72,762</td>
-                            <td class="border border-black px-4 py-2 text-right">351,718</td>
-                            <td class="border border-black px-4 py-2">*</td>
-                            <td class="border border-black px-4 py-2">72,762</td>
-                            <td class="border border-b border-black px-4 py-2">*</td>
+                            <td class="border border-black px-4 py-2 text-right">351,718*</td>
+                            <td class="border border-black px-4 py-2"></td>
+                            <td class="border border-black px-4 py-2">72,762*</td>
+                            <td class="border border-b border-black px-4 py-2"></td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">1 - 5</td>

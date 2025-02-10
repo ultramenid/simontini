@@ -111,9 +111,9 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open6'" style="display: none !important">
-                    <x-checkbox idAttr="kantonghabitat" layerName="simontini:KantongGajah2018RTM">
+                    {{-- <x-checkbox idAttr="kantonghabitat" layerName="simontini:KantongGajah2018RTM">
                         {{__('Kantong Habitat Gajah')}}
-                    </x-checkbox>
+                    </x-checkbox> --}}
 
                 </div>
             </div>
