@@ -21,7 +21,7 @@
             <a class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Deforestasi Indonesia')}} 2024</a>
             <div class="flex gap-4">
                 [
-                    <a target="_blank" href="https://simontini.id/assets/status-deforestasi-indonesia-2023.zip" x-show="download" class=" flex items-center cursor-pointer text-atas">{{__('peta digital')}}</a>
+                    <a target="_blank" href="https://simontini.id/assets/status-deforestasi-indonesia-2024.zip" x-show="download" class=" flex items-center cursor-pointer text-atas">{{__('peta digital')}}</a>
                     |
                     @if (app()->getLocale() == 'id')
                         <a target="_blank" href="{{ route('stadi2024' ) }}"  class=" flex items-center cursor-pointer text-atas">insight</a>
@@ -38,7 +38,7 @@
             <a class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Deforestasi Indonesia')}} 2023</a>
             <div class="flex gap-4">
                 [
-                    <a target="_blank" href="https://simontini.id/assets/status-deforestasi-indonesia-2024.zip" x-show="download" class=" flex items-center cursor-pointer text-atas">{{__('peta digital')}}</a>
+                    <a target="_blank" href="https://simontini.id/assets/status-deforestasi-indonesia-2023.zip" x-show="download" class=" flex items-center cursor-pointer text-atas">{{__('peta digital')}}</a>
                     |
                     @if (app()->getLocale() == 'id')
                         <a target="_blank" href="{{ asset('presentation/Deforestasi_Indonesia-2023-paparan.pdf') }}"  class=" flex items-center cursor-pointer text-atas">presentasi</a>
