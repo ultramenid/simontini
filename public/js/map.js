@@ -40,7 +40,7 @@
         format: 'image/png'
     });
     var deforestasi2024 = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-        layers: 'simontini:2024_stadi_c2_adm',
+        layers: 'simontini:ID_STADI24_CEA',
         transparent: true,
         format: 'image/png'
     });
