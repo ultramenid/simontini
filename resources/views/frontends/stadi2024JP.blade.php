@@ -20,11 +20,11 @@
         </div>
         <a href="{{ route('index', 'en') }}" class="md:w-2/12 w-4/12"><img src="{{ asset('assets/logo-simontinus.png') }}" alt="betahita" class="  sm:h-6 h-5 "></a>
         <div class=" w-8/12  flex sm:gap-6 gap-2 items-center overflow-auto no-scrollbar">
-            <a class=" md:text-base text-xs text-nowrap text-simontini font-semibold" href="#pendahuluan">Introduction</a>
-            <a class=" md:text-base text-xs text-nowrap text-simontini font-semibold" href="#metodologi">Methodology</a>
-            <a class=" md:text-base text-xs text-nowrap text-simontini font-semibold" href="#deforestasi2024">Deforestation 2024</a>
-            <a class=" md:text-base text-xs text-nowrap text-simontini font-semibold" href="#diskusi">Discussion</a>
-            <a class=" md:text-base text-xs text-nowrap text-simontini font-semibold" href="#rekomendasi">Recommendations</a>
+            <a class=" md:text-base text-xs text-nowrap text-simontini font-semibold" href="#pendahuluan">はじめに</a>
+            <a class=" md:text-base text-xs text-nowrap text-simontini font-semibold" href="#metodologi">方法論</a>
+            <a class=" md:text-base text-xs text-nowrap text-simontini font-semibold" href="#deforestasi2024">2024年の森林破壊</a>
+            <a class=" md:text-base text-xs text-nowrap text-simontini font-semibold" href="#diskusi">ディスカッション</a>
+            <a class=" md:text-base text-xs text-nowrap text-simontini font-semibold" href="#rekomendasi">提言</a>
         </div>
     </div>
 </div>
