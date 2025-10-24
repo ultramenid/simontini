@@ -1,5 +1,11 @@
-@extends('layouts.stadiLayout') @section('meta') @include('partials.insightMeta') @endsection @section('content')
+@extends('layouts.stadiLayout')
 
+@section('meta')
+@include('partials.insightMeta')
+@endsection
+
+
+@section('content')
 
 <!-- topbar -->
 <div class="bg-white py-4 top-0 sticky z-30">
@@ -29,7 +35,7 @@
 
 
 <div class="fixed z-10 md:bottom-56 bottom-2/3 md:left-[16%] left-5 md:w-[34%] w-[90%]" id="stickyText">
-    <a class="md:text-5xl text-2xl text-white font-bold">Status of Deforestation in Indonesia 2024</a>
+    <a class="md:text-5xl text-2xl text-white font-bold">インドネシアにおける2024年の森林破壊の現状</a>
 </div>
 
 
@@ -55,20 +61,15 @@
 
 
 <div class="max-w-2xl mx-auto px-4 z-20 relative mt-12">
-    <div class="flex w-full justify-center">
+    {{-- <div class="flex w-full justify-center">
         <p class=" md:text-xl text-base mt-2 italic text-center max-w-1xl">Auriga released deforestation data for 2023 in March last year. Commencing this year, it will release annual deforestation data each January.</p>
-    </div>
+    </div> --}}
     <div id="pendahuluan" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini block">INTRODUCTION</h1>
-        <p class="mt-6 leading-relaxed">Despite appearing reluctant – when viewed in light of some statements from state officials, the refusal to use certain terms, the tinkering with definitions of forests, and the various policies still providing room to exploit them – the Government
-            of Indonesia is basically striving to curb deforestation in the country. Moratoria on new licenses for primary forests and peatlands, and FOLU Net Sink 2030 are examples of such efforts.</p>
-        <p class="mt-4 leading-relaxed">However, periodic annual deforestation data for Indonesia has yet to be available, with the exception of data published by Global Forest Watch in collaboration with the University of Maryland and the World Resources Institute. To date, deforestation
-            data released by the Government of Indonesia through the Ministry of Forestry – formerly the Ministry of Environment and Forestry – cannot be considered annual as it runs from July to June the following year, meaning that despite covering
-            a twelve-month period, it references months over two consecutive years. This twelve-monthly deforestation data, published since 2012, follows eight previous publications (2012, 2009, 2006, 2003, 2003, 2000, 1996, and 1990). Yet, the Government
-            of Indonesia only releases statistical data on deforestation, with no accompanying maps, thereby making it difficult to verify independently, or to engage public participation.</p>
-        <p class="mt-4 leading-relaxed">Technological developments, particularly machine learning and computation like the Google Earth Engine, along with the open access availability of satellite imagery like Landsat, Sentinel, and Planet, has resulted in the provision of annual, or
-            even near real-time deforestation data. A spirit of transparency and public participation to halt deforestation was the basis for Auriga Nusantara, which has also initiated and coordinates <a href="https://mapbiomas.id" class="underline text-simontini">MapBiomas Indonesia</a>,
-            to present annual deforestation data at the beginning of each year.
+        <h1 class="text-3xl font-bold mt-12 text-simontini block">はじめに</h1>
+        <p class="mt-6 leading-relaxed">部の政府関係者の発言を見る限り、機微に触れるような用語を避けたり、森林の定義を弄んだり、森林を搾取する余地を残す政策をおこなうなど、依然、消極さがうかがえるものの、インドネシア政府は基本的に国内の森林減少を抑制しようとしています。原生林と泥炭地の新規許可のモラトリアムやFOLU Net Sink 2030（森林・土地利用分野からの温室効果ガス排出を2030年までにゼロにすることを目標とするインドネシア政府による計画）は、そのような取り組みの例です。</p>
+        <p class="mt-4 leading-relaxed">しかしながら、メリーランド大学および世界資源研究所と協力してGlobal Forest Watchが発表したデータを除き、インドネシアの定期的な年次森林減少データはまだ利用できません。これまで、インドネシア政府が林業省（旧・環境林業省）を通じて発表してきた森林減少データは、7月から翌年6月までの期間を対象としているため、年次とはみなせず、12か月間をカバーしているものの2年にわたる月次ベースのデータを参照しています。この12か月間の森林減少データは2012年から発表されており、それ以前には8回（2012年、2009年、2006年、2003年、2003年、2000年、1996年、1990年）発表されています。しかし、インドネシア政府は森林減少に関する統計データのみを発表し、地図は添付されていないため、独立した検証や市民の参画が困難です。</p>
+        <p class="mt-4 leading-relaxed">
+            特に、機械学習やGoogle Earth Engineなどの計算技術の発展、Landsat、Sentinel、Planetなどの衛星画像へのオープンアクセスの利用可能性により、年間単位またはほぼリアルタイムの森林減少データの提供が可能になりました。森林減少を阻止するための透明性と公的参加の精神が、Auriga Nusantaraは毎年、年初に森林減少データを公表する取り組みを開始し、「<a href="https://mapbiomas.id" class="underline text-simontini">MapBiomas Indonesia</a>」の立ち上げと調整も担っています。
         </p>
     </div>
 </div>
@@ -80,42 +81,32 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="metodologi" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini">METHODOLOGY</h1>
-        <p class="mt-6 leading-relaxed">The deforestation referred to in this study is the loss of natural forest cover, and does not count loss in timber plantations and/or plantation forests. Natural forest is a vegetative association dominated by naturally occurring woody growth.
-            Therefore, this natural forest terminology covers both primary and secondary forests.</p>
+        <h1 class="text-3xl font-bold mt-12 text-simontini">方法論</h1>
+        <p class="mt-6 leading-relaxed">本レポートで言及される森林破壊（Deforestation）とは、天然林被覆の喪失を指し、産業植林やプランテーションの喪失は含まれていません。天然林（Natural Forest）とは、自然に発生した植物（Woody Growth）が優占する植生群集です。したがって、天然林という用語は原生林（Primary Forest）と二次林（Secondary Forest）の両方を含みます。</p>
         <p class="mt-4 leading-relaxed">
-            Timber plantations are areas filled with timber crops that are harvested periodically within 10 years, while plantation forests are areas filled with timber crops that are not harvested below 10 years of age.
+            産業植林は、10年以内に定期的に収穫される木材で満たされた地域であり、プランテーションは10年未満で収穫されない木材で満たされた地域です。
         </p>
-        <p class="mt-4 leading-relaxed">Timber plantations in Indonesia can be for producing pulp or energy crops. They are called ‘plantation forests’ by the Ministry of Forestry, so they fall under the category of agricultural crops. The plantation forest category established by Auriga
-            Nusantara includes things such as teak plantations in Java, which it categorizes as forest.
+        <p class="mt-4 leading-relaxed">インドネシアにおける産業植林は、パルプ生産やエネルギー向けに生産されています。林業省は「植林地（Hutan Tanaman）」と呼んでおり、農業作物のカテゴリーに分類されています。Auriga Nusantaraによる「Hutan Tanaman」のカテゴリーには、林業省が「森林」と分類するジャワ島のチーク植林なども含まれます。
         </p>
         <p class="mt-4 leading-relaxed">
-            Deforestation data for 2024 was generated through three stages as follows: {{-- tahap-1 --}}
-            <h1 class="leading-relaxed mt-4"><b>1. Detection of suspected deforestation: </b> Suspected deforestation was obtained using two approaches:</h1>
+            2024年の森林破壊データは、以下に示す3つの段階を通じて作成されています。 {{-- tahap-1 --}}
+            <h1 class="leading-relaxed mt-4"><b>1. 森林破壊の疑いのある地域の特定 </b>：以下の2つのアプローチを用いて森林破壊の疑いのある地域が得られています。 </h1>
             <ul class="list-[lower-alpha] pl-12">
                 <ul class="list-[lower-alpha] pl-12">
-                    <li class="leading-relaxed mt-4">Monthly deforestation alerts: Suspected monthly deforestation was established by using monthly deforestation alerts developed by the University of Maryland. These alerts were overlaid on MapBiomas Indonesia forest cover data for 2023
-                        (which will be released imminently) to remove alerts outside forest cover (false). Alerts located within forest cover (true) were then expanded (buffered) to radii of 1.5 kilometers, called scope areas. After removing areas obscured
-                        by cloud, these scope areas for every month throughout 2024 were determined as deforestation, and classified by detecting changes against forest cover from the end of December 2023. Classification results were then filtered temporally
-                        and spatially to ensure deforestation occurrence and remove areas below the minimum mapping unit of 0.25 hectares (ha).
+                    <li class="leading-relaxed mt-4">月毎の森林破壊アラート：月次単位の森林破壊の疑いは、メリーランド大学が開発した月毎の森林破壊アラートを用いて特定されました。これらのアラートは、2023年の「<a href="https://mapbiomas.id" class="underline text-simontini">MapBiomas Indonesia</a>」の森林被覆データ（近日中に公開予定）と重ね合わせ、森林被覆外に発生したアラートを除外しました。森林被覆内に位置するアラートは半径1.5キロメートルにバッファリングが拡大され、「スコープエリア」と呼ばれます。その後、雲被りによる見えない領域を取り除き、2024年の月ごとに得られたこれらのスコープエリアを森林破壊と見なし、2023年12月末時点の森林被覆との変化を分類しました。分類結果はさらに時間的および空間的にフィルタリングされ、森林破壊の発生を確実にし、最小マッピング単位である0.25ヘクタール未満の領域を除外しました。
                     </li>
                     <li class="mt-4">
-                        <p class="leading-relaxed">Suspected annual deforestation: This was identified based on changes in the NDVI (Normalized Difference Vegetation Index) for natural forest cover. NDVI was obtained through red band and NIR (near-infrared) extraction on 4.7-meter
-                            resolution NICFI/Planet satellite imagery. Based on the Auriga Nusantara team’s measurements, natural forest vegetation values of more than 0.8 (on a scale of -1 to +1, where NDVI vegetation area > 0.5) and NDVI decreases of
-                            more than 0.2, were identified as deforestation. </p>
-                        <p class="mt-4 leading-relaxed">A natural forest baseline, or T0, was established from an agreement on natural forest cover in 2017 for MapBiomas Indonesia Collection 3 – due for imminent release – and Global Forest Canopy Height developed by the University of
-                            Maryland. Consequently, analysis years (Tx) were 2018 and subsequent years, including 2024. The choice of this baseline year was adjusted to the availability of NICFI/Planet satellite imagery data, which covers all regions
-                            of Indonesia. Differences in NDVI were measured against T0 in the same times/semesters/quarters in the analysis years. </p>
-                        <p class="mt-4 leading-relaxed">Then, to avoid noise resulting from cloud cover or shadow, filtering was applied by comparing them against a remaining forest mask obtained by taking away all alerts available in GLAD (Global Land Analysis and Discovery) and RADD
-                            (Radar for Detecting Deforestation) since 2019 from the natural forest baseline. Meanwhile, spatial filters were applied to remove areas below the minimum mapping unit of 100 connected pixels or 250 square meters (0.025 ha).</p>
-                        <p class="mt-4 leading-relaxed">All data processing and analysis was conducted in the Google Earth Engine (GEE) platform, including its cloud-based computing technology.</p>
-                        <p class="mt-4 leading-relaxed">Data produced from the two approaches was then merged to obtain 968,845 deforestation areas (polygons) covering a total area of 299,650 ha.</p>
+                        <p class="leading-relaxed">推定年間森林破壊量：これは、天然林被覆のNDVI（植生の分布状況や活性を示す指標）の変化に基づいて特定しています。NDVIは、解像度4.7メートルのNICFI/Planetによる衛星画像の赤色バンドと近赤外バンド（NIR）の抽出を通じて取得されました。Auriga Nusantaraの測定によると、天然林植生値が「0.8」を超え（NDVI植生エリア>0.5、スケールは-1から+1）、NDVIの減少が「0.2」を超える場合、森林破壊であると特定しています。</p>
+                        <p class="mt-4 leading-relaxed">天然林のベースライン、すなわちT0は、「MapBiomas Indonesia Collection 3」（近日公開予定）の2017年の天然林被覆に関する合意と、メリーランド大学が開発した「Global Forest Canopy Height」から確立されました。したがって、分析対象年（Tx）は2018年およびそれ以降の年（2024年を含む）としました。このベースライン年の選択は、インドネシアの全地域をカバーするNICFI/Planetによる衛星画像データの利用可能性に合わせて調整されました。NDVIの差異は、分析対象年の同じ時期／学期／四半期のT0と比較して測定されました。</p>
+                        <p class="mt-4 leading-relaxed">その後、雲の被覆や影によるノイズを避けるため、天然林ベースラインから2019年以降のGLAD（Global Land Analysis and Discovery）およびRADD（Radar for Detecting Deforestation）で利用可能なすべてのアラートを除外して得られた残存森林マスクと比較することでフィルタリングが適用されました。一方、100連結ピクセルまたは250平方メートル（0.025ヘクタール）の最小マッピング単位未満の地域を除去するために空間フィルターが適用されました。</p>
+                        <p class="mt-4 leading-relaxed">すべてのデータ処理と分析は、クラウドベースのコンピューティング技術を含むGoogle Earth Engine（GEE）プラットフォームで実施されました。</p>
+                        <p class="mt-4 leading-relaxed">2つのアプローチから生成されたデータは、その後統合され、合計面積299,650ヘクタールをカバーする968,845の森林破壊エリア（ポリゴン）を取得しました。</p>
                     </li>
                 </ul>
             </ul>
 
             {{-- tahap-2 --}}
-            <h2 class="leading-relaxed mt-4"><b>2. Visual inspection: </b> The aforementioned suspected deforestation areas were then inspected visually. Suspected deforestation was checked polygon-by-polygon on 3-meter resolution NICFI/Planet satellite imagery throughout 2024. Considering the large number of deforestation polygons, Auriga Nusantara decided to only inspect all suspected deforestation in excess of 1 ha.</h2>
+            <h2 class="leading-relaxed mt-4"><b>2. 目視検査: </b> 前述の森林破壊と推定される地域は、その後目視で検査されます。疑わしい森林破壊は、2024年を通じてNICFI/Planetによる衛星画像（3メートル解像度）上でポリゴンごとにチェックされました。森林破壊ポリゴンの数が多いため、Auriga Nusantaraは1ヘクタール超の疑わしい森林破壊エリアのみを検査対象とする決定を下しました</h2>
     </div>
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative mt-6">
@@ -125,17 +116,17 @@
         <table class="border h-[200px] w-full border-black text-sm text-white">
             <thead>
                 <tr class="bg-gray-800 text-white">
-                    <th rowspan="2" class="border border-black px-4 py-2">CATEGORY</th>
-                    <th colspan="2" class="border border-black px-4 py-2">SUSPECTED DEFORESTATION</th>
-                    <th colspan="4" class="border border-black px-4 py-2">INSPECTION/VERIFICATION RESULTS</th>
+                    <th rowspan="2" class="border border-black px-4 py-2">カテゴリ</th>
+                    <th colspan="2" class="border border-black px-4 py-2">疑いのある森林破壊</th>
+                    <th colspan="4" class="border border-black px-4 py-2">検証結果</th>
                 </tr>
                 <tr class="bg-gray-800 text-white">
-                    <th class="border border-black px-4 py-2">POLYGONS</th>
-                    <th class="border border-black px-4 py-2">AREA (ha)</th>
-                    <th class="border border-black px-4 py-2">POLYGONS TRUE</th>
-                    <th class="border border-black px-4 py-2">POLYGONS FALSE</th>
-                    <th class="border border-black px-4 py-2">AREA TRUE (ha)</th>
-                    <th class="border border-black px-4 py-2">AREA FALSE (ha)</th>
+                    <th class="border border-black px-4 py-2">ポリゴン</th>
+                    <th class="border border-black px-4 py-2">地域(ha)</th>
+                    <th class="border border-black px-4 py-2">ポリゴン TRUE</th>
+                    <th class="border border-black px-4 py-2">ポリゴン FALSE</th>
+                    <th class="border border-black px-4 py-2">地域 TRUE (ha)</th>
+                    <th class="border border-black px-4 py-2">地域 FALSE (ha)</th>
                 </tr>
             </thead>
             <tbody class="bg-gray-700">
@@ -197,15 +188,15 @@
             </tbody>
         </table>
     </div>
-    <p class="text-sm">*Not inspected</p>
+    <p class="text-sm">*検証未了</p>
 </div>
 
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     {{-- tahap-3 --}}
     <h2 class="leading-relaxed mt-4">
-            <p><b>3. Field monitoring: </b> Monitoring was carried out on specific areas throughout 2024. Choices of monitoring area were based on representative categories, i.e., geography, forest estate typology, government projects, and land-based concessions (mining, timber plantation, logging, and oil palm).</h2>
+            <p><b>3. 現地モニタリング: </b> モニタリングは2024年を通じて特定の地域で実施されました。モニタリング地域の選択は、地理、森林地域類型、政府プロジェクト、土地ベースのコンセッション（鉱業、木材プランテーション、伐採、アブラヤシ）などの代表的なカテゴリーに基づいていました。</h2>
     <p class="mt-4 leading-relaxed">
-        Throughout 2024, the Auriga Nusantara research team visited deforestation areas in Aceh, North Sumatra, Riau, Jambi, Bengkulu, South Sumatra, West Kalimantan, Central Kalimantan, East Kalimantan, North Kalimantan, Central Sulawesi, Gorontalo, North Maluku, Southwest Papua, and Papua provinces. In total, the Auriga Nusantara research team visited areas representing 22,350 ha of deforestation in 2024.
+        2024年を通じて、Auriga Nusantaraは、アチェ、北スマトラ、リアウ、ジャンビ、ベンクル、南スマトラ、西カリマンタン、中央カリマンタン、東カリマンタン、北カリマンタン、中央スラウェシ、ゴロンタロ、北マルク、南西パプア、パプアの諸州における森林破壊地域を訪問しました。合計で、2024年に森林破壊が起きた22,350ヘクタールの地域を訪問しました。
     </p>
 </div>
 </div>
@@ -218,9 +209,9 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="deforestasi2024" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini">DEFORESTATION IN 2024</h1>
+        <h1 class="text-3xl font-bold mt-12 text-simontini">2024年の森林破壊</h1>
         <p class="mt-6 leading-relaxed">
-            Indonesian deforestation in 2024 was identified to be 261.575 ha; an increase of 4,191 ha on the previous year, which was recorded at <a href="https://simontini.id/presentation/Deforestasi_Indonesia-2023-paparan.pdf" target="_blank" class="underline text-simontini">257.384</a>            ha. Deforestation occurred in all regions of Indonesia, with increases in Kalimantan and Sumatra, and decreases in Sulawesi, Papua, the Moluccas, Java, and Bali and Nusa Tenggara.
+            ヘクタールから4,191ヘクタール増加しました。森林破壊はインドネシアのすべての地域で発生し、カリマンタンとスマトラで増加し、スラウェシ、パプア、マルク諸島、ジャワ、バリ、ヌサトゥンガラでは減少しています。
         </p>
     </div>
 </div>
@@ -231,12 +222,10 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-6">
     <p class="mt-4 leading-relaxed">
-        Deforestation occurred in all of Indonesia’s provinces with the exception of the Jakarta Special Region. Where the top ten provinces for deforestation in 2023 were: (1) West Kalimantan, (2) Central Kalimantan, (3) East Kalimantan, (4) Central Sulawesi,
-        (5) South Kalimantan, (6) North Kalimantan, (7) Riau, (8) South Papua, (9) Central Papua, and (10) West Papua; the top ten in 2024 were: (1) East Kalimantan, (2) West Kalimantan, (3) Central Kalimantan, (4) Riau, (5) South Sumatra, (6) Jambi,
-        (7) Aceh, (8) North Kalimantan, (9) Bangka Belitung, and (10) North Sumatra.
+        森林破壊は、ジャカルタ特別州を除くインドネシアのすべての州で発生しました。2023年の森林破壊上位10州は、（1）西カリマンタン、（2）中央カリマンタン、（3）東カリマンタン、（4）中央スラウェシ、（5）南カリマンタン、（6）北カリマンタン、（7）リアウ、（8）南パプア、（9）中部パプア、（10）西パプアでした。2024年の上位10州は、（1）東カリマンタン、（2）西カリマンタン、（3）中央カリマンタン、（4）リアウ、（5）南スマトラ、（6）ジャンビ、（7）アチェ、（8）北カリマンタン、（9）バンカ・ブリトゥン、（10）北スマトラです。
     </p>
     {{-- table-2 --}}
-    <h3 class="text-simontini mt-6 font-bold mb-2">TOP TEN PROVINCES OF DEFORESTATION, 2024(hectare)</h3>
+    <h3 class="text-simontini mt-6 font-bold mb-2">森林破壊が起きた上位10州（2024年）</h3>
     <div class="mb-6 flex w-full flex-col gap-4 text-white sm:flex-row">
         <!-- 2023 Table -->
         <div class="w-full sm:w-6/12">
@@ -247,47 +236,47 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">West Kalimantan</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">西カリマンタン</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">35,162</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">Central Kalimantan</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">中央カリマンタン</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">30,433</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">East Kalimantan</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">東カリマンタン</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">28,633</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">Central Sulawesi</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">中央スラウェシ</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">16,679</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">South Kalimantan</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">南カリマンタン</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">16,067</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">North Kalimantan</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">北カリマンタン</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">14,316</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">Riau</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">リアウ</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">13,268</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">South Papua</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">南パプア</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">12,640</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">Central Papua</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">中部パプア</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">11,336</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">West Papua</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">西パプア</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">10,990</td>
                     </tr>
                     <tr class="bg-black">
-                        <td class="border border-black px-4 py-2 text-sm font-bold sm:text-base">27 other provinces</td>
+                        <td class="border border-black px-4 py-2 text-sm font-bold sm:text-base">その他27州</td>
                         <td class="border border-black px-4 py-2 text-right text-sm font-bold sm:text-base">67,858</td>
                     </tr>
                 </tbody>
@@ -303,47 +292,47 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">East Kalimantan</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">東カリマンタン</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">44,483</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">West Kalimantan</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">西カリマンタン</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">39,598</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">Central Kalimantan</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">中央カリマンタン</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">33,389</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">Riau</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">リアウ</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">20,812</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">Sumatera Selatan</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">南スマトラ</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">20,184</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">Jambi</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">ジャンビ</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">14,839</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">Aceh</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">アチェ</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">8,962</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">North Kalimantan</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">北カリマンタン</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">8,767</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">Bangka Belitung</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">バンカ・ブリトゥン</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">7,956</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-4 py-2 text-sm sm:text-base">North Sumatra</td>
+                        <td class="border border-black px-4 py-2 text-sm sm:text-base">北スマトラ</td>
                         <td class="border border-black px-4 py-2 text-right text-sm sm:text-base">7,303</td>
                     </tr>
                     <tr class="bg-black">
-                        <td class="border border-black px-4 py-2 text-sm font-bold sm:text-base">27 other provinces</td>
+                        <td class="border border-black px-4 py-2 text-sm font-bold sm:text-base">その他27州</td>
                         <td class="border border-black px-4 py-2 text-right text-sm font-bold sm:text-base">55,282</td>
                     </tr>
                 </tbody>
@@ -353,73 +342,73 @@
 
 
     <p class="mt-4 leading-relaxed">
-        In 2024, deforestation occurred in 428, or 83% of Indonesia’s 514 regencies and municipalities. Sixty-eight regencies showed deforestation exceeding 1,000 ha. As shown in the table below, nine of the top-ten regencies for deforestation were in Kalimantan.
+        2024年には、インドネシアの514の県・市のうち428、すなわち83％で森林破壊が発生しました。68の県では1,000ヘクタールを超える森林破壊が起きました。下表に示すように、森林破壊上位10県のうち9県がカリマンタンに位置しています。
     </p>
 
     {{-- table-3 --}}
-    <h3 class="mt-6 text-simontini font-bold mb-2">TOP TEN DEFORESTED REGENCY, 2024</h3>
+    <h3 class="mt-6 text-simontini font-bold mb-2">森林破壊が起きた上位10県（2024年）</h3>
     <div class="text-white  mb-4 w-full overflow-auto">
         <table class="border border-black text-white  w-full">
             <thead class="bg-black">
                 <tr>
-                    <th class="border border-black px-6 py-2 font-bold text-left">REGENCY</th>
-                    <th class="border border-black px-6 py-2 font-bold text-left">PROVINCE</th>
-                    <th class="border border-black px-6 py-2 font-bold text-right">DEFORESTATION (HA)</th>
+                    <th class="border border-black px-6 py-2 font-bold text-left">県</th>
+                    <th class="border border-black px-6 py-2 font-bold text-left">州</th>
+                    <th class="border border-black px-6 py-2 font-bold text-right">森林破壊面積 (HA)</th>
                 </tr>
             </thead>
             <tbody class="bg-gray-800">
                 <tr>
-                    <td class="border border-black px-6 py-2 ">East Kutai</td>
-                    <td class="border border-black px-6 py-2">East Kalimantan</td>
+                    <td class="border border-black px-6 py-2 ">東クタイ</td>
+                    <td class="border border-black px-6 py-2">東カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">16,578</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2 ">Berau</td>
-                    <td class="border border-black px-6 py-2">East Kalimantan</td>
+                    <td class="border border-black px-6 py-2 ">ベラウ</td>
+                    <td class="border border-black px-6 py-2">東カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">9,378</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2 ">Ketapang</td>
-                    <td class="border border-black px-6 py-2">West Kalimantan</td>
+                    <td class="border border-black px-6 py-2 ">ケタパン</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">9,115</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">Musi Banyuasin</td>
-                    <td class="border border-black px-6 py-2">South Sumatra</td>
+                    <td class="border border-black px-6 py-2">ムシ・バニュアシン</td>
+                    <td class="border border-black px-6 py-2">南スマトラ</td>
                     <td class="border border-black px-6 py-2 text-right">8,517</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">Kutai Kartanegara</td>
-                    <td class="border border-black px-6 py-2">East Kalimantan</td>
+                    <td class="border border-black px-6 py-2">クタイ・カルタヌガラ</td>
+                    <td class="border border-black px-6 py-2">東カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">7,887</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">Kapuas Hulu</td>
-                    <td class="border border-black px-6 py-2">West Kalimantan</td>
+                    <td class="border border-black px-6 py-2">カプアス・フル</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">7,340</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">West Kutai</td>
-                    <td class="border border-black px-6 py-2">East Kalimantan</td>
+                    <td class="border border-black px-6 py-2">西クタイ</td>
+                    <td class="border border-black px-6 py-2">東カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">6,364</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">Kapuas</td>
-                    <td class="border border-black px-6 py-2">Central Kalimantan</td>
+                    <td class="border border-black px-6 py-2">カプアス</td>
+                    <td class="border border-black px-6 py-2">中央カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">5,589</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">Sanggau</td>
-                    <td class="border border-black px-6 py-2">West Kalimantan</td>
+                    <td class="border border-black px-6 py-2">サンガウ</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">5,336</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">Katingan</td>
-                    <td class="border border-black px-6 py-2">Central Kalimantan</td>
+                    <td class="border border-black px-6 py-2">カティンガン</td>
+                    <td class="border border-black px-6 py-2">中央カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">4,809</td>
                 </tr>
                 <tr class="bg-black">
-                    <td class="border border-black px-6 py-2 font-bold text-sm">18 other regency</td>
+                    <td class="border border-black px-6 py-2 font-bold text-sm">その他18県</td>
                     <td class="border border-black px-6 py-2"></td>
                     <td class="border border-black px-6 py-2 text-right font-bold">180,663</td>
                 </tr>
@@ -427,7 +416,7 @@
         </table>
     </div>
     <p class="mt-12 leading-relaxed">
-        Seen in terms of land control status, 57% of this deforestation occurred on land controlled by the state, or forest estate.
+        土地ステータスの観点から見ると、この森林破壊の57％は国が管理する土地、すなわち森林地域で発生しました。
     </p>
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative">
@@ -436,74 +425,74 @@
         <img src="https://simontini.id/assets/stadi2024/Stadi20245.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-10 hover:brightness-50 transition duration-300 ease-in-out" />
     </a>
     {{-- table-4 --}}
-    <h3 class="text-simontini mt-6 font-bold mb-2">TOP TEN DEFORESTATION IN LOGGING CONCESSIONS (HPH/PBPH HHK-HA)</h3>
+    <h3 class="text-simontini mt-6 font-bold mb-2">森林伐採事業権地(HPH/PBPH HHK-HA)における森林破壊企業上位10社（2024年）</h3>
     <div class="w-full overflow-auto bg-gray-800 ">
         <table class="w-full table-auto">
             <thead>
                 <tr class="bg-black">
-                    <th class="border border-black px-4 py-3 text-left font-semibold text-white uppercase">CONSESSION</th>
-                    <th class="border border-black px-4 py-3 text-left font-semibold text-white uppercase">PROVINCE</th>
-                    <th class="border border-black px-4 py-3 text-left font-semibold text-white uppercase">DEFORESTATION (HA)</th>
+                    <th class="border border-black px-4 py-3 text-left font-semibold text-white uppercase">コンセッション</th>
+                    <th class="border border-black px-4 py-3 text-left font-semibold text-white uppercase">州</th>
+                    <th class="border border-black px-4 py-3 text-left font-semibold text-white uppercase">森林破壊面積 (HA)</th>
                 </tr>
             </thead>
             <tbody class="text-white">
                 <tr>
                     <td class="border border-black px-4 py-2">PT Panambangan</td>
-                    <td class="border border-black px-4 py-2">East Kalimantan</td>
+                    <td class="border border-black px-4 py-2">東カリマンタン</td>
                     <td class="border border-black px-4 py-2 text-right">5,485</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Kiani Lestari</td>
-                    <td class="border border-black px-4 py-2">East Kalimantan</td>
+                    <td class="border border-black px-4 py-2">東カリマンタン</td>
                     <td class="border border-black px-4 py-2 text-right">3,304</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Daya Maju Lestari (d.h. PT Marimun Timber IDS)</td>
-                    <td class="border border-black px-4 py-2">East Kalimantan</td>
+                    <td class="border border-black px-4 py-2">東カリマンタン</td>
                     <td class="border border-black px-4 py-2 text-right">2,641</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2 ">PT Putra Duta Indah Wood</td>
-                    <td class="border border-black px-4 py-2 ">Jambi</td>
+                    <td class="border border-black px-4 py-2 ">ジャンビ</td>
                     <td class="border border-black px-4 py-2 text-right">2,053</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2 ">PT Diamond Raya Timber</td>
-                    <td class="border border-black px-4 py-2">Riau</td>
+                    <td class="border border-black px-4 py-2">リアウ</td>
                     <td class="border border-black px-4 py-2 text-right">1,264</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Inhutani I (Unit Labanan)</td>
-                    <td class="border border-black px-4 py-2">East Kalimantan</td>
+                    <td class="border border-black px-4 py-2">東カリマンタン</td>
                     <td class="border border-black px-4 py-2 text-right">1,166</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Dasa Intiga</td>
-                    <td class="border border-black px-4 py-2">Central Kalimantan</td>
+                    <td class="border border-black px-4 py-2">中央カリマンタン</td>
                     <td class="border border-black px-4 py-2 text-right">805</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Anugerah Pratama Inspirasi</td>
-                    <td class="border border-black px-4 py-2">Bengkulu</td>
+                    <td class="border border-black px-4 py-2">ベンクル</td>
                     <td class="border border-black px-4 py-2 text-right">796</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Austral Byna</td>
-                    <td class="border border-black px-4 py-2">Central Kalimantan</td>
+                    <td class="border border-black px-4 py-2">中央カリマンタン</td>
                     <td class="border border-black px-4 py-2 text-right">740</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-4 py-2">PT Wana Kencana Sejati</td>
-                    <td class="border border-black px-4 py-2">North Maluku</td>
+                    <td class="border border-black px-4 py-2">北マルク</td>
                     <td class="border border-black px-4 py-2 text-right">689</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-4 py-2">244 other logging concessions</td>
+                    <td class="border border-black px-4 py-2">その他244の伐採コンセッション</td>
                     <td class="border border-black px-4 py-2"></td>
                     <td class="border border-black px-4 py-2 text-right">17,124</td>
                 </tr>
                 <tr class="bg-black">
-                    <td class="border border-black px-4 py-2 font-bold">Total</td>
+                    <td class="border border-black px-4 py-2 font-bold">合計</td>
                     <td class="border border-black px-4 py-2 font-bold"></td>
                     <td class="border border-black px-4 py-2 font-bold text-right">36,068</td>
                 </tr>
@@ -512,74 +501,74 @@
     </div>
 
     {{-- table-5 --}}
-    <h3 class="text-simontini mt-6 mb-2 font-bold">TOP TEN DEFORESTATION IN TIMBER PLANTATION CONCESSIONS (HTI/PBPH HHK-HTI)</h3>
+    <h3 class="text-simontini mt-6 mb-2 font-bold">産業植林事業権地(HTI/PBPH HHK-HTI)における森林破壊企業上位10社（2024年）</h3>
     <div class="w-full overflow-auto bg-gray-800">
         <table class="w-full table-auto">
             <thead>
                 <tr class="bg-black">
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">CONSESSION</th>
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">PROVINCE</th>
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">DEFORESTATION (HA)</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">コンセッション</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">州</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">森林破壊面積 (HA)</th>
                 </tr>
             </thead>
             <tbody class="text-white">
                 <tr>
                     <td class="border border-black px-6 py-2">PT Mayawana Persada</td>
-                    <td class="border border-black px-6 py-2">West Kalimantan</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">6,145</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Finnantara Intiga</td>
-                    <td class="border border-black px-6 py-2">West Kalimantan</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">1,551</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Sendawar Adhi Karya</td>
-                    <td class="border border-black px-6 py-2">East Kalimantan</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">1,170</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Industrial Forest Plantation</td>
-                    <td class="border border-black px-6 py-2">Central Kalimantan</td>
+                    <td class="border border-black px-6 py-2">中央カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">1,105</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Meranti Laksana</td>
-                    <td class="border border-black px-6 py-2">West Kalimantan</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">918</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Grace Putri Perdana</td>
-                    <td class="border border-black px-6 py-2">West Kalimantan - Central Kalimantan</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン、中央カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">875</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Permata Borneo Abadi</td>
-                    <td class="border border-black px-6 py-2">East Kalimantan</td>
+                    <td class="border border-black px-6 py-2">東カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">786</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Paramitra Mulia Langgeng</td>
-                    <td class="border border-black px-6 py-2">Lampung - South Sumatra</td>
+                    <td class="border border-black px-6 py-2">ランプン、南スマトラ</td>
                     <td class="border border-black px-6 py-2 text-right">661</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Andalan Karya Pertiwi</td>
-                    <td class="border border-black px-6 py-2">Bangka Belitung</td>
+                    <td class="border border-black px-6 py-2">バンカ・ブリトゥン</td>
                     <td class="border border-black px-6 py-2 text-right">661</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Perawang Sukses Perkasa</td>
-                    <td class="border border-black px-6 py-2">Riau</td>
+                    <td class="border border-black px-6 py-2">リアウ</td>
                     <td class="border border-black px-6 py-2 text-right">660</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">270 other timber plantation concessions</td>
+                    <td class="border border-black px-6 py-2">その他270の産業植林伐採コンセッション</td>
                     <td class="border border-black px-6 py-2"></td>
                     <td class="border border-black px-6 py-2 text-right">26,800</td>
                 </tr>
                 <tr class="bg-black">
-                    <td class="border border-black px-6 py-2 font-bold">Total</td>
+                    <td class="border border-black px-6 py-2 font-bold">合計</td>
                     <td class="border border-black px-6 py-2 font-bold"></td>
                     <td class="border border-black px-6 py-2 text-right font-bold">41,332</td>
                 </tr>
@@ -588,74 +577,74 @@
     </div>
 
     {{-- table-6 --}}
-    <h3 class="text-simontini mt-6 mb-2 font-bold">TOP TEN DEFORESTATION IN MINING CONCESSIONS, 2024</h3>
+    <h3 class="text-simontini mt-6 mb-2 font-bold">鉱山開発事業権地における森林破壊企業上位10社（2024年）</h3>
     <div class="w-full overflow-auto bg-gray-800">
         <table class="w-full table-auto">
             <thead>
                 <tr class="bg-black">
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">CONSESSION</th>
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">COMMODITIES</th>
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">DEFORESTATION (HA)</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">コンセッション</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">コモディティ</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">森林破壊面積 (HA)</th>
                 </tr>
             </thead>
             <tbody class="text-white">
                 <tr>
                     <td class="border border-black px-6 py-2">PT Berau Coal</td>
-                    <td class="border border-black px-6 py-2">Coal</td>
+                    <td class="border border-black px-6 py-2">石炭</td>
                     <td class="border border-black px-6 py-2 text-right">2,039</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Cita Mineral Investindo Tbk</td>
-                    <td class="border border-black px-6 py-2">Bauxite</td>
+                    <td class="border border-black px-6 py-2">ボーキサイト</td>
                     <td class="border border-black px-6 py-2 text-right">1,442</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Timah Tbk</td>
-                    <td class="border border-black px-6 py-2">Tin</td>
+                    <td class="border border-black px-6 py-2">錫</td>
                     <td class="border border-black px-6 py-2 text-right">1,070</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Sumber Sentosa Bersama</td>
-                    <td class="border border-black px-6 py-2">Quartz sand</td>
+                    <td class="border border-black px-6 py-2">ケイ砂</td>
                     <td class="border border-black px-6 py-2 text-right">808</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Vale Tbk</td>
-                    <td class="border border-black px-6 py-2">Nickel</td>
+                    <td class="border border-black px-6 py-2">ニッケル</td>
                     <td class="border border-black px-6 py-2 text-right">689</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Battoman Coal</td>
-                    <td class="border border-black px-6 py-2">Coal</td>
+                    <td class="border border-black px-6 py-2">石炭</td>
                     <td class="border border-black px-6 py-2 text-right">651</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Weda Bay Nickel</td>
-                    <td class="border border-black px-6 py-2">Nickel</td>
+                    <td class="border border-black px-6 py-2">ニッケル</td>
                     <td class="border border-black px-6 py-2 text-right">650</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Kayan Kaltara Coal</td>
-                    <td class="border border-black px-6 py-2">Coal</td>
+                    <td class="border border-black px-6 py-2">石炭</td>
                     <td class="border border-black px-6 py-2 text-right">595</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Ridatama Cahaya Abadi</td>
-                    <td class="border border-black px-6 py-2">Bauxite</td>
+                    <td class="border border-black px-6 py-2">ボーキサイト</td>
                     <td class="border border-black px-6 py-2 text-right">540</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Aneka Tambang Tbk</td>
-                    <td class="border border-black px-6 py-2">Multi-commodity</td>
+                    <td class="border border-black px-6 py-2">複数のコモディティ商品</td>
                     <td class="border border-black px-6 py-2 text-right">497</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">1580 other mining business permit</td>
-                    <td class="border border-black px-6 py-2">Mineral & Coal</td>
+                    <td class="border border-black px-6 py-2">その他1580の鉱山開発事業</td>
+                    <td class="border border-black px-6 py-2"></td>
                     <td class="border border-black px-6 py-2 text-right">29,635</td>
                 </tr>
                 <tr class="bg-black">
-                    <td class="border border-black px-6 py-2 font-bold">Total mining deforestation</td>
+                    <td class="border border-black px-6 py-2 font-bold">合計</td>
                     <td class="border border-black px-6 py-2 font-bold"></td>
                     <td class="border border-black px-6 py-2 text-right font-bold">38,615</td>
                 </tr>
@@ -664,74 +653,74 @@
     </div>
 
     {{-- table-7 --}}
-    <h3 class="text-simontini mt-6 mb-2 font-bold">TOP TEN DEFORESTATION IN PALM OIL CONCESSIONS, 2024</h3>
+    <h3 class="text-simontini mt-6 mb-2 font-bold">アブラヤシ農園開発事業権地における森林破壊企業上位10社（2024年）</h3>
     <div class="w-full overflow-auto bg-gray-800">
         <table class="w-full table-auto">
             <thead>
                 <tr class="bg-black">
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">CONCESSIONS</th>
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">PROVINCE</th>
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">DEFORESTATION (HA)</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">コンセッション</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">州</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">森林破壊面積 (HA)</th>
                 </tr>
             </thead>
             <tbody class="text-white">
                 <tr>
                     <td class="border border-black px-6 py-2">PT Borneo International Anugerah</td>
-                    <td class="border border-black px-6 py-2">West Kalimantan</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">2,019</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Mitra Kapuas Agro</td>
-                    <td class="border border-black px-6 py-2">West Kalimantan</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">1,534</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Banyan Tumbuh Lestari</td>
-                    <td class="border border-black px-6 py-2">Gorontalo</td>
+                    <td class="border border-black px-6 py-2">ゴロンタロ</td>
                     <td class="border border-black px-6 py-2 text-right">1,521</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Uniseraya</td>
-                    <td class="border border-black px-6 py-2">Riau</td>
+                    <td class="border border-black px-6 py-2">リアウ</td>
                     <td class="border border-black px-6 py-2 text-right">1,408</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Alam Lestari Indah</td>
-                    <td class="border border-black px-6 py-2">Central Kalimantan</td>
+                    <td class="border border-black px-6 py-2">中央カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">1,347</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Inti Kebun Sawit</td>
-                    <td class="border border-black px-6 py-2">Southwest Papua</td>
+                    <td class="border border-black px-6 py-2">パプア</td>
                     <td class="border border-black px-6 py-2 text-right">1,115</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Inti Kebun Sejahtera</td>
-                    <td class="border border-black px-6 py-2">Southwest Papua</td>
+                    <td class="border border-black px-6 py-2">パプア</td>
                     <td class="border border-black px-6 py-2 text-right">1,057</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Archipelago Timur Abadi</td>
-                    <td class="border border-black px-6 py-2">Central Kalimantan</td>
+                    <td class="border border-black px-6 py-2">中央カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">932</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Berkah Sawit Abadi</td>
-                    <td class="border border-black px-6 py-2">West Kalimantan</td>
+                    <td class="border border-black px-6 py-2">西カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">819</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Tewah Bahana Lestari</td>
-                    <td class="border border-black px-6 py-2">Central Kalimantan</td>
+                    <td class="border border-black px-6 py-2">中央カリマンタン</td>
                     <td class="border border-black px-6 py-2 text-right">783</td>
                 </tr>
                 <tr>
-                    <td class="border border-black px-6 py-2">1,082 other palm oil concessions</td>
+                    <td class="border border-black px-6 py-2">その他1,082のアブラヤシ農園事業</td>
                     <td class="border border-black px-6 py-2"></td>
                     <td class="border border-black px-6 py-2 text-right">24,948</td>
                 </tr>
                 <tr class="bg-black">
-                    <td class="border border-black px-6 py-2 font-bold">Total</td>
+                    <td class="border border-black px-6 py-2 font-bold">合計</td>
                     <td class="border border-black px-6 py-2 font-bold"></td>
                     <td class="border border-black px-6 py-2 text-right font-bold">37,483</td>
                 </tr>
@@ -742,7 +731,7 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
 
-    <p class="mt-12 leading-relaxed">The majority of natural forest lost in Indonesia in 2024 constituted habitat for rare and protected species. The table/figure below shows the area of deforestation in habitats for iconic megafauna (flagship species) protected by regulations in Indonesia.</p>
+    <p class="mt-12 leading-relaxed">2024年のすべての森林破壊のうち、3％が保全地域で発生し、5％が保護林地域で、49％が生産林で、43％が森林地域外で発生しました。より詳しく見ると、保護林および生産林地域での森林破壊は、森林利用（すなわちコンセッション）または国家戦略プロジェクト（PSN）などの政府プログラムのために許可された地域で発生しました。これは、2024年に発生した森林破壊の97％が合法的なものであったことを意味します。</p>
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative">
     <a href="https://simontini.id/assets/stadi2024/Stadi202411.jpg" class="glightbox5 mt-4">
@@ -751,19 +740,15 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="diskusi" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-20 text-simontini">DISCUSSION</h1> {{-- diskusi-1 --}}
-        <h2 class="font-bold mt-8">1. Legal deforestation as the greatest threat</h2>
+        <h1 class="text-3xl font-bold mt-20 text-simontini">ディスカッション</h1> {{-- diskusi-1 --}}
+        <h2 class="font-bold mt-8">1. 合法的な森林破壊が最大の脅威</h2>
         <div id="diskusi-1" class="pl-5">
-            <p class="mt-4 leading-relaxed">Essentially, Indonesia’s legal system does not prohibit deforestation, because as long as the government issues a license, the license holder is basically able to carry out deforestation. Since the passing of the Omnibus Law, government projects
-                can freely clear existing natural forests.</p>
+            <p class="mt-4 leading-relaxed">インドネシアの法制度は、基本的に森林伐採を禁止していません。政府がライセンスを発行する限り、ライセンス保有者は基本的に森林伐採を行うことができます。雇用創出オムニバス法の成立以降、政府プロジェクトは既存の天然林を自由に皆伐することができます。</p>
             <p class="mt-4 leading-relaxed">
-                It may true that companies are not allowed to deforest arbitrarily, even inside concessions, as they have to secure approval for their annual work plans (RKTs) in the case of forestry concessions, or work, budget and expenditure plans (RKABs) in the case
-                of mining concessions. For oil palm concessions, conversion licenses are carried out though forest estate releases. The problem is, because the government never releases forestry company RKTs, mining company RKABs, or oil palm company
-                forest estate release maps, concession owners can claim that their clearing of natural forest in conversion concessions (for timber plantations, oil palm, and mining) is legal.
+                企業がコンセッション内であっても手当たり次第に森林伐採を行うことは許可されていないのは事実です。これは、林業コンセッションの場合は年間作業計画（RKT）、鉱業コンセッションの場合は作業・予算・支出計画（RKAB）の承認を得る必要があるためです。アブラヤシ農園の場合、転換許可は林地指定の解除を通じて発行されます。問題は、政府が林業会社の年間作業計画（RKT）、鉱業会社の作業・予算・支出計画（RKAB）、あるいはアブラヤシ会社の林地指定の解除を示す地図を一切公開していないため、コンセッション保有者は転換コンセッション（木材プランテーション、アブラヤシ、鉱業）における天然林の皆伐は合法であると主張できるということです。
             </p>
             <p class="mt-4 leading-relaxed">
-                Only 3% of all deforestation in 2024 occurred in conservation areas, while 5% occurred in protection forest estates, 49% in production forests, and 43% outside the forest estate. Examined in more depth, deforestation in protection and production forest
-                estates occurred in areas licensed for forest utilization (read: concessions) or for government programs, such as national strategic projects (PSN). This means, 97% of deforestation occurring in 2024 was legal deforestation.
+                2024年に起きた森林破壊のうち、保護地域で起きたのは3%、保護林では5%、生産林では49%、森林地域外では43%でした。さらに詳しい調査によれば、保護林と生産林における森林破壊は、森林利用許可（コンセッション）を受けた地域、または国家戦略プロジェクト（PSN）などの政府プログラムのために行われた地域で発生しました。つまり、2024年に起きた森林破壊の97%は合法的な森林破壊であったことになります。
             </p>
 
         </div>
@@ -821,10 +806,9 @@
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
 
         {{-- diskusi-2 --}}
-        <h2 class="font-bold mt-12">2. The most extensive deforestation once again occurred in Kalimantan</h2>
+        <h2 class="font-bold mt-12">2. もっとも大規模な森林破壊はカリマンタンで発生</h2>
         <div id="diskusi-2" class="pl-5">
-            <p class="mt-4 leading-relaxed">Kalimantan was again home to the most extensive annual deforestation in 2024, as it had been for the previous eleven years. In contrast to other regions, where deforestation has remained relatively stagnant, in Kalimantan deforestation has
-                increased drastically every year since 2021.</p>
+            <p class="mt-4 leading-relaxed">カリマンタンは、過去11年間と同様に、2024年もっとも広範囲な森林破壊が起きた場所でした。他の地域では森林破壊が比較的停滞しているのに対し、カリマンタンでは2021年以降、劇的に増加しています。</p>
         </div>
     </div>
 </div>
@@ -837,13 +821,10 @@
     <div>
 
         <p class="mt-4 leading-relaxed">
-            The designation of an area in North Penajam Paser Regency to become the new national capital city (IKN) has been one reason for this increase in deforestation, as seen from the East Kalimantan Provincial Government’s proposal to change its provincial
-            spatial plan, which if agreed, will result in the release or change in function of 736,055 ha of existing forest estate. North Kalimantan has submitted a similar process with the potential to impact 762,947 ha of existing forest estate. One
-            argument put forward by the two provinces is economic development in line with the presence of the new capital city.
+            北プナジャム・パセル県の地域を新しい国家首都（IKN）に指定したことが、この森林破壊増加の理由の一つです。これは、東カリマンタン州政府の空間計画の変更提案からも見て取れ、もし合意されれば既存の森林地域736,055ヘクタールの解除または機能変更がもたらされます。また北カリマンタンでも、既存の森林地域762,947ヘクタールに影響を与える可能性のある同様のプロセスが提出されています。両州が提出した論拠の一つは、新首都の存在に沿った経済発展です。
         </p>
         <p class="mt-4 leading-relaxed">
-            Seen by commodity, timber plantation (29,898 ha), mining (23,583 ha), and oil palm (23,430 ha) development are the main causes of deforestation in Kalimantan. Deforestation for these three commodities accounted for 59% of all deforestation across Kalimantan.
-            The top-ten companies in terms of deforestation for the development of these three commodities in Kalimantan in 2024 are as follows:
+            コモディティ別に見ると、木材プランテーション（29,898ヘクタール）、鉱山開発（23,583ヘクタール）、アブラヤシ農園開発（23,430ヘクタール）がカリマンタンの森林破壊の主な原因です。これら3つのコモディティによる森林破壊は、全体の59％を占めています。
         </p>
     </div>
 </div>
@@ -852,76 +833,76 @@
     <div>
 
         {{-- table-8 --}}
-        <h3 class="text-simontini mt-6 mb-2 font-bold">TOP TEN DEFORESTATION BY CONVERSION LICENSE IN KALIMANTAN, 2024</h3>
+        <h3 class="text-simontini mt-6 mb-2 font-bold">カリマンタンにおける転換許可を持つ森林破壊企業上位10社（2024年）</h3>
         <div class="mb-4 w-full overflow-auto bg-gray-800">
             <table class="w-full table-auto">
                 <thead>
                     <tr class="bg-black">
-                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">COMPANY</th>
-                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">CONSESSION</th>
-                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">PROVINCE</th>
-                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">DEFORESTAION (HA)</th>
+                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">企業名</th>
+                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">コンセッション</th>
+                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">州</th>
+                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">森林破壊面積 (HA)</th>
                     </tr>
                 </thead>
                 <tbody class="text-white">
                     <tr>
                         <td class="border border-black px-6 py-2">PT Mayawana Persada</td>
-                        <td class="border border-black px-6 py-2">Timber Plantation</td>
-                        <td class="border border-black px-6 py-2">West Kalimantan</td>
+                        <td class="border border-black px-6 py-2">木材プランテーション</td>
+                        <td class="border border-black px-6 py-2">西カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">6,145</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Berau Coal</td>
-                        <td class="border border-black px-6 py-2">Coal Mine</td>
-                        <td class="border border-black px-6 py-2">East Kalimantan</td>
+                        <td class="border border-black px-6 py-2">石炭採掘</td>
+                        <td class="border border-black px-6 py-2">東カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">2,039</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Borneo International Anugerah</td>
-                        <td class="border border-black px-6 py-2">Palm</td>
-                        <td class="border border-black px-6 py-2">West Kalimantan</td>
+                        <td class="border border-black px-6 py-2">アブラヤシ</td>
+                        <td class="border border-black px-6 py-2">西カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">2,019</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Finnantara Intiga</td>
-                        <td class="border border-black px-6 py-2">Timber Plantation</td>
-                        <td class="border border-black px-6 py-2">West Kalimantan</td>
+                        <td class="border border-black px-6 py-2">木材プランテーション</td>
+                        <td class="border border-black px-6 py-2">西カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">1,551</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Mitra Kapuas Agro</td>
-                        <td class="border border-black px-6 py-2">Palm</td>
-                        <td class="border border-black px-6 py-2">West Kalimantan</td>
+                        <td class="border border-black px-6 py-2">アブラヤシ</td>
+                        <td class="border border-black px-6 py-2">西カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">1,534</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Cita Mineral Investindo Tbk</td>
-                        <td class="border border-black px-6 py-2">Bauxite mine</td>
-                        <td class="border border-black px-6 py-2">West Kalimantan</td>
+                        <td class="border border-black px-6 py-2">ボーキサイト採掘</td>
+                        <td class="border border-black px-6 py-2">西カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">1,442</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Alam Lestari Indah</td>
-                        <td class="border border-black px-6 py-2">Palm</td>
-                        <td class="border border-black px-6 py-2">Central Kalimantan</td>
+                        <td class="border border-black px-6 py-2">アブラヤシ</td>
+                        <td class="border border-black px-6 py-2">中央カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">1,347</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Sendawar Adhi Karya</td>
-                        <td class="border border-black px-6 py-2">Timber Plantation</td>
-                        <td class="border border-black px-6 py-2">East Kalimantan</td>
+                        <td class="border border-black px-6 py-2">木材プランテーション</td>
+                        <td class="border border-black px-6 py-2">東カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">1,170</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Industrial Forest Plantation</td>
-                        <td class="border border-black px-6 py-2">Timber Plantation</td>
-                        <td class="border border-black px-6 py-2">Central Kalimantan</td>
+                        <td class="border border-black px-6 py-2">木材プランテーション</td>
+                        <td class="border border-black px-6 py-2">中央カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">1,105</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">PT Archipelago Timur Abadi</td>
-                        <td class="border border-black px-6 py-2">Palm</td>
-                        <td class="border border-black px-6 py-2">Central Kalimantan</td>
+                        <td class="border border-black px-6 py-2">アブラヤシ</td>
+                        <td class="border border-black px-6 py-2">中央カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">932</td>
                     </tr>
                 </tbody>
@@ -986,25 +967,18 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
     {{-- diskusi-3 --}}
-    <h2 class="font-bold mt-12">3. Timber plantations as drivers of deforestation</h2>
+    <h2 class="font-bold mt-12">3. 木材プランテーションが森林破壊の主要原因</h2>
     <div id="diskusi-3" class="pl-5">
-        <p class="mt-4 leading-relaxed">In 2023, timber plantation development was the greatest cause of deforestation in Indonesia, occurring mainly in Kalimantan. Despite this deforestation being so extensive, it occurred in only a few concessions. </p>
-        <p class="mt-4 leading-relaxed">This situation continued in 2024, almost entirely in the same concessions, or those with ownership links. As an example, massive deforestation in the PT Mayawana Persada timber plantation concession in West Kalimantan expanded significantly in
-            2024, with the same thing happening in the PT Industrial Forest Plantation concession in Central Kalimantan. Even though a coalition of civil society organizations had already exposed deforestation in the two concessions the previous year
-            in reports entitled Pulping Borneo (2023) about deforestation in PT Industrial Forest Plantation and Deforestation Anonymous (March 2024) highlighting deforestation in the PT Mayawana Persada concession, deforestation continued in both concessions
-            in 2024.</p>
-        <p class="mt-4 leading-relaxed"> However, some timber plantations also began in 2024, as was the case with three neighboring concessions in Melawi Regency, West Kalimantan – PT Meranti Laksana, PT Meranti Lestari, and PT Lahan Cakrawala – which commenced operations in the second
-            half of 2024. Auriga Nusantara researchers documented deforestation in November 2024, and will soon publish a dedicated report.</p>
-        <p class="mt-4 leading-relaxed">Deforestation from timber plantation development appears set to continue in Kalimantan in the coming year, as the government has issued a license to establish the giant PT Phoenix Resources International pulp mill in Tarakan, North Kalimantan.
-            No clarification has been given to the public about the source of raw materials for the mill, and, most worryingly, there are indications of ownership/management connections between PT Phoenix Resources International and PT Mayawana Persada,
-            PT Industrial Forest Plantation, PT Meranti Laksana, PT Meranti Lestari, and PT Lahan Cakrawala.</p>
-        <p class="mt-4 leading-relaxed">Deforestation for timber plantation development in 2024 was not only carried out by the pulp industry, but also by energy or biomass plantations, as was the case with three neighboring concessions – PT Inti Global Laksana, PT Banyan Tumbuh Lestari,
-            and PT Biomasa Jaya Abadi – in Gorontalo; PT Malinau Hijau Lestari in North Kalimantan; PT Jaya Bumi Paser in East Kalimantan; and PT Babugus Wahana Lestari in Central Kalimantan. </p>
+        <p class="mt-4 leading-relaxed">2023年には、木材プランテーション開発がインドネシアの森林破壊の最大の原因であり、そのほとんどがカリマンタンで発生しました。この森林破壊は非常に広範囲に及びましたが、発生したのはごく一部のコンセッションのみでした。 </p>
+        <p class="mt-4 leading-relaxed">この状況は2024年も続き、ほぼ完全に同じ企業、または所有権のつながりのある企業が引き起こしています。例えば、西カリマンタン州のマヤワナ・ペルサダ（Mayawana Persada）社による大規模な森林破壊は2024年に大幅に拡大し、中央カリマンタン州のインダストリアル・フォレスト・プランテーション（Industrial Forest Plantation）社でも同様でした。</p>
+        <p class="mt-4 leading-relaxed"> しかし、2024年に操業を開始した一部の木材プランテーションもあります。西カリマンタンのメラウィ県の3つの隣接するコンセッション（メランティ・ラクサナ（Meranti Laksana）社、メランティ・レスタリ（Meranti Lestari）社、ラハン・チャクラワラ（Lahan Cakrawala）社）は2024年後半に操業を開始しました。Auriga Nusantaraの研究者は2024年11月に森林破壊を記録し、特別レポートを間もなく発表する予定です。</p>
+        <p class="mt-4 leading-relaxed">木材プランテーション開発による森林破壊は、政府が北カリマンタン州のタラカンにおいてフェニックス・リソーシーズ・インターナショナル（Phoenix Resources International）社に巨大パルプ工場の設立許可を発行したため、来年もカリマンタンで続く見込みです。工場の原材料供給源について公的な説明はなく、もっとも懸念されるのは、フェニックス・リソーシーズ・インターナショナル（Phoenix Resources International）社とマヤワナ・ペルサダ（Mayawana Persada）社、インダストリアル・フォレスト・プランテーション（Industrial Forest Plantation）社、メランティ・ラクサナ（Meranti Laksana）社、メランティ・レスタリ（Meranti Lestari）社、ラハン・チャクラワラ（Lahan Cakrawala）社の間に所有権／経営のつながりがある兆候が見られることです。</p>
+        <p class="mt-4 leading-relaxed">2024年の木材プランテーション開発による森林破壊は、パルプ産業だけでなく、エネルギー用植林地またはバイオマス用植林地によっても引き起こされました。ゴロンタロ州の3つの隣接するコンセッション（インティ・グローバル・ラクサナ（Inti Global Laksana）社、バンヤン・トゥンブ・レスタリ（Banyan Tumbuh Lestari）社、ビオマサ・ジャヤ・アバディ（Biomasa Jaya Abadi）社）、北カリマンタン州のマリナウ・ヒジャウ・レスタリ（Malinau Hijau Lestari）社、東カリマンタン州のジャヤ・ブミ・パセル（Jaya Bumi Paser）社、中央カリマンタン州のバブグス・ワハナ・レスタリ（Babugus Wahana Lestari）社がその例です。 </p>
         <p class="mt-4 leading-relaxed">
-            Deforestation for energy plantation development looks set to continue in coming years, bearing in mind (1) the high market demand, especially from Japan and South Korea; (2) national electricity policy providing room for the use of wood-based biomass
-            as a raw material for generating around 5% – 10% of the country’s electricity by 2030; and (3) the drastic increase in energy plantation concession licenses issued by the Ministry of Forestry. A warning about high levels of deforestation for
-            the development of biomass energy plantations has been voiced by a coalition of civil society organizations through a report entitled <a href="https://auriga.or.id/report/download/id/report/112/bioenergy_threats_report_en_hi_res_id.pdf?lang=id"
-            target="_blank" class="underline text-simontini">Unheeded Warnings: Forest Biomass Threats to Tropical Forests in Indonesia and Southeast Asia.</a>
+
+            エネルギー用植林地の開発による森林破壊は、（1）特に日本と韓国からの高い市場需要、（2）2030年までに国の電力の約5％～10％を木材ベースのバイオマスで発電するための国家電力政策、（3）林業省によるエネルギー用植林地の事業許可の劇的な増加を考慮すると、今後数年間続く見込みです。エネルギー用植林地の開発による深刻な森林破壊について、市民社会団体の連合が『<a href="https://auriga.or.id/report/download/id/report/112/bioenergy_threats_report_en_hi_res_id.pdf?lang=id"
+            target="_blank" class="underline text-simontini">無視された警告：インドネシアと東南アジアの熱帯林を脅かす森林バイオマス</a>』と題する報告書を通じて警鐘を鳴らしました。
+
         </p>
     </div>
 </div>
@@ -1068,16 +1042,12 @@
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
 
     {{-- diskusi-4 --}}
-    <h2 class="font-bold mt-12">4. Oil palm continues to prey on Indonesia’s natural forests</h2>
+    <h2 class="font-bold mt-12">4. アブラヤシはインドネシアの天然林を食い荒らし続けている</h2>
     <div id="diskusi-4" class="pl-5">
         <p class="mt-4 leading-relaxed">
-
-            <i>“.. moving forward, we must plant more oil palm. There’s no need to be afraid ... endanger deforestation,”</i> <a href="https://youtu.be/faoo-qTC9Rg?si=MgZGUFJDCbtoQStH" target="_blank" class="underline text-simontini">said President Prabowo</a>            at the National Development Deliberation (Musrenbangnas) on 30 December 2024. Whether in line with this thought, or not, Prabowo is building justification for oil palm expansion that converts natural forest. Clearly, in 2024 deforestation
-            for oil palm development remained high in Indonesia, especially in Sumatra and Kalimantan. In 2024, oil palm development accounted for 37,483 ha, or 14% of all deforestation.
+            今後、私たちはもっと多くのアブラヤシを植えなければならない。恐れる必要はない…たとえそれによって森林破壊という危険にさらされるとしても」と、プラボウォ大統領は2024年12月30日の国家開発計画会議（Musrenbangnas）で述べました。この考えに沿っているかどうかは別として、プラボウォは天然林を転換するアブラヤシ拡大の正当化を構築しています。明らかに、2024年におけるアブラヤシ農園開発による森林破壊はインドネシア、特にスマトラとカリマンタンで高いままでした。2024年には、アブラヤシ農園開発が37,483ヘクタール、すべての森林破壊の14％を占めました。
         </p>
-        <p class="mt-4 leading-relaxed">Deforestation for oil palm tending to occur on a large scale in almost every oil palm deforestation point in 2024, indicates oil palm development being carried out by corporations, or being propped up by large investors, rather than smallholders
-            (categorized as under 25 ha). This was apparent with 2,019 ha of deforestation for oil palm in the PT Borneo International Anugerah (BIA) concession in West Kalimantan, and 1,347 ha in the PT Alam Lestari Indah concession in Central Kalimantan.
-            Deforestation for oil palm not only occurred in oil palm concessions, but also in the PT Diamond Raya Timber plantation concession in Riau Province.</p>
+        <p class="mt-4 leading-relaxed">2024年のほぼすべてのアブラヤシ森林破壊地点で大規模に発生する傾向があることは、アブラヤシ開発が小規模農家（25ヘクタール未満に分類）ではなく、企業や大規模投資家によって行われていることを示しています。これは、西カリマンタン州のボルネオ・インターナショナル・アヌゲラ（Borneo International Anugerah）社のコンセッションでアブラヤシのために2,019ヘクタール、中央カリマンタン州のアラム・レスタリ・インダ（Alam Lestari Indah）社のコンセッションで1,347ヘクタールの森林が失われたことからも明らかです。アブラヤシによる森林破壊は、アブラヤシ農園だけでなく、リアウ州のダイアモンド・ラヤ・ティンバー（Diamond Raya Timber）社のプランテーションコンセッションでも発生しました。</p>
     </div>
 </div>
 {{-- slide-4 --}}
@@ -1137,28 +1107,22 @@
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
 
     {{-- diskusi-5 --}}
-    <h2 class="font-bold mt-12">5. Nickel, gold, and timber plantations: A threefold threat to Sulawesi’s forests</h2>
+    <h2 class="font-bold mt-12">5. ニッケル、金、木材プランテーション：スラウェシ島における3つの脅威</h2>
     <div id="diskusi-5" class="pl-5">
         <p class="mt-4 leading-relaxed">
-            Deforestation in Sulawesi fell significantly in 2024. Nevertheless, bearing in mind the area of forest cover on the island is far below that of Papua, Kalimantan, and Sumatra, its deforestation figures should still be taken seriously. Deforestation in
-            Sulawesi, from highest to lowest, occurred in Central Sulawesi, Southeast Sulawesi, Gorontalo, West Sulawesi, South Sulawesi, and North Sulawesi.
+            スラウェシでの森林破壊は2024年に大幅に減少しました。それにもかかわらず、島の森林被覆面積がパプア、カリマンタン、スマトラに比べてはるかに少ないことを考慮すると、森林破壊面積の数値は依然として深刻に受け止めなければなりません。スラウェシでの森林破壊は、中央スラウェシ州、南東スラウェシ州、ゴロンタロ州、西スラウェシ州、南スラウェシ州、北スラウェシ州の順に発生しました。
         </p>
         <p class="mt-4 leading-relaxed">
-            In contrast to relatively flat Kalimantan, undulating hills are predominant on Sulawesi. The island, the entirety of which sits in the Wallacea region, is known for its high levels of floral and faunal endemism, particularly in its birds. In addition
-            to having significant potential to result in landslides and flash floods, deforestation on the island also has the potential to trigger higher levels of species extinction.
+            比較的平坦なカリマンタンとは異なり、スラウェシでは丘陵地が優勢です。全域がウォーレシア地域に位置するこの島は、特に鳥類において高い動植物固有性で知られています。地滑りや鉄砲水のリスクが高いだけでなく、島での森林破壊はより高いレベルの種の絶滅を引き起こす可能性もあります。
         </p>
         <p class="mt-4 leading-relaxed">
-            Seen by commodity, the nickel industry was the greatest driver of deforestation in Sulawesi, accounting for an area of 4,262 ha in 210 concessions in Central Sulawesi, Southeast Sulawesi, and South Sulawesi.
+            コモディティ別に見ると、ニッケル産業がスラウェシでの森林破壊の最大の要因であり、中央スラウェシ州、南東スラウェシ州、南スラウェシ州の210のコンセッションで4,262ヘクタールの面積を占めました。
         </p>
         <p class="mt-4 leading-relaxed">
-            A special note should be given to Gorontalo, a small province in northern Sulawesi, which has a relatively small area of natural forest, but experienced 2,180 ha of deforestation in 2024. As much as 71% of this deforestation was for energy plantation
-            development (biomass) by neighboring concessions, PT Inti Global Laksana, and PT Banyan Tumbuh Lestari, which supply the nearby PT Biomasa Jaya Abadi wood pellet mill. Auriga Nusantara analysis, due for imminent release, shows ownership links
-            between the three companies.
+            スラウェシ北部の小さな州であるゴロンタロには特別な注意が必要です。この州は比較的天然林の面積が小さいにもかかわらず、2024年に2,180ヘクタールの森林破壊が起きました。この森林破壊の71％は、近隣のインティ・グローバル・ラクサナ（Inti Global Laksana）社とバンヤン・トゥンブ・レスタリ（Banyan Tumbuh Lestari）社によるエネルギー用植林地の開発（バイオマス）のためであり、これらは近くのビオマサ・ジャヤ・アバディ（Biomasa Jaya Abadi）社による木質ペレット工場に供給しています。まもなく発表されるAuriga Nusantaraの分析は、これら3社間の所有関係のつながりを示しています。
         </p>
         <p class="mt-4 leading-relaxed">
-            The formation of this island through volcanic activity has resulted in it containing high levels of mining commodities. Not only is it home to nickel, the island also has relatively large gold reserves. Unfortunately, this potential threatens its natural
-            forest cover. An area of 181 ha of deforestation from gold mining activities was identified in 2024. This figure is what transpired inside mining operation concession areas; however, such activities were even identified to be encroaching on
-            conservation areas like Nantu Wildlife Refuge in Gorontalo, and Bogani Nani Wartabone National Park in North Sulawesi.
+            この島は火山活動によって形成されたため、豊富な鉱物資源を有しています。ニッケルの一大産地であるだけでなく、比較的大きな金の埋蔵量もあります。しかし残念ながら、この可能性は天然林被覆を脅かしています。2024年には金採掘活動による181ヘクタールの森林破壊が起きました。この数字は鉱山開発の地域内で発生したものですが、そのような活動はゴロンタロ州のナントゥ野生動物保護区や北スラウェシ州のボガニ・ナニ・ワルタボネ国立公園などの保全地域にも侵入していることが判明しています。
         </p>
     </div>
 </div>
@@ -1209,68 +1173,66 @@
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
 
     {{-- diskusi-6 --}}
-    <h2 class="font-bold mt-12">6. Deforestation for nickel ravages Tanah Papua</h2>
+    <h2 class="font-bold mt-12">6. ニッケル採掘のための森林破壊がパプアの土地を荒廃させる</h2>
     <div id="diskusi-6" class="pl-5">
-        <p class="mt-4 leading-relaxed">The public perhaps still thinks of Raja Ampat as an untouched cluster of small islands surrounded by beautiful calm seas filled with coral reefs. This island cluster – now a regency in Southwest Papua – is indeed known as a tourist destination
-            and for its natural beauty, especially its coral reef-filled waters. None other than President Jokowi even saw in the new year there.</p>
+        <p class="mt-4 leading-relaxed">おそらく一般の人々は、ラジャ・アンパット諸島を美しく静かな海とサンゴ礁に囲まれた手つかずの小さな島々の集まりとして考えているでしょう。現在は南西パプアの県となっているこの諸島は、確かに観光地として、特にサンゴ礁で満たされた水域の自然の美しさで知られています。ジョコウィ大統領でさえそこで新年を過ごしました。</p>
         <p class="mt-4 leading-relaxed">
-            However, this area of such national and international acclaim has been unable to withstand the onslaught of nickel mining. At least four small islands in Raja Ampat: Gag, Waigeo, Manuram, and Kawei have already been affected by nickel mines. Analysis
-            of satellite imagery indicates that to 2024, nickel mining had resulted in 174 ha of deforestation across the four islands.
+            しかし、このような国内外の評価を受けた地域も、ニッケル採掘の猛攻撃（開発の波）には耐えられませんでした。ラジャ・アンパット諸島にある少なくとも4つの小さな島、ガグ、ワイゲオ、マヌラン、カウェイはすでにニッケル鉱山の影響を受けています。衛星画像の分析によると、2024年までにニッケル採掘はこれら4つの島で174ヘクタールの森林破壊をもたらしました。
         </p>
         <p class="mt-4 leading-relaxed">
-            Not only that, but new nickel mining licenses have been issued to PT Mulia Raymond Perkasa for the islands of Batang Pele and Manyaifun, though mining operations have yet to commence.
+            さらに、バタンペレ島とマニャイフン島では、Mulia Raymond Perkasa社が新たなニッケル採掘の許可を得ていますが、採掘事業はまだ始まっていません。
         </p>
         <p class="mt-4 leading-relaxed">
-            Deforestation for nickel looks set to expand in Tanah Papua, as there are five mining licenses in this easternmost region of Indonesia. These licenses cover a total area of 38,529 ha, with 58%, or 22,452 ha, constituting natural forest cover.
+            パプアでのニッケル採掘による森林破壊は拡大する見込みです。インドネシア最東端地域には5つの採掘許可があり、これらの許可は合計38,529ヘクタールの面積をカバーし、そのうち58％、22,452ヘクタールが天然林に覆われています。
         </p>
     </div>
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative">
     {{-- table-9 --}}
-    <h3 class="text-simontini mt-6 mb-2 font-bold">NICKEL MINING PERMIT IN PAPUA LAND</h3>
+    <h3 class="text-simontini mt-6 mb-2 font-bold">パプアでのニッケル鉱山開発許可</h3>
     <div class="w-full overflow-auto bg-gray-800">
         <table class="w-full table-auto">
             <thead>
                 <tr class="bg-black">
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">CONSESSION</th>
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">LOCATION</th>
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">PERMIT AREA</th>
-                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">NATURAL FOREST IN CONCESSION</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">コンセッション</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">地域</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">許可地面積（ha）</th>
+                    <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">コンセッション地域内の天然林（ha）</th>
                 </tr>
             </thead>
             <tbody class="text-white">
                 <tr>
                     <td class="border border-black px-6 py-2">PT Anugerah Surya Pratama</td>
-                    <td class="border border-black px-6 py-2">Raja Ampat, Southwest Papua</td>
+                    <td class="border border-black px-6 py-2">ラジャアンパット、南西パプア</td>
                     <td class="border border-black px-6 py-2 text-right">1,167</td>
                     <td class="border border-black px-6 py-2 text-right">209</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Kawei Sejahtera Mining</td>
-                    <td class="border border-black px-6 py-2">Raja Ampat, Southwest Papua</td>
+                    <td class="border border-black px-6 py-2">ラジャアンパット、南西パプア</td>
                     <td class="border border-black px-6 py-2 text-right">5,691</td>
                     <td class="border border-black px-6 py-2 text-right">2,361</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Mulia Raymond Perkasa</td>
-                    <td class="border border-black px-6 py-2">Raja Ampat, West Papua</td>
+                    <td class="border border-black px-6 py-2">ラジャアンパット、西パプア</td>
                     <td class="border border-black px-6 py-2 text-right">2,194</td>
                     <td class="border border-black px-6 py-2 text-right">874</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Gag Nikel</td>
-                    <td class="border border-black px-6 py-2">Raja Ampat, West Papua</td>
+                    <td class="border border-black px-6 py-2">ラジャアンパット、西パプア</td>
                     <td class="border border-black px-6 py-2 text-right">13,078</td>
                     <td class="border border-black px-6 py-2 text-right">2,838</td>
                 </tr>
                 <tr>
                     <td class="border border-black px-6 py-2">PT Iriana Mutiara Mining</td>
-                    <td class="border border-black px-6 py-2">Sarmi, Papua</td>
+                    <td class="border border-black px-6 py-2">サルミ、パプア</td>
                     <td class="border border-black px-6 py-2 text-right">16,399</td>
                     <td class="border border-black px-6 py-2 text-right">16,170</td>
                 </tr>
                 <tr class="bg-black">
-                    <td class="border border-black px-6 py-2 font-bold">TOTAL</td>
+                    <td class="border border-black px-6 py-2 font-bold">合計</td>
                     <td class="border border-black px-6 py-2 font-bold"></td>
                     <td class="border border-black px-6 py-2 text-right font-bold">38,529</td>
                     <td class="border border-black px-6 py-2 text-right font-bold">22,452</td>
@@ -1338,87 +1300,84 @@
 </div>
     <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
         {{-- diskusi-7 --}}
-        <h2 class="font-bold mt-12">7. Massive deforestation is also occurring in conservation areas</h2>
+        <h2 class="font-bold mt-12">7. 保全地域でも大規模な森林破壊が起きている</h2>
         <div id="diskusi-7" class="pl-5">
             <p class="mt-4 leading-relaxed">
-                On 31 October 2024, a coalition of civil society organizations involving Ekspedisi Indonesia Baru, HAKA Aceh, Forest Watch Indonesia, Greenpeace Indonesia, Pusaka Belantara Rakyat, and Auriga Nusantara released the film <b>17 Sweet Letters</b>                at the COP 16 Convention on Biological Diversity in Cali, Colombia. The Indonesian language version of the film, entitled <b>17 Surat Cinta</b> and released domestically on 17 November 2024, tells the story of how deforestation has continued
-                for years in the Rawa Singkil Wildlife Refuge conservation area in Aceh. Conservation activists had already sent 17 letters of complaint to the government, but the deforestation continued unabated. During 2024, 159 ha of deforestation
-                was identified in this habitat for elephants, orangutans, and other iconic wildlife.
+                2024年10月31日、Ekspedisi Indonesia Baru、HAKA Aceh、Forest Watch Indonesia、Greenpeace Indonesia、Pusaka Belantara Rakyat、Auriga Nusantaraからなる市民社会組織連合が、コロンビア・カリで開催された生物多様性条約第16回締約国会議（COP 16）で映画「17 Sweet Letters」を発表しました。そのインドネシア語版「17 Surat Cinta」は2024年11月17日に国内で公開され、アチェ州のラワ・シンキル野生動物保護区で長年続く森林破壊の物語を描いています。保全活動家たちは政府に対し17通の苦情文書を送っていましたが、森林破壊は続いています。2024年には、ゾウやオランウータンなど象徴的な野生動物の生息地で159ヘクタールの森林破壊が確認されました。
             </p>
             <p class="mt-4 leading-relaxed">
-                Throughout 2024, 7,704 ha of deforestation was identified inside conservation areas. This deforestation occurred in national parks, wildlife refuges, nature reserves, great forest parks, ecotourism parks, and game parks in 37 provinces.
+                2024年を通じて、インドネシア全体で保全地域内の合計7,704ヘクタールの森林破壊が確認されました。この森林破壊は、37州の国立公園、野生生物保護区、自然保護区、大森林公園、エコツーリズム公園、狩猟エリアで行われています。
             </p>
             <p class="mt-4 leading-relaxed">
-                Deforestation inside conservation areas should be of particular concern as dedicated management agencies, such as natural resources conservation agencies and technical management units, have already been established, and it is strictly prohibited by at
-                least four laws: the conservation law, forestry law, environmental law, and illegal logging eradication law.
+               保全地域内の森林破壊は、自然資源保全庁や技術管理ユニットなどの専門管理機関がすでに設置されており、少なくとも4つの法律（保全法、林業法、環境法、違法伐採撲滅法）によって厳しく禁止されているため、特に懸念されるべきです。
             </p>
         </div>
     </div>
     <div class="max-w-5xl mx-auto px-4 z-20 relative">
         {{-- table-10 --}}
-        <h3 class="text-simontini mt-6 mb-2 font-bold">TOP TEN CONSERVATION AREA DEFORESTATION BY 2024</h3>
+        <h3 class="text-simontini mt-6 mb-2 font-bold">保護地域における森林破壊トップ10</h3>
         <div class="w-full overflow-auto bg-gray-800">
             <table class="w-full table-auto">
                 <thead>
                     <tr class="bg-black">
-                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">CONSERVATION AREA</th>
-                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">PROVINCE</th>
-                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">Deforestation in 2024 (HA)</th>
+                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">保全地域</th>
+                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">州</th>
+                        <th class="border border-black px-6 py-3 text-left font-semibold text-white uppercase">2024年の森林破壊面積（ha）</th>
                     </tr>
                 </thead>
                 <tbody class="text-white">
                     <tr>
                         <td class="border border-black px-6 py-2">Kerinci Seblat National Park</td>
-                        <td class="border border-black px-6 py-2">Bengkulu, Jambi, West Sumatra dan South Sumatra</td>
+                        <td class="border border-black px-6 py-2">ベンクル、ジャンビ、西スマトラ、南スマトラ</td>
                         <td class="border border-black px-6 py-2 text-right">1,283</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">Lorentz National Park</td>
-                        <td class="border border-black px-6 py-2">Papua Mountains, South Papua dan Central Papua</td>
+                        <td class="border border-black px-6 py-2">山岳パプア、南パプア、中央パプア</td>
                         <td class="border border-black px-6 py-2 text-right">900</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">Memberamo Foja Wildlife Sanctuary</td>
-                        <td class="border border-black px-6 py-2">Papua, Papua Mountains, Central Papua</td>
+                        <td class="border border-black px-6 py-2">パプア、山岳パプア、中央パプア</td>
                         <td class="border border-black px-6 py-2 text-right">490</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">Bukit Soeharto Forest Park</td>
-                        <td class="border border-black px-6 py-2">East Kalimantan</td>
+                        <td class="border border-black px-6 py-2">東カリマンタン</td>
                         <td class="border border-black px-6 py-2 text-right">363</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">Jayawijaya Mountains Wildlife Sanctuary</td>
-                        <td class="border border-black px-6 py-2">Papua Mountains</td>
+                        <td class="border border-black px-6 py-2">山岳パプア</td>
                         <td class="border border-black px-6 py-2 text-right">357</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">Gunung Leuser National Park</td>
-                        <td class="border border-black px-6 py-2">Aceh dan North Sumatra</td>
+                        <td class="border border-black px-6 py-2">アチェ、北スマトラ</td>
                         <td class="border border-black px-6 py-2 text-right">335</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">Bukit Rimbun Bukit Baling Wildlife Sanctuary</td>
-                        <td class="border border-black px-6 py-2">Riau dan West Sumatra</td>
+                        <td class="border border-black px-6 py-2">リアウ、西スマトラ</td>
                         <td class="border border-black px-6 py-2 text-right">312</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">Tesso Nilo National Park</td>
-                        <td class="border border-black px-6 py-2">Riau</td>
+                        <td class="border border-black px-6 py-2">リアウ</td>
                         <td class="border border-black px-6 py-2 text-right">251</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">Dangku Wildlife Sanctuary</td>
-                        <td class="border border-black px-6 py-2">South Sumatra</td>
+                        <td class="border border-black px-6 py-2">南スマトラ</td>
                         <td class="border border-black px-6 py-2 text-right">236</td>
                     </tr>
                     <tr>
                         <td class="border border-black px-6 py-2">Giam Siak Kecil Wildlife Sanctuary</td>
-                        <td class="border border-black px-6 py-2">Riau</td>
+                        <td class="border border-black px-6 py-2">リアウ</td>
                         <td class="border border-black px-6 py-2 text-right">221</td>
                     </tr>
                     <tr>
-                        <td class="border border-black px-6 py-2">188 other conservation area</td>
+                        <td class="border border-black px-6 py-2">その他188の保全地域</td>
                         <td class="border border-black px-6 py-2"></td>
                         <td class="border border-black px-6 py-2 text-right">2,933</td>
                     </tr>
@@ -1469,23 +1428,18 @@
 
         <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
             <div id="rekomendasi" class="pt-[45px] -mt-[45px]">
-                <h1 class="text-3xl font-bold mt-12 text-simontini">RECOMMENDATIONS</h1>
+                <h1 class="text-3xl font-bold mt-12 text-simontini">提言</h1>
                 <p class="mt-6 leading-relaxed">
-                    Currently, legal protection for natural forest in Indonesia only applies to natural forests inside conservation areas, as the conversion of forest cover and/or landscapes within them is prohibited. Of a total 22.4 million ha of conservation areas in Indonesia,
-                    17.3 million ha constitute natural forest cover.
+                    現在、インドネシアの天然林に対する法的保護は、保全地域内の天然林にのみ適用されています。なぜなら、これらの地域では森林被覆やランドスケープの転換が禁止されているからです。インドネシアの保全地域の総面積2,240万ヘクタールのうち、1,730万ヘクタールが天然林被覆となっています。
                 </p>
                 <p class="mt-4 leading-relaxed">
-                    There is indeed a moratorium policy on new licenses for primary forest (and peatlands). However, it should be underlined that this moratorium is a policy, not a regulation, so the protection it affords is not permanent. Moratoria, formally designated
-                    through indicative maps called Peta Indikatif Penundaan Pemberian Izin Baru (PIPPIB) pada Hutan Alam Primer and Lahan Gambut, have been designated through Minister of Environment and Forestry decrees. In the most recent decree, dated
-                    November 2023, the PIPPIB area covered 66.3 million ha. A spatial analysis of this map showed 53.5 million ha of natural forest inside the moratorium area. Still, all conservation areas are included inside the PIPPIB area.
+                    確かに、原生林（および泥炭地）の新規許可に関するモラトリアム政策は存在します。しかし、このモラトリアムは政策であり規制ではないため、その保護は恒久的ではありません。「Peta Indikatif Penundaan Pemberian Izin Baru（PIPPIB）」と呼ばれる地図を通じて正式に指定されたこのモラトリアムは、環境林業大臣令によって定められています。2023年11月時点の最新版では、6,630万ヘクタールの地域をカバーしています。この地図の空間分析によれば、モラトリアム地域内には5,350万ヘクタールの天然林があります。それでも、すべての保全地域はPIPPIB地域内に含まれています。
                 </p>
                 <p class="mt-4 leading-relaxed">
-                    Natural forests outside the two categories above have no legal protection or policy at all. For that reason, Minister of Forestry, Raja Juli Antoni, for instance, could blithely say he will provide <a href="https://www.youtube.com/watch?v=xaRhYDmVTWc"
-                    target="_blank" class="underline text-simontini">20 million ha of forest estate</a> for food, energy, and water reserves.
+                    上記の2つのカテゴリー以外の天然林には、法的保護や政策がまったくありません。例えば、林業大臣ラジャ・ジュリ・アントニ氏は、食料・エネルギー・水の備蓄のために2,000万ヘクタールの森林地域を提供すると発言しています。
                 </p>
                 <p class="mt-4 leading-relaxed">
-                    Meanwhile, as shown by MapBiomas Indonesia Collection 3, Indonesia currently has 94.9 million ha of natural forests, 52.9 million ha of which are in PIPPIB areas. This means, 42 million ha of natural forest have no legal protection or policy. An aggregate
-                    nine million ha of this figure is even inside conversion concessions for oil palm (2.3 million ha), mining (3.2 million ha), and timber plantations (3.5 million ha).
+                    一方、「MapBiomas Indonesia Collection 3」が示すように、インドネシアは現在9,490万ヘクタールの天然林を有しており、そのうち5,290万ヘクタールがモラトリアム地域にあります。これは、4,200万ヘクタールの天然林に法的保護や政策がないことを意味します。この数字のうち合計900万ヘクタールは、アブラヤシ（230万ヘクタール）、鉱業（320万ヘクタール）、木材プランテーション（350万ヘクタール）の転換コンセッション内にさえ含まれています。
                 </p>
 
             </div>
@@ -1496,32 +1450,31 @@
         <p class="text-sm mt-2">Deforestation in 2001-2022 gathered by overlaying University of Maryland's Lossyear data against forest cover in 2000 by Ministry of Forestry</p>
         <p class="text-sm sm:-mt-1 mt-2">Deforestation in 2023 and 2024 using Auriga Nusantara STADI (Indonesia Deforestation Status) which available on https://simontini.id/</p>
     </div>
+
     <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-12">
         <div>
             <div>
                 <p class="mt-4 leading-relaxed">
-                    Legal protection for natural forest should ideally be in the form of a law. Though passing a law is not an easy task, and always takes years. Even the level of legislation immediately below, i.e., a government regulation, frequently takes a long time,
-                    particularly as it is complicated by the complexities of securing inter-ministerial agreement; a necessary precondition for a government regulation.
+                    天然林に対する保護は、理想的には法律の形を取るべきです。法律を制定するのは簡単な作業ではなく、通常何年もかかります。次のレベルの立法、すなわち政府規則でさえ、省庁間合意の確保という前提条件の複雑さにより、しばしば長い時間がかかります。
                 </p>
                 <p class="mt-4 leading-relaxed">
-                    For that reason, a legal breakthrough could be undertaken in a short time in the form of a presidential regulation, which has similar force to a government regulation. Therefore, it is time for President Prabowo Subianto to issue a presidential regulation
-                    that provides legal protection for all remaining natural forest in Indonesia. </b><span class="bg-red-500 h-3 w-3 inline-flex"></span>
+                   したがって、政府規則と同等の効力を持つ大統領令の形で、短期間で法的な突破口を実現することが可能です。したがって、プラボウォ・スビアント大統領がインドネシアの残存するすべての天然林に法的保護を提供する大統領令を発行する時が来ています。 <span class="bg-red-500 h-3 w-3 inline-flex"></span>
                 </p>
 
             </div>
 
             <div class="text-center border-black mt-24">
                     <div class="mb-4">
-                        <a class=" font-semibold mb-1 ">Authors: </a>
+                        <a class=" font-semibold mb-1 ">著者: </a>
                         <p >Timer Manurung, Dedy Sukmara, Andhika Younastya</p>
                     </div>
                     <div class="mt-6">
-                        <a class=" font-semibold ">Data and processing </a>
+                        <a class=" font-semibold ">データ収集・編集 </a>
                         <p class="mt-1">Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika Laura, Dedy Sukmara, M. Alichamdan, M. Dendi Alfitrah, Sesilia Maharani Putri, Wahyu Ananta Nugraha, Yustinus Seno</p>
                     </div>
 
                     <div class="mt-6">
-                        <a class="  font-semibold ">On-ground verification: </a>
+                        <a class="  font-semibold ">実地検証: </a>
                         <p class="mt-1">
                             Bagus Subgiarto, Fajar Simanjuntak, Gilang Ekselsa, Hafid Azi Darma, Hilman Afif, Riszki Is Hardianto, Robby Eebor, Supintri Yohar, Yudi Nofiandi, Sulih Primara Putra
                         </p>

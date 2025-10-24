@@ -12,9 +12,11 @@
 
     <div class="max-w-7xl mx-auto relative z-10 px-6   flex  sm:gap-10 gap-6 items-center">
         <div class="flex space-x-2 text-gray-300 text-sm">
-            <a href="{{ url('/en/status-of-deforestation-in-indonesia-2024')}}" class="cursor-pointer">EN</a>
+            <a href="{{ url('/en/status-of-deforestation-in-indonesia-2024')}}" class="cursor-pointer text-simontini font-bold  ">EN</a>
             <div class="border-l border-gray-300"></div>
-            <a href="{{ url('/id/status-deforestasi-indonesia-2024') }}" class="cursor-pointer text-simontini font-bold ">ID</a>
+            <a href="{{ url('/id/status-deforestasi-indonesia-2024') }}" class="cursor-pointer   ">ID</a>
+            <div class="border-l border-gray-300"></div>
+            <a href="{{ url('/jp/status-of-deforestation-in-indonesia-2024') }}" class="cursor-pointer   ">JP</a>
         </div>
         <a href="{{ route('index', 'id') }}" class="md:w-2/12 w-4/12"><img src="{{ asset('assets/logo-simontinus.png') }}" alt="Simontini" class="  sm:h-6 h-5 "></a>
         <div class=" w-8/12  flex sm:gap-6 gap-2 items-center overflow-auto no-scrollbar">
