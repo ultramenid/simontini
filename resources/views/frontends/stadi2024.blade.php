@@ -12,9 +12,9 @@
 
     <div class="max-w-7xl mx-auto relative z-10 px-6   flex  sm:gap-10 gap-6 items-center">
         <div class="flex space-x-2 text-gray-300 text-sm">
-            <a href="{{ url('/en/status-of-deforestation-in-indonesia-2024')}}" class="cursor-pointer text-simontini font-bold  ">EN</a>
+            <a href="{{ url('/en/status-of-deforestation-in-indonesia-2024')}}" class="cursor-pointer   ">EN</a>
             <div class="border-l border-gray-300"></div>
-            <a href="{{ url('/id/status-deforestasi-indonesia-2024') }}" class="cursor-pointer   ">ID</a>
+            <a href="{{ url('/id/status-deforestasi-indonesia-2024') }}" class="cursor-pointer  text-simontini font-bold ">ID</a>
             <div class="border-l border-gray-300"></div>
             <a href="{{ url('/jp/status-of-deforestation-in-indonesia-2024') }}" class="cursor-pointer   ">JP</a>
         </div>
