@@ -12,6 +12,8 @@ use App\Http\Middleware\setLanguage;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/id');
+
+// stadi 2024
 Route::get('/id/status-deforestasi-indonesia-2024', [InsightContoller::class, 'stadi2024'])->name('stadi2024');
 Route::get('/en/status-of-deforestation-in-indonesia-2024', [InsightContoller::class, 'stadi2024EN'])->name('stadi2024EN');
 Route::get('/jp/status-of-deforestation-in-indonesia-2024', [InsightContoller::class, 'stadi2024JP'])->name('stadi2024JP');

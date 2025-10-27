@@ -1487,6 +1487,10 @@
                     <p>Auriga Nusantara. 2025. Status of Deforestation in Indonesia 2024, accessed on [DD/MM/YYYY] through [LINK].</p>
                 </div>
 
+                <div class="flex flex-col w-full text-center justify-center mb-24 mt-6">
+                    <p>The translation to Japanese is conducted by <a class="text-simontini underline" href="https://en.jatan.org/" target="_blank">JATAN</a></p>
+                </div>
+
 
 
 
