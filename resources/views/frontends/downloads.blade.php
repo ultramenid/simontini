@@ -19,7 +19,7 @@
     <div class="max-w-3xl mx-auto  sm:px-12 px-4 h-screen  py-12">
         <div class="pb-4 border-b border-simontini mb-12">
             <a class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Deforestasi Indonesia')}} 2025</a>
-            <div class="flex gap-4">
+            <div class="flex gap-4 sm:text-sm text-sm">
                 [
                     <a target="_blank" href="#" x-show="download" class=" flex items-center cursor-pointer text-atas">{{__('peta digital')}}</a>
                     |
