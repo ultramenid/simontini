@@ -30,13 +30,13 @@
                     @endif
                     |
                     @if (app()->getLocale() == 'id')
-                        <a target="_blank" href="#"  class=" flex items-center cursor-pointer text-atas">presentasi</a>
+                        <a target="_blank" href="{{ asset('presentation/STADI - Status Deforestasi Indonesia 2025.pptx') }}"  class=" flex items-center cursor-pointer text-atas">presentasi</a>
                     @else
-                        <a target="_blank" href="#"  class=" flex items-center cursor-pointer text-atas">presentation</a>
+                        <a target="_blank" href="{{ asset('presentation/STADI - Status of deforestation in indonesia 2025.pptx') }}"  class=" flex items-center cursor-pointer text-atas">presentation</a>
                     @endif
                 ]
             </div>
-            <p class="sm:text-sm text-xs mt-4">{{__('Sitasi:')}} <br> Auriga Nusantara. 2025. <a class="underline font-semibold" >{{__('Status Deforestasi Indonesia 2025')}}</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
+            <p class="sm:text-sm text-xs mt-4">{{__('Sitasi:')}} <br> Auriga Nusantara. 2026. <a class="underline font-semibold" >{{__('Status Deforestasi Indonesia 2025')}}</a>, {{__('diakses pada')}} [DD/MM/YYYY] {{__('melalui tautan')}} [LINK].</p>
         </div>
         <div class="pb-4 border-b border-simontini mb-12">
             <a class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Deforestasi Indonesia')}} 2024</a>
