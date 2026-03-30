@@ -46,6 +46,7 @@ const baseLayerConfigs = baseLayers.map(b => {
 
   // WMS layers
   const wmsLayers = {
+    deforestasi2025: 'simontini:STADI_2025',
     deforestasi2023: 'simontini:Auriga - Deforestasi 2023',
     deforestasi2024: 'simontini:ID_STADI24_CEA',
     kawasanhutan: 'simontini:Forest_estate_adm',
