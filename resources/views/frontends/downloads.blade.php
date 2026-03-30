@@ -21,7 +21,7 @@
             <a class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Deforestasi Indonesia')}} 2025</a>
             <div class="flex gap-4 sm:text-sm text-sm">
                 [
-                    <a target="_blank" href="#" x-show="download" class=" flex items-center cursor-pointer text-atas">{{__('peta digital')}}</a>
+                    <a target="_blank" href="https://simontini.id/assets/STADI-2025.zip" x-show="download" class=" flex items-center cursor-pointer text-atas">{{__('peta digital')}}</a>
                     |
                     @if (app()->getLocale() == 'id')
                         <a target="_blank" href="#"  class=" flex items-center cursor-pointer text-atas">insight</a>

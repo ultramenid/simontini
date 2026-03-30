@@ -47,7 +47,7 @@
                       </svg>
                 </div>
                 <div class="w-full mt-2 flex flex-col gap-1" x-show="open === 'open2'" style="display: none !important">
-                     <x-checkbox idAttr="deforestasi2025" layerName="#">
+                     <x-checkbox idAttr="deforestasi2025" layerName="simontini:STADI_2025">
                         {{__('Deforestasi 2025')}}
                     </x-checkbox>
                     <x-checkbox idAttr="deforestasi2024" layerName="simontini:2024_stadi_c2_adm">
