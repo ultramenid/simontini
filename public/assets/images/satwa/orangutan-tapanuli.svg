@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Orangutan Tapanuli">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#bg)"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#ffedd5" stroke-width="4" opacity="0.65"/>
+  <path d="M30 60c0-18 12-30 30-30s30 12 30 30c0 6-2 12-5 18H35c-3-6-5-12-5-18z" fill="#fed7aa" opacity="0.82"/>
+  <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="700" fill="#7c2d12">OT</text>
+  <text x="60" y="90" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="9" letter-spacing="1.2" fill="#ffedd5">TAPANULI</text>
+</svg>

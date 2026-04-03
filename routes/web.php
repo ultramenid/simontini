@@ -63,6 +63,12 @@ Route::get('/en/status-of-deforestation-in-indonesia-2024', [InsightContoller::c
 Route::get('/jp/status-of-deforestation-in-indonesia-2024', [InsightContoller::class, 'stadi2024JP'])->name('stadi2024JP');
 
 
+
+// stadi 2025
+Route::middleware('httpauth')->group(function () {
+    Route::get('/id/status-deforestasi-indonesia-2025', [InsightContoller::class, 'stadi2025'])->name('stadi2025');
+});
+
 Route::middleware([setLanguage::class])->group(function () {
     Route::group(['prefix' => '{lang}'], function () {
         Route::get('/', [IndexController::class, 'index'])->name('index');

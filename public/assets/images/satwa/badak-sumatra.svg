@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Badak Sumatra">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5e3c"/>
+      <stop offset="100%" stop-color="#5b3a29"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#bg)"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#f5e7db" stroke-width="4" opacity="0.65"/>
+  <path d="M33 75c4-22 18-34 27-34 10 0 24 12 27 34l-12 4c-2-14-8-22-15-22s-13 8-15 22z" fill="#f5e7db" opacity="0.88"/>
+  <path d="M57 33l12 0-6 14z" fill="#f5e7db" opacity="0.9"/>
+  <text x="60" y="67" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="30" font-weight="700" fill="#fff8f3">BS</text>
+  <text x="60" y="90" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="#fff8f3">BADAK</text>
+</svg>

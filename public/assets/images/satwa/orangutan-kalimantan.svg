@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Orangutan Kalimantan">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#bg)"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#ffedd5" stroke-width="4" opacity="0.65"/>
+  <path d="M28 60c0-18 13-31 32-31 18 0 32 13 32 31 0 6-2 12-5 18H33c-3-6-5-12-5-18z" fill="#fdba74" opacity="0.85"/>
+  <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="700" fill="#7c2d12">OK</text>
+  <text x="60" y="90" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="8.5" letter-spacing="1.1" fill="#ffedd5">KALIMANTAN</text>
+</svg>

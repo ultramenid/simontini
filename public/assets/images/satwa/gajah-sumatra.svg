@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Gajah Sumatra">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#bg)"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#e2e8f0" stroke-width="4" opacity="0.65"/>
+  <path d="M32 44c8-8 18-12 28-12 11 0 21 4 28 12l-9 7c-6-5-12-7-19-7-6 0-13 2-19 7z" fill="#cbd5e1" opacity="0.85"/>
+  <path d="M48 54h24v16c0 9-5 15-12 15s-12-6-12-15z" fill="#cbd5e1" opacity="0.85"/>
+  <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="30" font-weight="700" fill="#f8fafc">GS</text>
+  <text x="60" y="90" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="#f8fafc">GAJAH</text>
+</svg>
