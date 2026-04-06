@@ -32,8 +32,8 @@
             <li><a href="#rekomendasi">Recommendations</a></li>
         </ul>
         <div class="global-lang" aria-label="language switcher">
-            <button type="button" id="lang-id" class="g-lang-btn active">ID</button>
-            <button type="button" id="lang-en" class="g-lang-btn">EN</button>
+            <a href="{{ url('/id/status-deforestasi-indonesia-2025') }}" id="lang-id" class="g-lang-btn ">ID</a>
+            <a href="{{ url('/en/status-of-deforestation-in-indonesia-2025') }}" id="lang-en" class="g-lang-btn active">EN</a>
         </div>
     </div>
 </nav>
