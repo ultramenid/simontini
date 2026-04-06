@@ -1180,9 +1180,9 @@
     </div>
   </div>
 
-  <p class="body-text">
+  {{-- <p class="body-text">
     Selain itu, komitmen ESG para pemilik atau pengelola izin serta insentif bagi pemerintah daerah, komunitas lokal, dan swasta dalam perlindungan hutan alam perlu diperkuat agar perlindungan hutan tidak hanya bergantung pada pendekatan administratif semata.
-  </p>
+  </p> --}}
 
   <hr class="divider">
 
