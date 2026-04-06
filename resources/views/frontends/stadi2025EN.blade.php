@@ -38,7 +38,7 @@
     </div>
 </nav>
 <section id="hero">
-    <h1>Status Deforestasi Indonesia 2025</h1>
+    <h1>INDONESIA DEFORESTATION STATUS 2025</h1>
     <div class="hero-meta">
         <div class="hero-stat">
             <span class="hs-val">433.751</span>
@@ -51,7 +51,8 @@
          </div> -->
         <div class="hero-divider"></div>
         <div class="hero-desc">
-            Deforestation is on the rise; it’s time for the government to issue regulations to protect all remaining natural forests
+            Deforestation is on the rise; it’s time for the government to issue regulations to protect all remaining
+            natural forests
         </div>
     </div>
     <div class="scroll-hint">
@@ -542,7 +543,8 @@
                             <div class="flex flex-row-reverse items-center flex-1">
                                 <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
                                     id="r3c3" onclick="alurToggle(this)">
-                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Automatic Image Acquisition
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Automatic Image
+                                        Acquisition
                                     </div>
                                     <div
                                         class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
@@ -564,7 +566,8 @@
                                         Indikatif</div>
                                     <div
                                         class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                        Sentinel image prediction using a <em class="italic text-[#8a7e78]">deep learning</em>
+                                        Sentinel image prediction using a <em class="italic text-[#8a7e78]">deep
+                                            learning</em>
                                         model that has been trained.</div>
                                 </div>
                             </div>
@@ -627,11 +630,13 @@
                                     <div class="flex items-center flex-1">
                                         <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
                                             id="r4c2a" onclick="alurToggle(this)">
-                                            <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Visual Inspection
+                                            <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Visual
+                                                Inspection
                                             </div>
                                             <div
                                                 class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                                Verification through direct visual inspection of satellite imagery.</div>
+                                                Verification through direct visual inspection of satellite imagery.
+                                            </div>
                                         </div>
                                         <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
                                             id="r4a2a"><svg viewBox="0 0 36 14" fill="none">
@@ -858,7 +863,8 @@
                         Geser tabel ke samping untuk melihat semua kolom.
                     </div>
                     <div class="tight text-[10px] px-2 mb-2 w-full">
-                        Interactive table of the results of the 2025 deforestation data accuracy test, broken down by polygon area.
+                        Interactive table of the results of the 2025 deforestation data accuracy test, broken down by
+                        polygon area.
                     </div>
                 </div>
             </div>
@@ -931,7 +937,8 @@
                                     <div>
                                         <div class="relative h-[92px] flex items-end">
                                             <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                                                <span></span><span></span><span></span><span></span><span></span></div>
+                                                <span></span><span></span><span></span><span></span><span></span>
+                                            </div>
                                             <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
                                                 id="peta-bars-sumatra"></div>
                                         </div>
@@ -956,7 +963,8 @@
                                     <div>
                                         <div class="relative h-[92px] flex items-end">
                                             <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                                                <span></span><span></span><span></span><span></span><span></span></div>
+                                                <span></span><span></span><span></span><span></span><span></span>
+                                            </div>
                                             <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
                                                 id="peta-bars-kalimantan"></div>
                                         </div>
@@ -981,7 +989,8 @@
                                     <div>
                                         <div class="relative h-[92px] flex items-end">
                                             <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                                                <span></span><span></span><span></span><span></span><span></span></div>
+                                                <span></span><span></span><span></span><span></span><span></span>
+                                            </div>
                                             <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
                                                 id="peta-bars-sulawesi"></div>
                                         </div>
@@ -1006,7 +1015,8 @@
                                     <div>
                                         <div class="relative h-[92px] flex items-end">
                                             <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                                                <span></span><span></span><span></span><span></span><span></span></div>
+                                                <span></span><span></span><span></span><span></span><span></span>
+                                            </div>
                                             <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
                                                 id="peta-bars-papua"></div>
                                         </div>
@@ -1407,7 +1417,8 @@
                 <aside id="sidebar"
                     class="sm:w-[350px] w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] px-4 py-4 overflow-y-auto border-r border-white/[.08]">
                     <h1 class="text-[1.05rem] font-bold leading-[1.15] mb-1 p-1">Thematic Map of Deforestation</h1>
-                    <p class="px-1 text-[.58rem] tracking-[.1em] uppercase text-[#d4c4a0] mb-[10px]">Choose analysis type · 2025</p>
+                    <p class="px-1 text-[.58rem] tracking-[.1em] uppercase text-[#d4c4a0] mb-[10px]">Choose analysis
+                        type · 2025</p>
                     <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
                         style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)"
