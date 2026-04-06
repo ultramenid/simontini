@@ -1287,13 +1287,13 @@
                 (8) North Kalimantan, (9) Bangka Belitung, and (10) North Sumatra, the top ten ranking in 2025 shifted to:
                 (1) Central Kalimantan, (2) East Kalimantan, (3) Aceh, (4) West Kalimantan, (5) Central Papua, (6) West
                 Sumatra, (7) North Sumatra, (8) North Kalimantan, (9) Riau, and (10) Highland Papua.
-            </p><br>
+            </p>
 
             <p class="body-text">
                 Three provinces that experienced catastrophic landslides and flooding in northern Sumatra at the end of 2025
                 recorded dramatic increases in deforestation: Aceh (426%), North Sumatra (281%), and West Sumatra
                 (1,034%).<br>
-            </p><br>
+            </p>
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
@@ -1374,7 +1374,7 @@
                 Deforestation occurred in 383 regencies/municipalities, or 74% of Indonesia’s total of 514, down from 428 in
                 the previous year. The top ten regencies for deforestation were in Kalimantan and Papua, accounting for
                 95,733 hectares or 22% of national deforestation.<br>
-            </p><br>
+            </p>
 
             <p class="body-text">
                 Seen in terms of land control status, 307,861 hectares (71%) of deforestation occurred inside forest estates
@@ -1389,7 +1389,7 @@
                 deforestation occurred in 163 conservation areas. The top ten conservation areas alone accounted for 17,153
                 hectares, or 68% of total deforestation within all conservation areas.<br>
 
-            </p><br>
+            </p>
 
             <p class="body-text">
                 Deforestation of 156,463 hectares – excluding double counting in overlapping habitats – occurred in 29
@@ -1407,13 +1407,13 @@
                 hectares of the forest estate for food, energy, and water reserves. A total of 78,213 hectares, or 18% of
                 national deforestation occurred within these designated areas.<br>
 
-            </p><br>
+            </p>
 
             <p class="body-text">
                 Around 44% of deforestation occurred inside concession areas, with forestry concessions accounting for the
                 highest percentage (58%). The majority of deforestation in concessions (65%) occurred in Kalimantan.<br>
 
-            </p><br>
+            </p>
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
@@ -1479,7 +1479,7 @@
 
             <p class="body-text">
                 Deforestation amounting to 41,162 hectares occurred inside 1,140 mining permit or concession areas, with the
-                top ten accounting for 22% (8,929 hectares).<br>
+                top ten accounting for 22% (8,929 hectares).
 
             </p>
 
@@ -1488,14 +1488,14 @@
                 Deforestation amounting to 37,910 hectares occurred inside 719 oil palm concessions throughout 2025, with
                 the top ten concessions accounting for 36% (13,610 hectares). <br>
 
-            </p><br>
+            </p>
 
             <p class="body-text">
                 Deforestation amounting to 110,898 hectares occurred inside 486 forestry concessions, with 74,409 hectares
                 in logging concessions, 33,063 hectares in pulpwood concessions, 671 hectares in ecosystem restoration
                 concessions, and 2,754 hectares in other forestry concessions.<br>
 
-            </p><br>
+            </p>
 
             <p class="body-text">
                 Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.<br>
