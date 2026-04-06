@@ -272,7 +272,7 @@
             </div>
 
             <!-- ALUR INLINE — replaces <iframe src="alur.html"> -->
-            <div id="alur-embed" class="bg-[#0e0e0e] font-poppins text-[#e8e2d8] antialiased overflow-x-auto px-4">
+            <div id="alur-embed" class="bg-[#0e0e0e] font-poppins text-[#e8e2d8] antialiased overflow-x-auto overflow-y-hidden px-4">
 
                 <div class="px-4 sm:px-[60px] pt-6 pb-8 min-w-[680px] sm:min-w-0 max-w-[1400px] mx-auto relative"
                     id="dwrap">
