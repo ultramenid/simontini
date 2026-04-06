@@ -24,15 +24,15 @@
     </div>
     <div class="nav-actions">
       <ul class="nav-links flex list-none">
-         <li><a href="#pendahuluan">Pendahuluan</a></li>
-         <li><a href="#metodologi">Metodologi</a></li>
-         <li><a href="#deforestasi">Deforestasi 2025</a></li>
-         {{-- <li><a href="#konsesi">Konsesi</a></li> --}}
-         <li><a href="#diskusi">Diskusi</a></li>
-         <li><a href="#rekomendasi">Rekomendasi</a></li>
+        <li><a href="#pendahuluan">Pendahuluan</a></li>
+        <li><a href="#metodologi">Metodologi</a></li>
+        <li><a href="#deforestasi">Deforestasi 2025</a></li>
+        <li><a href="#konsesi">Konsesi</a></li>
+        <li><a href="#diskusi">Diskusi</a></li>
+        <li><a href="#rekomendasi">Rekomendasi</a></li>
       </ul>
       <div class="global-lang" aria-label="language switcher">
-         <a href="{{ url('/id/status-deforestasi-indonesia-2025') }}" id="lang-id" class="g-lang-btn active">ID</a>
+        <a href="{{ url('/id/status-deforestasi-indonesia-2025') }}" id="lang-id" class="g-lang-btn active">ID</a>
          <a href="{{ url('/en/status-of-deforestation-in-indonesia-2025') }}" id="lang-en" class="g-lang-btn">EN</a>
       </div>
     </div>
@@ -1619,11 +1619,12 @@
 
 
 
-<!-- KONSESI -->
-{{-- <span class="s-anchor" id="konsesi"></span>
-<section class="page-section px-[5vw] py-10">
-<div class="section-body">
-  <div class="section-label">04 / Deforestasi dalam Konsesi</div>
+      <div class="pull-quote">
+        <p>Deforestasi di Kalimantan meningkat drastis setiap tahun sejak 2021, didorong oleh ekspansi konsesi kebun kayu,
+          sawit, dan pertambangan yang beroperasi secara legal di bawah izin yang diterbitkan pemerintah.</p>
+        <cite>—Analisis SIMONTINI 2025</cite>
+      </div>
+    </section>
 
     <!-- KONSESI -->
     <span class="s-anchor" id="konsesi"></span>
@@ -1642,46 +1643,7 @@
         <!-- <div class="viz-block viz-block--full" data-include-html="partials/konsesi-embed.html"></div> -->
 
 
-  <div class="callout">
-    <p>
-      <strong>Catatan:</strong> Hanya 3% deforestasi 2025 yang terjadi di kawasan konservasi, sementara 49% di hutan produksi dan 43% di luar kawasan hutan. Artinya, <strong>97% deforestasi yang terjadi berpotensi legal</strong> karena dilakukan di daerah berizin.
-    </p>
-  </div>
-</div>
-</section> --}}
-
-<!-- DISKUSI -->
-<span class="s-anchor" id="diskusi"></span>
-<section class="page-section px-[5vw] py-10">
-  <div class="section-label">04 / Diskusi</div>
-
-  <div class="mt-10">
-    <div class="chapter-header">
-      <span class="ms-num">01</span>
-      <h3 class="chapter-title"><strong>Kebijakan pemerintah turut memicu deforestasi</strong></h3>
-    </div>
-    <p class="body-text">
-      Di era presidensi Joko Widodo, terutama pada periode kedua, perlindungan lingkungan mengalami pengenduran, terutama melalui pengesahan Undang-Undang Cipta Kerja atau Omnibus Law. Batasan 30% hutan untuk setiap wilayah, sebagai misal, dihilangkan dari teks aturan. Tidak hanya itu, proyek-proyek pemerintah, terutama yang dibungkus dengan judul Proyek Strategis Nasional, diberi kemudahan menabrak kawasan hutan. Padahal, proyek-proyek ini kerap tidak disertai perencanaan matang, termasuk secara spasial.
-    </p>
-    <p class="body-text">
-      Era kepresidenan Prabowo-Gibran tampak meneruskan kebijakan ini. Kengototan meneruskan program lumbung pangan (<em>estate</em>) di Merauke salah satu contohnya. Pemerintah membangun sawah di Merauke, tapi pada saat bersamaan menghilangkan banyak sawah di Sulawesi demi pembangunan smelter dan ekspansi tambang nikel. Tidak hanya itu, tambang-tambang nikel ini justru memicu pemusnahan tumbuhan sagu di Indonesia Timur, padahal sagu merupakan salah satu makanan pokok di Indonesia Timur.
-    </p>
-    <p class="body-text">
-      Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, pemerintah mencanangkan program 20 juta hektare hutan untuk cadangan pangan, energi, dan air. Pada perkembangannya, total area untuk program ini menjadi 20,6 juta hektare. Analisis Auriga Nusantara menunjukkan bahwa terdapat 8,8 juta hektare hutan alam di dalam area pencadangan ini dan 18% deforestasi 2025 terjadi di dalam area ini. Deforestasi ini terjadi melalui program-program pangan populis, seperti Cetak Sawah Rakyat (CSR) di Kalimantan Tengah, provinsi yang menjadi pemuncak deforestasi pada 2025. Padahal pada 2024 provinsi ini berada di urutan ketiga provinsi terdeforestasi.
-    </p>
-    <p class="body-text">
-      Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan hutan alam juga menjadi pemicu deforestasi. Analisis Auriga Nusantara menunjukkan bahwa per 2024 terdapat 9,6 juta hektare tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam konsesi ini mencapai 114.823 hektare atau 26% dari deforestasi nasional.
-    </p>
-    <p class="body-text">
-      Selain itu, pelepasan kawasan hutan menjadi area penggunaan lain (APL) namun memiliki tutupan hutan alam juga menjadi langkah awal deforestasi, karena penebangan hutan di dalam APL tidak melanggar hukum. Pelepasan kawasan hutan seperti ini kerap terjadi untuk konsesi tertentu atau oleh permintaan pemerintah daerah melalui revisi rencana tata ruang (RTRW). Per 2024 terdapat 10,2 juta hektare hutan alam di dalam APL. Dan, pada 2025 deforestasi dalam APL seluas 125.997 hektare atau 28% deforestasi nasional.
-    </p>
-    <!-- <ul class="insight-list">
-      <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-      <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-      <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-      <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-    </ul> -->
-  </div>
+        <!-- <hr class="divider"> -->
 
         <div class="callout">
           <p>
@@ -1837,11 +1799,32 @@
 
       <hr class="divider">
 
-<!-- REKOMENDASI -->
-<span class="s-anchor" id="rekomendasi"></span>
-<section class="page-section px-[5vw] pt-10 pb-20">
-<div class="mx-auto max-w-[820px]">
-  <div class="section-label">05 / Rekomendasi</div>
+      <div>
+        <div class="chapter-header">
+          <span class="ms-num">04</span>
+          <h3 class="chapter-title">Legal deforestasi sebagai biang masalah</h3>
+        </div>
+        <p class="body-text">
+          Salah satu efek dari kerumitan aturan di Indonesia adalah ketidaklugasan dalam mengenali legal atau tidaknya
+          suatu deforestasi. Terdapat banyak aturan yang melindungi hutan, tapi tidak sedikit celah yang membuatnya tidak
+          terlindungi.
+        </p>
+        <p class="body-text">
+          Dalam sebuah presentasi pada
+          <a href="https://www.youtube.com/watch?v=fXpCyo4TrlU&t=7193s" target="_blank" rel="noopener noreferrer"
+            style="color: #bc4a3c;">Rapat Dengar Pendapat Umum</a>
+          di Komisi 4 Dewan Perwakilan Rakyat Republik Indonesia (DPR RI) pada 15 Juli 2025 Auriga Nusantara
+          mengungkapkan, per 2024, seluas 41,6 juta hektare atau 44% tutupan hutan alam di Indonesia tidak punya
+          perlindungan hukum. Dengan kondisi demikian, manuver yang tidak melanggar hukum yang akan menghilangkan hutan
+          tersebut, seperti melalui penerbitan izin konversi atau revisi tata ruang, masih memungkinkan.
+        </p>
+        <p class="body-text">
+          Dari total deforestasi 2025, deforestasi yang secara langsung bisa dikategorikan ilegal hanya deforestasi di
+          kawasan konservasi (20.077 hektare), di hutan lindung (80.023 hektare), di konsesi logging (74.409 hektare), dan
+          konsesi restorasi ekosistem (617 hektare), yang seluruhnya berjumlah 180.370 hektare atau 42% deforestasi
+          nasional. Dengan kata lain, 58% deforestasi 2025 berupa deforestasi legal (<em>legal deforestation</em>).
+        </p>
+      </div>
 
       <hr class="divider">
 
@@ -2143,9 +2126,13 @@
 
   </div>
 
-  {{-- <p class="body-text">
-    Selain itu, komitmen ESG para pemilik atau pengelola izin serta insentif bagi pemerintah daerah, komunitas lokal, dan swasta dalam perlindungan hutan alam perlu diperkuat agar perlindungan hutan tidak hanya bergantung pada pendekatan administratif semata.
-  </p> --}}
+  <!-- Pop up multi image -->
+  <div id="popupGallery" class="fixed inset-0 bg-black/90 flex items-center justify-center p-6 z-[999999]"
+    style="display:none" data-index="0" onclick="
+    if($(event.target).attr('id') === 'popupGallery'){
+      $('#popupGallery').fadeOut(200);
+    }
+  ">
 
     <button onclick="$('#popupGallery').fadeOut(200)"
       class="absolute top-4 right-4 text-white text-2xl z-[1000000] cursor-pointer">✕</button>
