@@ -1,117 +1,152 @@
 @extends('layouts.stadi2025')
 
 @section('meta')
-    @include('partials.insightMeta')
+@include('partials.insightMeta')
 @endsection
 
 @section('content')
 <div id="site-loader" role="status" aria-live="polite" aria-label="Memuat halaman SIMONTINI">
-   <div class="loader-mark">
-      <img src="{{ asset('assets/images/logo1.png') }}" alt="" class="">
-      <!-- <div class="loader-title">SIMONTINI</div> -->
-      <div class="loader-sub">Status Deforestasi Indonesia 2025</div>
-      <div class="loader-bar"><span></span></div>
-   </div>
+    <div class="loader-mark">
+        <img src="{{ asset('assets/images/logo1.png') }}" alt="" class="">
+        <!-- <div class="loader-title">SIMONTINI</div> -->
+        <div class="loader-sub">Indonesia's Deforestation Status in 2025</div>
+        <div class="loader-bar"><span></span></div>
+    </div>
 </div>
 
 
 <!-- STICKY NAV -->
-<nav id="sitenav" class="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[52px] px-[5vw] bg-[rgba(245,240,232,.92)] backdrop-blur-md border-b border-[#e2d8cc]">
-   <div class="nav-brand flex items-center gap-1.5 uppercase tracking-[0.18em] text-[#8b2a1a] text-[.65rem] font-semibold">
-      <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt="" class="h-8"></a>
-   </div>
-   <div class="nav-actions">
-      <ul class="nav-links flex list-none">
-         <li><a href="#pendahuluan">Pendahuluan</a></li>
-         <li><a href="#metodologi">Metodologi</a></li>
-         <li><a href="#deforestasi">Deforestasi 2025</a></li>
-         <li><a href="#konsesi">Konsesi</a></li>
-         <li><a href="#diskusi">Diskusi</a></li>
-         <li><a href="#rekomendasi">Rekomendasi</a></li>
-      </ul>
-      <div class="global-lang" aria-label="language switcher">
-         <button type="button" id="lang-id" class="g-lang-btn active">ID</button>
-         <button type="button" id="lang-en" class="g-lang-btn">EN</button>
-      </div>
-   </div>
+<nav id="sitenav"
+    class="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[52px] px-[5vw] bg-[rgba(245,240,232,.92)] backdrop-blur-md border-b border-[#e2d8cc]">
+    <div
+        class="nav-brand flex items-center gap-1.5 uppercase tracking-[0.18em] text-[#8b2a1a] text-[.65rem] font-semibold">
+        <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt="" class="h-8"></a>
+    </div>
+    <div class="nav-actions">
+        <ul class="nav-links flex list-none">
+            <li><a href="#pendahuluan">Introduction</a></li>
+            <li><a href="#metodologi">Methodology</a></li>
+            <li><a href="#deforestasi">Deforestation 2025</a></li>
+            <li><a href="#konsesi">Concessions</a></li>
+            <li><a href="#diskusi">Discussion</a></li>
+            <li><a href="#rekomendasi">Recommendations</a></li>
+        </ul>
+        <div class="global-lang" aria-label="language switcher">
+            <button type="button" id="lang-id" class="g-lang-btn active">ID</button>
+            <button type="button" id="lang-en" class="g-lang-btn">EN</button>
+        </div>
+    </div>
 </nav>
 <section id="hero">
-   <h1>Status Deforestasi Indonesia 2025</h1>
-   <div class="hero-meta">
-      <div class="hero-stat">
-         <span class="hs-val">433.751</span>
-         <span class="hs-unit">Hektare</span>
-      </div>
-      <div class="hero-divider"></div>
-      <!-- <div class="hero-stat">
+    <h1>Status Deforestasi Indonesia 2025</h1>
+    <div class="hero-meta">
+        <div class="hero-stat">
+            <span class="hs-val">433.751</span>
+            <span class="hs-unit">Hektare</span>
+        </div>
+        <div class="hero-divider"></div>
+        <!-- <div class="hero-stat">
          <span class="hs-val">+66%</span>
          <span class="hs-unit">Peningkatan dari 2024</span>
          </div> -->
-      <div class="hero-divider"></div>
-      <div class="hero-desc">
-         Deforestasi melonjak, saatnya pemerintah menerbitkan
-         regulasi yang melindungi seluruh hutan alam tersisa
-      </div>
-   </div>
-   <div class="scroll-hint">
-      <div class="scroll-dot"></div>
-   </div>
+        <div class="hero-divider"></div>
+        <div class="hero-desc">
+            Deforestation is on the rise; it’s time for the government to issue regulations to protect all remaining natural forests
+        </div>
+    </div>
+    <div class="scroll-hint">
+        <div class="scroll-dot"></div>
+    </div>
 </section>
 
 <!-- PENDAHULUAN -->
 <span class="s-anchor" id="pendahuluan"></span>
 
 <section class="page-section px-[5vw]">
-    <div class="section-label">01 / Pendahuluan</div>
+    <div class="section-label">01 / Introduction</div>
     <p class="lead">
-        In November 2021, during the 26th United Nations Climate Change Conference (COP26) in Glasgow, Scotland, leaders of 144 nations, including Indonesia, signed the Glasgow Leaders’ Declaration on Forest and Land Use, or the <a href="" class="text-[#bc4a3c]">Glasgow Declaration</a>. The declaration constitutes an agreement to work collectively to halt and reverse forest loss and land degradation.
+        In November 2021, during the 26th United Nations Climate Change Conference (COP26) in Glasgow, Scotland, leaders
+        of 144 nations, including Indonesia, signed the Glasgow Leaders’ Declaration on Forest and Land Use, or the <a
+            href="" class="text-[#bc4a3c]">Glasgow Declaration</a>. The declaration constitutes an agreement to work
+        collectively to halt and reverse forest loss and land degradation.
     </p>
     <p class="body-text">
-    In Indonesia, efforts to halt deforestation or the loss of natural forests did not begin with the declaration. A decade earlier, President Susilo Bambang Yudhoyono signed Presidential Instruction No. 10/2011, commonly referred to as the Moratorium Instruction (<a href="https://peraturan.bpk.go.id/Download/68485/Inpres_no_10_2011.pdf" target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">Inpres Moratorium</a>), prohibiting  the issuance of conversion permits in primary natural forests and protected peatlands. President Joko Widodo continued this policy by issuing Presidential Instruction No. 8/2018, or the Oil Palm Moratorium (<a href="https://peraturan.bpk.go.id/Download/261461/Inpres%20Nomor%208%20Tahun%202018.PDF" target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">Inpres Moratorium Sawit</a>), which was intended to optimize existing oil palm plantations and halt deforestation driven by palm oil expansion.
+        In Indonesia, efforts to halt deforestation or the loss of natural forests did not begin with the declaration. A
+        decade earlier, President Susilo Bambang Yudhoyono signed Presidential Instruction No. 10/2011, commonly
+        referred to as the Moratorium Instruction (<a
+            href="https://peraturan.bpk.go.id/Download/68485/Inpres_no_10_2011.pdf" target="_blank"
+            rel="noopener noreferrer" style="color: #bc4a3c;">Inpres Moratorium</a>), prohibiting the issuance of
+        conversion permits in primary natural forests and protected peatlands. President Joko Widodo continued this
+        policy by issuing Presidential Instruction No. 8/2018, or the Oil Palm Moratorium (<a
+            href="https://peraturan.bpk.go.id/Download/261461/Inpres%20Nomor%208%20Tahun%202018.PDF" target="_blank"
+            rel="noopener noreferrer" style="color: #bc4a3c;">Inpres Moratorium Sawit</a>), which was intended to
+        optimize existing oil palm plantations and halt deforestation driven by palm oil expansion.
     </p>
     <p class="body-text">
-    Indonesia also ratified the Paris Agreement, which aims to keep global temperature increases to below 2°C while pursuing efforts to limit the rise to 1.5°C above pre-industrial levels. Within this framework, the Government of Indonesia issued <a href="https://peraturan.bpk.go.id/Download/180699/Perpres%2520Nomor%252098%2520Tahun%25202021.pdf" target="_blank" rel="noopener noreferrer" class="text-[#bc4a3c]">Presidential Regulation No. 98/2021</a> on the Implementation of Carbon Pricing and elaborated it in greater detail through Minister of Environment and Forestry Decree No. 168/2022 on Indonesia’s <a href="https://eos.co.id/main/wp-content/uploads/2022/03/1647210373656.pdf" target="_blank" rel="noopener noreferrer" class="text-[#bc4a3c]">FOLU Net Sink 2030</a> for Climate Change Control.
+        Indonesia also ratified the Paris Agreement, which aims to keep global temperature increases to below 2°C while
+        pursuing efforts to limit the rise to 1.5°C above pre-industrial levels. Within this framework, the Government
+        of Indonesia issued <a
+            href="https://peraturan.bpk.go.id/Download/180699/Perpres%2520Nomor%252098%2520Tahun%25202021.pdf"
+            target="_blank" rel="noopener noreferrer" class="text-[#bc4a3c]">Presidential Regulation No. 98/2021</a> on
+        the Implementation of Carbon Pricing and elaborated it in greater detail through Minister of Environment and
+        Forestry Decree No. 168/2022 on Indonesia’s <a
+            href="https://eos.co.id/main/wp-content/uploads/2022/03/1647210373656.pdf" target="_blank"
+            rel="noopener noreferrer" class="text-[#bc4a3c]">FOLU Net Sink 2030</a> for Climate Change Control.
     </p>
     <p class="body-text">
-    These policies led to falls in deforestation rates in Indonesia for five consecutive years starting in 2017. However, in 2022, Indonesian deforestation rates began to rise again, as shown in the graph below. Deforestation in Indonesia subsequently surged in 2025.
+        These policies led to falls in deforestation rates in Indonesia for five consecutive years starting in 2017.
+        However, in 2022, Indonesian deforestation rates began to rise again, as shown in the graph below. Deforestation
+        in Indonesia subsequently surged in 2025.
     </p>
     <!-- embedded chart using TailwindUI layout -->
     <div class="viz-block viz-block--full mt-12 mb-2" id="chart-app-wrap">
         <div class=" ">
             <div id="chart-app" class="w-full bg-black py-6 md:py-12">
-                <div id="chart-inner" class="flex flex-col md:flex-row px-4 w-full max-w-[980px] mx-auto gap-4 min-h-[360px]">
+                <div id="chart-inner"
+                    class="flex flex-col md:flex-row px-4 w-full max-w-[980px] mx-auto gap-4 min-h-[360px]">
                     <div id="chart-viz" class="flex-1 min-w-0">
-                    <div class="chart-header mb-4">
-                        <h2 class="chart-title text-white text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi Indonesia, 2001–2025</h2>
-                        <p class="chart-sub text-[#7a9e97] text-sm">Luas hutan yang hilang per tahun · hektare</p>
+                        <div class="chart-header mb-4">
+                            <h2 class="chart-title text-white text-lg md:text-xl font-bold tracking-tight mb-1">
+                                Deforestation in Indonesia, 2001–2025</h2>
+                            <p class="chart-sub text-[#7a9e97] text-sm">Annual deforestation rate · hectares</p>
+                        </div>
+                        <div id="chart-body" class="relative flex h-full">
+                            <div id="y-axis"
+                                class="flex flex-col-reverse justify-between pb-[78px] w-[52px] md:w-[72px] shrink-0">
+                            </div>
+                            <div id="bars-wrap" class="relative flex-1 flex flex-col">
+                                <div id="grid-lines" class="relative flex flex-col-reverse justify-between flex-1">
+                                </div>
+                                <div id="bars-svg-wrap"
+                                    class="absolute inset-x-0 top-0 bottom-[78px] grid items-end gap-[3px] px-0.5">
+                                </div>
+                                <div id="x-axis" class="grid gap-[3px] px-[2px] mt-0 h-[78px] items-start"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div id="chart-body" class="relative flex h-full">
-                        <div id="y-axis" class="flex flex-col-reverse justify-between pb-[78px] w-[52px] md:w-[72px] shrink-0">
-                        </div>
-                        <div id="bars-wrap" class="relative flex-1 flex flex-col">
-                            <div id="grid-lines" class="relative flex flex-col-reverse justify-between flex-1"></div>
-                            <div id="bars-svg-wrap" class="absolute inset-x-0 top-0 bottom-[78px] grid items-end gap-[3px] px-0.5"></div>
-                            <div id="x-axis" class="grid gap-[3px] px-[2px] mt-0 h-[78px] items-start"></div>
-                        </div>
-                    </div>
-                    </div>
-                    <div id="detail-panel" class="w-full md:w-[280px] bg-[#1a2826] border-t md:border-t-0 md:border-l border-[rgba(255,255,255,.07)] flex flex-col">
-                    <div class="panel-inner p-4 flex flex-col h-full overflow-y-auto">
-                        <div class="w-full justify-between flex sm:flex-col flex-row">
-                            <div class="panel-header mb-4">
-                            <div class="ph-title text-[#e07060] text-xs font-bold uppercase tracking-widest mb-1">Era Kepemimpinan</div>
-                            <div class="ph-sub text-[rgba(255,255,255,.2)] text-xs">klik untuk sorot era</div>
-                        </div>
-                        <div class="year-display">
-                            <div id="yd-year" class="yd-label text-[#7a9e97] text-xs font-semibold uppercase tracking-[0.14em] mb-1">Arahkan kursor ke bar</div>
-                            <div id="yd-val" class="yd-val text-2xl font-bold text-white mb-1">—</div>
-                            <div class="yd-unit text-sm text-[#7a9e97]">ha </div>
-                        </div>
-                        </div>
+                    <div id="detail-panel"
+                        class="w-full md:w-[280px] bg-[#1a2826] border-t md:border-t-0 md:border-l border-[rgba(255,255,255,.07)] flex flex-col">
+                        <div class="panel-inner p-4 flex flex-col h-full overflow-y-auto">
+                            <div class="w-full justify-between flex sm:flex-col flex-row">
+                                <div class="panel-header mb-4">
+                                    <div
+                                        class="ph-title text-[#e07060] text-xs font-bold uppercase tracking-widest mb-1">
+                                        The Era of Leadership</div>
+                                    <div class="ph-sub text-[rgba(255,255,255,.2)] text-xs">click to highlight era</div>
+                                </div>
+                                <div class="year-display">
+                                    <div id="yd-year"
+                                        class="yd-label text-[#7a9e97] text-xs font-semibold uppercase tracking-[0.14em] mb-1">
+                                        Hover over a bar</div>
+                                    <div id="yd-val" class="yd-val text-2xl font-bold text-white mb-1">—</div>
+                                    <div class="yd-unit text-sm text-[#7a9e97]">ha </div>
+                                </div>
+                            </div>
 
-                        <div id="pres-list" class="space-y-2 grid grid-cols-2 md:grid-cols-1 gap-2"></div>
-                        <div class="panel-note text-[0.55rem] text-gray-600 mt-auto pt-3">Data: University of Maryland Lossyear · Auriga STADI<br>simontini.id</div>
-                    </div>
+                            <div id="pres-list" class="space-y-2 grid grid-cols-2 md:grid-cols-1 gap-2"></div>
+                            <div class="panel-note text-[0.55rem] text-gray-600 mt-auto pt-3">Data: University of
+                                Maryland Lossyear · Auriga STADI<br>simontini.id</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,930 +158,1555 @@
 <span class="s-anchor" id="metodologi"></span>
 <section class="page-section px-[5vw]  section-after-chart">
     <div class="section-body">
-    <div class="section-label">02 / Metodologi</div>
+        <div class="section-label">02 / Methodology</div>
 
-    <p class="body-text">
-    <strong>Stages and Data Processing: The 2025 deforestation map was produced using deep learning modeling on Sentinel satellite imagery. The stages were as follows:</strong>
-    </p>
+        <p class="body-text">
+            <strong>Stages and Data Processing:</strong> The 2025 deforestation map was produced using deep learning
+            modeling on Sentinel satellite imagery. The stages were as follows:
+        </p>
 
-    <div class="method-steps">
-        <div class="method-step">
-        <div class="ms-num">01</div>
-        <div class="body-text">
-            <p>
-            <em>First, </em>
-            deforestation modelling: Knowledge accumulated to date – from field monitoring and deforestation data for 2023 and 2024 – was modelled with U-Net deep learning. This model was then trained on 10-meter resolution Sentinel satellite imagery.
-            </p>
+        <div class="method-steps">
+            <div class="method-step">
+                <div class="ms-num">01</div>
+                <div class="body-text">
+                    <p>
+                        <em>First, </em>
+                        deforestation modelling: Knowledge accumulated to date – from field monitoring and deforestation
+                        data for 2023 and 2024 – was modelled with U-Net deep learning. This model was then trained on
+                        10-meter resolution Sentinel satellite imagery.
+                    </p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="ms-num">02</div>
+                <div class="body-text">
+                    <!-- <h4>Inspeksi visual</h4> -->
+                    <p>
+                        <em>Second</em>, defining scoping areas: Monthly deforestation alerts produced by the University
+                        of Maryland (usually referred to as GLAD alerts) were compiled. For efficiency, only
+                        high-confidence alerts were collected. These alerts were then “bound” or aggregated in bounding
+                        boxes with search radii of 10,240 meters. These bounding boxes then became the scoping areas.
+                    </p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="ms-num">03</div>
+                <div class="body-text">
+                    <!-- <h4>Pemantauan lapangan</h4> -->
+                    <p>
+                        <em>Third</em>, the developed deforestation model was then run on 10-meter resolution Sentinel-2
+                        satellite imagery in the defined scoping areas.
+                    </p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="ms-num">04</div>
+                <div class="body-text">
+                    <!-- <h4>Pemantauan lapangan</h4> -->
+                    <p>
+                        <em>Fourth</em>, areas where deforestation was identified (indicative deforestation) were
+                        overlaid with forest cover maps. Four forest cover references were used: (1) MapBiomas
+                        Indonesia; (2) land cover maps produced by the Ministry of Forestry; (3) tropical-moist forest
+                        (TMF) data produced by the European Commission’s Joint Research Centre; and (4) the Forest
+                        Persistence dataset produced by Google.
+                    </p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="ms-num">05</div>
+                <div class="body-text">
+                    <!-- <h4>Pemantauan lapangan</h4> -->
+                    <p>
+                        Fifth, verification processes: Indicative deforestation outside intersections of the four forest
+                        cover references (forest-agreement areas) were inspected visually. Due to the large numbers of
+                        polygons and limited time available, polygons smaller than one hectare could not be inspected
+                        and were consequently excluded from the deforestation area. For indicative deforestation inside
+                        forest-agreement areas, visual inspections and historical screening (temporal filtering) were
+                        conducted on areas larger than 10 hectares, as well as on all areas under 10 hectares located
+                        inside concessions and conservation areas. Areas identified as false positives or not having
+                        deforestation were removed from the dataset, whereas areas that were not inspected (below 10
+                        hectares) were included as deforestation areas.
+                    </p><br>
+                    <p>
+                        Verifications were also carried out through field visits and on-the-ground documentation. In
+                        total, Auriga Nusantara conducted field visits covering 49,321 hectares of deforestation sites –
+                        equivalent to 11% of total deforestation in 2025 – across 38 villages in 28 regencies spanning
+                        16 provinces in Sumatra, Kalimantan, Sulawesi, Nusa Tenggara, the Maluku Archipelago, and Papua.
+                    </p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="ms-num">06</div>
+                <div class="body-text">
+                    <!-- <h4>Pemantauan lapangan</h4> -->
+                    <p>
+                        <em>Sixth</em>, filtering: Focusing on deforestation caused by human activity (anthropogenic
+                        deforestation), filtering was conducted to exclude deforestation areas resulting from landslides
+                        or river shifts. For example, 11,693 hectares of forest cover were lost due to landslides in
+                        Aceh, North Sumatra, and West Sumatra in the hydrometeorological disaster at the end of 2025.
+                        Loss of forest cover due to river shifts was also relatively prevalent in conservation areas.
+                    </p>
+                </div>
+            </div>
         </div>
-        </div>
-        <div class="method-step">
-        <div class="ms-num">02</div>
-        <div class="body-text">
-            <!-- <h4>Inspeksi visual</h4> -->
-            <p>
-            <em>Second</em>, defining scoping areas: Monthly deforestation alerts produced by the University of Maryland (usually referred to as GLAD alerts) were compiled. For efficiency, only high-confidence alerts were collected. These alerts were then “bound” or aggregated in bounding boxes with search radii of 10,240 meters. These bounding boxes then became the scoping areas.
-            </p>
-        </div>
-        </div>
-        <div class="method-step">
-        <div class="ms-num">03</div>
-        <div class="body-text">
-            <!-- <h4>Pemantauan lapangan</h4> -->
-            <p>
-            <em>Third</em>, the developed deforestation model was then run on 10-meter resolution Sentinel-2 satellite imagery in the defined scoping areas.
-            </p>
-        </div>
-        </div>
-        <div class="method-step">
-        <div class="ms-num">04</div>
-        <div class="body-text">
-            <!-- <h4>Pemantauan lapangan</h4> -->
-            <p>
-            <em>Fourth</em>, areas where deforestation was identified (indicative deforestation) were overlaid with forest cover maps. Four forest cover references were used: (1) MapBiomas Indonesia; (2) land cover maps produced by the Ministry of Forestry; (3) tropical-moist forest (TMF) data produced by the European Commission’s Joint Research Centre; and (4) the Forest Persistence dataset produced by Google.
-            </p>
-        </div>
-        </div>
-        <div class="method-step">
-        <div class="ms-num">05</div>
-        <div class="body-text">
-            <!-- <h4>Pemantauan lapangan</h4> -->
-            <p>
-            Fifth, verification processes: Indicative deforestation outside intersections of the four forest cover references (forest-agreement areas) were inspected visually. Due to the large numbers of polygons and limited time available, polygons smaller than one hectare could not be inspected and were consequently excluded from the deforestation area. For indicative deforestation inside forest-agreement areas, visual inspections and historical screening (temporal filtering) were conducted on areas larger than 10 hectares, as well as on all areas under 10 hectares located inside concessions and conservation areas. Areas identified as false positives or not having deforestation were removed from the dataset, whereas areas that were not inspected (below 10 hectares) were included as deforestation areas.
-            </p><br>
-            <p>
-            Verifications were also carried out through field visits and on-the-ground documentation. In total, Auriga Nusantara conducted field visits covering 49,321 hectares of deforestation sites – equivalent to 11% of total deforestation in 2025 – across 38 villages in 28 regencies spanning 16 provinces in Sumatra, Kalimantan, Sulawesi, Nusa Tenggara, the Maluku Archipelago, and Papua.
-            </p>
-        </div>
-        </div>
-        <div class="method-step">
-        <div class="ms-num">06</div>
-        <div class="body-text">
-            <!-- <h4>Pemantauan lapangan</h4> -->
-            <p>
-            <em>Sixth</em>, filtering: Focusing on deforestation caused by human activity (anthropogenic deforestation), filtering was conducted to exclude deforestation areas resulting from landslides or river shifts. For example, 11,693 hectares of forest cover were lost due to landslides in Aceh, North Sumatra, and West Sumatra in the hydrometeorological disaster at the end of 2025. Loss of forest cover due to river shifts was also relatively prevalent in conservation areas.
-            </p>
-        </div>
-        </div>
-    </div>
     </div>
 </section>
 
 {{-- step 1 --}}
 <div class="viz-block viz-block--full alur" style="margin-top: -60px !important;">
     <div style="background:#0d0d0d; margin-bottom:0;" class="alur-embed">
-    <div style="background:#0d0d0d; border-radius:0;">
-        <div class="embed-bar" style="background:#161616; border-bottom-color:rgba(255,255,255,.08);">
-        <span class="embed-bar-title" style="color:rgba(255,255,255,.45);">Tahapan & Pemrosesan Data SIMONTINI</span>
+        <div style="background:#0d0d0d; border-radius:0;">
+            <div class="embed-bar" style="background:#161616; border-bottom-color:rgba(255,255,255,.08);">
+                <span class="embed-bar-title" style="color:rgba(255,255,255,.45);">Tahapan & Pemrosesan Data
+                    SIMONTINI</span>
+            </div>
+            <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
+                style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)"
+                    stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+                <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk melihat
+                    alur lengkap</span>
+            </div>
+
+            <!-- ALUR INLINE — replaces <iframe src="alur.html"> -->
+            <div id="alur-embed" class="bg-[#0e0e0e] font-poppins text-[#e8e2d8] antialiased overflow-x-auto px-4">
+
+                <div class="px-4 sm:px-[60px] pt-6 pb-8 min-w-[680px] sm:min-w-0 max-w-[1400px] mx-auto relative"
+                    id="dwrap">
+
+                    <!-- ═══ ROW 1 · Deep Learning Modeling ═══ -->
+                    <div class="flex items-stretch border-t border-white/[0.07] relative" id="row1">
+                        <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none"
+                            id="ll1" onclick="alurRowToggle(this)">
+                            <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">01</div>
+                            <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Deep Learning Modeling
+                            </div>
+                            <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                    <polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></div>
+                        </div>
+                        <div class="steps flex-1 pl-8 flex items-center relative">
+
+                            <div class="flex items-center flex-1">
+                                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="r1c1" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Training Dataset</div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        Sentinel 2 × STADI 2024.<br>Labeled samples {0, 1}.</div>
+                                </div>
+                                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                    id="r1a1"><svg viewBox="0 0 36 14" fill="none">
+                                        <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                    </svg></div>
+                            </div>
+
+                            <div class="flex items-center flex-1">
+                                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="r1c2" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Dataset Normalization
+                                    </div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        <ul class="pl-3.5">
+                                            <li class="mb-0.5">Cropping, tiling, slicing</li>
+                                            <li class="mb-0.5">Image normalization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                    id="r1a2"><svg viewBox="0 0 36 14" fill="none">
+                                        <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                    </svg></div>
+                            </div>
+
+                            <div class="flex items-center flex-1">
+                                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="r1c3" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Deep Learning — UNET
+                                    </div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        <ul class="pl-3.5">
+                                            <li class="mb-0.5">Augmentasi &amp; rotasi</li>
+                                            <li class="mb-0.5">Encoder &amp; Decoder</li>
+                                            <li class="mb-0.5">Confusion Matrix</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                    id="r1a3"><svg viewBox="0 0 36 14" fill="none">
+                                        <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                    </svg></div>
+                            </div>
+
+                            <div class="flex items-center [flex:0.8]">
+                                <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="outmodel" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Ouput Model</div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        A ready-to-use deforestation mapping model for large-scale detection.</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ═══ ROW 2 · Scoping Area ═══ -->
+                    <div class="flex items-stretch border-t border-white/[0.07] relative" id="row2">
+                        <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none"
+                            id="ll2" onclick="alurRowToggle(this)">
+                            <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">02</div>
+                            <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Scoping Area Deforestasi
+                            </div>
+                            <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                    <polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></div>
+                        </div>
+                        <div class="steps flex-1 pl-8 flex items-center relative">
+
+                            <div class="flex items-center flex-1">
+                                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="r2c1" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Determination of Area
+                                        &amp; Period</div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        <ul class="pl-3.5">
+                                            <li class="mb-0.5">Natural Forests 2024</li>
+                                            <li class="mb-0.5">Alert January–December</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                    id="r2a1"><svg viewBox="0 0 36 14" fill="none">
+                                        <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                    </svg></div>
+                            </div>
+
+                            <div class="flex items-center flex-1">
+                                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="r2c2" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Alert Filtering</div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        GLAD confidence level 3 ∩ Forest cover in 2024.</div>
+                                </div>
+                                <div class="arrow w-[50px] min-w-[50px] flex items-center justify-center shrink-0 a-arr"
+                                    id="r2a2">
+                                    <svg viewBox="0 0 50 90" fill="none" width="50" height="90">
+                                        <line x1="0" y1="45" x2="18" y2="45" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <line x1="18" y1="10" x2="18" y2="80" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <line x1="18" y1="10" x2="40" y2="10" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <line x1="18" y1="80" x2="40" y2="80" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <polyline points="34,5 41,10 34,15" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                        <polyline points="34,75 41,80 34,85" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- True + False alert -->
+                            <div class="flex self-stretch items-stretch flex-1">
+                                <div class="flex flex-col flex-1 gap-0">
+                                    <div class="flex items-center flex-1">
+                                        <div class="card flex-1 bg-[rgba(46,139,90,0.06)] border border-[rgba(46,139,90,0.3)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                            id="r2c3a" onclick="alurToggle(this)">
+                                            <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">True Alert</div>
+                                            <div
+                                                class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                                Alerts identified as actual deforestation events. Being processed
+                                                further.</div>
+                                        </div>
+                                        <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                            id="r2a3"><svg viewBox="0 0 36 14" fill="none">
+                                                <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                                    opacity="0.6" />
+                                                <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                                    fill="none" stroke-linejoin="miter" stroke-linecap="square"
+                                                    opacity="0.6" />
+                                            </svg></div>
+                                    </div>
+                                    <div class="flex items-center flex-1 mt-2">
+                                        <div class="card flex-1 bg-transparent border border-white/[0.07] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#1e1e1e] a-card"
+                                            id="r2c3b" onclick="alurToggle(this)">
+                                            <div class="text-sm font-bold text-[#6b6460] leading-[1.3]">False Alert
+                                            </div>
+                                            <div
+                                                class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                                False positive — not processed further in this workflow.</div>
+                                        </div>
+                                        <div class="w-[40px] min-w-[40px]"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex self-stretch [flex:0.8]">
+                                <div class="flex flex-col flex-1">
+                                    <div class="flex items-center flex-1">
+                                        <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                            id="agreg" onclick="alurToggle(this)">
+                                            <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Agregasi True
+                                                Alert</div>
+                                            <div
+                                                class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                                <ul class="pl-3.5">
+                                                    <li class="mb-0.5">Alert grouping</li>
+                                                    <li class="mb-0.5">Maximum distance: 10,240 m</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 mt-2"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ═══ ROW 3 · Deforestasi Indikatif (reversed) ═══ -->
+                    <div class="flex items-stretch border-t border-white/[0.07] relative" id="row3">
+                        <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none"
+                            id="ll3" onclick="alurRowToggle(this)">
+                            <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">03</div>
+                            <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Deforestasi Indikatif</div>
+                            <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                    <polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></div>
+                        </div>
+                        <div class="steps rev flex-1 pl-8 flex items-center relative flex-row-reverse">
+
+                            <div class="flex flex-row-reverse items-center flex-1">
+                                <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="normcit" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Normalisasi Citra
+                                        Sentinel 2</div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        <ul class="pl-3.5">
+                                            <li class="mb-0.5">Spatial &amp; temporal filter</li>
+                                            <li class="mb-0.5">Cloud masking</li>
+                                            <li class="mb-0.5">Band auditions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                    id="r3a1"><svg viewBox="0 0 36 14" fill="none">
+                                        <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                    </svg></div>
+                            </div>
+
+                            <div class="flex flex-row-reverse items-center flex-1">
+                                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="bbox" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Bounding Box</div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        A 10,240-meter radius from the alert aggregation ID.</div>
+                                </div>
+                                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                    id="r3a2"><svg viewBox="0 0 36 14" fill="none">
+                                        <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                    </svg></div>
+                            </div>
+
+                            <div class="flex flex-row-reverse items-center flex-1">
+                                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="r3c3" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Automatic Image Acquisition
+                                    </div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        Automatically download Sentinel-2 imagery on a monthly basis.</div>
+                                </div>
+                                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                    id="r3a3"><svg viewBox="0 0 36 14" fill="none">
+                                        <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                    </svg></div>
+                            </div>
+
+                            <div class="flex flex-row-reverse items-center [flex:0.8]">
+                                <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="dataindikatif" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Data Deforestasi
+                                        Indikatif</div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        Sentinel image prediction using a <em class="italic text-[#8a7e78]">deep learning</em>
+                                        model that has been trained.</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ═══ ROW 4 · Verifikasi ═══ -->
+                    <div class="flex items-stretch border-t border-white/[0.07] relative" id="row4">
+                        <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none"
+                            id="ll4" onclick="alurRowToggle(this)">
+                            <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">04</div>
+                            <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Verifikasi</div>
+                            <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                    <polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></div>
+                        </div>
+                        <div class="steps flex-1 pl-8 flex items-center relative">
+
+                            <div class="flex [flex:0.8] self-stretch items-center">
+                                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                    id="r4c1" onclick="alurToggle(this)">
+                                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Overlay &amp; Filter
+                                        Area</div>
+                                    <div
+                                        class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                        <ul class="pl-3.5">
+                                            <li class="mb-0.5">Forest cover in 2024</li>
+                                            <li class="mb-0.5">Min. mapping unit 0.25 Ha</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="arrow w-[50px] min-w-[50px] flex items-center justify-center shrink-0 a-arr"
+                                    id="r4a1">
+                                    <svg viewBox="0 0 50 130" fill="none" width="50" height="130">
+                                        <line x1="0" y1="65" x2="18" y2="65" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <line x1="18" y1="15" x2="18" y2="115" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <line x1="18" y1="15" x2="40" y2="15" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <line x1="18" y1="65" x2="40" y2="65" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <line x1="18" y1="115" x2="40" y2="115" stroke="#C75B2E" stroke-width="1.2"
+                                            opacity="0.6" />
+                                        <polyline points="34,10 41,15 34,20" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                        <polyline points="34,60 41,65 34,70" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                        <polyline points="34,110 41,115 34,120" stroke="#C75B2E" stroke-width="1.2"
+                                            fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="self-stretch items-stretch [flex:1.5] flex">
+                                <div class="flex flex-col flex-1 gap-2 py-2">
+
+                                    <div class="flex items-center flex-1">
+                                        <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                            id="r4c2a" onclick="alurToggle(this)">
+                                            <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Visual Inspection
+                                            </div>
+                                            <div
+                                                class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                                Verification through direct visual inspection of satellite imagery.</div>
+                                        </div>
+                                        <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                            id="r4a2a"><svg viewBox="0 0 36 14" fill="none">
+                                                <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                                    opacity="0.6" />
+                                                <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                                    fill="none" stroke-linejoin="miter" stroke-linecap="square"
+                                                    opacity="0.6" />
+                                            </svg></div>
+                                    </div>
+
+                                    <div class="flex items-center flex-1">
+                                        <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                            id="r4c2b" onclick="alurToggle(this)">
+                                            <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Filtering
+                                                Temporal</div>
+                                            <div
+                                                class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                                Multitemporal analysis to confirm that the changes are permanent.
+                                            </div>
+                                        </div>
+                                        <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                            id="r4a2b"><svg viewBox="0 0 36 14" fill="none">
+                                                <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                                    opacity="0.6" />
+                                                <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                                    fill="none" stroke-linejoin="miter" stroke-linecap="square"
+                                                    opacity="0.6" />
+                                            </svg></div>
+                                    </div>
+
+                                    <div class="flex items-center flex-1">
+                                        <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
+                                            id="r4c2c" onclick="alurToggle(this)">
+                                            <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">On-site
+                                                Inspection</div>
+                                            <div
+                                                class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
+                                                Field survey of the suspected location to confirm the actual conditions.
+                                            </div>
+                                        </div>
+                                        <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
+                                            id="r4a2c"><svg viewBox="0 0 36 14" fill="none">
+                                                <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
+                                                    opacity="0.6" />
+                                                <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
+                                                    fill="none" stroke-linejoin="miter" stroke-linecap="square"
+                                                    opacity="0.6" />
+                                            </svg></div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="[flex:0.8] self-stretch flex">
+                                <div class="card-final flex-1 bg-[#C75B2E] rounded-[10px] px-5 py-6 flex flex-col justify-center relative overflow-hidden min-h-[160px] a-card"
+                                    id="card-final">
+                                    <div
+                                        class="font-poppins text-[22px] font-extrabold text-white leading-[1.1] relative">
+                                        Data<br>Deforestation</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><!-- /#dwrap -->
+            </div><!-- /#alur-embed -->
+
+            <div
+                style="padding:10px 16px 14px; font-size:.72rem; line-height:1.7; color:rgba(255,255,255,.45); text-align:center;">
+                Diagram interaktif alur kerja SIMONTINI dari pemodelan deep learning hingga verifikasi lapangan. Klik
+                kotak oranye untuk melihat detail setiap tahapan.
+            </div>
         </div>
-        <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden" style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk melihat alur lengkap</span>
+    </div>
+
+    <section class="page-section px-[5vw] pt-8 pb-6">
+        <div class="body-text">
+            <p>
+                <strong>Accuracy Testing:</strong>. To determine the level of precision of the 2025 deforestation data,
+                an accuracy assessment was conducted by visually inspecting deforestation polygons using PlanetScope
+                imagery with a spatial resolution of 3.7 meters. The polygons selected for inspection were chosen
+                randomly using a stratified random sampling method. Deforestation polygons were grouped by area, namely:
+                <0.5 ha, 0.5–1 ha, 1–5 ha, 5–10 ha, 10–50 ha, and>50 ha. The number of samples was determined using the
+                    Slovin formula with a 5% margin of error.
+            </p><br>
+            <p>
+                Results of this accuracy testing showed the 2025 deforestation data having an accuracy level of 89%, as
+                presented in the table below.
+            </p>
         </div>
 
-        <!-- ALUR INLINE — replaces <iframe src="alur.html"> -->
-        <div id="alur-embed" class="bg-[#0e0e0e] font-poppins text-[#e8e2d8] antialiased overflow-x-auto px-4">
+        <div class="viz-block viz-block--full mt-12 mb-2">
+            <div class="max-w-3xl mx-auto mt-4">
+                <div
+                    class=" sm:mx-auto overflow-x-auto overflow-y-hidden  sm:rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible">
+                    <div class="border-b border-[#ddd5c8] px-4 py-4 sm:px-6">
+                        <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">Results
+                            of the accuracy test on 2025 deforestation data</div>
+                    </div>
 
-        <div class="px-4 sm:px-[60px] pt-6 pb-8 min-w-[680px] sm:min-w-0 max-w-[1400px] mx-auto relative" id="dwrap">
+                    <table
+                        class="akurasi-table w-full min-w-[480px] table-fixed border-collapse text-[10px] text-[#1a1a1a] sm:text-[11px] md:min-w-full md:text-[12px]">
+                        <thead>
+                            <tr>
+                                <th colspan="3"
+                                    class="border-r border-white/15 text-center bg-[#8b2a1a] px-2 py-3 text-left font-semibold uppercase tracking-[0.08em] text-white sm:px-4">
+                                    Deforestation Area</th>
+                                <th colspan="3"
+                                    class="bg-[#8b2a1a] px-2 py-3 text-center font-semibold uppercase tracking-[0.08em] text-white sm:px-4">
+                                    Accuracy Test</th>
+                            </tr>
+                            <tr>
+                                <th
+                                    class="w-[16%] bg-[#a33520] px-2 py-2 text-left font-semibold text-white/90 sm:px-4">
+                                    Strata (ha)</th>
+                                <th
+                                    class="w-[17%] bg-[#a33520] px-2 py-2 text-right font-semibold text-white/90 sm:px-4">
+                                    Area (ha)</th>
+                                <th
+                                    class="w-[14%] bg-[#a33520] px-2 py-2 text-right font-semibold text-white/90 sm:px-4">
+                                    Polygon</th>
+                                <th
+                                    class="w-[18%]  bg-[#a33520] px-2 py-2 text-right font-semibold text-white/90 sm:px-4">
+                                    Sample Polygon</th>
+                                <th
+                                    class="w-[10%] bg-[#a33520] px-2 py-2 text-right font-semibold text-white/90 sm:px-4">
+                                    TRUE</th>
+                                <th
+                                    class="w-[25%] bg-[#a33520] px-2 py-2 text-right font-semibold text-white/90 sm:px-4">
+                                    Accuracy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-[#ddd5c8]">
+                                <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">&lt;0,5</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">59.743</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">322.725</td>
+                                <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">261</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">227</td>
+                                <td class="px-2 py-3 sm:px-4">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <span>87%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-[#ddd5c8] bg-[#f9f5ef]">
+                                <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">0,5 – 1</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">58.260</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">84.211</td>
+                                <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">69</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">61</td>
+                                <td class="px-2 py-3 sm:px-4">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <span>88%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-[#ddd5c8]">
+                                <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">1 – 5</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">149.159</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">77.445</td>
+                                <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">63</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">59</td>
+                                <td class="px-2 py-3 sm:px-4">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <span>94%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-[#ddd5c8] bg-[#f9f5ef]">
+                                <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">5 – 10</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">44.585</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">6.495</td>
+                                <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">6</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">6</td>
+                                <td class="px-2 py-3 sm:px-4">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <span>100%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-[#ddd5c8]">
+                                <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">10 – 50</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">69.113</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">3.648</td>
+                                <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">3</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">3</td>
+                                <td class="px-2 py-3 sm:px-4">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <span>100%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-[#ddd5c8] bg-[#f9f5ef]">
+                                <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">&gt; 50</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">52.892</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">432</td>
+                                <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">1</td>
+                                <td class="px-2 py-3 text-right font-bold sm:px-4">1</td>
+                                <td class="px-2 py-3 sm:px-4">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <span>100%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="bg-[#fdf6f4] font-semibold">
+                                <td class="px-2 py-3 font-bold text-[#8b2a1a] sm:px-4">Total</td>
+                                <td class="px-2 py-3 text-right sm:px-4">433.751</td>
+                                <td class="px-2 py-3 text-right sm:px-4">494.956</td>
+                                <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">403</td>
+                                <td class="px-2 py-3 text-right sm:px-4">357</td>
+                                <td class="px-2 py-3 sm:px-4">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <span>89%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-            <!-- ═══ ROW 1 · Deep Learning Modeling ═══ -->
-            <div class="flex items-stretch border-t border-white/[0.07] relative" id="row1">
-            <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none" id="ll1" onclick="alurRowToggle(this)">
-                <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">01</div>
-                <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Deep Learning Modeling</div>
-                <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="border-t border-[#ddd5c8] px-2 py-2 text-[10px] text-[#7a6e60] sm:hidden">
+                        Geser tabel ke samping untuk melihat semua kolom.
+                    </div>
+                    <div class="tight text-[10px] px-2 mb-2 w-full">
+                        Interactive table of the results of the 2025 deforestation data accuracy test, broken down by polygon area.
+                    </div>
+                </div>
             </div>
-            <div class="steps flex-1 pl-8 flex items-center relative">
 
-                <div class="flex items-center flex-1">
-                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r1c1" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Training Dataset</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">Sentinel 2 × STADI 2024.<br>Sampel berlabel {0, 1}.</div>
-                </div>
-                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r1a1"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
-                </div>
+        </div>
+    </section>
 
-                <div class="flex items-center flex-1">
-                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r1c2" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Normalisasi Dataset</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light"><ul class="pl-3.5"><li class="mb-0.5">Cropping, tiling, slicing</li><li class="mb-0.5">Normalisasi citra</li></ul></div>
-                </div>
-                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r1a2"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
-                </div>
 
-                <div class="flex items-center flex-1">
-                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r1c3" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Deep Learning — UNET</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light"><ul class="pl-3.5"><li class="mb-0.5">Augmentasi &amp; rotasi</li><li class="mb-0.5">Encoder &amp; Decoder</li><li class="mb-0.5">Confusion Matrix</li></ul></div>
-                </div>
-                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r1a3"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
-                </div>
 
-                <div class="flex items-center [flex:0.8]">
-                <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="outmodel" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Ouput Model</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">Model pemetaan deforestasi siap pakai untuk deteksi skala besar.</div>
-                </div>
-                </div>
 
-            </div>
-            </div>
+    <!-- DEFORESTASI 2025 -->
+    <span class="s-anchor" id="deforestasi"></span>
+    <section class="page-section px-[5vw] py-8">
+        <div class="section-label">03 / DEFORESTATION 2025</div>
 
-            <!-- ═══ ROW 2 · Scoping Area ═══ -->
-            <div class="flex items-stretch border-t border-white/[0.07] relative" id="row2">
-            <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none" id="ll2" onclick="alurRowToggle(this)">
-                <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">02</div>
-                <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Scoping Area Deforestasi</div>
-                <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="steps flex-1 pl-8 flex items-center relative">
+        <p class="body-text">
+            With the methodology outlined above, <strong>deforestation in Indonesia in 2025 reached 433,751
+                hectares</strong>, an increase of 66% compared to the <a
+                href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank"
+                rel="noopener noreferrer" class="text-[#bc4a3c]">261,575 hectares</a> recorded for the previous year.
+            The largest area of deforestation once again occurred in Kalimantan, followed by Sumatra. Papua, which
+            ranked fourth in 2024, rose to third place in 2025, overtaking Sulawesi.
+        </p>
+        <p class="body-text">
+            The following table displays the deforestation data per major island in Indonesia for the years 2023-2025.
+        </p>
 
-                <div class="flex items-center flex-1">
-                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r2c1" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Penentuan Wilayah &amp; Periode</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light"><ul class="pl-3.5"><li class="mb-0.5">Hutan alam 2024</li><li class="mb-0.5">Alert Januari–Desember</li></ul></div>
-                </div>
-                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r2a1"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
+        <div id="peta-embed" class="mx-auto">
+            <!-- MAP SECTION -->
+            <div class="relative bg-black overflow-hidden" style="height:550px;">
+
+                <!-- Header -->
+                <div
+                    class="absolute top-0 left-0 right-0 z-50 pt-4 sm:pt-6 px-4 sm:px-10 flex justify-between items-start pointer-events-none">
+                    <h1 class="font-poppins text-[clamp(1.6rem,3vw,2.6rem)] font-bold leading-[1.1] text-[#f5f0e8]">
+                        Deforestation<br>is set to surge by <span class="text-[#8b2a1a]">2025</span>
+                    </h1>
                 </div>
 
-                <div class="flex items-center flex-1">
-                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r2c2" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Penapisan Alert</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">GLAD confidence level 3 ∩ tutupan hutan 2024.</div>
+                <!-- Map -->
+                <div class="absolute inset-0 pt-[90px] pb-[168px] flex items-center justify-center z-10">
+                    <img id="indonesia-map" class="w-full max-h-full object-contain pointer-events-none select-none"
+                        style="filter:saturate(.65) brightness(1.05);"
+                        src="{{ asset('assets/images/indonesia-map.jpg') }}" alt="Peta Indonesia" />
                 </div>
-                <div class="arrow w-[50px] min-w-[50px] flex items-center justify-center shrink-0 a-arr" id="r2a2">
-                    <svg viewBox="0 0 50 90" fill="none" width="50" height="90">
-                    <line x1="0" y1="45" x2="18" y2="45" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/>
-                    <line x1="18" y1="10" x2="18" y2="80" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/>
-                    <line x1="18" y1="10" x2="40" y2="10" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/>
-                    <line x1="18" y1="80" x2="40" y2="80" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/>
-                    <polyline points="34,5 41,10 34,15" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/>
-                    <polyline points="34,75 41,80 34,85" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/>
+
+                <!-- Year ghost -->
+                <div id="peta-year-ghost"
+                    class="absolute bottom-[15px] sm:bottom-[90px] right-2 sm:right-10 z-10 pointer-events-none font-poppins font-black text-[#f5f0e8] opacity-10 leading-none tracking-tighter"
+                    style="font-size:clamp(4rem,10vw,10rem)">2025</div>
+
+                <!-- Charts layer -->
+                <div class="absolute inset-0 z-20 pointer-events-none">
+
+                    <!-- Charts wrap: desktop = absolute inset-0 passthrough; mobile = single grid box -->
+                    <div id="peta-charts-wrap" class="absolute inset-0 pointer-events-none">
+
+                        <!-- Sumatra chart -->
+                        <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                            id="peta-chart-sumatra"
+                            style="left:3%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                            <div
+                                class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                                <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
+                                    Sumatera</div>
+                                <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                </div>
+                                <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                                    <div class="relative h-[78px] mt-[14px]" id="peta-axis-sumatra"></div>
+                                    <div>
+                                        <div class="relative h-[92px] flex items-end">
+                                            <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                                                <span></span><span></span><span></span><span></span><span></span></div>
+                                            <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                                                id="peta-bars-sumatra"></div>
+                                        </div>
+                                        <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sumatra"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kalimantan chart -->
+                        <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                            id="peta-chart-kalimantan"
+                            style="left:31%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                            <div
+                                class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                                <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
+                                    Kalimantan</div>
+                                <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                </div>
+                                <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                                    <div class="relative h-[78px] mt-[14px]" id="peta-axis-kalimantan"></div>
+                                    <div>
+                                        <div class="relative h-[92px] flex items-end">
+                                            <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                                                <span></span><span></span><span></span><span></span><span></span></div>
+                                            <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                                                id="peta-bars-kalimantan"></div>
+                                        </div>
+                                        <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-kalimantan"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sulawesi chart -->
+                        <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                            id="peta-chart-sulawesi"
+                            style="left:55%;top:10%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                            <div
+                                class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                                <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
+                                    Sulawesi</div>
+                                <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                </div>
+                                <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                                    <div class="relative h-[78px] mt-[14px]" id="peta-axis-sulawesi"></div>
+                                    <div>
+                                        <div class="relative h-[92px] flex items-end">
+                                            <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                                                <span></span><span></span><span></span><span></span><span></span></div>
+                                            <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                                                id="peta-bars-sulawesi"></div>
+                                        </div>
+                                        <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sulawesi"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Papua chart -->
+                        <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                            id="peta-chart-papua"
+                            style="left:72%;top:16%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                            <div
+                                class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                                <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
+                                    Papua</div>
+                                <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                </div>
+                                <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                                    <div class="relative h-[78px] mt-[14px]" id="peta-axis-papua"></div>
+                                    <div>
+                                        <div class="relative h-[92px] flex items-end">
+                                            <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                                                <span></span><span></span><span></span><span></span><span></span></div>
+                                            <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                                                id="peta-bars-papua"></div>
+                                        </div>
+                                        <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-papua"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /peta-charts-wrap -->
+
+                </div><!-- /charts-layer -->
+
+                <!-- Bubbles -->
+                <div id="peta-bubbles"
+                    class="absolute bottom-[105px] left-0 right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 flex gap-1 sm:gap-3 z-30 pointer-events-none items-center justify-center px-1 sm:px-0">
+                    <div class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+                        id="peta-b0" onclick="petaSelectYear(0)">
+                        <div class="b-yr text-[.6rem] font-semibold">2021</div>
+                        <div class="b-val font-bold leading-[1.1]">229.982</div>
+                        <div class="b-u text-[.58rem] opacity-85">ha</div>
+                    </div>
+                    <div class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+                        id="peta-b1" onclick="petaSelectYear(1)">
+                        <div class="b-yr text-[.6rem] font-semibold">2022</div>
+                        <div class="b-val font-bold leading-[1.1]">230.760</div>
+                        <div class="b-u text-[.58rem] opacity-85">ha</div>
+                    </div>
+                    <div class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+                        id="peta-b2" onclick="petaSelectYear(2)">
+                        <div class="b-yr text-[.6rem] font-semibold">2023</div>
+                        <div class="b-val font-bold leading-[1.1]">257.385</div>
+                        <div class="b-u text-[.58rem] opacity-85">ha</div>
+                    </div>
+                    <div class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+                        id="peta-b3" onclick="petaSelectYear(3)">
+                        <div class="b-yr text-[.6rem] font-semibold">2024</div>
+                        <div class="b-val font-bold leading-[1.1]">261.574</div>
+                        <div class="b-u text-[.58rem] opacity-85">ha</div>
+                    </div>
+                    <div class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+                        id="peta-b4" onclick="petaSelectYear(4)">
+                        <div class="b-yr font-semibold">2025</div>
+                        <div class="b-val font-bold leading-[1.1]">433.751</div>
+                        <div class="b-u text-[.58rem] opacity-85">ha</div>
+                    </div>
+                </div>
+
+            </div><!-- /map section -->
+
+            <!-- TABLE SECTION -->
+            <div id="peta-table-section" class="bg-[#1a1a1a] text-[#f5f0e8] py-8 sm:py-20 px-4 sm:px-12 relative">
+                <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
+                    style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)"
+                        stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
+                    <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk melihat
+                        alur lengkap</span>
                 </div>
+                <div class="max-w-[980px] mx-auto overflow-x-auto">
+                    <table class="w-full border-collapse min-w-[560px]">
+                        <thead>
+                            <tr c lass="border-b-2 border-[#8b2a1a]">
+                                <th rowspan="2"
+                                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-left align-bottom">
+                                    Island</th>
+                                <th colspan="3"
+                                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#c04030] py-1 sm:py-[9px] px-2 sm:px-[14px] text-center border-b border-[rgba(255,255,255,.1)]">
+                                    Deforestation (ha)</th>
+                                <th colspan="2"
+                                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase py-1 sm:py-[9px] px-2 sm:px-[14px] text-center border-b border-[rgba(255,255,255,.1)]"
+                                    style="color:#ff6b4a">Expansion 2025 vs 2024</th>
+                            </tr>
+                            <tr class="border-b-2 border-[#8b2a1a]">
+                                <th
+                                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                                    2023</th>
+                                <th
+                                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                                    2024</th>
+                                <th
+                                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                                    2025</th>
+                                <th
+                                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                                    Hektare</th>
+                                <th
+                                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                                    Persen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                                    Kalimantan</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    124.611</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    129.896</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    158.283</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    28.387</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                                    22%</td>
+                            </tr>
+                            <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                                    Sumatera</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    33.311</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    91.248</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    144.150</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    52.901</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                                    58%</td>
+                            </tr>
+                            <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                                    Papua</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    55.981</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    17.341</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    77.678</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    60.337</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                                    348%</td>
+                            </tr>
+                            <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                                    Sulawesi</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    36.814</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    17.361</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    39.685</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    22.324</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                                    129%</td>
+                            </tr>
+                            <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                                    Maluku</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    4.034</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    3.537</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    7.527</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    3.989</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                                    113%</td>
+                            </tr>
+                            <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                                    Bali &amp; Nusa Tenggara</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    2.052</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    1.780</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    4.209</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    2.429</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                                    136%</td>
+                            </tr>
+                            <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                                    Jawa</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    582</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    411</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    2.221</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    1.810</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                                    440%</td>
+                            </tr>
+                            <tr class="tot border-t-2 border-[#8b2a1a] text-[#c04030] font-semibold">
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem]">
+                                    Total</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    257.385</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    261.575</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    433.751</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                                    172.177</td>
+                                <td
+                                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct">
+                                    66%</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-
-                <!-- True + False alert -->
-                <div class="flex self-stretch items-stretch flex-1">
-                <div class="flex flex-col flex-1 gap-0">
-                    <div class="flex items-center flex-1">
-                    <div class="card flex-1 bg-[rgba(46,139,90,0.06)] border border-[rgba(46,139,90,0.3)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r2c3a" onclick="alurToggle(this)">
-                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">True Alert</div>
-                        <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">Alert yang teridentifikasi sebagai kejadian deforestasi nyata. Diproses lebih lanjut.</div>
-                    </div>
-                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r2a3"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
-                    </div>
-                    <div class="flex items-center flex-1 mt-2">
-                    <div class="card flex-1 bg-transparent border border-white/[0.07] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#1e1e1e] a-card" id="r2c3b" onclick="alurToggle(this)">
-                        <div class="text-sm font-bold text-[#6b6460] leading-[1.3]">False Alert</div>
-                        <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">Positif palsu — tidak diproses lebih lanjut dalam alur ini.</div>
-                    </div>
-                    <div class="w-[40px] min-w-[40px]"></div>
-                    </div>
-                </div>
-                </div>
-
-                <div class="flex self-stretch [flex:0.8]">
-                <div class="flex flex-col flex-1">
-                    <div class="flex items-center flex-1">
-                    <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="agreg" onclick="alurToggle(this)">
-                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Agregasi True Alert</div>
-                        <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light"><ul class="pl-3.5"><li class="mb-0.5">Pengelompokan alert</li><li class="mb-0.5">Jarak maks. 10.240 m</li></ul></div>
-                    </div>
-                    </div>
-                    <div class="flex-1 mt-2"></div>
-                </div>
-                </div>
-
             </div>
-            </div>
+        </div><br><br>
 
-            <!-- ═══ ROW 3 · Deforestasi Indikatif (reversed) ═══ -->
-            <div class="flex items-stretch border-t border-white/[0.07] relative" id="row3">
-            <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none" id="ll3" onclick="alurRowToggle(this)">
-                <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">03</div>
-                <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Deforestasi Indikatif</div>
-                <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="steps rev flex-1 pl-8 flex items-center relative flex-row-reverse">
 
-                <div class="flex flex-row-reverse items-center flex-1">
-                <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="normcit" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Normalisasi Citra Sentinel 2</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light"><ul class="pl-3.5"><li class="mb-0.5">Spasial &amp; temporal filter</li><li class="mb-0.5">Cloud masking</li><li class="mb-0.5">Seleksi band</li></ul></div>
-                </div>
-                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r3a1"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
-                </div>
 
-                <div class="flex flex-row-reverse items-center flex-1">
-                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="bbox" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Bounding Box</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">Radius 10.240 m dari ID agregasi alert.</div>
-                </div>
-                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r3a2"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
-                </div>
+        <p class="body-text">
+            Deforestation occurred in all Indonesian provinces except the Jakarta Special Capital Region and the Special
+            Region of Yogyakarta. Where the top ten provinces for deforestation in 2024, in order, were: (1) East
+            Kalimantan, (2) West Kalimantan, (3) Central Kalimantan, (4) Riau, (5) South Sumatra, (6) Jambi, (7) Aceh,
+            (8) North Kalimantan, (9) Bangka Belitung, and (10) North Sumatra, the top ten ranking in 2025 shifted to:
+            (1) Central Kalimantan, (2) East Kalimantan, (3) Aceh, (4) West Kalimantan, (5) Central Papua, (6) West
+            Sumatra, (7) North Sumatra, (8) North Kalimantan, (9) Riau, and (10) Highland Papua.
+        </p><br>
 
-                <div class="flex flex-row-reverse items-center flex-1">
-                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r3c3" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Akuisisi Citra Otomatis</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">Download Sentinel 2 per bulan kejadian secara otomatis.</div>
-                </div>
-                <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r3a3"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
-                </div>
+        <p class="body-text">
+            Three provinces that experienced catastrophic landslides and flooding in northern Sumatra at the end of 2025
+            recorded dramatic increases in deforestation: Aceh (426%), North Sumatra (281%), and West Sumatra
+            (1,034%).<br>
+        </p><br>
 
-                <div class="flex flex-row-reverse items-center [flex:0.8]">
-                <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="dataindikatif" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Data Deforestasi Indikatif</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">Prediksi citra Sentinel via <em class="italic text-[#8a7e78]">deep learning</em> model yang sudah dilatih.</div>
-                </div>
-                </div>
+        <div class="viz-block viz-block--full mt-2 mb-2">
+            <div class="viz-frame viz-frame--padded">
+                <div class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible"
+                    style="max-width:980px;">
 
-            </div>
-            </div>
-
-            <!-- ═══ ROW 4 · Verifikasi ═══ -->
-            <div class="flex items-stretch border-t border-white/[0.07] relative" id="row4">
-            <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none" id="ll4" onclick="alurRowToggle(this)">
-                <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">04</div>
-                <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Verifikasi</div>
-                <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="steps flex-1 pl-8 flex items-center relative">
-
-                <div class="flex [flex:0.8] self-stretch items-center">
-                <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r4c1" onclick="alurToggle(this)">
-                    <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Overlay &amp; Filter Area</div>
-                    <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light"><ul class="pl-3.5"><li class="mb-0.5">Tutupan hutan 2024</li><li class="mb-0.5">Min. mapping unit 0.25 Ha</li></ul></div>
-                </div>
-                <div class="arrow w-[50px] min-w-[50px] flex items-center justify-center shrink-0 a-arr" id="r4a1">
-                    <svg viewBox="0 0 50 130" fill="none" width="50" height="130">
-                    <line x1="0" y1="65" x2="18" y2="65" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/>
-                    <line x1="18" y1="15" x2="18" y2="115" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/>
-                    <line x1="18" y1="15" x2="40" y2="15" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/>
-                    <line x1="18" y1="65" x2="40" y2="65" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/>
-                    <line x1="18" y1="115" x2="40" y2="115" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/>
-                    <polyline points="34,10 41,15 34,20" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/>
-                    <polyline points="34,60 41,65 34,70" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/>
-                    <polyline points="34,110 41,115 34,120" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/>
-                    </svg>
-                </div>
-                </div>
-
-                <div class="self-stretch items-stretch [flex:1.5] flex">
-                <div class="flex flex-col flex-1 gap-2 py-2">
-
-                    <div class="flex items-center flex-1">
-                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r4c2a" onclick="alurToggle(this)">
-                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Inspeksi Visual</div>
-                        <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">Verifikasi melalui pemeriksaan visual langsung pada citra satelit.</div>
+                    <div style="background:#1a1f1e; border-radius:4px; overflow:hidden;">
+                        <iframe src="gallery4.html" style="display:block; width:100%; border:0; height:730px;"></iframe>
                     </div>
-                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r4a2a"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
+                </div>
+            </div>
+        </div><br><br>
+
+        <p class="body-text">
+            Deforestation occurred in 383 regencies/municipalities, or 74% of Indonesia’s total of 514, down from 428 in
+            the previous year. The top ten regencies for deforestation were in Kalimantan and Papua, accounting for
+            95,733 hectares or 22% of national deforestation.<br>
+        </p><br>
+
+        <p class="body-text">
+            Seen in terms of land control status, 307,861 hectares (71%) of deforestation occurred inside forest estates
+            managed by the Ministry of Forestry, while 125,890 hectares occurred in other land use areas (APL) managed
+            by regional governments or land/concession holders.  <br>
+        </p>
+
+        <div class="viz-block viz-block--full mt-2 mb-2">
+            <div class="viz-frame viz-frame--padded">
+                <div class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible"
+                    style="max-width:980px;">
+
+                    <div style="background:#1a1f1e; border-radius:4px; overflow:hidden;">
+                        <iframe src="gallery-banyan.html"
+                            style="display:block; width:100%; border:0; height:650px;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <p class="body-text">
+            Deforestation in conservation areas surged from 7,704 hectares in 2024 to 25,077 hectares in 2025 This
+            deforestation occurred in 163 conservation areas. The top ten conservation areas alone accounted for 17,153
+            hectares, or 68% of total deforestation within all conservation areas.<br>
+
+        </p><br>
+
+        <p class="body-text">
+            Deforestation of 156,463 hectares – excluding double counting in overlapping habitats – occurred in 29
+            million hectares of tiger, rhino, elephant and orangutan habitats.<br>
+
+        </p>
+
+        <div class="viz-block viz-block--full mt-2 mb-2">
+            <div class="viz-frame viz-frame--padded">
+                <div class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible"
+                    style="max-width:980px;">
+
+                    <div style="background:#1a1f1e; border-radius:4px; overflow:hidden;">
+                        <iframe src="gallery-haka.html"
+                            style="display:block; width:100%; border:0; height:650px;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+
+
+        <p class="body-text">
+            In late December 2024, two months after the inauguration of President Prabowo Subianto and Vice President
+            Gibran Rakabuming Raka, the Government of Indonesia launched a food security program allocating 20.6 million
+            hectares of the forest estate for food, energy, and water reserves. A total of 78,213 hectares, or 18% of
+            national deforestation occurred within these designated areas.<br>
+
+        </p><br>
+
+        <p class="body-text">
+            Around 44% of deforestation occurred inside concession areas, with forestry concessions accounting for the
+            highest percentage (58%). The majority of deforestation in concessions (65%) occurred in Kalimantan.<br>
+
+        </p><br>
+
+        <p class="body-text">
+            Deforestation amounting to 41,162 hectares occurred inside 1,140 mining permit or concession areas, with the
+            top ten accounting for 22% (8,929 hectares).<br>
+
+        </p>
+        <div class="viz-block viz-block--full mt-2 mb-2">
+            <div class="viz-frame viz-frame--padded">
+                <div class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible"
+                    style="max-width:980px;">
+
+                    <div style="background:#1a1f1e; border-radius:4px; overflow:hidden;">
+                        <iframe src="gallery-equator.html"
+                            style="display:block; width:100%; border:0; height:650px;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+
+        <p class="body-text">
+            Deforestation amounting to 37,910 hectares occurred inside 719 oil palm concessions throughout 2025, with
+            the top ten concessions accounting for 36% (13,610 hectares). <br>
+
+        </p><br>
+
+        <p class="body-text">
+            Deforestation amounting to 110,898 hectares occurred inside 486 forestry concessions, with 74,409 hectares
+            in logging concessions, 33,063 hectares in pulpwood concessions, 671 hectares in ecosystem restoration
+            concessions, and 2,754 hectares in other forestry concessions.<br>
+
+        </p><br>
+
+        <p class="body-text">
+            Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.<br>
+
+        </p>
+
+
+        <div class="viz-block viz-block--full">
+
+            <!-- PETA TEMATIK (inline) -->
+            <div id="peta-tematik" style="height: 60vh" class="flex overflow-hidden">
+                <aside id="sidebar"
+                    class="sm:w-[350px] w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] px-4 py-4 overflow-y-auto border-r border-white/[.08]">
+                    <h1 class="text-[1.05rem] font-bold leading-[1.15] mb-1 p-1">Thematic Map of Deforestation</h1>
+                    <p class="px-1 text-[.58rem] tracking-[.1em] uppercase text-[#d4c4a0] mb-[10px]">Choose analysis type · 2025</p>
+                    <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
+                        style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                        <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk
+                            melihat alur lengkap</span>
+                    </div>
+                    <div id="mode-btn-rail">
+                        <button
+                            class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all active"
+                            data-mode="provinsi">Deforestation by province</button>
+                        <button
+                            class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
+                            data-mode="kabupaten">Deforestation by regency</button>
+                        <button
+                            class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
+                            data-mode="konservasi">Deforestation in conservation areas</button>
+                        <button
+                            class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
+                            data-mode="megafauna">Deforestation in iconic megafauna habitats</button>
+                        <button
+                            class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
+                            data-mode="konsesi">Deforestation in Concession Areas</button>
+                    </div><!-- /#mode-btn-rail -->
+
+                    <!-- Sub-menu konsesi (hidden by default) -->
+                    <div id="konsesi-submenu" class="hidden pl-4">
+                        <button
+                            class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                            data-cat="kebun-kayu"> Kebun Kayu</button>
+                        <button
+                            class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                            data-cat="logging">Logging</button>
+                        <button
+                            class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                            data-cat="sawit"> Sawit</button>
+                        <button
+                            class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                            data-cat="tambang"> Tambang</button>
                     </div>
 
-                    <div class="flex items-center flex-1">
-                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r4c2b" onclick="alurToggle(this)">
-                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Penapisan Temporal</div>
-                        <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">Analisis multi-temporal untuk memastikan perubahan bersifat permanen.</div>
-                    </div>
-                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r4a2b"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
-                    </div>
+                </aside>
 
-                    <div class="flex items-center flex-1">
-                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card" id="r4c2c" onclick="alurToggle(this)">
-                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Pengecekan Lapangan</div>
-                        <div class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">Survey lapangan ke lokasi terindikasi untuk konfirmasi kondisi aktual.</div>
-                    </div>
-                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr" id="r4a2c"><svg viewBox="0 0 36 14" fill="none"><line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2" opacity="0.6"/><polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2" fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6"/></svg></div>
+                <main id="wrap" class="relative flex-1 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
+                    <div id="map" class="w-full flex-1"></div>
+                    <div id="satwa-badges"
+                        class="hidden absolute top-4 left-1/2 -translate-x-1/2 z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-center gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[92vw]">
                     </div>
 
-                </div>
-                </div>
 
-                <div class="[flex:0.8] self-stretch flex">
-                <div class="card-final flex-1 bg-[#C75B2E] rounded-[10px] px-5 py-6 flex flex-col justify-center relative overflow-hidden min-h-[160px] a-card" id="card-final">
-                    <div class="font-poppins text-[22px] font-extrabold text-white leading-[1.1] relative">Data<br>Deforestasi</div>
-                </div>
-                </div>
+                    <div id="title-block" class="absolute top-[10px] left-[14px] z-[600] pointer-events-none">
+                        <h2 id="map-title"
+                            class="font-bold text-[clamp(.9rem,1.5vw,1.5rem)] leading-[1.2] text-[#1a1a1a] [text-shadow:0_2px_10px_rgba(255,255,255,.7)]">
+                            Deforestasi berbasis provinsi</h2>
+                    </div>
 
+                    <div id="kpi-float"
+                        class="absolute left-[14px] bottom-[14px] z-[610] bg-[rgba(20,20,20,.82)] backdrop-blur-[4px] border-l-[3px] border-l-[#8b2a1a] rounded-md px-3 py-[7px] w-44 text-[#f5f0e8]">
+                        <button id="kpi-toggle" onclick="kpiFloatToggle()" style="display:none"
+                            class="w-full flex flex-col items-center pt-[10px] pb-[8px] cursor-pointer bg-transparent border-0 outline-none gap-[5px]">
+                            <span class="block w-7 h-[3px] rounded-full bg-white/30"></span>
+                            <svg id="kpi-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                style="transition:transform .25s ease">
+                                <path d="M1 7L7 1L13 7" stroke="rgba(245,240,232,.5)" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="text-[.5rem] tracking-[.08em] uppercase text-[#d4c4a0]" id="kpi-label">Total</div>
+                        <div class="text-[1.25rem] font-bold leading-none mt-[2px]" id="kpi-val">0</div>
+                        <div class="text-[.5rem] text-[#d4c4a0] mt-[2px]" id="kpi-unit">hektare</div>
+                        <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]"></ul>
+                    </div>
+
+                    <div id="others-bubble"
+                        class="absolute right-[14px] top-[10px] z-[620] w-[120px] h-[120px] rounded-full bg-[rgba(192,64,48,.95)] text-white hidden text-center items-center justify-center flex-col p-3 shadow-[0_8px_26px_rgba(139,42,26,.35)]">
+                        <div class="text-[.58rem] leading-[1.3]" id="bubble-label">Kabupaten lainnya</div>
+                        <div class="text-[1.4rem] font-bold leading-none mt-[3px]" id="bubble-val">0</div>
+                        <div class="text-[.5rem] mt-[1px] opacity-90" id="bubble-unit">hektare</div>
+                    </div>
+
+                    <div id="notes-wrap"
+                        class="absolute left-[14px] bottom-[12px] z-[620] w-[min(360px,38vw)] flex flex-col">
+                        <div id="notes-box" class=" pt-[14px] px-[14px] pb-[10px]">
+                            <ul id="notes-list"
+                                class="pl-[18px] [&>li]:text-[.82rem] [&>li]:leading-[1.48] [&>li]:mb-[6px]"></ul>
+                        </div>
+                    </div>
+
+                    <div id="table-panel"
+                        class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
+                        <button id="table-toggle"
+                            class="absolute left-[-36px] top-1/2 -translate-y-1/2 z-10 [writing-mode:vertical-rl] [text-orientation:mixed] bg-[#1a1a1a] text-[#f5f0e8] border-0 rounded-l-lg py-5 px-[9px] text-[.6rem] font-bold tracking-[.1em] uppercase cursor-pointer shadow-[-4px_0_14px_rgba(0,0,0,.3)] transition-colors leading-none whitespace-nowrap hidden">Tabel
+                            ▶</button>
+                        <div class="flex items-center justify-between px-4 py-3 border-b border-white/[.1] shrink-0">
+                            <span class="text-[.65rem] font-bold tracking-[.1em] uppercase text-[#d4c4a0]">Tabel
+                                Data</span>
+                            <button id="table-close"
+                                class="flex items-center justify-center w-7 h-7 rounded-full bg-white/[.08] hover:bg-white/[.16] border-0 cursor-pointer transition-colors"
+                                aria-label="Tutup tabel">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M1 1l10 10M11 1L1 11" stroke="#f5f0e8" stroke-width="1.8"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="table-wrap" class="flex-1 overflow-y-auto overflow-x-hidden flex flex-col"></div>
+                    </div>
+                </main>
             </div>
+
+        </div><br><br>
+
+
+
+        <p class="body-text">
+            Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.
+        </p>
+        <p class="body-text">
+            Deforestation occurred in 237 logging concessions, with the top ten accounting for 28 percent.
+        </p>
+
+
+
+        {{-- <div class="pull-quote">
+            <p>Deforestasi di Kalimantan meningkat drastis setiap tahun sejak 2021, didorong oleh ekspansi konsesi kebun
+                kayu, sawit, dan pertambangan yang beroperasi secara legal di bawah izin yang diterbitkan pemerintah.
+            </p>
+            <cite>—Analisis SIMONTINI 2025</cite>
+        </div> --}}
+    </section>
+
+    <!-- KONSESI -->
+    {{-- <span class="s-anchor" id="konsesi"></span>
+    <section class="page-section px-[5vw] py-10">
+        <div class="section-body">
+            <div class="section-label">04 / Deforestasi dalam Konsesi</div>
+
+            <p class="body-text">
+                Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan
+                hutan alam juga menjadi pemicu deforestasi. Analisis Auriga Nusantara menunjukkan bahwa per 2024
+                terdapat 9,6 juta hektare tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam
+                konsesi seperti ini mencapai 114.823 hektare atau 26% dari deforestasi nasional. Visual berikut
+                menampilkan sepuluh teratas deforestasi dalam konsesi per kategori.
+            </p>
+
+            <!-- <div class="viz-block viz-block--full" data-include-html="partials/konsesi-embed.html"></div> -->
+
+
+            <!-- <hr class="divider"> -->
+
+            <div class="callout">
+                <p>
+                    <strong>Catatan:</strong> Hanya 3% deforestasi 2025 yang terjadi di kawasan konservasi, sementara
+                    49% di hutan produksi dan 43% di luar kawasan hutan. Artinya, <strong>97% deforestasi yang terjadi
+                        berpotensi legal</strong> karena dilakukan di daerah berizin.
+                </p>
             </div>
-
-        </div><!-- /#dwrap -->
-        </div><!-- /#alur-embed -->
-
-        <div style="padding:10px 16px 14px; font-size:.72rem; line-height:1.7; color:rgba(255,255,255,.45); text-align:center;">
-        Diagram interaktif alur kerja SIMONTINI dari pemodelan deep learning hingga verifikasi lapangan. Klik kotak oranye untuk melihat detail setiap tahapan.
         </div>
-  </div>
-</div>
+    </section> --}}
 
-<section class="page-section px-[5vw] pt-8 pb-6">
-  <div class="body-text">
-    <p>
-      <strong>Accuracy Testing:</strong>. To determine the level of precision of the 2025 deforestation data, an accuracy assessment was conducted by visually inspecting deforestation polygons using PlanetScope imagery with a spatial resolution of 3.7 meters. The polygons selected for inspection were chosen randomly using a stratified random sampling method. Deforestation polygons were grouped by area, namely: <0.5 ha, 0.5–1 ha, 1–5 ha, 5–10 ha, 10–50 ha, and >50 ha. The number of samples was determined using the Slovin formula with a 5% margin of error.
-    </p><br>
-    <p>
-      Results of this accuracy testing showed the 2025 deforestation data having an accuracy level of 89%, as presented in the table below.
-    </p>
-  </div>
+    <!-- DISKUSI -->
+    <span class="s-anchor" id="diskusi"></span>
+    <section class="page-section px-[5vw] py-10">
+        <div class="section-label">04 / Discussion</div>
 
-  <div class="viz-block viz-block--full mt-12 mb-2">
-    <div class="max-w-3xl mx-auto mt-4">
-      <div class=" sm:mx-auto overflow-x-auto overflow-y-hidden  sm:rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible">
-        <div class="border-b border-[#ddd5c8] px-4 py-4 sm:px-6">
-          <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">Hasil uji akurasi terhadap data deforestasi 2025</div>
-        </div>
-
-        <table class="akurasi-table w-full min-w-[480px] table-fixed border-collapse text-[10px] text-[#1a1a1a] sm:text-[11px] md:min-w-full md:text-[12px]">
-          <thead>
-            <tr>
-              <th colspan="3" class="border-r border-white/15 text-center bg-[#8b2a1a] px-2 py-3 text-left font-semibold uppercase tracking-[0.08em] text-white sm:px-4">Area deforestasi</th>
-              <th colspan="3" class="bg-[#8b2a1a] px-2 py-3 text-center font-semibold uppercase tracking-[0.08em] text-white sm:px-4">Uji akurasi</th>
-            </tr>
-            <tr>
-              <th class="w-[16%] bg-[#a33520] px-2 py-2 text-left font-semibold text-white/90 sm:px-4">Strata (ha)</th>
-              <th class="w-[17%] bg-[#a33520] px-2 py-2 text-right font-semibold text-white/90 sm:px-4">Luas (ha)</th>
-              <th class="w-[14%] bg-[#a33520] px-2 py-2 text-right font-semibold text-white/90 sm:px-4">Poligon</th>
-              <th class="w-[18%]  bg-[#a33520] px-2 py-2 text-right font-semibold text-white/90 sm:px-4">Sampel poligon</th>
-              <th class="w-[10%] bg-[#a33520] px-2 py-2 text-right font-semibold text-white/90 sm:px-4">TRUE</th>
-              <th class="w-[25%] bg-[#a33520] px-2 py-2 text-right font-semibold text-white/90 sm:px-4">Akurasi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-[#ddd5c8]">
-              <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">&lt;0,5</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">59.743</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">322.725</td>
-              <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">261</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">227</td>
-              <td class="px-2 py-3 sm:px-4">
-                <div class="flex items-center justify-end gap-2">
-                  <span>87%</span>
-                </div>
-              </td>
-            </tr>
-            <tr class="border-b border-[#ddd5c8] bg-[#f9f5ef]">
-              <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">0,5 – 1</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">58.260</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">84.211</td>
-              <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">69</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">61</td>
-              <td class="px-2 py-3 sm:px-4">
-                <div class="flex items-center justify-end gap-2">
-                  <span>88%</span>
-                </div>
-              </td>
-            </tr>
-            <tr class="border-b border-[#ddd5c8]">
-              <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">1 – 5</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">149.159</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">77.445</td>
-              <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">63</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">59</td>
-              <td class="px-2 py-3 sm:px-4">
-                <div class="flex items-center justify-end gap-2">
-                  <span>94%</span>
-                </div>
-              </td>
-            </tr>
-            <tr class="border-b border-[#ddd5c8] bg-[#f9f5ef]">
-              <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">5 – 10</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">44.585</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">6.495</td>
-              <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">6</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">6</td>
-              <td class="px-2 py-3 sm:px-4">
-                <div class="flex items-center justify-end gap-2">
-                  <span>100%</span>
-                </div>
-              </td>
-            </tr>
-            <tr class="border-b border-[#ddd5c8]">
-              <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">10 – 50</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">69.113</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">3.648</td>
-              <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">3</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">3</td>
-              <td class="px-2 py-3 sm:px-4">
-                <div class="flex items-center justify-end gap-2">
-                  <span>100%</span>
-                </div>
-              </td>
-            </tr>
-            <tr class="border-b border-[#ddd5c8] bg-[#f9f5ef]">
-              <td class="px-2 py-3 font-semibold text-[#7a6e60] sm:px-4">&gt; 50</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">52.892</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">432</td>
-              <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">1</td>
-              <td class="px-2 py-3 text-right font-bold sm:px-4">1</td>
-              <td class="px-2 py-3 sm:px-4">
-                <div class="flex items-center justify-end gap-2">
-                  <span>100%</span>
-                </div>
-              </td>
-            </tr>
-            <tr class="bg-[#fdf6f4] font-semibold">
-              <td class="px-2 py-3 font-bold text-[#8b2a1a] sm:px-4">Total</td>
-              <td class="px-2 py-3 text-right sm:px-4">433.751</td>
-              <td class="px-2 py-3 text-right sm:px-4">494.956</td>
-              <td class=" border-[#ddd5c8] px-2 py-3 text-right sm:px-4">403</td>
-              <td class="px-2 py-3 text-right sm:px-4">357</td>
-              <td class="px-2 py-3 sm:px-4">
-                <div class="flex items-center justify-end gap-2">
-                  <span>89%</span>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="border-t border-[#ddd5c8] px-2 py-2 text-[10px] text-[#7a6e60] sm:hidden">
-          Geser tabel ke samping untuk melihat semua kolom.
-        </div>
-        <div class="tight text-[10px] px-2 mb-2 w-full">
-        Tabel interaktif hasil uji akurasi data deforestasi 2025 berdasarkan strata luas poligon.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-<!-- DEFORESTASI 2025 -->
-<span class="s-anchor" id="deforestasi"></span>
-<section class="page-section px-[5vw] py-8">
-  <div class="section-label">03 / DEFORESTATION 2025</div>
-
-  <p class="body-text">
-    With the methodology outlined above, <strong>deforestation in Indonesia in 2025 reached 433,751 hectares</strong>, an increase of 66% compared to the <a href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank" rel="noopener noreferrer" class="text-[#bc4a3c]" >261,575 hectares</a> recorded for the previous year. The largest area of deforestation once again occurred in Kalimantan, followed by Sumatra. Papua, which ranked fourth in 2024, rose to third place in 2025, overtaking Sulawesi.
-  </p>
-  <p class="body-text">
-    The following table displays the deforestation data per major island in Indonesia for the years 2023-2025.
-  </p>
-
-<div id="peta-embed" class="mx-auto">
-<!-- MAP SECTION -->
-<div class="relative bg-black overflow-hidden" style="height:550px;">
-
-  <!-- Header -->
-  <div class="absolute top-0 left-0 right-0 z-50 pt-4 sm:pt-6 px-4 sm:px-10 flex justify-between items-start pointer-events-none">
-    <h1 class="font-poppins text-[clamp(1.6rem,3vw,2.6rem)] font-bold leading-[1.1] text-[#f5f0e8]">
-      Deforestasi<br>melonjak pada <span class="text-[#8b2a1a]">2025</span>
-    </h1>
-  </div>
-
-  <!-- Map -->
-  <div class="absolute inset-0 pt-[90px] pb-[168px] flex items-center justify-center z-10">
-    <img id="indonesia-map" class="w-full max-h-full object-contain pointer-events-none select-none" style="filter:saturate(.65) brightness(1.05);" src="{{ asset('assets/images/indonesia-map.jpg') }}" alt="Peta Indonesia"/>
-  </div>
-
-  <!-- Year ghost -->
-  <div id="peta-year-ghost" class="absolute bottom-[15px] sm:bottom-[90px] right-2 sm:right-10 z-10 pointer-events-none font-poppins font-black text-[#f5f0e8] opacity-10 leading-none tracking-tighter" style="font-size:clamp(4rem,10vw,10rem)">2025</div>
-
-  <!-- Charts layer -->
-  <div class="absolute inset-0 z-20 pointer-events-none">
-
-    <!-- Charts wrap: desktop = absolute inset-0 passthrough; mobile = single grid box -->
-    <div id="peta-charts-wrap" class="absolute inset-0 pointer-events-none">
-
-    <!-- Sumatra chart -->
-    <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100" id="peta-chart-sumatra" style="left:3%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-      <div class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-        <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sumatera</div>
-        <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
-        <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-          <div class="relative h-[78px] mt-[14px]" id="peta-axis-sumatra"></div>
-          <div>
-            <div class="relative h-[92px] flex items-end">
-              <div class="peta-grid-lines absolute inset-0 pointer-events-none"><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]" id="peta-bars-sumatra"></div>
+        <div class="mt-10">
+            <div class="chapter-header">
+                <span class="ms-num">01</span>
+                <h3 class="chapter-title"><strong>Government policies have contributed to deforestation</strong></h3>
             </div>
-            <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sumatra"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Kalimantan chart -->
-    <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100" id="peta-chart-kalimantan" style="left:31%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-      <div class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-        <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Kalimantan</div>
-        <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
-        <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-          <div class="relative h-[78px] mt-[14px]" id="peta-axis-kalimantan"></div>
-          <div>
-            <div class="relative h-[92px] flex items-end">
-              <div class="peta-grid-lines absolute inset-0 pointer-events-none"><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]" id="peta-bars-kalimantan"></div>
-            </div>
-            <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-kalimantan"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sulawesi chart -->
-    <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100" id="peta-chart-sulawesi" style="left:55%;top:10%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-      <div class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-        <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sulawesi</div>
-        <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
-        <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-          <div class="relative h-[78px] mt-[14px]" id="peta-axis-sulawesi"></div>
-          <div>
-            <div class="relative h-[92px] flex items-end">
-              <div class="peta-grid-lines absolute inset-0 pointer-events-none"><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]" id="peta-bars-sulawesi"></div>
-            </div>
-            <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sulawesi"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Papua chart -->
-    <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100" id="peta-chart-papua" style="left:72%;top:16%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-      <div class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-        <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Papua</div>
-        <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
-        <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-          <div class="relative h-[78px] mt-[14px]" id="peta-axis-papua"></div>
-          <div>
-            <div class="relative h-[92px] flex items-end">
-              <div class="peta-grid-lines absolute inset-0 pointer-events-none"><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]" id="peta-bars-papua"></div>
-            </div>
-            <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-papua"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    </div><!-- /peta-charts-wrap -->
-
-  </div><!-- /charts-layer -->
-
-  <!-- Bubbles -->
-  <div id="peta-bubbles" class="absolute bottom-[105px] left-0 right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 flex gap-1 sm:gap-3 z-30 pointer-events-none items-center justify-center px-1 sm:px-0">
-    <div class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer" id="peta-b0" onclick="petaSelectYear(0)"><div class="b-yr text-[.6rem] font-semibold">2021</div><div class="b-val font-bold leading-[1.1]">229.982</div><div class="b-u text-[.58rem] opacity-85">ha</div></div>
-    <div class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer" id="peta-b1" onclick="petaSelectYear(1)"><div class="b-yr text-[.6rem] font-semibold">2022</div><div class="b-val font-bold leading-[1.1]">230.760</div><div class="b-u text-[.58rem] opacity-85">ha</div></div>
-    <div class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer" id="peta-b2" onclick="petaSelectYear(2)"><div class="b-yr text-[.6rem] font-semibold">2023</div><div class="b-val font-bold leading-[1.1]">257.385</div><div class="b-u text-[.58rem] opacity-85">ha</div></div>
-    <div class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer" id="peta-b3" onclick="petaSelectYear(3)"><div class="b-yr text-[.6rem] font-semibold">2024</div><div class="b-val font-bold leading-[1.1]">261.574</div><div class="b-u text-[.58rem] opacity-85">ha</div></div>
-    <div class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer" id="peta-b4" onclick="petaSelectYear(4)"><div class="b-yr font-semibold">2025</div><div class="b-val font-bold leading-[1.1]">433.751</div><div class="b-u text-[.58rem] opacity-85">ha</div></div>
-  </div>
-
-</div><!-- /map section -->
-
-<!-- TABLE SECTION -->
-<div id="peta-table-section" class="bg-[#1a1a1a] text-[#f5f0e8] py-8 sm:py-20 px-4 sm:px-12 relative">
-     <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden" style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk melihat alur lengkap</span>
-        </div>
-  <div class="max-w-[980px] mx-auto overflow-x-auto">
-    <table class="w-full border-collapse min-w-[560px]">
-      <thead>
-        <tr c lass="border-b-2 border-[#8b2a1a]">
-          <th rowspan="2" class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-left align-bottom">Pulau</th>
-          <th colspan="3" class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#c04030] py-1 sm:py-[9px] px-2 sm:px-[14px] text-center border-b border-[rgba(255,255,255,.1)]">Deforestasi (ha)</th>
-          <th colspan="2" class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase py-1 sm:py-[9px] px-2 sm:px-[14px] text-center border-b border-[rgba(255,255,255,.1)]" style="color:#ff6b4a">Perluasan 2025 vs 2024</th>
-        </tr>
-        <tr class="border-b-2 border-[#8b2a1a]">
-          <th class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">2023</th>
-          <th class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">2024</th>
-          <th class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">2025</th>
-          <th class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">Hektare</th>
-          <th class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">Persen</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]"><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">Kalimantan</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">124.611</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">129.896</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">158.283</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">28.387</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">22%</td></tr>
-        <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]"><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">Sumatera</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">33.311</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">91.248</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">144.150</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">52.901</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">58%</td></tr>
-        <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]"><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">Papua</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">55.981</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">17.341</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">77.678</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">60.337</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">348%</td></tr>
-        <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]"><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">Sulawesi</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">36.814</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">17.361</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">39.685</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">22.324</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">129%</td></tr>
-        <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]"><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">Maluku</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">4.034</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">3.537</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">7.527</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">3.989</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">113%</td></tr>
-        <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]"><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">Bali &amp; Nusa Tenggara</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">2.052</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">1.780</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">4.209</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">2.429</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">136%</td></tr>
-        <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]"><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">Jawa</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">582</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">411</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">2.221</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">1.810</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">440%</td></tr>
-        <tr class="tot border-t-2 border-[#8b2a1a] text-[#c04030] font-semibold"><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem]">Total</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">257.385</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">261.575</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">433.751</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">172.177</td><td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct">66%</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-</div><br><br>
-
-
-
-    <p class="body-text">
-    Deforestation occurred in all Indonesian provinces except the Jakarta Special Capital Region and the Special Region of Yogyakarta. Where the top ten provinces for deforestation in 2024, in order, were: (1) East Kalimantan, (2) West Kalimantan, (3) Central Kalimantan, (4) Riau, (5) South Sumatra, (6) Jambi, (7) Aceh, (8) North Kalimantan, (9) Bangka Belitung, and (10) North Sumatra, the top ten ranking in 2025 shifted to: (1) Central Kalimantan, (2) East Kalimantan, (3) Aceh, (4) West Kalimantan, (5) Central Papua, (6) West Sumatra, (7) North Sumatra, (8) North Kalimantan, (9) Riau, and (10) Highland Papua.
-    </p><br>
-
-    <p class="body-text">
-    Three provinces that experienced catastrophic landslides and flooding in northern Sumatra at the end of 2025 recorded dramatic increases in deforestation: Aceh (426%), North Sumatra (281%), and West Sumatra (1,034%).
-(graph) <strong>The top ten provinces for deforestation, 2023–2025</strong> (hectares)<br>
-    </p><br>
-
-    <div class="viz-block viz-block--full mt-2 mb-2">
-    <div class="viz-frame viz-frame--padded">
-      <div class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible" style="max-width:980px;">
-
-        <div style="background:#1a1f1e; border-radius:4px; overflow:hidden;">
-          <iframe src="gallery4.html" style="display:block; width:100%; border:0; height:730px;"></iframe>
-        </div>
-      </div>
-    </div>
-  </div><br><br>
-
-    <p class="body-text">
-    Deforestation occurred in 383 regencies/municipalities, or 74% of Indonesia’s total of 514, down from 428 in the previous year. The top ten regencies for deforestation were in Kalimantan and Papua, accounting for 95,733 hectares or 22% of national deforestation. 
-(graph) <strong>The top ten regencies for deforestation, 2023–2025</strong> (hectares)<br>
-    </p><br>
-
-    <p class="body-text">
-    Seen in terms of land control status, 307,861 hectares (71%) of deforestation occurred inside forest estates managed by the Ministry of Forestry, while 125,890 hectares occurred in other land use areas (APL) managed by regional governments or land/concession holders.  (graph) <strong>Deforestation in forest estates versus other land use areas (APL)</strong> (hectares).<br>
-    </p>
-
-    <div class="viz-block viz-block--full mt-2 mb-2">
-    <div class="viz-frame viz-frame--padded">
-      <div class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible" style="max-width:980px;">
-
-        <div style="background:#1a1f1e; border-radius:4px; overflow:hidden;">
-          <iframe src="gallery-banyan.html" style="display:block; width:100%; border:0; height:650px;"></iframe>
-        </div>
-      </div>
-    </div>
-  </div><br>
-
-    <p class="body-text">
-    Deforestation in conservation areas surged from 7,704 hectares in 2024 to 25,077 hectares in 2025 This deforestation occurred in 163 conservation areas. The top ten conservation areas alone accounted for 17,153 hectares, or 68% of total deforestation within all conservation areas. (graph) <strong>The top ten conservation areas for deforestation</strong> (hectares).<br>
-
-    </p><br>
-
-    <p class="body-text">
-    Deforestation of 156,463 hectares – excluding double counting in overlapping habitats – occurred in 29 million hectares of tiger, rhino, elephant and orangutan habitats.
-(graph) <strong>Deforestation in iconic megafauna habitats</strong> (hectares).<br>
-
-    </p>
-
-    <div class="viz-block viz-block--full mt-2 mb-2">
-    <div class="viz-frame viz-frame--padded">
-      <div class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible" style="max-width:980px;">
-
-        <div style="background:#1a1f1e; border-radius:4px; overflow:hidden;">
-          <iframe src="gallery-haka.html" style="display:block; width:100%; border:0; height:650px;"></iframe>
-        </div>
-      </div>
-    </div>
-  </div><br>
-
-
-
-    <p class="body-text">
-    In late December 2024, two months after the inauguration of President Prabowo Subianto and Vice President Gibran Rakabuming Raka, the Government of Indonesia launched a food security program allocating 20.6 million hectares of the forest estate for food, energy, and water reserves. A total of 78,213 hectares, or 18% of national deforestation occurred within these designated areas. 
-(graph or table) <strong>Deforestation of forest estate for food, energy, and water reserves</strong>.<br>
-
-    </p><br>
-
-    <p class="body-text">
-    Around 44% of deforestation occurred inside concession areas, with forestry concessions accounting for the highest percentage (58%). The majority of deforestation in concessions (65%) occurred in Kalimantan.
-(graph) <strong>Deforestation in concession areas</strong>.<br>
-
-    </p><br>
-
-    <p class="body-text">
-    Deforestation amounting to 41,162 hectares occurred inside 1,140 mining permit or concession areas, with the top ten accounting for 22% (8,929 hectares).
-(graph) <strong>The top ten mining concessions for deforestation</strong>.<br>
-
-    </p>
-    <div class="viz-block viz-block--full mt-2 mb-2">
-    <div class="viz-frame viz-frame--padded">
-      <div class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible" style="max-width:980px;">
-
-        <div style="background:#1a1f1e; border-radius:4px; overflow:hidden;">
-          <iframe src="gallery-equator.html" style="display:block; width:100%; border:0; height:650px;"></iframe>
-        </div>
-      </div>
-    </div>
-  </div><br><br>
-
-    <p class="body-text">
-    Deforestation amounting to 37,910 hectares occurred inside 719 oil palm concessions throughout 2025, with the top ten concessions accounting for 36% (13,610 hectares). 
-(table) <strong>The top ten oil palm concessions for deforestation</strong><br>
-
-    </p><br>
-
-    <p class="body-text">
-    Deforestation amounting to 110,898 hectares occurred inside 486 forestry concessions, with 74,409 hectares in logging concessions, 33,063 hectares in pulpwood concessions, 671 hectares in ecosystem restoration concessions, and 2,754 hectares in other forestry concessions.<br>
-
-    </p><br>
-
-    <p class="body-text">
-    Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.
-(graph) The top ten pulpwood concessions for deforestation<br>
-
-    </p>
-
-
-   <div class="viz-block viz-block--full">
-
-<!-- PETA TEMATIK (inline) -->
-<div id="peta-tematik" style="height: 60vh" class="flex overflow-hidden">
-  <aside id="sidebar" class="sm:w-[350px] w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] px-4 py-4 overflow-y-auto border-r border-white/[.08]">
-    <h1 class="text-[1.05rem] font-bold leading-[1.15] mb-1 p-1">Peta Tematik Deforestasi</h1>
-    <p class="px-1 text-[.58rem] tracking-[.1em] uppercase text-[#d4c4a0] mb-[10px]">Pilih jenis analisis · 2025</p>
-    <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden" style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk melihat alur lengkap</span>
-        </div>
-    <div id="mode-btn-rail">
-    <button class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all active" data-mode="provinsi">Deforestasi berbasis provinsi</button>
-    <button class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all" data-mode="kabupaten">Deforestasi berbasis kabupaten</button>
-    <button class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all" data-mode="konservasi">Deforestasi di kawasan konservasi</button>
-    <button class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all" data-mode="megafauna">Deforestasi di Habitat megafauna ikonik</button>
-    <button class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all" data-mode="konsesi">Deforestasi dalam Konsesi</button>
-    </div><!-- /#mode-btn-rail -->
-
-    <!-- Sub-menu konsesi (hidden by default) -->
-    <div id="konsesi-submenu" class="hidden pl-4">
-      <button class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all" data-cat="kebun-kayu"> Kebun Kayu</button>
-      <button class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all" data-cat="logging">Logging</button>
-      <button class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all" data-cat="sawit"> Sawit</button>
-      <button class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all" data-cat="tambang"> Tambang</button>
-    </div>
-
-  </aside>
-
-  <main id="wrap" class="relative flex-1 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
-    <div id="map" class="w-full flex-1"></div>
-    <div id="satwa-badges" class="hidden absolute top-4 left-1/2 -translate-x-1/2 z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-center gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[92vw]"></div>
-
-
-    <div id="title-block" class="absolute top-[10px] left-[14px] z-[600] pointer-events-none">
-      <h2 id="map-title" class="font-bold text-[clamp(.9rem,1.5vw,1.5rem)] leading-[1.2] text-[#1a1a1a] [text-shadow:0_2px_10px_rgba(255,255,255,.7)]">Deforestasi berbasis provinsi</h2>
-    </div>
-
-    <div id="kpi-float" class="absolute left-[14px] bottom-[14px] z-[610] bg-[rgba(20,20,20,.82)] backdrop-blur-[4px] border-l-[3px] border-l-[#8b2a1a] rounded-md px-3 py-[7px] w-44 text-[#f5f0e8]">
-      <button id="kpi-toggle" onclick="kpiFloatToggle()" style="display:none" class="w-full flex flex-col items-center pt-[10px] pb-[8px] cursor-pointer bg-transparent border-0 outline-none gap-[5px]">
-        <span class="block w-7 h-[3px] rounded-full bg-white/30"></span>
-        <svg id="kpi-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none" style="transition:transform .25s ease">
-          <path d="M1 7L7 1L13 7" stroke="rgba(245,240,232,.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <div class="text-[.5rem] tracking-[.08em] uppercase text-[#d4c4a0]" id="kpi-label">Total</div>
-      <div class="text-[1.25rem] font-bold leading-none mt-[2px]" id="kpi-val">0</div>
-      <div class="text-[.5rem] text-[#d4c4a0] mt-[2px]" id="kpi-unit">hektare</div>
-      <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]"></ul>
-    </div>
-
-    <div id="others-bubble" class="absolute right-[14px] top-[10px] z-[620] w-[120px] h-[120px] rounded-full bg-[rgba(192,64,48,.95)] text-white hidden text-center items-center justify-center flex-col p-3 shadow-[0_8px_26px_rgba(139,42,26,.35)]">
-      <div class="text-[.58rem] leading-[1.3]" id="bubble-label">Kabupaten lainnya</div>
-      <div class="text-[1.4rem] font-bold leading-none mt-[3px]" id="bubble-val">0</div>
-      <div class="text-[.5rem] mt-[1px] opacity-90" id="bubble-unit">hektare</div>
-    </div>
-
-    <div id="notes-wrap" class="absolute left-[14px] bottom-[12px] z-[620] w-[min(360px,38vw)] flex flex-col">
-      <div id="notes-box" class=" pt-[14px] px-[14px] pb-[10px]">
-        <ul id="notes-list" class="pl-[18px] [&>li]:text-[.82rem] [&>li]:leading-[1.48] [&>li]:mb-[6px]"></ul>
-      </div>
-    </div>
-
-    <div id="table-panel" class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
-      <button id="table-toggle" class="absolute left-[-36px] top-1/2 -translate-y-1/2 z-10 [writing-mode:vertical-rl] [text-orientation:mixed] bg-[#1a1a1a] text-[#f5f0e8] border-0 rounded-l-lg py-5 px-[9px] text-[.6rem] font-bold tracking-[.1em] uppercase cursor-pointer shadow-[-4px_0_14px_rgba(0,0,0,.3)] transition-colors leading-none whitespace-nowrap hidden">Tabel ▶</button>
-      <div class="flex items-center justify-between px-4 py-3 border-b border-white/[.1] shrink-0">
-        <span class="text-[.65rem] font-bold tracking-[.1em] uppercase text-[#d4c4a0]">Tabel Data</span>
-        <button id="table-close" class="flex items-center justify-center w-7 h-7 rounded-full bg-white/[.08] hover:bg-white/[.16] border-0 cursor-pointer transition-colors" aria-label="Tutup tabel">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 1l10 10M11 1L1 11" stroke="#f5f0e8" stroke-width="1.8" stroke-linecap="round"/></svg>
-        </button>
-      </div>
-      <div id="table-wrap" class="flex-1 overflow-y-auto overflow-x-hidden flex flex-col"></div>
-    </div>
-  </main>
-</div>
-
-   </div><br><br>
-
-
-
-  <p class="body-text">
-    Deforestasi terjadi di 383 kabupaten/kota atau 74% kabupaten/kota se-Indonesia yang jumlahnya 514, mengalami penurunan dari tahun sebelumnya yang terjadi di 428 kabupaten/kota. Sepuluh teratas kabupaten deforestasi berada di Kalimantan dan Tanah Papua, dengan deforestasi seluas 95.874 hektare atau 22% deforestasi nasional.
-  </p>
-  <p class="body-text">
-    Dilihat dari status penguasaan lahan, 308.261 hektare (72%) deforestasi terjadi di kawasan hutan yang dikelola Kementerian Kehutanan, dan 125.997 hektare terjadi di area penggunaan lain (APL) yang dikelola pemerintah daerah atau pemilik lahan/konsesi.
-  </p>
-
-
-
-  <div class="pull-quote">
-    <p>Deforestasi di Kalimantan meningkat drastis setiap tahun sejak 2021, didorong oleh ekspansi konsesi kebun kayu, sawit, dan pertambangan yang beroperasi secara legal di bawah izin yang diterbitkan pemerintah.</p>
-    <cite>—Analisis SIMONTINI 2025</cite>
-  </div>
-</section>
-
-<!-- KONSESI -->
-<span class="s-anchor" id="konsesi"></span>
-<section class="page-section px-[5vw] py-10">
-<div class="section-body">
-  <div class="section-label">04 / Deforestasi dalam Konsesi</div>
-
-  <p class="body-text">
-    Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan hutan alam juga menjadi pemicu deforestasi. Analisis Auriga Nusantara menunjukkan bahwa per 2024 terdapat 9,6 juta hektare tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam konsesi seperti ini mencapai 114.823 hektare atau 26% dari deforestasi nasional. Visual berikut menampilkan sepuluh teratas deforestasi dalam konsesi per kategori.
-  </p>
-
-  <!-- <div class="viz-block viz-block--full" data-include-html="partials/konsesi-embed.html"></div> -->
-
-
-  <!-- <hr class="divider"> -->
-
-  <div class="callout">
-    <p>
-      <strong>Catatan:</strong> Hanya 3% deforestasi 2025 yang terjadi di kawasan konservasi, sementara 49% di hutan produksi dan 43% di luar kawasan hutan. Artinya, <strong>97% deforestasi yang terjadi berpotensi legal</strong> karena dilakukan di daerah berizin.
-    </p>
-  </div>
-</div>
-</section>
-
-<!-- DISKUSI -->
-<span class="s-anchor" id="diskusi"></span>
-<section class="page-section px-[5vw] py-10">
-  <div class="section-label">05 / Diskusi</div>
-
-  <div class="mt-10">
-    <div class="chapter-header">
-      <span class="ms-num">01</span>
-      <h3 class="chapter-title"><strong>Kebijakan pemerintah turut memicu deforestasi</strong></h3>
-    </div>
-    <p class="body-text">
-      Di era presidensi Joko Widodo, terutama pada periode kedua, perlindungan lingkungan mengalami pengenduran, terutama melalui pengesahan Undang-Undang Cipta Kerja atau Omnibus Law. Batasan 30% hutan untuk setiap wilayah, sebagai misal, dihilangkan dari teks aturan. Tidak hanya itu, proyek-proyek pemerintah, terutama yang dibungkus dengan judul Proyek Strategis Nasional, diberi kemudahan menabrak kawasan hutan. Padahal, proyek-proyek ini kerap tidak disertai perencanaan matang, termasuk secara spasial.
-    </p>
-    <p class="body-text">
-      Era kepresidenan Prabowo-Gibran tampak meneruskan kebijakan ini. Kengototan meneruskan program lumbung pangan (<em>estate</em>) di Merauke salah satu contohnya. Pemerintah membangun sawah di Merauke, tapi pada saat bersamaan menghilangkan banyak sawah di Sulawesi demi pembangunan smelter dan ekspansi tambang nikel. Tidak hanya itu, tambang-tambang nikel ini justru memicu pemusnahan tumbuhan sagu di Indonesia Timur, padahal sagu merupakan salah satu makanan pokok di Indonesia Timur.
-    </p>
-    <p class="body-text">
-      Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, pemerintah mencanangkan program 20 juta hektare hutan untuk cadangan pangan, energi, dan air. Pada perkembangannya, total area untuk program ini menjadi 20,6 juta hektare. Analisis Auriga Nusantara menunjukkan bahwa terdapat 8,8 juta hektare hutan alam di dalam area pencadangan ini dan 18% deforestasi 2025 terjadi di dalam area ini. Deforestasi ini terjadi melalui program-program pangan populis, seperti Cetak Sawah Rakyat (CSR) di Kalimantan Tengah, provinsi yang menjadi pemuncak deforestasi pada 2025. Padahal pada 2024 provinsi ini berada di urutan ketiga provinsi terdeforestasi.
-    </p>
-    <p class="body-text">
-      Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan hutan alam juga menjadi pemicu deforestasi. Analisis Auriga Nusantara menunjukkan bahwa per 2024 terdapat 9,6 juta hektare tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam konsesi ini mencapai 114.823 hektare atau 26% dari deforestasi nasional.
-    </p>
-    <p class="body-text">
-      Selain itu, pelepasan kawasan hutan menjadi area penggunaan lain (APL) namun memiliki tutupan hutan alam juga menjadi langkah awal deforestasi, karena penebangan hutan di dalam APL tidak melanggar hukum. Pelepasan kawasan hutan seperti ini kerap terjadi untuk konsesi tertentu atau oleh permintaan pemerintah daerah melalui revisi rencana tata ruang (RTRW). Per 2024 terdapat 10,2 juta hektare hutan alam di dalam APL. Dan, pada 2025 deforestasi dalam APL seluas 125.997 hektare atau 28% deforestasi nasional.
-    </p>
-    <!-- <ul class="insight-list">
+            <p class="body-text">
+                During the Joko Widodo presidency, particularly the second term, environmental protection weakened,
+                especially with the enactment of the Job Creation Law or Omnibus Law. For example, the requirement for
+                every region to maintain at least 30% forest cover was removed from regulatory text. Further, government
+                projects, particularly those labeled National Strategic Projects, were afforded flexibility to encroach
+                on forest estates. Such projects are often not accompanied by adequate planning, including spatial
+                planning.
+            </p>
+            <p class="body-text">
+                The Prabowo–Gibran presidential era appears to be persisting with this policy. Its doggedness in
+                continuing the food estate program in Merauke is one such example. The government is developing rice
+                fields in Merauke while, at the same time, eradicating rice fields in Sulawesi for smelter construction
+                and nickel mining expansion. Not only that, these nickel mines have triggered the destruction of sago
+                plants in eastern Indonesia, despite sago being a staple food in the region.
+            </p>
+            <p class="body-text">
+                At the end of December 2024, two months after the inauguration of Prabowo–Gibran, the government
+                launched a program to designate 20 million hectares of forest for food, energy, and water reserves. As
+                things progressed, the total area became 20.6 million hectares. Auriga Nusantara analysis shows 8.8
+                million hectares of natural forest inside these designated reserves, and 18% of deforestation in 2025
+                occurring within such areas. This deforestation was driven by populist food programs, such as the
+                Community Ricefield Development or Cetak Sawah Rakyat (CSR) program in Central Kalimantan – the province
+                with the highest deforestation area in 2025, despite ranking third in 2024.
+            </p>
+            <p class="body-text">
+                The issuing of conversion permits for mining, oil palm plantations, and industrial timber plantations in
+                areas with natural forest is another major driver of deforestation. Auriga Nusantara’s analysis
+                indicates that, as of 2024, there were 9.6 million hectares of natural forest cover within conversion
+                concessions. In 2025, deforestation inside these concessions reached 114,823 hectares, or 26% of
+                national deforestation.
+            </p>
+            <p class="body-text">
+                Additionally, the release of forest estate to become other land use (APL) areas, despite still having
+                natural forest cover, often marks the initial step towards deforestation, as logging inside APL areas is
+                not against the law. Such forest estate releases frequently occur to accommodate specific concessions or
+                at the request of regional governments through spatial planning revisions (RTRW). As of 2024, there were
+                10.2 million hectares of natural forest inside APL areas, and in 2025, deforestation in such areas
+                reached 125,997 hectares, or 28% of national deforestation.
+            </p>
+            <!-- <ul class="insight-list">
       <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
       <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
       <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
       <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
     </ul> -->
-  </div>
+        </div>
 
-  <hr class="divider">
+        <hr class="divider">
 
-  <div>
-    <div class="chapter-header">
-      <span class="ms-num">02</span>
-      <h3 class="chapter-title">Episentrum deforestasi mengarah ke Tanah Papua</h3>
-    </div>
-    <p class="body-text">
-      Deforestasi tertinggi memang masih dipegang Kalimantan. Pulau ini menjadi pemuncak deforestasi di Indonesia
-      <a href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">sejak 2013</a>,
-      atau 13 tahun terakhir secara berturut. Namun begitu, perluasan deforestasi terbesar pada 2025 terjadi di Tanah Papua, yakni seluas 60.337 hektare, yang menempatkan pulau ini di peringkat ketiga, di bawah Kalimantan dan Sumatera, menggantikan Sulawesi yang menempati posisi itu pada deforestasi 2024.
-    </p>
-    <p class="body-text">
-      Program pemerintah, seperti Proyek Strategis Nasional, lumbung pangan (food estate), menjadi pemicu peningkatan deforestasi di Tanah Papua. Pembangunan infrastruktur yang tak jarang sebagai kelanjutan dari pemekaran wilayah administrasi ditengarai turut memicu deforestasi di pulau ini. Demikian pula perluasan komoditas monokultur, terutama sawit, turut memicu peningkatan deforestasi tersebut.
-    </p>
-    <p class="body-text">
-      Kombinasi hal-hal di atas harus menjadi perhatian serius dalam upaya menahan laju deforestasi di Tanah Papua ke depan. Simulasi yang dilakukan Auriga Nusantara di Aceh dan Riau menunjukkan bahwa deforestasi melonjak setelah pabrik sawit beroperasi, dan semakin dekat dengan pabrik akan semakin tinggi tingkat deforestasi. Fenomena mirip terjadi di Sulawesi dan Maluku Utara dengan pengoperasian smelter-smelter nikel sejak 2016. Dengan demikian, pembangunan infrastruktur dan pemekaran wilayah administrasi di Tanah Papua akan menjadi pemungkin terhadap hadirnya pabrik-pabrik atau industri pengolahan baru. Apalagi sawit-sawit di Tanah Papua saat ini kebanyakan pada usia muda dan akan mengalami puncak produksi pada 5-10 tahun ke depan sehingga akan membutuhkan pabrik-pabrik sawit. Bila pabrik-pabrik sawit bermunculan, dan infrastruktur semakin baik, bagaimana menahan laju deforestasi di pulau ini?
-    </p>
-  </div>
+        <div>
+            <div class="chapter-header">
+                <span class="ms-num">02</span>
+                <h3 class="chapter-title">The epicenter of deforestation is shifting to Papua</h3>
+            </div>
+            <p class="body-text">
+                Kalimantan once again recorded the greatest extent of deforestation, making it the region with
+                Indonesia’s highest deforestation rate for consecutive years <a
+                    href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank"
+                    class="text-[#bc4a3c]">since 2013</a>, or for 13 years in a row. However, the greatest increase in
+                deforestation in 2025 occurred in Papua, with 60,337 hectares positioning the island in third place
+                behind Kalimantan and Sumatra, overtaking Sulawesi which ranked third for deforestation in 2024.
+            </p>
+            <p class="body-text">
+                Government programs, such as National Strategic Projects and food estates, are key drivers of increasing
+                deforestation in Papua. Infrastructure development, which frequently follows fragmentation to form new
+                administrative regions, has also contributed to forest loss on the island. Similarly, the expansion of
+                monoculture commodities, particularly oil palm, has further accelerated deforestation.
+            </p>
+            <p class="body-text">
+                This combination of factors must be afforded serious attention in efforts to curb deforestation in Papua
+                moving forward. Simulations conducted by Auriga Nusantara in Aceh and Riau show that deforestation
+                surges once palm oil mills begin operating, and the closer an area is to a mill, the higher its
+                deforestation rate will be. A similar phenomenon has occurred in Sulawesi and North Maluku since nickel
+                smelters began operating in 2016. Accordingly, infrastructure development and fragmentation of
+                administrative regions in Papua will make the establishment of new mills or processing industries a
+                likelihood. Moreover, most oil palm plantations in Papua are still young and are expected to reach peak
+                production within the next 5–10 years, increasing the need for processing mills. If such mills do
+                appear, and infrastructure continues to improve, how can deforestation rates on the island be held back?
+            </p>
+        </div>
 
-  <hr class="divider">
+        <hr class="divider">
 
-  <div>
-    <div class="chapter-header">
-      <span class="ms-num">03</span>
-      <h3 class="chapter-title">Ekspansi komoditas industrial menjadi pemicu deforestasi Indonesia</h3>
-    </div>
-    <p class="body-text">
-      Ekspansi komoditas industrial tetap menjadi momok bagi hutan alam tersisa di Indonesia. Pengembangan kebun-kebun baru sawit menjadi salah satu pemicu (driver) utama di Sumatera, sebagaimana terjadi di Hutan Lindung Sijunjung di Sumatera Barat. Deforestasi demi pembangunan kebun sawit bahkan merangsek ke kawasan konservasi, seperti terjadi di Suaka Margasatwa Rawa Singkil di Aceh.
-    </p>
-    <p class="body-text">
-      Deforestasi oleh ekspansi sawit sejatinya cenderung melambat, terutama karena pasar yang sudah mulai jenuh. Tapi, kebijakan subsidi biodiesel oleh pemerintah yang tidak disertai dengan mekanisme pelindung (safeguard) terhadap tutupan hutan turut memicu deforestasi ini. Setelah sebelumnya mewajibkan kandungan bahan bakar nabati berbasis sawit dalam bahan bakar minyak jenis solar sebesar 30% (B30) kemudian meningkat menjadi 35% (B35), sejak awal 2025 pemerintah menerapkan
-      <a href="https://www.esdm.go.id/id/media-center/arsip-berita/wujudkan-ketahanan-energi-dan-kurangi-impor-menteri-esdm-mandatori-b40-berlaku-1-januari-2025" target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">kebijakan B40</a>.
+        <div>
+            <div class="chapter-header">
+                <span class="ms-num">03</span>
+                <h3 class="chapter-title">Expansion of industrial commodities is a key driver of deforestation in
+                    Indonesia</h3>
+            </div>
+            <p class="body-text">
+                Expansion of industrial commodities remains a major threat to Indonesia’s remaining natural forests. The
+                development of new oil palm plantations is a primary driver of deforestation in Sumatra, as has happened
+                in Sijunjung Protection Forest in West Sumatra. Deforestation for oil palm development has even
+                encroached into conservation areas like Rawa Singkil Wildlife Sanctuary in Aceh.
+            </p>
+            <p class="body-text">
+                Deforestation from oil palm expansion has tended to slow, partly due to market saturation. However,
+                government biodiesel subsidy policies, unaccompanied by safeguard mechanisms for forests, continue to
+                drive deforestation. After previously mandating a biodiesel blend containing 30% palm oil (B30), which
+                then increased to B35, since early 2025, the government has been applying its <a
+                    href="https://www.esdm.go.id/id/media-center/arsip-berita/wujudkan-ketahanan-energi-dan-kurangi-impor-menteri-esdm-mandatori-b40-berlaku-1-januari-2025"
+                    target="_blank" rel="noopener noreferrer" class="text-[#bc4a3c]">B40 policy</a>.
+            </p>
+            <p class="body-text">
+                In Kalimantan, the main driver of deforestation is the expansion of pulpwood plantations for the pulp
+                and paper industry. The issuing of a license to build the giant PT Phoenix Resources International pulp
+                mill in Tarakan, North Kalimantan, is the main cause, as the mill lacks its own managed supplier
+                concessions. Much of the deforestation occurring in Central and East Kalimantan leads to this mill.
+            </p>
+            <p class="body-text">
+                The global boom in electric vehicles is a driver of nickel mining and processing industry expansion.
+                Permits for these industries being issued without clarity over raw material sources, particularly to
+                avoid deforestation, resulted in a surge in deforestation in Sulawesi and North Maluku.
+            </p>
+            <p class="body-text">
+                Nickel mining is nothing new in Sulawesi, and dates back to the 1930s, with nickel smelters being in
+                operation since 1973. Prior to 2014, only three smelters were operating in Sulawesi, before the number
+                grew rapidly during the Joko Widodo presidency. From 2014 to 2024, at least 16 new nickel smelters began
+                operating on the island, which has one of the world’s highest levels of endemism.
+            </p>
+            <p class="body-text">
+                Rising gold prices have also contributed to deforestation. Notably, two gold mining concessions – PT
+                Agincourt Resources and PT Blok Waringin Agung – rank among the top ten deforesters among mining
+                concessions.
+            </p>
 
-    </p>
-    <p class="body-text">
-      Di Kalimantan, pemicu utama deforestasi berupa perluasan kebun kayu demi industri <em>pulp & paper</em>. Pemberian izin pembangunan pabrik pulp raksasa PT Phoenix Resources International di Tarakan, Kalimantan Utara menjadi penyebab utama, karena dalam perencanaannya pabrik ini tidak memiliki konsesi pemasok yang dikelola sendiri. Banyak deforestasi terjadi di Kalimantan Tengah dan Kalimantan Timur yang bermuara ke pabrik ini.
-    </p>
-    <p class="body-text">
-      <em>Booming</em> kendaraan listrik menjadi pemicu ekspansi tambang dan industri nikel. Namun, pemberian izin industri yang tidak disertai dengan kejelasan sumber bahan baku, terutama untuk menghindari deforestasi, mengakibatkan melonjaknya deforestasi di Sulawesi (dan Maluku Utara).
-    </p>
-    <p class="body-text">
-      Tambang dan industri nikel bukan barang baru di Sulawesi, karena penambangan nikel sudah ada sejak 1930-an, dan industri pengolahan (smelter) nikel sudah beroperasi sejak 1973. Hingga 2014 hanya 3 smelter nikel yang beroperasi di Sulawesi. Kemudian jumlahnya membengkak di era presidensi Joko Widodo. Pada 2014-2024 setidaknya ada 16 smelter nikel baru yang beroperasi di pulau dengan tingkat endemisme tertinggi di dunia ini.
-    </p>
-    <p class="body-text">
-      Meningkatnya harga emas juga turut memicu deforestasi. Bahkan, 2 konsesi tambang emas bertengger dalam sepuluh teratas deforestasi dalam konsesi tambang, yakni PT Agincourt Resources dan PT Blok Waringin Agung.
-    </p>
-
-    <!-- <div class="callout">
+            <!-- <div class="callout">
       <strong>Faktor pendorong utama:</strong>
       <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
         <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
@@ -1054,162 +1714,245 @@
         <li>Kenaikan harga komoditas seperti nikel dan emas</li>
       </ul>
     </div> -->
-  </div>
+        </div>
 
-  <hr class="divider">
+        <hr class="divider">
 
-  <div>
-    <div class="chapter-header">
-      <span class="ms-num">04</span>
-      <h3 class="chapter-title">Legal deforestasi sebagai biang masalah</h3>
-    </div>
-    <p class="body-text">
-     Salah satu efek dari kerumitan aturan di Indonesia adalah ketidaklugasan dalam mengenali legal atau tidaknya suatu deforestasi. Terdapat banyak aturan yang melindungi hutan, tapi tidak sedikit celah yang membuatnya tidak terlindungi.
-    </p>
-    <p class="body-text">
-      Dalam sebuah presentasi pada
-      <a href="https://www.youtube.com/watch?v=fXpCyo4TrlU&t=7193s" target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">Rapat Dengar Pendapat Umum</a>
-      di Komisi 4 Dewan Perwakilan Rakyat Republik Indonesia (DPR RI) pada 15 Juli 2025 Auriga Nusantara mengungkapkan, per 2024, seluas 41,6 juta hektare atau 44% tutupan hutan alam di Indonesia tidak punya perlindungan hukum. Dengan kondisi demikian, manuver yang tidak melanggar hukum yang akan menghilangkan hutan tersebut, seperti melalui penerbitan izin konversi atau revisi tata ruang, masih memungkinkan.
-    </p>
-    <p class="body-text">
-      Dari total deforestasi 2025, deforestasi yang secara langsung bisa dikategorikan ilegal hanya deforestasi di kawasan konservasi (20.077 hektare), di hutan lindung (80.023 hektare), di konsesi logging (74.409 hektare), dan konsesi restorasi ekosistem (617 hektare), yang seluruhnya berjumlah 180.370 hektare atau 42% deforestasi nasional. Dengan kata lain, 58% deforestasi 2025 berupa deforestasi legal (<em>legal deforestation</em>).
-    </p>
-  </div>
+        <div>
+            <div class="chapter-header">
+                <span class="ms-num">04</span>
+                <h3 class="chapter-title">Legal deforestation as a root cause</h3>
+            </div>
+            <p class="body-text">
+                One effect of Indonesia’s convoluted regulatory framework is difficulty in recognizing whether
+                deforestation is legal or illegal. While many regulations aim to protect forests, numerous loopholes
+                render them unprotected.
+            </p>
+            <p class="body-text">
+                In a presentation to Commission IV of the Republic of Indonesia House of Representatives (DPR RI) on
+                July 15, 2025, Auriga Nusantara revealed that, as of 2024, 41.6 million hectares, or 44% of Indonesia’s
+                natural forest cover, had no legal protection. Under the current situation, causing forest loss is still
+                possible through legally permissible mechanisms, such as conversion permit issuance or spatial plan
+                revisions.
+            </p>
+            <p class="body-text">
+                Of all deforestation in 2025, the only deforestation that could be directly classified as illegal was
+                deforestation in conservation areas (20,077 hectares), in protection forests (80,023 hectares), logging
+                concessions (74,409 hectares), and ecosystem restoration concessions (617 hectares), totaling 180,370
+                hectares or 42% of national deforestation. In other words, 58% of deforestation in 2025 constituted
+                legal deforestation.
+            </p>
+        </div>
 
-  <hr class="divider">
+        <hr class="divider">
 
-  <div>
-    <div class="chapter-header">
-      <span class="ms-num">05</span>
-      <h3 class="chapter-title">Deforestasi tinggi di area konservasi</h3>
-    </div>
-    <p class="body-text">
-      Saat ini, perlakuan konservasi oleh pemerintah cenderung hanya pada kawasan konservasi, yakni area konservasi yang ada di dalam kawasan hutan. Kawasan konservasi adalah penggabungan kawasan suaka alam, seperti cagar alam, suaka margasatwa; dan kawasan pelestarian alam, seperti taman nasional, taman hutan raya. Kawasan konservasi di Indonesia saat ini seluas 22,1 juta hektare.
-    </p>
-    <p class="body-text">
-      Akan tetapi terdapat sejumlah besar area-area yang penting secara ekologi di luar kawasan konservasi. Area di luar kawasan konservasi ini merupakan habitat spesies ikonik harimau, badak, gajah, orangutan seluas 22,8 juta hektare; dan Key Biodiversity Area (KBA) yang dikembangkan IUCN seluas 21,6 juta hektare. Ketiga wilayah ini bila digabungkan sebagai area konservasi seluruhnya –tanpa menghitung perulangan– seluas 63,5 juta hektare.
-    </p>
-    <p class="body-text">
-      Deforestasi di kawasan konservasi pada 2024 seluas 7.704 hektare, melonjak menjadi 25.077 hektare pada 2025, atau meningkat 225%. Sementara, deforestasi di seluruh area konservasi terhitung seluas 186.465 hektare atau 43% deforestasi nasional.
-    </p>
-  </div>
-</section>
+        <div>
+            <div class="chapter-header">
+                <span class="ms-num">05</span>
+                <h3 class="chapter-title">Significant deforestation in conservation areas</h3>
+            </div>
+            <p class="body-text">
+                Currently, government conservation efforts tend to focus only on designated conservation areas within
+                the forest estate. These include natural sanctuaries such as nature reserves and wildlife sanctuaries;
+                and conservation estates such as national parks and grand forest parks. Indonesia currently has 22.1
+                million hectares of conservation areas.
+            </p>
+            <p class="body-text">
+                However, a large number of ecologically important areas lie outside conservation areas. These include
+                22.8 million hectares of habitat for iconic species – tigers, rhinos, elephants, and orangutans; and
+                21.6 million hectares of key biodiversity areas (KBAs) identified by the International Union for
+                Conservation of Nature (IUCN). These areas combined, without double counting, cover 63.5 million
+                hectares.
+            </p>
+            <p class="body-text">
+                Deforestation within conservation areas surged from 7,704 hectares in 2024 to 25,077 hectares in 2025,
+                an increase of 225%. Meanwhile, deforestation across all conservation areas reached 186,465 hectares,
+                accounting for 43% of national deforestation.
+            </p>
+        </div>
+    </section>
 
-<!-- REKOMENDASI -->
-<span class="s-anchor" id="rekomendasi"></span>
-<section class="page-section px-[5vw] pt-10 pb-20">
-<div class="mx-auto max-w-[820px]">
-  <div class="section-label">06 / Rekomendasi</div>
+    <!-- REKOMENDASI -->
+    <span class="s-anchor" id="rekomendasi"></span>
+    <section class="page-section px-[5vw] pt-10 pb-20">
+        <div class="mx-auto max-w-[820px]">
+            <div class="section-label">06 / Recomendations</div>
 
-  <p class="body-text">
-    Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan tanggung jawab para pemegang izin. Rekomendasi berikut menempatkan perlindungan hutan sebagai agenda kebijakan yang harus dijalankan secara serentak.
-  </p>
+            {{-- <p class="body-text">
+                Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
+                tanggung jawab para pemegang izin. Rekomendasi berikut menempatkan perlindungan hutan sebagai agenda
+                kebijakan yang harus dijalankan secara serentak.
+            </p> --}}
 
-  <div class="method-steps">
-    <div class="method-step">
-      <div class="ms-num">01</div>
-      <div>
-        <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di Indonesia.</h4><br>
-        <p class="body-text">
-          Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun, menghadirkan sebuah undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di bawahnya, yakni peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama oleh kerumitan dan kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam penyusunan peraturan pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup menjawab persoalan, sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden mengenai perlindungan <strong> seluruh </strong> hutan alam tersisa di Indonesia.
-        </p>
-      </div>
-    </div>
-    <div class="method-step">
-      <div class="ms-num">02</div>
-      <div class="">
-        <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.</h4><br>
-        <p class="body-text">
-          pertengahan 2023 publik dikejutkan dengan usulan revisi tata ruang Provinsi Kalimantan Timur yang ditengarai akan melepaskan 612.355 hektare kawasan hutan (menjadi area penggunaan lain), menurunkan fungsi kawasan hutan (sehingga memungkinkan ditambang) seluas 101.788 hektare. Padahal, setidaknya 389.596 hektare
-          <a href="https://www.youtube.com/watch?v=Mx4638DmEjI" target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">(55%) area ini bertutupan hutan alam</a>.
-          Sementara, beberapa bulan sebelumnya Pemerintah Provinsi Kalimantan Utara mengusulkan revisi tata ruang yang akan mengalihkan fungsi kawasan hutan seluas
-          <a href="https://korankaltara.com/762-ribu-hektare-hutan-diusulkan-beralih-fungsi" target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">762.000 hektare</a>.
-           Di Aceh, manuver pemerintah daerah ditengarai akan berdampak pada hilangnya status perlindungan Kawasan Ekosistem Leuser yang telah ditetapkan sebagai cagar biosfer sekaligus sebagai penyangga Taman Nasional Gunung Leuser. Sekelumit kecil contoh empirik ini menunjukkan kemendesakan perlunya instrumen pengendalian revisi tata ruang wilayah yang menjamin prosesnya berlangsung secara transparan dan memastikan pelibatan pihak terdampak sehingga hasil revisinya semata-mata demi kepentingan publik.
-        </p>
-      </div>
-    </div>
-    <div class="method-step">
-      <div class="ms-num">03</div>
-      <div class="">
-        <h4 class="chapter-title">Percepatan perluasan area preservasi, terutama di luar kawasan hutan</h4><br>
-        <p class="body-text">
-          Sebagaimana disampaikan di atas, kawasan konservasi eksisting jauh dari memadai untuk mencakup seluruh area konservasi. Bahkan, setidaknya 31.358 hektare habitat spesies ikonik dan area penting biodiversitas tersebut berada dalam area penggunaan lain (APL). Di tengah rendahnya kinerja pelestarian dalam kawasan konservasi oleh Kementerian Kehutanan, perlu model-model baru pengelolaan area konservasi. Undang-Undang Konservasi 32/2024 telah membuka ruang untuk ini, yakni sebagai area preservasi. Namun, kekosongan peraturan pelaksananya mengakibatkan belum adanya perwujudan area preservasi hingga saat ini. Oleh karena itu, pengadaan aturan pelaksana ini perlu disegerakan. Namun begitu, perlu digarisbawahi bahwa area preservasi ini semestinya merupakan model-model baru, semisal pengelolaannya, termasuk penerima manfaat ekonominya, oleh dan untuk pemerintah daerah atau komunitas lokal dengan kordinasi atau supervisi oleh Kementerian Kehutanan.
-        </p>
-      </div>
-    </div>
-    <div class="method-step">
-      <div class="ms-num">04</div>
-      <div class="">
-        <h4 class="chapter-title">Redistribusi kelembagaan dan aparatur pengelola hutan sehingga seluruh tutupan hutan alam memiliki aparatur penjaga.</h4><br>
-        <p class="body-text">
-          Presiden Prabowo disebut telah memerintahkan penggandaan jumlah polisi hutan. Satu langkah yang semestinya patut diapresiasi. Akan tetapi, sebagaimana pernah
-          <a href="https://www.youtube.com/watch?v=fXpCyo4TrlU&t=7193s" target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">dipaparkan</a> Auriga Nusantara ke Komisi 4 DPR RI, keberadaan aparatur penjaga hutan selama ini cenderung terkonsentrasi di Pulau Jawa. Demikian juga penganggaran, porsi anggaran negara per hektare kawasan hutan jauh lebih tinggi di Jawa. Karena itu, selain penambahan aparatur –atau redistribusi kewenangan dan fungsi pengelolaan ke pemerintah daerah– diperlukan juga redistribusi aparatur sehingga seluruh tutupan hutan alam memiliki aparatur penjaga berikut anggarannya.
+            <div class="method-steps">
+                <div class="method-step">
+                    <div class="ms-num">01</div>
+                    <div>
+                        <h4 class="chapter-title">Issue legislation to ensure the protection of all remaining natural
+                            forests in Indonesia.</h4><br>
+                        <p class="body-text">
+                            Legal protection over natural forests should ideally be in the form of a law. However,
+                            enacting laws is not easy and often takes years. Even lower tier legislation like government
+                            regulations can take considerable time to develop, largely due to the intricacies and
+                            complexities involved in the cross-ministerial approvals required in their formulation.
+                            Consequently, a presidential regulation would constitute a tactical breakthrough that could
+                            act as an emergency brake to address this issue. Thus, it is time for President Prabowo
+                            Subianto to issue a presidential regulation on the protection of all remaining natural
+                            forests in Indonesia.
+                        </p>
+                    </div>
+                </div>
+                <div class="method-step">
+                    <div class="ms-num">02</div>
+                    <div class="">
+                        <h4 class="chapter-title">Establish and apply instruments to control spatial plan revisions.
+                        </h4><br>
+                        <p class="body-text">
+                            In mid-2023, the public was surprised by a proposed revision to the spatial plan for East
+                            Kalimantan Province, which would enable the release of 612,355 hectares of forest estate to
+                            become other land use (APL) areas, and downgrade the status of 101,788 hectares of forest
+                            estate to make it eligible for mining, despite at least 389,596 hectares <a
+                                href="https://www.youtube.com/watch?v=Mx4638DmEjI" target="_blank"
+                                class="text-[#bc4a3c]">(55%) of this area having natural forest cover</a>. Meanwhile,
+                            several months earlier, the North Kalimantan Provincial Government had proposed a spatial
+                            plan revision that would reclassify <a
+                                href="https://korankaltara.com/762-ribu-hektare-hutan-diusulkan-beralih-fungsi"
+                                target="_blank" class="text-[#bc4a3c]">762,000 hectares</a> of forest estate. In Aceh,
+                            regional government maneuvering is expected to threaten the protected status of the Leuser
+                            Ecosystem Area, a designated biosphere reserve and buffer zone for Mount Leuser National
+                            Park. These examples highlight the urgent need for instruments to control regional spatial
+                            planning revisions, guaranteeing such processes are transparent and ensuring impacted
+                            parties are involved so that any revisions are only in the public interest.
+                        </p>
+                    </div>
+                </div>
+                <div class="method-step">
+                    <div class="ms-num">03</div>
+                    <div class="">
+                        <h4 class="chapter-title">Accelerate the expansion of preservation areas, especially outside the
+                            forest estate.</h4><br>
+                        <p class="body-text">
+                            As noted above, existing conservation estates are far from sufficient to cover all
+                            conservation areas. At least 31,358 hectares of iconic species’ habitats and key
+                            biodiversity areas are located inside APL areas. The Ministry of Forestry’s weak
+                            conservation performance inside the forest estate necessitates new models for managing
+                            conservation areas. Conservation Law No. 32/2024 has opened space for this through its
+                            concept of preservation areas. However, the absence of any implementing regulation has meant
+                            such areas have yet to be realized. Therefore, the establishment of an implementing
+                            regulation should be expedited. Nevertheless, it should be underlined that such preservation
+                            areas should adopt new management models; for example, being managed by and for regional
+                            governments or local communities, with them being the recipients of any economic benefits,
+                            and coordination or supervision by the Ministry of Forestry.
+                        </p>
+                    </div>
+                </div>
+                <div class="method-step">
+                    <div class="ms-num">04</div>
+                    <div class="">
+                        <h4 class="chapter-title">Redistribute forest management institutions and personnel so that all
+                            natural forests have rangers to protect them.</h4><br>
+                        <p class="body-text">
+                            President Prabowo Subianto has reportedly instructed a doubling of the number of forest
+                            rangers – a step deserving of appreciation. However, as Auriga Nusantara has previously
+                            outlined to Commission IV of the Indonesian House of Representatives (DPR RI), forest
+                            protection personnel have tended to be concentrated on the island of Java. The same applies
+                            to budgeting, with allocations per hectare of forest estate being significantly higher in
+                            Java than elsewhere. Therefore, in addition to increasing personnel numbers – or
+                            redistributing authority and management functions to regional governments – there is also a
+                            need to redistribute personnel so that all remaining natural forest areas have rangers and
+                            associated budgets.
+                        </p>
+                    </div>
+                </div>
+                <div class="method-step">
+                    <div class="ms-num">05</div>
+                    <div class="">
+                        <h4 class="chapter-title">Companies that manage areas with natural forest cover should make
+                            environmental, social, and good governance (ESG) commitments.</h4><br>
+                        <p class="body-text">
+                            Nearly half of deforestation in 2025 occurred inside concession areas. Meanwhile there are
+                            more than nine million hectares of natural forest cover remaining within conversion
+                            concessions (mining, oil palm, industrial timber). Corporations managing these areas should
+                            declare environmental, social, and good governance (ESG) commitments, including not
+                            perpetrating nor being involved in deforestation.
+                        </p>
+                    </div>
+                </div>
+                <div class="method-step">
+                    <div class="ms-num">06</div>
+                    <div class="">
+                        <h4 class="chapter-title">Provide incentives for regional governments, local communities and
+                            corporations that protect natural forest.</h4><br>
+                        <p class="body-text">Forest protection should be viewed as an investment, not only because
+                            forests provide environmental services for the public, but also because economic activities
+                            will be disrupted if the environment is degraded or does not function in the way it should.
+                            Therefore, the state should provide incentives to those who protect forests, including local
+                            communities, regional governments (provincial, regency, and village), and corporations. In
+                            addition to incentives, economic benefits, such as carbon services, should also be
+                            accessible to those protecting forests. Such incentives and benefits could serve as both a
+                            stimulus for forest protection and a provider of financing for long-term protection efforts
+                            by such parties.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-        </p>
-      </div>
-    </div>
-    <div class="method-step">
-      <div class="ms-num">05</div>
-      <div class="">
-        <h4 class="chapter-title">Korporasi yang mengelola area bertutupan hutan alam berkomitmen terhadap lingkungan, sosial, dan tata kelola yang baik (ESG Commitment).</h4><br>
-        <p class="body-text">
-          Hampir separuh deforestasi 2025 terjadi di dalam konsesi, sementara terdapat lebih dari 9 juta hektare tutupan hutan alam di dalam konsesi konversi (tambang, sawit, kebun kayu). Korporasi-korporasi yang mengelola areal bertutupan hutan alam ini semestinya menyatakan komitmen lingkungan, sosial, dan tata kelola yang baik, termasuk untuk tidak melakukan atau terlibat dengan deforestasi.
-        </p>
-      </div>
-    </div>
-    <div class="method-step">
-      <div class="ms-num">06</div>
-      <div class="">
-        <h4 class="chapter-title">Penyediaan insentif bagi pemerintah daerah, komunitas lokal, dan korporasi yang melakukan perlindungan hutan alam.</h4><br>
-        <p class="body-text">Perlindungan hutan semestinya dipandang sebagai investasi, selain karena fungsi dan jasa lingkungannya yang dinikmati publik, juga karena kegiatan ekonomi akan terganggu bila lingkungan rusak atau tidak berfungsi semestinya. Karena itu, insentif semestinya disediakan negara kepada pihak-pihak yang melindungi hutan, baik komunitas lokal, pemerintah daerah (provinsi, kabupaten, dan desa), maupun korporasi. Selain insentif, manfaat ekonomi, seperti jasa karbon, atas keberadaan hutan semestinya diperoleh juga oleh pihak-pihak yang melindungi hutan. Insentif dan manfaat ekonomi ini selain sebagai stimulus untuk perlindungan hutan alam, juga sebagai penyedia pembiayaan untuk perlindungan hutan dalam jangka panjang oleh pihak-pihak tersebut.
-        </p>
-      </div>
-    </div>
-  </div>
+            {{-- <p class="body-text">
+                Selain itu, komitmen ESG para pemilik atau pengelola izin serta insentif bagi pemerintah daerah,
+                komunitas lokal, dan swasta dalam perlindungan hutan alam perlu diperkuat agar perlindungan hutan tidak
+                hanya bergantung pada pendekatan administratif semata.
+            </p> --}}
 
-  <p class="body-text">
-    Selain itu, komitmen ESG para pemilik atau pengelola izin serta insentif bagi pemerintah daerah, komunitas lokal, dan swasta dalam perlindungan hutan alam perlu diperkuat agar perlindungan hutan tidak hanya bergantung pada pendekatan administratif semata.
-  </p>
+            <hr class="divider">
 
-  <hr class="divider">
+            <div class="author-block film-credit-block">
+                <div class="ab-group">
+                    <div class="ab-label">Author</div>
+                    <div class="ab-names">Timer Manurung, Dedy Sukmara, Andhika Younastya</div>
+                </div>
+                <div class="ab-group">
+                    <div class="ab-label">Data Processor</div>
+                    <div class="ab-names">Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika
+                        Laura, Dedy Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha,
+                        Yustinus Seno</div>
+                </div>
+                <div class="ab-group">
+                    <div class="ab-label">Verification Team</div>
+                    <div class="ab-names">Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika
+                        Younastya, Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika
+                        Laura, Chairul Soleh, Dedi Septyadi Wibisono, Fadela Yunika Sari, Hafid Azi Darma, Jonathan,
+                        Jumrio Nakul, Jundy Zaky Makarim, Luhut Simanjutak, M. Dendi Alfitrah, M. Irfan Nurrahman, M.
+                        Irfandi Andriansyah, Muhammad Nabil Astaqafi, Nebo Yok Jonah Marpaung, Reza Fahlevi, Rianti Gina
+                        Violeta, Riszki Is Hardianto, Sulih Primara Putra, Supintri Yohar Tri Wahyuni, Valentina Yulia
+                        Permatasari, Wahyu Ananta Nugraha, Yanuar Vira Febiyanti, Yudi Nofiandi, Yustinus Seno, Zerin
+                        Darma Kusuma</div>
+                </div>
+                <div class="ab-group">
+                    <div class="ab-label">Accuracy Testing Team</div>
+                    <div class="ab-names">Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul, M.
+                        Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno</div>
+                </div>
+                <div class="ab-group">
+                    <div class="ab-label">Creative Design</div>
+                    <div class="ab-names">Robby Eebor, M. Fachri</div>
+                </div>
+                <div class="ab-group">
+                    <div class="ab-label">Technology Team</div>
+                    <div class="ab-names">M. Alichamdan, M. Fachri, Thoriq Fa'iqoh</div>
+                </div>
+                <div class="ab-group">
+                    <div class="ab-names">© Auriga Nusantara. 2026. <br><em>Status Deforestasi Indonesia 2025, diakses
+                            pada [DD/MM/YYYY] melalui tautan [LINK].
+                            Auriga Nusantara. 2025 </em><br>.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="author-block film-credit-block">
-    <div class="ab-group">
-      <div class="ab-label">Penulis</div>
-      <div class="ab-names">Timer Manurung, Dedy Sukmara, Andhika Younastya</div>
-    </div>
-    <div class="ab-group">
-      <div class="ab-label">Pengolah Data</div>
-      <div class="ab-names">Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika Laura, Dedy Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno</div>
-    </div>
-    <div class="ab-group">
-      <div class="ab-label">Tim Verifikasi</div>
-      <div class="ab-names">Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika Younastya, Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika Laura, Chairul Soleh, Dedi Septyadi Wibisono, Fadela Yunika Sari, Hafid Azi Darma, Jonathan, Jumrio Nakul, Jundy Zaky Makarim, Luhut Simanjutak, M. Dendi Alfitrah, M. Irfan Nurrahman, M. Irfandi Andriansyah, Muhammad Nabil Astaqafi, Nebo Yok Jonah Marpaung, Reza Fahlevi, Rianti Gina Violeta, Riszki Is Hardianto, Sulih Primara Putra, Supintri Yohar Tri Wahyuni, Valentina Yulia Permatasari, Wahyu Ananta Nugraha, Yanuar Vira Febiyanti, Yudi Nofiandi, Yustinus Seno, Zerin Darma Kusuma</div>
-    </div>
-    <div class="ab-group">
-      <div class="ab-label">Tim Uji Akurasi</div>
-      <div class="ab-names">Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno</div>
-    </div>
-    <div class="ab-group">
-      <div class="ab-label">Kreatif Desain</div>
-      <div class="ab-names">Robby Eebor, M. Fachri</div>
-    </div>
-    <div class="ab-group">
-      <div class="ab-label">Tim Teknologi</div>
-      <div class="ab-names">M. Alichamdan, M. Fachri, Thoriq Fa'iqoh</div>
-    </div>
-    <div class="ab-group">
-      <div class="ab-names">© Auriga Nusantara. 2026. <br><em>Status Deforestasi Indonesia 2025, diakses pada [DD/MM/YYYY] melalui tautan [LINK].
-Auriga Nusantara. 2025 </em><br>.</div>
-    </div>
-  </div>
-</div>
-</section>
-
-@endsection
+    @endsection
 
 
-@push('scripts')
+    @push('scripts')
     <script>
         (function () {
             function hideLoader() {
@@ -1443,7 +2186,7 @@ Auriga Nusantara. 2025 </em><br>.</div>
                         '<span class="pres-initials">'+p.name.slice(0,3).toUpperCase()+'</span>' +
                         '</div>' +
                         '<div class="pres-info"><div class="pres-name">'+p.name+'</div><div class="pres-period">'+(p.start===p.end?p.start:(p.start+'–'+p.end))+'</div></div>' +
-                        '<div class="pres-stat"><div class="pres-total">'+fmtTotal(total)+'</div><div class="pres-total-unit">ha hilang</div></div>';
+                        '<div class="pres-stat"><div class="pres-total">'+fmtTotal(total)+'</div><div class="pres-total-unit">Hectares Lost</div></div>';
                     presList.appendChild(card);
                     cardEls.push(card);
                 });
@@ -1697,11 +2440,11 @@ Auriga Nusantara. 2025 </em><br>.</div>
             window.alurRowToggle = alurRowToggle;
         })();
     </script>
-@endpush
+    @endpush
 
-@push('scripts')
-<script id="peta-embed-script">
-const PETA_YEARS = [2021,2022,2023,2024,2025];
+    @push('scripts')
+    <script id="peta-embed-script">
+        const PETA_YEARS = [2021,2022,2023,2024,2025];
 const PETA_DATA = {
   sumatra:    [70, 65, 33, 91, 144],
   kalimantan: [95,105,124,129,158],
@@ -1827,13 +2570,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yrEl) yrEl.style.fontSize = (isMobile ? 0.42 : 0.60) + (t * (isMobile ? 0.06 : 0.14)) + 'rem';
   });
 });
-</script>
+    </script>
 
-<!-- PETA TEMATIK: Leaflet + Map JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js"></script>
-<script>
-(function() {
+    <!-- PETA TEMATIK: Leaflet + Map JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js"></script>
+    <script>
+        (function() {
 const isMobile = window.innerWidth < 640;
 const map = L.map('map', {
   zoomControl: false,
@@ -1864,13 +2607,13 @@ let stadi2025Loaded = false;
 
 const MODES = {
   provinsi: {
-    kpiLabel: 'Deforestasi di 10 provinsi teratas',
+    kpiLabel: 'Deforestation in the top 10 provinces',
     kpiVal: '302.493',
     kpiUnit: 'hektare',
     notesSidebar: [
-      '10 provinsi teratas didominasi Kalimantan dan Sumatera.',
-      'Kalimantan Tengah naik ke peringkat pertama pada 2025.',
-      'Aceh, Sumatera Utara, dan Sumatera Barat melonjak tajam.'
+      'The top 10 provinces are dominated by Kalimantan and Sumatera.',
+      'Central Kalimantan rises to the first position in 2025.',
+      'Aceh, North Sumatra, and West Sumatra experience a sharp increase.'
     ],
     notesBox: [''],
     markers: [
@@ -1934,13 +2677,13 @@ const MODES = {
   },
 
   kabupaten: {
-    kpiLabel: 'Deforestasi di 10 kabupaten teratas',
+    kpiLabel: 'Deforestation in the top 10 districts',
     kpiVal: '95.733',
     kpiUnit: 'hektare',
     notesSidebar: [
-      'Top-10 kabupaten mencakup 22% deforestasi nasional.',
-      'Didominasi Kalimantan dan Tanah Papua.',
-      'Kutai Timur dan Kapuas menjadi hotspot utama.'
+      'The top 10 districts account for 22% of national deforestation.',
+      'Dominated by Kalimantan and Papua.',
+      'East Kutai and Kapuas are the main hotspots.'
     ],
     notesBox: [''],
     bubble: { label: 'Kabupaten lainnya (373)', value: '338.018', unit: 'hektare' },
@@ -1960,13 +2703,13 @@ const MODES = {
   },
 
   konservasi: {
-    kpiLabel: 'Deforestasi di area kawasan konservasi',
+    kpiLabel: 'Deforestation in conservation areas',
     kpiVal: '25.077',
     kpiUnit: 'hektare',
     notesSidebar: [
-      'Termasuk kawasan konservasi, KBA, dan habitat spesies dilindungi.',
-      'Papua dan Sumatera menjadi lokasi dominan.',
-      'Tekanan tertinggi terjadi di TN Kerinci Seblat dan Jayawijaya.'
+      'Includes conservation areas, KBA, and habitats of protected species.',
+      'Papua and Sumatera become the dominant locations.',
+      'The highest pressure occurs in Kerinci Seblat National Park and Jayawijaya Mountains.'
     ],
     notesBox: [''],
     markers: [
@@ -1984,13 +2727,13 @@ const MODES = {
   },
 
   megafauna: {
-    kpiLabel: 'Total habitat terdampak',
+    kpiLabel: 'Total affected habitat',
     kpiVal: '156.463',
     kpiUnit: 'hektare',
     notesSidebar: [
-      'Mencakup habitat harimau, badak, gajah, dan orangutan.',
-      'Sebaran terbesar terdapat di Sumatera dan Kalimantan.',
-      'Nilai tidak menghitung duplikasi area habitat yang beririsan.'
+      'Includes habitat of tigers, rhinos, elephants, and orangutans.',
+      'The largest distribution is found in Sumatera and Kalimantan.',
+      'Values do not account for duplicated habitat areas.'
     ],
     notesBox: [''],
     species: [
@@ -2015,7 +2758,7 @@ const MODES = {
     tables: [],
     subCategories: {
       'kebun-kayu': {
-        title: 'Konsesi Kebun Kayu', kpiLabel: 'Total 10 teratas (kebun kayu)', kpiVal: '11.265',
+        title: 'Konsesi Kebun Kayu', kpiLabel: 'Top 10 (kebun kayu)', kpiVal: '11.265',
         othersLabel: '202 izin Lainnya', othersVal: '21.799', bullets: [''], geojsonFile: '/geojson/kebun-kayu.geojson',
         markers: [
           { lat:2.126959285437297,  lng:117.55112979226557,  rank:1,  name:'PT TANJUNG REDEB HUTANI',               value:1408, dir:'right'  },
@@ -2031,7 +2774,7 @@ const MODES = {
         ]
       },
       'logging': {
-        title: 'Konsesi Logging', kpiLabel: 'Total 10 teratas (logging)', kpiVal: '20.749',
+        title: 'Konsesi Logging', kpiLabel: 'Top 10 (logging)', kpiVal: '20.749',
         othersLabel: '227 izin Lainnya', othersVal: '53.661', bullets: [''], geojsonFile: '/geojson/logging.geojson',
         markers: [
           { lat:0.881264893236657,  lng:117.026904047300249, rank:1,  name:'PT KIANI LESTARI',                        value:3739, dir:'right'  },
@@ -2047,7 +2790,7 @@ const MODES = {
         ]
       },
       'sawit': {
-        title: 'Konsesi Sawit', kpiLabel: 'Total 10 teratas (sawit)', kpiVal: '13.610',
+        title: 'Konsesi Sawit', kpiLabel: 'Top 10 (sawit)', kpiVal: '13.610',
         othersLabel: '709 izin Lainnya', othersVal: '24.300', bullets: [''], geojsonFile: '/geojson/sawit.geojson',
         markers: [
           { lat:-1.171071756797254, lng:131.391544937632204, rank:1,  name:'Inti Kebun Lestari',            value:2624, dir:'top'    },
@@ -2063,7 +2806,7 @@ const MODES = {
         ]
       },
       'tambang': {
-        title: 'Konsesi Tambang', kpiLabel: 'Total 10 teratas (tambang)', kpiVal: '8.929',
+        title: 'Konsesi Tambang', kpiLabel: 'Top 10 (tambang)', kpiVal: '8.929',
         othersLabel: '1.131 izin Lainnya', othersVal: '32.233', bullets: [''], geojsonFile: '/geojson/tambang.geojson',
         markers: [
           { lat:2.138922060693282,  lng:117.395321188956885, rank:1,  name:'Berau Coal (Batubara)',           value:1473, dir:'right'  },
@@ -2401,6 +3144,5 @@ if (window.innerWidth < 640) {
 
 renderMode('provinsi');
 })();
-</script>
-@endpush
-
+    </script>
+    @endpush

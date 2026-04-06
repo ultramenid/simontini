@@ -1,15 +1,8 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DownloadController;
-use App\Http\Controllers\IndexController;
-use App\Http\Controllers\InsightContoller;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MapndataController;
-use App\Http\Middleware\checkSession;
-use App\Http\Middleware\hasSession;
-use App\Http\Middleware\setLanguage;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{DashboardController, DownloadController, IndexController, InsightContoller, LoginController, MapndataController};
+use App\Http\Middleware\{checkSession, hasSession, setLanguage};
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 Route::redirect('/', '/id');
@@ -69,11 +62,15 @@ Route::middleware('httpauth')->group(function () {
     Route::get('/id/status-deforestasi-indonesia-2025', [InsightContoller::class, 'stadi2025'])->name('stadi2025');
 });
 
+Route::middleware('httpauth')->group(function () {
+    Route::get('/en/status-of-deforestation-in-indonesia-2025', [InsightContoller::class, 'stadi2025EN'])->name('stadi2025EN');
+});
+    
 Route::middleware([setLanguage::class])->group(function () {
     Route::group(['prefix' => '{lang}'], function () {
         Route::get('/', [IndexController::class, 'index'])->name('index');
         Route::get('/mapndata', [MapndataController::class, 'index'])->name('mapndata');
-        Route::get('/download', [DownloadController::class, 'index'])->name('downloads');
+        Route::get('/download', [DownloadController::class, 'index'])->name('downloads');   
         Route::get('/insight', [InsightContoller::class, 'index'])->name('insight');
 
     });
