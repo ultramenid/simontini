@@ -27,7 +27,7 @@
             <li><a href="#pendahuluan">Introduction</a></li>
             <li><a href="#metodologi">Methodology</a></li>
             <li><a href="#deforestasi">Deforestation 2025</a></li>
-            <li><a href="#konsesi">Concessions</a></li>
+            {{-- <li><a href="#konsesi">Concessions</a></li> --}}
             <li><a href="#diskusi">Discussion</a></li>
             <li><a href="#rekomendasi">Recommendations</a></li>
         </ul>
@@ -1787,7 +1787,7 @@
     <span class="s-anchor" id="rekomendasi"></span>
     <section class="page-section px-[5vw] pt-10 pb-20">
         <div class="mx-auto max-w-[820px]">
-            <div class="section-label">06 / Recomendations</div>
+            <div class="section-label">05 / Recomendations</div>
 
             {{-- <p class="body-text">
                 Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan

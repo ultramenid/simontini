@@ -25,7 +25,7 @@
          <li><a href="#pendahuluan">Pendahuluan</a></li>
          <li><a href="#metodologi">Metodologi</a></li>
          <li><a href="#deforestasi">Deforestasi 2025</a></li>
-         <li><a href="#konsesi">Konsesi</a></li>
+         {{-- <li><a href="#konsesi">Konsesi</a></li> --}}
          <li><a href="#diskusi">Diskusi</a></li>
          <li><a href="#rekomendasi">Rekomendasi</a></li>
       </ul>
@@ -956,7 +956,7 @@
 </section>
 
 <!-- KONSESI -->
-<span class="s-anchor" id="konsesi"></span>
+{{-- <span class="s-anchor" id="konsesi"></span>
 <section class="page-section px-[5vw] py-10">
 <div class="section-body">
   <div class="section-label">04 / Deforestasi dalam Konsesi</div>
@@ -976,12 +976,12 @@
     </p>
   </div>
 </div>
-</section>
+</section> --}}
 
 <!-- DISKUSI -->
 <span class="s-anchor" id="diskusi"></span>
 <section class="page-section px-[5vw] py-10">
-  <div class="section-label">05 / Diskusi</div>
+  <div class="section-label">04 / Diskusi</div>
 
   <div class="mt-10">
     <div class="chapter-header">
@@ -1112,7 +1112,7 @@
 <span class="s-anchor" id="rekomendasi"></span>
 <section class="page-section px-[5vw] pt-10 pb-20">
 <div class="mx-auto max-w-[820px]">
-  <div class="section-label">06 / Rekomendasi</div>
+  <div class="section-label">05 / Rekomendasi</div>
 
   <p class="body-text">
     Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan tanggung jawab para pemegang izin. Rekomendasi berikut menempatkan perlindungan hutan sebagai agenda kebijakan yang harus dijalankan secara serentak.
