@@ -2218,7 +2218,7 @@ footer {
   /* Right-anchor Papua so it never overflows the right edge */
   #peta-chart-papua {
     left: auto !important;
-    right: 3% !important;
+    right: 26% !important;
   }
 }
 

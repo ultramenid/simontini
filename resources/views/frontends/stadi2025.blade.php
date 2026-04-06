@@ -879,7 +879,7 @@
 
               <!-- Sumatra chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-sumatra" style="left:3%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-sumatra" style="left:25%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
                   class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sumatera</div>
@@ -902,7 +902,7 @@
 
               <!-- Kalimantan chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-kalimantan" style="left:31%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-kalimantan" style="left:37%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
                   class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Kalimantan</div>
@@ -925,7 +925,7 @@
 
               <!-- Sulawesi chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-sulawesi" style="left:55%;top:10%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-sulawesi" style="left:50%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
                   class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sulawesi</div>
@@ -948,7 +948,7 @@
 
               <!-- Papua chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-papua" style="left:72%;top:16%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-papua" style="left:72%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
                   class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Papua</div>
@@ -2551,6 +2551,7 @@
 
       document.addEventListener('DOMContentLoaded', () => {
         Object.keys(PETA_DATA).forEach(k => petaBuildBars(k, PETA_DATA[k]));
+        petaSelectYear(4);
         const totals = [229982, 230760, 257385, 261574, 433751];
         const minV = Math.min(...totals), maxV = Math.max(...totals);
         const isMobile = window.innerWidth < 640;
