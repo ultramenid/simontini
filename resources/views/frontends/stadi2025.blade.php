@@ -46,9 +46,9 @@
       </div>
       <div class="hero-divider"></div>
       <!-- <div class="hero-stat">
-                                             <span class="hs-val">+66%</span>
-                                             <span class="hs-unit">Peningkatan dari 2024</span>
-                                             </div> -->
+                   <span class="hs-val">+66%</span>
+                   <span class="hs-unit">Peningkatan dari 2024</span>
+                   </div> -->
       <div class="hero-divider"></div>
       <div class="hero-desc">
         Deforestasi melonjak, saatnya pemerintah menerbitkan
@@ -1218,12 +1218,12 @@
                 <div class="w-full aspect-[16/9] overflow-hidden">
                   <img id="mainImage" src="{{ asset('assets/images/gallery2025/Kawasan Hutan Produksi.jpg') }}"
                     class="w-full h-full object-cover cursor-pointer" onclick="
-                    $('#popupImage').attr('src', this.src);
-                    $('#popupTitle').text($('#title').text());
-                    $('#popupSub').text($('#sub').text());
-                    $('#popupCaption').removeClass('hidden');
-                    $('#popup').fadeIn(200);
-                  ">
+                              $('#popupImage').attr('src', this.src);
+                              $('#popupTitle').text($('#title').text());
+                              $('#popupSub').text($('#sub').text());
+                              $('#popupCaption').removeClass('hidden');
+                              $('#popup').fadeIn(200);
+                            ">
                 </div>
 
                 <div
@@ -1233,24 +1233,24 @@
 
                     <img class="w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] object-cover border cursor-pointer shrink-0"
                       src="{{ asset('assets/images/gallery2025/Kawasan Hutan Produksi.jpg') }}" onclick="
-                      $('#mainImage').attr('src', this.src);
-                      $('#title').text('Kawasan Hutan Produksi,');
-                      $('#sub').text('Bireun, Aceh, Desember 2025');
-                    ">
+                                $('#mainImage').attr('src', this.src);
+                                $('#title').text('Kawasan Hutan Produksi,');
+                                $('#sub').text('Bireun, Aceh, Desember 2025');
+                              ">
 
                     <img class="w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] object-cover border cursor-pointer shrink-0"
                       src="{{ asset('assets/images/gallery2025/Konsesi PBPH, PT Toba Pulp Lestari,.jpg') }}" onclick="
-                      $('#mainImage').attr('src', this.src);
-                      $('#title').text('Konsesi PBPH, PT Toba Pulp Lestari,');
-                      $('#sub').text('Aek Raja, Sumatera Utara, Desember 2025');
-                    ">
+                                $('#mainImage').attr('src', this.src);
+                                $('#title').text('Konsesi PBPH, PT Toba Pulp Lestari,');
+                                $('#sub').text('Aek Raja, Sumatera Utara, Desember 2025');
+                              ">
 
                     <img class="w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] object-cover border cursor-pointer shrink-0"
                       src="{{ asset('assets/images/gallery2025/Deforestasi, Kawasan Hutan Lindung,.jpg') }}" onclick="
-                      $('#mainImage').attr('src', this.src);
-                      $('#title').text('Kawasan Hutan Lindung,');
-                      $('#sub').text('Sijunjung, Sumatera Barat, Desember 2025');
-                    ">
+                                $('#mainImage').attr('src', this.src);
+                                $('#title').text('Kawasan Hutan Lindung,');
+                                $('#sub').text('Sijunjung, Sumatera Barat, Desember 2025');
+                              ">
 
                   </div>
 
@@ -1291,18 +1291,18 @@
               <div class="w-full aspect-[16/9] overflow-hidden">
                 <img src="{{ asset('assets/images/gallery2025/Konsesi Sawit, PT Banyan Tumbuh Lestari.jpg') }}"
                   class="w-full h-full object-cover cursor-pointer" onclick="
-                          let img = $('#popupImage');
+                                  let img = $('#popupImage');
 
-                          img.attr('src', this.src);
-                          img.data({zoom:1,x:0,y:0,drag:false,dragging:false});
-                          img.css('transform','translate(0,0) scale(1)');
+                                  img.attr('src', this.src);
+                                  img.data({zoom:1,x:0,y:0,drag:false,dragging:false});
+                                  img.css('transform','translate(0,0) scale(1)');
 
-                          $('#popupTitle').text('Area Penggunaan Lain, Konsesi Sawit, PT Banyan Tumbuh Lestari,');
-                          $('#popupSub').text('Pahuwato, Gorontalo, Mei 2025');
+                                  $('#popupTitle').text('Area Penggunaan Lain, Konsesi Sawit, PT Banyan Tumbuh Lestari,');
+                                  $('#popupSub').text('Pahuwato, Gorontalo, Mei 2025');
 
-                          $('#popupCaption').show();
-                          $('#popup').fadeIn(200);
-                        ">
+                                  $('#popupCaption').show();
+                                  $('#popup').fadeIn(200);
+                                ">
               </div>
 
               <!-- CAPTION -->
@@ -1336,24 +1336,24 @@
         <div class="viz-frame viz-frame--padded">
           <div class="mx-auto w-full" style="max-width:980px;">
 
-            <div ">
+            <div >
 
-                <!-- IMAGE -->
-                <div class=" w-full aspect-[16/9] overflow-hidden">
+                      <!-- IMAGE -->
+                      <div class=" w-full aspect-[16/9] overflow-hidden">
               <img src="{{ asset('assets/images/gallery2025/Suaka Margasatwa Rawa Singkil.JPG') }}"
                 class="w-full h-full object-cover cursor-pointer" onclick="
-                        let img = $('#popupImage');
+                              let img = $('#popupImage');
 
-                        img.attr('src', this.src);
-                        img.data({zoom:1,x:0,y:0,drag:false,dragging:false});
-                        img.css('transform','translate(0,0) scale(1)');
+                              img.attr('src', this.src);
+                              img.data({zoom:1,x:0,y:0,drag:false,dragging:false});
+                              img.css('transform','translate(0,0) scale(1)');
 
-                        $('#popupTitle').text('Kawasan Konservasi, Suaka Margasatwa Rawa Singkil,');
-                        $('#popupSub').text('Aceh Selatan, Aceh, Agustus 2025, © HAKA');
+                              $('#popupTitle').text('Kawasan Konservasi, Suaka Margasatwa Rawa Singkil,');
+                              $('#popupSub').text('Aceh Selatan, Aceh, Agustus 2025, © HAKA');
 
-                        $('#popupCaption').show();
-                        $('#popup').fadeIn(200);
-                      ">
+                              $('#popupCaption').show();
+                              $('#popup').fadeIn(200);
+                            ">
             </div>
 
             <!-- CAPTION -->
@@ -1368,8 +1368,7 @@
 
         </div>
       </div>
-  </div>
-  <br>
+  </div><br>
 
 
 
@@ -1395,24 +1394,24 @@
     <div class="viz-frame viz-frame--padded">
       <div class="mx-auto w-full" style="max-width:980px;">
 
-        <div ">
+        <div >
 
-                <!-- IMAGE -->
-                <div class=" w-full aspect-[16/9] overflow-hidden">
+                    <!-- IMAGE -->
+                    <div class=" w-full aspect-[16/9] overflow-hidden">
           <img src="{{ asset('assets/images/gallery2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}"
             class="w-full h-full object-cover cursor-pointer" onclick="
-                        let img = $('#popupImage');
+                            let img = $('#popupImage');
 
-                        img.attr('src', this.src);
-                        img.data({zoom:1,x:0,y:0,drag:false,dragging:false});
-                        img.css('transform','translate(0,0) scale(1)');
+                            img.attr('src', this.src);
+                            img.data({zoom:1,x:0,y:0,drag:false,dragging:false});
+                            img.css('transform','translate(0,0) scale(1)');
 
-                        $('#popupTitle').text('Area Penggunaan Lain, Konsesi Kebun, PT Equator Sumber Rezeki,');
-                        $('#popupSub').text('Kapuas Hulu, Kalimantan Barat, Juni 2025');
+                            $('#popupTitle').text('Area Penggunaan Lain, Konsesi Kebun, PT Equator Sumber Rezeki,');
+                            $('#popupSub').text('Kapuas Hulu, Kalimantan Barat, Juni 2025');
 
-                        $('#popupCaption').show();
-                        $('#popup').fadeIn(200);
-                      ">
+                            $('#popupCaption').show();
+                            $('#popup').fadeIn(200);
+                          ">
         </div>
 
         <!-- CAPTION -->
@@ -1663,11 +1662,11 @@
         deforestasi dalam APL seluas 125.997 hektare atau 28% deforestasi nasional.
       </p>
       <!-- <ul class="insight-list">
-                                          <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                          <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                          <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                          <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                        </ul> -->
+                <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+              </ul> -->
     </div>
 
     <hr class="divider">
@@ -1750,13 +1749,13 @@
       </p>
 
       <!-- <div class="callout">
-                                          <strong>Faktor pendorong utama:</strong>
-                                          <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                            <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                            <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                            <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                          </ul>
-                                        </div> -->
+                <strong>Faktor pendorong utama:</strong>
+                <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                  <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                  <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                  <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                </ul>
+              </div> -->
     </div>
 
     <hr class="divider">
@@ -1982,8 +1981,6 @@
         </div>
       </div>
     </div>
-
-
   </section>
 
 @endsection
@@ -3063,14 +3060,14 @@
         badge.dataset.species = item.name;
         const shortName = item.name.split(' ').slice(-2).join(' ');
         badge.innerHTML = `
-                                        <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                        <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                        <div class="satwa-badge-detail">
-                                          <span class="si-name">${item.name}</span>
-                                          <span class="si-val">${item.value}</span>
-                                          <span class="si-unit">habitat terdampak</span>
-                                        </div>
-                                      `;
+              <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+              <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+              <div class="satwa-badge-detail">
+                <span class="si-name">${item.name}</span>
+                <span class="si-val">${item.value}</span>
+                <span class="si-unit">habitat terdampak</span>
+              </div>
+            `;
         badge.addEventListener('click', async (e) => {
           e.stopPropagation();
           const isActive = badge.classList.contains('active');
