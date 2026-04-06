@@ -64,7 +64,7 @@
   <span class="s-anchor" id="pendahuluan"></span>
 
   <section class="page-section px-[5vw]">
-    <div class="section-label">01 / Pendahuluan</div>
+    <div class="section-label">I. Pendahuluan</div>
     <p class="lead">
       Pada November 2021 dalam ajang KTT Iklim ke-26 Glasgow, Skotlandia, pemimpin 144 negara, termasuk Indonesia,
       menandatangani
@@ -158,7 +158,7 @@
   <span class="s-anchor" id="metodologi"></span>
   <section class="page-section px-[5vw]  section-after-chart">
     <div class="section-body">
-      <div class="section-label">02 / Metodologi</div>
+      <div class="section-label">II. Metodologi</div>
 
       <p class="body-text">
         <strong>Tahapan dan pemrosesan data.</strong> Peta deforestasi 2025 diperoleh dengan pemodelan deep learning pada
@@ -167,7 +167,7 @@
 
       <div class="method-steps">
         <div class="method-step">
-          <div class="ms-num">01</div>
+          <div class="ms-num">1.</div>
           <div class="body-text">
             <p>
               <em>Pertama, </em>
@@ -187,7 +187,7 @@
           </div>
         </div>
         <div class="method-step">
-          <div class="ms-num">02</div>
+          <div class="ms-num">2.</div>
           <div class="body-text">
             <!-- <h4>Inspeksi visual</h4> -->
             <p>
@@ -201,7 +201,7 @@
           </div>
         </div>
         <div class="method-step">
-          <div class="ms-num">03</div>
+          <div class="ms-num">3.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
             <p>
@@ -211,7 +211,7 @@
           </div>
         </div>
         <div class="method-step">
-          <div class="ms-num">04</div>
+          <div class="ms-num">4.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
             <p>
@@ -224,7 +224,7 @@
           </div>
         </div>
         <div class="method-step">
-          <div class="ms-num">05</div>
+          <div class="ms-num">5.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
             <p>
@@ -246,7 +246,7 @@
           </div>
         </div>
         <div class="method-step">
-          <div class="ms-num">06</div>
+          <div class="ms-num">6.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
             <p>
@@ -833,7 +833,7 @@
     <!-- DEFORESTASI 2025 -->
     <span class="s-anchor" id="deforestasi"></span>
     <section class="page-section px-[5vw] py-8">
-      <div class="section-label">03 / Deforestasi 2025</div>
+      <div class="section-label">III. Deforestasi 2025</div>
 
       <p class="body-text">
         Dengan metode tersebut, <strong> di Indonesia pada 2025 mencapai 433.751 hektare</strong>. Deforestasi ini
@@ -1282,21 +1282,6 @@
         atau pemilik lahan/konsesi.<br>
       </p>
 
-      <div class="viz-block viz-block--full mt-2 mb-2">
-        <div class="viz-frame viz-frame--padded">
-          <div
-            class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible"
-            style="max-width:980px;">
-
-            <a href="{{ asset('assets/images/stadi2025/Area Penggunaan Lain, Konsesi Sawit, PT Banyan Tumbuh Lestari.jpg') }}" class="glightbox3 mt-4"
-              data-glightbox=" description: Area Penggunaan Lain, Konsesi Sawit, PT Banyan Tumbuh Lestari, <br> Pahuwato, Gorontalo, Mei 2025">
-              <img src="{{ asset('assets/images/stadi2025/Area Penggunaan Lain, Konsesi Sawit, PT Banyan Tumbuh Lestari.jpg') }}" alt="Simontini - stadi 2024"
-                class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out">
-              <p class=" text-xs mt-2">Area Penggunaan Lain, Konsesi Sawit, PT Banyan Tumbuh Lestari, <br> Pahuwato, Gorontalo, Mei 2025</p>
-            </a>
-          </div>
-        </div>
-      </div><br>
 
       <p class="body-text">
         Deforestasi mengalami lonjakan di kawasan konservasi. Pada 2024, deforestasi di kawasan konservasi seluas 7.704
@@ -1310,22 +1295,6 @@
         menghitung perulangan di area yang beririsan.<br>
 
       </p>
-
-      <div class="viz-block viz-block--full mt-2 mb-2">
-        <div class="viz-frame viz-frame--padded">
-          <div
-            class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible"
-            style="max-width:980px;">
-
-            <a href="{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}" class="glightbox2 mt-4"
-              data-glightbox=" description: Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, <br> Aceh Selatan, Aceh, Agustus 2025, © HAKA">
-              <img src="{{ asset('assets/images/stadi2025/Kawasan Konservasi, Suaka Margasatwa Rawa Singkil.jpg') }}" alt="Simontini - stadi 2024"
-                class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out">
-              <p class=" text-xs mt-2">Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, <br> Aceh Selatan, Aceh, Agustus 2025, © HAKA</p>
-            </a>
-          </div>
-        </div>
-      </div><br>
 
 
 
@@ -1342,26 +1311,74 @@
 
       </p><br>
 
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+            <div x-data="{ currentSlide: 0, totalSlides: 3 }" @touchstart="startX = $event.touches[0].clientX"
+              @touchmove="handleTouchMove($event)"
+              class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
+              <div class="flex transition-transform duration-500"
+                :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                <div class="swiper-slide w-full flex-shrink-0">
+                  <a href="{{ asset('assets/images/stadi2025/DJI_20250618133349_0160_D.jpg.jpeg') }}" class="glightbox2 mt-4 gbox"
+                    data-glightbox=" description: Konsesi Kebun Sawit, PT Borneo Internasional Anugerah, <br> Kapuas Hulu, Kalimantan Barat, Juni 2025">
+                    <img src="{{ asset('assets/images/stadi2025/DJI_20250618133349_0160_D.jpg.jpeg') }}" alt="Simontini - stadi 2024"
+                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+                  </a>
+                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                    Konsesi Kebun Sawit, PT Borneo Internasional Anugerah, <br> Kapuas Hulu, Kalimantan Barat, Juni 2025
+                </div>
+                <div class="swiper-slide w-full flex-shrink-0">
+                  <a href="{{ asset('assets/images/stadi2025/DJI_20251222094403_0062_V.JPG (1).jpeg') }}" class="glightbox2 mt-4 gbox"
+                    data-glightbox="description: Konsesi Tambang, PT Indonesia Pamalaa Industri Park<br> Kolaka, Sulawesi Tenggara, Desember 2025">
+                    <img src="{{ asset('assets/images/stadi2025/DJI_20251222094403_0062_V.JPG (1).jpeg') }}" alt="Simontini - stadi 2024"
+                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+                  </a>
+                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                   Konsesi Tambang, PT Indonesia Pamalaa Industri Park <br> Kolaka, Sulawesi Tenggara, Desember 2025
+                  </p>
+                </div>
+                <div class="swiper-slide w-full flex-shrink-0">
+                  <a href="{{ asset('assets/images/stadi2025/Vale_Kolonodale_Sulteng2.jpg (1).jpeg') }}" class="glightbox2 mt-4 gbox"
+                    data-glightbox=" description: Deforestasi, Konsesi Tambang, PT Vale Indonesia, <br> Bahodapi, Sulawesi Tengah, Oktober 2025">
+                    <img src="{{ asset('assets/images/stadi2025/Vale_Kolonodale_Sulteng2.jpg (1).jpeg') }}" alt="Simontini - stadi 2024"
+                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+                  </a>
+                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                    Deforestasi, Konsesi Tambang, PT Vale Indonesia, <br> Bahodapi, Sulawesi Tengah, Oktober 2025
+                  </p>
+                </div>
+              </div>
+
+              <!-- Navigation Buttons -->
+              <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0" x-show="currentSlide > 0"
+                class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                </svg>
+              </button>
+              <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
+                x-show="currentSlide < totalSlides - 1"
+                class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div><br><br>
+
+
       <p class="body-text">
         Deforestasi seluas 41.162 hektare terjadi pada 1.140 izin atau konsesi tambang, dengan 22% (8.929 hektare) terjadi
         pada sepuluh teratas.<br>
 
       </p>
-      <div class="viz-block viz-block--full mt-2 mb-2">
-        <div class="viz-frame viz-frame--padded">
-          <div
-            class="mx-auto w-full overflow-x-auto overflow-y-hidden rounded-none shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible"
-            style="max-width:980px;">
-
-            <a href="{{ asset('assets/images/stadi2025/Area Penggunaan Lain, Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}" class="glightbox4 mt-4"
-              data-glightbox=" description: Area Penggunaan Lain, Konsesi Kebun, PT Equator Sumber Rezeki, <br> Kapuas Hulu, Kalimantan Barat, Juni 2025">
-              <img src="{{ asset('assets/images/stadi2025/Area Penggunaan Lain, Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}" alt="Simontini - stadi 2024"
-                class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out">
-              <p class=" text-xs mt-2">Area Penggunaan Lain, Konsesi Kebun, PT Equator Sumber Rezeki, <br> Kapuas Hulu, Kalimantan Barat, Juni 2025</p>
-            </a>
-          </div>
-        </div>
-      </div><br><br>
 
       <p class="body-text">
         Deforestasi seluas 37.910 hektare terjadi di 719 konsesi sawit sepanjang 2025, dengan 36% (13.610 hektare) terjadi
@@ -1554,11 +1571,11 @@
     <!-- DISKUSI -->
     <span class="s-anchor" id="diskusi"></span>
     <section class="page-section px-[5vw] py-10">
-      <div class="section-label">04 / Diskusi</div>
+      <div class="section-label">IV. Diskusi</div>
 
       <div class="mt-10">
         <div class="chapter-header">
-          <span class="ms-num">01</span>
+          <span class="ms-num">1.</span>
           <h3 class="chapter-title"><strong>Kebijakan pemerintah turut memicu deforestasi</strong></h3>
         </div>
         <p class="body-text">
@@ -1608,7 +1625,7 @@
 
       <div>
         <div class="chapter-header">
-          <span class="ms-num">02</span>
+          <span class="ms-num">2.</span>
           <h3 class="chapter-title">Episentrum deforestasi mengarah ke Tanah Papua</h3>
         </div>
         <p class="body-text">
@@ -1642,7 +1659,7 @@
 
       <div>
         <div class="chapter-header">
-          <span class="ms-num">03</span>
+          <span class="ms-num">3.</span>
           <h3 class="chapter-title">Ekspansi komoditas industrial menjadi pemicu deforestasi Indonesia</h3>
         </div>
         <p class="body-text">
@@ -1697,7 +1714,7 @@
 
       <div>
         <div class="chapter-header">
-          <span class="ms-num">04</span>
+          <span class="ms-num">4.</span>
           <h3 class="chapter-title">Legal deforestasi sebagai biang masalah</h3>
         </div>
         <p class="body-text">
@@ -1726,7 +1743,7 @@
 
       <div>
         <div class="chapter-header">
-          <span class="ms-num">05</span>
+          <span class="ms-num">5.</span>
           <h3 class="chapter-title">Deforestasi tinggi di area konservasi</h3>
         </div>
         <p class="body-text">
@@ -1753,7 +1770,7 @@
     <span class="s-anchor" id="rekomendasi"></span>
     <section class="page-section px-[5vw] pt-10 pb-20">
       <div class="mx-auto max-w-[820px]">
-        <div class="section-label">05 / Rekomendasi</div>
+        <div class="section-label">V. Rekomendasi</div>
 
         <p class="body-text">
           Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
@@ -1763,7 +1780,7 @@
 
         <div class="method-steps">
           <div class="method-step">
-            <div class="ms-num">01</div>
+            <div class="ms-num">1.</div>
             <div>
               <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di
                 Indonesia.</h4><br>
@@ -1779,7 +1796,7 @@
             </div>
           </div>
           <div class="method-step">
-            <div class="ms-num">02</div>
+            <div class="ms-num">2.</div>
             <div class="">
               <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.</h4><br>
               <p class="body-text">
@@ -1802,7 +1819,7 @@
             </div>
           </div>
           <div class="method-step">
-            <div class="ms-num">03</div>
+            <div class="ms-num">3.</div>
             <div class="">
               <h4 class="chapter-title">Percepatan perluasan area preservasi, terutama di luar kawasan hutan</h4><br>
               <p class="body-text">
@@ -1820,7 +1837,7 @@
             </div>
           </div>
           <div class="method-step">
-            <div class="ms-num">04</div>
+            <div class="ms-num">4.</div>
             <div class="">
               <h4 class="chapter-title">Redistribusi kelembagaan dan aparatur pengelola hutan sehingga seluruh tutupan
                 hutan alam memiliki aparatur penjaga.</h4><br>
@@ -1838,7 +1855,7 @@
             </div>
           </div>
           <div class="method-step">
-            <div class="ms-num">05</div>
+            <div class="ms-num">5.</div>
             <div class="">
               <h4 class="chapter-title">Korporasi yang mengelola area bertutupan hutan alam berkomitmen terhadap
                 lingkungan, sosial, dan tata kelola yang baik (ESG Commitment).</h4><br>
@@ -1851,7 +1868,7 @@
             </div>
           </div>
           <div class="method-step">
-            <div class="ms-num">06</div>
+            <div class="ms-num">6.</div>
             <div class="">
               <h4 class="chapter-title">Penyediaan insentif bagi pemerintah daerah, komunitas lokal, dan korporasi yang
                 melakukan perlindungan hutan alam.</h4><br>
