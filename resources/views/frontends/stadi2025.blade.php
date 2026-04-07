@@ -46,9 +46,9 @@
       </div>
       <div class="hero-divider"></div>
       <!-- <div class="hero-stat">
-                 <span class="hs-val">+66%</span>
-                 <span class="hs-unit">Peningkatan dari 2024</span>
-                 </div> -->
+                                     <span class="hs-val">+66%</span>
+                                     <span class="hs-unit">Peningkatan dari 2024</span>
+                                     </div> -->
       <div class="hero-divider"></div>
       <div class="hero-desc">
         Deforestasi melonjak, saatnya pemerintah menerbitkan
@@ -279,7 +279,8 @@
         </div>
 
         <!-- ALUR INLINE — replaces <iframe src="alur.html"> -->
-        <div id="alur-embed" class="bg-[#0e0e0e] font-poppins text-[#e8e2d8] antialiased overflow-x-auto overflow-y-hidden px-4">
+        <div id="alur-embed"
+          class="bg-[#0e0e0e] font-poppins text-[#e8e2d8] antialiased overflow-x-auto overflow-y-hidden px-4">
 
           <div class="px-4 sm:px-[60px] pt-6 pb-8 min-w-[680px] sm:min-w-0 max-w-[1400px] mx-auto relative" id="dwrap">
 
@@ -1208,67 +1209,53 @@
         mengalami lonjakan deforestasi luar biasa: Aceh (426%), Sumatera Utara (281%), dan Sumatera Barat (1.034%).<br>
       </p>
 
+      <!-- gallery 1 -->
+
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
-            <div x-data="{ currentSlide: 0, totalSlides: 3 }" @touchstart="startX = $event.touches[0].clientX"
-              @touchmove="handleTouchMove($event)"
-              class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
-              <div class="flex transition-transform duration-500"
-                :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}" class="glightbox1 mt-4 gbox"
-                    data-glightbox=" description: Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025">
-                    <img src="{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                    Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025
-                </div>
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}" class="glightbox1 mt-4 gbox"
-                    data-glightbox="description: Konsesi PBPH, PT Toba Pulp Lestari,<br> Aek Raja, Sumatera Utara, Desember 2025">
-                    <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                   Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025
-                  </p>
-                </div>
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}" class="glightbox1 mt-4 gbox"
-                    data-glightbox=" description: Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025">
-                    <img src="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                    Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025
-                  </p>
-                </div>
+            <div x-data="{ active: 0, images: [
+                  { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                  { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                  { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                ]}">
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" alt="Simontini"
+                  @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                  class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                <button x-show="active > 0" @click="active--"
+                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
+                </button>
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </button>
               </div>
-
-              <!-- Navigation Buttons -->
-              <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0" x-show="currentSlide > 0"
-                class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-                </svg>
-              </button>
-              <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
-                x-show="currentSlide < totalSlides - 1"
-                class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-                </svg>
-              </button>
+              <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+                    </div>
+                  </template>
+                </div>
+                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                  x-html="images[active].caption"></p>
+              </div>
             </div>
           </div>
         </div>
-      </div><br><br>
+      </div><br>
 
       <p class="body-text">
         Deforestasi terjadi di 383 kabupaten/kota atau 74% kabupaten/kota se-Indonesia yang jumlahnya 514, menurun dari
@@ -1311,77 +1298,66 @@
 
       </p>
 
+      <!-- gallery 2 -->
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
-          <div class="max-w-5xl mx-auto px-4 z-20 relative">
-            <div x-data="{ currentSlide: 0, totalSlides: 3 }" @touchstart="startX = $event.touches[0].clientX"
-              @touchmove="handleTouchMove($event)"
-              class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
-              <div class="flex transition-transform duration-500"
-                :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/DJI_20250618133349_0160_D.jpg.jpeg') }}" class="glightbox2 mt-4 gbox"
-                    data-glightbox=" description: Konsesi Kebun Sawit, PT Borneo Internasional Anugerah, <br> Kapuas Hulu, Kalimantan Barat, Juni 2025">
-                    <img src="{{ asset('assets/images/stadi2025/DJI_20250618133349_0160_D.jpg.jpeg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                    Konsesi Kebun Sawit, PT Borneo Internasional Anugerah, <br> Kapuas Hulu, Kalimantan Barat, Juni 2025
+          <div class="viz-block viz-block--full mt-2 mb-2">
+
+            <div class="max-w-5xl mx-auto px-4 z-20 relative">
+              <div x-data="{ active: 0, images: [
+                { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}', caption: 'Area Penggunaan lain, Konsesi Kebun Sawit, PT Borneo Internasional <br> Anugerah, Kapuas Hulu, Kalimantan Barat, Juni 2025' },
+                { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Vale Indonesia.jpg') }}', caption: 'Konsesi Tambang, PT Vale Indonesia, <br> Bahodopi, Sulawesi Tengah, Oktober 2025' },
+                { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Indonesia Pomalaa Industry Park.jpg') }}', caption: 'Kawasan Hutan Produksi Konversi, Konsesi Tambang, PT Indonesia Pomalaa Industry Park, <br> Kolaka, Sulawesi Tenggara, Desember 2025' }
+              ]}">
+                <div class="relative" x-ref="mainImg">
+                  <img :src="images[active].src" alt="Simontini"
+                    @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                    class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                  <button x-show="active > 0" @click="active--"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                      stroke="currentColor" class="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                  </button>
+                  <button x-show="active < images.length - 1" @click="active++"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                      stroke="currentColor" class="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
                 </div>
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/DJI_20251222094403_0062_V.JPG (1).jpeg') }}" class="glightbox2 mt-4 gbox"
-                    data-glightbox="description: Konsesi Tambang, PT Indonesia Pamalaa Industri Park<br> Kolaka, Sulawesi Tenggara, Desember 2025">
-                    <img src="{{ asset('assets/images/stadi2025/DJI_20251222094403_0062_V.JPG (1).jpeg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                   Konsesi Tambang, PT Indonesia Pamalaa Industri Park <br> Kolaka, Sulawesi Tenggara, Desember 2025
-                  </p>
-                </div>
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/Vale_Kolonodale_Sulteng2.jpg (1).jpeg') }}" class="glightbox2 mt-4 gbox"
-                    data-glightbox=" description: Deforestasi, Konsesi Tambang, PT Vale Indonesia, <br> Bahodapi, Sulawesi Tengah, Oktober 2025">
-                    <img src="{{ asset('assets/images/stadi2025/Vale_Kolonodale_Sulteng2.jpg (1).jpeg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                    Deforestasi, Konsesi Tambang, PT Vale Indonesia, <br> Bahodapi, Sulawesi Tengah, Oktober 2025
-                  </p>
+                <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                  <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                    <template x-for="(img, index) in images" :key="index">
+                      <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                        :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                        <img :src="img.src" alt="thumbnail"
+                          class="w-full h-full object-cover object-top transition duration-200" />
+                      </div>
+                    </template>
+                  </div>
+                  <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                    x-html="images[active].caption"></p>
                 </div>
               </div>
-
-              <!-- Navigation Buttons -->
-              <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0" x-show="currentSlide > 0"
-                class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-                </svg>
-              </button>
-              <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
-                x-show="currentSlide < totalSlides - 1"
-                class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-                </svg>
-              </button>
             </div>
           </div>
         </div>
-      </div><br><br>
-
+      </div><br>
 
       <p class="body-text">
-        Deforestasi seluas 41.162 hektare terjadi pada 1.140 izin atau konsesi tambang, dengan 22% (8.929 hektare) terjadi
+        Deforestasi seluas 41.162 hektare terjadi pada 1.140 izin atau konsesi tambang, dengan 22% (8.929 hektare)
+        terjadi
         pada sepuluh teratas.<br>
 
-      </p>
+      </p><br>
 
       <p class="body-text">
-        Deforestasi seluas 37.910 hektare terjadi di 719 konsesi sawit sepanjang 2025, dengan 36% (13.610 hektare) terjadi
+        Deforestasi seluas 37.910 hektare terjadi di 719 konsesi sawit sepanjang 2025, dengan 36% (13.610 hektare)
+        terjadi
         pada sepuluh konsesi teratas.<br>
 
       </p>
@@ -1519,7 +1495,8 @@
 
 
       <div class="pull-quote">
-        <p>Deforestasi di Kalimantan meningkat drastis setiap tahun sejak 2021, didorong oleh ekspansi konsesi kebun kayu,
+        <p>Deforestasi di Kalimantan meningkat drastis setiap tahun sejak 2021, didorong oleh ekspansi konsesi kebun
+          kayu,
           sawit, dan pertambangan yang beroperasi secara legal di bawah izin yang diterbitkan pemerintah.</p>
         <cite>—Analisis SIMONTINI 2025</cite>
       </div>
@@ -1600,11 +1577,11 @@
           deforestasi dalam APL seluas 125.997 hektare atau 28% deforestasi nasional.
         </p>
         <!-- <ul class="insight-list">
-              <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-              <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-              <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-              <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-            </ul> -->
+                                  <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                  <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                  <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                  <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                </ul> -->
       </div>
 
       <hr class="divider">
@@ -1687,13 +1664,13 @@
         </p>
 
         <!-- <div class="callout">
-              <strong>Faktor pendorong utama:</strong>
-              <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-              </ul>
-            </div> -->
+                                  <strong>Faktor pendorong utama:</strong>
+                                  <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                    <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                    <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                    <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                  </ul>
+                                </div> -->
       </div>
 
       <hr class="divider">
@@ -2910,14 +2887,14 @@
           badge.dataset.species = item.name;
           const shortName = item.name.split(' ').slice(-2).join(' ');
           badge.innerHTML = `
-            <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-            <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-            <div class="satwa-badge-detail">
-              <span class="si-name">${item.name}</span>
-              <span class="si-val">${item.value}</span>
-              <span class="si-unit">habitat terdampak</span>
-            </div>
-          `;
+                                <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                <div class="satwa-badge-detail">
+                                  <span class="si-name">${item.name}</span>
+                                  <span class="si-val">${item.value}</span>
+                                  <span class="si-unit">habitat terdampak</span>
+                                </div>
+                              `;
           badge.addEventListener('click', async (e) => {
             e.stopPropagation();
             const isActive = badge.classList.contains('active');

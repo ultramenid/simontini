@@ -47,9 +47,9 @@
             </div>
             <div class="hero-divider"></div>
             <!-- <div class="hero-stat">
-                             <span class="hs-val">+66%</span>
-                             <span class="hs-unit">Peningkatan dari 2024</span>
-                             </div> -->
+                                         <span class="hs-val">+66%</span>
+                                         <span class="hs-unit">Peningkatan dari 2024</span>
+                                         </div> -->
             <div class="hero-divider"></div>
             <div class="hero-desc">
                 Deforestation is on the rise; it’s time for the government to issue regulations to protect all remaining
@@ -272,8 +272,9 @@
                         alur lengkap</span>
                 </div>
 
-            <!-- ALUR INLINE — replaces <iframe src="alur.html"> -->
-            <div id="alur-embed" class="bg-[#0e0e0e] font-poppins text-[#e8e2d8] antialiased overflow-x-auto overflow-y-hidden px-4">
+                <!-- ALUR INLINE — replaces <iframe src="alur.html"> -->
+                <div id="alur-embed"
+                    class="bg-[#0e0e0e] font-poppins text-[#e8e2d8] antialiased overflow-x-auto overflow-y-hidden px-4">
 
                     <div class="px-4 sm:px-[60px] pt-6 pb-8 min-w-[680px] sm:min-w-0 max-w-[1400px] mx-auto relative"
                         id="dwrap">
@@ -1295,80 +1296,56 @@
                 (1,034%).<br>
             </p>
 
+            <!-- gallery 1 -->
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-
-
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
-                        <div x-data="{ currentSlide: 0, totalSlides: 3 }" @touchstart="startX = $event.touches[0].clientX"
-                            @touchmove="handleTouchMove($event)"
-                            class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
-                            <div class="flex transition-transform duration-500"
-                                :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                                <div class="swiper-slide w-full flex-shrink-0">
-                                    <a href="{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}"
-                                        class="glightbox1 mt-4 gbox"
-                                        data-glightbox=" description: Production Forest Area, <br> Bireun, Aceh, December 2025">
-                                        <img src="{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}"
-                                            alt="Simontini - stadi 2024"
-                                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                                    </a>
-                                    <p
-                                        class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                                        Production Forest Area, <br> Bireun, Aceh, December 2025</p>
-                                </div>
-                                <div class="swiper-slide w-full flex-shrink-0">
-                                    <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}"
-                                        class="glightbox1 mt-4 gbox"
-                                        data-glightbox="description: PBPH Concession, PT Toba Pulp Lestari, <br> Aek Raja, North Sumatra, December 2025">
-                                        <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}"
-                                            alt="Simontini - stadi 2024"
-                                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                                    </a>
-                                    <p
-                                        class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                                        PBPH Concession, PT Toba Pulp Lestari, <br> Aek Raja, North Sumatra, December 2025
-                                    </p>
-                                </div>
-                                <div class="swiper-slide w-full flex-shrink-0">
-                                    <a href="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}"
-                                        class="glightbox1 mt-4 gbox"
-                                        data-glightbox=" description: Deforestation, Protected Forest Area, <br> Sijunjung, West Sumatra, December 2025">
-                                        <img src="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}"
-                                            alt="Simontini - stadi 2024"
-                                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                                    </a>
-                                    <p
-                                        class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                                        Deforestation, Protected Forest Area, <br> Sijunjung, West Sumatra, December 2025
-                                    </p>
-                                </div>
+                        <div x-data="{ active: 0, images: [
+                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Production Forest Area, <br> Bireun, Aceh, December 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'PBPH Concession, PT Toba Pulp Lestari, <br> Aek Raja, North Sumatra, December 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestation, Protected Forest Area, <br> Sijunjung, West Sumatra, December 2025' }
+                    ]}">
+                            <div class="relative" x-ref="mainImg">
+                                <img :src="images[active].src" alt="Simontini"
+                                    @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                                    class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                                <button x-show="active > 0" @click="active--"
+                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button x-show="active < images.length - 1" @click="active++"
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
                             </div>
-
-                            <!-- Navigation Buttons -->
-                            <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0"
-                                x-show="currentSlide > 0"
-                                class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-                                </svg>
-                            </button>
-                            <button
-                                @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
-                                x-show="currentSlide < totalSlides - 1"
-                                class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-                                </svg>
-                            </button>
+                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                                            :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                                            <img :src="img.src" alt="thumbnail"
+                                                class="w-full h-full object-cover object-top transition duration-200" />
+                                        </div>
+                                    </template>
+                                </div>
+                                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                                    x-html="images[active].caption"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div><br><br>
+            </div><br>
+
+
 
             <p class="body-text">
                 Deforestation occurred in 383 regencies/municipalities, or 74% of Indonesia’s total of 514, down from 428 in
@@ -1415,234 +1392,230 @@
 
             </p>
 
+
+            <!-- gallery 2 -->
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-4 z-20 relative">
-                    <div x-data="{ currentSlide: 0, totalSlides: 3 }" @touchstart="startX = $event.touches[0].clientX"
-                    @touchmove="handleTouchMove($event)"
-                    class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
-                    <div class="flex transition-transform duration-500"
-                        :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                        <div class="swiper-slide w-full flex-shrink-0">
-                        <a href="{{ asset('assets/images/stadi2025/DJI_20250618133349_0160_D.jpg.jpeg') }}" class="glightbox2 mt-4 gbox"
-                            data-glightbox=" description: PT Borneo Internasional Anugerah oil palm concession, <br> Kapuas Hulu, West Kalimantan, June 2025">
-                            <img src="{{ asset('assets/images/stadi2025/DJI_20250618133349_0160_D.jpg.jpeg') }}" alt="Simontini - stadi 2024"
-                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                        </a>
-                        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                         PT Borneo Internasional Anugerah oil palm concession, <br> Kapuas Hulu, West Kalimantan, June 2025
-                        </div>
-                        <div class="swiper-slide w-full flex-shrink-0">
-                        <a href="{{ asset('assets/images/stadi2025/DJI_20251222094403_0062_V.JPG (1).jpeg') }}" class="glightbox2 mt-4 gbox"
-                            data-glightbox="description: PT Indonesia Pomalaa Industri Park mining concession<br> Kolaka, Southeast Sulawesi, December 2025">
-                            <img src="{{ asset('assets/images/stadi2025/DJI_20251222094403_0062_V.JPG (1).jpeg') }}" alt="Simontini - stadi 2024"
-                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                        </a>
-                        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                        PT Indonesia Pomalaa Industri Park mining concession <br> Kolaka, Southeast Sulawesi, December 2025
-                        </p>
-                        </div>
-                        <div class="swiper-slide w-full flex-shrink-0">
-                        <a href="{{ asset('assets/images/stadi2025/Vale_Kolonodale_Sulteng2.jpg (1).jpeg') }}" class="glightbox2 mt-4 gbox"
-                            data-glightbox=" description: PT Vale Indonesia mining concession  , <br> Bahodapi, Central Sulawesi, October 2025">
-                            <img src="{{ asset('assets/images/stadi2025/Vale_Kolonodale_Sulteng2.jpg (1).jpeg') }}" alt="Simontini - stadi 2024"
-                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                        </a>
-                        <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                         PT Vale Indonesia mining concession, <br> Bahodapi, Central Sulawesi, October 2025
-                        </p>
-                        </div>
-                    </div>
-
-                    <!-- Navigation Buttons -->
-                    <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0" x-show="currentSlide > 0"
-                        class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-                        </svg>
-                    </button>
-                    <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
-                        x-show="currentSlide < totalSlides - 1"
-                        class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </button>
-                    </div>
-                </div>
-                </div>
-            </div><br><br>
-
-            <p class="body-text">
-                Deforestation amounting to 41,162 hectares occurred inside 1,140 mining permit or concession areas, with the
-                top ten accounting for 22% (8,929 hectares).
-
-            </p>
-
-
-            <p class="body-text">
-                Deforestation amounting to 37,910 hectares occurred inside 719 oil palm concessions throughout 2025, with
-                the top ten concessions accounting for 36% (13,610 hectares). <br>
-
-            </p>
-
-            <p class="body-text">
-                Deforestation amounting to 110,898 hectares occurred inside 486 forestry concessions, with 74,409 hectares
-                in logging concessions, 33,063 hectares in pulpwood concessions, 671 hectares in ecosystem restoration
-                concessions, and 2,754 hectares in other forestry concessions.<br>
-
-            </p>
-
-            <p class="body-text">
-                Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.<br>
-
-            </p>
-
-
-            <div class="viz-block viz-block--full">
-
-                <!-- PETA TEMATIK (inline) -->
-                <div id="peta-tematik" style="height: 60vh" class="flex overflow-hidden">
-                    <aside id="sidebar"
-                        class="sm:w-[350px] w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] px-4 py-4 overflow-y-auto border-r border-white/[.08]">
-                        <h1 class="text-[1.05rem] font-bold leading-[1.15] mb-1 p-1">Thematic Map of Deforestation</h1>
-                        <p class="px-1 text-[.58rem] tracking-[.1em] uppercase text-[#d4c4a0] mb-[10px]">Choose analysis
-                            type · 2025</p>
-                        <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
-                            style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)"
-                                stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                            <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk
-                                melihat alur lengkap</span>
-                        </div>
-                        <div id="mode-btn-rail">
-                            <button
-                                class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all active"
-                                data-mode="provinsi">Deforestation by province</button>
-                            <button
-                                class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
-                                data-mode="kabupaten">Deforestation by regency</button>
-                            <button
-                                class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
-                                data-mode="konservasi">Deforestation in conservation areas</button>
-                            <button
-                                class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
-                                data-mode="megafauna">Deforestation in iconic megafauna habitats</button>
-                            <button
-                                class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
-                                data-mode="konsesi">Deforestation in Concession Areas</button>
-                        </div><!-- /#mode-btn-rail -->
-
-                        <!-- Sub-menu konsesi (hidden by default) -->
-                        <div id="konsesi-submenu" class="hidden pl-4">
-                            <button
-                                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                                data-cat="kebun-kayu"> Kebun Kayu</button>
-                            <button
-                                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                                data-cat="logging">Logging</button>
-                            <button
-                                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                                data-cat="sawit"> Sawit</button>
-                            <button
-                                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                                data-cat="tambang"> Tambang</button>
-                        </div>
-
-                    </aside>
-
-                    <main id="wrap" class="relative flex-1 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
-                        <div id="map" class="w-full flex-1"></div>
-                        <div id="satwa-badges"
-                            class="hidden absolute top-4 left-1/2 -translate-x-1/2 z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-center gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[92vw]">
-                        </div>
-
-
-                        <div id="title-block" class="absolute top-[10px] left-[14px] z-[600] pointer-events-none">
-                            <h2 id="map-title"
-                                class="font-bold text-[clamp(.9rem,1.5vw,1.5rem)] leading-[1.2] text-[#1a1a1a] [text-shadow:0_2px_10px_rgba(255,255,255,.7)]">
-                                Deforestasi berbasis provinsi</h2>
-                        </div>
-
-                        <div id="kpi-float"
-                            class="absolute left-[14px] bottom-[14px] z-[610] bg-[rgba(20,20,20,.82)] backdrop-blur-[4px] border-l-[3px] border-l-[#8b2a1a] rounded-md px-3 py-[7px] w-44 text-[#f5f0e8]">
-                            <button id="kpi-toggle" onclick="kpiFloatToggle()" style="display:none"
-                                class="w-full flex flex-col items-center pt-[10px] pb-[8px] cursor-pointer bg-transparent border-0 outline-none gap-[5px]">
-                                <span class="block w-7 h-[3px] rounded-full bg-white/30"></span>
-                                <svg id="kpi-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none"
-                                    style="transition:transform .25s ease">
-                                    <path d="M1 7L7 1L13 7" stroke="rgba(245,240,232,.5)" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                            <div class="text-[.5rem] tracking-[.08em] uppercase text-[#d4c4a0]" id="kpi-label">Total</div>
-                            <div class="text-[1.25rem] font-bold leading-none mt-[2px]" id="kpi-val">0</div>
-                            <div class="text-[.5rem] text-[#d4c4a0] mt-[2px]" id="kpi-unit">hektare</div>
-                            <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]"></ul>
-                        </div>
-
-                        <div id="others-bubble"
-                            class="absolute right-[14px] top-[10px] z-[620] w-[120px] h-[120px] rounded-full bg-[rgba(192,64,48,.95)] text-white hidden text-center items-center justify-center flex-col p-3 shadow-[0_8px_26px_rgba(139,42,26,.35)]">
-                            <div class="text-[.58rem] leading-[1.3]" id="bubble-label">Kabupaten lainnya</div>
-                            <div class="text-[1.4rem] font-bold leading-none mt-[3px]" id="bubble-val">0</div>
-                            <div class="text-[.5rem] mt-[1px] opacity-90" id="bubble-unit">hektare</div>
-                        </div>
-
-                        <div id="notes-wrap"
-                            class="absolute left-[14px] bottom-[12px] z-[620] w-[min(360px,38vw)] flex flex-col">
-                            <div id="notes-box" class=" pt-[14px] px-[14px] pb-[10px]">
-                                <ul id="notes-list"
-                                    class="pl-[18px] [&>li]:text-[.82rem] [&>li]:leading-[1.48] [&>li]:mb-[6px]"></ul>
-                            </div>
-                        </div>
-
-                        <div id="table-panel"
-                            class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
-                            <button id="table-toggle"
-                                class="absolute left-[-36px] top-1/2 -translate-y-1/2 z-10 [writing-mode:vertical-rl] [text-orientation:mixed] bg-[#1a1a1a] text-[#f5f0e8] border-0 rounded-l-lg py-5 px-[9px] text-[.6rem] font-bold tracking-[.1em] uppercase cursor-pointer shadow-[-4px_0_14px_rgba(0,0,0,.3)] transition-colors leading-none whitespace-nowrap hidden">Tabel
-                                ▶</button>
-                            <div class="flex items-center justify-between px-4 py-3 border-b border-white/[.1] shrink-0">
-                                <span class="text-[.65rem] font-bold tracking-[.1em] uppercase text-[#d4c4a0]">Tabel
-                                    Data</span>
-                                <button id="table-close"
-                                    class="flex items-center justify-center w-7 h-7 rounded-full bg-white/[.08] hover:bg-white/[.16] border-0 cursor-pointer transition-colors"
-                                    aria-label="Tutup tabel">
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                        <path d="M1 1l10 10M11 1L1 11" stroke="#f5f0e8" stroke-width="1.8"
-                                            stroke-linecap="round" />
+                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+                        <div x-data="{ active: 0, images: [
+                        { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}', caption: 'Other Areas of Use, Palm Oil Concession, PT Borneo Internasional <br> Anugerah, Kapuas Hulu, West Kalimantan, June 2025' },
+                        { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Vale Indonesia.jpg') }}', caption: 'Mining Concession, PT Vale Indonesia, Bahodopi, <br> Central Sulawesi, October 2025' },
+                        { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Indonesia Pomalaa Industry Park.jpg') }}', caption: 'Kawasan Hutan Produksi Konversi, Mining Concession, PT Indonesia Pomalaa Industry Park, <br>Kolaka, Southeast Sulawesi, December 2025' }
+                      ]}">
+                            <div class="relative" x-ref="mainImg">
+                                <img :src="images[active].src" alt="Simontini"
+                                    @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                                    class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                                <button x-show="active > 0" @click="active--"
+                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button x-show="active < images.length - 1" @click="active++"
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                     </svg>
                                 </button>
                             </div>
-                            <div id="table-wrap" class="flex-1 overflow-y-auto overflow-x-hidden flex flex-col"></div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                                            :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                                            <img :src="img.src" alt="thumbnail"
+                                                class="w-full h-full object-cover object-top transition duration-200" />
+                                        </div>
+                                    </template>
+                                </div>
+                                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                                    x-html="images[active].caption"></p>
+                            </div>
                         </div>
-                    </main>
+                    </div>
                 </div>
+            </div>
+            <<br>
 
-            </div><br><br>
+                <p class="body-text">
+                    Deforestation amounting to 41,162 hectares occurred inside 1,140 mining permit or concession areas, with
+                    the
+                    top ten accounting for 22% (8,929 hectares).<br>
 
+                </p><br>
 
+                <p class="body-text">
+                    Deforestation amounting to 37,910 hectares occurred inside 719 oil palm concessions throughout 2025,
+                    with
+                    the top ten concessions accounting for 36% (13,610 hectares). <br>
 
-            <p class="body-text">
-                Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.
-            </p>
-            <p class="body-text">
-                Deforestation occurred in 237 logging concessions, with the top ten accounting for 28 percent.
-            </p>
+                </p><br>
 
+                <p class="body-text">
+                    Deforestation amounting to 110,898 hectares occurred inside 486 forestry concessions, with 74,409
+                    hectares
+                    in logging concessions, 33,063 hectares in pulpwood concessions, 671 hectares in ecosystem restoration
+                    concessions, and 2,754 hectares in other forestry concessions.<br>
 
+                </p><br>
 
-            {{-- <div class="pull-quote">
-                <p>Deforestasi di Kalimantan meningkat drastis setiap tahun sejak 2021, didorong oleh ekspansi konsesi kebun
-                    kayu, sawit, dan pertambangan yang beroperasi secara legal di bawah izin yang diterbitkan pemerintah.
+                <p class="body-text">
+                    Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.<br>
+
                 </p>
-                <cite>—Analisis SIMONTINI 2025</cite>
-            </div> --}}
+
+
+                <div class="viz-block viz-block--full">
+
+                    <!-- PETA TEMATIK (inline) -->
+                    <div id="peta-tematik" style="height: 60vh" class="flex overflow-hidden">
+                        <aside id="sidebar"
+                            class="sm:w-[350px] w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] px-4 py-4 overflow-y-auto border-r border-white/[.08]">
+                            <h1 class="text-[1.05rem] font-bold leading-[1.15] mb-1 p-1">Thematic Map of Deforestation</h1>
+                            <p class="px-1 text-[.58rem] tracking-[.1em] uppercase text-[#d4c4a0] mb-[10px]">Choose analysis
+                                type · 2025</p>
+                            <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
+                                style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                                <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk
+                                    melihat alur lengkap</span>
+                            </div>
+                            <div id="mode-btn-rail">
+                                <button
+                                    class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all active"
+                                    data-mode="provinsi">Deforestation by province</button>
+                                <button
+                                    class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
+                                    data-mode="kabupaten">Deforestation by regency</button>
+                                <button
+                                    class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
+                                    data-mode="konservasi">Deforestation in conservation areas</button>
+                                <button
+                                    class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
+                                    data-mode="megafauna">Deforestation in iconic megafauna habitats</button>
+                                <button
+                                    class="mode-btn w-full border border-white/[.12] bg-transparent text-[rgba(245,240,232,.65)] rounded-md px-3 py-[7px] mb-[5px] text-left cursor-pointer text-[.75rem] font-semibold transition-all"
+                                    data-mode="konsesi">Deforestation in Concession Areas</button>
+                            </div><!-- /#mode-btn-rail -->
+
+                            <!-- Sub-menu konsesi (hidden by default) -->
+                            <div id="konsesi-submenu" class="hidden pl-4">
+                                <button
+                                    class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                                    data-cat="kebun-kayu"> Kebun Kayu</button>
+                                <button
+                                    class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                                    data-cat="logging">Logging</button>
+                                <button
+                                    class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                                    data-cat="sawit"> Sawit</button>
+                                <button
+                                    class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                                    data-cat="tambang"> Tambang</button>
+                            </div>
+
+                        </aside>
+
+                        <main id="wrap" class="relative flex-1 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
+                            <div id="map" class="w-full flex-1"></div>
+                            <div id="satwa-badges"
+                                class="hidden absolute top-4 left-1/2 -translate-x-1/2 z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-center gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[92vw]">
+                            </div>
+
+
+                            <div id="title-block" class="absolute top-[10px] left-[14px] z-[600] pointer-events-none">
+                                <h2 id="map-title"
+                                    class="font-bold text-[clamp(.9rem,1.5vw,1.5rem)] leading-[1.2] text-[#1a1a1a] [text-shadow:0_2px_10px_rgba(255,255,255,.7)]">
+                                    Deforestasi berbasis provinsi</h2>
+                            </div>
+
+                            <div id="kpi-float"
+                                class="absolute left-[14px] bottom-[14px] z-[610] bg-[rgba(20,20,20,.82)] backdrop-blur-[4px] border-l-[3px] border-l-[#8b2a1a] rounded-md px-3 py-[7px] w-44 text-[#f5f0e8]">
+                                <button id="kpi-toggle" onclick="kpiFloatToggle()" style="display:none"
+                                    class="w-full flex flex-col items-center pt-[10px] pb-[8px] cursor-pointer bg-transparent border-0 outline-none gap-[5px]">
+                                    <span class="block w-7 h-[3px] rounded-full bg-white/30"></span>
+                                    <svg id="kpi-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                        style="transition:transform .25s ease">
+                                        <path d="M1 7L7 1L13 7" stroke="rgba(245,240,232,.5)" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <div class="text-[.5rem] tracking-[.08em] uppercase text-[#d4c4a0]" id="kpi-label">Total
+                                </div>
+                                <div class="text-[1.25rem] font-bold leading-none mt-[2px]" id="kpi-val">0</div>
+                                <div class="text-[.5rem] text-[#d4c4a0] mt-[2px]" id="kpi-unit">hektare</div>
+                                <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]">
+                                </ul>
+                            </div>
+
+                            <div id="others-bubble"
+                                class="absolute right-[14px] top-[10px] z-[620] w-[120px] h-[120px] rounded-full bg-[rgba(192,64,48,.95)] text-white hidden text-center items-center justify-center flex-col p-3 shadow-[0_8px_26px_rgba(139,42,26,.35)]">
+                                <div class="text-[.58rem] leading-[1.3]" id="bubble-label">Kabupaten lainnya</div>
+                                <div class="text-[1.4rem] font-bold leading-none mt-[3px]" id="bubble-val">0</div>
+                                <div class="text-[.5rem] mt-[1px] opacity-90" id="bubble-unit">hektare</div>
+                            </div>
+
+                            <div id="notes-wrap"
+                                class="absolute left-[14px] bottom-[12px] z-[620] w-[min(360px,38vw)] flex flex-col">
+                                <div id="notes-box" class=" pt-[14px] px-[14px] pb-[10px]">
+                                    <ul id="notes-list"
+                                        class="pl-[18px] [&>li]:text-[.82rem] [&>li]:leading-[1.48] [&>li]:mb-[6px]"></ul>
+                                </div>
+                            </div>
+
+                            <div id="table-panel"
+                                class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
+                                <button id="table-toggle"
+                                    class="absolute left-[-36px] top-1/2 -translate-y-1/2 z-10 [writing-mode:vertical-rl] [text-orientation:mixed] bg-[#1a1a1a] text-[#f5f0e8] border-0 rounded-l-lg py-5 px-[9px] text-[.6rem] font-bold tracking-[.1em] uppercase cursor-pointer shadow-[-4px_0_14px_rgba(0,0,0,.3)] transition-colors leading-none whitespace-nowrap hidden">Tabel
+                                    ▶</button>
+                                <div
+                                    class="flex items-center justify-between px-4 py-3 border-b border-white/[.1] shrink-0">
+                                    <span class="text-[.65rem] font-bold tracking-[.1em] uppercase text-[#d4c4a0]">Tabel
+                                        Data</span>
+                                    <button id="table-close"
+                                        class="flex items-center justify-center w-7 h-7 rounded-full bg-white/[.08] hover:bg-white/[.16] border-0 cursor-pointer transition-colors"
+                                        aria-label="Tutup tabel">
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                            <path d="M1 1l10 10M11 1L1 11" stroke="#f5f0e8" stroke-width="1.8"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id="table-wrap" class="flex-1 overflow-y-auto overflow-x-hidden flex flex-col"></div>
+                            </div>
+                        </main>
+                    </div>
+
+                </div><br><br>
+
+
+
+                <p class="body-text">
+                    Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.
+                </p>
+                <p class="body-text">
+                    Deforestation occurred in 237 logging concessions, with the top ten accounting for 28 percent.
+                </p>
+
+
+
+                {{-- <div class="pull-quote">
+                    <p>Deforestasi di Kalimantan meningkat drastis setiap tahun sejak 2021, didorong oleh ekspansi konsesi
+                        kebun
+                        kayu, sawit, dan pertambangan yang beroperasi secara legal di bawah izin yang diterbitkan
+                        pemerintah.
+                    </p>
+                    <cite>—Analisis SIMONTINI 2025</cite>
+                </div> --}}
         </section>
 
         <!-- KONSESI -->
@@ -1724,11 +1697,11 @@
                     reached 125,997 hectares, or 28% of national deforestation.
                 </p>
                 <!-- <ul class="insight-list">
-                          <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                          <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                          <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                          <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                        </ul> -->
+                                      <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                      <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                      <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                      <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                    </ul> -->
             </div>
 
             <hr class="divider">
@@ -1811,13 +1784,13 @@
                 </p>
 
                 <!-- <div class="callout">
-                          <strong>Faktor pendorong utama:</strong>
-                          <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                            <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                            <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                            <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                          </ul>
-                        </div> -->
+                                      <strong>Faktor pendorong utama:</strong>
+                                      <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                        <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                        <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                        <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                      </ul>
+                                    </div> -->
             </div>
 
             <hr class="divider">
@@ -3042,14 +3015,14 @@
                     badge.dataset.species = item.name;
                     const shortName = item.name.split(' ').slice(-2).join(' ');
                     badge.innerHTML = `
-                            <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                            <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                            <div class="satwa-badge-detail">
-                              <span class="si-name">${item.name}</span>
-                              <span class="si-val">${item.value}</span>
-                              <span class="si-unit">habitat terdampak</span>
-                            </div>
-                          `;
+                                        <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                        <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                        <div class="satwa-badge-detail">
+                                          <span class="si-name">${item.name}</span>
+                                          <span class="si-val">${item.value}</span>
+                                          <span class="si-unit">habitat terdampak</span>
+                                        </div>
+                                      `;
                     badge.addEventListener('click', async (e) => {
                         e.stopPropagation();
                         const isActive = badge.classList.contains('active');
