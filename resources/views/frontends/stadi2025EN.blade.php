@@ -2851,13 +2851,13 @@
                         ],
                         notesBox: [''],
                         species: [
-                            { lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/panthera-tigris-sumatrae.json' },
-                            { lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/elephas-maximus-sumatranus.json' },
-                            { lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/dicerorhinus-sumatrensis-sumatrensis.json' },
-                            { lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/pongo-tapanuliensis.json' },
-                            { lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/pongo-abelii.json' },
-                            { lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/pongo-pygmaeus.json' },
-                            { lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/dicerorhinus-sumatrensis-harrissoni.json' }
+                            { lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/def_harimau.json' },
+                            { lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/def_gajah.json' },
+                            { lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json' },
+                            { lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/def_pongo_tapanuliensis.json' },
+                            { lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/def_pongo_abelii.json' },
+                            { lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/def_pongo_pygmaeus.json' },
+                            { lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json' }
                         ],
                         tables: []
                     },
