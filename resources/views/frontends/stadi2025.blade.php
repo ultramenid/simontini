@@ -64,7 +64,7 @@
   <span class="s-anchor" id="pendahuluan"></span>
 
   <section class="page-section px-[5vw]">
-    <div class="section-label">01 / Pendahuluan</div>
+    <div class="section-label">I. Pendahuluan</div>
     <p class="lead">
       Pada November 2021 dalam ajang KTT Iklim ke-26 Glasgow, Skotlandia, pemimpin 144 negara, termasuk Indonesia,
       menandatangani
@@ -158,7 +158,7 @@
   <span class="s-anchor" id="metodologi"></span>
   <section class="page-section px-[5vw]  section-after-chart">
     <div class="section-body">
-      <div class="section-label">02 / Metodologi</div>
+      <div class="section-label">II. Metodologi</div>
 
       <p class="body-text">
         <strong>Tahapan dan pemrosesan data.</strong> Peta deforestasi 2025 diperoleh dengan pemodelan deep learning pada
@@ -167,7 +167,7 @@
 
       <div class="method-steps">
         <div class="method-step">
-          <div class="ms-num">01</div>
+          <div class="ms-num">1.</div>
           <div class="body-text">
             <p>
               <em>Pertama, </em>
@@ -187,7 +187,7 @@
           </div>
         </div>
         <div class="method-step">
-          <div class="ms-num">02</div>
+          <div class="ms-num">2.</div>
           <div class="body-text">
             <!-- <h4>Inspeksi visual</h4> -->
             <p>
@@ -201,7 +201,7 @@
           </div>
         </div>
         <div class="method-step">
-          <div class="ms-num">03</div>
+          <div class="ms-num">3.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
             <p>
@@ -211,7 +211,7 @@
           </div>
         </div>
         <div class="method-step">
-          <div class="ms-num">04</div>
+          <div class="ms-num">4.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
             <p>
@@ -224,7 +224,7 @@
           </div>
         </div>
         <div class="method-step">
-          <div class="ms-num">05</div>
+          <div class="ms-num">5.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
             <p>
@@ -246,7 +246,7 @@
           </div>
         </div>
         <div class="method-step">
-          <div class="ms-num">06</div>
+          <div class="ms-num">6.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
             <p>
@@ -834,7 +834,7 @@
     <!-- DEFORESTASI 2025 -->
     <span class="s-anchor" id="deforestasi"></span>
     <section class="page-section px-[5vw] py-8">
-      <div class="section-label">03 / Deforestasi 2025</div>
+      <div class="section-label">III. Deforestasi 2025</div>
 
       <p class="body-text">
         Dengan metode tersebut, <strong> di Indonesia pada 2025 mencapai 433.751 hektare</strong>. Deforestasi ini
@@ -880,7 +880,7 @@
 
               <!-- Sumatra chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-sumatra" style="left:3%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-sumatra" style="left:25%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
                   class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sumatera</div>
@@ -903,7 +903,7 @@
 
               <!-- Kalimantan chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-kalimantan" style="left:31%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-kalimantan" style="left:37%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
                   class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Kalimantan</div>
@@ -926,7 +926,7 @@
 
               <!-- Sulawesi chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-sulawesi" style="left:55%;top:10%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-sulawesi" style="left:50%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
                   class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sulawesi</div>
@@ -949,7 +949,7 @@
 
               <!-- Papua chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-papua" style="left:72%;top:16%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-papua" style="left:72%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
                   class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Papua</div>
@@ -1202,12 +1202,12 @@
         dan (10) Sumatera Utara; pada 2025 urutannya menjadi (1) Kalimantan Tengah, (2) Kalimantan Timur, (3) Aceh, (4)
         Kalimantan Barat, (5) Papua Tengah, (6) Sumatera Barat, (7) Sumatera Utara, (8) Kalimantan Utara, (9) Riau, dan
         (10) Papua Pegunungan.
-      </p><br>
+      </p>
 
       <p class="body-text">
         Tiga provinsi yang mengalami bencana longsor-banjir dahsyat di Sumatera Bagian Utara pada penghujung 2025
         mengalami lonjakan deforestasi luar biasa: Aceh (426%), Sumatera Utara (281%), dan Sumatera Barat (1.034%).<br>
-      </p><br>
+      </p>
 
       <!-- gallery 1 -->
 
@@ -1261,26 +1261,27 @@
         Deforestasi terjadi di 383 kabupaten/kota atau 74% kabupaten/kota se-Indonesia yang jumlahnya 514, menurun dari
         tahun sebelumnya sebanyak 428 kabupaten/kota. Sepuluh teratas kabupaten deforestasi berada di Kalimantan dan Tanah
         Papua, dengan luas deforestasi mencapai 95.733 hektare atau 22% deforestasi nasional.<br>
-      </p><br>
+      </p>
 
       <p class="body-text">
         Dilihat dari status penguasaan lahan, 307.861 hektare (71%) deforestasi terjadi di kawasan hutan yang dikelola
         Kementerian Kehutanan, dan 125.890 hektare terjadi di area penggunaan lain (APL) yang dikelola pemerintah daerah
         atau pemilik lahan/konsesi.<br>
-      </p><br>
+      </p>
+
 
       <p class="body-text">
         Deforestasi mengalami lonjakan di kawasan konservasi. Pada 2024, deforestasi di kawasan konservasi seluas 7.704
         hektare, menjadi 25.077 hektare pada 2025 yang terjadi pada 163 kawasan konservasi. Sepuluh teratas deforestasi di
         kawasan konservasi mencapai 17.153 hektare, atau 68% deforestasi di seluruh kawasan konservasi.<br>
 
-      </p><br>
+      </p>
 
       <p class="body-text">
         Di 29 juta hektare habitat harimau, gajah, badak, dan orangutan, terjadi deforestasi seluas 156.463 hektare, tanpa
         menghitung perulangan di area yang beririsan.<br>
 
-      </p><br>
+      </p>
 
 
 
@@ -1289,7 +1290,7 @@
         ketahanan pangan melalui pengalokasian 20,6 juta hektare kawasan hutan untuk cadangan pangan, energi, dan air.
         Sebesar 78.123 hektare deforestasi terjadi di area pencadangan ini, atau 18% deforestasi nasional.<br>
 
-      </p><br>
+      </p>
 
       <p class="body-text">
         Sebesar 44% deforestasi terjadi di dalam konsesi, dengan konsesi kehutanan sebagai penyumbang terbesar (58%).
@@ -1359,14 +1360,14 @@
         terjadi
         pada sepuluh konsesi teratas.<br>
 
-      </p><br>
+      </p>
 
       <p class="body-text">
         Deforestasi seluas 110.898 hektare terjadi pada 486 konsesi kehutanan, yakni 74.409 hektare konsesi logging,
         33.063 hektare konsesi kebun kayu, 671 hektare konsesi restorasi ekosistem, dan 2.754 hektare konsesi kehutanan
         lainnya. Deforestasi terjadi di 212 konsesi kebun kayu, 34 persennya terjadi di sepuluh teratas.<br>
 
-      </p><br>
+      </p>
 
       <p class="body-text">
         Deforestasi terjadi di 237 konsesi logging, 28 persennya terjadi di sepuluh teratas.<br>
@@ -1493,20 +1494,6 @@
       </div><br><br>
 
 
-
-      <p class="body-text">
-        Deforestasi terjadi di 383 kabupaten/kota atau 74% kabupaten/kota se-Indonesia yang jumlahnya 514, mengalami
-        penurunan dari tahun sebelumnya yang terjadi di 428 kabupaten/kota. Sepuluh teratas kabupaten deforestasi berada
-        di Kalimantan dan Tanah Papua, dengan deforestasi seluas 95.874 hektare atau 22% deforestasi nasional.
-      </p>
-      <p class="body-text">
-        Dilihat dari status penguasaan lahan, 308.261 hektare (72%) deforestasi terjadi di kawasan hutan yang dikelola
-        Kementerian Kehutanan, dan 125.997 hektare terjadi di area penggunaan lain (APL) yang dikelola pemerintah daerah
-        atau pemilik lahan/konsesi.
-      </p>
-
-
-
       <div class="pull-quote">
         <p>Deforestasi di Kalimantan meningkat drastis setiap tahun sejak 2021, didorong oleh ekspansi konsesi kebun
           kayu,
@@ -1547,11 +1534,11 @@
     <!-- DISKUSI -->
     <span class="s-anchor" id="diskusi"></span>
     <section class="page-section px-[5vw] py-10">
-      <div class="section-label">04 / Diskusi</div>
+      <div class="section-label">IV. Diskusi</div>
 
       <div class="mt-10">
         <div class="chapter-header">
-          <span class="ms-num">01</span>
+          <span class="ms-num">1.</span>
           <h3 class="chapter-title"><strong>Kebijakan pemerintah turut memicu deforestasi</strong></h3>
         </div>
         <p class="body-text">
@@ -1601,7 +1588,7 @@
 
       <div>
         <div class="chapter-header">
-          <span class="ms-num">02</span>
+          <span class="ms-num">2.</span>
           <h3 class="chapter-title">Episentrum deforestasi mengarah ke Tanah Papua</h3>
         </div>
         <p class="body-text">
@@ -1635,7 +1622,7 @@
 
       <div>
         <div class="chapter-header">
-          <span class="ms-num">03</span>
+          <span class="ms-num">3.</span>
           <h3 class="chapter-title">Ekspansi komoditas industrial menjadi pemicu deforestasi Indonesia</h3>
         </div>
         <p class="body-text">
@@ -1690,7 +1677,7 @@
 
       <div>
         <div class="chapter-header">
-          <span class="ms-num">04</span>
+          <span class="ms-num">4.</span>
           <h3 class="chapter-title">Legal deforestasi sebagai biang masalah</h3>
         </div>
         <p class="body-text">
@@ -1719,7 +1706,7 @@
 
       <div>
         <div class="chapter-header">
-          <span class="ms-num">05</span>
+          <span class="ms-num">5.</span>
           <h3 class="chapter-title">Deforestasi tinggi di area konservasi</h3>
         </div>
         <p class="body-text">
@@ -1746,7 +1733,7 @@
     <span class="s-anchor" id="rekomendasi"></span>
     <section class="page-section px-[5vw] pt-10 pb-20">
       <div class="mx-auto max-w-[820px]">
-        <div class="section-label">05 / Rekomendasi</div>
+        <div class="section-label">V. Rekomendasi</div>
 
         <p class="body-text">
           Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
@@ -1756,7 +1743,7 @@
 
         <div class="method-steps">
           <div class="method-step">
-            <div class="ms-num">01</div>
+            <div class="ms-num">1.</div>
             <div>
               <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di
                 Indonesia.</h4><br>
@@ -1772,7 +1759,7 @@
             </div>
           </div>
           <div class="method-step">
-            <div class="ms-num">02</div>
+            <div class="ms-num">2.</div>
             <div class="">
               <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.</h4><br>
               <p class="body-text">
@@ -1795,7 +1782,7 @@
             </div>
           </div>
           <div class="method-step">
-            <div class="ms-num">03</div>
+            <div class="ms-num">3.</div>
             <div class="">
               <h4 class="chapter-title">Percepatan perluasan area preservasi, terutama di luar kawasan hutan</h4><br>
               <p class="body-text">
@@ -1813,7 +1800,7 @@
             </div>
           </div>
           <div class="method-step">
-            <div class="ms-num">04</div>
+            <div class="ms-num">4.</div>
             <div class="">
               <h4 class="chapter-title">Redistribusi kelembagaan dan aparatur pengelola hutan sehingga seluruh tutupan
                 hutan alam memiliki aparatur penjaga.</h4><br>
@@ -1831,7 +1818,7 @@
             </div>
           </div>
           <div class="method-step">
-            <div class="ms-num">05</div>
+            <div class="ms-num">5.</div>
             <div class="">
               <h4 class="chapter-title">Korporasi yang mengelola area bertutupan hutan alam berkomitmen terhadap
                 lingkungan, sosial, dan tata kelola yang baik (ESG Commitment).</h4><br>
@@ -1844,7 +1831,7 @@
             </div>
           </div>
           <div class="method-step">
-            <div class="ms-num">06</div>
+            <div class="ms-num">6.</div>
             <div class="">
               <h4 class="chapter-title">Penyediaan insentif bagi pemerintah daerah, komunitas lokal, dan korporasi yang
                 melakukan perlindungan hutan alam.</h4><br>
@@ -2527,6 +2514,7 @@
 
       document.addEventListener('DOMContentLoaded', () => {
         Object.keys(PETA_DATA).forEach(k => petaBuildBars(k, PETA_DATA[k]));
+        petaSelectYear(4);
         const totals = [229982, 230760, 257385, 261574, 433751];
         const minV = Math.min(...totals), maxV = Math.max(...totals);
         const isMobile = window.innerWidth < 640;
@@ -2708,13 +2696,13 @@
             ],
             notesBox: [''],
             species: [
-              { lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/panthera-tigris-sumatrae.json' },
-              { lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/elephas-maximus-sumatranus.json' },
-              { lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/dicerorhinus-sumatrensis-sumatrensis.json' },
-              { lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/pongo-tapanuliensis.json' },
-              { lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/pongo-abelii.json' },
-              { lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/pongo-pygmaeus.json' },
-              { lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/dicerorhinus-sumatrensis-harrissoni.json' }
+              { lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/def_harimau.json' },
+                            { lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/def_gajah.json' },
+                            { lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json' },
+                            { lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/def_pongo_tapanuliensis.json' },
+                            { lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/def_pongo_abelii.json' },
+                            { lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/def_pongo_pygmaeus.json' },
+                            { lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json' }
             ],
             tables: []
           },

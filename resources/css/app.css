@@ -751,7 +751,7 @@ body.is-preloading { overflow: hidden; }
 
 .ms-num {
   font-family: 'Poppins', sans-serif;
-  font-size: 22px; letter-spacing: .1em;
+  font-size: 14px; letter-spacing: .1em;
   color: var(--red); background: var(--red-pale);
   padding: 5px 8px; border-radius: 4px;
   flex-shrink: 0; font-weight: 600; align-self: flex-start;
@@ -2218,7 +2218,7 @@ footer {
   /* Right-anchor Papua so it never overflows the right edge */
   #peta-chart-papua {
     left: auto !important;
-    right: 3% !important;
+    right: 26% !important;
   }
 }
 

@@ -65,7 +65,7 @@
     <span class="s-anchor" id="pendahuluan"></span>
 
     <section class="page-section px-[5vw]">
-        <div class="section-label">01 / Introduction</div>
+        <div class="section-label">I. Introduction</div>
         <p class="lead">
             In November 2021, during the 26th United Nations Climate Change Conference (COP26) in Glasgow, Scotland, leaders
             of 144 nations, including Indonesia, signed the Glasgow Leaders’ Declaration on Forest and Land Use, or the <a
@@ -160,7 +160,7 @@
     <span class="s-anchor" id="metodologi"></span>
     <section class="page-section px-[5vw]  section-after-chart">
         <div class="section-body">
-            <div class="section-label">02 / Methodology</div>
+            <div class="section-label">II. Methodology</div>
 
             <p class="body-text">
                 <strong>Stages and Data Processing:</strong> The 2025 deforestation map was produced using deep learning
@@ -169,7 +169,7 @@
 
             <div class="method-steps">
                 <div class="method-step">
-                    <div class="ms-num">01</div>
+                    <div class="ms-num">1.</div>
                     <div class="body-text">
                         <p>
                             <em>First, </em>
@@ -180,7 +180,7 @@
                     </div>
                 </div>
                 <div class="method-step">
-                    <div class="ms-num">02</div>
+                    <div class="ms-num">2.</div>
                     <div class="body-text">
                         <!-- <h4>Inspeksi visual</h4> -->
                         <p>
@@ -192,7 +192,7 @@
                     </div>
                 </div>
                 <div class="method-step">
-                    <div class="ms-num">03</div>
+                    <div class="ms-num">3.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
                         <p>
@@ -202,7 +202,7 @@
                     </div>
                 </div>
                 <div class="method-step">
-                    <div class="ms-num">04</div>
+                    <div class="ms-num">4.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
                         <p>
@@ -215,7 +215,7 @@
                     </div>
                 </div>
                 <div class="method-step">
-                    <div class="ms-num">05</div>
+                    <div class="ms-num">5.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
                         <p>
@@ -238,7 +238,7 @@
                     </div>
                 </div>
                 <div class="method-step">
-                    <div class="ms-num">06</div>
+                    <div class="ms-num">6.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
                         <p>
@@ -880,7 +880,7 @@
         <!-- DEFORESTASI 2025 -->
         <span class="s-anchor" id="deforestasi"></span>
         <section class="page-section px-[5vw] py-8">
-            <div class="section-label">03 / DEFORESTATION 2025</div>
+            <div class="section-label">III. DEFORESTATION 2025</div>
 
             <p class="body-text">
                 With the methodology outlined above, <strong>deforestation in Indonesia in 2025 reached 433,751
@@ -927,7 +927,7 @@
                             <!-- Sumatra chart -->
                             <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
                                 id="peta-chart-sumatra"
-                                style="left:3%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                                style="left:25%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                                 <div
                                     class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
@@ -953,7 +953,7 @@
                             <!-- Kalimantan chart -->
                             <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
                                 id="peta-chart-kalimantan"
-                                style="left:31%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                                style="left:37%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                                 <div
                                     class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
@@ -979,7 +979,7 @@
                             <!-- Sulawesi chart -->
                             <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
                                 id="peta-chart-sulawesi"
-                                style="left:55%;top:10%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                                style="left:50%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                                 <div
                                     class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
@@ -1005,7 +1005,7 @@
                             <!-- Papua chart -->
                             <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
                                 id="peta-chart-papua"
-                                style="left:72%;top:16%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                                style="left:30%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                                 <div
                                     class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
@@ -1288,7 +1288,7 @@
                 (8) North Kalimantan, (9) Bangka Belitung, and (10) North Sumatra, the top ten ranking in 2025 shifted to:
                 (1) Central Kalimantan, (2) East Kalimantan, (3) Aceh, (4) West Kalimantan, (5) Central Papua, (6) West
                 Sumatra, (7) North Sumatra, (8) North Kalimantan, (9) Riau, and (10) Highland Papua.
-            </p><br>
+            </p>
 
             <p class="body-text">
                 Three provinces that experienced catastrophic landslides and flooding in northern Sumatra at the end of 2025
@@ -1351,26 +1351,30 @@
                 Deforestation occurred in 383 regencies/municipalities, or 74% of Indonesia’s total of 514, down from 428 in
                 the previous year. The top ten regencies for deforestation were in Kalimantan and Papua, accounting for
                 95,733 hectares or 22% of national deforestation.<br>
-            </p><br>
+            </p>
 
             <p class="body-text">
                 Seen in terms of land control status, 307,861 hectares (71%) of deforestation occurred inside forest estates
                 managed by the Ministry of Forestry, while 125,890 hectares occurred in other land use areas (APL) managed
                 by regional governments or land/concession holders.  <br>
-            </p><br>
+            </p>
+
+
 
             <p class="body-text">
                 Deforestation in conservation areas surged from 7,704 hectares in 2024 to 25,077 hectares in 2025 This
                 deforestation occurred in 163 conservation areas. The top ten conservation areas alone accounted for 17,153
                 hectares, or 68% of total deforestation within all conservation areas.<br>
 
-            </p><br>
+            </p>
 
             <p class="body-text">
                 Deforestation of 156,463 hectares – excluding double counting in overlapping habitats – occurred in 29
                 million hectares of tiger, rhino, elephant and orangutan habitats.<br>
 
-            </p><br>
+            </p>
+
+
 
 
 
@@ -1380,7 +1384,7 @@
                 hectares of the forest estate for food, energy, and water reserves. A total of 78,213 hectares, or 18% of
                 national deforestation occurred within these designated areas.<br>
 
-            </p><br>
+            </p>
 
             <p class="body-text">
                 Around 44% of deforestation occurred inside concession areas, with forestry concessions accounting for the
@@ -1646,11 +1650,11 @@
         <!-- DISKUSI -->
         <span class="s-anchor" id="diskusi"></span>
         <section class="page-section px-[5vw] py-10">
-            <div class="section-label">04 / Discussion</div>
+            <div class="section-label">IV. Discussion</div>
 
             <div class="mt-10">
                 <div class="chapter-header">
-                    <span class="ms-num">01</span>
+                    <span class="ms-num">1.</span>
                     <h3 class="chapter-title"><strong>Government policies have contributed to deforestation</strong></h3>
                 </div>
                 <p class="body-text">
@@ -1704,7 +1708,7 @@
 
             <div>
                 <div class="chapter-header">
-                    <span class="ms-num">02</span>
+                    <span class="ms-num">2.</span>
                     <h3 class="chapter-title">The epicenter of deforestation is shifting to Papua</h3>
                 </div>
                 <p class="body-text">
@@ -1738,7 +1742,7 @@
 
             <div>
                 <div class="chapter-header">
-                    <span class="ms-num">03</span>
+                    <span class="ms-num">3.</span>
                     <h3 class="chapter-title">Expansion of industrial commodities is a key driver of deforestation in
                         Indonesia</h3>
                 </div>
@@ -1793,7 +1797,7 @@
 
             <div>
                 <div class="chapter-header">
-                    <span class="ms-num">04</span>
+                    <span class="ms-num">4.</span>
                     <h3 class="chapter-title">Legal deforestation as a root cause</h3>
                 </div>
                 <p class="body-text">
@@ -1821,7 +1825,7 @@
 
             <div>
                 <div class="chapter-header">
-                    <span class="ms-num">05</span>
+                    <span class="ms-num">5.</span>
                     <h3 class="chapter-title">Significant deforestation in conservation areas</h3>
                 </div>
                 <p class="body-text">
@@ -1849,7 +1853,7 @@
         <span class="s-anchor" id="rekomendasi"></span>
         <section class="page-section px-[5vw] pt-10 pb-20">
             <div class="mx-auto max-w-[820px]">
-                <div class="section-label">05 / Recomendations</div>
+                <div class="section-label">V. Recommendations</div>
 
                 {{-- <p class="body-text">
                     Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
@@ -1859,7 +1863,7 @@
 
                 <div class="method-steps">
                     <div class="method-step">
-                        <div class="ms-num">01</div>
+                        <div class="ms-num ">1.</div>
                         <div>
                             <h4 class="chapter-title">Issue legislation to ensure the protection of all remaining natural
                                 forests in Indonesia.</h4><br>
@@ -1876,7 +1880,7 @@
                         </div>
                     </div>
                     <div class="method-step">
-                        <div class="ms-num">02</div>
+                        <div class="ms-num">2.</div>
                         <div class="">
                             <h4 class="chapter-title">Establish and apply instruments to control spatial plan revisions.
                             </h4><br>
@@ -1900,7 +1904,7 @@
                         </div>
                     </div>
                     <div class="method-step">
-                        <div class="ms-num">03</div>
+                        <div class="ms-num">3.</div>
                         <div class="">
                             <h4 class="chapter-title">Accelerate the expansion of preservation areas, especially outside the
                                 forest estate.</h4><br>
@@ -1920,7 +1924,7 @@
                         </div>
                     </div>
                     <div class="method-step">
-                        <div class="ms-num">04</div>
+                        <div class="ms-num">4.</div>
                         <div class="">
                             <h4 class="chapter-title">Redistribute forest management institutions and personnel so that all
                                 natural forests have rangers to protect them.</h4><br>
@@ -1938,7 +1942,7 @@
                         </div>
                     </div>
                     <div class="method-step">
-                        <div class="ms-num">05</div>
+                        <div class="ms-num">5.</div>
                         <div class="">
                             <h4 class="chapter-title">Companies that manage areas with natural forest cover should make
                                 environmental, social, and good governance (ESG) commitments.</h4><br>
@@ -1952,7 +1956,7 @@
                         </div>
                     </div>
                     <div class="method-step">
-                        <div class="ms-num">06</div>
+                        <div class="ms-num">6.</div>
                         <div class="">
                             <h4 class="chapter-title">Provide incentives for regional governments, local communities and
                                 corporations that protect natural forest.</h4><br>
@@ -2638,6 +2642,7 @@
 
             document.addEventListener('DOMContentLoaded', () => {
                 Object.keys(PETA_DATA).forEach(k => petaBuildBars(k, PETA_DATA[k]));
+                petaSelectYear(4);
                 const totals = [229982, 230760, 257385, 261574, 433751];
                 const minV = Math.min(...totals), maxV = Math.max(...totals);
                 const isMobile = window.innerWidth < 640;
@@ -2819,13 +2824,13 @@
                         ],
                         notesBox: [''],
                         species: [
-                            { lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/panthera-tigris-sumatrae.json' },
-                            { lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/elephas-maximus-sumatranus.json' },
-                            { lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/dicerorhinus-sumatrensis-sumatrensis.json' },
-                            { lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/pongo-tapanuliensis.json' },
-                            { lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/pongo-abelii.json' },
-                            { lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/pongo-pygmaeus.json' },
-                            { lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/dicerorhinus-sumatrensis-harrissoni.json' }
+                            { lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/def_harimau.json' },
+                            { lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/def_gajah.json' },
+                            { lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json' },
+                            { lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/def_pongo_tapanuliensis.json' },
+                            { lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/def_pongo_abelii.json' },
+                            { lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/def_pongo_pygmaeus.json' },
+                            { lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json' }
                         ],
                         tables: []
                     },
