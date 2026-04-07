@@ -726,10 +726,10 @@
                     <0.5 ha, 0.5–1 ha, 1–5 ha, 5–10 ha, 10–50 ha, and>50 ha. The number of samples was determined using the
                         Slovin formula with a 5% margin of error.
                 </p><br>
-                <p>
+                {{-- <p>
                     Results of this accuracy testing showed the 2025 deforestation data having an accuracy level of 89%, as
                     presented in the table below.
-                </p>
+                </p> --}}
             </div>
 
             <div class="viz-block viz-block--full mt-12 mb-2">
@@ -1466,8 +1466,16 @@
                 </p><br>
 
                 <p class="body-text">
-                    Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.<br>
+                    Deforestation occurred in 237 logging concessions, with the top ten accounting for 28 percent.
+                </p>
 
+                <p class="body-text">
+                    Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.<br>
+                </p><br><br>
+
+                <div class="section-label">IV. Peta Tematik Deforestasi</div>
+                <p class="body-text">
+                Deforestation by province Deforestation by district Deforestation in conservation areas Deforestation in iconic megafauna habitats Deforestation within concessions
                 </p>
 
 
@@ -1598,13 +1606,7 @@
                 </div><br><br>
 
 
-
-                <p class="body-text">
-                    Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.
-                </p>
-                <p class="body-text">
-                    Deforestation occurred in 237 logging concessions, with the top ten accounting for 28 percent.
-                </p>
+                
 
 
 
@@ -1616,6 +1618,13 @@
                     </p>
                     <cite>—Analisis SIMONTINI 2025</cite>
                 </div> --}}
+
+                <div class="pull-quote">
+                    <p>Deforestation in Kalimantan has increased dramatically every year since 2021, driven by the expansion of legally operating timber,
+                    palm oil,
+                    and mining concessions under government-issued permits.</p>
+                    <cite>—SIMONTINI 2025 Analysis</cite>
+                </div>
         </section>
 
         <!-- KONSESI -->
@@ -1650,7 +1659,7 @@
         <!-- DISKUSI -->
         <span class="s-anchor" id="diskusi"></span>
         <section class="page-section px-[5vw] py-10">
-            <div class="section-label">IV. Discussion</div>
+            <div class="section-label">V. Discussion</div>
 
             <div class="mt-10">
                 <div class="chapter-header">
@@ -1853,7 +1862,7 @@
         <span class="s-anchor" id="rekomendasi"></span>
         <section class="page-section px-[5vw] pt-10 pb-20">
             <div class="mx-auto max-w-[820px]">
-                <div class="section-label">V. Recommendations</div>
+                <div class="section-label">VI. Recommendations</div>
 
                 {{-- <p class="body-text">
                     Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
