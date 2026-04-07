@@ -691,9 +691,9 @@
           Poligon deforestasi dikelompokkan berdasarkan luasan, yakni <0,5 ha, 0,5-1 ha, 1-5 ha, 5-10 ha, 10-50 ha, dan>50
             ha. Jumlah sampel ditentukan berdasarkan rumus Slovin dengan tingkat kesalahan 5%.
         </p><br>
-        <p>
+        {{-- <p>
           Hasil pengujian akurasi data deforestasi 2025 ini sebesar 89%, sebagaimana terlihat dalam tabel berikut.
-        </p>
+        </p> --}}
       </div>
 
       <div class="viz-block viz-block--full mt-12 mb-2">
@@ -837,12 +837,7 @@
       <div class="section-label">III. Deforestasi 2025</div>
 
       <p class="body-text">
-        Dengan metode tersebut, <strong> di Indonesia pada 2025 mencapai 433.751 hektare</strong>. Deforestasi ini
-        meningkat sebesar 66% dari tahun sebelumnya seluas
-        <a href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank" rel="noopener noreferrer"
-          style="color: #bc4a3c;">261.575 hektare</a>.
-        Deforestasi terluas kembali terjadi di Kalimantan, disusul Sumatera. Tanah Papua, yang pada 2024 berada di
-        peringkat keempat, pada tahun 2025 menempati peringkat ketiga menggantikan Sulawesi.
+        Dengan metode tersebut, di Indonesia pada 2025 mencapai 433.751 hektare. Deforestasi ini meningkat sebesar 66% dari tahun sebelumnya seluas <a href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">261.575 hektare</a>. Deforestasi terluas kembali terjadi di Kalimantan, disusul Sumatera. Tanah Papua, yang pada 2024 berada di peringkat keempat, pada tahun 2025 menempati peringkat ketiga menggantikan Sulawesi.
       </p>
       <p class="body-text">
         Tabel berikut menampilkan data deforestasi per pulau besar di Indonesia tahun 2023-2025.
@@ -1196,17 +1191,11 @@
 
 
       <p class="body-text">
-        Deforestasi terjadi di seluruh provinsi Indonesia, kecuali DKI Jakarta dan Daerah Istimewa Yogyakarta. Bila 10
-        provinsi teratas deforestasi pada 2024 secara berurut adalah (1) Kalimantan Timur, (2) Kalimantan Barat, (3)
-        Kalimantan Tengah, (4) Riau, (5) Sumatera Selatan, (6) Jambi, (7) Aceh, (8) Kalimantan Utara, (9) Bangka Belitung,
-        dan (10) Sumatera Utara; pada 2025 urutannya menjadi (1) Kalimantan Tengah, (2) Kalimantan Timur, (3) Aceh, (4)
-        Kalimantan Barat, (5) Papua Tengah, (6) Sumatera Barat, (7) Sumatera Utara, (8) Kalimantan Utara, (9) Riau, dan
-        (10) Papua Pegunungan.
+        Deforestasi terjadi di seluruh provinsi Indonesia, kecuali DKI Jakarta dan Daerah Istimewa Yogyakarta. Bila 10 provinsi teratas deforestasi pada 2024 secara berurut adalah (1) Kalimantan Timur, (2) Kalimantan Barat, (3) Kalimantan Tengah, (4) Riau, (5) Sumatera Selatan, (6) Jambi, (7) Aceh, (8) Kalimantan Utara, (9) Bangka Belitung, dan (10) Sumatera Utara; pada 2025 urutannya menjadi (1) Kalimantan Tengah, (2) Kalimantan Timur, (3) Aceh, (4) Kalimantan Barat, (5) Papua Tengah, (6) Sumatera Barat, (7) Sumatera Utara, (8) Kalimantan Utara, (9) Riau, dan (10) Papua Pegunungan.
       </p>
 
       <p class="body-text">
-        Tiga provinsi yang mengalami bencana longsor-banjir dahsyat di Sumatera Bagian Utara pada penghujung 2025
-        mengalami lonjakan deforestasi luar biasa: Aceh (426%), Sumatera Utara (281%), dan Sumatera Barat (1.034%).<br>
+        Tiga provinsi yang mengalami bencana longsor-banjir dahsyat di Sumatera Bagian Utara pada penghujung 2025 mengalami lonjakan deforestasi luar biasa: Aceh (426%), Sumatera Utara (281%), dan Sumatera Barat (1.034%).<br>
       </p>
 
       <!-- gallery 1 -->
@@ -1258,44 +1247,30 @@
       </div><br>
 
       <p class="body-text">
-        Deforestasi terjadi di 383 kabupaten/kota atau 74% kabupaten/kota se-Indonesia yang jumlahnya 514, menurun dari
-        tahun sebelumnya sebanyak 428 kabupaten/kota. Sepuluh teratas kabupaten deforestasi berada di Kalimantan dan Tanah
-        Papua, dengan luas deforestasi mencapai 95.733 hektare atau 22% deforestasi nasional.<br>
+        Deforestasi terjadi di 383 kabupaten/kota atau 74% kabupaten/kota se-Indonesia yang jumlahnya 514, menurun dari tahun sebelumnya sebanyak 428 kabupaten/kota. Sepuluh teratas kabupaten deforestasi berada di Kalimantan dan Tanah Papua, dengan luas deforestasi mencapai 95.733 hektare atau 22% deforestasi nasional.<br>
       </p>
 
       <p class="body-text">
-        Dilihat dari status penguasaan lahan, 307.861 hektare (71%) deforestasi terjadi di kawasan hutan yang dikelola
-        Kementerian Kehutanan, dan 125.890 hektare terjadi di area penggunaan lain (APL) yang dikelola pemerintah daerah
-        atau pemilik lahan/konsesi.<br>
+       Dilihat dari status penguasaan lahan, 307.861 hektare (71%) deforestasi terjadi di kawasan hutan yang dikelola Kementerian Kehutanan, dan 125.890 hektare terjadi di area penggunaan lain (APL) yang dikelola pemerintah daerah atau pemilik lahan/konsesi.<br>
       </p>
 
 
       <p class="body-text">
-        Deforestasi mengalami lonjakan di kawasan konservasi. Pada 2024, deforestasi di kawasan konservasi seluas 7.704
-        hektare, menjadi 25.077 hektare pada 2025 yang terjadi pada 163 kawasan konservasi. Sepuluh teratas deforestasi di
-        kawasan konservasi mencapai 17.153 hektare, atau 68% deforestasi di seluruh kawasan konservasi.<br>
-
+        Deforestasi mengalami lonjakan di kawasan konservasi. Pada 2024, deforestasi di kawasan konservasi seluas 7.704 hektare, menjadi 25.077 hektare pada 2025 yang terjadi pada 163 kawasan konservasi. Sepuluh teratas deforestasi di kawasan konservasi mencapai 17.153 hektare, atau 68% deforestasi di seluruh kawasan konservasi.<br>
       </p>
 
       <p class="body-text">
-        Di 29 juta hektare habitat harimau, gajah, badak, dan orangutan, terjadi deforestasi seluas 156.463 hektare, tanpa
-        menghitung perulangan di area yang beririsan.<br>
-
+        Di 29 juta hektare habitat harimau, gajah, badak, dan orangutan, terjadi deforestasi seluas 156.463 hektare, tanpa menghitung perulangan di area yang beririsan.<br>
       </p>
 
 
 
       <p class="body-text">
-        Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, Pemerintah Indonesia mencanangkan program
-        ketahanan pangan melalui pengalokasian 20,6 juta hektare kawasan hutan untuk cadangan pangan, energi, dan air.
-        Sebesar 78.123 hektare deforestasi terjadi di area pencadangan ini, atau 18% deforestasi nasional.<br>
-
+        Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, Pemerintah Indonesia mencanangkan program ketahanan pangan melalui pengalokasian 20,6 juta hektare kawasan hutan untuk cadangan pangan, energi, dan air. Sebesar 78.123 hektare deforestasi terjadi di area pencadangan ini, atau 18% deforestasi nasional.<br>
       </p>
 
       <p class="body-text">
-        Sebesar 44% deforestasi terjadi di dalam konsesi, dengan konsesi kehutanan sebagai penyumbang terbesar (58%).
-        Sebagian besar (65%) deforestasi dalam konsesi terjadi di Kalimantan.<br>
-
+        Sebesar 44% deforestasi terjadi di dalam konsesi, dengan konsesi kehutanan sebagai penyumbang terbesar (58%). Sebagian besar (65%) deforestasi dalam konsesi terjadi di Kalimantan.<br>
       </p>
 
       <!-- gallery 2 -->
@@ -1349,32 +1324,26 @@
       </div><br>
 
       <p class="body-text">
-        Deforestasi seluas 41.162 hektare terjadi pada 1.140 izin atau konsesi tambang, dengan 22% (8.929 hektare)
-        terjadi
-        pada sepuluh teratas.<br>
-
+        Deforestasi seluas 41.162 hektare terjadi pada 1.140 izin atau konsesi tambang, dengan 22% (8.929 hektare) terjadi pada sepuluh teratas.<br>
       </p><br>
 
       <p class="body-text">
-        Deforestasi seluas 37.910 hektare terjadi di 719 konsesi sawit sepanjang 2025, dengan 36% (13.610 hektare)
-        terjadi
-        pada sepuluh konsesi teratas.<br>
-
+        Deforestasi seluas 37.910 hektare terjadi di 719 konsesi sawit sepanjang 2025, dengan 36% (13.610 hektare) terjadi pada sepuluh konsesi teratas.<br>
       </p>
 
       <p class="body-text">
-        Deforestasi seluas 110.898 hektare terjadi pada 486 konsesi kehutanan, yakni 74.409 hektare konsesi logging,
-        33.063 hektare konsesi kebun kayu, 671 hektare konsesi restorasi ekosistem, dan 2.754 hektare konsesi kehutanan
-        lainnya. Deforestasi terjadi di 212 konsesi kebun kayu, 34 persennya terjadi di sepuluh teratas.<br>
-
+        Deforestasi seluas 110.898 hektare terjadi pada 486 konsesi kehutanan, yakni 74.409 hektare konsesi logging, 33.063 hektare konsesi kebun kayu, 671 hektare konsesi restorasi ekosistem, dan 2.754 hektare konsesi kehutanan lainnya. Deforestasi terjadi di 212 konsesi kebun kayu, 34 persennya terjadi di sepuluh teratas.<br>
       </p>
 
       <p class="body-text">
-        Deforestasi terjadi di 237 konsesi logging, 28 persennya terjadi di sepuluh teratas.<br>
+       Deforestasi terjadi di 237 konsesi logging, 28 persennya terjadi di sepuluh teratas.<br>
+      </p><br><br>
 
-      </p>
 
-
+      <div class="section-label">IV. Peta Tematik Deforestasi</div>
+        <p class="body-text">
+          Deforestasi berbasis provinsi Deforestasi berbasis kabupaten Deforestasi di kawasan konservasi Deforestasi di Habitat megafauna ikonik Deforestasi dalam Konsesi
+        </p>
       <div class="viz-block viz-block--full">
 
         <!-- PETA TEMATIK (inline) -->
@@ -1534,7 +1503,7 @@
     <!-- DISKUSI -->
     <span class="s-anchor" id="diskusi"></span>
     <section class="page-section px-[5vw] py-10">
-      <div class="section-label">IV. Diskusi</div>
+      <div class="section-label">V. Diskusi</div>
 
       <div class="mt-10">
         <div class="chapter-header">
@@ -1542,11 +1511,7 @@
           <h3 class="chapter-title"><strong>Kebijakan pemerintah turut memicu deforestasi</strong></h3>
         </div>
         <p class="body-text">
-          Di era presidensi Joko Widodo, terutama pada periode kedua, perlindungan lingkungan mengalami pengenduran,
-          terutama melalui pengesahan Undang-Undang Cipta Kerja atau Omnibus Law. Batasan 30% hutan untuk setiap wilayah,
-          sebagai misal, dihilangkan dari teks aturan. Tidak hanya itu, proyek-proyek pemerintah, terutama yang dibungkus
-          dengan judul Proyek Strategis Nasional, diberi kemudahan menabrak kawasan hutan. Padahal, proyek-proyek ini
-          kerap tidak disertai perencanaan matang, termasuk secara spasial.
+          Di era presidensi Joko Widodo, terutama pada periode kedua, perlindungan lingkungan mengalami pengenduran, terutama melalui pengesahan Undang-Undang Cipta Kerja atau Omnibus Law. Batasan 30% hutan untuk setiap wilayah, sebagai misal, dihilangkan dari teks aturan. Tidak hanya itu, proyek-proyek pemerintah, terutama yang dibungkus dengan judul Proyek Strategis Nasional, diberi kemudahan menabrak kawasan hutan. Padahal, proyek-proyek ini kerap tidak disertai perencanaan matang, termasuk secara spasial.
         </p>
         <p class="body-text">
           Era kepresidenan Prabowo-Gibran tampak meneruskan kebijakan ini. Kengototan meneruskan program lumbung pangan
@@ -1556,12 +1521,7 @@
           merupakan salah satu makanan pokok di Indonesia Timur.
         </p>
         <p class="body-text">
-          Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, pemerintah mencanangkan program 20 juta
-          hektare hutan untuk cadangan pangan, energi, dan air. Pada perkembangannya, total area untuk program ini menjadi
-          20,6 juta hektare. Analisis Auriga Nusantara menunjukkan bahwa terdapat 8,8 juta hektare hutan alam di dalam
-          area pencadangan ini dan 18% deforestasi 2025 terjadi di dalam area ini. Deforestasi ini terjadi melalui
-          program-program pangan populis, seperti Cetak Sawah Rakyat (CSR) di Kalimantan Tengah, provinsi yang menjadi
-          pemuncak deforestasi pada 2025. Padahal pada 2024 provinsi ini berada di urutan ketiga provinsi terdeforestasi.
+          Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, pemerintah mencanangkan program 20 juta hektare hutan untuk cadangan pangan, energi, dan air. Pada perkembangannya, total area untuk program ini menjadi 20,6 juta hektare. Analisis Auriga Nusantara menunjukkan bahwa terdapat 8,8 juta hektare hutan alam di dalam area pencadangan ini dan 18% deforestasi 2025 terjadi di dalam area ini. Deforestasi ini terjadi melalui program-program pangan populis, seperti Cetak Sawah Rakyat (CSR) di Kalimantan Tengah, provinsi yang menjadi pemuncak deforestasi pada 2025. Padahal pada 2024 provinsi ini berada di urutan ketiga provinsi terdeforestasi.
         </p>
         <p class="body-text">
           Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan hutan alam
@@ -1733,7 +1693,7 @@
     <span class="s-anchor" id="rekomendasi"></span>
     <section class="page-section px-[5vw] pt-10 pb-20">
       <div class="mx-auto max-w-[820px]">
-        <div class="section-label">V. Rekomendasi</div>
+        <div class="section-label">VI. Rekomendasi</div>
 
         <p class="body-text">
           Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
