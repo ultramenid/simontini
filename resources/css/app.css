@@ -1646,7 +1646,7 @@ footer {
   display: flex;
   height: 100%;
   overflow: hidden;
-  max-width: 980px;
+  max-width: 1300px;
   margin: 0 auto;
   width: 100%;
   font-family: 'Poppins', sans-serif;
@@ -1859,7 +1859,7 @@ footer {
 }
 .pres-info { flex: 1; min-width: 0; }
 .pres-name {
-  font-size: .82rem; font-weight: 700;
+  font-size: 50px; font-weight: 700;
   color: #e8f0ee; line-height: 1.2;
   margin-bottom: 2px; transition: color .2s;
 }

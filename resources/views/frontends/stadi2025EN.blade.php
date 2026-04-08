@@ -103,52 +103,28 @@
         <!-- embedded chart using TailwindUI layout -->
         <div class="viz-block viz-block--full mt-12 mb-2" id="chart-app-wrap">
             <div class=" ">
-                <div id="chart-app" class="w-full bg-black py-6 md:py-12">
-                    <div id="chart-inner"
-                        class="flex flex-col md:flex-row px-4 w-full max-w-[980px] mx-auto gap-4 min-h-[360px]">
-                        <div id="chart-viz" class="flex-1 min-w-0">
+                <div id="chart-app" class="w-full bg-black py-6 md:py-14">
+                    <div id="chart-inner" class="px-6 md:px-14 w-full max-w-[1400px] mx-auto">
+                        <div id="chart-viz" class="w-full min-w-0">
                             <div class="chart-header mb-4">
-                                <h2 class="chart-title text-white text-lg md:text-xl font-bold tracking-tight mb-1">
-                                    Deforestation in Indonesia, 2001–2025</h2>
+                                <h2 class="chart-title text-white text-lg md:text-xl font-bold tracking-tight mb-1">Deforestation in Indonesia, 2001–2025</h2>
                                 <p class="chart-sub text-[#7a9e97] text-sm">Annual deforestation rate · hectares</p>
                             </div>
-                            <div id="chart-body" class="relative flex h-full">
-                                <div id="y-axis"
-                                    class="flex flex-col-reverse justify-between pb-[78px] w-[52px] md:w-[72px] shrink-0">
-                                </div>
+                            <div id="chart-body" class="relative flex" style="height:380px;">
+                                <div id="y-axis" class="flex flex-col-reverse justify-between pb-[78px] w-[52px] md:w-[72px] shrink-0"></div>
                                 <div id="bars-wrap" class="relative flex-1 flex flex-col">
-                                    <div id="grid-lines" class="relative flex flex-col-reverse justify-between flex-1">
-                                    </div>
-                                    <div id="bars-svg-wrap"
-                                        class="absolute inset-x-0 top-0 bottom-[78px] grid items-end gap-[3px] px-0.5">
-                                    </div>
+                                    <div id="grid-lines" class="relative flex flex-col-reverse justify-between flex-1"></div>
+                                    <div id="bars-svg-wrap" class="absolute inset-x-0 top-0 bottom-[78px] grid items-end gap-[3px] px-0.5"></div>
                                     <div id="x-axis" class="grid gap-[3px] px-[2px] mt-0 h-[78px] items-start"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div id="detail-panel"
-                            class="w-full md:w-[280px] bg-[#1a2826] border-t md:border-t-0 md:border-l border-[rgba(255,255,255,.07)] flex flex-col">
-                            <div class="panel-inner p-4 flex flex-col h-full overflow-y-auto">
-                                <div class="w-full justify-between flex sm:flex-col flex-row">
-                                    <div class="panel-header mb-4">
-                                        <div
-                                            class="ph-title text-[#e07060] text-xs font-bold uppercase tracking-widest mb-1">
-                                            The Era of Leadership</div>
-                                        <div class="ph-sub text-[rgba(255,255,255,.2)] text-xs">click to highlight era</div>
-                                    </div>
-                                    <div class="year-display">
-                                        <div id="yd-year"
-                                            class="yd-label text-[#7a9e97] text-xs font-semibold uppercase tracking-[0.14em] mb-1">
-                                            Hover over a bar</div>
-                                        <div id="yd-val" class="yd-val text-2xl font-bold text-white mb-1">—</div>
-                                        <div class="yd-unit text-sm text-[#7a9e97]">ha </div>
-                                    </div>
-                                </div>
-
-                                <div id="pres-list" class="space-y-2 grid grid-cols-2 md:grid-cols-1 gap-2"></div>
-                                <div class="panel-note text-[0.55rem] text-gray-600 mt-auto pt-3">Data: University of
-                                    Maryland Lossyear · Auriga STADI<br>simontini.id</div>
+                            <div class="hidden md:flex mt-3">
+                                <div class="w-[52px] md:w-[72px] shrink-0"></div>
+                                <div id="pres-strip" class="flex-1 flex gap-[2px]"></div>
                             </div>
+                            <!-- Mobile-only era totals -->
+                            <div id="mobile-era-totals" class="md:hidden grid grid-cols-2 gap-[2px] mt-3"></div>
+                            <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland Lossyear · Auriga STADI · simontini.id</div>
                         </div>
                     </div>
                 </div>
@@ -2181,7 +2157,7 @@
                     ];
 
                     var MAX_VAL = Math.max.apply(null, DATA.map(function (d) { return d.val; }));
-                    var AXIS_MAX = Math.ceil(MAX_VAL / 200000) * 200000;
+                    var AXIS_MAX = 2000000;
                     var TICK_STEP = AXIS_MAX <= 600000 ? 100000 : AXIS_MAX <= 1200000 ? 200000 : 400000;
                     var Y_TICKS = [];
                     for (var v = 0; v <= AXIS_MAX; v += TICK_STEP) Y_TICKS.push(v);
@@ -2196,7 +2172,7 @@
                     Y_TICKS.forEach(function (t) {
                         var el = document.createElement('div');
                         el.className = 'y-tick text-[0.6rem] text-[#7a9e97] text-right pr-3 font-normal whitespace-nowrap';
-                        el.textContent = t === 0 ? '0' : (t >= 1000000 ? (t / 1000000).toFixed(1).replace('.', ',') + 'jt' : (t / 1000) + 'rb');
+                        el.textContent = t === 0 ? '0' : (t >= 1000000 ? (t / 1000000).toFixed(1) + 'M' : (t / 1000) + 'K');
                         yAxis.appendChild(el);
                     });
 
@@ -2232,9 +2208,15 @@
                         rect.className = 'bar-rect w-full  bg-[#bc4a3c] origin-bottom scale-y-0 transition-colors duration-150 relative';
                         var pct = (d.val / AXIS_MAX) * 100;
                         rect.style.height = pct + '%';
+
+                        var barLabel = document.createElement('div');
+                        barLabel.style.cssText = 'position:absolute;left:50%;transform:translateX(-50%);bottom:calc(' + pct + '% + 5px);font-size:0.6rem;font-weight:700;color:#fff;white-space:nowrap;opacity:0;transition:opacity .18s;pointer-events:none;z-index:10;text-shadow:0 1px 4px rgba(0,0,0,.9);background:rgba(0,0,0,.5);padding:1px 5px;border-radius:3px;';
+                        barLabel.textContent = fmt(d.val);
+                        col.appendChild(barLabel);
+
                         col.appendChild(rect);
                         barsWrap.appendChild(col);
-                        barEls.push({ col: col, rect: rect, hoverBg: hoverBg });
+                        barEls.push({ col: col, rect: rect, hoverBg: hoverBg, label: barLabel });
 
                         var lbl = document.createElement('div');
                         lbl.className = 'x-label flex-1 text-[0.52rem] text-[#7a9e97] text-center font-normal writing-vertical-rl rotate-180 pt-1 ' + (d.year % 4 === 1 ? 'font-semibold text-[#e07060]' : '');
@@ -2264,27 +2246,76 @@
                     function calcTotal(p) {
                         return DATA.filter(function (d) { return d.year >= p.start && d.year <= p.end; }).reduce(function (s, d) { return s + d.val; }, 0);
                     }
-                    function fmtTotal(v) {
-                        return (v / 1000000).toFixed(2).replace('.', ',') + ' jt';
-                    }
+                    var presStrip = document.getElementById('pres-strip');
+                    presStrip.innerHTML = '';
+                    var stripEls = [];
 
-                    var presList = document.getElementById('pres-list');
-                    presList.innerHTML = '';
-                    var cardEls = [];
+                    var barsWrapEl = document.getElementById('bars-wrap');
+                    var totalYears = DATA.length;
+                    var photoOverlayEls = [];
 
-                    PRESIDENTS.forEach(function (p) {
+                    var isDesktop = window.innerWidth >= 768;
+                    var ERA_COLORS = ['rgba(224,112,96,0.22)','rgba(196,72,58,0.25)','rgba(160,40,28,0.28)','rgba(110,10,0,0.32)'];
+
+                    PRESIDENTS.forEach(function (p, pi) {
                         var total = calcTotal(p);
-                        var card = document.createElement('div');
-                        card.className = 'pres-card flex items-center gap-2 p-2.5  cursor-pointer mb-1 border border-transparent opacity-60 transition duration-150';
-                        card.innerHTML = '<div class="pres-avatar">' +
-                            '<img src="' + p.photo + '" alt="' + p.name + '" onerror="this.style.display=\'none\'">' +
-                            '<span class="pres-initials">' + p.name.slice(0, 3).toUpperCase() + '</span>' +
-                            '</div>' +
-                            '<div class="pres-info"><div class="pres-name">' + p.name + '</div><div class="pres-period">' + (p.start === p.end ? p.start : (p.start + '–' + p.end)) + '</div></div>' +
-                            '<div class="pres-stat"><div class="pres-total">' + fmtTotal(total) + '</div><div class="pres-total-unit">Hectares Lost</div></div>';
-                        presList.appendChild(card);
-                        cardEls.push(card);
+                        var yearCount = p.end - p.start + 1;
+                        var startIdx = DATA.findIndex(function (d) { return d.year === p.start; });
+                        var leftPct = (startIdx / totalYears) * 100;
+                        var widthPct = (yearCount / totalYears) * 100;
+
+                        // Era background shading inside chart (desktop only)
+                        var eraBg = document.createElement('div');
+                        if (isDesktop) {
+                            eraBg.style.cssText = 'position:absolute;left:' + leftPct + '%;width:' + widthPct + '%;top:0;bottom:78px;background:' + ERA_COLORS[pi] + ';pointer-events:none;z-index:1;transition:background .3s;';
+                            barsWrapEl.appendChild(eraBg);
+                        }
+
+                        // Photo overlay positioning per president (desktop only)
+                        var photoWrap = document.createElement('div');
+                        if (isDesktop) {
+                            var photoOffset = p.name === 'Jokowi' ? (widthPct * 0.4) + '%'
+                                : p.name === 'Susilo Bambang Yudhoyono' ? (widthPct * 0.5) + '%'
+                                : '4px';
+                            photoWrap.style.cssText = 'position:absolute;left:calc(' + leftPct + '% + ' + photoOffset + ');top:0;pointer-events:none;z-index:4;transition:opacity .3s;transform:translateX(' + (p.name === 'Susilo Bambang Yudhoyono' ? '-50%' : '0') + ');';
+                            var img = document.createElement('img');
+                            img.src = p.photo;
+                            img.alt = p.name;
+                            img.style.cssText = 'height:100px;width:auto;object-fit:cover;object-position:top center;display:block;';
+                            img.onerror = function () { this.style.display = 'none'; };
+                            photoWrap.appendChild(img);
+                            barsWrapEl.appendChild(photoWrap);
+                        }
+                        photoOverlayEls.push({ bg: eraBg, photo: photoWrap, idx: pi });
+
+                        // Strip item (name + period + total)
+                        var el = document.createElement('div');
+                        el.style.cssText = 'flex:' + yearCount + ';cursor:pointer;padding:14px 10px 14px;border-top:2px solid rgba(255,255,255,.15);transition:border-color .25s,opacity .25s;min-width:0;overflow:visible;';
+                        el.innerHTML =
+                            '<div style="font-size:.8rem;font-weight:700;color:#e8e2d8;line-height:1.2;white-space:nowrap;margin-bottom:3px;">' + p.name + '</div>' +
+                            '<div style="font-size:.65rem;color:rgba(255,255,255,.35);margin-bottom:8px;white-space:nowrap;">' + (p.start === p.end ? p.start : p.start + '\u2013' + p.end) + '</div>' +
+                            '<div style="font-size:1rem;font-weight:800;color:#fff;line-height:1;white-space:nowrap;">' + total.toLocaleString('en-US') + '</div>' +
+                            '<div style="font-size:.65rem;color:#7a9e97;margin-top:3px;white-space:nowrap;">ha lost</div>';
+                        presStrip.appendChild(el);
+                        stripEls.push(el);
                     });
+
+                    // Mobile era totals
+                    var mobileEra = document.getElementById('mobile-era-totals');
+                    if (mobileEra) {
+                        mobileEra.innerHTML = '';
+                        PRESIDENTS.forEach(function (p, pi) {
+                            var total = calcTotal(p);
+                            var card = document.createElement('div');
+                            card.style.cssText = 'background:' + ERA_COLORS[pi] + ';padding:12px 14px;border-top:2px solid rgba(255,255,255,.15);';
+                            card.innerHTML =
+                                '<div style="font-size:.72rem;font-weight:700;color:#e8e2d8;margin-bottom:2px;">' + p.name + '</div>' +
+                                '<div style="font-size:.6rem;color:rgba(255,255,255,.35);margin-bottom:6px;">' + (p.start === p.end ? p.start : p.start + '–' + p.end) + '</div>' +
+                                '<div style="font-size:.95rem;font-weight:800;color:#fff;line-height:1;">' + total.toLocaleString('en-US') + '</div>' +
+                                '<div style="font-size:.6rem;color:#7a9e97;margin-top:2px;">ha lost</div>';
+                            mobileEra.appendChild(card);
+                        });
+                    }
 
                     var activeEra = null;
 
@@ -2296,9 +2327,13 @@
                             gsap.to(item.col, { opacity: match ? 1 : 0.12, duration: 0.3, ease: 'power2.out' });
                             item.rect.style.background = match ? '#e07060' : '';
                         });
-                        cardEls.forEach(function (c, i) {
-                            c.style.opacity = '';
-                            c.classList.toggle('active', PRESIDENTS[i].name === name);
+                        stripEls.forEach(function (el, i) {
+                            el.style.opacity = PRESIDENTS[i].name === name ? '1' : '0.3';
+                            el.style.borderTopColor = PRESIDENTS[i].name === name ? '#e07060' : 'rgba(255,255,255,.1)';
+                        });
+                        photoOverlayEls.forEach(function (ov, i) {
+                            ov.photo.style.opacity = PRESIDENTS[i].name === name ? '1' : '0.2';
+                            ov.bg.style.background = PRESIDENTS[i].name === name ? 'rgba(224,112,96,0.14)' : 'rgba(188,74,60,0.03)';
                         });
                     }
 
@@ -2308,40 +2343,48 @@
                             gsap.to(item.col, { opacity: 1, duration: 0.3, ease: 'power2.out' });
                             item.rect.style.background = '';
                         });
-                        cardEls.forEach(function (c) {
-                            c.style.opacity = '';
-                            c.classList.remove('active');
+                        stripEls.forEach(function (el) {
+                            el.style.opacity = '';
+                            el.style.borderTopColor = 'rgba(255,255,255,.15)';
+                        });
+                        photoOverlayEls.forEach(function (ov) {
+                            ov.photo.style.opacity = '';
+                            ov.bg.style.background = ERA_COLORS[ov.idx];
                         });
                     }
 
-                    cardEls.forEach(function (card, i) {
-                        card.addEventListener('click', function () {
+                    stripEls.forEach(function (el, i) {
+                        el.addEventListener('click', function () {
                             if (activeEra === PRESIDENTS[i].name) clearEra(); else setEra(PRESIDENTS[i].name);
                         });
                     });
-
-                    var ydYear = document.getElementById('yd-year');
-                    var ydVal = document.getElementById('yd-val');
-                    function updateYearDisplay(d) {
-                        ydYear.textContent = d ? d.year : 'Arahkan kursor ke bar';
-                        ydVal.textContent = d ? d.val.toLocaleString('id-ID') : '\u2014';
-                    }
 
                     barEls.forEach(function (item, i) {
                         item.col.addEventListener('mouseenter', function () {
                             gsap.to(item.rect, { scaleY: 1.025, transformOrigin: 'bottom center', duration: .18, ease: 'power1.out' });
                             item.hoverBg.style.opacity = '1';
-                            updateYearDisplay(DATA[i]);
+                            item.label.style.opacity = '1';
                             if (!activeEra) {
                                 var hovPres = getPresident(DATA[i].year);
-                                cardEls.forEach(function (c, ci) { c.style.opacity = hovPres && PRESIDENTS[ci].name === hovPres.name ? '1' : '0.3'; });
+                                stripEls.forEach(function (el, ci) { el.style.opacity = hovPres && PRESIDENTS[ci].name === hovPres.name ? '1' : '0.3'; });
+                                photoOverlayEls.forEach(function (ov, ci) {
+                                    var match = hovPres && PRESIDENTS[ci].name === hovPres.name;
+                                    ov.photo.style.opacity = match ? '1' : '0.15';
+                                    ov.bg.style.background = match ? 'rgba(224,112,96,0.22)' : 'rgba(0,0,0,0.35)';
+                                });
                             }
                         });
                         item.col.addEventListener('mouseleave', function () {
                             gsap.to(item.rect, { scaleY: 1, duration: .22, ease: 'power1.out' });
                             item.hoverBg.style.opacity = '0';
-                            updateYearDisplay(null);
-                            if (!activeEra) cardEls.forEach(function (c) { c.style.opacity = ''; });
+                            item.label.style.opacity = '0';
+                            if (!activeEra) {
+                                stripEls.forEach(function (el) { el.style.opacity = ''; });
+                                photoOverlayEls.forEach(function (ov) {
+                                    ov.photo.style.opacity = '';
+                                    ov.bg.style.background = ERA_COLORS[ov.idx];
+                                });
+                            }
                         });
                         item.col.addEventListener('click', function () {
                             var pres = getPresident(DATA[i].year);
