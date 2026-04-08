@@ -213,7 +213,7 @@ body.is-preloading { overflow: hidden; }
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 5vw;
   height: 90px;
-  background: rgba(245,240,232,.92);
+  background: white;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   transform: translateY(-100%);
@@ -403,7 +403,7 @@ body.is-preloading { overflow: hidden; }
 /* ── SECTION LABEL ── */
 .section-label {
   font-family: 'Poppins', sans-serif;
-  font-size: 24px; font-weight: 600; letter-spacing: .22em;
+  font-size: 20px; font-weight: 600; letter-spacing: .22em;
   text-transform: uppercase; color: var(--red);
   display: flex; align-items: center; gap: 10px;
   margin-bottom: 16px;
@@ -1299,6 +1299,12 @@ footer {
   font-size: .72rem; font-weight: 700;
   color: var(--accent); z-index: 1;
 }
+
+@media (min-width:640px) {
+          #peta-embed .peta-island-chart,
+          #peta-embed .peta-island-chart * { color: #f5f0e8 !important; }
+          #peta-embed .peta-island-chart [id^="peta-bars-"] { border-bottom-color: rgba(245,240,232,.5) !important; }
+        }
 .pres-info { flex: 1; min-width: 0; }
 .pres-name {
   font-size: .82rem; font-weight: 700;
@@ -1755,7 +1761,6 @@ footer {
 
 .bar-rect {
   width: 100%;
-  border-radius: 3px 3px 0 0;
   background: #bc4a3c;
   transform-origin: bottom center;
   transform: scaleY(0);
@@ -1775,7 +1780,7 @@ footer {
 }
 
 .x-label {
-  font-size: .52rem;
+  font-size: .92rem;
   color: #7a9e97;
   text-align: center;
   font-weight: 400;

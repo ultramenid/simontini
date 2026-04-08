@@ -9,7 +9,7 @@
         <div class="loader-mark">
             <img src="{{ asset('assets/images/logo1.png') }}" alt="" class="">
             <!-- <div class="loader-title">SIMONTINI</div> -->
-            <div class="loader-sub">Indonesia's Deforestation Status in 2025</div>
+            <div class="loader-sub">Status of deforestation in Indonesia 2025</div>
             <div class="loader-bar"><span></span></div>
         </div>
     </div>
@@ -39,7 +39,7 @@
         </div>
     </nav>
     <section id="hero">
-        <h1>INDONESIA DEFORESTATION STATUS 2025</h1>
+        <h1>Status of deforestation in Indonesia 2025</h1>
         <div class="hero-meta">
             <div class="hero-stat">
                 <span class="hs-val">433.751</span>
@@ -103,28 +103,24 @@
         <!-- embedded chart using TailwindUI layout -->
         <div class="viz-block viz-block--full mt-12 mb-2" id="chart-app-wrap">
             <div class=" ">
-                <div id="chart-app" class="w-full bg-black py-6 md:py-14">
-                    <div id="chart-inner" class="px-6 md:px-14 w-full max-w-[1400px] mx-auto">
+                <div id="chart-app" class="w-full py-4 md:py-8" style="background:white;">
+                    <div id="chart-inner" class="px-6 w-full max-w-[1400px] mx-auto">
                         <div id="chart-viz" class="w-full min-w-0">
                             <div class="chart-header mb-4">
-                                <h2 class="chart-title text-white text-lg md:text-xl font-bold tracking-tight mb-1">Deforestation in Indonesia, 2001–2025</h2>
-                                <p class="chart-sub text-[#7a9e97] text-sm">Annual deforestation rate · hectares</p>
+                                <h2 class="text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestation in Indonesia, 2001–2025</h2>
+                                <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate · hectares</p>
                             </div>
-                            <div id="chart-body" class="relative flex" style="height:380px;">
-                                <div id="y-axis" class="flex flex-col-reverse justify-between pb-[78px] w-[52px] md:w-[72px] shrink-0"></div>
+                            <div id="chart-body" class="relative flex" style="height:420px;">
+                                <div id="y-axis" class="flex flex-col-reverse justify-between pb-[48px] w-[42px] md:w-[56px] shrink-0"></div>
                                 <div id="bars-wrap" class="relative flex-1 flex flex-col">
                                     <div id="grid-lines" class="relative flex flex-col-reverse justify-between flex-1"></div>
-                                    <div id="bars-svg-wrap" class="absolute inset-x-0 top-0 bottom-[78px] grid items-end gap-[3px] px-0.5"></div>
-                                    <div id="x-axis" class="grid gap-[3px] px-[2px] mt-0 h-[78px] items-start"></div>
+                                    <div id="bars-svg-wrap" class="absolute inset-x-0 top-0 bottom-[48px] grid items-end gap-[2px] px-0.5"></div>
+                                    <div id="x-axis" class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden" style="background:white;z-index:2;"></div>
                                 </div>
                             </div>
-                            <div class="hidden md:flex mt-3">
-                                <div class="w-[52px] md:w-[72px] shrink-0"></div>
-                                <div id="pres-strip" class="flex-1 flex gap-[2px]"></div>
+                            <div class="md:hidden mt-3">
+                                <div id="pres-strip" class="flex flex-col gap-[2px]"></div>
                             </div>
-                            <!-- Mobile-only era totals -->
-                            <div id="mobile-era-totals" class="md:hidden grid grid-cols-2 gap-[2px] mt-3"></div>
-                            <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland Lossyear · Auriga STADI · simontini.id</div>
                         </div>
                     </div>
                 </div>
@@ -148,8 +144,7 @@
                     <div class="ms-num">1.</div>
                     <div class="body-text">
                         <p>
-                            <em>First, </em>
-                            deforestation modelling: Knowledge accumulated to date – from field monitoring and deforestation
+                            <strong>Deforestation modelling:</strong> Knowledge accumulated to date – from field monitoring and deforestation
                             data for 2023 and 2024 – was modelled with U-Net deep learning. This model was then trained on
                             10-meter resolution Sentinel satellite imagery.
                         </p>
@@ -159,8 +154,8 @@
                     <div class="ms-num">2.</div>
                     <div class="body-text">
                         <!-- <h4>Inspeksi visual</h4> -->
-                        <p>
-                            <em>Second</em>, defining scoping areas: Monthly deforestation alerts produced by the University
+                        <p><strong>
+                            Defining scoping areas:</strong> Monthly deforestation alerts produced by the University
                             of Maryland (usually referred to as GLAD alerts) were compiled. For efficiency, only
                             high-confidence alerts were collected. These alerts were then “bound” or aggregated in bounding
                             boxes with search radii of 10,240 meters. These bounding boxes then became the scoping areas.
@@ -172,7 +167,7 @@
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
                         <p>
-                            <em>Third</em>, the developed deforestation model was then run on 10-meter resolution Sentinel-2
+                           <strong> The developed deforestation model</strong> was then run on <strong> 10-meter resolution Sentinel-2</strong>
                             satellite imagery in the defined scoping areas.
                         </p>
                     </div>
@@ -181,9 +176,9 @@
                     <div class="ms-num">4.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p>
-                            <em>Fourth</em>, areas where deforestation was identified (indicative deforestation) were
-                            overlaid with forest cover maps. Four forest cover references were used: (1) MapBiomas
+                        <p><strong>
+                            Areas where deforestation was identified</strong> (indicative deforestation) were
+                            overlaid with <strong> forest cover maps</strong>. Four forest cover references were used: (1) MapBiomas
                             Indonesia; (2) land cover maps produced by the Ministry of Forestry; (3) tropical-moist forest
                             (TMF) data produced by the European Commission’s Joint Research Centre; and (4) the Forest
                             Persistence dataset produced by Google.
@@ -194,8 +189,8 @@
                     <div class="ms-num">5.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p>
-                            Fifth, verification processes: Indicative deforestation outside intersections of the four forest
+                        <p> <strong>
+                            Verification processes:</strong> Indicative deforestation outside intersections of the four forest
                             cover references (forest-agreement areas) were inspected visually. Due to the large numbers of
                             polygons and limited time available, polygons smaller than one hectare could not be inspected
                             and were consequently excluded from the deforestation area. For indicative deforestation inside
@@ -218,7 +213,8 @@
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
                         <p>
-                            <em>Sixth</em>, filtering: Focusing on deforestation caused by human activity (anthropogenic
+                            <strong>
+                            Filtering:</strong> Focusing on deforestation caused by human activity (anthropogenic
                             deforestation), filtering was conducted to exclude deforestation areas resulting from landslides
                             or river shifts. For example, 11,693 hectares of forest cover were lost due to landslides in
                             Aceh, North Sumatra, and West Sumatra in the hydrometeorological disaster at the end of 2025.
@@ -432,10 +428,10 @@
                             src="{{ asset('assets/images/indonesia-map.jpg') }}" alt="Peta Indonesia" />
                     </div>
 
-                    <!-- Year ghost -->
+                    {{-- <!-- Year ghost -->
                     <div id="peta-year-ghost"
                         class="absolute bottom-[15px] sm:bottom-[90px] right-2 sm:right-10 z-10 pointer-events-none font-poppins font-black text-[#f5f0e8] opacity-10 leading-none tracking-tighter"
-                        style="font-size:clamp(4rem,10vw,10rem)">2025</div>
+                        style="font-size:clamp(4rem,10vw,10rem)">2025</div> --}}
 
                     <!-- Charts layer -->
                     <div class="absolute inset-0 z-20 pointer-events-none">
@@ -443,109 +439,97 @@
                         <!-- Charts wrap: desktop = absolute inset-0 passthrough; mobile = single grid box -->
                         <div id="peta-charts-wrap" class="absolute inset-0 pointer-events-none">
 
-                            <!-- Sumatra chart -->
-                            <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                                id="peta-chart-sumatra"
-                                style="left:25%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-                                <div
-                                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.45)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-                                    <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
-                                        Sumatera</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                        <!-- Sumatra chart -->
+                        <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                            id="peta-chart-sumatra" style="left:25%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                            <div
+                            class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                            <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sumatera</div>
+                            <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
+                            <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                                <div class="relative h-[78px] mt-[14px]" id="peta-axis-sumatra"></div>
+                                <div>
+                                <div class="relative h-[92px] flex items-end">
+                                    <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                                    <span></span><span></span><span></span><span></span><span></span>
                                     </div>
-                                    <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-                                        <div class="relative h-[78px] mt-[14px]" id="peta-axis-sumatra"></div>
-                                        <div>
-                                            <div class="relative h-[92px] flex items-end">
-                                                <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                                                    <span></span><span></span><span></span><span></span><span></span>
-                                                </div>
-                                                <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
-                                                    id="peta-bars-sumatra"></div>
-                                            </div>
-                                            <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sumatra"></div>
-                                        </div>
-                                    </div>
+                                    <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                                    id="peta-bars-sumatra"></div>
+                                </div>
+                                <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sumatra"></div>
                                 </div>
                             </div>
+                            </div>
+                        </div>
 
-                            <!-- Kalimantan chart -->
-                            <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                                id="peta-chart-kalimantan"
-                                style="left:37%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-                                <div
-                                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.45)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-                                    <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
-                                        Kalimantan</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                        <!-- Kalimantan chart -->
+                        <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                            id="peta-chart-kalimantan" style="left:37%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                            <div
+                            class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                            <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Kalimantan</div>
+                            <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
+                            <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                                <div class="relative h-[78px] mt-[14px]" id="peta-axis-kalimantan"></div>
+                                <div>
+                                <div class="relative h-[92px] flex items-end">
+                                    <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                                    <span></span><span></span><span></span><span></span><span></span>
                                     </div>
-                                    <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-                                        <div class="relative h-[78px] mt-[14px]" id="peta-axis-kalimantan"></div>
-                                        <div>
-                                            <div class="relative h-[92px] flex items-end">
-                                                <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                                                    <span></span><span></span><span></span><span></span><span></span>
-                                                </div>
-                                                <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
-                                                    id="peta-bars-kalimantan"></div>
-                                            </div>
-                                            <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-kalimantan"></div>
-                                        </div>
-                                    </div>
+                                    <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                                    id="peta-bars-kalimantan"></div>
+                                </div>
+                                <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-kalimantan"></div>
                                 </div>
                             </div>
+                            </div>
+                        </div>
 
-                            <!-- Sulawesi chart -->
-                            <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                                id="peta-chart-sulawesi"
-                                style="left:50%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-                                <div
-                                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.45)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-                                    <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
-                                        Sulawesi</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                        <!-- Sulawesi chart -->
+                        <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                            id="peta-chart-sulawesi" style="left:50%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                            <div
+                            class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                            <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sulawesi</div>
+                            <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
+                            <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                                <div class="relative h-[78px] mt-[14px]" id="peta-axis-sulawesi"></div>
+                                <div>
+                                <div class="relative h-[92px] flex items-end">
+                                    <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                                    <span></span><span></span><span></span><span></span><span></span>
                                     </div>
-                                    <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-                                        <div class="relative h-[78px] mt-[14px]" id="peta-axis-sulawesi"></div>
-                                        <div>
-                                            <div class="relative h-[92px] flex items-end">
-                                                <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                                                    <span></span><span></span><span></span><span></span><span></span>
-                                                </div>
-                                                <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
-                                                    id="peta-bars-sulawesi"></div>
-                                            </div>
-                                            <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sulawesi"></div>
-                                        </div>
-                                    </div>
+                                    <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                                    id="peta-bars-sulawesi"></div>
+                                </div>
+                                <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sulawesi"></div>
                                 </div>
                             </div>
+                            </div>
+                        </div>
 
-                            <!-- Papua chart -->
-                            <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                                id="peta-chart-papua"
-                                style="left:30%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-                                <div
-                                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.45)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-                                    <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
-                                        Papua</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                        <!-- Papua chart -->
+                        <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                            id="peta-chart-papua" style="left:72%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                            <div
+                            class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                            <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Papua</div>
+                            <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
+                            <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                                <div class="relative h-[78px] mt-[14px]" id="peta-axis-papua"></div>
+                                <div>
+                                <div class="relative h-[92px] flex items-end">
+                                    <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                                    <span></span><span></span><span></span><span></span><span></span>
                                     </div>
-                                    <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-                                        <div class="relative h-[78px] mt-[14px]" id="peta-axis-papua"></div>
-                                        <div>
-                                            <div class="relative h-[92px] flex items-end">
-                                                <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                                                    <span></span><span></span><span></span><span></span><span></span>
-                                                </div>
-                                                <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
-                                                    id="peta-bars-papua"></div>
-                                            </div>
-                                            <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-papua"></div>
-                                        </div>
-                                    </div>
+                                    <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                                    id="peta-bars-papua"></div>
+                                </div>
+                                <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-papua"></div>
                                 </div>
                             </div>
+                            </div>
+                        </div>
 
                         </div><!-- /peta-charts-wrap -->
 
@@ -992,7 +976,7 @@
                     Deforestation occurred in 212 pulpwood concessions, with the top ten accounting for 34 percent.<br>
                 </p><br><br>
 
-                <div class="section-label">IV. Peta Tematik Deforestasi</div>
+                <div class="section-label">IV. Thematic Map of Deforestation</div>
                 <p class="body-text">
                 Deforestation by province Deforestation by district Deforestation in conservation areas Deforestation in iconic megafauna habitats Deforestation within concessions
                 </p>
@@ -1696,17 +1680,20 @@
                         { year: 2022, val: 230760 },
                         { year: 2023, val: 257384 },
                         { year: 2024, val: 261575 },
-                        { year: 2025, val: 433751 }
+                        { year: 2025, val: 433751 },
+                        { year: 2026, val: 0 },
+                        { year: 2027, val: 0 },
+                        { year: 2028, val: 0 }
                     ];
 
                     var MAX_VAL = Math.max.apply(null, DATA.map(function (d) { return d.val; }));
-                    var AXIS_MAX = 2000000;
+                    var AXIS_MAX = 1500000;
                     var TICK_STEP = AXIS_MAX <= 600000 ? 100000 : AXIS_MAX <= 1200000 ? 200000 : 400000;
                     var Y_TICKS = [];
                     for (var v = 0; v <= AXIS_MAX; v += TICK_STEP) Y_TICKS.push(v);
 
                     function fmt(v) {
-                        return v.toLocaleString('id-ID');
+                        return v.toLocaleString('en-US');
                     }
 
                     var yAxis = document.getElementById('y-axis');
@@ -1714,7 +1701,8 @@
                     yAxis.innerHTML = '';
                     Y_TICKS.forEach(function (t) {
                         var el = document.createElement('div');
-                        el.className = 'y-tick text-[0.6rem] text-[#7a9e97] text-right pr-3 font-normal whitespace-nowrap';
+                        el.className = 'y-tick text-[0.6rem] text-right pr-3 font-normal whitespace-nowrap';
+                        el.style.color = '#8b7355';
                         el.textContent = t === 0 ? '0' : (t >= 1000000 ? (t / 1000000).toFixed(1) + 'M' : (t / 1000) + 'K');
                         yAxis.appendChild(el);
                     });
@@ -1723,7 +1711,8 @@
                     gridWrap.innerHTML = '';
                     Y_TICKS.forEach(function (t) {
                         var line = document.createElement('div');
-                        line.className = 'grid-line absolute inset-x-0 h-[1px] bg-[rgba(255,255,255,.07)]';
+                        line.className = 'grid-line absolute inset-x-0 h-[1px]';
+                        line.style.background = 'rgba(139,115,85,0.18)';
                         line.style.bottom = ((t / AXIS_MAX) * 100) + '%';
                         gridWrap.appendChild(line);
                     });
@@ -1737,6 +1726,7 @@
                     var colsTemplate = 'repeat(' + DATA.length + ', minmax(0, 1fr))';
                     barsWrap.style.gridTemplateColumns = colsTemplate;
                     xAxis.style.gridTemplateColumns = colsTemplate;
+                    xAxis.style.justifyItems = 'center';
 
                     DATA.forEach(function (d, i) {
                         var col = document.createElement('div');
@@ -1744,17 +1734,17 @@
                         col.dataset.index = i;
 
                         var hoverBg = document.createElement('div');
-                        hoverBg.style.cssText = 'position:absolute;inset:0;background:rgba(255,255,255,0.1);border-radius:3px;opacity:0;transition:opacity:.18s;pointer-events:none;';
+                        hoverBg.style.cssText = 'position:absolute;inset:0;background:rgba(0,0,0,0.04);opacity:0;transition:opacity:.18s;pointer-events:none;';
                         col.appendChild(hoverBg);
 
                         var rect = document.createElement('div');
-                        rect.className = 'bar-rect w-full  bg-[#bc4a3c] origin-bottom scale-y-0 transition-colors duration-150 relative';
-                        var pct = (d.val / AXIS_MAX) * 100;
-                        rect.style.height = pct + '%';
+                        rect.className = 'bar-rect origin-bottom scale-y-0 transition-colors duration-150 relative';
+                        var pct = (d.val / AXIS_MAX) * 130;
+                        rect.style.cssText = 'width:100%;max-width:52px;min-width:3px;height:' + pct + '%;background:#bc4a3c;' + (d.val === 0 ? 'visibility:hidden;' : '');
 
                         var barLabel = document.createElement('div');
-                        barLabel.style.cssText = 'position:absolute;left:50%;transform:translateX(-50%);bottom:calc(' + pct + '% + 5px);font-size:0.6rem;font-weight:700;color:#fff;white-space:nowrap;opacity:0;transition:opacity .18s;pointer-events:none;z-index:10;text-shadow:0 1px 4px rgba(0,0,0,.9);background:rgba(0,0,0,.5);padding:1px 5px;border-radius:3px;';
-                        barLabel.textContent = fmt(d.val);
+                        barLabel.style.cssText = 'position:absolute;left:50%;transform:translateX(-50%);bottom:calc(' + pct + '% + 6px);font-size:0.58rem;font-weight:700;color:#1a1a1a;white-space:nowrap;opacity:0;transition:opacity .18s;pointer-events:none;z-index:10;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.12);padding:2px 6px;border-radius:4px;box-shadow:0 1px 6px rgba(0,0,0,.1);';
+                        if (d.val > 0) barLabel.textContent = fmt(d.val);
                         col.appendChild(barLabel);
 
                         col.appendChild(rect);
@@ -1762,9 +1752,10 @@
                         barEls.push({ col: col, rect: rect, hoverBg: hoverBg, label: barLabel });
 
                         var lbl = document.createElement('div');
-                        lbl.className = 'x-label flex-1 text-[0.52rem] text-[#7a9e97] text-center font-normal writing-vertical-rl rotate-180 pt-1 ' + (d.year % 4 === 1 ? 'font-semibold text-[#e07060]' : '');
+                        lbl.className = 'x-label flex-1 text-[0.52rem] text-center font-normal writing-vertical-rl rotate-180 pt-1 ' + (d.year % 4 === 1 ? 'font-semibold' : '');
+                        lbl.style.color = d.year % 4 === 1 ? '#8b2a1a' : '#8b7355';
                         lbl.style.writingMode = 'vertical-rl';
-                        lbl.textContent = d.year;
+                        if (d.val > 0) lbl.textContent = d.year;
                         xAxis.appendChild(lbl);
                     });
 
@@ -1780,7 +1771,7 @@
                         { name: 'Megawati', start: 2001, end: 2004, photo: '/assets/images/presiden/meg.jpeg' },
                         { name: 'Susilo Bambang Yudhoyono', start: 2005, end: 2014, photo: '/assets/images/presiden/sby.jpg' },
                         { name: 'Jokowi', start: 2015, end: 2024, photo: '/assets/images/presiden/jok.jpeg' },
-                        { name: 'Prabowo', start: 2025, end: 2025, photo: '/assets/images/presiden/pra.jpeg' }
+                        { name: 'Prabowo', start: 2025, end: 2028, photo: '/assets/images/presiden/pra.jpeg' }
                     ];
 
                     function getPresident(year) {
@@ -1789,6 +1780,7 @@
                     function calcTotal(p) {
                         return DATA.filter(function (d) { return d.year >= p.start && d.year <= p.end; }).reduce(function (s, d) { return s + d.val; }, 0);
                     }
+
                     var presStrip = document.getElementById('pres-strip');
                     presStrip.innerHTML = '';
                     var stripEls = [];
@@ -1798,7 +1790,7 @@
                     var photoOverlayEls = [];
 
                     var isDesktop = window.innerWidth >= 768;
-                    var ERA_COLORS = ['rgba(224,112,96,0.22)','rgba(196,72,58,0.25)','rgba(160,40,28,0.28)','rgba(110,10,0,0.32)'];
+                    var ERA_COLORS = ['rgba(188,74,60,0.06)','rgba(188,74,60,0.09)','rgba(188,74,60,0.12)','rgba(188,74,60,0.18)'];
 
                     PRESIDENTS.forEach(function (p, pi) {
                         var total = calcTotal(p);
@@ -1810,73 +1802,97 @@
                         // Era background shading inside chart (desktop only)
                         var eraBg = document.createElement('div');
                         if (isDesktop) {
-                            eraBg.style.cssText = 'position:absolute;left:' + leftPct + '%;width:' + widthPct + '%;top:0;bottom:78px;background:' + ERA_COLORS[pi] + ';pointer-events:none;z-index:1;transition:background .3s;';
+                            eraBg.style.cssText = 'position:absolute;left:' + leftPct + '%;width:' + widthPct + '%;top:0;bottom:48px;background:' + ERA_COLORS[pi] + ';pointer-events:none;z-index:1;transition:background .3s;';
                             barsWrapEl.appendChild(eraBg);
                         }
 
-                        // Photo overlay positioning per president (desktop only)
+                        // Photo + card: wrapped together so card sits to the right of photo
                         var photoWrap = document.createElement('div');
+                        var el = document.createElement('div');
                         if (isDesktop) {
                             var photoOffset = p.name === 'Jokowi' ? (widthPct * 0.4) + '%'
                                 : p.name === 'Susilo Bambang Yudhoyono' ? (widthPct * 0.5) + '%'
                                 : '4px';
-                            photoWrap.style.cssText = 'position:absolute;left:calc(' + leftPct + '% + ' + photoOffset + ');top:0;pointer-events:none;z-index:4;transition:opacity .3s;transform:translateX(' + (p.name === 'Susilo Bambang Yudhoyono' ? '-50%' : '0') + ');';
+                            var presGroup = document.createElement('div');
+                            presGroup.style.cssText = 'position:absolute;left:calc(' + leftPct + '% + ' + photoOffset + ');top:0;z-index:4;display:flex;flex-direction:row;align-items:flex-start;transform:translateX(' + (p.name === 'Susilo Bambang Yudhoyono' ? '-50%' : '0') + ');';
+
+                            photoWrap.style.cssText = 'pointer-events:none;transition:opacity .3s;flex-shrink:0;';
                             var img = document.createElement('img');
                             img.src = p.photo;
                             img.alt = p.name;
                             img.style.cssText = 'height:100px;width:auto;object-fit:cover;object-position:top center;display:block;';
                             img.onerror = function () { this.style.display = 'none'; };
                             photoWrap.appendChild(img);
-                            barsWrapEl.appendChild(photoWrap);
+
+                            el.style.cssText = 'opacity:0;pointer-events:none;transition:opacity .25s;min-width:140px;padding:8px 10px;background:rgba(255,255,255,0.96);border-left:2px solid rgba(0,0,0,.1);box-shadow:4px 4px 16px rgba(0,0,0,.1);cursor:pointer;align-self:stretch;display:flex;flex-direction:column;justify-content:center;';
+                            el.innerHTML =
+                                '<div style="font-size:.72rem;font-weight:700;color:#1a1a1a;line-height:1.2;white-space:nowrap;margin-bottom:2px;">' + p.name + '</div>' +
+                                '<div style="font-size:.58rem;color:rgba(0,0,0,.4);margin-bottom:5px;white-space:nowrap;">' + (p.start === p.end ? p.start : p.start + '\u2013' + p.end) + '</div>' +
+                                '<div style="font-size:.88rem;font-weight:800;color:#8b2a1a;line-height:1;white-space:nowrap;">' + total.toLocaleString('en-US') + '</div>' +
+                                '<div style="font-size:.58rem;color:#8b7355;margin-top:2px;white-space:nowrap;">ha lost</div>';
+
+                            presGroup.appendChild(photoWrap);
+                            presGroup.appendChild(el);
+                            barsWrapEl.appendChild(presGroup);
                         }
                         photoOverlayEls.push({ bg: eraBg, photo: photoWrap, idx: pi });
-
-                        // Strip item (name + period + total)
-                        var el = document.createElement('div');
-                        el.style.cssText = 'flex:' + yearCount + ';cursor:pointer;padding:14px 10px 14px;border-top:2px solid rgba(255,255,255,.15);transition:border-color .25s,opacity .25s;min-width:0;overflow:visible;';
-                        el.innerHTML =
-                            '<div style="font-size:.8rem;font-weight:700;color:#e8e2d8;line-height:1.2;white-space:nowrap;margin-bottom:3px;">' + p.name + '</div>' +
-                            '<div style="font-size:.65rem;color:rgba(255,255,255,.35);margin-bottom:8px;white-space:nowrap;">' + (p.start === p.end ? p.start : p.start + '\u2013' + p.end) + '</div>' +
-                            '<div style="font-size:1rem;font-weight:800;color:#fff;line-height:1;white-space:nowrap;">' + total.toLocaleString('en-US') + '</div>' +
-                            '<div style="font-size:.65rem;color:#7a9e97;margin-top:3px;white-space:nowrap;">ha lost</div>';
-                        presStrip.appendChild(el);
+                        el.dataset.presIdx = pi;
                         stripEls.push(el);
+
+                        // Mobile strip item (only shown on era selection)
+                        if (!isDesktop) {
+                            var mel = document.createElement('div');
+                            mel.dataset.mobile = '1';
+                            mel.dataset.presIdx = pi;
+                            mel.style.cssText = 'display:none;flex-direction:row;align-items:stretch;border-top:2px solid rgba(0,0,0,.1);transition:border-color .25s,opacity .25s;cursor:pointer;overflow:hidden;';
+                            var mPhoto = document.createElement('img');
+                            mPhoto.src = p.photo;
+                            mPhoto.alt = p.name;
+                            mPhoto.style.cssText = 'width:64px;flex-shrink:0;object-fit:cover;object-position:top center;display:block;';
+                            mPhoto.onerror = function () { this.style.display = 'none'; };
+                            var mInfo = document.createElement('div');
+                            mInfo.style.cssText = 'padding:10px 12px;display:flex;flex-direction:column;justify-content:center;min-width:0;';
+                            mInfo.innerHTML =
+                                '<div style="font-size:.72rem;font-weight:700;color:#1a1a1a;line-height:1.2;margin-bottom:2px;">' + p.name + '</div>' +
+                                '<div style="font-size:.58rem;color:rgba(0,0,0,.4);margin-bottom:5px;white-space:nowrap;">' + (p.start === p.end ? p.start : p.start + '\u2013' + p.end) + '</div>' +
+                                '<div style="font-size:.88rem;font-weight:800;color:#8b2a1a;line-height:1;white-space:nowrap;">' + total.toLocaleString('en-US') + '</div>' +
+                                '<div style="font-size:.58rem;color:#8b7355;margin-top:2px;white-space:nowrap;">ha lost</div>';
+                            mel.appendChild(mPhoto);
+                            mel.appendChild(mInfo);
+                            presStrip.appendChild(mel);
+                            stripEls.push(mel);
+                        }
                     });
 
-                    // Mobile era totals
-                    var mobileEra = document.getElementById('mobile-era-totals');
-                    if (mobileEra) {
-                        mobileEra.innerHTML = '';
-                        PRESIDENTS.forEach(function (p, pi) {
-                            var total = calcTotal(p);
-                            var card = document.createElement('div');
-                            card.style.cssText = 'background:' + ERA_COLORS[pi] + ';padding:12px 14px;border-top:2px solid rgba(255,255,255,.15);';
-                            card.innerHTML =
-                                '<div style="font-size:.72rem;font-weight:700;color:#e8e2d8;margin-bottom:2px;">' + p.name + '</div>' +
-                                '<div style="font-size:.6rem;color:rgba(255,255,255,.35);margin-bottom:6px;">' + (p.start === p.end ? p.start : p.start + '–' + p.end) + '</div>' +
-                                '<div style="font-size:.95rem;font-weight:800;color:#fff;line-height:1;">' + total.toLocaleString('en-US') + '</div>' +
-                                '<div style="font-size:.6rem;color:#7a9e97;margin-top:2px;">ha lost</div>';
-                            mobileEra.appendChild(card);
-                        });
-                    }
-
                     var activeEra = null;
+
+                    function presName(i) {
+                        return PRESIDENTS[parseInt(stripEls[i].dataset.presIdx)].name;
+                    }
 
                     function setEra(name) {
                         activeEra = name;
                         barEls.forEach(function (item, i) {
                             var p = getPresident(DATA[i].year);
                             var match = p && p.name === name;
-                            gsap.to(item.col, { opacity: match ? 1 : 0.12, duration: 0.3, ease: 'power2.out' });
-                            item.rect.style.background = match ? '#e07060' : '';
+                            gsap.to(item.col, { opacity: 1, duration: 0.3, ease: 'power2.out' });
+                            item.rect.style.background = match ? '#8b2a1a' : '#d4c4a0';
                         });
                         stripEls.forEach(function (el, i) {
-                            el.style.opacity = PRESIDENTS[i].name === name ? '1' : '0.3';
-                            el.style.borderTopColor = PRESIDENTS[i].name === name ? '#e07060' : 'rgba(255,255,255,.1)';
+                            var match = presName(i) === name;
+                            var isMobile = el.dataset.mobile === '1';
+                            if (isMobile) {
+                                el.style.display = match ? 'flex' : 'none';
+                                el.style.borderTopColor = match ? '#8b2a1a' : 'rgba(0,0,0,.1)';
+                            } else {
+                                el.style.opacity = match ? '1' : '0';
+                                el.style.pointerEvents = match ? 'auto' : 'none';
+                                el.style.borderTopColor = match ? '#8b2a1a' : 'rgba(0,0,0,.1)';
+                            }
                         });
                         photoOverlayEls.forEach(function (ov, i) {
                             ov.photo.style.opacity = PRESIDENTS[i].name === name ? '1' : '0.2';
-                            ov.bg.style.background = PRESIDENTS[i].name === name ? 'rgba(224,112,96,0.14)' : 'rgba(188,74,60,0.03)';
+                            ov.bg.style.background = PRESIDENTS[i].name === name ? 'rgba(139,42,26,0.1)' : 'rgba(0,0,0,0.02)';
                         });
                     }
 
@@ -1884,11 +1900,13 @@
                         activeEra = null;
                         barEls.forEach(function (item) {
                             gsap.to(item.col, { opacity: 1, duration: 0.3, ease: 'power2.out' });
-                            item.rect.style.background = '';
+                            item.rect.style.background = '#bc4a3c';
                         });
                         stripEls.forEach(function (el) {
-                            el.style.opacity = '';
-                            el.style.borderTopColor = 'rgba(255,255,255,.15)';
+                            var isMobile = el.dataset.mobile === '1';
+                            if (isMobile) { el.style.display = 'none'; }
+                            else { el.style.opacity = '0'; el.style.pointerEvents = 'none'; }
+                            el.style.borderTopColor = 'rgba(0,0,0,.1)';
                         });
                         photoOverlayEls.forEach(function (ov) {
                             ov.photo.style.opacity = '';
@@ -1898,7 +1916,8 @@
 
                     stripEls.forEach(function (el, i) {
                         el.addEventListener('click', function () {
-                            if (activeEra === PRESIDENTS[i].name) clearEra(); else setEra(PRESIDENTS[i].name);
+                            var name = presName(i);
+                            if (activeEra === name) clearEra(); else setEra(name);
                         });
                     });
 
@@ -1909,11 +1928,17 @@
                             item.label.style.opacity = '1';
                             if (!activeEra) {
                                 var hovPres = getPresident(DATA[i].year);
-                                stripEls.forEach(function (el, ci) { el.style.opacity = hovPres && PRESIDENTS[ci].name === hovPres.name ? '1' : '0.3'; });
+                                barEls.forEach(function (bi, ci) { bi.rect.style.background = hovPres && getPresident(DATA[ci].year) && getPresident(DATA[ci].year).name === hovPres.name ? '#bc4a3c' : '#d4c4a0'; });
+                                stripEls.forEach(function (el, ci) {
+                                    var match = hovPres && presName(ci) === hovPres.name;
+                                    var isMobile = el.dataset.mobile === '1';
+                                    if (isMobile) { el.style.display = match ? 'flex' : 'none'; }
+                                    else { el.style.opacity = match ? '1' : '0'; el.style.pointerEvents = match ? 'auto' : 'none'; }
+                                });
                                 photoOverlayEls.forEach(function (ov, ci) {
                                     var match = hovPres && PRESIDENTS[ci].name === hovPres.name;
                                     ov.photo.style.opacity = match ? '1' : '0.15';
-                                    ov.bg.style.background = match ? 'rgba(224,112,96,0.22)' : 'rgba(0,0,0,0.35)';
+                                    ov.bg.style.background = match ? 'rgba(188,74,60,0.1)' : 'rgba(0,0,0,0.02)';
                                 });
                             }
                         });
@@ -1922,7 +1947,8 @@
                             item.hoverBg.style.opacity = '0';
                             item.label.style.opacity = '0';
                             if (!activeEra) {
-                                stripEls.forEach(function (el) { el.style.opacity = ''; });
+                                barEls.forEach(function (bi) { bi.rect.style.background = '#bc4a3c'; });
+                                stripEls.forEach(function (el) { var isMobile = el.dataset.mobile === '1'; if (isMobile) { el.style.display = 'none'; } else { el.style.opacity = '0'; el.style.pointerEvents = 'none'; } });
                                 photoOverlayEls.forEach(function (ov) {
                                     ov.photo.style.opacity = '';
                                     ov.bg.style.background = ERA_COLORS[ov.idx];
