@@ -232,465 +232,8 @@
 
     {{-- step 1 --}}
     <div class="viz-block viz-block--full alur" style="margin-top: -60px !important;">
-        <div style="background:#0d0d0d; margin-bottom:0;" class="alur-embed">
-            <div style="background:#0d0d0d; border-radius:0;">
-                <div class="embed-bar" style="background:#161616; border-bottom-color:rgba(255,255,255,.08);">
-                    <span class="embed-bar-title" style="color:rgba(255,255,255,.45);">Tahapan & Pemrosesan Data
-                        SIMONTINI</span>
-                </div>
-                <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
-                    style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)"
-                        stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                    <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk melihat
-                        alur lengkap</span>
-                </div>
+        <img src="{{ asset('assets/Tahap-Eng.png') }}" alt="Simontini - 2025 Methodology" class="sm:max-w-6xl w-full mx-auto h-auto object-contain">
 
-                <!-- ALUR INLINE — replaces <iframe src="alur.html"> -->
-                <div id="alur-embed"
-                    class="bg-[#0e0e0e] font-poppins text-[#e8e2d8] antialiased overflow-x-auto overflow-y-hidden px-4">
-
-                    <div class="px-4 sm:px-[60px] pt-6 pb-8 min-w-[680px] sm:min-w-0 max-w-[1400px] mx-auto relative"
-                        id="dwrap">
-
-                        <!-- ═══ ROW 1 · Deep Learning Modeling ═══ -->
-                        <div class="flex items-stretch border-t border-white/[0.07] relative" id="row1">
-                            <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none"
-                                id="ll1" onclick="alurRowToggle(this)">
-                                <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">01</div>
-                                <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Deep Learning Modeling
-                                </div>
-                                <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                        <polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg></div>
-                            </div>
-                            <div class="steps flex-1 pl-8 flex items-center relative">
-
-                                <div class="flex items-center flex-1">
-                                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="r1c1" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Training Dataset</div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            Sentinel 2 × STADI 2024.<br>Labeled samples {0, 1}.</div>
-                                    </div>
-                                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                        id="r1a1"><svg viewBox="0 0 36 14" fill="none">
-                                            <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                        </svg></div>
-                                </div>
-
-                                <div class="flex items-center flex-1">
-                                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="r1c2" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Dataset Normalization
-                                        </div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            <ul class="pl-3.5">
-                                                <li class="mb-0.5">Cropping, tiling, slicing</li>
-                                                <li class="mb-0.5">Image normalization</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                        id="r1a2"><svg viewBox="0 0 36 14" fill="none">
-                                            <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                        </svg></div>
-                                </div>
-
-                                <div class="flex items-center flex-1">
-                                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="r1c3" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Deep Learning — UNET
-                                        </div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            <ul class="pl-3.5">
-                                                <li class="mb-0.5">Augmentasi &amp; rotasi</li>
-                                                <li class="mb-0.5">Encoder &amp; Decoder</li>
-                                                <li class="mb-0.5">Confusion Matrix</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                        id="r1a3"><svg viewBox="0 0 36 14" fill="none">
-                                            <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                        </svg></div>
-                                </div>
-
-                                <div class="flex items-center [flex:0.8]">
-                                    <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="outmodel" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Ouput Model</div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            A ready-to-use deforestation mapping model for large-scale detection.</div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- ═══ ROW 2 · Scoping Area ═══ -->
-                        <div class="flex items-stretch border-t border-white/[0.07] relative" id="row2">
-                            <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none"
-                                id="ll2" onclick="alurRowToggle(this)">
-                                <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">02</div>
-                                <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Scoping Area Deforestasi
-                                </div>
-                                <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                        <polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg></div>
-                            </div>
-                            <div class="steps flex-1 pl-8 flex items-center relative">
-
-                                <div class="flex items-center flex-1">
-                                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="r2c1" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Determination of Area
-                                            &amp; Period</div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            <ul class="pl-3.5">
-                                                <li class="mb-0.5">Natural Forests 2024</li>
-                                                <li class="mb-0.5">Alert January–December</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                        id="r2a1"><svg viewBox="0 0 36 14" fill="none">
-                                            <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                        </svg></div>
-                                </div>
-
-                                <div class="flex items-center flex-1">
-                                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="r2c2" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Alert Filtering</div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            GLAD confidence level 3 ∩ Forest cover in 2024.</div>
-                                    </div>
-                                    <div class="arrow w-[50px] min-w-[50px] flex items-center justify-center shrink-0 a-arr"
-                                        id="r2a2">
-                                        <svg viewBox="0 0 50 90" fill="none" width="50" height="90">
-                                            <line x1="0" y1="45" x2="18" y2="45" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <line x1="18" y1="10" x2="18" y2="80" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <line x1="18" y1="10" x2="40" y2="10" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <line x1="18" y1="80" x2="40" y2="80" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <polyline points="34,5 41,10 34,15" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                            <polyline points="34,75 41,80 34,85" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <!-- True + False alert -->
-                                <div class="flex self-stretch items-stretch flex-1">
-                                    <div class="flex flex-col flex-1 gap-0">
-                                        <div class="flex items-center flex-1">
-                                            <div class="card flex-1 bg-[rgba(46,139,90,0.06)] border border-[rgba(46,139,90,0.3)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                                id="r2c3a" onclick="alurToggle(this)">
-                                                <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">True Alert</div>
-                                                <div
-                                                    class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                                    Alerts identified as actual deforestation events. Being processed
-                                                    further.</div>
-                                            </div>
-                                            <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                                id="r2a3"><svg viewBox="0 0 36 14" fill="none">
-                                                    <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                        opacity="0.6" />
-                                                    <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                        fill="none" stroke-linejoin="miter" stroke-linecap="square"
-                                                        opacity="0.6" />
-                                                </svg></div>
-                                        </div>
-                                        <div class="flex items-center flex-1 mt-2">
-                                            <div class="card flex-1 bg-transparent border border-white/[0.07] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#1e1e1e] a-card"
-                                                id="r2c3b" onclick="alurToggle(this)">
-                                                <div class="text-sm font-bold text-[#6b6460] leading-[1.3]">False Alert
-                                                </div>
-                                                <div
-                                                    class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                                    False positive — not processed further in this workflow.</div>
-                                            </div>
-                                            <div class="w-[40px] min-w-[40px]"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="flex self-stretch [flex:0.8]">
-                                    <div class="flex flex-col flex-1">
-                                        <div class="flex items-center flex-1">
-                                            <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                                id="agreg" onclick="alurToggle(this)">
-                                                <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Agregasi True
-                                                    Alert</div>
-                                                <div
-                                                    class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                                    <ul class="pl-3.5">
-                                                        <li class="mb-0.5">Alert grouping</li>
-                                                        <li class="mb-0.5">Maximum distance: 10,240 m</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-1 mt-2"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- ═══ ROW 3 · Deforestasi Indikatif (reversed) ═══ -->
-                        <div class="flex items-stretch border-t border-white/[0.07] relative" id="row3">
-                            <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none"
-                                id="ll3" onclick="alurRowToggle(this)">
-                                <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">03</div>
-                                <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Deforestasi Indikatif</div>
-                                <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                        <polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg></div>
-                            </div>
-                            <div class="steps rev flex-1 pl-8 flex items-center relative flex-row-reverse">
-
-                                <div class="flex flex-row-reverse items-center flex-1">
-                                    <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="normcit" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Normalisasi Citra
-                                            Sentinel 2</div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            <ul class="pl-3.5">
-                                                <li class="mb-0.5">Spatial &amp; temporal filter</li>
-                                                <li class="mb-0.5">Cloud masking</li>
-                                                <li class="mb-0.5">Band auditions</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                        id="r3a1"><svg viewBox="0 0 36 14" fill="none">
-                                            <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                        </svg></div>
-                                </div>
-
-                                <div class="flex flex-row-reverse items-center flex-1">
-                                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="bbox" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Bounding Box</div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            A 10,240-meter radius from the alert aggregation ID.</div>
-                                    </div>
-                                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                        id="r3a2"><svg viewBox="0 0 36 14" fill="none">
-                                            <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                        </svg></div>
-                                </div>
-
-                                <div class="flex flex-row-reverse items-center flex-1">
-                                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="r3c3" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Automatic Image
-                                            Acquisition
-                                        </div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            Automatically download Sentinel-2 imagery on a monthly basis.</div>
-                                    </div>
-                                    <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                        id="r3a3"><svg viewBox="0 0 36 14" fill="none">
-                                            <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                        </svg></div>
-                                </div>
-
-                                <div class="flex flex-row-reverse items-center [flex:0.8]">
-                                    <div class="card flex-1 border border-[rgba(199,91,46,0.3)] bg-[rgba(199,91,46,0.06)] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="dataindikatif" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Data Deforestasi
-                                            Indikatif</div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            Sentinel image prediction using a <em class="italic text-[#8a7e78]">deep
-                                                learning</em>
-                                            model that has been trained.</div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- ═══ ROW 4 · Verifikasi ═══ -->
-                        <div class="flex items-stretch border-t border-white/[0.07] relative" id="row4">
-                            <div class="w-[160px] min-w-[160px] pr-5 py-7 flex flex-col justify-center border-r border-white/[0.07] a-lane select-none"
-                                id="ll4" onclick="alurRowToggle(this)">
-                                <div class="text-[11px] font-bold tracking-[0.12em] mb-1.5 text-[#C75B2E]">04</div>
-                                <div class="text-[23px] font-bold text-[#e8e2d8] leading-[1.35]">Verifikasi</div>
-                                <div class="mt-2 a-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                        <polyline points="1,1 5,5 9,1" stroke="rgba(199,91,46,0.6)" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg></div>
-                            </div>
-                            <div class="steps flex-1 pl-8 flex items-center relative">
-
-                                <div class="flex [flex:0.8] self-stretch items-center">
-                                    <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                        id="r4c1" onclick="alurToggle(this)">
-                                        <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Overlay &amp; Filter
-                                            Area</div>
-                                        <div
-                                            class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                            <ul class="pl-3.5">
-                                                <li class="mb-0.5">Forest cover in 2024</li>
-                                                <li class="mb-0.5">Min. mapping unit 0.25 Ha</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="arrow w-[50px] min-w-[50px] flex items-center justify-center shrink-0 a-arr"
-                                        id="r4a1">
-                                        <svg viewBox="0 0 50 130" fill="none" width="50" height="130">
-                                            <line x1="0" y1="65" x2="18" y2="65" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <line x1="18" y1="15" x2="18" y2="115" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <line x1="18" y1="15" x2="40" y2="15" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <line x1="18" y1="65" x2="40" y2="65" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <line x1="18" y1="115" x2="40" y2="115" stroke="#C75B2E" stroke-width="1.2"
-                                                opacity="0.6" />
-                                            <polyline points="34,10 41,15 34,20" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                            <polyline points="34,60 41,65 34,70" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                            <polyline points="34,110 41,115 34,120" stroke="#C75B2E" stroke-width="1.2"
-                                                fill="none" stroke-linejoin="miter" stroke-linecap="square" opacity="0.6" />
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <div class="self-stretch items-stretch [flex:1.5] flex">
-                                    <div class="flex flex-col flex-1 gap-2 py-2">
-
-                                        <div class="flex items-center flex-1">
-                                            <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                                id="r4c2a" onclick="alurToggle(this)">
-                                                <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Visual
-                                                    Inspection
-                                                </div>
-                                                <div
-                                                    class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                                    Verification through direct visual inspection of satellite imagery.
-                                                </div>
-                                            </div>
-                                            <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                                id="r4a2a"><svg viewBox="0 0 36 14" fill="none">
-                                                    <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                        opacity="0.6" />
-                                                    <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                        fill="none" stroke-linejoin="miter" stroke-linecap="square"
-                                                        opacity="0.6" />
-                                                </svg></div>
-                                        </div>
-
-                                        <div class="flex items-center flex-1">
-                                            <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                                id="r4c2b" onclick="alurToggle(this)">
-                                                <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">Filtering
-                                                    Temporal</div>
-                                                <div
-                                                    class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                                    Multitemporal analysis to confirm that the changes are permanent.
-                                                </div>
-                                            </div>
-                                            <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                                id="r4a2b"><svg viewBox="0 0 36 14" fill="none">
-                                                    <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                        opacity="0.6" />
-                                                    <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                        fill="none" stroke-linejoin="miter" stroke-linecap="square"
-                                                        opacity="0.6" />
-                                                </svg></div>
-                                        </div>
-
-                                        <div class="flex items-center flex-1">
-                                            <div class="card flex-1 bg-[#1e1e1e] border border-white/[0.12] rounded-[10px] px-5 py-[18px] cursor-pointer relative overflow-hidden transition-all duration-[220ms] hover:bg-[#262626] hover:border-[rgba(199,91,46,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,91,46,0.15)] a-card"
-                                                id="r4c2c" onclick="alurToggle(this)">
-                                                <div class="text-sm font-bold text-[#e8e2d8] leading-[1.3]">On-site
-                                                    Inspection</div>
-                                                <div
-                                                    class="card-desc hidden text-[12.5px] text-[#6b6460] leading-[1.6] mt-2.5 font-light">
-                                                    Field survey of the suspected location to confirm the actual conditions.
-                                                </div>
-                                            </div>
-                                            <div class="arrow w-[40px] min-w-[40px] flex items-center justify-center shrink-0 a-arr"
-                                                id="r4a2c"><svg viewBox="0 0 36 14" fill="none">
-                                                    <line x1="0" y1="7" x2="28" y2="7" stroke="#C75B2E" stroke-width="1.2"
-                                                        opacity="0.6" />
-                                                    <polyline points="22,2 29,7 22,12" stroke="#C75B2E" stroke-width="1.2"
-                                                        fill="none" stroke-linejoin="miter" stroke-linecap="square"
-                                                        opacity="0.6" />
-                                                </svg></div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="[flex:0.8] self-stretch flex">
-                                    <div class="card-final flex-1 bg-[#C75B2E] rounded-[10px] px-5 py-6 flex flex-col justify-center relative overflow-hidden min-h-[160px] a-card"
-                                        id="card-final">
-                                        <div
-                                            class="font-poppins text-[22px] font-extrabold text-white leading-[1.1] relative">
-                                            Data<br>Deforestation</div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div><!-- /#dwrap -->
-                </div><!-- /#alur-embed -->
-
-                <div
-                    style="padding:10px 16px 14px; font-size:.72rem; line-height:1.7; color:rgba(255,255,255,.45); text-align:center;">
-                    Diagram interaktif alur kerja SIMONTINI dari pemodelan deep learning hingga verifikasi lapangan. Klik
-                    kotak oranye untuk melihat detail setiap tahapan.
-                </div>
-            </div>
-        </div>
 
         <section class="page-section px-[5vw] pt-8 pb-6">
             <div class="body-text">
@@ -905,7 +448,7 @@
                                 id="peta-chart-sumatra"
                                 style="left:25%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                                 <div
-                                    class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.45)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Sumatera</div>
                                     <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
@@ -931,7 +474,7 @@
                                 id="peta-chart-kalimantan"
                                 style="left:37%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                                 <div
-                                    class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.45)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Kalimantan</div>
                                     <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
@@ -957,7 +500,7 @@
                                 id="peta-chart-sulawesi"
                                 style="left:50%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                                 <div
-                                    class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.45)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Sulawesi</div>
                                     <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
@@ -983,7 +526,7 @@
                                 id="peta-chart-papua"
                                 style="left:30%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                                 <div
-                                    class="bg-[rgba(245,240,232,.96)] border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.45)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Papua</div>
                                     <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
@@ -1582,7 +1125,7 @@
                 </div><br><br>
 
 
-                
+
 
 
 
@@ -2630,37 +2173,44 @@
                 });
             }
 
-            let petaActiveYear = -1;
+            const petaSelectedYears = new Set();
             let petaChartsOpen = false;
 
-            function petaRevealBars(idx, barOffset) {
+            function petaRevealBars(_, barOffset) {
                 barOffset = barOffset || 0;
+                const selected = Array.from(petaSelectedYears).sort((a, b) => a - b);
                 PETA_ALL_ISLANDS.forEach((id, islandIdx) => {
                     const islandDelay = islandIdx * barOffset;
                     const barsWrap = document.getElementById('peta-bars-' + id);
                     const xlabelsWrap = document.getElementById('peta-xlabels-' + id);
-                    barsWrap.querySelectorAll('[data-baridx]').forEach(el => {
-                        if (parseInt(el.dataset.baridx) > idx) el.style.opacity = '0';
-                    });
-                    xlabelsWrap.querySelectorAll('[data-baridx]').forEach(el => {
-                        if (parseInt(el.dataset.baridx) > idx) el.style.opacity = '0';
-                    });
-                    for (let j = 0; j <= idx; j++) {
+                    // Hide all first
+                    barsWrap.querySelectorAll('[data-baridx]').forEach(el => el.style.opacity = '0');
+                    xlabelsWrap.querySelectorAll('[data-baridx]').forEach(el => el.style.opacity = '0');
+                    // Show only selected indices with stagger
+                    selected.forEach((j, order) => {
                         setTimeout(() => {
                             const bEl = barsWrap.querySelector('[data-baridx="' + j + '"]');
                             const lEl = xlabelsWrap.querySelector('[data-baridx="' + j + '"]');
                             if (bEl) bEl.style.opacity = '1';
                             if (lEl) lEl.style.opacity = '1';
-                        }, islandDelay + j * 130);
-                    }
+                        }, islandDelay + order * 130);
+                    });
                 });
             }
 
             function petaSelectYear(idx) {
                 const ghost = document.getElementById('peta-year-ghost');
                 const wrap = document.getElementById('peta-charts-wrap');
-                if (petaActiveYear === idx) {
-                    petaActiveYear = -1;
+
+                // Toggle selection
+                if (petaSelectedYears.has(idx)) {
+                    petaSelectedYears.delete(idx);
+                } else {
+                    petaSelectedYears.add(idx);
+                }
+
+                // Nothing selected → close everything
+                if (petaSelectedYears.size === 0) {
                     petaChartsOpen = false;
                     document.querySelectorAll('#peta-bubbles .peta-bub').forEach(b => b.classList.remove('on'));
                     PETA_ALL_ISLANDS.forEach(id => {
@@ -2672,29 +2222,36 @@
                     if (wrap) wrap.classList.remove('peta-open');
                     return;
                 }
-                petaActiveYear = idx;
-                if (ghost) ghost.textContent = PETA_YEARS[idx];
-                document.querySelectorAll('#peta-bubbles .peta-bub').forEach((b, i) => b.classList.toggle('on', i === idx));
+
+                const maxIdx = Math.max(...petaSelectedYears);
+                if (ghost) ghost.textContent = PETA_YEARS[maxIdx];
+
+                // Update bubble active states
+                document.querySelectorAll('#peta-bubbles .peta-bub').forEach((b, i) => b.classList.toggle('on', petaSelectedYears.has(i)));
+
+                // Update bar highlight states
                 PETA_ALL_ISLANDS.forEach(id => {
                     document.querySelectorAll('#peta-bars-' + id + ' .peta-bar').forEach((bar, i) => {
-                        bar.classList.toggle('hi', i === idx);
+                        bar.classList.toggle('hi', petaSelectedYears.has(i));
                     });
                 });
+
                 if (wrap) wrap.classList.add('peta-open');
                 if (petaChartsOpen) {
-                    petaRevealBars(idx, 0);
+                    petaRevealBars(maxIdx, 0);
                     return;
                 }
                 petaChartsOpen = true;
                 PETA_ALL_ISLANDS.forEach((id, i) => {
                     setTimeout(() => document.getElementById('peta-chart-' + id).classList.remove('hidden'), i * 200);
                 });
-                petaRevealBars(idx, 200);
+                petaRevealBars(maxIdx, 200);
             }
 
             document.addEventListener('DOMContentLoaded', () => {
                 Object.keys(PETA_DATA).forEach(k => petaBuildBars(k, PETA_DATA[k]));
-                petaSelectYear(4);
+                // Select all years by default
+                PETA_YEARS.forEach((_, i) => petaSelectYear(i));
                 const totals = [229982, 230760, 257385, 261574, 433751];
                 const minV = Math.min(...totals), maxV = Math.max(...totals);
                 const isMobile = window.innerWidth < 640;

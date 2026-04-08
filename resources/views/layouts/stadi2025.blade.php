@@ -33,7 +33,7 @@
     gtag('config', 'G-DNGJ48QE13');
     </script>
 </head>
-<body class="is-preloading bg-[#f5f0e8] text-[#1a1a1a] font-['Poppins'] antialiased overflow-x-hidden">
+<body class="is-preloading  text-[#1a1a1a] font-['Poppins'] antialiased overflow-x-hidden">
     @yield('content')
 
     @stack('scripts')
