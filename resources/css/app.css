@@ -1343,9 +1343,17 @@ footer {
    PETA TEMATIK (inline map section)
    ════════════════════════════════════════════ */
 
-/* ── BUTTON STATES (JS-toggled .active) ── */
-.mode-btn:hover { border-color: #c04030; color: #fff; }
-.mode-btn.active { background: #8b2a1a; border-color: #8b2a1a; color: #fff; }
+/* ── MODE TOGGLE BUTTONS ── */
+.mode-btn { width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.06); color: rgba(245,240,232,.48); padding: 9px 2px; margin-bottom: 0; text-align: left; cursor: pointer; font-size: .73rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 10px; transition: color .18s; }
+.mode-btn-label { flex: 1; line-height: 1.3; text-align: left; }
+.mode-btn-switch { width: 30px; height: 16px; border-radius: 8px; background: rgba(255,255,255,.13); position: relative; flex-shrink: 0; transition: background .2s; }
+.mode-btn-knob { position: absolute; left: 2px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: rgba(245,240,232,.35); transition: transform .2s, background .2s; }
+.mode-btn:hover { color: rgba(245,240,232,.85); }
+.mode-btn:hover .mode-btn-switch { background: rgba(255,255,255,.22); }
+.mode-btn.active { color: #f5f0e8; }
+.mode-btn.active .mode-btn-switch { background: #8b2a1a; }
+.mode-btn.active .mode-btn-knob { transform: translateX(14px); background: #f5f0e8; }
+/* ── CAT BUTTON STATES ── */
 .cat-btn:hover  { border-color: #c04030; color: #fff; }
 .cat-btn.active { background: #8b2a1a; border-color: #8b2a1a; color: #fff; }
 
@@ -1437,7 +1445,7 @@ footer {
   #peta-tematik { flex-direction: column; }
   #sidebar { width: 100%; max-height: 32vh; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); padding: 16px 14px; }
   #sidebar h1 { font-size: 1.08rem; }
-  .mode-btn { font-size: .78rem; padding: 9px 10px; margin-bottom: 7px; }
+  .mode-btn { font-size: .75rem; padding: 9px 2px; }
   #title-block { top: 64px; left: 10px; }
   #title-block h2 { font-size: clamp(.95rem, 2.2vw, 1.2rem); }
   #interaction-hint { top: 8px; right: 8px; font-size: .48rem; padding: 4px 7px; }
@@ -2226,6 +2234,31 @@ footer {
     right: 26% !important;
   }
 }
+
+/* ── MAP LOADING INDICATOR ── */
+#map-loading { background: rgba(236,232,223,0.72); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); gap: 12px; }
+.map-loading-spinner { width: 36px; height: 36px; border: 3px solid rgba(139,42,26,.18); border-top-color: #8b2a1a; border-radius: 50%; animation: map-spin .7s linear infinite; }
+.map-loading-label { font-family: 'Poppins', sans-serif; font-size: .62rem; font-weight: 600; color: #8b2a1a; letter-spacing: .06em; }
+@keyframes map-spin { to { transform: rotate(360deg); } }
+
+/* ── CHOROPLETH LEGEND ── */
+.choro-legend { background: rgba(20,20,20,0.84); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border-radius: 6px; padding: 9px 12px 10px; font-family: 'Poppins', sans-serif; color: #f5f0e8; min-width: 138px; }
+.choro-legend-title { font-size: .52rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #d4c4a0; margin-bottom: 7px; }
+.choro-legend-row { display: flex; align-items: center; gap: 7px; font-size: .57rem; margin-bottom: 4px; color: rgba(245,240,232,.75); white-space: nowrap; }
+.choro-legend-row span { display: inline-block; width: 13px; height: 13px; border-radius: 2px; flex-shrink: 0; }
+
+/* ── LEAFLET: remove focus outline on clicked polygons ── */
+.leaflet-interactive:focus { outline: none; }
+
+/* ── CHOROPLETH RANK LABELS ── */
+.choro-rank-label { display: flex; flex-direction: column; align-items: center; gap: 2px; transform: translate(-50%, -50%); pointer-events: none; }
+.choro-rank-num { width: 20px; height: 20px; border-radius: 50%; background: rgba(20,20,20,0.82); color: #f5f0e8; font-family: 'Poppins', sans-serif; font-size: .65rem; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(245,240,232,.35); line-height: 1; }
+.choro-rank-name { background: rgba(20,20,20,0.72); color: #f5f0e8; font-family: 'Poppins', sans-serif; font-size: .45rem; font-weight: 600; letter-spacing: .04em; padding: 1px 5px; border-radius: 3px; white-space: nowrap; max-width: 80px; overflow: hidden; text-overflow: ellipsis; text-align: center; }
+
+/* ── CHOROPLETH TOOLTIP ── */
+.leaflet-tooltip.choro-tooltip { background: rgba(20,20,20,0.88); border: none; border-radius: 6px; color: #f5f0e8; font-family: 'Poppins', sans-serif; font-size: .72rem; padding: 6px 10px; box-shadow: 0 4px 12px rgba(0,0,0,.3); pointer-events: none; }
+.leaflet-tooltip.choro-tooltip::before { display: none !important; }
+.choro-tooltip strong { font-weight: 700; font-size: .8rem; display: block; margin-bottom: 2px; color: #f5f0e8; }
 
 /* ── Peta table section — desktop compact ── */
 @media (min-width: 640px) {
