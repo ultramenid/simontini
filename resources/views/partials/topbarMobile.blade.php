@@ -38,6 +38,21 @@
                     <a   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">about<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
+                <div class=" px-6" x-data="{open1: false}"><a>
+                    <div class="flex items-center  mb-4 px-2" @click=" open1 =! open1"><a>
+                        <a   class="px-2 inline-block  leading-5 text-white text-xl font-semibold ">stadi<a>
+                        <svg xmlns="http://www.w3.org/2000/svg" :class="{'rotate-180': open1, 'rotate-0': !open1}" class="w-6 text-white rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="bg-white px-4 py-2 mb-4 flex flex-col space-y-2 rounded" x-show="open1">
+
+                        <a href="" class="text-sm text-landy mr-6">2025</a>
+                        <a href="" class="text-sm text-landy mr-6">2024</a>
+                        <a href="" class="text-sm text-landy mr-6">2023</a>
+                    </div>
+                    <p class="border-b border-gray-300"></p>
+                </div>
                 <div class=" px-6">
                     <a  href="{{ route('insight', app()->getLocale()) }}" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
                     <p class="border-b border-gray-300"></p>

@@ -450,7 +450,7 @@
 
               <!-- Sumatra chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-sumatra" style="left:25%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-sumatra" style="left:24%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
                   class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sumatera</div>
@@ -519,7 +519,7 @@
 
               <!-- Papua chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-papua" style="left:72%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-papua" style="left:78%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
                   class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Papua</div>
@@ -882,10 +882,10 @@
           </div>
         </div>
 
-        <div id="peta-tematik" style="height: 87vh" class="flex flex-col overflow-hidden">
+        <div id="peta-tematik" class="overflow-hidden">
 
-          <main id="wrap" class="relative flex-1 min-h-0 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
-            <div id="map" class="w-full flex-1"></div>
+          <main id="wrap" class="relative w-full h-full bg-[#ece8df] flex flex-col overflow-hidden">
+            <div id="map" class="w-full flex-1 h-40"></div>
             <div id="map-loading"
               class="hidden absolute inset-0 z-[700] flex flex-col items-center justify-center pointer-events-none">
               <div class="map-loading-spinner"></div>
@@ -939,13 +939,14 @@
             </div>
           </main>
 
-          <aside id="sidebar"
-            class="w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] border-t border-white/[.08] flex flex-col overflow-hidden"
-            style="min-height:180px">
-            <span id="sidebar-mode-label" class="hidden"></span>
-            <div id="sidebar-table-wrap" class="flex-1 flex flex-row items-stretch justify-start"></div>
-          </aside>
         </div>
+
+        <aside id="sidebar"
+          class="w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] border-t border-white/[.08] flex flex-col overflow-hidden"
+          style="max-height:400px">
+          <span id="sidebar-mode-label" class="hidden"></span>
+          <div id="sidebar-table-wrap" class="flex-1 flex flex-row items-stretch justify-center overflow-y-hidden overflow-x-auto"></div>
+        </aside>
 
       </div><br><br>
 
@@ -2499,7 +2500,7 @@
           doubleClickZoom: false,
           minZoom: isMobile ? 0.1 : 4,
           maxZoom: isMobile ? 3 : 9
-        }).setView(isMobile ? [-7.3, 118] : [-4.3, 118], isMobile ? 3 : 5);
+        }).setView(isMobile ? [-7.3, 118] : [-3.4, 118], isMobile ? 3 : 5);
 
         L.tileLayer('', {
           attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
@@ -2540,7 +2541,7 @@
         const MODES = {
           provinsi: {
             kpiLabel: 'Deforestasi di 10 provinsi teratas',
-            kpiVal: '302.493',
+            kpiVal: '302.279',
             kpiUnit: 'hektare',
             notesSidebar: [
               '10 provinsi teratas didominasi Kalimantan dan Sumatera.',
@@ -2548,64 +2549,21 @@
               'Aceh, Sumatera Utara, dan Sumatera Barat melonjak tajam.'
             ],
             notesBox: [''],
+            bubble: { label: 'Kabupaten lainnya (373)', value: '131.472', unit: 'hektare' },
             markers: [
-              { lat: -1.8, lng: 113.0, rank: 1, name: 'Kalimantan Tengah', value: '56.900', dir: 'right' },
-              { lat: 0.9, lng: 117.1, rank: 2, name: 'Kalimantan Timur', value: '47.135', dir: 'right' },
-              { lat: 4.3, lng: 96.8, rank: 3, name: 'Aceh', value: '38.157', dir: 'right' },
-              { lat: -0.5, lng: 111.3, rank: 4, name: 'Kalimantan Barat', value: '31.876', dir: 'left' },
-              { lat: -3.2, lng: 138.5, rank: 5, name: 'Papua Tengah', value: '26.978', dir: 'left' },
-              { lat: -0.9, lng: 100.5, rank: 6, name: 'Sumatera Barat', value: '26.940', dir: 'right' },
-              { lat: 2.2, lng: 99.3, rank: 7, name: 'Sumatera Utara', value: '20.512', dir: 'right' },
-              { lat: 2.8, lng: 116.5, rank: 8, name: 'Kalimantan Utara', value: '19.716', dir: 'right' },
-              { lat: 0.5, lng: 101.7, rank: 9, name: 'Riau', value: '17.812', dir: 'left' },
-              { lat: -5.7, lng: 140.6, rank: 10, name: 'Papua Pegunungan', value: '16.468', dir: 'left' }
+              { lat: -1.60615374, lng: 113.416, rank: 1, name: 'Kalimantan Tengah', value: '56.900', dir: 'right' },
+              { lat: 0.45468874, lng: 116.451, rank: 2, name: 'Kalimantan Timur', value: '47.135', dir: 'right' },
+              { lat: 4.22572873, lng: 96.912, rank: 3, name: 'Aceh', value: '38.157', dir: 'right' },
+              { lat: -0.08652108, lng: 111.121, rank: 4, name: 'Kalimantan Barat', value: '31.876', dir: 'left' },
+              { lat: -3.91073545, lng: 136.624, rank: 5, name: 'Papua Tengah', value: '26.978', dir: 'left' },
+              { lat: -0.84851756, lng: 100.465, rank: 6, name: 'Sumatera Barat', value: '26.940', dir: 'right' },
+              { lat: 2.18843942, lng: 99.058, rank: 7, name: 'Sumatera Utara', value: '20.512', dir: 'right' },
+              { lat: 2.91502507, lng: 116.246, rank: 8, name: 'Kalimantan Utara', value: '19.716', dir: 'right' },
+              { lat: 0.50874453, lng: 101.815, rank: 9, name: 'Riau', value: '17.812', dir: 'left' },
+              { lat: -4.22893963, lng: 139.454, rank: 10, name: 'Papua Pegunungan', value: '16.245', dir: 'left' }
             ],
-            tables: [
-              {
-                title: 'Provinsi 2025',
-                headers: ['2025', '2024', 'Provinsi', '2025 (ha)', '2024 (ha)'],
-                rows: [
-                  ['1', '↑3', 'Kalimantan Tengah', '56.900', '33.389'],
-                  ['2', '↓1', 'Kalimantan Timur', '47.135', '44.483'],
-                  ['3', '↑7', 'Aceh', '38.157', '8.962'],
-                  ['4', '↓2', 'Kalimantan Barat', '31.876', '39.598'],
-                  ['5', '↑12', 'Papua Tengah', '26.978', '6.360'],
-                  ['6', '↑20', 'Sumatera Barat', '26.940', '2.606'],
-                  ['7', '↑10', 'Sumatera Utara', '20.512', '7.303'],
-                  ['8', '8', 'Kalimantan Utara', '19.716', '8.767'],
-                  ['9', '↓4', 'Riau', '17.812', '20.812'],
-                  ['10', '↑18', 'Papua Pegunungan', '16.468', '2.688'],
-                  ['11', '↑11', 'Sulawesi Tengah', '15.839', '7.019'],
-                  ['12', '↓6', 'Jambi', '15.334', '14.839'],
-                  ['13', '↑15', 'Bengkulu', '13.095', '4.300'],
-                  ['14', '↓5', 'Sumatera Selatan', '9.771', '20.184'],
-                  ['15', '↑17', 'Papua Barat Daya', '9.459', '2.966'],
-                  ['16', '↑21', 'Papua Barat', '9.108', '2.303'],
-                  ['17', '↓14', 'Sulawesi Tenggara', '9.104', '4.413'],
-                  ['18', '↑24', 'Papua', '8.421', '1.768'],
-                  ['19', '↓13', 'Papua Selatan', '7.248', '5.010'],
-                  ['20', '↑23', 'Sulawesi Selatan', '5.526', '1.928'],
-                  ['21', '↑26', 'Sulawesi Barat', '4.867', '1.170'],
-                  ['22', '↓19', 'Maluku Utara', '4.454', '2.648'],
-                  ['23', '↑22', 'Gorontalo', '3.849', '2.180'],
-                  ['24', '↑27', 'Maluku', '3.072', '889'],
-                  ['25', '↓16', 'Kalimantan Selatan', '2.656', '3.659'],
-                  ['26', '↑29', 'Nusa Tenggara Timur', '2.335', '497'],
-                  ['27', '↓25', 'Nusa Tenggara Barat', '1.813', '1.276'],
-                  ['28', '↑32', 'Lampung', '1.111', '145'],
-                  ['29', '↑30', 'Kepulauan Riau', '965', '387'],
-                  ['30', '↑35', 'Banten', '784', '55'],
-                  ['31', '↑33', 'Jawa Barat', '690', '87'],
-                  ['32', '↓31', 'Jawa Timur', '657', '209'],
-                  ['33', '↓28', 'Sulawesi Utara', '495', '650'],
-                  ['34', '↓9', 'Kepulauan Bangka Belitung', '454', '7.956'],
-                  ['35', '↑34', 'Jawa Tengah', '89', '59'],
-                  ['36', '36', 'Bali', '61', '7'],
-                  ['37', '37', 'Daerah Istimewa Yogyakarta', '0', '0.3'],
-                  ['Total', '', 'Seluruh provinsi', '433.751', '261.575']
-                ]
-              }
-            ]
+            dlUrl: '',
+
           },
 
           kabupaten: {
@@ -2631,7 +2589,8 @@
               { lat: -1.5, lng: 113.0, rank: 9, name: 'Gunung Mas', value: '6.539', dir: 'bottom' },
               { lat: 2.9, lng: 117.3, rank: 10, name: 'Bulungan', value: '6.208', dir: 'right' }
             ],
-            tables: []
+            tables: [],
+            dlUrl: ''
           },
 
           konservasi: {
@@ -2644,6 +2603,7 @@
               'Tekanan tertinggi terjadi di TN Kerinci Seblat dan Jayawijaya.'
             ],
             notesBox: [''],
+            dlUrl: '',
             markers: [
               { lat: -2.4, lng: 101.5, rank: 1, name: 'TN Kerinci Seblat', value: '6.362', dir: 'left' },
               { lat: -4.0, lng: 138.8, rank: 2, name: 'SM Pegunungan Jayawijaya', value: '3.210', dir: 'right' },
@@ -2677,7 +2637,8 @@
               { lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/def_pongo_pygmaeus.json' },
               { lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json' }
             ],
-            tables: []
+            tables: [],
+            dlUrl: ''
           },
 
           konsesi: {
@@ -2691,7 +2652,7 @@
             subCategories: {
               'kebun-kayu': {
                 title: 'Konsesi Kebun Kayu', kpiLabel: 'Total 10 teratas (kebun kayu)', kpiVal: '11.265',
-                othersLabel: '202 izin Lainnya', othersVal: '21.799', bullets: [''], geojsonFile: '/geojson/kebun-kayu.geojson',
+                othersLabel: '202 izin Lainnya', othersVal: '21.799', bullets: [''], geojsonFile: '/geojson/kebun-kayu.geojson', dlUrl: '',
                 markers: [
                   { lat: 2.126959285437297, lng: 117.55112979226557, rank: 1, name: 'PT TANJUNG REDEB HUTANI', value: 1408, dir: 'right' },
                   { lat: 0.397174210774834, lng: 110.992844937424763, rank: 2, name: 'PT FINNANTARA INTIGA', value: 1341, dir: 'left' },
@@ -2707,7 +2668,7 @@
               },
               'logging': {
                 title: 'Konsesi Logging', kpiLabel: 'Total 10 teratas (logging)', kpiVal: '20.749',
-                othersLabel: '227 izin Lainnya', othersVal: '53.661', bullets: [''], geojsonFile: '/geojson/logging.geojson',
+                othersLabel: '227 izin Lainnya', othersVal: '53.661', bullets: [''], geojsonFile: '/geojson/logging.geojson', dlUrl: '',
                 markers: [
                   { lat: 0.881264893236657, lng: 117.026904047300249, rank: 1, name: 'PT KIANI LESTARI', value: 3739, dir: 'right' },
                   { lat: -1.252358059458737, lng: 114.487610383463576, rank: 2, name: 'PT DASA INTIGA', value: 3195, dir: 'left' },
@@ -2723,7 +2684,7 @@
               },
               'sawit': {
                 title: 'Konsesi Sawit', kpiLabel: 'Total 10 teratas (sawit)', kpiVal: '13.610',
-                othersLabel: '709 izin Lainnya', othersVal: '24.300', bullets: [''], geojsonFile: '/geojson/sawit.geojson',
+                othersLabel: '709 izin Lainnya', othersVal: '24.300', bullets: [''], geojsonFile: '/geojson/sawit.geojson', dlUrl: '',
                 markers: [
                   { lat: -1.171071756797254, lng: 131.391544937632204, rank: 1, name: 'Inti Kebun Lestari', value: 2624, dir: 'top' },
                   { lat: 0.675035799730648, lng: 121.473335486617259, rank: 2, name: 'Banyan Tumbuh Lestari', value: 2094, dir: 'right' },
@@ -2739,7 +2700,7 @@
               },
               'tambang': {
                 title: 'Konsesi Tambang', kpiLabel: 'Total 10 teratas (tambang)', kpiVal: '8.929',
-                othersLabel: '1.131 izin Lainnya', othersVal: '32.233', bullets: [''], geojsonFile: '/geojson/tambang.geojson',
+                othersLabel: '1.131 izin Lainnya', othersVal: '32.233', bullets: [''], geojsonFile: '/geojson/tambang.geojson', dlUrl: '',
                 markers: [
                   { lat: 2.138922060693282, lng: 117.395321188956885, rank: 1, name: 'Berau Coal (Batubara)', value: 1473, dir: 'right' },
                   { lat: -3.003818526025582, lng: 121.809448329238492, rank: 2, name: 'Sulawesi Cahaya Mineral (Nikel)', value: 1085, dir: 'right' },
@@ -2994,7 +2955,7 @@
             maxVisibleRows = Math.max(maxVisibleRows, countRows(mode.markers || mode.species || [], mode.kpiVal || null, mode.bubble?.value || null));
           });
 
-          function appendSidebarCard(heading, markers, totalVal, othersVal, targetRows = 0) {
+          function appendSidebarCard(heading, markers, totalVal, othersVal, targetRows = 0, dlUrl = '') {
             if (!markers || !markers.length) return;
             const card = document.createElement('div');
             card.className = 'sb-card';
@@ -3094,20 +3055,29 @@
             scrollWrap.appendChild(table);
             card.appendChild(scrollWrap);
 
-            const dlBtn = document.createElement('button');
+            const dlBtn = document.createElement('a');
             dlBtn.className = 'sb-card-dl-btn';
             dlBtn.innerHTML = `<svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v6M2.5 5l3 3 3-3M1 9.5h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Unduh CSV`;
-            dlBtn.addEventListener('click', () => {
-              const rows = [['Lokasi', 'ha']];
-              markers.forEach(m => rows.push([m.name, m.value]));
-              if (totalVal) rows.push(['Total', totalVal]);
-              if (othersVal) rows.push(['Lainnya', othersVal]);
-              const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
-              const a = document.createElement('a');
-              a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
-              a.download = heading.replace(/[^a-z0-9]/gi, '_') + '.csv';
-              a.click();
-            });
+            if (dlUrl) {
+              dlBtn.href = dlUrl;
+              dlBtn.target = '_blank';
+              dlBtn.rel = 'noopener noreferrer';
+              dlBtn.download = '';
+            } else {
+              dlBtn.href = '#';
+              dlBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const rows = [['Lokasi', 'ha']];
+                markers.forEach(m => rows.push([m.name, m.value]));
+                if (totalVal) rows.push(['Total', totalVal]);
+                if (othersVal) rows.push(['Lainnya', othersVal]);
+                const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+                const a = document.createElement('a');
+                a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+                a.download = heading.replace(/[^a-z0-9]/gi, '_') + '.csv';
+                a.click();
+              });
+            }
             card.appendChild(dlBtn);
             wrap.appendChild(card);
           }
@@ -3118,7 +3088,7 @@
               activeKonsesiCats.forEach(ck => {
                 const cat = MODES.konsesi.subCategories[ck];
                 if (!cat) return;
-                appendSidebarCard(catNames[ck] || ck, cat.markers || [], cat.kpiVal, cat.othersVal || null, maxVisibleRows);
+                appendSidebarCard(catNames[ck] || ck, cat.markers || [], cat.kpiVal, cat.othersVal || null, maxVisibleRows, cat.dlUrl || '');
               });
               return;
             }
@@ -3126,7 +3096,7 @@
             const mode = MODES[modeKey];
             if (!mode) return;
             const markers = mode.markers || mode.species || [];
-            appendSidebarCard(modeNames[modeKey] || modeKey, markers, mode.kpiVal || null, mode.bubble?.value || null, maxVisibleRows);
+            appendSidebarCard(modeNames[modeKey] || modeKey, markers, mode.kpiVal || null, mode.bubble?.value || null, maxVisibleRows, mode.dlUrl || '');
           });
 
           updateSidebarDynamicHeight();

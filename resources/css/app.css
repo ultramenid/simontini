@@ -1373,7 +1373,7 @@ footer {
 #sidebar-table-wrap { padding: 12px 6px 20px; display: flex; flex-direction: row; justify-content: flex-start; align-items: stretch; gap: 6px; overflow-x: auto; overflow-y: hidden; scrollbar-width: thin; scrollbar-color: rgba(139,42,26,.3) transparent; }
 #sidebar-table-wrap::-webkit-scrollbar { height: 4px; }
 #sidebar-table-wrap::-webkit-scrollbar-thumb { background: rgba(139,42,26,.28); border-radius: 2px; }
-.sb-card { margin: 0; min-width: 155px; flex-shrink: 0; display: flex; flex-direction: column; border: 1px solid rgba(139,42,26,.28); border-radius: 5px; overflow: hidden; background: #faf8f3; }
+.sb-card { margin: 0; min-width: 155px; flex-shrink: 0; display: flex; flex-direction: column; border: 1px solid rgba(139,42,26,.28); border-radius: 0px; background: #faf8f3; }
 .sb-card:first-child { margin-left: auto; }
 .sb-card:last-child { margin-right: auto; }
 .sb-card-head { padding: 5px 8px 4px; font-size: .47rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: #f5f0e8; white-space: nowrap; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center; background: #6e1208; }
@@ -1516,7 +1516,7 @@ footer {
 @keyframes satwa-pulse { from { box-shadow: 0 0 0 2px rgba(192,64,48,.3); } to { box-shadow: 0 0 0 6px rgba(192,64,48,.55); } }
 
 /* ── PETA TEMATIK WRAPPER ── */
-#peta-tematik { display: flex; height: 850px; overflow: hidden; width: 100%; font-family: 'Poppins', sans-serif; }
+#peta-tematik { display: flex; height: 50vh; overflow: hidden; width: 100%; font-family: 'Poppins', sans-serif; }
 
 /* ── PETA TEMATIK RESPONSIVE ── */
 @media (max-width: 1280px) {
