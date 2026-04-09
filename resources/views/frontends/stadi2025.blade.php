@@ -46,9 +46,9 @@
       </div>
       <div class="hero-divider"></div>
       <!-- <div class="hero-stat">
-                                                                     <span class="hs-val">+66%</span>
-                                                                     <span class="hs-unit">Peningkatan dari 2024</span>
-                                                                     </div> -->
+                                           <span class="hs-val">+66%</span>
+                                           <span class="hs-unit">Peningkatan dari 2024</span>
+                                           </div> -->
       <div class="hero-divider"></div>
       <div class="hero-desc">
         Deforestasi melonjak, saatnya pemerintah menerbitkan
@@ -869,23 +869,27 @@
               <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
               <span class="mode-btn-label">Konsesi</span>
             </button>
-          </div>
-          <div id="konsesi-submenu" class="hidden">
-            <button class="cat-btn" data-cat="kebun-kayu">Kebun Kayu</button>
-            <button class="cat-btn" data-cat="logging">Logging</button>
-            <button class="cat-btn" data-cat="sawit">Sawit</button>
-            <button class="cat-btn" data-cat="tambang">Tambang</button>
+            <div id="konsesi-submenu" class="hidden">
+              <button class="cat-btn" data-cat="kebun-kayu"><span class="cat-btn-switch" aria-hidden="true"><span
+                    class="cat-btn-knob"></span></span><span class="cat-btn-label">Kebun Kayu</span></button>
+              <button class="cat-btn" data-cat="logging"><span class="cat-btn-switch" aria-hidden="true"><span
+                    class="cat-btn-knob"></span></span><span class="cat-btn-label">Logging</span></button>
+              <button class="cat-btn" data-cat="sawit"><span class="cat-btn-switch" aria-hidden="true"><span
+                    class="cat-btn-knob"></span></span><span class="cat-btn-label">Sawit</span></button>
+              <button class="cat-btn" data-cat="tambang"><span class="cat-btn-switch" aria-hidden="true"><span
+                    class="cat-btn-knob"></span></span><span class="cat-btn-label">Tambang</span></button>
+            </div>
           </div>
         </div>
 
-        <div id="peta-tematik" style="height: 70vh" class="flex flex-col overflow-hidden">
+        <div id="peta-tematik" style="height: 87vh" class="flex flex-col overflow-hidden">
 
-          <main id="wrap" class="relative flex-1 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
+          <main id="wrap" class="relative flex-1 min-h-0 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
             <div id="map" class="w-full flex-1"></div>
             <div id="map-loading"
               class="hidden absolute inset-0 z-[700] flex flex-col items-center justify-center pointer-events-none">
               <div class="map-loading-spinner"></div>
-              <div class="map-loading-label">Memuat data provinsi…</div>
+              <div class="map-loading-label">Memuat data peta..</div>
             </div>
             <div id="satwa-badges"
               class="hidden absolute top-4 right-[14px] z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-end gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[60vw]">
@@ -898,30 +902,16 @@
                 Deforestasi berbasis provinsi</h2>
             </div>
 
-            <div id="bl-stack" class="absolute left-[14px] bottom-[14px] z-[610] flex flex-col items-start gap-2 w-44">
-              <div id="kpi-float"
-                class="bg-[rgba(20,20,20,.82)] backdrop-blur-[4px] border-l-[3px] border-l-[#8b2a1a] rounded-md px-3 py-[7px] w-full text-[#f5f0e8]">
-                <button id="kpi-toggle" onclick="kpiFloatToggle()" style="display:none"
-                  class="w-full flex flex-col items-center pt-[10px] pb-[8px] cursor-pointer bg-transparent border-0 outline-none gap-[5px]">
-                  <span class="block w-7 h-[3px] rounded-full bg-white/30"></span>
-                  <svg id="kpi-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none"
-                    style="transition:transform .25s ease">
-                    <path d="M1 7L7 1L13 7" stroke="rgba(245,240,232,.5)" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </button>
-                <div class="text-[.5rem] tracking-[.08em] uppercase text-[#d4c4a0]" id="kpi-label">Total</div>
-                <div class="text-[1.25rem] font-bold leading-none mt-[2px]" id="kpi-val">0</div>
-                <div class="text-[.5rem] text-[#d4c4a0] mt-[2px]" id="kpi-unit">hektare</div>
-                <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]"></ul>
+            <div id="bl-stack" class="hidden">
+              <div id="kpi-float">
+                <div id="kpi-items"></div>
               </div>
-            </div><!-- /#bl-stack -->
+            </div>
 
-            <div id="others-bubble"
-              class="absolute right-[14px] top-[10px] z-[620] w-[120px] h-[120px] rounded-full bg-[rgba(192,64,48,.95)] text-white hidden text-center items-center justify-center flex-col p-3 shadow-[0_8px_26px_rgba(139,42,26,.35)]">
-              <div class="text-[.58rem] leading-[1.3]" id="bubble-label">Kabupaten lainnya</div>
-              <div class="text-[1.4rem] font-bold leading-none mt-[3px]" id="bubble-val">0</div>
-              <div class="text-[.5rem] mt-[1px] opacity-90" id="bubble-unit">hektare</div>
+            <div id="others-bubble" class="hidden" style="display:none!important">
+              <div id="bubble-label"></div>
+              <div id="bubble-val"></div>
+              <div id="bubble-unit"></div>
             </div>
 
             <div id="notes-wrap" class="absolute left-[14px] bottom-[12px] z-[620] w-[min(360px,38vw)] flex flex-col">
@@ -934,9 +924,7 @@
 
             <div id="table-panel"
               class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
-              <button id="table-toggle"
-                class="absolute left-[-36px] top-1/2 -translate-y-1/2 z-10 [writing-mode:vertical-rl] [text-orientation:mixed] bg-[#1a1a1a] text-[#f5f0e8] border-0 rounded-l-lg py-5 px-[9px] text-[.6rem] font-bold tracking-[.1em] uppercase cursor-pointer shadow-[-4px_0_14px_rgba(0,0,0,.3)] transition-colors leading-none whitespace-nowrap hidden">Tabel
-                ▶</button>
+              <button id="table-toggle" style="display:none!important"></button>
               <div class="flex items-center justify-between px-4 py-3 border-b border-white/[.1] shrink-0">
                 <span class="text-[.65rem] font-bold tracking-[.1em] uppercase text-[#d4c4a0]">Tabel Data</span>
                 <button id="table-close"
@@ -953,9 +941,9 @@
 
           <aside id="sidebar"
             class="w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] border-t border-white/[.08] flex flex-col overflow-hidden"
-            style="height:225px">
+            style="min-height:180px">
             <span id="sidebar-mode-label" class="hidden"></span>
-            <div id="sidebar-table-wrap" class="flex-1 flex flex-row items-stretch"></div>
+            <div id="sidebar-table-wrap" class="flex-1 flex flex-row items-stretch justify-start"></div>
           </aside>
         </div>
 
@@ -1049,20 +1037,20 @@
 
 
         <!-- <ul class="insight-list">
-                                                                  <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                                                  <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                                                  <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                                                  <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                                                </ul> -->
+                                                                    <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                    <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                    <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                    <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                  </ul> -->
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
             <div x-data="{ active: 0, images: [
-                            { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                            { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                            { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                          ]}">
+                              { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                            ]}">
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" alt="Simontini"
                   @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1138,10 +1126,10 @@
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
             <div x-data="{ active: 0, images: [
-                          { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                          { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                          { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                        ]}">
+                            { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                            { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                            { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                          ]}">
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" alt="Simontini"
                   @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1226,22 +1214,22 @@
         </p>
 
         <!-- <div class="callout">
-                                                                  <strong>Faktor pendorong utama:</strong>
-                                                                  <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                                                    <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                                                    <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                                                    <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                                                  </ul>
-                                                                </div> -->
+                                                                    <strong>Faktor pendorong utama:</strong>
+                                                                    <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                      <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                      <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                      <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                    </ul>
+                                                                  </div> -->
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
             <div x-data="{ active: 0, images: [
-                        { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                        { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                        { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                      ]}">
+                          { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                          { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                          { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                        ]}">
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" alt="Simontini"
                   @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1315,10 +1303,10 @@
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
             <div x-data="{ active: 0, images: [
-                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                    ]}">
+                        { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                        { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                        { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                      ]}">
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" alt="Simontini"
                   @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1388,10 +1376,10 @@
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
             <div x-data="{ active: 0, images: [
-                    { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                    { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                    { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                  ]}">
+                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                    ]}">
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" alt="Simontini"
                   @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1469,19 +1457,19 @@
               <div class="viz-frame viz-frame--padded">
 
                 <div x-data="{
-                            currentSlide: 0,
-                            totalSlides: 5,
-                            startX: 0,
-                            startSwipe(e) { this.startX = e.touches[0].clientX; },
-                            handleTouchMove(e) {
-                              let diff = this.startX - e.touches[0].clientX;
-                              if (Math.abs(diff) > 50) {
-                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                this.startX = e.touches[0].clientX;
+                              currentSlide: 0,
+                              totalSlides: 5,
+                              startX: 0,
+                              startSwipe(e) { this.startX = e.touches[0].clientX; },
+                              handleTouchMove(e) {
+                                let diff = this.startX - e.touches[0].clientX;
+                                if (Math.abs(diff) > 50) {
+                                  if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                  else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                  this.startX = e.touches[0].clientX;
+                                }
                               }
-                            }
-                          }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                            }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
                   class="relative bg-gray-100 pb-4 mt-4 max-w-5xl mx-auto z-20 overflow-hidden">
 
 
@@ -1494,8 +1482,8 @@
 
                           <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
                             alt="RDPU RUU Kehutanan {{ $i }}" class="w-full object-cover object-top cursor-pointer
-                                                     h-[220px] 
-                                                     sm:h-[60vh]" />
+                                                         h-[220px] 
+                                                         sm:h-[60vh]" />
 
                         </a>
                       </div>
@@ -1552,7 +1540,7 @@
               </p>
             </div>
           </div>
-        <div class="method-step border-b">
+          <div class="method-step border-b">
             <div class="ms-num">3.</div>
             <div class="">
               <h4 class="chapter-title">Percepatan perluasan area preservasi, terutama di luar kawasan hutan</h4><br>
@@ -1598,19 +1586,19 @@
               <div class="viz-frame viz-frame--padded">
 
                 <div x-data="{
-                            currentSlide: 0,
-                            totalSlides: 2,
-                            startX: 0,
-                            startSwipe(e) { this.startX = e.touches[0].clientX; },
-                            handleTouchMove(e) {
-                              let diff = this.startX - e.touches[0].clientX;
-                              if (Math.abs(diff) > 50) {
-                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                this.startX = e.touches[0].clientX;
+                              currentSlide: 0,
+                              totalSlides: 2,
+                              startX: 0,
+                              startSwipe(e) { this.startX = e.touches[0].clientX; },
+                              handleTouchMove(e) {
+                                let diff = this.startX - e.touches[0].clientX;
+                                if (Math.abs(diff) > 50) {
+                                  if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                  else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                  this.startX = e.touches[0].clientX;
+                                }
                               }
-                            }
-                          }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                            }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
                   class="relative bg-gray-100 pb-4 mt-4 max-w-5xl mx-auto z-20 overflow-hidden">
 
 
@@ -1623,8 +1611,8 @@
 
                           <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
                             alt="RDPU RUU Kehutanan {{ $i }}" class="w-full object-cover object-top cursor-pointer
-                                                     h-[220px] 
-                                                     sm:h-[60vh]" />
+                                                         h-[220px] 
+                                                         sm:h-[60vh]" />
 
                         </a>
                       </div>
@@ -1745,17 +1733,11 @@
     <script>
       (function () {
         function createLightbox(selectorID) {
-          GLightbox({
+          const lightbox = GLightbox({
             selector: selectorID,
             touchNavigation: true,
-
-            // 🔥 MATIKAN SEMUA ANIMASI
-            openEffect: 'none',
-            closeEffect: 'none',
-            slideEffect: 'none'
           });
         }
-
         for (let i = 1; i <= 21; i++) {
           createLightbox(`.glightbox${i}`);
         }
@@ -2519,14 +2501,26 @@
           maxZoom: isMobile ? 3 : 9
         }).setView(isMobile ? [-7.3, 118] : [-4.3, 118], isMobile ? 3 : 5);
 
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+        L.tileLayer('', {
           attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
           maxZoom: 19
         }).addTo(map);
 
+        // Custom panes so toggling choropleth layers is a single CSS display flip
+        map.createPane('choroplethPane'); map.getPane('choroplethPane').style.zIndex = 350;
+        map.createPane('choroplethLabelPane'); map.getPane('choroplethLabelPane').style.zIndex = 351;
+        map.getPane('choroplethPane').style.display = 'none';
+        map.getPane('choroplethLabelPane').style.display = 'none';
+        map.createPane('kabupatenPane'); map.getPane('kabupatenPane').style.zIndex = 352;
+        map.createPane('kabupatenLabelPane'); map.getPane('kabupatenLabelPane').style.zIndex = 353;
+        map.getPane('kabupatenPane').style.display = 'none';
+        map.getPane('kabupatenLabelPane').style.display = 'none';
+
         const stadi2025Layer = L.layerGroup().addTo(map);
         const choroplethLayer = L.layerGroup().addTo(map);
         const choroplethLabelLayer = L.layerGroup().addTo(map);
+        const kabupatenLayer = L.layerGroup().addTo(map);
+        const kabupatenLabelLayer = L.layerGroup().addTo(map);
         const markerLayer = L.layerGroup().addTo(map);
         const polygonLayer = L.layerGroup().addTo(map);
         const calloutLayer = { clearLayers: () => { } };
@@ -2536,12 +2530,12 @@
         let currentMode = 'provinsi';
         const activeModes = new Set();
         let currentKonsesiCat = null;
+        const activeKonsesiCats = new Set();
         let activeEntry = null;
         let activePolygonSpecies = null;
         let stadi2025Loaded = false;
         let choroplethGeoLayer = null;
-        let choroplethCache = null;
-        let choroplethFeatures = [];
+        let kabupatenGeoLayer = null;
 
         const MODES = {
           provinsi: {
@@ -2766,13 +2760,15 @@
         function clearModeVisuals() {
           markerLayer.clearLayers();
           polygonLayer.clearLayers();
-          // Keep choropleth alive when provinsi stays active — rebuilding ~34 GeoJSON
-          // features with event listeners is the main source of toggle lag.
-          if (!activeModes.has('provinsi')) {
-            choroplethLayer.clearLayers();
-            choroplethLabelLayer.clearLayers();
-            choroplethGeoLayer = null;
-            choroplethFeatures = [];
+          // Instantly hide/show choropleth layers via CSS pane display — zero DOM traversal.
+          // Kabupaten overrides provinsi: hide provinsi pane when kabupaten is active
+          if (!activeModes.has('provinsi') || activeModes.has('kabupaten')) {
+            map.getPane('choroplethPane').style.display = 'none';
+            map.getPane('choroplethLabelPane').style.display = 'none';
+          }
+          if (!activeModes.has('kabupaten')) {
+            map.getPane('kabupatenPane').style.display = 'none';
+            map.getPane('kabupatenLabelPane').style.display = 'none';
           }
           map.closePopup();
           markerRegistry = [];
@@ -2815,10 +2811,6 @@
         }
 
         function focusMarkerByLabel(label, rowEl = null) {
-          if (activeModes.has('provinsi') && choroplethGeoLayer) {
-            highlightChoroplethByName(label, rowEl);
-            return;
-          }
           const found = findMarkerByLabel(label);
           if (!found) return;
           if (rowEl) { clearActiveRow(); rowEl.classList.add('active-row'); activeRow = rowEl; }
@@ -2882,14 +2874,14 @@
           badge.dataset.species = item.name;
           const shortName = item.name.split(' ').slice(-2).join(' ');
           badge.innerHTML = `
-                                                                <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                                                <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                                                <div class="satwa-badge-detail">
-                                                                  <span class="si-name">${item.name}</span>
-                                                                  <span class="si-val">${item.value}</span>
-                                                                  <span class="si-unit">habitat terdampak</span>
-                                                                </div>
-                                                              `;
+                                      <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                      <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                      <div class="satwa-badge-detail">
+                                        <span class="si-name">${item.name}</span>
+                                        <span class="si-val">${item.value}</span>
+                                        <span class="si-unit">habitat terdampak</span>
+                                      </div>
+                                    `;
           badge.addEventListener('click', async (e) => {
             e.stopPropagation();
             const isActive = badge.classList.contains('active');
@@ -2973,64 +2965,104 @@
 
         function renderAllSidebarCards() {
           const wrap = document.getElementById('sidebar-table-wrap');
-          const lbl  = document.getElementById('sidebar-mode-label');
+          const lbl = document.getElementById('sidebar-mode-label');
           if (!wrap) return;
           wrap.innerHTML = '';
           const modeNames = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna', konsesi: 'Konsesi' };
-          const catNames  = { 'kebun-kayu': 'Kebun Kayu', logging: 'Logging', sawit: 'Sawit', tambang: 'Tambang' };
-          if (activeModes.size === 0) {
-            if (lbl) lbl.textContent = '—';
-            return;
-          }
+          const catNames = { 'kebun-kayu': 'Kebun Kayu', logging: 'Logging', sawit: 'Sawit', tambang: 'Tambang' };
+          if (activeModes.size === 0) { if (lbl) lbl.textContent = '—'; return; }
           if (lbl) lbl.textContent = [...activeModes].map(mk => modeNames[mk] || mk).join(', ');
+
+          const countRows = (markers, totalVal, othersVal) => {
+            let n = (markers?.length || 0);
+            if (totalVal) n += 1;
+            if (othersVal) n += 1;
+            return n;
+          };
+
+          let maxVisibleRows = 0;
           [...activeModes].forEach(modeKey => {
-            let markers = [], heading = modeNames[modeKey] || modeKey, totalVal = null, othersVal = null;
             if (modeKey === 'konsesi') {
-              if (currentKonsesiCat && MODES.konsesi.subCategories[currentKonsesiCat]) {
-                const cat = MODES.konsesi.subCategories[currentKonsesiCat];
-                markers = cat.markers || [];
-                heading = catNames[currentKonsesiCat] || currentKonsesiCat;
-                totalVal = cat.kpiVal;
-                othersVal = cat.othersVal || null;
-              } else {
-                const card = document.createElement('div');
-                card.className = 'sb-card';
-                card.innerHTML = '<div class="sb-card-head">Konsesi</div><div class="stbl-empty">Pilih kategori konsesi.</div>';
-                wrap.appendChild(card);
-                return;
-              }
-            } else {
-              const mode = MODES[modeKey];
-              if (!mode) return;
-              markers = mode.markers || mode.species || [];
-              totalVal = mode.kpiVal || null;
-              othersVal = mode.bubble?.value || null;
+              activeKonsesiCats.forEach(ck => {
+                const c = MODES.konsesi.subCategories[ck];
+                if (c) maxVisibleRows = Math.max(maxVisibleRows, countRows(c.markers || [], c.kpiVal, c.othersVal || null));
+              });
+              return;
             }
-            if (!markers.length) return;
+            const mode = MODES[modeKey];
+            if (!mode) return;
+            maxVisibleRows = Math.max(maxVisibleRows, countRows(mode.markers || mode.species || [], mode.kpiVal || null, mode.bubble?.value || null));
+          });
+
+          function appendSidebarCard(heading, markers, totalVal, othersVal, targetRows = 0) {
+            if (!markers || !markers.length) return;
             const card = document.createElement('div');
             card.className = 'sb-card';
             const head = document.createElement('div');
             head.className = 'sb-card-head';
-            head.textContent = heading;
+            head.innerHTML = `<span class="sb-card-head-title">${heading}</span><span class="sb-card-head-badge">TOP 10</span>`;
             card.appendChild(head);
             const table = document.createElement('table');
             table.className = 'stbl';
+            const formattedVals = markers.map(m => {
+              const raw = m.value;
+              const num = typeof raw === 'number' ? raw : parseFloat(String(raw).replace(/\./g, '').replace(',', '.'));
+              return isNaN(num) ? String(raw) : num.toLocaleString('id-ID');
+            });
+            const maxValLen = Math.max(
+              5,
+              ...formattedVals.map(v => String(v).length),
+              String(totalVal || '').length,
+              String(othersVal || '').length
+            );
+            const valueColCh = Math.max(7, Math.min(14, maxValLen + 1));
+            table.style.setProperty('--val-col', `${valueColCh}ch`);
+
+            const colgroup = document.createElement('colgroup');
+            const colName = document.createElement('col');
+            colName.className = 'stbl-col-name';
+            const colVal = document.createElement('col');
+            colVal.className = 'stbl-col-val';
+            colgroup.appendChild(colName);
+            colgroup.appendChild(colVal);
+            table.appendChild(colgroup);
+            const thead = document.createElement('thead');
+            const trH = document.createElement('tr');
+            trH.className = 'stbl-colhead';
+            const thN = document.createElement('th'); thN.textContent = 'Lokasi';
+            const thV = document.createElement('th'); thV.textContent = 'ha';
+            trH.appendChild(thN); trH.appendChild(thV);
+            thead.appendChild(trH);
+            table.appendChild(thead);
             const tbody = document.createElement('tbody');
-            markers.forEach(m => {
+            markers.forEach((m, i) => {
               const tr = document.createElement('tr');
               tr.className = 'stbl-row';
               tr.addEventListener('click', () => focusMarkerByLabel(m.name, tr));
               const tdN = document.createElement('td');
               tdN.className = 'stbl-name';
               tdN.textContent = m.name;
-              const raw = m.value;
-              const num = typeof raw === 'number' ? raw : parseFloat(String(raw).replace(/\./g, '').replace(',', '.'));
               const tdV = document.createElement('td');
               tdV.className = 'stbl-val';
-              tdV.textContent = isNaN(num) ? raw : num.toLocaleString('id-ID');
+              tdV.textContent = formattedVals[i];
               tr.appendChild(tdN); tr.appendChild(tdV);
               tbody.appendChild(tr);
             });
+            const currentRows = countRows(markers, totalVal, othersVal);
+            const fillerRows = Math.max(0, targetRows - currentRows);
+            for (let i = 0; i < fillerRows; i += 1) {
+              const trF = document.createElement('tr');
+              trF.className = 'stbl-row stbl-filler';
+              const tdFN = document.createElement('td');
+              tdFN.className = 'stbl-name';
+              tdFN.innerHTML = '&nbsp;';
+              const tdFV = document.createElement('td');
+              tdFV.className = 'stbl-val';
+              tdFV.innerHTML = '&nbsp;';
+              trF.appendChild(tdFN); trF.appendChild(tdFV);
+              tbody.appendChild(trF);
+            }
+
             if (totalVal) {
               const trT = document.createElement('tr');
               trT.className = 'stbl-total';
@@ -3055,6 +3087,7 @@
               trL.appendChild(tdLN); trL.appendChild(tdLV);
               tbody.appendChild(trL);
             }
+
             table.appendChild(tbody);
             const scrollWrap = document.createElement('div');
             scrollWrap.className = 'stbl-scroll';
@@ -3069,7 +3102,7 @@
               markers.forEach(m => rows.push([m.name, m.value]));
               if (totalVal) rows.push(['Total', totalVal]);
               if (othersVal) rows.push(['Lainnya', othersVal]);
-              const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+              const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
               const a = document.createElement('a');
               a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
               a.download = heading.replace(/[^a-z0-9]/gi, '_') + '.csv';
@@ -3077,7 +3110,60 @@
             });
             card.appendChild(dlBtn);
             wrap.appendChild(card);
+          }
+
+          [...activeModes].forEach(modeKey => {
+            if (modeKey === 'konsesi') {
+              if (!activeKonsesiCats.size) return;
+              activeKonsesiCats.forEach(ck => {
+                const cat = MODES.konsesi.subCategories[ck];
+                if (!cat) return;
+                appendSidebarCard(catNames[ck] || ck, cat.markers || [], cat.kpiVal, cat.othersVal || null, maxVisibleRows);
+              });
+              return;
+            }
+
+            const mode = MODES[modeKey];
+            if (!mode) return;
+            const markers = mode.markers || mode.species || [];
+            appendSidebarCard(modeNames[modeKey] || modeKey, markers, mode.kpiVal || null, mode.bubble?.value || null, maxVisibleRows);
           });
+
+          updateSidebarDynamicHeight();
+          buildLegend();
+        }
+
+        function updateSidebarDynamicHeight() {
+          const sidebar = document.getElementById('sidebar');
+          const wrap = document.getElementById('sidebar-table-wrap');
+          if (!sidebar || !wrap) return;
+
+          const cards = wrap.querySelectorAll('.sb-card');
+          if (!cards.length) {
+            sidebar.style.height = '180px';
+            return;
+          }
+
+          const prevHeight = sidebar.style.height;
+          sidebar.style.height = 'auto';
+
+          let maxCardHeight = 0;
+          cards.forEach(card => {
+            maxCardHeight = Math.max(maxCardHeight, card.scrollHeight);
+          });
+
+          const wrapStyle = getComputedStyle(wrap);
+          const sidebarStyle = getComputedStyle(sidebar);
+          const padTop = parseFloat(wrapStyle.paddingTop) || 0;
+          const padBottom = parseFloat(wrapStyle.paddingBottom) || 0;
+          const borderTop = parseFloat(sidebarStyle.borderTopWidth) || 0;
+          const borderBottom = parseFloat(sidebarStyle.borderBottomWidth) || 0;
+
+          const target = Math.ceil(maxCardHeight + padTop + padBottom + borderTop + borderBottom);
+          const minH = 180;
+          sidebar.style.height = `${Math.max(minH, target)}px`;
+
+          if (!sidebar.style.height && prevHeight) sidebar.style.height = prevHeight;
         }
         // ─────────────────────────────────────────────────────────────────────────
 
@@ -3089,37 +3175,32 @@
         }
 
         function loadProvinsiChoropleth() {
-          if (choroplethCache) { buildChoropleth(choroplethCache); return; }
-          setMapLoading(true);
-          var url = 'https://aws.simontini.id/geoserver/wfs?service=WFS&version=2.0.0' +
-            '&request=GetFeature&typeNames=proteus:PROVINSI_STADI_2025' +
-            '&outputFormat=application/json&srsname=EPSG:4326';
-          fetch(url)
-            .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-            .then(function (data) { choroplethCache = data; buildChoropleth(data); })
-            .catch(function (err) {
-              console.warn('Gagal memuat choropleth WFS:', err);
-              var el = document.getElementById('map-loading');
-              if (el) { el.querySelector('.map-loading-label').textContent = 'Gagal memuat data.'; }
-            })
-            .finally(function () { setMapLoading(false); });
+          if (choroplethGeoLayer) { showChoroplethPanes(); return; }
+          choroplethGeoLayer = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+            layers: 'proteus:PROVINSI_STADI_2025',
+            format: 'image/png',
+            transparent: true,
+            version: '1.1.0',
+            pane: 'choroplethPane'
+          }).addTo(choroplethLayer);
+          showChoroplethPanes();
         }
 
-        function highlightChoroplethByName(name, rowEl) {
-          if (!choroplethGeoLayer) return;
-          choroplethGeoLayer.resetStyle();
-          var norm = function (s) { return (s || '').toLowerCase().replace(/[\s\-\.]/g, ''); };
-          var q = norm(name);
-          var found = choroplethFeatures.find(function (f) {
-            var n = norm(f.name);
-            return n === q || n.includes(q) || q.includes(n);
-          });
-          if (!found) return;
-          found.layer.setStyle({ fillOpacity: 0.95, weight: 2, color: '#1a1a1a', fillColor: '#8b2a1a' });
-          found.layer.bringToFront();
-          if (rowEl) { clearActiveRow(); rowEl.classList.add('active-row'); activeRow = rowEl; }
-          var bounds = found.layer.getBounds();
-          map.flyToBounds(bounds, { maxZoom: 7, padding: [40, 40], duration: 0.5 });
+        function showKabupatenPanes() {
+          map.getPane('kabupatenPane').style.display = '';
+          map.getPane('kabupatenLabelPane').style.display = '';
+        }
+
+        function loadKabupatenChoropleth() {
+          if (kabupatenGeoLayer) { showKabupatenPanes(); return; }
+          kabupatenGeoLayer = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+            layers: 'proteus:KABUPATEN_STADI_2025',
+            format: 'image/png',
+            transparent: true,
+            version: '1.1.0',
+            pane: 'kabupatenPane'
+          }).addTo(kabupatenLayer);
+          showKabupatenPanes();
         }
         // ─────────────────────────────────────────────────────────────────────────
 
@@ -3127,9 +3208,7 @@
           const mode = MODES[modeKey];
           if (!mode) return;
           currentMode = modeKey;
-          // When kabupaten is active, suppress provinsi visuals entirely
-          if (modeKey === 'provinsi' && activeModes.has('kabupaten')) return;
-          if (mode.markers) mode.markers.forEach(createRankMarker);
+          if (mode.markers) mode.markers.forEach(m => createRankMarker(m, modeKey));
           if (mode.species) mode.species.forEach(createSpeciesMarker);
           const tableWrap = document.getElementById('table-wrap');
           if (mode.tables && mode.tables.length) {
@@ -3146,8 +3225,23 @@
             });
           }
           if (modeKey === 'megafauna') positionSatwaBadges(mode.species);
-          // Skip rebuild if choropleth layer is already rendered (preserved by clearModeVisuals)
-          if (modeKey === 'provinsi' && !choroplethGeoLayer) loadProvinsiChoropleth();
+          // Show choropleth panes or load WFS data for the first time
+          if (modeKey === 'provinsi') {
+            if (!choroplethGeoLayer) {
+              loadProvinsiChoropleth();
+            } else {
+              map.getPane('choroplethPane').style.display = '';
+              map.getPane('choroplethLabelPane').style.display = '';
+            }
+          }
+          if (modeKey === 'kabupaten') {
+            if (!kabupatenGeoLayer) {
+              loadKabupatenChoropleth();
+            } else {
+              map.getPane('kabupatenPane').style.display = '';
+              map.getPane('kabupatenLabelPane').style.display = '';
+            }
+          }
         }
 
         function toggleMode(modeKey) {
@@ -3166,12 +3260,17 @@
             // Update sidebar KPI/title from the most recently activated mode still active
             const uiKey = activeModes.has(currentMode) ? currentMode : [...activeModes].slice(-1)[0];
             const uiMode = uiKey ? MODES[uiKey] : null;
+            // KPI float: separate row per active mode (runs regardless of uiMode)
+            const _kpiNames = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna', konsesi: 'Konsesi' };
+            const _kpiHtml = [...activeModes].map(mk => {
+              const m = MODES[mk];
+              if (!m?.kpiVal) return '';
+              return `<div style="margin-bottom:3px;"><div style="font-size:.42rem;text-transform:uppercase;letter-spacing:.08em;color:#d4c4a0;line-height:1.4;">${_kpiNames[mk] || mk}</div><div style="font-size:1.2rem;font-weight:700;line-height:1;margin-top:1px;">${m.kpiVal}</div><div style="font-size:.45rem;color:#d4c4a0;margin-top:1px;">hektare</div></div>`;
+            }).filter(Boolean).join('');
+            document.getElementById('kpi-items').innerHTML = _kpiHtml;
             if (uiMode) {
               document.getElementById('map-title').textContent = uiMode.title;
-              document.getElementById('kpi-label').textContent = uiMode.kpiLabel;
-              document.getElementById('kpi-val').textContent = uiMode.kpiVal;
-              document.getElementById('kpi-unit').textContent = uiMode.kpiUnit;
-              document.getElementById('sidebar-notes').innerHTML = uiMode.notesSidebar.map(n => `<li>${n}</li>`).join('');
+              //   document.getElementById('sidebar-notes').innerHTML = uiMode.notesSidebar.map(n => `<li>${n}</li>`).join('');
               document.getElementById('notes-list').innerHTML = uiMode.notesBox.map(n => `<li>${n}</li>`).join('');
               const bubble = document.getElementById('others-bubble');
               if (uiMode.bubble) {
@@ -3190,19 +3289,23 @@
             }
             activeModes.forEach(mk => renderModeVisuals(mk));
             map.invalidateSize();
+            renderAllSidebarCards();
           });
         }
 
         function loadKonsesiCategory(catKey) {
           const cat = MODES.konsesi.subCategories[catKey];
           if (!cat) return;
-          document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === catKey));
-          markerLayer.clearLayers();
-          markerRegistry = [];
-          activeMarker = null;
-          map.closePopup();
+          if (activeKonsesiCats.has(catKey)) {
+            activeKonsesiCats.delete(catKey);
+          } else {
+            activeKonsesiCats.add(catKey);
+          }
+          currentKonsesiCat = catKey;
+          document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', activeKonsesiCats.has(b.dataset.cat)));
+
           document.getElementById('kpi-items').innerHTML = `<div><div style="font-size:.42rem;text-transform:uppercase;letter-spacing:.08em;color:#d4c4a0;line-height:1.4;">Konsesi</div><div style="font-size:1.2rem;font-weight:700;line-height:1;margin-top:1px;">${cat.kpiVal} </div></div>`;
-        //   document.getElementById('sidebar-notes').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
+          //   document.getElementById('sidebar-notes').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
           //   document.getElementById('map-title').textContent = 'Deforestasi ' + cat.title;
           const bubble = document.getElementById('others-bubble');
           bubble.style.display = 'flex';
@@ -3210,19 +3313,10 @@
           document.getElementById('bubble-val').textContent = cat.othersVal;
           document.getElementById('bubble-unit').textContent = 'hektare';
           document.getElementById('notes-list').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
-          function placeMarkers(points) {
-            points.forEach(p => createRankMarker({ lat: p.lat, lng: p.lng, rank: p.rank, name: p.name, value: String(p.value), dir: p.dir || 'right' }));
-          }
-          if (cat.geojsonFile) {
-            fetch(cat.geojsonFile)
-              .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-              .then(geojson => {
-                const pts = geojson.features.map(f => ({ lat: f.geometry.coordinates[1], lng: f.geometry.coordinates[0], rank: f.properties.rank, name: f.properties.namobj, value: f.properties.value, dir: f.properties.dir || 'right' }));
-                placeMarkers(pts);
-              })
-              .catch(() => { if (cat.markers && cat.markers.length) placeMarkers(cat.markers); });
-          } else if (cat.markers && cat.markers.length) { placeMarkers(cat.markers); }
-          currentKonsesiCat = catKey;
+
+          clearModeVisuals();
+          activeModes.forEach(mk => renderModeVisuals(mk));
+          map.invalidateSize();
           renderAllSidebarCards();
         }
 
@@ -3242,9 +3336,9 @@
           titleEl.textContent = 'Legend Top 10';
           el.appendChild(titleEl);
           const modeColors = { provinsi: '#c04030', kabupaten: '#e07840', konservasi: '#4a8c5c', megafauna: '#7060b0', konsesi: '#b06020' };
-          const catColors  = { 'kebun-kayu': '#b06020', logging: '#c04030', sawit: '#4a8c5c', tambang: '#7060b0' };
+          const catColors = { 'kebun-kayu': '#b06020', logging: '#c04030', sawit: '#4a8c5c', tambang: '#7060b0' };
           const modeLabels = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna' };
-          const catLabels  = { 'kebun-kayu': 'Kebun Kayu', logging: 'Logging', sawit: 'Sawit', tambang: 'Tambang' };
+          const catLabels = { 'kebun-kayu': 'Kebun Kayu', logging: 'Logging', sawit: 'Sawit', tambang: 'Tambang' };
 
           const entries = [];
           [...activeModes].forEach(mk => {
