@@ -2833,6 +2833,22 @@
             scrollWrap.className = 'stbl-scroll';
             scrollWrap.appendChild(table);
             card.appendChild(scrollWrap);
+
+            const dlBtn = document.createElement('button');
+            dlBtn.className = 'sb-card-dl-btn';
+            dlBtn.innerHTML = `<svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v6M2.5 5l3 3 3-3M1 9.5h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Unduh CSV`;
+            dlBtn.addEventListener('click', () => {
+              const rows = [['Lokasi', 'ha']];
+              markers.forEach(m => rows.push([m.name, m.value]));
+              if (totalVal) rows.push(['Total', totalVal]);
+              if (othersVal) rows.push(['Lainnya', othersVal]);
+              const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+              const a = document.createElement('a');
+              a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+              a.download = heading.replace(/[^a-z0-9]/gi, '_') + '.csv';
+              a.click();
+            });
+            card.appendChild(dlBtn);
             wrap.appendChild(card);
           }
 
