@@ -845,60 +845,40 @@
       <div class="viz-block viz-block--full">
 
         <!-- PETA TEMATIK (inline) -->
-        <div id="peta-tematik" style="height: 60vh" class="flex overflow-hidden">
-          <aside id="sidebar"
-            class="sm:w-[350px] w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] px-4 py-4 overflow-y-auto border-r border-white/[.08]">
-            <h1 class="text-[1.05rem] font-bold leading-[1.15] mb-1 p-1">Peta Tematik Deforestasi</h1>
-            <p class="px-1 text-[.58rem] tracking-[.1em] uppercase text-[#d4c4a0] mb-[10px]">Pilih jenis analisis · 2025
-            </p>
-            <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
-              style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-              <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk melihat alur
-                lengkap</span>
-            </div>
-            <div id="mode-btn-rail">
-              <button class="mode-btn active" data-mode="provinsi">
-                <span class="mode-btn-label">Deforestasi berbasis provinsi</span>
-                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              </button>
-              <button class="mode-btn" data-mode="kabupaten">
-                <span class="mode-btn-label">Deforestasi berbasis kabupaten</span>
-                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              </button>
-              <button class="mode-btn" data-mode="konservasi">
-                <span class="mode-btn-label">Deforestasi di kawasan konservasi</span>
-                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              </button>
-              <button class="mode-btn" data-mode="megafauna">
-                <span class="mode-btn-label">Deforestasi di Habitat megafauna ikonik</span>
-                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              </button>
-              <button class="mode-btn" data-mode="konsesi">
-                <span class="mode-btn-label">Deforestasi dalam Konsesi</span>
-                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              </button>
-            </div><!-- /#mode-btn-rail -->
+        <!-- ── MODE PILL BAR ── -->
+        <div id="mode-pill-bar">
+          <div class="pill-bar-label">Pilih jenis analisis · 2025</div>
+          <div id="mode-btn-rail">
+            <button class="mode-btn active" data-mode="provinsi">
+              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              <span class="mode-btn-label">Provinsi</span>
+            </button>
+            <button class="mode-btn" data-mode="kabupaten">
+              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              <span class="mode-btn-label">Kabupaten</span>
+            </button>
+            <button class="mode-btn" data-mode="konservasi">
+              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              <span class="mode-btn-label">Konservasi</span>
+            </button>
+            <button class="mode-btn" data-mode="megafauna">
+              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              <span class="mode-btn-label">Megafauna</span>
+            </button>
+            <button class="mode-btn" data-mode="konsesi">
+              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              <span class="mode-btn-label">Konsesi</span>
+            </button>
+          </div>
+          <div id="konsesi-submenu" class="hidden">
+            <button class="cat-btn" data-cat="kebun-kayu">Kebun Kayu</button>
+            <button class="cat-btn" data-cat="logging">Logging</button>
+            <button class="cat-btn" data-cat="sawit">Sawit</button>
+            <button class="cat-btn" data-cat="tambang">Tambang</button>
+          </div>
+        </div>
 
-            <!-- Sub-menu konsesi (hidden by default) -->
-            <div id="konsesi-submenu" class="hidden pl-4">
-              <button
-                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                data-cat="kebun-kayu"> Kebun Kayu</button>
-              <button
-                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                data-cat="logging">Logging</button>
-              <button
-                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                data-cat="sawit"> Sawit</button>
-              <button
-                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                data-cat="tambang"> Tambang</button>
-            </div>
-
-          </aside>
+        <div id="peta-tematik" style="height: 70vh" class="flex flex-col overflow-hidden">
 
           <main id="wrap" class="relative flex-1 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
             <div id="map" class="w-full flex-1"></div>
@@ -908,7 +888,7 @@
               <div class="map-loading-label">Memuat data provinsi…</div>
             </div>
             <div id="satwa-badges"
-              class="hidden absolute top-4 left-1/2 -translate-x-1/2 z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-center gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[92vw]">
+              class="hidden absolute top-4 right-[14px] z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-end gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[60vw]">
             </div>
 
 
@@ -950,6 +930,8 @@
               </div>
             </div>
 
+            <div id="map-legend" class="absolute left-[14px] bottom-[52px] z-[620] flex flex-col gap-[4px]"></div>
+
             <div id="table-panel"
               class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
               <button id="table-toggle"
@@ -968,6 +950,13 @@
               <div id="table-wrap" class="flex-1 overflow-y-auto overflow-x-hidden flex flex-col"></div>
             </div>
           </main>
+
+          <aside id="sidebar"
+            class="w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] border-t border-white/[.08] flex flex-col overflow-hidden"
+            style="height:225px">
+            <span id="sidebar-mode-label" class="hidden"></span>
+            <div id="sidebar-table-wrap" class="flex-1 flex flex-row items-stretch"></div>
+          </aside>
         </div>
 
       </div><br><br>
@@ -2528,7 +2517,7 @@
           doubleClickZoom: false,
           minZoom: isMobile ? 0.1 : 4,
           maxZoom: isMobile ? 3 : 9
-        }).setView(isMobile ? [-6.3, 118] : [-2.3, 118], isMobile ? 3 : 5);
+        }).setView(isMobile ? [-7.3, 118] : [-4.3, 118], isMobile ? 3 : 5);
 
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
           attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
@@ -2546,6 +2535,7 @@
         let activeRow = null;
         let currentMode = 'provinsi';
         const activeModes = new Set();
+        let currentKonsesiCat = null;
         let activeEntry = null;
         let activePolygonSpecies = null;
         let stadi2025Loaded = false;
@@ -2856,15 +2846,19 @@
           entry.marker.openPopup();
         }
 
-        function createRankMarker(item) {
+        function createRankMarker(item, modeOverride) {
+          const mode = modeOverride || currentMode;
+          const dotColors = { provinsi: '#c04030', kabupaten: '#e07840', konservasi: '#4a8c5c', megafauna: '#7060b0' };
+          const catColors = { 'kebun-kayu': '#b06020', logging: '#c04030', sawit: '#4a8c5c', tambang: '#7060b0' };
+          const color = mode === 'konsesi' ? (catColors[item.cat] || '#b06020') : (dotColors[mode] || '#8b2a1a');
           const icon = L.divIcon({
             className: '',
-            html: `<div class="rank-dot">${item.rank}</div>`,
+            html: `<div class="rank-dot" style="background:${color};box-shadow:0 2px 8px ${color}88">${item.rank}</div>`,
             iconSize: [28, 28],
             iconAnchor: [14, 14]
           });
           const marker = L.marker([item.lat, item.lng], { icon }).addTo(markerLayer);
-          const entry = { name: item.name, marker, value: item.value, mode: currentMode, item, kind: 'rank' };
+          const entry = { name: item.name, marker, value: item.value, mode, item, kind: 'rank' };
           marker.bindPopup('', { closeButton: true, maxWidth: 280, minWidth: 190 });
           marker.on('mouseover', () => setActiveMarker(marker));
           marker.on('mouseout', () => { if (!activeEntry || activeEntry.marker !== marker) setActiveMarker(null); });
@@ -2977,81 +2971,105 @@
           return card;
         }
 
-        // ── CHOROPLETH: Deforestasi berbasis provinsi via GeoServer WFS ────────────
-        function getChoroColor(val) {
-          if (!val || val <= 0) return 'rgba(245,240,232,0.18)';
-          if (val < 200) return '#fef4ee';
-          if (val < 500) return '#fce3d4';
-          if (val < 1000) return '#f8c4a2';
-          if (val < 2500) return '#f0a070';
-          if (val < 5000) return '#e57a48';
-          if (val < 10000) return '#d45930';
-          if (val < 20000) return '#bb3c1e';
-          if (val < 35000) return '#9e2e14';
-          if (val < 55000) return '#7e1f0c';
-          return '#5a1206';
-        }
-
-        function buildChoropleth(data) {
-          if (choroplethGeoLayer) { choroplethLayer.removeLayer(choroplethGeoLayer); choroplethGeoLayer = null; }
-          choroplethFeatures = [];
-          choroplethGeoLayer = L.geoJSON(data, {
-            style: function (feature) {
-              var val = parseFloat(feature.properties.deforestas) || 0;
-              return {
-                fillColor: getChoroColor(val),
-                fillOpacity: 0.92,
-                color: 'rgba(120,90,60,0.45)',
-                weight: 0.6,
-                opacity: 1
-              };
-            },
-            onEachFeature: function (feature, layer) {
-              var props = feature.properties;
-              var name = props.political3 || props.level_3 || '';
-              var val = parseFloat(props.deforestas) || 0;
-              var fmtVal = Math.round(val).toLocaleString('id-ID');
-              choroplethFeatures.push({ name: name, layer: layer, val: val });
-              layer.bindTooltip(
-                '<strong>' + name + '</strong><br>' + fmtVal + '\u00a0ha',
-                { sticky: true, className: 'choro-tooltip', direction: 'auto' }
-              );
-              layer.on('mouseover', function () {
-                if (!activeModes.has('provinsi')) return;
-                layer.setStyle({ fillOpacity: 0.9, weight: 1.5, color: '#1a1a1a' });
-                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) layer.bringToFront();
-              });
-              layer.on('mouseout', function () {
-                if (!activeModes.has('provinsi')) return;
-                choroplethGeoLayer.resetStyle(layer);
-              });
+        function renderAllSidebarCards() {
+          const wrap = document.getElementById('sidebar-table-wrap');
+          const lbl  = document.getElementById('sidebar-mode-label');
+          if (!wrap) return;
+          wrap.innerHTML = '';
+          const modeNames = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna', konsesi: 'Konsesi' };
+          const catNames  = { 'kebun-kayu': 'Kebun Kayu', logging: 'Logging', sawit: 'Sawit', tambang: 'Tambang' };
+          if (activeModes.size === 0) {
+            if (lbl) lbl.textContent = '—';
+            return;
+          }
+          if (lbl) lbl.textContent = [...activeModes].map(mk => modeNames[mk] || mk).join(', ');
+          [...activeModes].forEach(modeKey => {
+            let markers = [], heading = modeNames[modeKey] || modeKey, totalVal = null, othersVal = null;
+            if (modeKey === 'konsesi') {
+              if (currentKonsesiCat && MODES.konsesi.subCategories[currentKonsesiCat]) {
+                const cat = MODES.konsesi.subCategories[currentKonsesiCat];
+                markers = cat.markers || [];
+                heading = catNames[currentKonsesiCat] || currentKonsesiCat;
+                totalVal = cat.kpiVal;
+                othersVal = cat.othersVal || null;
+              } else {
+                const card = document.createElement('div');
+                card.className = 'sb-card';
+                card.innerHTML = '<div class="sb-card-head">Konsesi</div><div class="stbl-empty">Pilih kategori konsesi.</div>';
+                wrap.appendChild(card);
+                return;
+              }
+            } else {
+              const mode = MODES[modeKey];
+              if (!mode) return;
+              markers = mode.markers || mode.species || [];
+              totalVal = mode.kpiVal || null;
+              othersVal = mode.bubble?.value || null;
             }
-          }).addTo(choroplethLayer);
-          // Permanent rank labels for top-10 provinces
-          var top10Ranks = {
-            'Kalimantan Tengah': 1, 'Kalimantan Timur': 2, 'Aceh': 3,
-            'Kalimantan Barat': 4, 'Papua Tengah': 5, 'Sumatera Barat': 6,
-            'Sumatera Utara': 7, 'Kalimantan Utara': 8, 'Riau': 9, 'Papua Pegunungan': 10
-          };
-          choroplethFeatures.forEach(function (f) {
-            var rank = top10Ranks[f.name];
-            if (!rank) return;
-            var center = f.layer.getBounds().getCenter();
-            var icon = L.divIcon({
-              className: '',
-              html: '<div class="choro-rank-label"><span class="choro-rank-num">' + rank + '</span><span class="choro-rank-name">' + f.name + '</span></div>',
-              iconSize: null,
-              iconAnchor: null
+            if (!markers.length) return;
+            const card = document.createElement('div');
+            card.className = 'sb-card';
+            const head = document.createElement('div');
+            head.className = 'sb-card-head';
+            head.textContent = heading;
+            card.appendChild(head);
+            const table = document.createElement('table');
+            table.className = 'stbl';
+            const tbody = document.createElement('tbody');
+            markers.forEach(m => {
+              const tr = document.createElement('tr');
+              tr.className = 'stbl-row';
+              tr.addEventListener('click', () => focusMarkerByLabel(m.name, tr));
+              const tdN = document.createElement('td');
+              tdN.className = 'stbl-name';
+              tdN.textContent = m.name;
+              const raw = m.value;
+              const num = typeof raw === 'number' ? raw : parseFloat(String(raw).replace(/\./g, '').replace(',', '.'));
+              const tdV = document.createElement('td');
+              tdV.className = 'stbl-val';
+              tdV.textContent = isNaN(num) ? raw : num.toLocaleString('id-ID');
+              tr.appendChild(tdN); tr.appendChild(tdV);
+              tbody.appendChild(tr);
             });
-            L.marker(center, { icon: icon, interactive: false }).addTo(choroplethLabelLayer);
+            if (totalVal) {
+              const trT = document.createElement('tr');
+              trT.className = 'stbl-total';
+              const tdTN = document.createElement('td');
+              tdTN.className = 'stbl-name';
+              tdTN.textContent = 'Total';
+              const tdTV = document.createElement('td');
+              tdTV.className = 'stbl-val';
+              tdTV.textContent = totalVal;
+              trT.appendChild(tdTN); trT.appendChild(tdTV);
+              tbody.appendChild(trT);
+            }
+            if (othersVal) {
+              const trL = document.createElement('tr');
+              trL.className = 'stbl-others';
+              const tdLN = document.createElement('td');
+              tdLN.className = 'stbl-name';
+              tdLN.textContent = 'Lainnya';
+              const tdLV = document.createElement('td');
+              tdLV.className = 'stbl-val';
+              tdLV.textContent = othersVal;
+              trL.appendChild(tdLN); trL.appendChild(tdLV);
+              tbody.appendChild(trL);
+            }
+            table.appendChild(tbody);
+            const scrollWrap = document.createElement('div');
+            scrollWrap.className = 'stbl-scroll';
+            scrollWrap.appendChild(table);
+            card.appendChild(scrollWrap);
+            wrap.appendChild(card);
           });
         }
+        // ─────────────────────────────────────────────────────────────────────────
 
-        function setMapLoading(on) {
-          var el = document.getElementById('map-loading');
-          if (!el) return;
-          el.classList.toggle('hidden', !on);
-          el.style.pointerEvents = on ? 'auto' : 'none';
+        // ── CHOROPLETH: WMS tiles from GeoServer ──────────────────────────────────
+
+        function showChoroplethPanes() {
+          map.getPane('choroplethPane').style.display = '';
+          map.getPane('choroplethLabelPane').style.display = '';
         }
 
         function loadProvinsiChoropleth() {
@@ -3093,7 +3111,9 @@
           const mode = MODES[modeKey];
           if (!mode) return;
           currentMode = modeKey;
-          if (mode.markers && modeKey !== 'provinsi') mode.markers.forEach(createRankMarker);
+          // When kabupaten is active, suppress provinsi visuals entirely
+          if (modeKey === 'provinsi' && activeModes.has('kabupaten')) return;
+          if (mode.markers) mode.markers.forEach(createRankMarker);
           if (mode.species) mode.species.forEach(createSpeciesMarker);
           const tableWrap = document.getElementById('table-wrap');
           if (mode.tables && mode.tables.length) {
@@ -3103,8 +3123,11 @@
           if (modeKey === 'konsesi') {
             const submenu = document.getElementById('konsesi-submenu');
             submenu.classList.remove('hidden'); submenu.classList.add('show');
-            const activecat = submenu.querySelector('.cat-btn.active');
-            if (!activecat) { const firstCat = submenu.querySelector('.cat-btn'); if (firstCat) loadKonsesiCategory(firstCat.dataset.cat); }
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', activeKonsesiCats.has(b.dataset.cat)));
+            activeKonsesiCats.forEach(ck => {
+              const cat = MODES.konsesi.subCategories[ck];
+              if (cat?.markers) cat.markers.forEach(p => createRankMarker({ lat: p.lat, lng: p.lng, rank: p.rank, name: p.name, value: String(p.value), dir: p.dir || 'right', cat: ck }, 'konsesi'));
+            });
           }
           if (modeKey === 'megafauna') positionSatwaBadges(mode.species);
           // Skip rebuild if choropleth layer is already rendered (preserved by clearModeVisuals)
@@ -3146,6 +3169,8 @@
               const submenu = document.getElementById('konsesi-submenu');
               submenu.classList.add('hidden'); submenu.classList.remove('show');
               document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+              currentKonsesiCat = null;
+              activeKonsesiCats.clear();
             }
             activeModes.forEach(mk => renderModeVisuals(mk));
             map.invalidateSize();
@@ -3160,10 +3185,8 @@
           markerRegistry = [];
           activeMarker = null;
           map.closePopup();
-          document.getElementById('kpi-label').textContent = cat.kpiLabel;
-          document.getElementById('kpi-val').textContent = cat.kpiVal;
-          document.getElementById('kpi-unit').textContent = 'hektare';
-          document.getElementById('sidebar-notes').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
+          document.getElementById('kpi-items').innerHTML = `<div><div style="font-size:.42rem;text-transform:uppercase;letter-spacing:.08em;color:#d4c4a0;line-height:1.4;">Konsesi</div><div style="font-size:1.2rem;font-weight:700;line-height:1;margin-top:1px;">${cat.kpiVal} </div></div>`;
+        //   document.getElementById('sidebar-notes').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
           //   document.getElementById('map-title').textContent = 'Deforestasi ' + cat.title;
           const bubble = document.getElementById('others-bubble');
           bubble.style.display = 'flex';
@@ -3183,10 +3206,69 @@
               })
               .catch(() => { if (cat.markers && cat.markers.length) placeMarkers(cat.markers); });
           } else if (cat.markers && cat.markers.length) { placeMarkers(cat.markers); }
+          currentKonsesiCat = catKey;
+          renderAllSidebarCards();
         }
 
         document.querySelectorAll('.mode-btn').forEach(btn => btn.addEventListener('click', () => toggleMode(btn.dataset.mode)));
         document.querySelectorAll('.cat-btn').forEach(btn => btn.addEventListener('click', () => loadKonsesiCategory(btn.dataset.cat)));
+        window.addEventListener('resize', updateSidebarDynamicHeight);
+
+        // ── LEGEND ────────────────────────────────────────────────────────────────
+        const legendVisible = new Set();
+
+        function buildLegend() {
+          const el = document.getElementById('map-legend');
+          if (!el) return;
+          el.innerHTML = '';
+          const titleEl = document.createElement('div');
+          titleEl.className = 'map-legend-title';
+          titleEl.textContent = 'Legend Top 10';
+          el.appendChild(titleEl);
+          const modeColors = { provinsi: '#c04030', kabupaten: '#e07840', konservasi: '#4a8c5c', megafauna: '#7060b0', konsesi: '#b06020' };
+          const catColors  = { 'kebun-kayu': '#b06020', logging: '#c04030', sawit: '#4a8c5c', tambang: '#7060b0' };
+          const modeLabels = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna' };
+          const catLabels  = { 'kebun-kayu': 'Kebun Kayu', logging: 'Logging', sawit: 'Sawit', tambang: 'Tambang' };
+
+          const entries = [];
+          [...activeModes].forEach(mk => {
+            if (mk === 'konsesi') {
+              activeKonsesiCats.forEach(ck => entries.push({ key: 'konsesi:' + ck, label: catLabels[ck] || ck, color: catColors[ck] || '#c04030' }));
+            } else if (MODES[mk]?.markers?.length || MODES[mk]?.species?.length) {
+              entries.push({ key: mk, label: modeLabels[mk] || mk, color: modeColors[mk] || '#c04030' });
+            }
+          });
+
+          if (!entries.length) return;
+
+          entries.forEach(({ key, label, color }) => {
+            if (!legendVisible.has(key)) legendVisible.add(key);
+            const item = document.createElement('button');
+            item.className = 'map-legend-item' + (legendVisible.has(key) ? ' active' : '');
+            item.dataset.legendKey = key;
+            item.innerHTML = `<span class="map-legend-switch"><span class="map-legend-knob" style="background:${color}"></span></span><span class="map-legend-label">${label}</span>`;
+            item.addEventListener('click', () => {
+              if (legendVisible.has(key)) {
+                legendVisible.delete(key);
+                item.classList.remove('active');
+              } else {
+                legendVisible.add(key);
+                item.classList.add('active');
+              }
+              applyLegendVisibility();
+            });
+            el.appendChild(item);
+          });
+        }
+
+        function applyLegendVisibility() {
+          markerRegistry.forEach(entry => {
+            let key = entry.mode === 'konsesi' ? 'konsesi:' + (entry.item?.cat || '') : entry.mode;
+            const show = !key || legendVisible.has(key);
+            entry.marker.setOpacity(show ? 1 : 0);
+            if (entry.marker._icon) entry.marker._icon.style.pointerEvents = show ? '' : 'none';
+          });
+        }
 
         window.addEventListener('keydown', (e) => {
           const mapping = { '1': 'provinsi', '2': 'kabupaten', '3': 'konservasi', '4': 'megafauna', '5': 'konsesi' };
