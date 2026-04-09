@@ -871,14 +871,14 @@
             </button>
           </div>
           <div id="konsesi-submenu" class="hidden">
-            <button class="cat-btn" data-cat="kebun-kayu">Kebun Kayu</button>
-            <button class="cat-btn" data-cat="logging">Logging</button>
-            <button class="cat-btn" data-cat="sawit">Sawit</button>
-            <button class="cat-btn" data-cat="tambang">Tambang</button>
+            <button class="cat-btn" data-cat="kebun-kayu"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Kebun Kayu</span></button>
+            <button class="cat-btn" data-cat="logging"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Logging</span></button>
+            <button class="cat-btn" data-cat="sawit"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Sawit</span></button>
+            <button class="cat-btn" data-cat="tambang"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Tambang</span></button>
           </div>
         </div>
 
-        <div id="peta-tematik" style="height: 70vh" class="flex flex-col overflow-hidden">
+        <div id="peta-tematik" style="height: 87vh" class="flex flex-col overflow-hidden">
 
           <main id="wrap" class="relative flex-1 min-h-0 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
             <div id="map" class="w-full flex-1"></div>
@@ -888,7 +888,7 @@
               <div class="map-loading-label">Memuat data peta..</div>
             </div>
             <div id="satwa-badges"
-              class="hidden absolute top-4 left-1/2 -translate-x-1/2 z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-center gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[92vw]">
+              class="hidden absolute top-4 right-[14px] z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-end gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[60vw]">
             </div>
 
 
@@ -907,6 +907,8 @@
                 <ul id="notes-list" class="pl-[18px] [&>li]:text-[.82rem] [&>li]:leading-[1.48] [&>li]:mb-[6px]"></ul>
               </div>
             </div>
+
+            <div id="map-legend" class="absolute left-[14px] bottom-[52px] z-[620] flex flex-col gap-[4px]"></div>
 
             <div id="table-panel"
               class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
@@ -927,9 +929,9 @@
 
           <aside id="sidebar"
             class="w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] border-t border-white/[.08] flex flex-col overflow-hidden"
-            style="height:225px">
+            style="min-height:180px">
             <span id="sidebar-mode-label" class="hidden"></span>
-            <div id="sidebar-table-wrap" class="flex-1 flex flex-row items-stretch"></div>
+            <div id="sidebar-table-wrap" class="flex-1 flex flex-row items-stretch justify-start"></div>
           </aside>
         </div>
 
@@ -2237,7 +2239,7 @@
           doubleClickZoom: false,
           minZoom: isMobile ? 0.1 : 4,
           maxZoom: isMobile ? 3 : 9
-        }).setView(isMobile ? [-6.3, 118] : [-2.3, 118], isMobile ? 3 : 5);
+        }).setView(isMobile ? [-7.3, 118] : [-4.3, 118], isMobile ? 3 : 5);
 
         L.tileLayer('', {
           attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
@@ -2268,6 +2270,7 @@
         let currentMode = 'provinsi';
         const activeModes = new Set();
         let currentKonsesiCat = null;
+        const activeKonsesiCats = new Set();
         let activeEntry = null;
         let activePolygonSpecies = null;
         let stadi2025Loaded = false;
@@ -2575,15 +2578,19 @@
           entry.marker.openPopup();
         }
 
-        function createRankMarker(item) {
+        function createRankMarker(item, modeOverride) {
+          const mode = modeOverride || currentMode;
+          const dotColors = { provinsi: '#c04030', kabupaten: '#e07840', konservasi: '#4a8c5c', megafauna: '#7060b0' };
+          const catColors = { 'kebun-kayu': '#b06020', logging: '#c04030', sawit: '#4a8c5c', tambang: '#7060b0' };
+          const color = mode === 'konsesi' ? (catColors[item.cat] || '#b06020') : (dotColors[mode] || '#8b2a1a');
           const icon = L.divIcon({
             className: '',
-            html: `<div class="rank-dot">${item.rank}</div>`,
+            html: `<div class="rank-dot" style="background:${color};box-shadow:0 2px 8px ${color}88">${item.rank}</div>`,
             iconSize: [28, 28],
             iconAnchor: [14, 14]
           });
           const marker = L.marker([item.lat, item.lng], { icon }).addTo(markerLayer);
-          const entry = { name: item.name, marker, value: item.value, mode: currentMode, item, kind: 'rank' };
+          const entry = { name: item.name, marker, value: item.value, mode, item, kind: 'rank' };
           marker.bindPopup('', { closeButton: true, maxWidth: 280, minWidth: 190 });
           marker.on('mouseover', () => setActiveMarker(marker));
           marker.on('mouseout', () => { if (!activeEntry || activeEntry.marker !== marker) setActiveMarker(null); });
@@ -2703,59 +2710,99 @@
           wrap.innerHTML = '';
           const modeNames = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna', konsesi: 'Konsesi' };
           const catNames  = { 'kebun-kayu': 'Kebun Kayu', logging: 'Logging', sawit: 'Sawit', tambang: 'Tambang' };
-          if (activeModes.size === 0) {
-            if (lbl) lbl.textContent = '—';
-            return;
-          }
+          if (activeModes.size === 0) { if (lbl) lbl.textContent = '—'; return; }
           if (lbl) lbl.textContent = [...activeModes].map(mk => modeNames[mk] || mk).join(', ');
+
+          const countRows = (markers, totalVal, othersVal) => {
+            let n = (markers?.length || 0);
+            if (totalVal) n += 1;
+            if (othersVal) n += 1;
+            return n;
+          };
+
+          let maxVisibleRows = 0;
           [...activeModes].forEach(modeKey => {
-            let markers = [], heading = modeNames[modeKey] || modeKey, totalVal = null, othersVal = null;
             if (modeKey === 'konsesi') {
-              if (currentKonsesiCat && MODES.konsesi.subCategories[currentKonsesiCat]) {
-                const cat = MODES.konsesi.subCategories[currentKonsesiCat];
-                markers = cat.markers || [];
-                heading = catNames[currentKonsesiCat] || currentKonsesiCat;
-                totalVal = cat.kpiVal;
-                othersVal = cat.othersVal || null;
-              } else {
-                const card = document.createElement('div');
-                card.className = 'sb-card';
-                card.innerHTML = '<div class="sb-card-head">Konsesi</div><div class="stbl-empty">Pilih kategori konsesi.</div>';
-                wrap.appendChild(card);
-                return;
-              }
-            } else {
-              const mode = MODES[modeKey];
-              if (!mode) return;
-              markers = mode.markers || mode.species || [];
-              totalVal = mode.kpiVal || null;
-              othersVal = mode.bubble?.value || null;
+              activeKonsesiCats.forEach(ck => {
+                const c = MODES.konsesi.subCategories[ck];
+                if (c) maxVisibleRows = Math.max(maxVisibleRows, countRows(c.markers || [], c.kpiVal, c.othersVal || null));
+              });
+              return;
             }
-            if (!markers.length) return;
+            const mode = MODES[modeKey];
+            if (!mode) return;
+            maxVisibleRows = Math.max(maxVisibleRows, countRows(mode.markers || mode.species || [], mode.kpiVal || null, mode.bubble?.value || null));
+          });
+
+          function appendSidebarCard(heading, markers, totalVal, othersVal, targetRows = 0) {
+            if (!markers || !markers.length) return;
             const card = document.createElement('div');
             card.className = 'sb-card';
             const head = document.createElement('div');
             head.className = 'sb-card-head';
-            head.textContent = heading;
+            head.innerHTML = `<span class="sb-card-head-title">${heading}</span><span class="sb-card-head-badge">TOP 10</span>`;
             card.appendChild(head);
             const table = document.createElement('table');
             table.className = 'stbl';
+            const formattedVals = markers.map(m => {
+              const raw = m.value;
+              const num = typeof raw === 'number' ? raw : parseFloat(String(raw).replace(/\./g, '').replace(',', '.'));
+              return isNaN(num) ? String(raw) : num.toLocaleString('id-ID');
+            });
+            const maxValLen = Math.max(
+              5,
+              ...formattedVals.map(v => String(v).length),
+              String(totalVal || '').length,
+              String(othersVal || '').length
+            );
+            const valueColCh = Math.max(7, Math.min(14, maxValLen + 1));
+            table.style.setProperty('--val-col', `${valueColCh}ch`);
+
+            const colgroup = document.createElement('colgroup');
+            const colName = document.createElement('col');
+            colName.className = 'stbl-col-name';
+            const colVal = document.createElement('col');
+            colVal.className = 'stbl-col-val';
+            colgroup.appendChild(colName);
+            colgroup.appendChild(colVal);
+            table.appendChild(colgroup);
+            const thead = document.createElement('thead');
+            const trH = document.createElement('tr');
+            trH.className = 'stbl-colhead';
+            const thN = document.createElement('th'); thN.textContent = 'Lokasi';
+            const thV = document.createElement('th'); thV.textContent = 'ha';
+            trH.appendChild(thN); trH.appendChild(thV);
+            thead.appendChild(trH);
+            table.appendChild(thead);
             const tbody = document.createElement('tbody');
-            markers.forEach(m => {
+            markers.forEach((m, i) => {
               const tr = document.createElement('tr');
               tr.className = 'stbl-row';
               tr.addEventListener('click', () => focusMarkerByLabel(m.name, tr));
               const tdN = document.createElement('td');
               tdN.className = 'stbl-name';
               tdN.textContent = m.name;
-              const raw = m.value;
-              const num = typeof raw === 'number' ? raw : parseFloat(String(raw).replace(/\./g, '').replace(',', '.'));
               const tdV = document.createElement('td');
               tdV.className = 'stbl-val';
-              tdV.textContent = isNaN(num) ? raw : num.toLocaleString('id-ID');
+              tdV.textContent = formattedVals[i];
               tr.appendChild(tdN); tr.appendChild(tdV);
               tbody.appendChild(tr);
             });
+            const currentRows = countRows(markers, totalVal, othersVal);
+            const fillerRows = Math.max(0, targetRows - currentRows);
+            for (let i = 0; i < fillerRows; i += 1) {
+              const trF = document.createElement('tr');
+              trF.className = 'stbl-row stbl-filler';
+              const tdFN = document.createElement('td');
+              tdFN.className = 'stbl-name';
+              tdFN.innerHTML = '&nbsp;';
+              const tdFV = document.createElement('td');
+              tdFV.className = 'stbl-val';
+              tdFV.innerHTML = '&nbsp;';
+              trF.appendChild(tdFN); trF.appendChild(tdFV);
+              tbody.appendChild(trF);
+            }
+
             if (totalVal) {
               const trT = document.createElement('tr');
               trT.className = 'stbl-total';
@@ -2780,13 +2827,67 @@
               trL.appendChild(tdLN); trL.appendChild(tdLV);
               tbody.appendChild(trL);
             }
+
             table.appendChild(tbody);
             const scrollWrap = document.createElement('div');
             scrollWrap.className = 'stbl-scroll';
             scrollWrap.appendChild(table);
             card.appendChild(scrollWrap);
             wrap.appendChild(card);
+          }
+
+          [...activeModes].forEach(modeKey => {
+            if (modeKey === 'konsesi') {
+              if (!activeKonsesiCats.size) return;
+              activeKonsesiCats.forEach(ck => {
+                const cat = MODES.konsesi.subCategories[ck];
+                if (!cat) return;
+                appendSidebarCard(catNames[ck] || ck, cat.markers || [], cat.kpiVal, cat.othersVal || null, maxVisibleRows);
+              });
+              return;
+            }
+
+            const mode = MODES[modeKey];
+            if (!mode) return;
+            const markers = mode.markers || mode.species || [];
+            appendSidebarCard(modeNames[modeKey] || modeKey, markers, mode.kpiVal || null, mode.bubble?.value || null, maxVisibleRows);
           });
+
+          updateSidebarDynamicHeight();
+          buildLegend();
+        }
+
+        function updateSidebarDynamicHeight() {
+          const sidebar = document.getElementById('sidebar');
+          const wrap = document.getElementById('sidebar-table-wrap');
+          if (!sidebar || !wrap) return;
+
+          const cards = wrap.querySelectorAll('.sb-card');
+          if (!cards.length) {
+            sidebar.style.height = '180px';
+            return;
+          }
+
+          const prevHeight = sidebar.style.height;
+          sidebar.style.height = 'auto';
+
+          let maxCardHeight = 0;
+          cards.forEach(card => {
+            maxCardHeight = Math.max(maxCardHeight, card.scrollHeight);
+          });
+
+          const wrapStyle = getComputedStyle(wrap);
+          const sidebarStyle = getComputedStyle(sidebar);
+          const padTop = parseFloat(wrapStyle.paddingTop) || 0;
+          const padBottom = parseFloat(wrapStyle.paddingBottom) || 0;
+          const borderTop = parseFloat(sidebarStyle.borderTopWidth) || 0;
+          const borderBottom = parseFloat(sidebarStyle.borderBottomWidth) || 0;
+
+          const target = Math.ceil(maxCardHeight + padTop + padBottom + borderTop + borderBottom);
+          const minH = 180;
+          sidebar.style.height = `${Math.max(minH, target)}px`;
+
+          if (!sidebar.style.height && prevHeight) sidebar.style.height = prevHeight;
         }
         // ─────────────────────────────────────────────────────────────────────────
 
@@ -2831,9 +2932,7 @@
           const mode = MODES[modeKey];
           if (!mode) return;
           currentMode = modeKey;
-          // When kabupaten is active, suppress provinsi visuals entirely
-          if (modeKey === 'provinsi' && activeModes.has('kabupaten')) return;
-          if (mode.markers) mode.markers.forEach(createRankMarker);
+          if (mode.markers) mode.markers.forEach(m => createRankMarker(m, modeKey));
           if (mode.species) mode.species.forEach(createSpeciesMarker);
           const tableWrap = document.getElementById('table-wrap');
           if (mode.tables && mode.tables.length) {
@@ -2843,8 +2942,11 @@
           if (modeKey === 'konsesi') {
             const submenu = document.getElementById('konsesi-submenu');
             submenu.classList.remove('hidden'); submenu.classList.add('show');
-            const activecat = submenu.querySelector('.cat-btn.active');
-            if (!activecat) { const firstCat = submenu.querySelector('.cat-btn'); if (firstCat) loadKonsesiCategory(firstCat.dataset.cat); }
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', activeKonsesiCats.has(b.dataset.cat)));
+            activeKonsesiCats.forEach(ck => {
+              const cat = MODES.konsesi.subCategories[ck];
+              if (cat?.markers) cat.markers.forEach(p => createRankMarker({ lat: p.lat, lng: p.lng, rank: p.rank, name: p.name, value: String(p.value), dir: p.dir || 'right', cat: ck }, 'konsesi'));
+            });
           }
           if (modeKey === 'megafauna') positionSatwaBadges(mode.species);
           // Show choropleth panes or load WFS data for the first time
@@ -2906,6 +3008,8 @@
               const submenu = document.getElementById('konsesi-submenu');
               submenu.classList.add('hidden'); submenu.classList.remove('show');
               document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+              currentKonsesiCat = null;
+              activeKonsesiCats.clear();
             }
             activeModes.forEach(mk => renderModeVisuals(mk));
             map.invalidateSize();
@@ -2916,11 +3020,14 @@
         function loadKonsesiCategory(catKey) {
           const cat = MODES.konsesi.subCategories[catKey];
           if (!cat) return;
-          document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === catKey));
-          markerLayer.clearLayers();
-          markerRegistry = [];
-          activeMarker = null;
-          map.closePopup();
+          if (activeKonsesiCats.has(catKey)) {
+            activeKonsesiCats.delete(catKey);
+          } else {
+            activeKonsesiCats.add(catKey);
+          }
+          currentKonsesiCat = catKey;
+          document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', activeKonsesiCats.has(b.dataset.cat)));
+
           document.getElementById('kpi-items').innerHTML = `<div><div style="font-size:.42rem;text-transform:uppercase;letter-spacing:.08em;color:#d4c4a0;line-height:1.4;">Konsesi</div><div style="font-size:1.2rem;font-weight:700;line-height:1;margin-top:1px;">${cat.kpiVal} </div></div>`;
         //   document.getElementById('sidebar-notes').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
           //   document.getElementById('map-title').textContent = 'Deforestasi ' + cat.title;
@@ -2930,24 +3037,72 @@
           document.getElementById('bubble-val').textContent = cat.othersVal;
           document.getElementById('bubble-unit').textContent = 'hektare';
           document.getElementById('notes-list').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
-          function placeMarkers(points) {
-            points.forEach(p => createRankMarker({ lat: p.lat, lng: p.lng, rank: p.rank, name: p.name, value: String(p.value), dir: p.dir || 'right' }));
-          }
-          if (cat.geojsonFile) {
-            fetch(cat.geojsonFile)
-              .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-              .then(geojson => {
-                const pts = geojson.features.map(f => ({ lat: f.geometry.coordinates[1], lng: f.geometry.coordinates[0], rank: f.properties.rank, name: f.properties.namobj, value: f.properties.value, dir: f.properties.dir || 'right' }));
-                placeMarkers(pts);
-              })
-              .catch(() => { if (cat.markers && cat.markers.length) placeMarkers(cat.markers); });
-          } else if (cat.markers && cat.markers.length) { placeMarkers(cat.markers); }
-          currentKonsesiCat = catKey;
+
+          clearModeVisuals();
+          activeModes.forEach(mk => renderModeVisuals(mk));
+          map.invalidateSize();
           renderAllSidebarCards();
         }
 
         document.querySelectorAll('.mode-btn').forEach(btn => btn.addEventListener('click', () => toggleMode(btn.dataset.mode)));
         document.querySelectorAll('.cat-btn').forEach(btn => btn.addEventListener('click', () => loadKonsesiCategory(btn.dataset.cat)));
+        window.addEventListener('resize', updateSidebarDynamicHeight);
+
+        // ── LEGEND ────────────────────────────────────────────────────────────────
+        const legendVisible = new Set();
+
+        function buildLegend() {
+          const el = document.getElementById('map-legend');
+          if (!el) return;
+          el.innerHTML = '';
+          const titleEl = document.createElement('div');
+          titleEl.className = 'map-legend-title';
+          titleEl.textContent = 'Legend Top 10';
+          el.appendChild(titleEl);
+          const modeColors = { provinsi: '#c04030', kabupaten: '#e07840', konservasi: '#4a8c5c', megafauna: '#7060b0', konsesi: '#b06020' };
+          const catColors  = { 'kebun-kayu': '#b06020', logging: '#c04030', sawit: '#4a8c5c', tambang: '#7060b0' };
+          const modeLabels = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna' };
+          const catLabels  = { 'kebun-kayu': 'Kebun Kayu', logging: 'Logging', sawit: 'Sawit', tambang: 'Tambang' };
+
+          const entries = [];
+          [...activeModes].forEach(mk => {
+            if (mk === 'konsesi') {
+              activeKonsesiCats.forEach(ck => entries.push({ key: 'konsesi:' + ck, label: catLabels[ck] || ck, color: catColors[ck] || '#c04030' }));
+            } else if (MODES[mk]?.markers?.length || MODES[mk]?.species?.length) {
+              entries.push({ key: mk, label: modeLabels[mk] || mk, color: modeColors[mk] || '#c04030' });
+            }
+          });
+
+          if (!entries.length) return;
+
+          entries.forEach(({ key, label, color }) => {
+            if (!legendVisible.has(key)) legendVisible.add(key);
+            const item = document.createElement('button');
+            item.className = 'map-legend-item' + (legendVisible.has(key) ? ' active' : '');
+            item.dataset.legendKey = key;
+            item.innerHTML = `<span class="map-legend-switch"><span class="map-legend-knob" style="background:${color}"></span></span><span class="map-legend-label">${label}</span>`;
+            item.addEventListener('click', () => {
+              if (legendVisible.has(key)) {
+                legendVisible.delete(key);
+                item.classList.remove('active');
+              } else {
+                legendVisible.add(key);
+                item.classList.add('active');
+              }
+              applyLegendVisibility();
+            });
+            el.appendChild(item);
+          });
+        }
+
+        function applyLegendVisibility() {
+          markerRegistry.forEach(entry => {
+            let key = entry.mode === 'konsesi' ? 'konsesi:' + (entry.item?.cat || '') : entry.mode;
+            const show = !key || legendVisible.has(key);
+            entry.marker.setOpacity(show ? 1 : 0);
+            if (entry.marker._icon) entry.marker._icon.style.pointerEvents = show ? '' : 'none';
+          });
+        }
 
         window.addEventListener('keydown', (e) => {
           const mapping = { '1': 'provinsi', '2': 'kabupaten', '3': 'konservasi', '4': 'megafauna', '5': 'konsesi' };
