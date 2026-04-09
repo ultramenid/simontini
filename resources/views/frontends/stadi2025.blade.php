@@ -1552,7 +1552,7 @@
               </p>
             </div>
           </div>
-          <div class="method-step border-b">
+        <div class="method-step border-b">
             <div class="ms-num">3.</div>
             <div class="">
               <h4 class="chapter-title">Percepatan perluasan area preservasi, terutama di luar kawasan hutan</h4><br>

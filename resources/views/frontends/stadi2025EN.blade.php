@@ -1651,7 +1651,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="method-ste border-b">
+                    <div class="method-step border-b">
                         <div class="ms-num">3.</div>
                         <div class="">
                             <h4 class="chapter-title">Accelerate the expansion of preservation areas, especially outside the
