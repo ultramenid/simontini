@@ -46,9 +46,9 @@
       </div>
       <div class="hero-divider"></div>
       <!-- <div class="hero-stat">
-                                     <span class="hs-val">+66%</span>
-                                     <span class="hs-unit">Peningkatan dari 2024</span>
-                                     </div> -->
+                                         <span class="hs-val">+66%</span>
+                                         <span class="hs-unit">Peningkatan dari 2024</span>
+                                         </div> -->
       <div class="hero-divider"></div>
       <div class="hero-desc">
         Deforestasi melonjak, saatnya pemerintah menerbitkan
@@ -121,7 +121,8 @@
                   <div id="grid-lines" class="relative flex flex-col-reverse justify-between flex-1"></div>
                   <div id="bars-svg-wrap" class="absolute inset-x-0 top-0 bottom-[48px] grid items-end gap-[2px] px-0.5">
                   </div>
-                  <div id="x-axis" class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden" style="background:white;z-index:2;"></div>
+                  <div id="x-axis" class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden"
+                    style="background:white;z-index:2;"></div>
                 </div>
               </div>
               <div class="md:hidden mt-3">
@@ -129,7 +130,8 @@
               </div>
               <!-- Mobile-only era totals -->
               {{-- <div id="mobile-era-totals" class="md:hidden grid grid-cols-2 gap-[2px] mt-3"></div> --}}
-              {{-- <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland Lossyear · Auriga STADI · simontini.id</div> --}}
+              {{-- <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland Lossyear ·
+                Auriga STADI · simontini.id</div> --}}
             </div>
           </div>
         </div>
@@ -153,7 +155,8 @@
           <div class="ms-num">1.</div>
           <div class="body-text">
             <p>
-              <strong>Pemodelan deforestasi.</strong> Pengetahuan yang terkumpul selama ini, seperti dari pemantauan lapangan dan data-data
+              <strong>Pemodelan deforestasi.</strong> Pengetahuan yang terkumpul selama ini, seperti dari pemantauan
+              lapangan dan data-data
               deforestasi
               <a href="https://simontini.id/presentation/Deforestasi_Indonesia-2023-paparan.pdf" target="_blank"
                 rel="noopener noreferrer" style="color: #bc4a3c;">2023</a>
@@ -172,7 +175,7 @@
           <div class="ms-num">2.</div>
           <div class="body-text">
             <!-- <h4>Inspeksi visual</h4> -->
-            <p><strong>Penentuan area cakupan</strong>  (<em>scoping area</em>). Isyarat deforestasi (<em>deforestation
+            <p><strong>Penentuan area cakupan</strong> (<em>scoping area</em>). Isyarat deforestasi (<em>deforestation
                 alert</em>, atau biasa disebut GLAD alert) bulanan yang diproduksi Universitas Maryland dikumpulkan. Demi
               efektivitas, yang dikumpul hanya isyarat dengan tingkat kepercayaan tinggi (<em>high confidence</em>).
               Isyarat-isyarat ini kemudian “diikat” atau diagregasi pada satu kotak (<em>bounding box</em>) bersisi 10.240
@@ -185,8 +188,9 @@
           <div class="ms-num">3.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
-            <p><strong>Model deforestasi</strong> yang telah dibangun kemudian<strong> dijalankan pada citra satelit Sentinel 2
-              resolusi 10 meter</strong> di area-area cakupan.
+            <p><strong>Model deforestasi</strong> yang telah dibangun kemudian<strong> dijalankan pada citra satelit
+                Sentinel 2
+                resolusi 10 meter</strong> di area-area cakupan.
             </p>
           </div>
         </div>
@@ -194,8 +198,10 @@
           <div class="ms-num">4.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
-            <p> <strong> Area-area yang terdeteksi deforestasi </strong>  (deforestasi indikatif) <strong>ditampalkan</strong>
-              (<em>overlay</em>) <strong>dengan peta tutupan hutan</strong>. Terdapat 4 referensi tutupan hutan yang dipakai, yakni: (1)
+            <p> <strong> Area-area yang terdeteksi deforestasi </strong> (deforestasi indikatif)
+              <strong>ditampalkan</strong>
+              (<em>overlay</em>) <strong>dengan peta tutupan hutan</strong>. Terdapat 4 referensi tutupan hutan yang
+              dipakai, yakni: (1)
               MapBiomas Indonesia, (2) Peta Penutupan Lahan yang diproduksi Kementerian Kehutanan, (3) Tropical-moist
               forest (TMF) yang diproduksi European Commission’s Joint Research Centre, dan (4) Forest Persistence yang
               diproduksi Google.
@@ -206,7 +212,8 @@
           <div class="ms-num">5.</div>
           <div class="body-text">
             <!-- <h4>Pemantauan lapangan</h4> -->
-            <p> <strong>Proses verifikasi</strong>. Deforestasi indikatif yang terdapat di luar irisan keempat tutupan hutan
+            <p> <strong>Proses verifikasi</strong>. Deforestasi indikatif yang terdapat di luar irisan keempat tutupan
+              hutan
               referensi (forest-agreement area) diinspeksi secara visual. Berhubung banyaknya poligon, sementara waktu
               yang tersedia terbatas, poligon di bawah 1 hektare tidak dapat diinspeksi sehingga dihilangkan dari area
               deforestasi. Untuk deforestasi indikatif di dalam irisan tutupan hutan referensi (forest-agreement area) ,
@@ -241,7 +248,8 @@
 
   {{-- step 1 --}}
   <div class="viz-block viz-block--full alur" style="margin-top: -60px !important;">
-    <img src="{{ asset('assets/Tahap.png') }}" alt="Simontini - 2025 Methodology" class="sm:max-w-6xl w-full mx-auto h-auto object-contain">
+    <img src="{{ asset('assets/Tahap.png') }}" alt="Simontini - 2025 Methodology"
+      class="sm:max-w-6xl w-full mx-auto h-auto object-contain">
 
     <section class="page-section px-[5vw] pt-8 pb-6">
       <div class="body-text">
@@ -398,7 +406,11 @@
       <div class="section-label">III. Deforestasi 2025</div>
 
       <p class="body-text">
-        Dengan metode tersebut, di Indonesia pada 2025 mencapai 433.751 hektare. Deforestasi ini meningkat sebesar 66% dari tahun sebelumnya seluas <a href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">261.575 hektare</a>. Deforestasi terluas kembali terjadi di Kalimantan, disusul Sumatera. Tanah Papua, yang pada 2024 berada di peringkat keempat, pada tahun 2025 menempati peringkat ketiga menggantikan Sulawesi.
+        Dengan metode tersebut, di Indonesia pada 2025 mencapai 433.751 hektare. Deforestasi ini meningkat sebesar 66%
+        dari tahun sebelumnya seluas <a href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank"
+          rel="noopener noreferrer" style="color: #bc4a3c;">261.575 hektare</a>. Deforestasi terluas kembali terjadi di
+        Kalimantan, disusul Sumatera. Tanah Papua, yang pada 2024 berada di peringkat keempat, pada tahun 2025 menempati
+        peringkat ketiga menggantikan Sulawesi.
       </p>
       <p class="body-text">
         Tabel berikut menampilkan data deforestasi per pulau besar di Indonesia tahun 2023-2025.
@@ -754,159 +766,82 @@
 
 
       <p class="body-text">
-        Deforestasi terjadi di seluruh provinsi Indonesia, kecuali DKI Jakarta dan Daerah Istimewa Yogyakarta. Bila 10 provinsi teratas deforestasi pada 2024 secara berurut adalah (1) Kalimantan Timur, (2) Kalimantan Barat, (3) Kalimantan Tengah, (4) Riau, (5) Sumatera Selatan, (6) Jambi, (7) Aceh, (8) Kalimantan Utara, (9) Bangka Belitung, dan (10) Sumatera Utara; pada 2025 urutannya menjadi (1) Kalimantan Tengah, (2) Kalimantan Timur, (3) Aceh, (4) Kalimantan Barat, (5) Papua Tengah, (6) Sumatera Barat, (7) Sumatera Utara, (8) Kalimantan Utara, (9) Riau, dan (10) Papua Pegunungan.
+        Deforestasi terjadi di seluruh provinsi Indonesia, kecuali DKI Jakarta dan Daerah Istimewa Yogyakarta. Bila 10
+        provinsi teratas deforestasi pada 2024 secara berurut adalah (1) Kalimantan Timur, (2) Kalimantan Barat, (3)
+        Kalimantan Tengah, (4) Riau, (5) Sumatera Selatan, (6) Jambi, (7) Aceh, (8) Kalimantan Utara, (9) Bangka Belitung,
+        dan (10) Sumatera Utara; pada 2025 urutannya menjadi (1) Kalimantan Tengah, (2) Kalimantan Timur, (3) Aceh, (4)
+        Kalimantan Barat, (5) Papua Tengah, (6) Sumatera Barat, (7) Sumatera Utara, (8) Kalimantan Utara, (9) Riau, dan
+        (10) Papua Pegunungan.
       </p>
 
       <p class="body-text">
-        Tiga provinsi yang mengalami bencana longsor-banjir dahsyat di Sumatera Bagian Utara pada penghujung 2025 mengalami lonjakan deforestasi luar biasa: Aceh (426%), Sumatera Utara (281%), dan Sumatera Barat (1.034%).<br>
-      </p>
-
-      <!-- gallery 1 -->
-
-      <div class="viz-block viz-block--full mt-2 mb-2">
-        <div class="viz-frame viz-frame--padded">
-          <div class="max-w-5xl mx-auto px-4 z-20 relative">
-            <div x-data="{ active: 0, images: [
-                  { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                  { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                  { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                ]}">
-              <div class="relative" x-ref="mainImg">
-                <img :src="images[active].src" alt="Simontini"
-                  @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
-                  class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
-                <button x-show="active > 0" @click="active--"
-                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                  </svg>
-                </button>
-                <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </button>
-              </div>
-              <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
-                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
-                  <template x-for="(img, index) in images" :key="index">
-                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
-                      <img :src="img.src" alt="thumbnail"
-                        class="w-full h-full object-cover object-top transition duration-200" />
-                    </div>
-                  </template>
-                </div>
-                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
-                  x-html="images[active].caption"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><br>
-
-      <p class="body-text">
-        Deforestasi terjadi di 383 kabupaten/kota atau 74% kabupaten/kota se-Indonesia yang jumlahnya 514, menurun dari tahun sebelumnya sebanyak 428 kabupaten/kota. Sepuluh teratas kabupaten deforestasi berada di Kalimantan dan Tanah Papua, dengan luas deforestasi mencapai 95.733 hektare atau 22% deforestasi nasional.<br>
-      </p>
-
-      <p class="body-text">
-       Dilihat dari status penguasaan lahan, 307.861 hektare (71%) deforestasi terjadi di kawasan hutan yang dikelola Kementerian Kehutanan, dan 125.890 hektare terjadi di area penggunaan lain (APL) yang dikelola pemerintah daerah atau pemilik lahan/konsesi.<br>
-      </p>
-
-
-      <p class="body-text">
-        Deforestasi mengalami lonjakan di kawasan konservasi. Pada 2024, deforestasi di kawasan konservasi seluas 7.704 hektare, menjadi 25.077 hektare pada 2025 yang terjadi pada 163 kawasan konservasi. Sepuluh teratas deforestasi di kawasan konservasi mencapai 17.153 hektare, atau 68% deforestasi di seluruh kawasan konservasi.<br>
-      </p>
-
-      <p class="body-text">
-        Di 29 juta hektare habitat harimau, gajah, badak, dan orangutan, terjadi deforestasi seluas 156.463 hektare, tanpa menghitung perulangan di area yang beririsan.<br>
-      </p>
-
-
-
-      <p class="body-text">
-        Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, Pemerintah Indonesia mencanangkan program ketahanan pangan melalui pengalokasian 20,6 juta hektare kawasan hutan untuk cadangan pangan, energi, dan air. Sebesar 78.123 hektare deforestasi terjadi di area pencadangan ini, atau 18% deforestasi nasional.<br>
-      </p>
-
-      <p class="body-text">
-        Sebesar 44% deforestasi terjadi di dalam konsesi, dengan konsesi kehutanan sebagai penyumbang terbesar (58%). Sebagian besar (65%) deforestasi dalam konsesi terjadi di Kalimantan.<br>
-      </p>
-
-      <!-- gallery 2 -->
-      <div class="viz-block viz-block--full mt-2 mb-2">
-        <div class="viz-frame viz-frame--padded">
-          <div class="viz-block viz-block--full mt-2 mb-2">
-
-            <div class="max-w-5xl mx-auto px-4 z-20 relative">
-              <div x-data="{ active: 0, images: [
-                { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}', caption: 'Area Penggunaan lain, Konsesi Kebun Sawit, PT Borneo Internasional <br> Anugerah, Kapuas Hulu, Kalimantan Barat, Juni 2025' },
-                { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Vale Indonesia.jpg') }}', caption: 'Konsesi Tambang, PT Vale Indonesia, <br> Bahodopi, Sulawesi Tengah, Oktober 2025' },
-                { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Indonesia Pomalaa Industry Park.jpg') }}', caption: 'Kawasan Hutan Produksi Konversi, Konsesi Tambang, PT Indonesia Pomalaa Industry Park, <br> Kolaka, Sulawesi Tenggara, Desember 2025' }
-              ]}">
-                <div class="relative" x-ref="mainImg">
-                  <img :src="images[active].src" alt="Simontini"
-                    @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
-                    class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
-                  <button x-show="active > 0" @click="active--"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                      stroke="currentColor" class="w-4 h-4">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                    </svg>
-                  </button>
-                  <button x-show="active < images.length - 1" @click="active++"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                      stroke="currentColor" class="w-4 h-4">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
-                  <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
-                    <template x-for="(img, index) in images" :key="index">
-                      <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                        :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
-                        <img :src="img.src" alt="thumbnail"
-                          class="w-full h-full object-cover object-top transition duration-200" />
-                      </div>
-                    </template>
-                  </div>
-                  <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
-                    x-html="images[active].caption"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><br>
-
-      <p class="body-text">
-        Deforestasi seluas 41.162 hektare terjadi pada 1.140 izin atau konsesi tambang, dengan 22% (8.929 hektare) terjadi pada sepuluh teratas.<br>
+        Tiga provinsi yang mengalami bencana longsor-banjir dahsyat di Sumatera Bagian Utara pada penghujung 2025
+        mengalami lonjakan deforestasi luar biasa: Aceh (426%), Sumatera Utara (281%), dan Sumatera Barat (1.034%).<br>
       </p><br>
 
       <p class="body-text">
-        Deforestasi seluas 37.910 hektare terjadi di 719 konsesi sawit sepanjang 2025, dengan 36% (13.610 hektare) terjadi pada sepuluh konsesi teratas.<br>
+        Deforestasi terjadi di 383 kabupaten/kota atau 74% kabupaten/kota se-Indonesia yang jumlahnya 514, menurun dari
+        tahun sebelumnya sebanyak 428 kabupaten/kota. Sepuluh teratas kabupaten deforestasi berada di Kalimantan dan Tanah
+        Papua, dengan luas deforestasi mencapai 95.733 hektare atau 22% deforestasi nasional.<br>
       </p>
 
       <p class="body-text">
-        Deforestasi seluas 110.898 hektare terjadi pada 486 konsesi kehutanan, yakni 74.409 hektare konsesi logging, 33.063 hektare konsesi kebun kayu, 671 hektare konsesi restorasi ekosistem, dan 2.754 hektare konsesi kehutanan lainnya. Deforestasi terjadi di 212 konsesi kebun kayu, 34 persennya terjadi di sepuluh teratas.<br>
+        Dilihat dari status penguasaan lahan, 307.861 hektare (71%) deforestasi terjadi di kawasan hutan yang dikelola
+        Kementerian Kehutanan, dan 125.890 hektare terjadi di area penggunaan lain (APL) yang dikelola pemerintah daerah
+        atau pemilik lahan/konsesi.<br>
+      </p>
+
+
+      <p class="body-text">
+        Deforestasi mengalami lonjakan di kawasan konservasi. Pada 2024, deforestasi di kawasan konservasi seluas 7.704
+        hektare, menjadi 25.077 hektare pada 2025 yang terjadi pada 163 kawasan konservasi. Sepuluh teratas deforestasi di
+        kawasan konservasi mencapai 17.153 hektare, atau 68% deforestasi di seluruh kawasan konservasi.<br>
       </p>
 
       <p class="body-text">
-       Deforestasi terjadi di 237 konsesi logging, 28 persennya terjadi di sepuluh teratas.<br>
+        Di 29 juta hektare habitat harimau, gajah, badak, dan orangutan, terjadi deforestasi seluas 156.463 hektare, tanpa
+        menghitung perulangan di area yang beririsan.<br>
+      </p>
+
+
+
+      <p class="body-text">
+        Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, Pemerintah Indonesia mencanangkan program
+        ketahanan pangan melalui pengalokasian 20,6 juta hektare kawasan hutan untuk cadangan pangan, energi, dan air.
+        Sebesar 78.123 hektare deforestasi terjadi di area pencadangan ini, atau 18% deforestasi nasional.<br>
+      </p>
+
+      <p class="body-text">
+        Sebesar 44% deforestasi terjadi di dalam konsesi, dengan konsesi kehutanan sebagai penyumbang terbesar (58%).
+        Sebagian besar (65%) deforestasi dalam konsesi terjadi di Kalimantan.<br>
+      </p><br>
+
+      <p class="body-text">
+        Deforestasi seluas 41.162 hektare terjadi pada 1.140 izin atau konsesi tambang, dengan 22% (8.929 hektare) terjadi
+        pada sepuluh teratas.<br>
+      </p><br>
+
+      <p class="body-text">
+        Deforestasi seluas 37.910 hektare terjadi di 719 konsesi sawit sepanjang 2025, dengan 36% (13.610 hektare) terjadi
+        pada sepuluh konsesi teratas.<br>
+      </p>
+
+      <p class="body-text">
+        Deforestasi seluas 110.898 hektare terjadi pada 486 konsesi kehutanan, yakni 74.409 hektare konsesi logging,
+        33.063 hektare konsesi kebun kayu, 671 hektare konsesi restorasi ekosistem, dan 2.754 hektare konsesi kehutanan
+        lainnya. Deforestasi terjadi di 212 konsesi kebun kayu, 34 persennya terjadi di sepuluh teratas.<br>
+      </p>
+
+      <p class="body-text">
+        Deforestasi terjadi di 237 konsesi logging, 28 persennya terjadi di sepuluh teratas.<br>
       </p><br><br>
 
 
       <div class="section-label">IV. Peta Tematik Deforestasi</div>
-        <p class="body-text">
-          Deforestasi berbasis provinsi Deforestasi berbasis kabupaten Deforestasi di kawasan konservasi Deforestasi di Habitat megafauna ikonik Deforestasi dalam Konsesi
-        </p>
+      <p class="body-text">
+        Deforestasi berbasis provinsi Deforestasi berbasis kabupaten Deforestasi di kawasan konservasi Deforestasi di
+        Habitat megafauna ikonik Deforestasi dalam Konsesi
+      </p>
       <div class="viz-block viz-block--full">
 
         <!-- PETA TEMATIK (inline) -->
@@ -967,7 +902,8 @@
 
           <main id="wrap" class="relative flex-1 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
             <div id="map" class="w-full flex-1"></div>
-            <div id="map-loading" class="hidden absolute inset-0 z-[700] flex flex-col items-center justify-center pointer-events-none">
+            <div id="map-loading"
+              class="hidden absolute inset-0 z-[700] flex flex-col items-center justify-center pointer-events-none">
               <div class="map-loading-spinner"></div>
               <div class="map-loading-label">Memuat data provinsi…</div>
             </div>
@@ -983,22 +919,22 @@
             </div>
 
             <div id="bl-stack" class="absolute left-[14px] bottom-[14px] z-[610] flex flex-col items-start gap-2 w-44">
-            <div id="kpi-float"
-              class="bg-[rgba(20,20,20,.82)] backdrop-blur-[4px] border-l-[3px] border-l-[#8b2a1a] rounded-md px-3 py-[7px] w-full text-[#f5f0e8]">
-              <button id="kpi-toggle" onclick="kpiFloatToggle()" style="display:none"
-                class="w-full flex flex-col items-center pt-[10px] pb-[8px] cursor-pointer bg-transparent border-0 outline-none gap-[5px]">
-                <span class="block w-7 h-[3px] rounded-full bg-white/30"></span>
-                <svg id="kpi-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none"
-                  style="transition:transform .25s ease">
-                  <path d="M1 7L7 1L13 7" stroke="rgba(245,240,232,.5)" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </button>
-              <div class="text-[.5rem] tracking-[.08em] uppercase text-[#d4c4a0]" id="kpi-label">Total</div>
-              <div class="text-[1.25rem] font-bold leading-none mt-[2px]" id="kpi-val">0</div>
-              <div class="text-[.5rem] text-[#d4c4a0] mt-[2px]" id="kpi-unit">hektare</div>
-              <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]"></ul>
-            </div>
+              <div id="kpi-float"
+                class="bg-[rgba(20,20,20,.82)] backdrop-blur-[4px] border-l-[3px] border-l-[#8b2a1a] rounded-md px-3 py-[7px] w-full text-[#f5f0e8]">
+                <button id="kpi-toggle" onclick="kpiFloatToggle()" style="display:none"
+                  class="w-full flex flex-col items-center pt-[10px] pb-[8px] cursor-pointer bg-transparent border-0 outline-none gap-[5px]">
+                  <span class="block w-7 h-[3px] rounded-full bg-white/30"></span>
+                  <svg id="kpi-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                    style="transition:transform .25s ease">
+                    <path d="M1 7L7 1L13 7" stroke="rgba(245,240,232,.5)" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <div class="text-[.5rem] tracking-[.08em] uppercase text-[#d4c4a0]" id="kpi-label">Total</div>
+                <div class="text-[1.25rem] font-bold leading-none mt-[2px]" id="kpi-val">0</div>
+                <div class="text-[.5rem] text-[#d4c4a0] mt-[2px]" id="kpi-unit">hektare</div>
+                <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]"></ul>
+              </div>
             </div><!-- /#bl-stack -->
 
             <div id="others-bubble"
@@ -1085,7 +1021,11 @@
           <h3 class="chapter-title"><strong>Kebijakan pemerintah turut memicu deforestasi</strong></h3>
         </div>
         <p class="body-text">
-          Di era presidensi Joko Widodo, terutama pada periode kedua, perlindungan lingkungan mengalami pengenduran, terutama melalui pengesahan Undang-Undang Cipta Kerja atau Omnibus Law. Batasan 30% hutan untuk setiap wilayah, sebagai misal, dihilangkan dari teks aturan. Tidak hanya itu, proyek-proyek pemerintah, terutama yang dibungkus dengan judul Proyek Strategis Nasional, diberi kemudahan menabrak kawasan hutan. Padahal, proyek-proyek ini kerap tidak disertai perencanaan matang, termasuk secara spasial.
+          Di era presidensi Joko Widodo, terutama pada periode kedua, perlindungan lingkungan mengalami pengenduran,
+          terutama melalui pengesahan Undang-Undang Cipta Kerja atau Omnibus Law. Batasan 30% hutan untuk setiap wilayah,
+          sebagai misal, dihilangkan dari teks aturan. Tidak hanya itu, proyek-proyek pemerintah, terutama yang dibungkus
+          dengan judul Proyek Strategis Nasional, diberi kemudahan menabrak kawasan hutan. Padahal, proyek-proyek ini
+          kerap tidak disertai perencanaan matang, termasuk secara spasial.
         </p>
         <p class="body-text">
           Era kepresidenan Prabowo-Gibran tampak meneruskan kebijakan ini. Kengototan meneruskan program lumbung pangan
@@ -1095,7 +1035,12 @@
           merupakan salah satu makanan pokok di Indonesia Timur.
         </p>
         <p class="body-text">
-          Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, pemerintah mencanangkan program 20 juta hektare hutan untuk cadangan pangan, energi, dan air. Pada perkembangannya, total area untuk program ini menjadi 20,6 juta hektare. Analisis Auriga Nusantara menunjukkan bahwa terdapat 8,8 juta hektare hutan alam di dalam area pencadangan ini dan 18% deforestasi 2025 terjadi di dalam area ini. Deforestasi ini terjadi melalui program-program pangan populis, seperti Cetak Sawah Rakyat (CSR) di Kalimantan Tengah, provinsi yang menjadi pemuncak deforestasi pada 2025. Padahal pada 2024 provinsi ini berada di urutan ketiga provinsi terdeforestasi.
+          Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, pemerintah mencanangkan program 20 juta
+          hektare hutan untuk cadangan pangan, energi, dan air. Pada perkembangannya, total area untuk program ini menjadi
+          20,6 juta hektare. Analisis Auriga Nusantara menunjukkan bahwa terdapat 8,8 juta hektare hutan alam di dalam
+          area pencadangan ini dan 18% deforestasi 2025 terjadi di dalam area ini. Deforestasi ini terjadi melalui
+          program-program pangan populis, seperti Cetak Sawah Rakyat (CSR) di Kalimantan Tengah, provinsi yang menjadi
+          pemuncak deforestasi pada 2025. Padahal pada 2024 provinsi ini berada di urutan ketiga provinsi terdeforestasi.
         </p>
         <p class="body-text">
           Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan hutan alam
@@ -1110,12 +1055,85 @@
           rencana tata ruang (RTRW). Per 2024 terdapat 10,2 juta hektare hutan alam di dalam APL. Dan, pada 2025
           deforestasi dalam APL seluas 125.997 hektare atau 28% deforestasi nasional.
         </p>
+
+        <!-- Gallery 1-->
+
+        <!-- gallery 1 -->
+
+        <div class="viz-block viz-block--full mt-2 mb-2">
+          <div class="viz-frame viz-frame--padded">
+
+            <div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX"
+              @touchmove="handleTouchMove($event)"
+              class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
+              <div class="flex transition-transform duration-500"
+                :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                <div class="swiper-slide w-full flex-shrink-0">
+                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan3.jpg') }}" class="glightbox1 mt-4 gbox"
+                    data-glightbox=" description: ">
+                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan3.jpg') }}" alt="Simontini - stadi 2024"
+                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+                  </a>
+                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                  </p>
+                </div>
+                <div class="swiper-slide w-full flex-shrink-0">
+                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan4.jpg') }}" class="glightbox1 mt-4 gbox"
+                    data-glightbox="description: ">
+                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan4.jpg') }}" alt="Simontini - stadi 2024"
+                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+                  </a>
+                </div>
+                <div class="swiper-slide w-full flex-shrink-0">
+                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan5.jpg') }}" class="glightbox1 mt-4 gbox"
+                    data-glightbox="description:">
+                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan5.jpg') }}" alt="Simontini - stadi 2024"
+                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
+                  </a>
+                </div>
+                <div class="swiper-slide w-full flex-shrink-0">
+                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan6.jpg') }}" class="glightbox1 mt-4 gbox"
+                    data-glightbox="description: ">
+                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan6.jpg') }}" alt="Simontini - stadi 2024"
+                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+                  </a>
+                </div>
+                <div class="swiper-slide w-full flex-shrink-0">
+                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan7.jpg') }}" class="glightbox1 mt-4 gbox"
+                    data-glightbox="description:">
+                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan7.jpg') }}" alt="Simontini - stadi 2024"
+                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+                  </a>
+                </div>
+              </div>
+
+              <!-- Navigation Buttons -->
+              <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0" x-show="currentSlide > 0"
+                class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                </svg>
+              </button>
+              <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
+                x-show="currentSlide < totalSlides - 1"
+                class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
         <!-- <ul class="insight-list">
-                                  <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                  <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                  <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                  <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                </ul> -->
+                                      <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                      <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                      <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                      <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                    </ul> -->
       </div>
 
       <hr class="divider">
@@ -1198,13 +1216,13 @@
         </p>
 
         <!-- <div class="callout">
-                                  <strong>Faktor pendorong utama:</strong>
-                                  <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                    <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                    <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                    <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                  </ul>
-                                </div> -->
+                                      <strong>Faktor pendorong utama:</strong>
+                                      <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                        <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                        <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                        <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                      </ul>
+                                    </div> -->
       </div>
 
       <hr class="divider">
@@ -1234,7 +1252,58 @@
           konsesi restorasi ekosistem (617 hektare), yang seluruhnya berjumlah 180.370 hektare atau 42% deforestasi
           nasional. Dengan kata lain, 58% deforestasi 2025 berupa deforestasi legal (<em>legal deforestation</em>).
         </p>
+
+        <!-- gallery 1 -->
+
+        <div class="viz-block viz-block--full mt-2 mb-2">
+          <div class="viz-frame viz-frame--padded">
+
+            <div x-data="{ currentSlide: 0, totalSlides: 2 }" @touchstart="startX = $event.touches[0].clientX"
+              @touchmove="handleTouchMove($event)"
+              class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
+              <div class="flex transition-transform duration-500"
+                :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                <div class="swiper-slide w-full flex-shrink-0">
+                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan8.jpg') }}" class="glightbox2 mt-4 gbox"
+                    data-glightbox=" description: ">
+                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan8.jpg') }}" alt="Simontini - stadi 2024"
+                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+                  </a>
+                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
+                  </p>
+                </div>
+                <div class="swiper-slide w-full flex-shrink-0">
+                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan9.jpg') }}" class="glightbox2 mt-4 gbox"
+                    data-glightbox="description: ">
+                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan9.jpg') }}" alt="Simontini - stadi 2024"
+                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+                  </a>
+                </div>
+              </div>
+
+              <!-- Navigation Buttons -->
+              <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0" x-show="currentSlide > 0"
+                class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                </svg>
+              </button>
+              <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
+                x-show="currentSlide < totalSlides - 1"
+                class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
+
 
       <hr class="divider">
 
@@ -1687,7 +1756,7 @@
           var photoOverlayEls = [];
 
           var isDesktop = window.innerWidth >= 768;
-          var ERA_COLORS = ['rgba(188,74,60,0.06)','rgba(188,74,60,0.09)','rgba(188,74,60,0.12)','rgba(188,74,60,0.18)'];
+          var ERA_COLORS = ['rgba(188,74,60,0.06)', 'rgba(188,74,60,0.09)', 'rgba(188,74,60,0.12)', 'rgba(188,74,60,0.18)'];
 
           PRESIDENTS.forEach(function (p, pi) {
             var total = calcTotal(p);
@@ -1709,7 +1778,7 @@
             if (isDesktop) {
               var photoOffset = p.name === 'Jokowi' ? (widthPct * 0.4) + '%'
                 : p.name === 'Susilo Bambang Yudhoyono' ? (widthPct * 0.5) + '%'
-                : '4px';
+                  : '4px';
               var presGroup = document.createElement('div');
               presGroup.style.cssText = 'position:absolute;left:calc(' + leftPct + '% + ' + photoOffset + ');top:0;z-index:4;display:flex;flex-direction:row;align-items:flex-start;transform:translateX(' + (p.name === 'Susilo Bambang Yudhoyono' ? '-50%' : '0') + ');';
 
@@ -2363,12 +2432,12 @@
             notesBox: [''],
             species: [
               { lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/def_harimau.json' },
-                            { lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/def_gajah.json' },
-                            { lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json' },
-                            { lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/def_pongo_tapanuliensis.json' },
-                            { lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/def_pongo_abelii.json' },
-                            { lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/def_pongo_pygmaeus.json' },
-                            { lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json' }
+              { lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/def_gajah.json' },
+              { lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json' },
+              { lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/def_pongo_tapanuliensis.json' },
+              { lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/def_pongo_abelii.json' },
+              { lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/def_pongo_pygmaeus.json' },
+              { lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json' }
             ],
             tables: []
           },
@@ -2565,14 +2634,14 @@
           badge.dataset.species = item.name;
           const shortName = item.name.split(' ').slice(-2).join(' ');
           badge.innerHTML = `
-                                <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                <div class="satwa-badge-detail">
-                                  <span class="si-name">${item.name}</span>
-                                  <span class="si-val">${item.value}</span>
-                                  <span class="si-unit">habitat terdampak</span>
-                                </div>
-                              `;
+                                    <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                    <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                    <div class="satwa-badge-detail">
+                                      <span class="si-name">${item.name}</span>
+                                      <span class="si-val">${item.value}</span>
+                                      <span class="si-unit">habitat terdampak</span>
+                                    </div>
+                                  `;
           badge.addEventListener('click', async (e) => {
             e.stopPropagation();
             const isActive = badge.classList.contains('active');
@@ -2657,15 +2726,15 @@
         // ── CHOROPLETH: Deforestasi berbasis provinsi via GeoServer WFS ────────────
         function getChoroColor(val) {
           if (!val || val <= 0) return 'rgba(245,240,232,0.18)';
-          if (val <    200) return '#fef4ee';
-          if (val <    500) return '#fce3d4';
-          if (val <   1000) return '#f8c4a2';
-          if (val <   2500) return '#f0a070';
-          if (val <   5000) return '#e57a48';
-          if (val <  10000) return '#d45930';
-          if (val <  20000) return '#bb3c1e';
-          if (val <  35000) return '#9e2e14';
-          if (val <  55000) return '#7e1f0c';
+          if (val < 200) return '#fef4ee';
+          if (val < 500) return '#fce3d4';
+          if (val < 1000) return '#f8c4a2';
+          if (val < 2500) return '#f0a070';
+          if (val < 5000) return '#e57a48';
+          if (val < 10000) return '#d45930';
+          if (val < 20000) return '#bb3c1e';
+          if (val < 35000) return '#9e2e14';
+          if (val < 55000) return '#7e1f0c';
           return '#5a1206';
         }
 
