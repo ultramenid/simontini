@@ -47,9 +47,9 @@
             </div>
             <div class="hero-divider"></div>
             <!-- <div class="hero-stat">
-                                                 <span class="hs-val">+66%</span>
-                                                 <span class="hs-unit">Peningkatan dari 2024</span>
-                                                 </div> -->
+                                                                 <span class="hs-val">+66%</span>
+                                                                 <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                 </div> -->
             <div class="hero-divider"></div>
             <div class="hero-desc">
                 Deforestation is on the rise; it’s time for the government to issue regulations to protect all remaining
@@ -1134,92 +1134,61 @@
                     10.2 million hectares of natural forest inside APL areas, and in 2025, deforestation in such areas
                     reached 125,997 hectares, or 28% of national deforestation.
                 </p>
+                <!-- <ul class="insight-list">
+                                                              <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                              <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                              <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                              <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                            </ul> -->
+            </div>
 
-                <!-- gallery 1 -->
-
-                <div class="viz-block viz-block--full mt-2 mb-2">
-                    <div class="viz-frame viz-frame--padded">
-
-                        <div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX"
-                            @touchmove="handleTouchMove($event)"
-                            class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
-                            <div class="flex transition-transform duration-500"
-                                :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                                <div class="swiper-slide w-full flex-shrink-0">
-                                    <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan3.jpg') }}"
-                                        class="glightbox1 mt-4 gbox" data-glightbox=" description: ">
-                                        <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan3.jpg') }}"
-                                            alt="Simontini - stadi 2024"
-                                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                                    </a>
-                                    <p
-                                        class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                                    </p>
-                                </div>
-                                <div class="swiper-slide w-full flex-shrink-0">
-                                    <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan4.jpg') }}"
-                                        class="glightbox1 mt-4 gbox" data-glightbox="description: ">
-                                        <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan4.jpg') }}"
-                                            alt="Simontini - stadi 2024"
-                                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-                                    </a>
-                                </div>
-                                <div class="swiper-slide w-full flex-shrink-0">
-                                    <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan5.jpg') }}"
-                                        class="glightbox1 mt-4 gbox" data-glightbox="description:">
-                                        <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan5.jpg') }}"
-                                            alt="Simontini - stadi 2024"
-                                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
-                                    </a>
-                                </div>
-                                <div class="swiper-slide w-full flex-shrink-0">
-                                    <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan6.jpg') }}"
-                                        class="glightbox1 mt-4 gbox" data-glightbox="description: ">
-                                        <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan6.jpg') }}"
-                                            alt="Simontini - stadi 2024"
-                                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                                    </a>
-                                </div>
-                                <div class="swiper-slide w-full flex-shrink-0">
-                                    <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan7.jpg') }}"
-                                        class="glightbox1 mt-4 gbox" data-glightbox="description:">
-                                        <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan7.jpg') }}"
-                                            alt="Simontini - stadi 2024"
-                                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                                    </a>
-                                </div>
+            <div class="viz-block viz-block--full mt-2 mb-2">
+                <div class="viz-frame viz-frame--padded">
+                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+                        <div x-data="{ active: 0, images: [
+                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                    ]}">
+                            <div class="relative" x-ref="mainImg">
+                                <img :src="images[active].src" alt="Simontini"
+                                    @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                                    class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                                <button x-show="active > 0" @click="active--"
+                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button x-show="active < images.length - 1" @click="active++"
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
                             </div>
-
-                            <!-- Navigation Buttons -->
-                            <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0"
-                                x-show="currentSlide > 0"
-                                class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-                                </svg>
-                            </button>
-                            <button
-                                @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
-                                x-show="currentSlide < totalSlides - 1"
-                                class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-                                </svg>
-                            </button>
+                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                                            :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                                            <img :src="img.src" alt="thumbnail"
+                                                class="w-full h-full object-cover object-top transition duration-200" />
+                                        </div>
+                                    </template>
+                                </div>
+                                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                                    x-html="images[active].caption"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- <ul class="insight-list">
-                                              <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                              <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                              <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                              <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                            </ul> -->
-            </div>
+            </div><br>
 
             <hr class="divider">
 
@@ -1254,6 +1223,54 @@
                     appear, and infrastructure continues to improve, how can deforestation rates on the island be held back?
                 </p>
             </div>
+
+            <div class="viz-block viz-block--full mt-2 mb-2">
+                <div class="viz-frame viz-frame--padded">
+                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+                        <div x-data="{ active: 0, images: [
+                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                    ]}">
+                            <div class="relative" x-ref="mainImg">
+                                <img :src="images[active].src" alt="Simontini"
+                                    @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                                    class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                                <button x-show="active > 0" @click="active--"
+                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button x-show="active < images.length - 1" @click="active++"
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                                            :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                                            <img :src="img.src" alt="thumbnail"
+                                                class="w-full h-full object-cover object-top transition duration-200" />
+                                        </div>
+                                    </template>
+                                </div>
+                                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                                    x-html="images[active].caption"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
 
             <hr class="divider">
 
@@ -1301,14 +1318,62 @@
                 </p>
 
                 <!-- <div class="callout">
-                                              <strong>Faktor pendorong utama:</strong>
-                                              <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                                <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                                <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                                <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                              </ul>
-                                            </div> -->
+                                                              <strong>Faktor pendorong utama:</strong>
+                                                              <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                              </ul>
+                                                            </div> -->
             </div>
+
+            <div class="viz-block viz-block--full mt-2 mb-2">
+                <div class="viz-frame viz-frame--padded">
+                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+                        <div x-data="{ active: 0, images: [
+                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                    ]}">
+                            <div class="relative" x-ref="mainImg">
+                                <img :src="images[active].src" alt="Simontini"
+                                    @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                                    class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                                <button x-show="active > 0" @click="active--"
+                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button x-show="active < images.length - 1" @click="active++"
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                                            :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                                            <img :src="img.src" alt="thumbnail"
+                                                class="w-full h-full object-cover object-top transition duration-200" />
+                                        </div>
+                                    </template>
+                                </div>
+                                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                                    x-html="images[active].caption"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
 
             <hr class="divider">
 
@@ -1336,62 +1401,55 @@
                     hectares or 42% of national deforestation. In other words, 58% of deforestation in 2025 constituted
                     legal deforestation.
                 </p>
+            </div>
 
-                <!-- gallery 1 -->
-
-                <div class="viz-block viz-block--full mt-2 mb-2">
-                    <div class="viz-frame viz-frame--padded">
-
-                        <div x-data="{ currentSlide: 0, totalSlides: 2 }" @touchstart="startX = $event.touches[0].clientX"
-                            @touchmove="handleTouchMove($event)"
-                            class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
-                            <div class="flex transition-transform duration-500"
-                                :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                                <div class="swiper-slide w-full flex-shrink-0">
-                                    <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan8.jpg') }}"
-                                        class="glightbox2 mt-4 gbox" data-glightbox=" description: ">
-                                        <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan8.jpg') }}"
-                                            alt="Simontini - stadi 2024"
-                                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                                    </a>
-                                    <p
-                                        class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                                    </p>
-                                </div>
-                                <div class="swiper-slide w-full flex-shrink-0">
-                                    <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan9.jpg') }}"
-                                        class="glightbox2 mt-4 gbox" data-glightbox="description: ">
-                                        <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan9.jpg') }}"
-                                            alt="Simontini - stadi 2024"
-                                            class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-                                    </a>
-                                </div>
+            <div class="viz-block viz-block--full mt-2 mb-2">
+                <div class="viz-frame viz-frame--padded">
+                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+                        <div x-data="{ active: 0, images: [
+                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                    ]}">
+                            <div class="relative" x-ref="mainImg">
+                                <img :src="images[active].src" alt="Simontini"
+                                    @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                                    class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                                <button x-show="active > 0" @click="active--"
+                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button x-show="active < images.length - 1" @click="active++"
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
                             </div>
-
-                            <!-- Navigation Buttons -->
-                            <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0"
-                                x-show="currentSlide > 0"
-                                class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-                                </svg>
-                            </button>
-                            <button
-                                @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
-                                x-show="currentSlide < totalSlides - 1"
-                                class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-                                </svg>
-                            </button>
+                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                                            :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                                            <img :src="img.src" alt="thumbnail"
+                                                class="w-full h-full object-cover object-top transition duration-200" />
+                                        </div>
+                                    </template>
+                                </div>
+                                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                                    x-html="images[active].caption"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div><br>
 
             <hr class="divider">
 
@@ -1419,6 +1477,54 @@
                     accounting for 43% of national deforestation.
                 </p>
             </div>
+
+            <div class="viz-block viz-block--full mt-2 mb-2">
+                <div class="viz-frame viz-frame--padded">
+                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+                        <div x-data="{ active: 0, images: [
+                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                    ]}">
+                            <div class="relative" x-ref="mainImg">
+                                <img :src="images[active].src" alt="Simontini"
+                                    @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                                    class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                                <button x-show="active > 0" @click="active--"
+                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button x-show="active < images.length - 1" @click="active++"
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                                            :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                                            <img :src="img.src" alt="thumbnail"
+                                                class="w-full h-full object-cover object-top transition duration-200" />
+                                        </div>
+                                    </template>
+                                </div>
+                                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                                    x-html="images[active].caption"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
         </section>
 
         <!-- REKOMENDASI -->
@@ -1434,24 +1540,94 @@
                 </p> --}}
 
                 <div class="method-steps">
-                    <div class="method-step">
-                        <div class="ms-num ">1.</div>
-                        <div>
-                            <h4 class="chapter-title">Issue legislation to ensure the protection of all remaining natural
-                                forests in Indonesia.</h4><br>
-                            <p class="body-text">
-                                Legal protection over natural forests should ideally be in the form of a law. However,
-                                enacting laws is not easy and often takes years. Even lower tier legislation like government
-                                regulations can take considerable time to develop, largely due to the intricacies and
-                                complexities involved in the cross-ministerial approvals required in their formulation.
-                                Consequently, a presidential regulation would constitute a tactical breakthrough that could
-                                act as an emergency brake to address this issue. Thus, it is time for President Prabowo
-                                Subianto to issue a presidential regulation on the protection of all remaining natural
-                                forests in Indonesia.
-                            </p>
+                    <div class="border-b py-12">
+                        <div class="method-step ">
+                            <div class="ms-num ">1.</div>
+                            <div>
+                                <h4 class="chapter-title">Issue legislation to ensure the protection of all remaining
+                                    natural
+                                    forests in Indonesia.</h4><br>
+                                <p class="body-text">
+                                    Legal protection over natural forests should ideally be in the form of a law. However,
+                                    enacting laws is not easy and often takes years. Even lower tier legislation like
+                                    government
+                                    regulations can take considerable time to develop, largely due to the intricacies and
+                                    complexities involved in the cross-ministerial approvals required in their formulation.
+                                    Consequently, a presidential regulation would constitute a tactical breakthrough that
+                                    could
+                                    act as an emergency brake to address this issue. Thus, it is time for President Prabowo
+                                    Subianto to issue a presidential regulation on the protection of all remaining natural
+                                    forests in Indonesia.
+                                </p>
+
+
+                            </div>
+                        </div>
+                        <div class="viz-block viz-block--full mt-2 mb-2">
+                            <div class="viz-frame viz-frame--padded">
+
+                                <div x-data="{
+                              currentSlide: 0,
+                              totalSlides: 5,
+                              startX: 0,
+                              startSwipe(e) { this.startX = e.touches[0].clientX; },
+                              handleTouchMove(e) {
+                                let diff = this.startX - e.touches[0].clientX;
+                                if (Math.abs(diff) > 50) {
+                                  if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                  else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                  this.startX = e.touches[0].clientX;
+                                }
+                              }
+                            }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                                    class="relative bg-gray-100 pb-4 mt-4 max-w-5xl mx-auto z-20 overflow-hidden">
+
+
+                                    <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+
+                                        @foreach([3, 4, 5, 6, 7] as $i)
+                                            <div class="w-full flex-shrink-0">
+                                                <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
+                                                    class="glightbox1 gbox" data-glightbox="description:">
+
+                                                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
+                                                        alt="RDPU RUU Kehutanan {{ $i }}" class="w-full object-cover object-top cursor-pointer
+                                                             h-[220px] 
+                                                             sm:h-[60vh]" />
+
+                                                </a>
+                                            </div>
+                                        @endforeach
+
+                                    </div>
+
+                                    <!-- BUTTON -->
+                                    <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                                        class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                                        ◀
+                                    </button>
+
+                                    <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                                        x-show="currentSlide < totalSlides - 1"
+                                        class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                                        ▶
+                                    </button>
+
+                                    <!-- DOT -->
+                                    <div class="flex justify-center gap-2 mt-3">
+                                        <template x-for="i in totalSlides" :key="i">
+                                            <button @click="currentSlide = i - 1"
+                                                :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
+                                                class="w-2 h-2">
+                                            </button>
+                                        </template>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="method-step">
+                    <div class="method-step border-b">
                         <div class="ms-num">2.</div>
                         <div class="">
                             <h4 class="chapter-title">Establish and apply instruments to control spatial plan revisions.
@@ -1475,7 +1651,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="method-step">
+                    <div class="method-step border-b">
                         <div class="ms-num">3.</div>
                         <div class="">
                             <h4 class="chapter-title">Accelerate the expansion of preservation areas, especially outside the
@@ -1495,25 +1671,97 @@
                             </p>
                         </div>
                     </div>
-                    <div class="method-step">
-                        <div class="ms-num">4.</div>
-                        <div class="">
-                            <h4 class="chapter-title">Redistribute forest management institutions and personnel so that all
-                                natural forests have rangers to protect them.</h4><br>
-                            <p class="body-text">
-                                President Prabowo Subianto has reportedly instructed a doubling of the number of forest
-                                rangers – a step deserving of appreciation. However, as Auriga Nusantara has previously
-                                outlined to Commission IV of the Indonesian House of Representatives (DPR RI), forest
-                                protection personnel have tended to be concentrated on the island of Java. The same applies
-                                to budgeting, with allocations per hectare of forest estate being significantly higher in
-                                Java than elsewhere. Therefore, in addition to increasing personnel numbers – or
-                                redistributing authority and management functions to regional governments – there is also a
-                                need to redistribute personnel so that all remaining natural forest areas have rangers and
-                                associated budgets.
-                            </p>
+                    <div class="border-b py-12">
+                        <div class="method-step">
+                            <div class="ms-num">4.</div>
+                            <div class="">
+                                <h4 class="chapter-title">Redistribute forest management institutions and personnel so that
+                                    all
+                                    natural forests have rangers to protect them.</h4><br>
+                                <p class="body-text">
+                                    President Prabowo Subianto has reportedly instructed a doubling of the number of forest
+                                    rangers – a step deserving of appreciation. However, as Auriga Nusantara has previously
+                                    outlined to Commission IV of the Indonesian House of Representatives (DPR RI), forest
+                                    protection personnel have tended to be concentrated on the island of Java. The same
+                                    applies
+                                    to budgeting, with allocations per hectare of forest estate being significantly higher
+                                    in
+                                    Java than elsewhere. Therefore, in addition to increasing personnel numbers – or
+                                    redistributing authority and management functions to regional governments – there is
+                                    also a
+                                    need to redistribute personnel so that all remaining natural forest areas have rangers
+                                    and
+                                    associated budgets.
+                                </p>
+
+
+                            </div>
+                        </div>
+                        <div class="viz-block viz-block--full mt-2 mb-2">
+                            <div class="viz-frame viz-frame--padded">
+
+                                <div x-data="{
+                          currentSlide: 0,
+                          totalSlides: 2,
+                          startX: 0,
+                          startSwipe(e) { this.startX = e.touches[0].clientX; },
+                          handleTouchMove(e) {
+                            let diff = this.startX - e.touches[0].clientX;
+                            if (Math.abs(diff) > 50) {
+                              if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                              else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                              this.startX = e.touches[0].clientX;
+                            }
+                          }
+                        }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                                    class="relative bg-gray-100 pb-4 mt-4 max-w-5xl mx-auto z-20 overflow-hidden">
+
+
+                                    <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+
+                                        @foreach([8, 9] as $i)
+                                            <div class="w-full flex-shrink-0">
+                                                <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
+                                                    class="glightbox1 gbox" data-glightbox="description:">
+
+                                                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
+                                                        alt="RDPU RUU Kehutanan {{ $i }}" class="w-full object-cover object-top cursor-pointer
+                                                     h-[220px] 
+                                                     sm:h-[60vh]" />
+
+                                                </a>
+                                            </div>
+                                        @endforeach
+
+                                    </div>
+
+                                    <!-- BUTTON -->
+                                    <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                                        class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                                        ◀
+                                    </button>
+
+                                    <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                                        x-show="currentSlide < totalSlides - 1"
+                                        class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                                        ▶
+                                    </button>
+
+                                    <!-- DOT -->
+                                    <div class="flex justify-center gap-2 mt-3">
+                                        <template x-for="i in totalSlides" :key="i">
+                                            <button @click="currentSlide = i - 1"
+                                                :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
+                                                class="w-2 h-2">
+                                            </button>
+                                        </template>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="method-step">
+                    <div class="method-step border-b">
                         <div class="ms-num">5.</div>
                         <div class="">
                             <h4 class="chapter-title">Companies that manage areas with natural forest cover should make
@@ -1527,7 +1775,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="method-step">
+                    <div class="method-step border-b">
                         <div class="ms-num">6.</div>
                         <div class="">
                             <h4 class="chapter-title">Provide incentives for regional governments, local communities and
@@ -1543,6 +1791,7 @@
                                 by such parties.
                             </p>
                         </div>
+
                     </div>
                 </div>
 
@@ -2710,14 +2959,14 @@
                     badge.dataset.species = item.name;
                     const shortName = item.name.split(' ').slice(-2).join(' ');
                     badge.innerHTML = `
-                                                <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                                <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                                <div class="satwa-badge-detail">
-                                                  <span class="si-name">${item.name}</span>
-                                                  <span class="si-val">${item.value}</span>
-                                                  <span class="si-unit">habitat terdampak</span>
-                                                </div>
-                                              `;
+                                                                <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                                                <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                                                <div class="satwa-badge-detail">
+                                                                  <span class="si-name">${item.name}</span>
+                                                                  <span class="si-val">${item.value}</span>
+                                                                  <span class="si-unit">habitat terdampak</span>
+                                                                </div>
+                                                              `;
                     badge.addEventListener('click', async (e) => {
                         e.stopPropagation();
                         const isActive = badge.classList.contains('active');
