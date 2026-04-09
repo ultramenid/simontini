@@ -845,62 +845,42 @@
       <div class="viz-block viz-block--full">
 
         <!-- PETA TEMATIK (inline) -->
-        <div id="peta-tematik" style="height: 60vh" class="flex overflow-hidden">
-          <aside id="sidebar"
-            class="sm:w-[350px] w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] px-4 py-4 overflow-y-auto border-r border-white/[.08]">
-            <h1 class="text-[1.05rem] font-bold leading-[1.15] mb-1 p-1">Peta Tematik Deforestasi</h1>
-            <p class="px-1 text-[.58rem] tracking-[.1em] uppercase text-[#d4c4a0] mb-[10px]">Pilih jenis analisis · 2025
-            </p>
-            <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
-              style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-              <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk melihat alur
-                lengkap</span>
-            </div>
-            <div id="mode-btn-rail">
-              <button class="mode-btn active" data-mode="provinsi">
-                <span class="mode-btn-label">Deforestasi berbasis provinsi</span>
-                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              </button>
-              <button class="mode-btn" data-mode="kabupaten">
-                <span class="mode-btn-label">Deforestasi berbasis kabupaten</span>
-                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              </button>
-              <button class="mode-btn" data-mode="konservasi">
-                <span class="mode-btn-label">Deforestasi di kawasan konservasi</span>
-                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              </button>
-              <button class="mode-btn" data-mode="megafauna">
-                <span class="mode-btn-label">Deforestasi di Habitat megafauna ikonik</span>
-                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              </button>
-              <button class="mode-btn" data-mode="konsesi">
-                <span class="mode-btn-label">Deforestasi dalam Konsesi</span>
-                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              </button>
-            </div><!-- /#mode-btn-rail -->
+        <!-- ── MODE PILL BAR ── -->
+        <div id="mode-pill-bar">
+          <div class="pill-bar-label">Pilih jenis analisis · 2025</div>
+          <div id="mode-btn-rail">
+            <button class="mode-btn active" data-mode="provinsi">
+              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              <span class="mode-btn-label">Provinsi</span>
+            </button>
+            <button class="mode-btn" data-mode="kabupaten">
+              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              <span class="mode-btn-label">Kabupaten</span>
+            </button>
+            <button class="mode-btn" data-mode="konservasi">
+              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              <span class="mode-btn-label">Konservasi</span>
+            </button>
+            <button class="mode-btn" data-mode="megafauna">
+              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              <span class="mode-btn-label">Megafauna</span>
+            </button>
+            <button class="mode-btn" data-mode="konsesi">
+              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              <span class="mode-btn-label">Konsesi</span>
+            </button>
+          </div>
+          <div id="konsesi-submenu" class="hidden">
+            <button class="cat-btn" data-cat="kebun-kayu">Kebun Kayu</button>
+            <button class="cat-btn" data-cat="logging">Logging</button>
+            <button class="cat-btn" data-cat="sawit">Sawit</button>
+            <button class="cat-btn" data-cat="tambang">Tambang</button>
+          </div>
+        </div>
 
-            <!-- Sub-menu konsesi (hidden by default) -->
-            <div id="konsesi-submenu" class="hidden pl-4">
-              <button
-                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                data-cat="kebun-kayu"> Kebun Kayu</button>
-              <button
-                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                data-cat="logging">Logging</button>
-              <button
-                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                data-cat="sawit"> Sawit</button>
-              <button
-                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
-                data-cat="tambang"> Tambang</button>
-            </div>
+        <div id="peta-tematik" style="height: 70vh" class="flex flex-col overflow-hidden">
 
-          </aside>
-
-          <main id="wrap" class="relative flex-1 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
+          <main id="wrap" class="relative flex-1 min-h-0 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
             <div id="map" class="w-full flex-1"></div>
             <div id="map-loading"
               class="hidden absolute inset-0 z-[700] flex flex-col items-center justify-center pointer-events-none">
@@ -918,29 +898,9 @@
                 Deforestasi berbasis provinsi</h2>
             </div>
 
-            <div id="bl-stack" class="absolute left-[14px] bottom-[14px] z-[610] flex flex-col items-start gap-2 w-44">
-              <div id="kpi-float"
-                class="bg-[rgba(20,20,20,.82)] backdrop-blur-[4px] border-l-[3px] border-l-[#8b2a1a] rounded-md px-3 py-[7px] w-full text-[#f5f0e8]">
-                <button id="kpi-toggle" onclick="kpiFloatToggle()" style="display:none"
-                  class="w-full flex flex-col items-center pt-[10px] pb-[8px] cursor-pointer bg-transparent border-0 outline-none gap-[5px]">
-                  <span class="block w-7 h-[3px] rounded-full bg-white/30"></span>
-                  <svg id="kpi-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none"
-                    style="transition:transform .25s ease">
-                    <path d="M1 7L7 1L13 7" stroke="rgba(245,240,232,.5)" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </button>
-                <div id="kpi-items"></div>
-                {{-- <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]"></ul> --}}
-              </div>
-            </div><!-- /#bl-stack -->
+            <div id="bl-stack" class="hidden"><div id="kpi-float"><div id="kpi-items"></div></div></div>
 
-            <div id="others-bubble"
-              class="absolute right-[14px] top-[10px] z-[620] w-[120px] h-[120px] rounded-full bg-[rgba(192,64,48,.95)] text-white hidden text-center items-center justify-center flex-col p-3 shadow-[0_8px_26px_rgba(139,42,26,.35)]">
-              <div class="text-[.58rem] leading-[1.3]" id="bubble-label">Kabupaten lainnya</div>
-              <div class="text-[1.4rem] font-bold leading-none mt-[3px]" id="bubble-val">0</div>
-              <div class="text-[.5rem] mt-[1px] opacity-90" id="bubble-unit">hektare</div>
-            </div>
+            <div id="others-bubble" class="hidden" style="display:none!important"><div id="bubble-label"></div><div id="bubble-val"></div><div id="bubble-unit"></div></div>
 
             <div id="notes-wrap" class="absolute left-[14px] bottom-[12px] z-[620] w-[min(360px,38vw)] flex flex-col">
               <div id="notes-box" class=" pt-[14px] px-[14px] pb-[10px]">
@@ -950,9 +910,7 @@
 
             <div id="table-panel"
               class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
-              <button id="table-toggle"
-                class="absolute left-[-36px] top-1/2 -translate-y-1/2 z-10 [writing-mode:vertical-rl] [text-orientation:mixed] bg-[#1a1a1a] text-[#f5f0e8] border-0 rounded-l-lg py-5 px-[9px] text-[.6rem] font-bold tracking-[.1em] uppercase cursor-pointer shadow-[-4px_0_14px_rgba(0,0,0,.3)] transition-colors leading-none whitespace-nowrap hidden">Tabel
-                ▶</button>
+              <button id="table-toggle" style="display:none!important"></button>
               <div class="flex items-center justify-between px-4 py-3 border-b border-white/[.1] shrink-0">
                 <span class="text-[.65rem] font-bold tracking-[.1em] uppercase text-[#d4c4a0]">Tabel Data</span>
                 <button id="table-close"
@@ -966,6 +924,13 @@
               <div id="table-wrap" class="flex-1 overflow-y-auto overflow-x-hidden flex flex-col"></div>
             </div>
           </main>
+
+          <aside id="sidebar"
+            class="w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] border-t border-white/[.08] flex flex-col overflow-hidden"
+            style="height:225px">
+            <span id="sidebar-mode-label" class="hidden"></span>
+            <div id="sidebar-table-wrap" class="flex-1 flex flex-row items-stretch"></div>
+          </aside>
         </div>
 
       </div><br><br>
@@ -2302,6 +2267,7 @@
         let activeRow = null;
         let currentMode = 'provinsi';
         const activeModes = new Set();
+        let currentKonsesiCat = null;
         let activeEntry = null;
         let activePolygonSpecies = null;
         let stadi2025Loaded = false;
@@ -2730,6 +2696,100 @@
           return card;
         }
 
+        function renderAllSidebarCards() {
+          const wrap = document.getElementById('sidebar-table-wrap');
+          const lbl  = document.getElementById('sidebar-mode-label');
+          if (!wrap) return;
+          wrap.innerHTML = '';
+          const modeNames = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna', konsesi: 'Konsesi' };
+          const catNames  = { 'kebun-kayu': 'Kebun Kayu', logging: 'Logging', sawit: 'Sawit', tambang: 'Tambang' };
+          if (activeModes.size === 0) {
+            if (lbl) lbl.textContent = '—';
+            return;
+          }
+          if (lbl) lbl.textContent = [...activeModes].map(mk => modeNames[mk] || mk).join(', ');
+          [...activeModes].forEach(modeKey => {
+            let markers = [], heading = modeNames[modeKey] || modeKey, totalVal = null, othersVal = null;
+            if (modeKey === 'konsesi') {
+              if (currentKonsesiCat && MODES.konsesi.subCategories[currentKonsesiCat]) {
+                const cat = MODES.konsesi.subCategories[currentKonsesiCat];
+                markers = cat.markers || [];
+                heading = catNames[currentKonsesiCat] || currentKonsesiCat;
+                totalVal = cat.kpiVal;
+                othersVal = cat.othersVal || null;
+              } else {
+                const card = document.createElement('div');
+                card.className = 'sb-card';
+                card.innerHTML = '<div class="sb-card-head">Konsesi</div><div class="stbl-empty">Pilih kategori konsesi.</div>';
+                wrap.appendChild(card);
+                return;
+              }
+            } else {
+              const mode = MODES[modeKey];
+              if (!mode) return;
+              markers = mode.markers || mode.species || [];
+              totalVal = mode.kpiVal || null;
+              othersVal = mode.bubble?.value || null;
+            }
+            if (!markers.length) return;
+            const card = document.createElement('div');
+            card.className = 'sb-card';
+            const head = document.createElement('div');
+            head.className = 'sb-card-head';
+            head.textContent = heading;
+            card.appendChild(head);
+            const table = document.createElement('table');
+            table.className = 'stbl';
+            const tbody = document.createElement('tbody');
+            markers.forEach(m => {
+              const tr = document.createElement('tr');
+              tr.className = 'stbl-row';
+              tr.addEventListener('click', () => focusMarkerByLabel(m.name, tr));
+              const tdN = document.createElement('td');
+              tdN.className = 'stbl-name';
+              tdN.textContent = m.name;
+              const raw = m.value;
+              const num = typeof raw === 'number' ? raw : parseFloat(String(raw).replace(/\./g, '').replace(',', '.'));
+              const tdV = document.createElement('td');
+              tdV.className = 'stbl-val';
+              tdV.textContent = isNaN(num) ? raw : num.toLocaleString('id-ID');
+              tr.appendChild(tdN); tr.appendChild(tdV);
+              tbody.appendChild(tr);
+            });
+            if (totalVal) {
+              const trT = document.createElement('tr');
+              trT.className = 'stbl-total';
+              const tdTN = document.createElement('td');
+              tdTN.className = 'stbl-name';
+              tdTN.textContent = 'Total';
+              const tdTV = document.createElement('td');
+              tdTV.className = 'stbl-val';
+              tdTV.textContent = totalVal;
+              trT.appendChild(tdTN); trT.appendChild(tdTV);
+              tbody.appendChild(trT);
+            }
+            if (othersVal) {
+              const trL = document.createElement('tr');
+              trL.className = 'stbl-others';
+              const tdLN = document.createElement('td');
+              tdLN.className = 'stbl-name';
+              tdLN.textContent = 'Lainnya';
+              const tdLV = document.createElement('td');
+              tdLV.className = 'stbl-val';
+              tdLV.textContent = othersVal;
+              trL.appendChild(tdLN); trL.appendChild(tdLV);
+              tbody.appendChild(trL);
+            }
+            table.appendChild(tbody);
+            const scrollWrap = document.createElement('div');
+            scrollWrap.className = 'stbl-scroll';
+            scrollWrap.appendChild(table);
+            card.appendChild(scrollWrap);
+            wrap.appendChild(card);
+          });
+        }
+        // ─────────────────────────────────────────────────────────────────────────
+
         // ── CHOROPLETH: WMS tiles from GeoServer ──────────────────────────────────
 
         function showChoroplethPanes() {
@@ -2849,6 +2909,7 @@
             }
             activeModes.forEach(mk => renderModeVisuals(mk));
             map.invalidateSize();
+            renderAllSidebarCards();
           });
         }
 
@@ -2881,6 +2942,8 @@
               })
               .catch(() => { if (cat.markers && cat.markers.length) placeMarkers(cat.markers); });
           } else if (cat.markers && cat.markers.length) { placeMarkers(cat.markers); }
+          currentKonsesiCat = catKey;
+          renderAllSidebarCards();
         }
 
         document.querySelectorAll('.mode-btn').forEach(btn => btn.addEventListener('click', () => toggleMode(btn.dataset.mode)));
