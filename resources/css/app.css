@@ -1397,6 +1397,8 @@ footer {
 .sb-card .stbl-row:nth-child(even) td { background: rgba(139,42,26,.045); }
 .sb-card .stbl-row:hover td { background: rgba(139,42,26,.13) !important; }
 .sb-card .stbl-filler td { color: transparent; user-select: none; pointer-events: none; }
+.sb-card-dl-btn { display: flex; align-items: center; justify-content: center; gap: 5px; width: 100%; padding: 5px 8px; background: rgba(139,42,26,.07); border: none; border-top: 1px solid rgba(139,42,26,.12); color: rgba(110,18,8,.6); font-size: .6rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; flex-shrink: 0; transition: background .15s, color .15s; }
+.sb-card-dl-btn:hover { background: rgba(139,42,26,.15); color: #6e1208; }
 .sb-card .stbl-total td { border-top: 1px solid rgba(139,42,26,.22); font-weight: 700; color: #7a1a0a !important; padding-top: 3px; padding-bottom: 3px; background: rgba(139,42,26,.07) !important; }
 .sb-card .stbl-others td { border-top: 1px solid rgba(139,42,26,.1); padding-top: 3px; padding-bottom: 3px; color: rgba(42,21,5,.42); font-style: italic; }
 
