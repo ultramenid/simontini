@@ -905,7 +905,7 @@
             <div id="map-loading"
               class="hidden absolute inset-0 z-[700] flex flex-col items-center justify-center pointer-events-none">
               <div class="map-loading-spinner"></div>
-              <div class="map-loading-label">Memuat data provinsi…</div>
+              <div class="map-loading-label">Memuat data peta..</div>
             </div>
             <div id="satwa-badges"
               class="hidden absolute top-4 left-1/2 -translate-x-1/2 z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-center gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[92vw]">
@@ -930,10 +930,8 @@
                       stroke-linejoin="round" />
                   </svg>
                 </button>
-                <div class="text-[.5rem] tracking-[.08em] uppercase text-[#d4c4a0]" id="kpi-label">Total</div>
-                <div class="text-[1.25rem] font-bold leading-none mt-[2px]" id="kpi-val">0</div>
-                <div class="text-[.5rem] text-[#d4c4a0] mt-[2px]" id="kpi-unit">hektare</div>
-                <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]"></ul>
+                <div id="kpi-items"></div>
+                {{-- <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]"></ul> --}}
               </div>
             </div><!-- /#bl-stack -->
 
@@ -2276,14 +2274,26 @@
           maxZoom: isMobile ? 3 : 9
         }).setView(isMobile ? [-6.3, 118] : [-2.3, 118], isMobile ? 3 : 5);
 
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+        L.tileLayer('', {
           attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
           maxZoom: 19
         }).addTo(map);
 
+        // Custom panes so toggling choropleth layers is a single CSS display flip
+        map.createPane('choroplethPane'); map.getPane('choroplethPane').style.zIndex = 350;
+        map.createPane('choroplethLabelPane'); map.getPane('choroplethLabelPane').style.zIndex = 351;
+        map.getPane('choroplethPane').style.display = 'none';
+        map.getPane('choroplethLabelPane').style.display = 'none';
+        map.createPane('kabupatenPane'); map.getPane('kabupatenPane').style.zIndex = 352;
+        map.createPane('kabupatenLabelPane'); map.getPane('kabupatenLabelPane').style.zIndex = 353;
+        map.getPane('kabupatenPane').style.display = 'none';
+        map.getPane('kabupatenLabelPane').style.display = 'none';
+
         const stadi2025Layer = L.layerGroup().addTo(map);
         const choroplethLayer = L.layerGroup().addTo(map);
         const choroplethLabelLayer = L.layerGroup().addTo(map);
+        const kabupatenLayer = L.layerGroup().addTo(map);
+        const kabupatenLabelLayer = L.layerGroup().addTo(map);
         const markerLayer = L.layerGroup().addTo(map);
         const polygonLayer = L.layerGroup().addTo(map);
         const calloutLayer = { clearLayers: () => { } };
@@ -2296,8 +2306,7 @@
         let activePolygonSpecies = null;
         let stadi2025Loaded = false;
         let choroplethGeoLayer = null;
-        let choroplethCache = null;
-        let choroplethFeatures = [];
+        let kabupatenGeoLayer = null;
 
         const MODES = {
           provinsi: {
@@ -2522,13 +2531,15 @@
         function clearModeVisuals() {
           markerLayer.clearLayers();
           polygonLayer.clearLayers();
-          // Keep choropleth alive when provinsi stays active — rebuilding ~34 GeoJSON
-          // features with event listeners is the main source of toggle lag.
-          if (!activeModes.has('provinsi')) {
-            choroplethLayer.clearLayers();
-            choroplethLabelLayer.clearLayers();
-            choroplethGeoLayer = null;
-            choroplethFeatures = [];
+          // Instantly hide/show choropleth layers via CSS pane display — zero DOM traversal.
+          // Kabupaten overrides provinsi: hide provinsi pane when kabupaten is active
+          if (!activeModes.has('provinsi') || activeModes.has('kabupaten')) {
+            map.getPane('choroplethPane').style.display = 'none';
+            map.getPane('choroplethLabelPane').style.display = 'none';
+          }
+          if (!activeModes.has('kabupaten')) {
+            map.getPane('kabupatenPane').style.display = 'none';
+            map.getPane('kabupatenLabelPane').style.display = 'none';
           }
           map.closePopup();
           markerRegistry = [];
@@ -2571,10 +2582,6 @@
         }
 
         function focusMarkerByLabel(label, rowEl = null) {
-          if (activeModes.has('provinsi') && choroplethGeoLayer) {
-            highlightChoroplethByName(label, rowEl);
-            return;
-          }
           const found = findMarkerByLabel(label);
           if (!found) return;
           if (rowEl) { clearActiveRow(); rowEl.classList.add('active-row'); activeRow = rowEl; }
@@ -2723,115 +2730,40 @@
           return card;
         }
 
-        // ── CHOROPLETH: Deforestasi berbasis provinsi via GeoServer WFS ────────────
-        function getChoroColor(val) {
-          if (!val || val <= 0) return 'rgba(245,240,232,0.18)';
-          if (val < 200) return '#fef4ee';
-          if (val < 500) return '#fce3d4';
-          if (val < 1000) return '#f8c4a2';
-          if (val < 2500) return '#f0a070';
-          if (val < 5000) return '#e57a48';
-          if (val < 10000) return '#d45930';
-          if (val < 20000) return '#bb3c1e';
-          if (val < 35000) return '#9e2e14';
-          if (val < 55000) return '#7e1f0c';
-          return '#5a1206';
-        }
+        // ── CHOROPLETH: WMS tiles from GeoServer ──────────────────────────────────
 
-        function buildChoropleth(data) {
-          if (choroplethGeoLayer) { choroplethLayer.removeLayer(choroplethGeoLayer); choroplethGeoLayer = null; }
-          choroplethFeatures = [];
-          choroplethGeoLayer = L.geoJSON(data, {
-            style: function (feature) {
-              var val = parseFloat(feature.properties.deforestas) || 0;
-              return {
-                fillColor: getChoroColor(val),
-                fillOpacity: 0.92,
-                color: 'rgba(120,90,60,0.45)',
-                weight: 0.6,
-                opacity: 1
-              };
-            },
-            onEachFeature: function (feature, layer) {
-              var props = feature.properties;
-              var name = props.political3 || props.level_3 || '';
-              var val = parseFloat(props.deforestas) || 0;
-              var fmtVal = Math.round(val).toLocaleString('id-ID');
-              choroplethFeatures.push({ name: name, layer: layer, val: val });
-              layer.bindTooltip(
-                '<strong>' + name + '</strong><br>' + fmtVal + '\u00a0ha',
-                { sticky: true, className: 'choro-tooltip', direction: 'auto' }
-              );
-              layer.on('mouseover', function () {
-                if (!activeModes.has('provinsi')) return;
-                layer.setStyle({ fillOpacity: 0.9, weight: 1.5, color: '#1a1a1a' });
-                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) layer.bringToFront();
-              });
-              layer.on('mouseout', function () {
-                if (!activeModes.has('provinsi')) return;
-                choroplethGeoLayer.resetStyle(layer);
-              });
-            }
-          }).addTo(choroplethLayer);
-          // Permanent rank labels for top-10 provinces
-          var top10Ranks = {
-            'Kalimantan Tengah': 1, 'Kalimantan Timur': 2, 'Aceh': 3,
-            'Kalimantan Barat': 4, 'Papua Tengah': 5, 'Sumatera Barat': 6,
-            'Sumatera Utara': 7, 'Kalimantan Utara': 8, 'Riau': 9, 'Papua Pegunungan': 10
-          };
-          choroplethFeatures.forEach(function (f) {
-            var rank = top10Ranks[f.name];
-            if (!rank) return;
-            var center = f.layer.getBounds().getCenter();
-            var icon = L.divIcon({
-              className: '',
-              html: '<div class="choro-rank-label"><span class="choro-rank-num">' + rank + '</span><span class="choro-rank-name">' + f.name + '</span></div>',
-              iconSize: null,
-              iconAnchor: null
-            });
-            L.marker(center, { icon: icon, interactive: false }).addTo(choroplethLabelLayer);
-          });
-        }
-
-        function setMapLoading(on) {
-          var el = document.getElementById('map-loading');
-          if (!el) return;
-          el.classList.toggle('hidden', !on);
-          el.style.pointerEvents = on ? 'auto' : 'none';
+        function showChoroplethPanes() {
+          map.getPane('choroplethPane').style.display = '';
+          map.getPane('choroplethLabelPane').style.display = '';
         }
 
         function loadProvinsiChoropleth() {
-          if (choroplethCache) { buildChoropleth(choroplethCache); return; }
-          setMapLoading(true);
-          var url = 'https://aws.simontini.id/geoserver/wfs?service=WFS&version=2.0.0' +
-            '&request=GetFeature&typeNames=proteus:PROVINSI_STADI_2025' +
-            '&outputFormat=application/json&srsname=EPSG:4326';
-          fetch(url)
-            .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-            .then(function (data) { choroplethCache = data; buildChoropleth(data); })
-            .catch(function (err) {
-              console.warn('Gagal memuat choropleth WFS:', err);
-              var el = document.getElementById('map-loading');
-              if (el) { el.querySelector('.map-loading-label').textContent = 'Gagal memuat data.'; }
-            })
-            .finally(function () { setMapLoading(false); });
+          if (choroplethGeoLayer) { showChoroplethPanes(); return; }
+          choroplethGeoLayer = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+            layers: 'proteus:PROVINSI_STADI_2025',
+            format: 'image/png',
+            transparent: true,
+            version: '1.1.0',
+            pane: 'choroplethPane'
+          }).addTo(choroplethLayer);
+          showChoroplethPanes();
         }
 
-        function highlightChoroplethByName(name, rowEl) {
-          if (!choroplethGeoLayer) return;
-          choroplethGeoLayer.resetStyle();
-          var norm = function (s) { return (s || '').toLowerCase().replace(/[\s\-\.]/g, ''); };
-          var q = norm(name);
-          var found = choroplethFeatures.find(function (f) {
-            var n = norm(f.name);
-            return n === q || n.includes(q) || q.includes(n);
-          });
-          if (!found) return;
-          found.layer.setStyle({ fillOpacity: 0.95, weight: 2, color: '#1a1a1a', fillColor: '#8b2a1a' });
-          found.layer.bringToFront();
-          if (rowEl) { clearActiveRow(); rowEl.classList.add('active-row'); activeRow = rowEl; }
-          var bounds = found.layer.getBounds();
-          map.flyToBounds(bounds, { maxZoom: 7, padding: [40, 40], duration: 0.5 });
+        function showKabupatenPanes() {
+          map.getPane('kabupatenPane').style.display = '';
+          map.getPane('kabupatenLabelPane').style.display = '';
+        }
+
+        function loadKabupatenChoropleth() {
+          if (kabupatenGeoLayer) { showKabupatenPanes(); return; }
+          kabupatenGeoLayer = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+            layers: 'proteus:KABUPATEN_STADI_2025',
+            format: 'image/png',
+            transparent: true,
+            version: '1.1.0',
+            pane: 'kabupatenPane'
+          }).addTo(kabupatenLayer);
+          showKabupatenPanes();
         }
         // ─────────────────────────────────────────────────────────────────────────
 
@@ -2839,7 +2771,9 @@
           const mode = MODES[modeKey];
           if (!mode) return;
           currentMode = modeKey;
-          if (mode.markers && modeKey !== 'provinsi') mode.markers.forEach(createRankMarker);
+          // When kabupaten is active, suppress provinsi visuals entirely
+          if (modeKey === 'provinsi' && activeModes.has('kabupaten')) return;
+          if (mode.markers) mode.markers.forEach(createRankMarker);
           if (mode.species) mode.species.forEach(createSpeciesMarker);
           const tableWrap = document.getElementById('table-wrap');
           if (mode.tables && mode.tables.length) {
@@ -2853,8 +2787,23 @@
             if (!activecat) { const firstCat = submenu.querySelector('.cat-btn'); if (firstCat) loadKonsesiCategory(firstCat.dataset.cat); }
           }
           if (modeKey === 'megafauna') positionSatwaBadges(mode.species);
-          // Skip rebuild if choropleth layer is already rendered (preserved by clearModeVisuals)
-          if (modeKey === 'provinsi' && !choroplethGeoLayer) loadProvinsiChoropleth();
+          // Show choropleth panes or load WFS data for the first time
+          if (modeKey === 'provinsi') {
+            if (!choroplethGeoLayer) {
+              loadProvinsiChoropleth();
+            } else {
+              map.getPane('choroplethPane').style.display = '';
+              map.getPane('choroplethLabelPane').style.display = '';
+            }
+          }
+          if (modeKey === 'kabupaten') {
+            if (!kabupatenGeoLayer) {
+              loadKabupatenChoropleth();
+            } else {
+              map.getPane('kabupatenPane').style.display = '';
+              map.getPane('kabupatenLabelPane').style.display = '';
+            }
+          }
         }
 
         function toggleMode(modeKey) {
@@ -2873,12 +2822,17 @@
             // Update sidebar KPI/title from the most recently activated mode still active
             const uiKey = activeModes.has(currentMode) ? currentMode : [...activeModes].slice(-1)[0];
             const uiMode = uiKey ? MODES[uiKey] : null;
+            // KPI float: separate row per active mode (runs regardless of uiMode)
+            const _kpiNames = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna', konsesi: 'Konsesi' };
+            const _kpiHtml = [...activeModes].map(mk => {
+              const m = MODES[mk];
+              if (!m?.kpiVal) return '';
+              return `<div style="margin-bottom:3px;"><div style="font-size:.42rem;text-transform:uppercase;letter-spacing:.08em;color:#d4c4a0;line-height:1.4;">${_kpiNames[mk] || mk}</div><div style="font-size:1.2rem;font-weight:700;line-height:1;margin-top:1px;">${m.kpiVal}</div><div style="font-size:.45rem;color:#d4c4a0;margin-top:1px;">hektare</div></div>`;
+            }).filter(Boolean).join('');
+            document.getElementById('kpi-items').innerHTML = _kpiHtml;
             if (uiMode) {
               document.getElementById('map-title').textContent = uiMode.title;
-              document.getElementById('kpi-label').textContent = uiMode.kpiLabel;
-              document.getElementById('kpi-val').textContent = uiMode.kpiVal;
-              document.getElementById('kpi-unit').textContent = uiMode.kpiUnit;
-              document.getElementById('sidebar-notes').innerHTML = uiMode.notesSidebar.map(n => `<li>${n}</li>`).join('');
+            //   document.getElementById('sidebar-notes').innerHTML = uiMode.notesSidebar.map(n => `<li>${n}</li>`).join('');
               document.getElementById('notes-list').innerHTML = uiMode.notesBox.map(n => `<li>${n}</li>`).join('');
               const bubble = document.getElementById('others-bubble');
               if (uiMode.bubble) {
@@ -2906,10 +2860,8 @@
           markerRegistry = [];
           activeMarker = null;
           map.closePopup();
-          document.getElementById('kpi-label').textContent = cat.kpiLabel;
-          document.getElementById('kpi-val').textContent = cat.kpiVal;
-          document.getElementById('kpi-unit').textContent = 'hektare';
-          document.getElementById('sidebar-notes').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
+          document.getElementById('kpi-items').innerHTML = `<div><div style="font-size:.42rem;text-transform:uppercase;letter-spacing:.08em;color:#d4c4a0;line-height:1.4;">Konsesi</div><div style="font-size:1.2rem;font-weight:700;line-height:1;margin-top:1px;">${cat.kpiVal} </div></div>`;
+        //   document.getElementById('sidebar-notes').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
           //   document.getElementById('map-title').textContent = 'Deforestasi ' + cat.title;
           const bubble = document.getElementById('others-bubble');
           bubble.style.display = 'flex';
