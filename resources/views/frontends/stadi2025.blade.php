@@ -869,12 +869,12 @@
               <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
               <span class="mode-btn-label">Konsesi</span>
             </button>
-          </div>
-          <div id="konsesi-submenu" class="hidden">
-            <button class="cat-btn" data-cat="kebun-kayu"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Kebun Kayu</span></button>
-            <button class="cat-btn" data-cat="logging"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Logging</span></button>
-            <button class="cat-btn" data-cat="sawit"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Sawit</span></button>
-            <button class="cat-btn" data-cat="tambang"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Tambang</span></button>
+            <div id="konsesi-submenu" class="hidden">
+              <button class="cat-btn" data-cat="kebun-kayu"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Kebun Kayu</span></button>
+              <button class="cat-btn" data-cat="logging"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Logging</span></button>
+              <button class="cat-btn" data-cat="sawit"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Sawit</span></button>
+              <button class="cat-btn" data-cat="tambang"><span class="cat-btn-switch" aria-hidden="true"><span class="cat-btn-knob"></span></span><span class="cat-btn-label">Tambang</span></button>
+            </div>
           </div>
         </div>
 
