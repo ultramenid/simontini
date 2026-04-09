@@ -744,7 +744,7 @@ body.is-preloading { overflow: hidden; }
   padding: 20px 0;
   margin-top: -10px;
   margin-bottom: 5px;
-  border-bottom: 1px solid var(--border);
+  
 }
 
 .method-step:last-child { border-bottom: none; }

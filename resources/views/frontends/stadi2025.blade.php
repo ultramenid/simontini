@@ -46,9 +46,9 @@
       </div>
       <div class="hero-divider"></div>
       <!-- <div class="hero-stat">
-                                         <span class="hs-val">+66%</span>
-                                         <span class="hs-unit">Peningkatan dari 2024</span>
-                                         </div> -->
+                                                                     <span class="hs-val">+66%</span>
+                                                                     <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                     </div> -->
       <div class="hero-divider"></div>
       <div class="hero-desc">
         Deforestasi melonjak, saatnya pemerintah menerbitkan
@@ -845,47 +845,67 @@
       <div class="viz-block viz-block--full">
 
         <!-- PETA TEMATIK (inline) -->
-        <!-- ── MODE PILL BAR ── -->
-        <div id="mode-pill-bar">
-          <div class="pill-bar-label">Pilih jenis analisis · 2025</div>
-          <div id="mode-btn-rail">
-            <button class="mode-btn active" data-mode="provinsi">
-              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              <span class="mode-btn-label">Provinsi</span>
-            </button>
-            <button class="mode-btn" data-mode="kabupaten">
-              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              <span class="mode-btn-label">Kabupaten</span>
-            </button>
-            <button class="mode-btn" data-mode="konservasi">
-              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              <span class="mode-btn-label">Konservasi</span>
-            </button>
-            <button class="mode-btn" data-mode="megafauna">
-              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              <span class="mode-btn-label">Megafauna</span>
-            </button>
-            <button class="mode-btn" data-mode="konsesi">
-              <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
-              <span class="mode-btn-label">Konsesi</span>
-            </button>
-          </div>
-          <div id="konsesi-submenu" class="hidden">
-            <button class="cat-btn" data-cat="kebun-kayu">Kebun Kayu</button>
-            <button class="cat-btn" data-cat="logging">Logging</button>
-            <button class="cat-btn" data-cat="sawit">Sawit</button>
-            <button class="cat-btn" data-cat="tambang">Tambang</button>
-          </div>
-        </div>
+        <div id="peta-tematik" style="height: 60vh" class="flex overflow-hidden">
+          <aside id="sidebar"
+            class="sm:w-[350px] w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] px-4 py-4 overflow-y-auto border-r border-white/[.08]">
+            <h1 class="text-[1.05rem] font-bold leading-[1.15] mb-1 p-1">Peta Tematik Deforestasi</h1>
+            <p class="px-1 text-[.58rem] tracking-[.1em] uppercase text-[#d4c4a0] mb-[10px]">Pilih jenis analisis · 2025
+            </p>
+            <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
+              style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk melihat alur
+                lengkap</span>
+            </div>
+            <div id="mode-btn-rail">
+              <button class="mode-btn active" data-mode="provinsi">
+                <span class="mode-btn-label">Deforestasi berbasis provinsi</span>
+                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              </button>
+              <button class="mode-btn" data-mode="kabupaten">
+                <span class="mode-btn-label">Deforestasi berbasis kabupaten</span>
+                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              </button>
+              <button class="mode-btn" data-mode="konservasi">
+                <span class="mode-btn-label">Deforestasi di kawasan konservasi</span>
+                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              </button>
+              <button class="mode-btn" data-mode="megafauna">
+                <span class="mode-btn-label">Deforestasi di Habitat megafauna ikonik</span>
+                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              </button>
+              <button class="mode-btn" data-mode="konsesi">
+                <span class="mode-btn-label">Deforestasi dalam Konsesi</span>
+                <span class="mode-btn-switch" aria-hidden="true"><span class="mode-btn-knob"></span></span>
+              </button>
+            </div><!-- /#mode-btn-rail -->
 
-        <div id="peta-tematik" style="height: 70vh" class="flex flex-col overflow-hidden">
+            <!-- Sub-menu konsesi (hidden by default) -->
+            <div id="konsesi-submenu" class="hidden pl-4">
+              <button
+                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                data-cat="kebun-kayu"> Kebun Kayu</button>
+              <button
+                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                data-cat="logging">Logging</button>
+              <button
+                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                data-cat="sawit"> Sawit</button>
+              <button
+                class="cat-btn sm:w-full w-6/12 border border-white/[.1] bg-transparent text-[rgba(245,240,232,.58)] rounded px-2 py-[5px] mb-[4px] text-left cursor-pointer text-[.7rem] font-semibold transition-all"
+                data-cat="tambang"> Tambang</button>
+            </div>
 
-          <main id="wrap" class="relative flex-1 min-h-0 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
+          </aside>
+
+          <main id="wrap" class="relative flex-1 min-w-0 bg-[#ece8df] flex flex-col overflow-hidden">
             <div id="map" class="w-full flex-1"></div>
             <div id="map-loading"
               class="hidden absolute inset-0 z-[700] flex flex-col items-center justify-center pointer-events-none">
               <div class="map-loading-spinner"></div>
-              <div class="map-loading-label">Memuat data peta..</div>
+              <div class="map-loading-label">Memuat data provinsi…</div>
             </div>
             <div id="satwa-badges"
               class="hidden absolute top-4 left-1/2 -translate-x-1/2 z-[450] pointer-events-none px-[18px] py-[10px] flex-row items-end justify-center gap-[10px] flex-nowrap overflow-x-auto bg-[rgba(248,244,238,.7)] backdrop-blur-[6px]  max-w-[92vw]">
@@ -898,9 +918,31 @@
                 Deforestasi berbasis provinsi</h2>
             </div>
 
-            <div id="bl-stack" class="hidden"><div id="kpi-float"><div id="kpi-items"></div></div></div>
+            <div id="bl-stack" class="absolute left-[14px] bottom-[14px] z-[610] flex flex-col items-start gap-2 w-44">
+              <div id="kpi-float"
+                class="bg-[rgba(20,20,20,.82)] backdrop-blur-[4px] border-l-[3px] border-l-[#8b2a1a] rounded-md px-3 py-[7px] w-full text-[#f5f0e8]">
+                <button id="kpi-toggle" onclick="kpiFloatToggle()" style="display:none"
+                  class="w-full flex flex-col items-center pt-[10px] pb-[8px] cursor-pointer bg-transparent border-0 outline-none gap-[5px]">
+                  <span class="block w-7 h-[3px] rounded-full bg-white/30"></span>
+                  <svg id="kpi-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                    style="transition:transform .25s ease">
+                    <path d="M1 7L7 1L13 7" stroke="rgba(245,240,232,.5)" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <div class="text-[.5rem] tracking-[.08em] uppercase text-[#d4c4a0]" id="kpi-label">Total</div>
+                <div class="text-[1.25rem] font-bold leading-none mt-[2px]" id="kpi-val">0</div>
+                <div class="text-[.5rem] text-[#d4c4a0] mt-[2px]" id="kpi-unit">hektare</div>
+                <ul id="sidebar-notes" class="mt-[6px] pt-[6px] border-t border-white/[.18] text-[.62rem]"></ul>
+              </div>
+            </div><!-- /#bl-stack -->
 
-            <div id="others-bubble" class="hidden" style="display:none!important"><div id="bubble-label"></div><div id="bubble-val"></div><div id="bubble-unit"></div></div>
+            <div id="others-bubble"
+              class="absolute right-[14px] top-[10px] z-[620] w-[120px] h-[120px] rounded-full bg-[rgba(192,64,48,.95)] text-white hidden text-center items-center justify-center flex-col p-3 shadow-[0_8px_26px_rgba(139,42,26,.35)]">
+              <div class="text-[.58rem] leading-[1.3]" id="bubble-label">Kabupaten lainnya</div>
+              <div class="text-[1.4rem] font-bold leading-none mt-[3px]" id="bubble-val">0</div>
+              <div class="text-[.5rem] mt-[1px] opacity-90" id="bubble-unit">hektare</div>
+            </div>
 
             <div id="notes-wrap" class="absolute left-[14px] bottom-[12px] z-[620] w-[min(360px,38vw)] flex flex-col">
               <div id="notes-box" class=" pt-[14px] px-[14px] pb-[10px]">
@@ -910,7 +952,9 @@
 
             <div id="table-panel"
               class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
-              <button id="table-toggle" style="display:none!important"></button>
+              <button id="table-toggle"
+                class="absolute left-[-36px] top-1/2 -translate-y-1/2 z-10 [writing-mode:vertical-rl] [text-orientation:mixed] bg-[#1a1a1a] text-[#f5f0e8] border-0 rounded-l-lg py-5 px-[9px] text-[.6rem] font-bold tracking-[.1em] uppercase cursor-pointer shadow-[-4px_0_14px_rgba(0,0,0,.3)] transition-colors leading-none whitespace-nowrap hidden">Tabel
+                ▶</button>
               <div class="flex items-center justify-between px-4 py-3 border-b border-white/[.1] shrink-0">
                 <span class="text-[.65rem] font-bold tracking-[.1em] uppercase text-[#d4c4a0]">Tabel Data</span>
                 <button id="table-close"
@@ -924,13 +968,6 @@
               <div id="table-wrap" class="flex-1 overflow-y-auto overflow-x-hidden flex flex-col"></div>
             </div>
           </main>
-
-          <aside id="sidebar"
-            class="w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] border-t border-white/[.08] flex flex-col overflow-hidden"
-            style="height:225px">
-            <span id="sidebar-mode-label" class="hidden"></span>
-            <div id="sidebar-table-wrap" class="flex-1 flex flex-row items-stretch"></div>
-          </aside>
         </div>
 
       </div><br><br>
@@ -1019,85 +1056,61 @@
           deforestasi dalam APL seluas 125.997 hektare atau 28% deforestasi nasional.
         </p>
 
-        <!-- Gallery 1-->
 
-        <!-- gallery 1 -->
 
-        <div class="viz-block viz-block--full mt-2 mb-2">
-          <div class="viz-frame viz-frame--padded">
 
-            <div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX"
-              @touchmove="handleTouchMove($event)"
-              class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
-              <div class="flex transition-transform duration-500"
-                :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan3.jpg') }}" class="glightbox1 mt-4 gbox"
-                    data-glightbox=" description: ">
-                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan3.jpg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                  </p>
-                </div>
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan4.jpg') }}" class="glightbox1 mt-4 gbox"
-                    data-glightbox="description: ">
-                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan4.jpg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                </div>
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan5.jpg') }}" class="glightbox1 mt-4 gbox"
-                    data-glightbox="description:">
-                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan5.jpg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                </div>
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan6.jpg') }}" class="glightbox1 mt-4 gbox"
-                    data-glightbox="description: ">
-                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan6.jpg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                </div>
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan7.jpg') }}" class="glightbox1 mt-4 gbox"
-                    data-glightbox="description:">
-                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan7.jpg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                </div>
+        <!-- <ul class="insight-list">
+                                                                  <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                  <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                  <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                  <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                </ul> -->
+      </div>
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+            <div x-data="{ active: 0, images: [
+                            { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                            { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                            { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                          ]}">
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" alt="Simontini"
+                  @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                  class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                <button x-show="active > 0" @click="active--"
+                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
+                </button>
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </button>
               </div>
-
-              <!-- Navigation Buttons -->
-              <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0" x-show="currentSlide > 0"
-                class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-                </svg>
-              </button>
-              <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
-                x-show="currentSlide < totalSlides - 1"
-                class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-                </svg>
-              </button>
+              <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+                    </div>
+                  </template>
+                </div>
+                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                  x-html="images[active].caption"></p>
+              </div>
             </div>
           </div>
         </div>
-        <!-- <ul class="insight-list">
-                                      <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                      <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                      <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                      <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                    </ul> -->
-      </div>
+      </div><br>
 
       <hr class="divider">
 
@@ -1132,6 +1145,51 @@
           laju deforestasi di pulau ini?
         </p>
       </div>
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+            <div x-data="{ active: 0, images: [
+                          { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                          { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                          { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                        ]}">
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" alt="Simontini"
+                  @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                  class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                <button x-show="active > 0" @click="active--"
+                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
+                </button>
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </button>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+                    </div>
+                  </template>
+                </div>
+                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                  x-html="images[active].caption"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
 
       <hr class="divider">
 
@@ -1179,14 +1237,59 @@
         </p>
 
         <!-- <div class="callout">
-                                      <strong>Faktor pendorong utama:</strong>
-                                      <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                        <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                        <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                        <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                      </ul>
-                                    </div> -->
+                                                                  <strong>Faktor pendorong utama:</strong>
+                                                                  <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                    <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                    <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                    <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                  </ul>
+                                                                </div> -->
       </div>
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+            <div x-data="{ active: 0, images: [
+                        { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                        { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                        { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                      ]}">
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" alt="Simontini"
+                  @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                  class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                <button x-show="active > 0" @click="active--"
+                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
+                </button>
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </button>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+                    </div>
+                  </template>
+                </div>
+                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                  x-html="images[active].caption"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
 
       <hr class="divider">
 
@@ -1216,56 +1319,54 @@
           nasional. Dengan kata lain, 58% deforestasi 2025 berupa deforestasi legal (<em>legal deforestation</em>).
         </p>
 
-        <!-- gallery 1 -->
 
-        <div class="viz-block viz-block--full mt-2 mb-2">
-          <div class="viz-frame viz-frame--padded">
+      </div>
 
-            <div x-data="{ currentSlide: 0, totalSlides: 2 }" @touchstart="startX = $event.touches[0].clientX"
-              @touchmove="handleTouchMove($event)"
-              class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
-              <div class="flex transition-transform duration-500"
-                :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan8.jpg') }}" class="glightbox2 mt-4 gbox"
-                    data-glightbox=" description: ">
-                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan8.jpg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                  <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
-                  </p>
-                </div>
-                <div class="swiper-slide w-full flex-shrink-0">
-                  <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan9.jpg') }}" class="glightbox2 mt-4 gbox"
-                    data-glightbox="description: ">
-                    <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan9.jpg') }}" alt="Simontini - stadi 2024"
-                      class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
-                  </a>
-                </div>
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+            <div x-data="{ active: 0, images: [
+                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                    ]}">
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" alt="Simontini"
+                  @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                  class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                <button x-show="active > 0" @click="active--"
+                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
+                </button>
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </button>
               </div>
-
-              <!-- Navigation Buttons -->
-              <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 0" x-show="currentSlide > 0"
-                class="absolute left-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-                </svg>
-              </button>
-              <button @click="currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : totalSlides - 1"
-                x-show="currentSlide < totalSlides - 1"
-                class="absolute right-0 sm:top-1/2 top-1/4 sm:mt-0 mt-6 transform -translate-y-1/2 bg-black text-white p-2 z-50">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="sm:w-6 sm:h-6 w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-                </svg>
-              </button>
+              <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+                    </div>
+                  </template>
+                </div>
+                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                  x-html="images[active].caption"></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </div><br>
 
 
       <hr class="divider">
@@ -1293,6 +1394,52 @@
           deforestasi nasional.
         </p>
       </div>
+
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+            <div x-data="{ active: 0, images: [
+                    { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                    { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                    { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                  ]}">
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" alt="Simontini"
+                  @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
+                  class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
+                <button x-show="active > 0" @click="active--"
+                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
+                </button>
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </button>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+                    </div>
+                  </template>
+                </div>
+                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
+                  x-html="images[active].caption"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
     </section>
 
     <!-- REKOMENDASI -->
@@ -1308,23 +1455,92 @@
         </p>
 
         <div class="method-steps">
-          <div class="method-step">
-            <div class="ms-num">1.</div>
-            <div>
-              <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di
-                Indonesia.</h4><br>
-              <p class="body-text">
-                Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun, menghadirkan sebuah
-                undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di bawahnya, yakni
-                peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama oleh kerumitan dan
-                kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam penyusunan peraturan
-                pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup menjawab persoalan,
-                sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden mengenai perlindungan
-                <strong> seluruh </strong> hutan alam tersisa di Indonesia.
-              </p>
+          <div class="border-b py-12">
+            <div class="method-step">
+              <div class="ms-num">1.</div>
+              <div>
+                <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di
+                  Indonesia.</h4><br>
+                <p class="body-text">
+                  Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun, menghadirkan sebuah
+                  undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di bawahnya, yakni
+                  peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama oleh kerumitan
+                  dan
+                  kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam penyusunan peraturan
+                  pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup menjawab
+                  persoalan,
+                  sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden mengenai perlindungan
+                  <strong>seluruh</strong> hutan alam tersisa di Indonesia.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="viz-block viz-block--full mt-2 mb-2">
+              <div class="viz-frame viz-frame--padded">
+
+                <div x-data="{
+                            currentSlide: 0,
+                            totalSlides: 5,
+                            startX: 0,
+                            startSwipe(e) { this.startX = e.touches[0].clientX; },
+                            handleTouchMove(e) {
+                              let diff = this.startX - e.touches[0].clientX;
+                              if (Math.abs(diff) > 50) {
+                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                this.startX = e.touches[0].clientX;
+                              }
+                            }
+                          }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                  class="relative bg-gray-100 pb-4 mt-4 max-w-5xl mx-auto z-20 overflow-hidden">
+
+
+                  <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+
+                    @foreach([3, 4, 5, 6, 7] as $i)
+                      <div class="w-full flex-shrink-0">
+                        <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
+                          class="glightbox1 gbox" data-glightbox="description:">
+
+                          <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
+                            alt="RDPU RUU Kehutanan {{ $i }}" class="w-full object-cover object-top cursor-pointer
+                                                     h-[220px] 
+                                                     sm:h-[60vh]" />
+
+                        </a>
+                      </div>
+                    @endforeach
+
+                  </div>
+
+                  <!-- BUTTON -->
+                  <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                    ◀
+                  </button>
+
+                  <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                    x-show="currentSlide < totalSlides - 1"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                    ▶
+                  </button>
+
+                  <!-- DOT -->
+                  <div class="flex justify-center gap-2 mt-3">
+                    <template x-for="i in totalSlides" :key="i">
+                      <button @click="currentSlide = i - 1" :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
+                        class="w-2 h-2">
+                      </button>
+                    </template>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
-          <div class="method-step">
+
+          <div class="method-step border-b">
             <div class="ms-num">2.</div>
             <div class="">
               <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.</h4><br>
@@ -1347,7 +1563,7 @@
               </p>
             </div>
           </div>
-          <div class="method-step">
+          <div class="method-step border-b">
             <div class="ms-num">3.</div>
             <div class="">
               <h4 class="chapter-title">Percepatan perluasan area preservasi, terutama di luar kawasan hutan</h4><br>
@@ -1365,25 +1581,94 @@
               </p>
             </div>
           </div>
-          <div class="method-step">
-            <div class="ms-num">4.</div>
-            <div class="">
-              <h4 class="chapter-title">Redistribusi kelembagaan dan aparatur pengelola hutan sehingga seluruh tutupan
-                hutan alam memiliki aparatur penjaga.</h4><br>
-              <p class="body-text">
-                Presiden Prabowo disebut telah memerintahkan penggandaan jumlah polisi hutan. Satu langkah yang semestinya
-                patut diapresiasi. Akan tetapi, sebagaimana pernah
-                <a href="https://www.youtube.com/watch?v=fXpCyo4TrlU&t=7193s" target="_blank" rel="noopener noreferrer"
-                  style="color: #bc4a3c;">dipaparkan</a> Auriga Nusantara ke Komisi 4 DPR RI, keberadaan aparatur penjaga
-                hutan selama ini cenderung terkonsentrasi di Pulau Jawa. Demikian juga penganggaran, porsi anggaran negara
-                per hektare kawasan hutan jauh lebih tinggi di Jawa. Karena itu, selain penambahan aparatur –atau
-                redistribusi kewenangan dan fungsi pengelolaan ke pemerintah daerah– diperlukan juga redistribusi aparatur
-                sehingga seluruh tutupan hutan alam memiliki aparatur penjaga berikut anggarannya.
+          <div class="border-b py-12">
+            <div class="method-step">
+              <div class="ms-num">4.</div>
+              <div class="">
+                <h4 class="chapter-title">Redistribusi kelembagaan dan aparatur pengelola hutan sehingga seluruh tutupan
+                  hutan alam memiliki aparatur penjaga.</h4><br>
+                <p class="body-text">
+                  Presiden Prabowo disebut telah memerintahkan penggandaan jumlah polisi hutan. Satu langkah yang
+                  semestinya
+                  patut diapresiasi. Akan tetapi, sebagaimana pernah
+                  <a href="https://www.youtube.com/watch?v=fXpCyo4TrlU&t=7193s" target="_blank" rel="noopener noreferrer"
+                    style="color: #bc4a3c;">dipaparkan</a> Auriga Nusantara ke Komisi 4 DPR RI, keberadaan aparatur
+                  penjaga
+                  hutan selama ini cenderung terkonsentrasi di Pulau Jawa. Demikian juga penganggaran, porsi anggaran
+                  negara
+                  per hektare kawasan hutan jauh lebih tinggi di Jawa. Karena itu, selain penambahan aparatur –atau
+                  redistribusi kewenangan dan fungsi pengelolaan ke pemerintah daerah– diperlukan juga redistribusi
+                  aparatur
+                  sehingga seluruh tutupan hutan alam memiliki aparatur penjaga berikut anggarannya.
 
-              </p>
+                </p>
+              </div>
+            </div>
+
+            <div class="viz-block viz-block--full mt-2 mb-2">
+              <div class="viz-frame viz-frame--padded">
+
+                <div x-data="{
+                            currentSlide: 0,
+                            totalSlides: 2,
+                            startX: 0,
+                            startSwipe(e) { this.startX = e.touches[0].clientX; },
+                            handleTouchMove(e) {
+                              let diff = this.startX - e.touches[0].clientX;
+                              if (Math.abs(diff) > 50) {
+                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                this.startX = e.touches[0].clientX;
+                              }
+                            }
+                          }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                  class="relative bg-gray-100 pb-4 mt-4 max-w-5xl mx-auto z-20 overflow-hidden">
+
+
+                  <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+
+                    @foreach([8, 9] as $i)
+                      <div class="w-full flex-shrink-0">
+                        <a href="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
+                          class="glightbox1 gbox" data-glightbox="description:">
+
+                          <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
+                            alt="RDPU RUU Kehutanan {{ $i }}" class="w-full object-cover object-top cursor-pointer
+                                                     h-[220px] 
+                                                     sm:h-[60vh]" />
+
+                        </a>
+                      </div>
+                    @endforeach
+
+                  </div>
+
+                  <!-- BUTTON -->
+                  <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                    ◀
+                  </button>
+
+                  <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                    x-show="currentSlide < totalSlides - 1"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                    ▶
+                  </button>
+
+                  <!-- DOT -->
+                  <div class="flex justify-center gap-2 mt-3">
+                    <template x-for="i in totalSlides" :key="i">
+                      <button @click="currentSlide = i - 1" :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
+                        class="w-2 h-2">
+                      </button>
+                    </template>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
-          <div class="method-step">
+          <div class="method-step border-b">
             <div class="ms-num">5.</div>
             <div class="">
               <h4 class="chapter-title">Korporasi yang mengelola area bertutupan hutan alam berkomitmen terhadap
@@ -1396,7 +1681,7 @@
               </p>
             </div>
           </div>
-          <div class="method-step">
+          <div class="method-step border-b">
             <div class="ms-num">6.</div>
             <div class="">
               <h4 class="chapter-title">Penyediaan insentif bagi pemerintah daerah, komunitas lokal, dan korporasi yang
@@ -1471,11 +1756,17 @@
     <script>
       (function () {
         function createLightbox(selectorID) {
-          const lightbox = GLightbox({
+          GLightbox({
             selector: selectorID,
             touchNavigation: true,
+
+            // 🔥 MATIKAN SEMUA ANIMASI
+            openEffect: 'none',
+            closeEffect: 'none',
+            slideEffect: 'none'
           });
         }
+
         for (let i = 1; i <= 21; i++) {
           createLightbox(`.glightbox${i}`);
         }
@@ -2239,26 +2530,14 @@
           maxZoom: isMobile ? 3 : 9
         }).setView(isMobile ? [-6.3, 118] : [-2.3, 118], isMobile ? 3 : 5);
 
-        L.tileLayer('', {
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
           attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
           maxZoom: 19
         }).addTo(map);
 
-        // Custom panes so toggling choropleth layers is a single CSS display flip
-        map.createPane('choroplethPane'); map.getPane('choroplethPane').style.zIndex = 350;
-        map.createPane('choroplethLabelPane'); map.getPane('choroplethLabelPane').style.zIndex = 351;
-        map.getPane('choroplethPane').style.display = 'none';
-        map.getPane('choroplethLabelPane').style.display = 'none';
-        map.createPane('kabupatenPane'); map.getPane('kabupatenPane').style.zIndex = 352;
-        map.createPane('kabupatenLabelPane'); map.getPane('kabupatenLabelPane').style.zIndex = 353;
-        map.getPane('kabupatenPane').style.display = 'none';
-        map.getPane('kabupatenLabelPane').style.display = 'none';
-
         const stadi2025Layer = L.layerGroup().addTo(map);
         const choroplethLayer = L.layerGroup().addTo(map);
         const choroplethLabelLayer = L.layerGroup().addTo(map);
-        const kabupatenLayer = L.layerGroup().addTo(map);
-        const kabupatenLabelLayer = L.layerGroup().addTo(map);
         const markerLayer = L.layerGroup().addTo(map);
         const polygonLayer = L.layerGroup().addTo(map);
         const calloutLayer = { clearLayers: () => { } };
@@ -2267,12 +2546,12 @@
         let activeRow = null;
         let currentMode = 'provinsi';
         const activeModes = new Set();
-        let currentKonsesiCat = null;
         let activeEntry = null;
         let activePolygonSpecies = null;
         let stadi2025Loaded = false;
         let choroplethGeoLayer = null;
-        let kabupatenGeoLayer = null;
+        let choroplethCache = null;
+        let choroplethFeatures = [];
 
         const MODES = {
           provinsi: {
@@ -2497,15 +2776,13 @@
         function clearModeVisuals() {
           markerLayer.clearLayers();
           polygonLayer.clearLayers();
-          // Instantly hide/show choropleth layers via CSS pane display — zero DOM traversal.
-          // Kabupaten overrides provinsi: hide provinsi pane when kabupaten is active
-          if (!activeModes.has('provinsi') || activeModes.has('kabupaten')) {
-            map.getPane('choroplethPane').style.display = 'none';
-            map.getPane('choroplethLabelPane').style.display = 'none';
-          }
-          if (!activeModes.has('kabupaten')) {
-            map.getPane('kabupatenPane').style.display = 'none';
-            map.getPane('kabupatenLabelPane').style.display = 'none';
+          // Keep choropleth alive when provinsi stays active — rebuilding ~34 GeoJSON
+          // features with event listeners is the main source of toggle lag.
+          if (!activeModes.has('provinsi')) {
+            choroplethLayer.clearLayers();
+            choroplethLabelLayer.clearLayers();
+            choroplethGeoLayer = null;
+            choroplethFeatures = [];
           }
           map.closePopup();
           markerRegistry = [];
@@ -2548,6 +2825,10 @@
         }
 
         function focusMarkerByLabel(label, rowEl = null) {
+          if (activeModes.has('provinsi') && choroplethGeoLayer) {
+            highlightChoroplethByName(label, rowEl);
+            return;
+          }
           const found = findMarkerByLabel(label);
           if (!found) return;
           if (rowEl) { clearActiveRow(); rowEl.classList.add('active-row'); activeRow = rowEl; }
@@ -2607,14 +2888,14 @@
           badge.dataset.species = item.name;
           const shortName = item.name.split(' ').slice(-2).join(' ');
           badge.innerHTML = `
-                                    <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                    <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                    <div class="satwa-badge-detail">
-                                      <span class="si-name">${item.name}</span>
-                                      <span class="si-val">${item.value}</span>
-                                      <span class="si-unit">habitat terdampak</span>
-                                    </div>
-                                  `;
+                                                                <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                                                <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                                                <div class="satwa-badge-detail">
+                                                                  <span class="si-name">${item.name}</span>
+                                                                  <span class="si-val">${item.value}</span>
+                                                                  <span class="si-unit">habitat terdampak</span>
+                                                                </div>
+                                                              `;
           badge.addEventListener('click', async (e) => {
             e.stopPropagation();
             const isActive = badge.classList.contains('active');
@@ -2696,134 +2977,115 @@
           return card;
         }
 
-        function renderAllSidebarCards() {
-          const wrap = document.getElementById('sidebar-table-wrap');
-          const lbl  = document.getElementById('sidebar-mode-label');
-          if (!wrap) return;
-          wrap.innerHTML = '';
-          const modeNames = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna', konsesi: 'Konsesi' };
-          const catNames  = { 'kebun-kayu': 'Kebun Kayu', logging: 'Logging', sawit: 'Sawit', tambang: 'Tambang' };
-          if (activeModes.size === 0) {
-            if (lbl) lbl.textContent = '—';
-            return;
-          }
-          if (lbl) lbl.textContent = [...activeModes].map(mk => modeNames[mk] || mk).join(', ');
-          [...activeModes].forEach(modeKey => {
-            let markers = [], heading = modeNames[modeKey] || modeKey, totalVal = null, othersVal = null;
-            if (modeKey === 'konsesi') {
-              if (currentKonsesiCat && MODES.konsesi.subCategories[currentKonsesiCat]) {
-                const cat = MODES.konsesi.subCategories[currentKonsesiCat];
-                markers = cat.markers || [];
-                heading = catNames[currentKonsesiCat] || currentKonsesiCat;
-                totalVal = cat.kpiVal;
-                othersVal = cat.othersVal || null;
-              } else {
-                const card = document.createElement('div');
-                card.className = 'sb-card';
-                card.innerHTML = '<div class="sb-card-head">Konsesi</div><div class="stbl-empty">Pilih kategori konsesi.</div>';
-                wrap.appendChild(card);
-                return;
-              }
-            } else {
-              const mode = MODES[modeKey];
-              if (!mode) return;
-              markers = mode.markers || mode.species || [];
-              totalVal = mode.kpiVal || null;
-              othersVal = mode.bubble?.value || null;
+        // ── CHOROPLETH: Deforestasi berbasis provinsi via GeoServer WFS ────────────
+        function getChoroColor(val) {
+          if (!val || val <= 0) return 'rgba(245,240,232,0.18)';
+          if (val < 200) return '#fef4ee';
+          if (val < 500) return '#fce3d4';
+          if (val < 1000) return '#f8c4a2';
+          if (val < 2500) return '#f0a070';
+          if (val < 5000) return '#e57a48';
+          if (val < 10000) return '#d45930';
+          if (val < 20000) return '#bb3c1e';
+          if (val < 35000) return '#9e2e14';
+          if (val < 55000) return '#7e1f0c';
+          return '#5a1206';
+        }
+
+        function buildChoropleth(data) {
+          if (choroplethGeoLayer) { choroplethLayer.removeLayer(choroplethGeoLayer); choroplethGeoLayer = null; }
+          choroplethFeatures = [];
+          choroplethGeoLayer = L.geoJSON(data, {
+            style: function (feature) {
+              var val = parseFloat(feature.properties.deforestas) || 0;
+              return {
+                fillColor: getChoroColor(val),
+                fillOpacity: 0.92,
+                color: 'rgba(120,90,60,0.45)',
+                weight: 0.6,
+                opacity: 1
+              };
+            },
+            onEachFeature: function (feature, layer) {
+              var props = feature.properties;
+              var name = props.political3 || props.level_3 || '';
+              var val = parseFloat(props.deforestas) || 0;
+              var fmtVal = Math.round(val).toLocaleString('id-ID');
+              choroplethFeatures.push({ name: name, layer: layer, val: val });
+              layer.bindTooltip(
+                '<strong>' + name + '</strong><br>' + fmtVal + '\u00a0ha',
+                { sticky: true, className: 'choro-tooltip', direction: 'auto' }
+              );
+              layer.on('mouseover', function () {
+                if (!activeModes.has('provinsi')) return;
+                layer.setStyle({ fillOpacity: 0.9, weight: 1.5, color: '#1a1a1a' });
+                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) layer.bringToFront();
+              });
+              layer.on('mouseout', function () {
+                if (!activeModes.has('provinsi')) return;
+                choroplethGeoLayer.resetStyle(layer);
+              });
             }
-            if (!markers.length) return;
-            const card = document.createElement('div');
-            card.className = 'sb-card';
-            const head = document.createElement('div');
-            head.className = 'sb-card-head';
-            head.textContent = heading;
-            card.appendChild(head);
-            const table = document.createElement('table');
-            table.className = 'stbl';
-            const tbody = document.createElement('tbody');
-            markers.forEach(m => {
-              const tr = document.createElement('tr');
-              tr.className = 'stbl-row';
-              tr.addEventListener('click', () => focusMarkerByLabel(m.name, tr));
-              const tdN = document.createElement('td');
-              tdN.className = 'stbl-name';
-              tdN.textContent = m.name;
-              const raw = m.value;
-              const num = typeof raw === 'number' ? raw : parseFloat(String(raw).replace(/\./g, '').replace(',', '.'));
-              const tdV = document.createElement('td');
-              tdV.className = 'stbl-val';
-              tdV.textContent = isNaN(num) ? raw : num.toLocaleString('id-ID');
-              tr.appendChild(tdN); tr.appendChild(tdV);
-              tbody.appendChild(tr);
+          }).addTo(choroplethLayer);
+          // Permanent rank labels for top-10 provinces
+          var top10Ranks = {
+            'Kalimantan Tengah': 1, 'Kalimantan Timur': 2, 'Aceh': 3,
+            'Kalimantan Barat': 4, 'Papua Tengah': 5, 'Sumatera Barat': 6,
+            'Sumatera Utara': 7, 'Kalimantan Utara': 8, 'Riau': 9, 'Papua Pegunungan': 10
+          };
+          choroplethFeatures.forEach(function (f) {
+            var rank = top10Ranks[f.name];
+            if (!rank) return;
+            var center = f.layer.getBounds().getCenter();
+            var icon = L.divIcon({
+              className: '',
+              html: '<div class="choro-rank-label"><span class="choro-rank-num">' + rank + '</span><span class="choro-rank-name">' + f.name + '</span></div>',
+              iconSize: null,
+              iconAnchor: null
             });
-            if (totalVal) {
-              const trT = document.createElement('tr');
-              trT.className = 'stbl-total';
-              const tdTN = document.createElement('td');
-              tdTN.className = 'stbl-name';
-              tdTN.textContent = 'Total';
-              const tdTV = document.createElement('td');
-              tdTV.className = 'stbl-val';
-              tdTV.textContent = totalVal;
-              trT.appendChild(tdTN); trT.appendChild(tdTV);
-              tbody.appendChild(trT);
-            }
-            if (othersVal) {
-              const trL = document.createElement('tr');
-              trL.className = 'stbl-others';
-              const tdLN = document.createElement('td');
-              tdLN.className = 'stbl-name';
-              tdLN.textContent = 'Lainnya';
-              const tdLV = document.createElement('td');
-              tdLV.className = 'stbl-val';
-              tdLV.textContent = othersVal;
-              trL.appendChild(tdLN); trL.appendChild(tdLV);
-              tbody.appendChild(trL);
-            }
-            table.appendChild(tbody);
-            const scrollWrap = document.createElement('div');
-            scrollWrap.className = 'stbl-scroll';
-            scrollWrap.appendChild(table);
-            card.appendChild(scrollWrap);
-            wrap.appendChild(card);
+            L.marker(center, { icon: icon, interactive: false }).addTo(choroplethLabelLayer);
           });
         }
-        // ─────────────────────────────────────────────────────────────────────────
 
-        // ── CHOROPLETH: WMS tiles from GeoServer ──────────────────────────────────
-
-        function showChoroplethPanes() {
-          map.getPane('choroplethPane').style.display = '';
-          map.getPane('choroplethLabelPane').style.display = '';
+        function setMapLoading(on) {
+          var el = document.getElementById('map-loading');
+          if (!el) return;
+          el.classList.toggle('hidden', !on);
+          el.style.pointerEvents = on ? 'auto' : 'none';
         }
 
         function loadProvinsiChoropleth() {
-          if (choroplethGeoLayer) { showChoroplethPanes(); return; }
-          choroplethGeoLayer = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-            layers: 'proteus:PROVINSI_STADI_2025',
-            format: 'image/png',
-            transparent: true,
-            version: '1.1.0',
-            pane: 'choroplethPane'
-          }).addTo(choroplethLayer);
-          showChoroplethPanes();
+          if (choroplethCache) { buildChoropleth(choroplethCache); return; }
+          setMapLoading(true);
+          var url = 'https://aws.simontini.id/geoserver/wfs?service=WFS&version=2.0.0' +
+            '&request=GetFeature&typeNames=proteus:PROVINSI_STADI_2025' +
+            '&outputFormat=application/json&srsname=EPSG:4326';
+          fetch(url)
+            .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+            .then(function (data) { choroplethCache = data; buildChoropleth(data); })
+            .catch(function (err) {
+              console.warn('Gagal memuat choropleth WFS:', err);
+              var el = document.getElementById('map-loading');
+              if (el) { el.querySelector('.map-loading-label').textContent = 'Gagal memuat data.'; }
+            })
+            .finally(function () { setMapLoading(false); });
         }
 
-        function showKabupatenPanes() {
-          map.getPane('kabupatenPane').style.display = '';
-          map.getPane('kabupatenLabelPane').style.display = '';
-        }
-
-        function loadKabupatenChoropleth() {
-          if (kabupatenGeoLayer) { showKabupatenPanes(); return; }
-          kabupatenGeoLayer = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-            layers: 'proteus:KABUPATEN_STADI_2025',
-            format: 'image/png',
-            transparent: true,
-            version: '1.1.0',
-            pane: 'kabupatenPane'
-          }).addTo(kabupatenLayer);
-          showKabupatenPanes();
+        function highlightChoroplethByName(name, rowEl) {
+          if (!choroplethGeoLayer) return;
+          choroplethGeoLayer.resetStyle();
+          var norm = function (s) { return (s || '').toLowerCase().replace(/[\s\-\.]/g, ''); };
+          var q = norm(name);
+          var found = choroplethFeatures.find(function (f) {
+            var n = norm(f.name);
+            return n === q || n.includes(q) || q.includes(n);
+          });
+          if (!found) return;
+          found.layer.setStyle({ fillOpacity: 0.95, weight: 2, color: '#1a1a1a', fillColor: '#8b2a1a' });
+          found.layer.bringToFront();
+          if (rowEl) { clearActiveRow(); rowEl.classList.add('active-row'); activeRow = rowEl; }
+          var bounds = found.layer.getBounds();
+          map.flyToBounds(bounds, { maxZoom: 7, padding: [40, 40], duration: 0.5 });
         }
         // ─────────────────────────────────────────────────────────────────────────
 
@@ -2831,9 +3093,7 @@
           const mode = MODES[modeKey];
           if (!mode) return;
           currentMode = modeKey;
-          // When kabupaten is active, suppress provinsi visuals entirely
-          if (modeKey === 'provinsi' && activeModes.has('kabupaten')) return;
-          if (mode.markers) mode.markers.forEach(createRankMarker);
+          if (mode.markers && modeKey !== 'provinsi') mode.markers.forEach(createRankMarker);
           if (mode.species) mode.species.forEach(createSpeciesMarker);
           const tableWrap = document.getElementById('table-wrap');
           if (mode.tables && mode.tables.length) {
@@ -2847,23 +3107,8 @@
             if (!activecat) { const firstCat = submenu.querySelector('.cat-btn'); if (firstCat) loadKonsesiCategory(firstCat.dataset.cat); }
           }
           if (modeKey === 'megafauna') positionSatwaBadges(mode.species);
-          // Show choropleth panes or load WFS data for the first time
-          if (modeKey === 'provinsi') {
-            if (!choroplethGeoLayer) {
-              loadProvinsiChoropleth();
-            } else {
-              map.getPane('choroplethPane').style.display = '';
-              map.getPane('choroplethLabelPane').style.display = '';
-            }
-          }
-          if (modeKey === 'kabupaten') {
-            if (!kabupatenGeoLayer) {
-              loadKabupatenChoropleth();
-            } else {
-              map.getPane('kabupatenPane').style.display = '';
-              map.getPane('kabupatenLabelPane').style.display = '';
-            }
-          }
+          // Skip rebuild if choropleth layer is already rendered (preserved by clearModeVisuals)
+          if (modeKey === 'provinsi' && !choroplethGeoLayer) loadProvinsiChoropleth();
         }
 
         function toggleMode(modeKey) {
@@ -2882,17 +3127,12 @@
             // Update sidebar KPI/title from the most recently activated mode still active
             const uiKey = activeModes.has(currentMode) ? currentMode : [...activeModes].slice(-1)[0];
             const uiMode = uiKey ? MODES[uiKey] : null;
-            // KPI float: separate row per active mode (runs regardless of uiMode)
-            const _kpiNames = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna', konsesi: 'Konsesi' };
-            const _kpiHtml = [...activeModes].map(mk => {
-              const m = MODES[mk];
-              if (!m?.kpiVal) return '';
-              return `<div style="margin-bottom:3px;"><div style="font-size:.42rem;text-transform:uppercase;letter-spacing:.08em;color:#d4c4a0;line-height:1.4;">${_kpiNames[mk] || mk}</div><div style="font-size:1.2rem;font-weight:700;line-height:1;margin-top:1px;">${m.kpiVal}</div><div style="font-size:.45rem;color:#d4c4a0;margin-top:1px;">hektare</div></div>`;
-            }).filter(Boolean).join('');
-            document.getElementById('kpi-items').innerHTML = _kpiHtml;
             if (uiMode) {
               document.getElementById('map-title').textContent = uiMode.title;
-            //   document.getElementById('sidebar-notes').innerHTML = uiMode.notesSidebar.map(n => `<li>${n}</li>`).join('');
+              document.getElementById('kpi-label').textContent = uiMode.kpiLabel;
+              document.getElementById('kpi-val').textContent = uiMode.kpiVal;
+              document.getElementById('kpi-unit').textContent = uiMode.kpiUnit;
+              document.getElementById('sidebar-notes').innerHTML = uiMode.notesSidebar.map(n => `<li>${n}</li>`).join('');
               document.getElementById('notes-list').innerHTML = uiMode.notesBox.map(n => `<li>${n}</li>`).join('');
               const bubble = document.getElementById('others-bubble');
               if (uiMode.bubble) {
@@ -2909,7 +3149,6 @@
             }
             activeModes.forEach(mk => renderModeVisuals(mk));
             map.invalidateSize();
-            renderAllSidebarCards();
           });
         }
 
@@ -2921,8 +3160,10 @@
           markerRegistry = [];
           activeMarker = null;
           map.closePopup();
-          document.getElementById('kpi-items').innerHTML = `<div><div style="font-size:.42rem;text-transform:uppercase;letter-spacing:.08em;color:#d4c4a0;line-height:1.4;">Konsesi</div><div style="font-size:1.2rem;font-weight:700;line-height:1;margin-top:1px;">${cat.kpiVal} </div></div>`;
-        //   document.getElementById('sidebar-notes').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
+          document.getElementById('kpi-label').textContent = cat.kpiLabel;
+          document.getElementById('kpi-val').textContent = cat.kpiVal;
+          document.getElementById('kpi-unit').textContent = 'hektare';
+          document.getElementById('sidebar-notes').innerHTML = cat.bullets.map(b => `<li>${b}</li>`).join('');
           //   document.getElementById('map-title').textContent = 'Deforestasi ' + cat.title;
           const bubble = document.getElementById('others-bubble');
           bubble.style.display = 'flex';
@@ -2942,8 +3183,6 @@
               })
               .catch(() => { if (cat.markers && cat.markers.length) placeMarkers(cat.markers); });
           } else if (cat.markers && cat.markers.length) { placeMarkers(cat.markers); }
-          currentKonsesiCat = catKey;
-          renderAllSidebarCards();
         }
 
         document.querySelectorAll('.mode-btn').forEach(btn => btn.addEventListener('click', () => toggleMode(btn.dataset.mode)));
