@@ -66,6 +66,10 @@ Route::middleware('httpauth')->group(function () {
     Route::get('/en/status-of-deforestation-in-indonesia-2025', [InsightContoller::class, 'stadi2025EN'])->name('stadi2025EN');
 });
 
+Route::middleware('httpauth')->group(function () {
+    Route::get('/penjelasan-data-stadi-2025', [InsightContoller::class, 'penjelasan'])->name('penjelasan-data-stadi-2025');
+});
+
 Route::middleware([setLanguage::class])->group(function () {
     Route::group(['prefix' => '{lang}'], function () {
         Route::get('/', [IndexController::class, 'index'])->name('index');
