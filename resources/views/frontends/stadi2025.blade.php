@@ -1050,8 +1050,7 @@
           <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-6 z-20">
 
             <a href="{{ asset('assets/images/stadi2025/PLTA Mentarang, Malinau.jpg') }}" class="glightbox1 mt-4 gbox"
-              data-gallery="gallery1" data-glightbox="description:   PLTA Mentarang, Malinau,
-                  <br>Kalimantan Utara, Oktober 2025">
+              data-gallery="gallery1" data-glightbox="description:   PLTA Mentarang, Malinau, <br> Kalimantan Utara, Oktober 2025">
 
               <img src="{{ asset('assets/images/stadi2025/PLTA Mentarang, Malinau.jpg') }}"
                 class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300" />
@@ -1107,8 +1106,7 @@
               <!-- IMAGE 1 -->
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Anugerah Surya Utama  2.jpg') }}"
-                  class="glightbox2 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:  Konsesi Tambang, PT Anugerah Surya Utama,
-                            <br>Raja Ampat, Papua, September 2025">
+                  class="glightbox2 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:  Konsesi Tambang, PT Anugerah Surya Utama, <br> Raja Ampat, Papua, September 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Anugerah Surya Utama  2.jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
@@ -1123,8 +1121,7 @@
               <!-- IMAGE 2 -->
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Jati Dharma Indah Plywood 2.jpg') }}"
-                  class="glightbox2 mt-4 gbox" data-gallery="gallery1" data-glightbox="description: Konsesi PBPH, PT Jati Dharma Indah Plywood
-                            <br>Industries, Nabire, Papua Tengah, Desember 2025">
+                  class="glightbox2 mt-4 gbox" data-gallery="gallery1" data-glightbox="description: Konsesi PBPH, PT Jati Dharma Indah Plywood, <br> Industries, Nabire, Papua Tengah, Desember 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Jati Dharma Indah Plywood 2.jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
@@ -1280,8 +1277,7 @@
               <!-- IMAGE 1 -->
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Hutan Berau Lestari .jpg') }}"
-                  class="glightbox4 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:  Konsesi PBPH, PT Hutan Berau Lestari,
-                                    <br>Berau, Kalimantan Timur, Mei 2025">
+                  class="glightbox4 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:  Konsesi PBPH, PT Hutan Berau Lestari, <br> Berau, Kalimantan Timur, Mei 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Hutan Berau Lestari .jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
@@ -1296,8 +1292,7 @@
               <!-- IMAGE 2 -->
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}"
-                  class="glightbox4 mt-4 gbox" data-gallery="gallery1" data-glightbox="description: Konsesi PBPH, PT Indosubur Sukses Makmur,
-                                  <br>Kutai Timur, Kalimantan Timur, Januari 2025">
+                  class="glightbox4 mt-4 gbox" data-gallery="gallery1" data-glightbox="description: Konsesi PBPH, PT Indosubur Sukses Makmur, <br> Kutai Timur, Kalimantan Timur, Januari 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
@@ -1348,8 +1343,7 @@
           <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-6 z-20">
 
             <a href="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2025.jpg') }}"
-              class="glightbox5 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:    Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, <br>
-                                      Aceh Selatan, Aceh, Agustus 2025, @ Haka">
+              class="glightbox5 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:    Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, <br> Aceh Selatan, Aceh, Agustus 2025, @ Haka">
 
               <img
                 src="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2025.jpg') }}"
