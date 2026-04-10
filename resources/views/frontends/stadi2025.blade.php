@@ -2006,7 +2006,7 @@
                 '<div style="font-size:.72rem;font-weight:700;color:#1a1a1a;line-height:1.2;white-space:nowrap;margin-bottom:2px;">' + p.name + '</div>' +
                 '<div style="font-size:.68rem;color:rgba(0,0,0,.4);margin-bottom:5px;white-space:nowrap;">' + (p.start === (p.labelEnd || p.end) ? p.start : p.start + '\u2013' + (p.labelEnd || p.end)) + '</div>' +
                 '<div style="font-size:.88rem;font-weight:800;color:#8b2a1a;line-height:1;white-space:nowrap;">' + total.toLocaleString('id-ID') + '</div>' +
-                '<div style="font-size:.58rem;color:#8b7355;margin-top:2px;white-space:nowrap;">ha hilang</div>';
+                '<div style="font-size:.58rem;color:#8b7355;margin-top:2px;white-space:nowrap;">hectare deforestasi</div>';
 
               presGroup.appendChild(photoWrap);
               presGroup.appendChild(el);
