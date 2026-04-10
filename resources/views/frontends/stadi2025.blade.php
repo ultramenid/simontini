@@ -1388,19 +1388,19 @@
             <div class="method-step">
                 <div class="ms-num">1.</div>
                 <div>
-                <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di
-                    Indonesia.</h4><br>
-                <p class="body-text">
-                    Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun, menghadirkan sebuah
-                    undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di bawahnya, yakni
-                    peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama oleh kerumitan
-                    dan
-                    kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam penyusunan peraturan
-                    pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup menjawab
-                    persoalan,
-                    sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden mengenai perlindungan
-                    <strong>seluruh</strong> hutan alam tersisa di Indonesia.
-                </p>
+                    <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di
+                        Indonesia.</h4><br>
+                    <p class="body-text">
+                        Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun, menghadirkan sebuah
+                        undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di bawahnya, yakni
+                        peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama oleh kerumitan
+                        dan
+                        kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam penyusunan peraturan
+                        pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup menjawab
+                        persoalan,
+                        sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden mengenai perlindungan
+                        <strong>seluruh</strong> hutan alam tersisa di Indonesia.
+                    </p>
                 </div>
             </div>
 
@@ -1408,9 +1408,9 @@
                 <div class="viz-frame !p-0 flex items-start">
 
                     <div x-data="{
-                        currentSlide: 0,
-                        totalSlides: 5,
-                        startX: 0,
+                        currentSlide: 3,
+                        totalSlides: 4,
+                        startX: 4,
                         startSwipe(e) { this.startX = e.touches[0].clientX; },
                         handleTouchMove(e) {
                             let diff = this.startX - e.touches[0].clientX;
@@ -1460,11 +1460,12 @@
           </div>
 
 
-          <div class="method-step border-b">
+          <div class="method-steps border-b">
+            <div class="method-step ">
             <div class="ms-num">2.</div>
-            <div class="">
+            <div class="-mb-12">
               <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.</h4><br>
-              <p class="body-text">
+              <p class="body-text ">
                 pertengahan 2023 publik dikejutkan dengan usulan revisi tata ruang Provinsi Kalimantan Timur yang
                 ditengarai akan melepaskan 612.355 hektare kawasan hutan (menjadi area penggunaan lain), menurunkan fungsi
                 kawasan hutan (sehingga memungkinkan ditambang) seluas 101.788 hektare. Padahal, setidaknya 389.596
@@ -1482,6 +1483,55 @@
                 pihak terdampak sehingga hasil revisinya semata-mata demi kepentingan publik.
               </p>
 
+            </div>
+            </div>
+            <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
+                <div class="viz-frame !p-0 flex items-start">
+
+                    <div x-data="{
+                        currentSlide: 0,
+                        totalSlides: 1,
+                        startX: 0,
+                        startSwipe(e) { this.startX = e.touches[0].clientX; },
+                        handleTouchMove(e) {
+                            let diff = this.startX - e.touches[0].clientX;
+                            if (Math.abs(diff) > 50) {
+                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                this.startX = e.touches[0].clientX;
+                            }
+                        }
+                    }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                        class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+
+                        <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                            @foreach([8] as $i)
+                            <div class="w-full flex-shrink-0">
+                                <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox1 gbox"
+                                data-glightbox="description:">
+                                <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
+                                    class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+
+                        <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                            class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                            <span style="font-size: 14px; color: #222;">◀</span>
+                        </button>
+
+                        <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                            x-show="currentSlide < totalSlides - 1"
+                            class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                            <span style="font-size: 14px; color: #222;">▶</span>
+                        </button>
+
+
+                        </div>
+                    </div>
             </div>
           </div>
           <div class="method-step border-b">
@@ -1611,11 +1661,6 @@
           </div>
         </div>
 
-        {{-- <p class="body-text">
-          Selain itu, komitmen ESG para pemilik atau pengelola izin serta insentif bagi pemerintah daerah, komunitas
-          lokal, dan swasta dalam perlindungan hutan alam perlu diperkuat agar perlindungan hutan tidak hanya bergantung
-          pada pendekatan administratif semata.
-        </p> --}}
 
         <hr class="divider">
 
