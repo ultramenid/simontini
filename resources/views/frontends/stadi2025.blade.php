@@ -249,7 +249,7 @@
   {{-- step 1 --}}
   <div class="viz-block viz-block--full alur" style="margin-top: -60px !important;">
     <img src="{{ asset('assets/Tahap.png') }}" alt="Simontini - 2025 Methodology"
-      class="sm:max-w-6xl w-full mx-auto h-auto object-contain">
+      class="sm:max-w-3xl w-full mx-auto h-auto object-contain">
 
     <section class="page-section px-[5vw] pt-8 pb-6">
       <div class="body-text">
@@ -420,22 +420,11 @@
 
       <div id="peta-embed" class="mx-auto">
         <!-- MAP SECTION -->
-        <div class="relative bg-black overflow-hidden" style="height:550px;">
+        <div class="relative bg-black overflow-hidden" style="height:500px;">
 
-          <!-- Header -->
-          <div
-            class="absolute top-0 left-0 right-0 z-50 pt-4 sm:pt-6 px-4 sm:px-10 flex justify-between items-start pointer-events-none">
-            <h1 class="font-poppins text-[clamp(1.6rem,3vw,2.6rem)] font-bold leading-[1.1] text-[#f5f0e8]">
-              Deforestasi<br>melonjak pada <span class="text-[#8b2a1a]">2025</span>
-            </h1>
-          </div>
 
           <!-- Map -->
-          <div class="absolute inset-0 pt-[90px] pb-[168px] flex items-center justify-center z-10">
-            <img id="indonesia-map" class="w-full max-h-full object-contain pointer-events-none select-none"
-              style="filter:saturate(.65) brightness(1.05);" src="{{ asset('assets/images/indonesia-map.jpg') }}"
-              alt="Peta Indonesia" />
-          </div>
+          <div id="peta-bg-map" class="absolute inset-0 z-10" style="background:#0a0a0a;"></div>
 
           <!-- Year ghost -->
           {{-- <div id="peta-year-ghost"
@@ -450,9 +439,9 @@
 
               <!-- Sumatra chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-sumatra" style="left:24%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-sumatra" style="left:22%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
-                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sumatera</div>
                   <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
                   <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
@@ -473,9 +462,9 @@
 
               <!-- Kalimantan chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-kalimantan" style="left:37%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-kalimantan" style="left:35%;top:3%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
-                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Kalimantan</div>
                   <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
                   <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
@@ -496,9 +485,9 @@
 
               <!-- Sulawesi chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-sulawesi" style="left:50%;top:8%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-sulawesi" style="left:52%;top:3%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
-                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sulawesi</div>
                   <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
                   <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
@@ -519,9 +508,9 @@
 
               <!-- Papua chart -->
               <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-papua" style="left:78%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                id="peta-chart-papua" style="left:65%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
                 <div
-                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(245,240,232,.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                   <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Papua</div>
                   <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
                   <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
@@ -546,37 +535,37 @@
 
           <!-- Bubbles -->
           <div id="peta-bubbles"
-            class="absolute bottom-[105px] left-0 right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 flex gap-1 sm:gap-3 z-30 pointer-events-none items-center justify-center px-1 sm:px-0">
+            class="absolute bottom-[30px] left-0 right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 flex gap-1 sm:gap-3 z-30 pointer-events-none items-center justify-center px-1 sm:px-0">
             <div
-              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
               id="peta-b0" onclick="petaSelectYear(0)">
               <div class="b-yr text-[.6rem] font-semibold">2021</div>
               <div class="b-val font-bold leading-[1.1]">229.982</div>
               <div class="b-u text-[.58rem] opacity-85">ha</div>
             </div>
             <div
-              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
               id="peta-b1" onclick="petaSelectYear(1)">
               <div class="b-yr text-[.6rem] font-semibold">2022</div>
               <div class="b-val font-bold leading-[1.1]">230.760</div>
               <div class="b-u text-[.58rem] opacity-85">ha</div>
             </div>
             <div
-              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
               id="peta-b2" onclick="petaSelectYear(2)">
               <div class="b-yr text-[.6rem] font-semibold">2023</div>
               <div class="b-val font-bold leading-[1.1]">257.385</div>
               <div class="b-u text-[.58rem] opacity-85">ha</div>
             </div>
             <div
-              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
               id="peta-b3" onclick="petaSelectYear(3)">
               <div class="b-yr text-[.6rem] font-semibold">2024</div>
               <div class="b-val font-bold leading-[1.1]">261.574</div>
               <div class="b-u text-[.58rem] opacity-85">ha</div>
             </div>
             <div
-              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(245,240,232,.25)] text-[rgba(245,240,232,.55)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
               id="peta-b4" onclick="petaSelectYear(4)">
               <div class="b-yr font-semibold">2025</div>
               <div class="b-val font-bold leading-[1.1]">433.751</div>
@@ -587,13 +576,13 @@
         </div><!-- /map section -->
 
         <!-- TABLE SECTION -->
-        <div id="peta-table-section" class="bg-[#1a1a1a] text-[#f5f0e8] py-8 sm:py-20 px-4 sm:px-12 relative">
-          <div class="flex items-center gap-1.5 px-4 py-2 sm:hidden"
-            style="background:#161616; border-bottom:1px solid rgba(255,255,255,.05);">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2">
+        <div id="peta-table-section" class="bg-[#ece8df] text-black  px-4 sm:px-12 relative">
+          <div class="flex items-center gap-1.5  sm:hidden"
+            style="background:#ece8df; border-bottom:1px solid rgba(255,255,255,.05);">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-            <span style="font-size:.6rem; color:rgba(255,255,255,.3); letter-spacing:.08em;">geser untuk melihat alur
+            <span style="font-size:.6rem; color:black; letter-spacing:.08em;">geser untuk melihat alur
               lengkap</span>
           </div>
           <div class="max-w-[980px] mx-auto overflow-x-auto">
@@ -601,7 +590,7 @@
               <thead>
                 <tr c lass="border-b-2 border-[#8b2a1a]">
                   <th rowspan="2"
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-left align-bottom">
+                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-left align-bottom">
                     Pulau</th>
                   <th colspan="3"
                     class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#c04030] py-1 sm:py-[9px] px-2 sm:px-[14px] text-center border-b border-[rgba(255,255,255,.1)]">
@@ -612,26 +601,26 @@
                 </tr>
                 <tr class="border-b-2 border-[#8b2a1a]">
                   <th
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
                     2023</th>
                   <th
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
                     2024</th>
                   <th
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
                     2025</th>
                   <th
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
                     Hektare</th>
                   <th
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#d4c4a0] py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
                     Persen</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
                   <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
                     Kalimantan</td>
                   <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
                     124.611</td>
@@ -647,7 +636,7 @@
                 </tr>
                 <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
                   <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
                     Sumatera</td>
                   <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
                     33.311</td>
@@ -663,7 +652,7 @@
                 </tr>
                 <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
                   <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
                     Papua</td>
                   <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
                     55.981</td>
@@ -679,7 +668,7 @@
                 </tr>
                 <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
                   <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
                     Sulawesi</td>
                   <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
                     36.814</td>
@@ -695,7 +684,7 @@
                 </tr>
                 <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
                   <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
                     Maluku</td>
                   <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
                     4.034</td>
@@ -711,7 +700,7 @@
                 </tr>
                 <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
                   <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
                     Bali &amp; Nusa Tenggara</td>
                   <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
                     2.052</td>
@@ -727,7 +716,7 @@
                 </tr>
                 <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
                   <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-[#f5f0e8]">
+                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
                     Jawa</td>
                   <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
                     582</td>
@@ -777,7 +766,7 @@
       <p class="body-text">
         Tiga provinsi yang mengalami bencana longsor-banjir dahsyat di Sumatera Bagian Utara pada penghujung 2025
         mengalami lonjakan deforestasi luar biasa: Aceh (426%), Sumatera Utara (281%), dan Sumatera Barat (1.034%).<br>
-      </p><br>
+      </p>
 
       <p class="body-text">
         Deforestasi terjadi di 383 kabupaten/kota atau 74% kabupaten/kota se-Indonesia yang jumlahnya 514, menurun dari
@@ -814,12 +803,34 @@
       <p class="body-text">
         Sebesar 44% deforestasi terjadi di dalam konsesi, dengan konsesi kehutanan sebagai penyumbang terbesar (58%).
         Sebagian besar (65%) deforestasi dalam konsesi terjadi di Kalimantan.<br>
-      </p><br>
+      </p>
 
       <p class="body-text">
         Deforestasi seluas 41.162 hektare terjadi pada 1.140 izin atau konsesi tambang, dengan 22% (8.929 hektare) terjadi
         pada sepuluh teratas.<br>
       </p><br>
+
+      {{-- chart bulanan --}}
+      <div class="viz-block viz-block--full mt-10 mb-6" id="chart-monthly-wrap">
+        <div class="max-w-4xl mx-auto">
+          <div class="">
+            <div class=" px-4  sm:px-6">
+              <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">Deforestasi Indonesia per Bulan, 2025</div>
+              <div class="text-[11px] mt-0.5" style="color:#8b7355;">Luas hutan yang hilang per bulan · hektare</div>
+            </div>
+            <div id="chart-monthly-inner" class="px-4 sm:px-6 py-4 w-full min-w-0">
+              <div id="chart-monthly-body" class="relative flex" style="height:380px;">
+                <div id="chart-monthly-yaxis" class="flex flex-col-reverse justify-between pb-[48px] w-[42px] md:w-[56px] shrink-0"></div>
+                <div id="chart-monthly-bars-wrap" class="relative flex-1 flex flex-col">
+                  <div id="chart-monthly-grid" class="relative flex flex-col-reverse justify-between flex-1"></div>
+                  <div id="chart-monthly-bars" class="absolute inset-x-0 top-0 bottom-[48px] grid items-end gap-[3px] md:gap-[5px] px-1"></div>
+                  <div id="chart-monthly-xaxis" class="relative grid gap-[3px] md:gap-[5px] px-[4px] mt-2 h-[48px] items-center" style="background:white;z-index:2;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <p class="body-text">
         Deforestasi seluas 37.910 hektare terjadi di 719 konsesi sawit sepanjang 2025, dengan 36% (13.610 hektare) terjadi
@@ -834,10 +845,10 @@
 
       <p class="body-text">
         Deforestasi terjadi di 237 konsesi logging, 28 persennya terjadi di sepuluh teratas.<br>
-      </p><br><br>
+      </p>
 
 
-      <div class="section-label">IV. Peta Tematik Deforestasi</div>
+      {{-- <div class="section-label">IV. Peta Tematik Deforestasi</div> --}}
       <p class="body-text">
         Deforestasi berbasis provinsi Deforestasi berbasis kabupaten Deforestasi di kawasan konservasi Deforestasi di
         Habitat megafauna ikonik Deforestasi dalam Konsesi
@@ -920,7 +931,7 @@
               </div>
             </div>
 
-            <div id="map-legend" class="absolute left-[14px] bottom-[52px] z-[620] flex flex-col gap-[4px]"></div>
+            <div id="map-legend" class="absolute left-[14px] bottom-[52px] z-[620] flex flex-col gap-[4px]" style="display:none"></div>
 
             <div id="table-panel"
               class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
@@ -992,7 +1003,7 @@
     <!-- DISKUSI -->
     <span class="s-anchor" id="diskusi"></span>
     <section class="page-section px-[5vw] py-10">
-      <div class="section-label">V. Diskusi</div>
+      <div class="section-label">IV. Diskusi</div>
 
       <div class="mt-10">
         <div class="chapter-header">
@@ -1360,91 +1371,165 @@
       </div><br>
     </section>
 
-    <!-- REKOMENDASI -->
-    <span class="s-anchor" id="rekomendasi"></span>
-    <section class="page-section px-[5vw] pt-10 pb-20">
-      <div class="mx-auto max-w-[820px]">
-        <div class="section-label">VI. Rekomendasi</div>
+<!-- REKOMENDASI -->
+<span class="s-anchor" id="rekomendasi"></span>
+<section class="page-section px-[5vw] pt-10 pb-20">
+    <div class="mx-auto max-w-[820px]">
+    <div class="section-label">V. Rekomendasi</div>
 
-        <p class="body-text">
-          Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
-          tanggung jawab para pemegang izin. Rekomendasi berikut menempatkan perlindungan hutan sebagai agenda kebijakan
-          yang harus dijalankan secara serentak.
-        </p>
+    <p class="body-text">
+        Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
+        tanggung jawab para pemegang izin. Rekomendasi berikut menempatkan perlindungan hutan sebagai agenda kebijakan
+        yang harus dijalankan secara serentak.
+    </p>
 
-        <div class="method-steps">
-          <div class="border-b pt-0 pb-12">
+    <div class="method-steps">
+        <div class="border-b pt-0 pb-12">
             <div class="method-step">
-              <div class="ms-num">1.</div>
-              <div>
+                <div class="ms-num">1.</div>
+                <div>
                 <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di
-                  Indonesia.</h4><br>
+                    Indonesia.</h4><br>
                 <p class="body-text">
-                  Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun, menghadirkan sebuah
-                  undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di bawahnya, yakni
-                  peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama oleh kerumitan
-                  dan
-                  kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam penyusunan peraturan
-                  pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup menjawab
-                  persoalan,
-                  sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden mengenai perlindungan
-                  <strong>seluruh</strong> hutan alam tersisa di Indonesia.
+                    Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun, menghadirkan sebuah
+                    undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di bawahnya, yakni
+                    peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama oleh kerumitan
+                    dan
+                    kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam penyusunan peraturan
+                    pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup menjawab
+                    persoalan,
+                    sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden mengenai perlindungan
+                    <strong>seluruh</strong> hutan alam tersisa di Indonesia.
                 </p>
-              </div>
+                </div>
             </div>
 
             <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
-              <div class="viz-frame !p-0 flex items-start">
+                <div class="viz-frame !p-0 flex items-start">
 
-                <div x-data="{
-                                                                                currentSlide: 0,
-                                                                                totalSlides: 5,
-                                                                                startX: 0,
-                                                                                startSwipe(e) { this.startX = e.touches[0].clientX; },
-                                                                                handleTouchMove(e) {
-                                                                                    let diff = this.startX - e.touches[0].clientX;
-                                                                                    if (Math.abs(diff) > 50) {
-                                                                                        if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                                                                        else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                                                                        this.startX = e.touches[0].clientX;
-                                                                                    }
-                                                                                }
-                                                                            }" @touchstart="startSwipe($event)"
-                  @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+                    <div x-data="{
+                        currentSlide: 0,
+                        totalSlides: 5,
+                        startX: 0,
+                        startSwipe(e) { this.startX = e.touches[0].clientX; },
+                        handleTouchMove(e) {
+                            let diff = this.startX - e.touches[0].clientX;
+                            if (Math.abs(diff) > 50) {
+                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                this.startX = e.touches[0].clientX;
+                            }
+                        }
+                    }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                        class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
-                  <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                    @foreach([1, 2, 3, 4, 5] as $i)
-                      <div class="w-full flex-shrink-0">
-                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox1 gbox"
-                          data-glightbox="description:">
-                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
-                            class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
-                        </a>
-                      </div>
-                    @endforeach
-                  </div>
+                        <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                            @foreach([1, 2, 3, 4, 5] as $i)
+                            <div class="w-full flex-shrink-0">
+                                <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox1 gbox"
+                                data-glightbox="description:">
+                                <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
+                                    class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
 
-                  <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
-                    class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
-                    style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
-                    <span style="font-size: 14px; color: #222;">◀</span>
-                  </button>
+                        <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                            class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                            <span style="font-size: 14px; color: #222;">◀</span>
+                        </button>
 
-                  <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
-                    x-show="currentSlide < totalSlides - 1"
-                    class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
-                    style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
-                    <span style="font-size: 14px; color: #222;">▶</span>
-                  </button>
+                        <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                            x-show="currentSlide < totalSlides - 1"
+                            class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                            <span style="font-size: 14px; color: #222;">▶</span>
+                        </button>
 
-                  <div class="flex justify-center gap-2 mt-3">
-                    <template x-for="i in totalSlides" :key="i">
-                      <button @click="currentSlide = i - 1" :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
-                        class="w-2 h-2 rounded-full"></button>
-                    </template>
-                  </div>
+                        <div class="flex justify-center gap-2 mt-3">
+                            <template x-for="i in totalSlides" :key="i">
+                            <button @click="currentSlide = i - 1" :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
+                                class="w-2 h-2 rounded-full"></button>
+                            </template>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+          </div>
+          <div class="border-b pt-0 pb-12">
+            <div class="method-step">
+                <div class="ms-num">1.</div>
+                <div>
+                <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di
+                    Indonesia.</h4><br>
+                <p class="body-text">
+                    Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun, menghadirkan sebuah
+                    undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di bawahnya, yakni
+                    peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama oleh kerumitan
+                    dan
+                    kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam penyusunan peraturan
+                    pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup menjawab
+                    persoalan,
+                    sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden mengenai perlindungan
+                    <strong>seluruh</strong> hutan alam tersisa di Indonesia.
+                </p>
                 </div>
-              </div>
+            </div>
+
+            <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
+                <div class="viz-frame !p-0 flex items-start">
+
+                    <div x-data="{
+                        currentSlide: 0,
+                        totalSlides: 5,
+                        startX: 0,
+                        startSwipe(e) { this.startX = e.touches[0].clientX; },
+                        handleTouchMove(e) {
+                            let diff = this.startX - e.touches[0].clientX;
+                            if (Math.abs(diff) > 50) {
+                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                this.startX = e.touches[0].clientX;
+                            }
+                        }
+                    }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                        class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+
+                        <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                            @foreach([1, 2, 3, 4, 5] as $i)
+                            <div class="w-full flex-shrink-0">
+                                <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox1 gbox"
+                                data-glightbox="description:">
+                                <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
+                                    class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+
+                        <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                            class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                            <span style="font-size: 14px; color: #222;">◀</span>
+                        </button>
+
+                        <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                            x-show="currentSlide < totalSlides - 1"
+                            class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                            <span style="font-size: 14px; color: #222;">▶</span>
+                        </button>
+
+                        <div class="flex justify-center gap-2 mt-3">
+                            <template x-for="i in totalSlides" :key="i">
+                            <button @click="currentSlide = i - 1" :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
+                                class="w-2 h-2 rounded-full"></button>
+                            </template>
+                        </div>
+                        </div>
+                    </div>
             </div>
           </div>
 
@@ -1469,6 +1554,7 @@
                 revisi tata ruang wilayah yang menjamin prosesnya berlangsung secara transparan dan memastikan pelibatan
                 pihak terdampak sehingga hasil revisinya semata-mata demi kepentingan publik.
               </p>
+
             </div>
           </div>
           <div class="method-step border-b">
@@ -1517,20 +1603,20 @@
               <div class="viz-frame !p-0 flex items-start">
 
                 <div x-data="{
-                                                                                currentSlide: 0,
-                                                                                totalSlides: 2,
-                                                                                startX: 0,
-                                                                                startSwipe(e) { this.startX = e.touches[0].clientX; },
-                                                                                handleTouchMove(e) {
-                                                                                    let diff = this.startX - e.touches[0].clientX;
-                                                                                    if (Math.abs(diff) > 50) {
-                                                                                        if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                                                                        else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                                                                        this.startX = e.touches[0].clientX;
-                                                                                    }
-                                                                                }
-                                                                            }" @touchstart="startSwipe($event)"
-                  @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+                    currentSlide: 0,
+                    totalSlides: 2,
+                    startX: 0,
+                    startSwipe(e) { this.startX = e.touches[0].clientX; },
+                    handleTouchMove(e) {
+                        let diff = this.startX - e.touches[0].clientX;
+                        if (Math.abs(diff) > 50) {
+                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                            this.startX = e.touches[0].clientX;
+                        }
+                    }
+                }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                  class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                   <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
                     @foreach([6, 7] as $i)
@@ -1538,7 +1624,7 @@
                         <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox1 gbox"
                           data-glightbox="description:">
                           <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
-                            class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
+                            class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
                         </a>
                       </div>
                     @endforeach
@@ -1633,7 +1719,7 @@
           </div>
           <div class="ab-group">
             <div class="ab-label">Kreatif Desain</div>
-            <div class="ab-names">Robby Eebor, M. Fachri</div>
+            <div class="ab-names">Robby Eebor, Tim Teknologi</div>
           </div>
           <div class="ab-group">
             <div class="ab-label">Tim Teknologi</div>
@@ -2082,14 +2168,124 @@
           document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clearEra(); });
         }
 
+        function buildMonthlyChart() {
+          var MONTHLY_DATA = [
+            { month: 'Jan', val: 2710 },
+            { month: 'Feb', val: 10367 },
+            { month: 'Mar', val: 29539 },
+            { month: 'Apr', val: 57982 },
+            { month: 'Mei', val: 75082 },
+            { month: 'Jun', val: 48351 },
+            { month: 'Jul', val: 34669 },
+            { month: 'Agu', val: 54847 },
+            { month: 'Sep', val: 33204 },
+            { month: 'Okt', val: 48364 },
+            { month: 'Nov', val: 19559 },
+            { month: 'Des', val: 19076 }
+          ];
+
+          var M_AXIS_MAX = 80000;
+          var M_TICK_STEP = 10000;
+          var M_TICKS = [];
+          for (var v = 0; v <= M_AXIS_MAX; v += M_TICK_STEP) M_TICKS.push(v);
+
+          function mFmt(v) { return v.toLocaleString('id-ID'); }
+
+          var yAxis = document.getElementById('chart-monthly-yaxis');
+          if (!yAxis) return;
+          yAxis.innerHTML = '';
+          M_TICKS.forEach(function (t) {
+            var el = document.createElement('div');
+            el.className = 'text-[0.6rem] text-right pr-3 font-normal whitespace-nowrap';
+            el.style.color = '#8b7355';
+            el.textContent = t === 0 ? '0' : (t / 1000) + '.000';
+            yAxis.appendChild(el);
+          });
+
+          var gridWrap = document.getElementById('chart-monthly-grid');
+          gridWrap.innerHTML = '';
+          M_TICKS.forEach(function (t) {
+            var line = document.createElement('div');
+            line.className = 'absolute inset-x-0 h-[1px]';
+            line.style.cssText = 'background:rgba(139,115,85,0.18);position:absolute;left:0;right:0;bottom:' + ((t / M_AXIS_MAX) * 100) + '%;';
+            gridWrap.appendChild(line);
+          });
+
+          var barsEl = document.getElementById('chart-monthly-bars');
+          var xAxisEl = document.getElementById('chart-monthly-xaxis');
+          barsEl.innerHTML = '';
+          xAxisEl.innerHTML = '';
+
+          var colsTemplate = 'repeat(' + MONTHLY_DATA.length + ', minmax(0, 1fr))';
+          barsEl.style.gridTemplateColumns = colsTemplate;
+          xAxisEl.style.gridTemplateColumns = colsTemplate;
+          xAxisEl.style.justifyItems = 'center';
+
+          var barRects = [];
+
+          MONTHLY_DATA.forEach(function (d) {
+            var pct = (d.val / M_AXIS_MAX) * 100;
+
+            var col = document.createElement('div');
+            col.className = 'relative flex flex-col items-center justify-end h-full';
+
+            // Static value label always shown above bar
+            var valLabel = document.createElement('div');
+            valLabel.style.cssText = 'font-size:0.58rem;font-weight:700;color:#1a1a1a;white-space:nowrap;text-align:center;margin-bottom:4px;line-height:1;';
+            valLabel.textContent = mFmt(d.val);
+            col.appendChild(valLabel);
+
+            var rect = document.createElement('div');
+            rect.className = 'origin-bottom scale-y-0 w-full';
+            rect.style.cssText = 'height:' + pct + '%;background:#bc4a3c;min-height:2px;max-width:46px';
+            col.appendChild(rect);
+
+            barsEl.appendChild(col);
+            barRects.push(rect);
+
+            var lbl = document.createElement('div');
+            lbl.className = 'text-[0.65rem] md:text-[0.72rem] font-semibold text-center';
+            lbl.style.color = '#8b2a1a';
+            lbl.textContent = d.month;
+            xAxisEl.appendChild(lbl);
+          });
+
+          // Use IntersectionObserver to trigger animation on scroll
+          var chartWrap = document.getElementById('chart-monthly-wrap');
+          if (!chartWrap) return;
+
+          function animateMonthly() {
+            if (typeof gsap !== 'undefined') {
+              gsap.to(barRects, {
+                scaleY: 1,
+                duration: 0.8,
+                ease: 'power3.out',
+                stagger: 0.06,
+                delay: 0.1
+              });
+            } else {
+              barRects.forEach(function (r) { r.style.transform = 'scaleY(1)'; });
+            }
+          }
+
+          var obs = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+              animateMonthly();
+              obs.disconnect();
+            }
+          }, { threshold: 0.2 });
+          obs.observe(chartWrap);
+        }
+
         // ensure GSAP is loaded
         if (typeof gsap === 'undefined') {
           var gsapScript = document.createElement('script');
           gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
-          gsapScript.onload = buildDeforestationChart;
+          gsapScript.onload = function () { buildDeforestationChart(); buildMonthlyChart(); };
           document.head.appendChild(gsapScript);
         } else {
           buildDeforestationChart();
+          buildMonthlyChart();
         }
 
         function alurToggle(card) {
@@ -2415,6 +2611,27 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js"></script>
     <script>
+      // ── peta-bg-map: decorative background Leaflet map ──
+      (function () {
+        var _isMobile = window.innerWidth < 640;
+        var bgMap = L.map('peta-bg-map', {
+          zoomControl: false,
+          attributionControl: false,
+          dragging: false,
+          touchZoom: false,
+          doubleClickZoom: false,
+          scrollWheelZoom: false,
+          boxZoom: false,
+          keyboard: false,
+        }).setView(_isMobile ? [-7.3, 118] : [-0.4, 119], _isMobile ? 3 : 3.5);
+        L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+          layers: 'proteus:POLITICAL_LEVEL_1_dissolved',
+          format: 'image/png',
+          transparent: true,
+        }).addTo(bgMap);
+      })();
+    </script>
+    <script>
       (function () {
         const isMobile = window.innerWidth < 640;
         const map = L.map('map', {
@@ -2430,6 +2647,12 @@
         L.tileLayer('', {
           attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
           maxZoom: 19
+        }).addTo(map);
+
+        var wmsLayer = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+            layers: 'proteus:POLITICAL_LEVEL_1_dissolved ',
+            format: 'image/png',
+            transparent: true
         }).addTo(map);
 
         // Custom panes so toggling choropleth layers is a single CSS display flip
@@ -2466,7 +2689,7 @@
         const MODES = {
           provinsi: {
             kpiLabel: 'Deforestasi di 10 provinsi teratas',
-            kpiVal: '302.279',
+            kpiVal: '302.493',
             kpiUnit: 'hektare',
             notesSidebar: [
               '10 provinsi teratas didominasi Kalimantan dan Sumatera.',
@@ -2474,7 +2697,7 @@
               'Aceh, Sumatera Utara, dan Sumatera Barat melonjak tajam.'
             ],
             notesBox: [''],
-            bubble: { label: 'Kabupaten lainnya (373)', value: '131.472', unit: 'hektare' },
+            bubble: { label: 'Kabupaten lainnya (373)', value: '131.258', unit: 'hektare' },
             markers: [
               { lat: -1.60615374, lng: 113.416, rank: 1, name: 'Kalimantan Tengah', value: '56.900', dir: 'right' },
               { lat: 0.45468874, lng: 116.451, rank: 2, name: 'Kalimantan Timur', value: '47.135', dir: 'right' },
@@ -2485,9 +2708,9 @@
               { lat: 2.18843942, lng: 99.058, rank: 7, name: 'Sumatera Utara', value: '20.512', dir: 'right' },
               { lat: 2.91502507, lng: 116.246, rank: 8, name: 'Kalimantan Utara', value: '19.716', dir: 'right' },
               { lat: 0.50874453, lng: 101.815, rank: 9, name: 'Riau', value: '17.812', dir: 'left' },
-              { lat: -4.22893963, lng: 139.454, rank: 10, name: 'Papua Pegunungan', value: '16.245', dir: 'left' }
+              { lat: -4.22893963, lng: 139.454, rank: 10, name: 'Papua Pegunungan', value: '16.468', dir: 'left' }
             ],
-            dlUrl: '',
+            dlUrl: 'https://simontini.id/assets/2025-data/provinsi.xlsx',
 
           },
 
@@ -2503,19 +2726,19 @@
             notesBox: [''],
             bubble: { label: 'Kabupaten lainnya (373)', value: '338.018', unit: 'hektare' },
             markers: [
-              { lat: 1.2, lng: 117.5, rank: 1, name: 'Berau', value: '19.163', dir: 'right' },
-              { lat: 0.7, lng: 117.4, rank: 2, name: 'Kutai Timur', value: '12.781', dir: 'left' },
-              { lat: -0.6, lng: 112.9, rank: 3, name: 'Kapuas', value: '11.850', dir: 'left' },
-              { lat: 0.9, lng: 114.4, rank: 4, name: 'Kapuas Hulu', value: '9.393', dir: 'left' },
-              { lat: -1.8, lng: 113.4, rank: 5, name: 'Katingan', value: '8.934', dir: 'left' },
-              { lat: -0.8, lng: 131.3, rank: 6, name: 'Sorong', value: '7.168', dir: 'right' },
-              { lat: -0.3, lng: 114.7, rank: 7, name: 'Murung Raya', value: '7.140', dir: 'bottom' },
-              { lat: -8.4, lng: 140.4, rank: 8, name: 'Merauke', value: '6.557', dir: 'top' },
-              { lat: -1.5, lng: 113.0, rank: 9, name: 'Gunung Mas', value: '6.539', dir: 'bottom' },
-              { lat: 2.9, lng: 117.3, rank: 10, name: 'Bulungan', value: '6.208', dir: 'right' }
+              { lat: 1.908, lng: 117.537, rank: 1, name: 'Berau', value: '19.163', dir: 'right' },
+              { lat: 0.87, lng: 117.191, rank: 2, name: 'Kutai Timur', value: '12.781', dir: 'left' },
+              { lat: -1.314, lng: 114.326, rank: 3, name: 'Kapuas', value: '11.850', dir: 'left' },
+              { lat: 0.808, lng: 112.386, rank: 4, name: 'Kapuas Hulu', value: '9.393', dir: 'left' },
+              { lat: -1.314, lng: 113.074, rank: 5, name: 'Katingan', value: '8.934', dir: 'left' },
+              { lat: -1.251, lng: 131.34, rank: 6, name: 'Sorong', value: '7.168', dir: 'right' },
+              { lat: -0.236, lng: 114.48, rank: 7, name: 'Murung Raya', value: '7.140', dir: 'bottom' },
+              { lat: -7.88, lng: 140.237, rank: 8, name: 'Merauke', value: '6.557', dir: 'top' },
+              { lat: -1.108, lng: 113.541, rank: 9, name: 'Gunung Mas', value: '6.539', dir: 'bottom' },
+              { lat: 2.686, lng: 117.22, rank: 10, name: 'Bulungan', value: '6.208', dir: 'right' }
             ],
             tables: [],
-            dlUrl: ''
+            dlUrl: 'https://simontini.id/assets/2025-data/kabupaten.xlsx'
           },
 
           konservasi: {
@@ -2528,18 +2751,20 @@
               'Tekanan tertinggi terjadi di TN Kerinci Seblat dan Jayawijaya.'
             ],
             notesBox: [''],
-            dlUrl: '',
+            dlUrl: 'https://simontini.id/assets/2025-data/konservasi.xlsx',
+            bubble: { label: 'konservasi lainnya (373)', value: '7.924', unit: 'hektare' },
+
             markers: [
-              { lat: -2.4, lng: 101.5, rank: 1, name: 'TN Kerinci Seblat', value: '6.362', dir: 'left' },
-              { lat: -4.0, lng: 138.8, rank: 2, name: 'SM Pegunungan Jayawijaya', value: '3.210', dir: 'right' },
-              { lat: 3.8, lng: 97.3, rank: 3, name: 'TN Gunung Leuser', value: '1.379', dir: 'left' },
-              { lat: 0.2, lng: 104.6, rank: 4, name: 'TB Lingga Isaq', value: '1.199', dir: 'left' },
-              { lat: -3.5, lng: 137.2, rank: 5, name: 'CA Enarotali', value: '1.049', dir: 'right' },
-              { lat: -2.7, lng: 138.7, rank: 6, name: 'SM Mamberamo Foja', value: '950', dir: 'right' },
-              { lat: -3.6, lng: 138.1, rank: 7, name: 'TN Lorentz', value: '889', dir: 'right' },
-              { lat: -1.0, lng: 132.8, rank: 8, name: 'CA Pegunungan Tamrau Selatan', value: '796', dir: 'right' },
-              { lat: -1.2, lng: 100.8, rank: 9, name: 'CA Batang Pangean I', value: '779', dir: 'left' },
-              { lat: 0.7, lng: 101.2, rank: 10, name: 'SM Bukit Rimbang Bukit Baling', value: '539', dir: 'left' }
+              { lat: -2.33, lng: 101.684, rank: 1, name: 'TN Kerinci Seblat', value: '6.362', dir: 'left' },
+              { lat: -4.244, lng: 140.255, rank: 2, name: 'SM Pegunungan Jayawijaya', value: '3.210', dir: 'right' },
+              { lat: 3.744, lng: 97.703, rank: 3, name: 'TN Gunung Leuser', value: '1.379', dir: 'left' },
+              { lat: 4.423, lng: 97.159, rank: 4, name: 'TB Lingga Isaq', value: '1.199', dir: 'left' },
+              { lat: -3.757, lng: 136.263, rank: 5, name: 'CA Enarotali', value: '1.049', dir: 'right' },
+              { lat: -2.84, lng: 138.797, rank: 6, name: 'SM Mamberamo Foja', value: '950', dir: 'right' },
+              { lat: -4.223, lng: 138.023, rank: 7, name: 'TN Lorentz', value: '889', dir: 'right' },
+              { lat: -1.15, lng: 133.295, rank: 8, name: 'CA Pegunungan Tamrau Selatan', value: '796', dir: 'right' },
+              { lat: -0.819, lng: 101.211, rank: 9, name: 'CA Batang Pangean I', value: '779', dir: 'left' },
+              { lat: -0.352, lng: 101.105, rank: 10, name: 'SM Bukit Rimbang Bukit Baling', value: '539', dir: 'left' }
             ]
           },
 
@@ -2554,13 +2779,13 @@
             ],
             notesBox: [''],
             species: [
-              { lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/def_harimau.json' },
-              { lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/def_gajah.json' },
-              { lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json' },
-              { lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/def_pongo_tapanuliensis.json' },
-              { lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/def_pongo_abelii.json' },
-              { lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/def_pongo_pygmaeus.json' },
-              { lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json' }
+              { lokal:'Harimau Sumatra', lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/def_harimau.json' },
+              { lokal:'Gajah Sumatra', lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/def_gajah.json' },
+              { lokal:'Badak Sumatra', lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json' },
+              { lokal:'Orangutan Tapanuli', lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/def_pongo_tapanuliensis.json' },
+              { lokal:'Orangutan Sumatra', lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/def_pongo_abelii.json' },
+              { lokal:'Orangutan Kalimantan', lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/def_pongo_pygmaeus.json' },
+              { lokal:'Badak Kalimantan', lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json' }
             ],
             tables: [],
             dlUrl: ''
@@ -2577,23 +2802,23 @@
             subCategories: {
               'kebun-kayu': {
                 title: 'Konsesi Kebun Kayu', kpiLabel: 'Total 10 teratas (kebun kayu)', kpiVal: '11.265',
-                othersLabel: '202 izin Lainnya', othersVal: '21.799', bullets: [''], geojsonFile: '/geojson/kebun-kayu.geojson', dlUrl: '',
+                othersLabel: '202 izin Lainnya', othersVal: '21.799', bullets: [''], geojsonFile: '/geojson/kebun-kayu.geojson', dlUrl: 'https://simontini.id/assets/2025-data/kebun-kayu.xlsx',
                 markers: [
-                  { lat: 2.126959285437297, lng: 117.55112979226557, rank: 1, name: 'PT TANJUNG REDEB HUTANI', value: 1408, dir: 'right' },
-                  { lat: 0.397174210774834, lng: 110.992844937424763, rank: 2, name: 'PT FINNANTARA INTIGA', value: 1341, dir: 'left' },
-                  { lat: 0.407421960214845, lng: 116.367172445672026, rank: 3, name: 'PT MAHAKARYA PERDANA GEMILANG UNIT II', value: 1324, dir: 'right' },
-                  { lat: 0.566679872006894, lng: 117.174814762389829, rank: 4, name: 'PT DIVA PERDANA PESONA', value: 1296, dir: 'right' },
-                  { lat: -1.335276267511383, lng: 114.138747007539251, rank: 5, name: 'PT BUMI HIJAU PRIMA', value: 1294, dir: 'left' },
-                  { lat: -2.009800604760271, lng: 111.153569955554644, rank: 6, name: 'PT GRACE PUTRI PERDANA', value: 1171, dir: 'left' },
-                  { lat: 1.853305859481002, lng: 117.594275093006445, rank: 7, name: 'PT HUTAN BERAU LESTARI', value: 1097, dir: 'right' },
-                  { lat: 0.026386043655114, lng: 115.929349893182021, rank: 8, name: 'PT SENDAWAR ADHI KARYA', value: 1019, dir: 'right' },
-                  { lat: 1.340801486700338, lng: 118.240850579581576, rank: 9, name: 'PT SWADAYA PERKASA', value: 662, dir: 'right' },
-                  { lat: 1.374270568895824, lng: 101.806156676794458, rank: 10, name: 'PT SEKATO PRATAMA MAKMUR', value: 652, dir: 'bottom' }
+                  { lat: 2.17, lng: 117.521, rank: 1, name: 'PT TANJUNG REDEB HUTANI', value: 1408, dir: 'right' },
+                  { lat: 0.394, lng: 110.954, rank: 2, name: 'PT FINNANTARA INTIGA', value: 1341, dir: 'left' },
+                  { lat: 0.417, lng: 116.378, rank: 3, name: 'PT MAHAKARYA PERDANA GEMILANG UNIT II', value: 1324, dir: 'right' },
+                  { lat: 0.527, lng: 117.221, rank: 4, name: 'PT DIVA PERDANA PESONA', value: 1296, dir: 'right' },
+                  { lat: -1.333, lng: 114.131, rank: 5, name: 'PT BUMI HIJAU PRIMA', value: 1294, dir: 'left' },
+                  { lat: -1.974, lng: 111.138, rank: 6, name: 'PT GRACE PUTRI PERDANA', value: 1171, dir: 'left' },
+                  { lat: 1.858, lng: 117.738, rank: 7, name: 'PT HUTAN BERAU LESTARI', value: 1097, dir: 'right' },
+                  { lat: 0.056, lng: 115.924, rank: 8, name: 'PT SENDAWAR ADHI KARYA', value: 1019, dir: 'right' },
+                  { lat: 1.354, lng: 118.134, rank: 9, name: 'PT SWADAYA PERKASA', value: 662, dir: 'right' },
+                  { lat: 1.4, lng: 101.685, rank: 10, name: 'PT SEKATO PRATAMA MAKMUR', value: 652, dir: 'bottom' }
                 ]
               },
               'logging': {
                 title: 'Konsesi Logging', kpiLabel: 'Total 10 teratas (logging)', kpiVal: '20.749',
-                othersLabel: '227 izin Lainnya', othersVal: '53.661', bullets: [''], geojsonFile: '/geojson/logging.geojson', dlUrl: '',
+                othersLabel: '227 izin Lainnya', othersVal: '53.661', bullets: [''], geojsonFile: '/geojson/logging.geojson', dlUrl: 'https://simontini.id/assets/2025-data/logging.xlsx',
                 markers: [
                   { lat: 0.881264893236657, lng: 117.026904047300249, rank: 1, name: 'PT KIANI LESTARI', value: 3739, dir: 'right' },
                   { lat: -1.252358059458737, lng: 114.487610383463576, rank: 2, name: 'PT DASA INTIGA', value: 3195, dir: 'left' },
@@ -2609,34 +2834,34 @@
               },
               'sawit': {
                 title: 'Konsesi Sawit', kpiLabel: 'Total 10 teratas (sawit)', kpiVal: '13.610',
-                othersLabel: '709 izin Lainnya', othersVal: '24.300', bullets: [''], geojsonFile: '/geojson/sawit.geojson', dlUrl: '',
+                othersLabel: '709 izin Lainnya', othersVal: '24.300', bullets: [''], geojsonFile: '/geojson/sawit.geojson', dlUrl: 'https://simontini.id/assets/2025-data/sawit.xlsx',
                 markers: [
-                  { lat: -1.171071756797254, lng: 131.391544937632204, rank: 1, name: 'Inti Kebun Lestari', value: 2624, dir: 'top' },
-                  { lat: 0.675035799730648, lng: 121.473335486617259, rank: 2, name: 'Banyan Tumbuh Lestari', value: 2094, dir: 'right' },
-                  { lat: -1.283649245406992, lng: 131.24771276041497, rank: 3, name: 'Inti Kebun Sejahtera', value: 2053, dir: 'right' },
-                  { lat: -7.873776279100799, lng: 140.650276678006122, rank: 4, name: 'Merauke Sawit Jaya', value: 1808, dir: 'left' },
-                  { lat: -1.444431042873964, lng: 131.2297651958757, rank: 5, name: 'Papua Lestari Abadi', value: 1300, dir: 'right' },
-                  { lat: 0.876612002390529, lng: 112.828968572362726, rank: 6, name: 'Borneo International Anugerah', value: 877, dir: 'right' },
-                  { lat: -1.6730810929783, lng: 113.408354095172541, rank: 7, name: 'Agro Kalimantan Lestari', value: 784, dir: 'left' },
-                  { lat: 1.223818358664025, lng: 118.285216683843913, rank: 8, name: 'Anugrah Surya Mandiri', value: 713, dir: 'top' },
-                  { lat: 0.996544524718871, lng: 112.051890133518881, rank: 9, name: 'Khatulistiwa Agro Abadi', value: 682, dir: 'left' },
-                  { lat: -0.228874466961059, lng: 104.847611995376113, rank: 10, name: 'Citra Sugi Aditya', value: 676, dir: 'bottom' }
+                  { lat: -1.163, lng: 131.378, rank: 1, name: 'Inti Kebun Lestari', value: 2624, dir: 'top' },
+                  { lat: 0.679, lng: 121.502, rank: 2, name: 'Banyan Tumbuh Lestari', value: 2094, dir: 'right' },
+                  { lat: -1.316, lng: 131.233, rank: 3, name: 'Inti Kebun Sejahtera', value: 2053, dir: 'right' },
+                  { lat: -7.918, lng: 140.71, rank: 4, name: 'Merauke Sawit Jaya', value: 1808, dir: 'left' },
+                  { lat: -1.391, lng: 131.193, rank: 5, name: 'Papua Lestari Abadi', value: 1300, dir: 'right' },
+                  { lat: 0.868, lng: 112.804, rank: 6, name: 'Borneo International Anugerah', value: 877, dir: 'right' },
+                  { lat: -1.673, lng: 113.417, rank: 7, name: 'Agro Kalimantan Lestari', value: 784, dir: 'left' },
+                  { lat: 1.229, lng: 118.277, rank: 8, name: 'Anugrah Surya Mandiri', value: 713, dir: 'top' },
+                  { lat: 0.996, lng: 112.031, rank: 9, name: 'Khatulistiwa Agro Abadi', value: 682, dir: 'left' },
+                  { lat: -0.191, lng: 104.85, rank: 10, name: 'Citra Sugi Aditya', value: 676, dir: 'bottom' }
                 ]
               },
               'tambang': {
                 title: 'Konsesi Tambang', kpiLabel: 'Total 10 teratas (tambang)', kpiVal: '8.929',
-                othersLabel: '1.131 izin Lainnya', othersVal: '32.233', bullets: [''], geojsonFile: '/geojson/tambang.geojson', dlUrl: '',
+                othersLabel: '1.131 izin Lainnya', othersVal: '32.233', bullets: [''], geojsonFile: '/geojson/tambang.geojson', dlUrl: 'https://simontini.id/assets/2025-data/tambang.xlsx',
                 markers: [
-                  { lat: 2.138922060693282, lng: 117.395321188956885, rank: 1, name: 'Berau Coal (Batubara)', value: 1473, dir: 'right' },
-                  { lat: -3.003818526025582, lng: 121.809448329238492, rank: 2, name: 'Sulawesi Cahaya Mineral (Nikel)', value: 1085, dir: 'right' },
-                  { lat: -0.090328260786384, lng: 114.919059555847099, rank: 3, name: 'Maruwai Coal (Batubara)', value: 920, dir: 'top' },
-                  { lat: 0.627934768307973, lng: 128.004841288293079, rank: 4, name: 'Weda Bay Nickel (Nikel)', value: 902, dir: 'right' },
-                  { lat: -2.634066859436454, lng: 121.488538466272828, rank: 5, name: 'Vale Indonesia TBK (Nikel)', value: 842, dir: 'left' },
-                  { lat: 1.370910557959839, lng: 99.149585821220384, rank: 6, name: 'Agincourt Resources (Emas)', value: 840, dir: 'left' },
-                  { lat: -0.207788395378338, lng: 115.026603507062106, rank: 7, name: 'Lahai Coal (Batubara)', value: 770, dir: 'left' },
-                  { lat: -1.541190947688207, lng: 112.517178689769239, rank: 8, name: 'Blok Waringin Agung (Emas)', value: 764, dir: 'right' },
-                  { lat: -1.039139704484105, lng: 114.625074268594773, rank: 9, name: 'Suprabari Mapanindo Mineral', value: 673, dir: 'left' },
-                  { lat: -2.843717003693491, lng: 121.980032209226394, rank: 10, name: 'Bintang Delapan Mineral (Nikel)', value: 659, dir: 'bottom' }
+                  { lat: 2.09, lng: 117.323, rank: 1, name: 'Berau Coal (Batubara)', value: 1473, dir: 'right' },
+                  { lat: -3.013, lng: 121.841, rank: 2, name: 'Sulawesi Cahaya Mineral (Nikel)', value: 1085, dir: 'right' },
+                  { lat: -0.102, lng: 114.889, rank: 3, name: 'Maruwai Coal (Batubara)', value: 920, dir: 'top' },
+                  { lat: 0.64, lng: 127.99, rank: 4, name: 'Weda Bay Nickel (Nikel)', value: 902, dir: 'right' },
+                  { lat: -2.633, lng: 121.621, rank: 5, name: 'Vale Indonesia TBK (Nikel)', value: 842, dir: 'left' },
+                  { lat: 1.109, lng: 99.205, rank: 6, name: 'Agincourt Resources (Emas)', value: 840, dir: 'left' },
+                  { lat: -0.278, lng: 114.902, rank: 7, name: 'Lahai Coal (Batubara)', value: 770, dir: 'left' },
+                  { lat: -1.537, lng: 112.523, rank: 8, name: 'Blok Waringin Agung (Emas)', value: 764, dir: 'right' },
+                  { lat: -1.068, lng: 114.624, rank: 9, name: 'Suprabari Mapanindo Mineral', value: 673, dir: 'left' },
+                  { lat: -2.891, lng: 122.045, rank: 10, name: 'Bintang Delapan Mineral (Nikel)', value: 659, dir: 'bottom' }
                 ]
               }
             }
@@ -2760,14 +2985,15 @@
           badge.dataset.species = item.name;
           const shortName = item.name.split(' ').slice(-2).join(' ');
           badge.innerHTML = `
-                                                                                                                  <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                                                                                                  <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                                                                                                  <div class="satwa-badge-detail">
-                                                                                                                    <span class="si-name">${item.name}</span>
-                                                                                                                    <span class="si-val">${item.value}</span>
-                                                                                                                    <span class="si-unit">habitat terdampak</span>
-                                                                                                                  </div>
-                                                                                                                `;
+                <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                <div class="satwa-badge-detail">
+                <span class="si-name">${item.name}</span>
+                <span class="si-val">${item.value}</span>
+                <span class="si-val">${item.lokal}</span>
+                <span class="si-unit">deforestasi di habitat</span>
+                </div>
+            `;
           badge.addEventListener('click', async (e) => {
             e.stopPropagation();
             const isActive = badge.classList.contains('active');
@@ -2982,7 +3208,7 @@
 
             const dlBtn = document.createElement('a');
             dlBtn.className = 'sb-card-dl-btn';
-            dlBtn.innerHTML = `<svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v6M2.5 5l3 3 3-3M1 9.5h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Unduh CSV`;
+            dlBtn.innerHTML = `<svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v6M2.5 5l3 3 3-3M1 9.5h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Unduh data`;
             if (dlUrl) {
               dlBtn.href = dlUrl;
               dlBtn.target = '_blank';
@@ -3226,10 +3452,6 @@
           const el = document.getElementById('map-legend');
           if (!el) return;
           el.innerHTML = '';
-          const titleEl = document.createElement('div');
-          titleEl.className = 'map-legend-title';
-          titleEl.textContent = 'Legend Top 10';
-          el.appendChild(titleEl);
           const modeColors = { provinsi: '#c04030', kabupaten: '#e07840', konservasi: '#4a8c5c', megafauna: '#7060b0', konsesi: '#b06020' };
           const catColors = { 'kebun-kayu': '#b06020', logging: '#c04030', sawit: '#4a8c5c', tambang: '#7060b0' };
           const modeLabels = { provinsi: 'Provinsi', kabupaten: 'Kabupaten', konservasi: 'Konservasi', megafauna: 'Megafauna' };
@@ -3244,7 +3466,12 @@
             }
           });
 
-          if (!entries.length) return;
+          if (!entries.length) { el.style.display = 'none'; return; }
+          el.style.display = 'flex';
+          const titleEl = document.createElement('div');
+          titleEl.className = 'map-legend-title';
+          titleEl.textContent = 'Legend Top 10';
+          el.appendChild(titleEl);
 
           entries.forEach(({ key, label, color }) => {
             if (!legendVisible.has(key)) legendVisible.add(key);

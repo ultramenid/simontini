@@ -48,9 +48,10 @@ class InsightContoller extends Controller
     }
 
     public function penjelasan(){
+        $nav = 'stadi';
         $title = 'Penjelasan Data Deforestasi Indonesia';
         $description = 'Simontini’s Insight is a series of articles that provide in-depth analysis of the latest issues related to deforestation and land use change in Indonesia.';
-        return view('frontends.penjelasan-data', compact('title', 'description'));
+        return view('frontends.penjelasan-data', compact('title', 'description', 'nav'));
     }
 
     public function dummy2025(){

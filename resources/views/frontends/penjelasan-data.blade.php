@@ -1,9 +1,11 @@
 @extends('layouts.penjelasan-data')
 
 @section('content')
+    @include('partials.topbarPC')
+    @include('partials.topbarMobile')
     {{-- HERO --}}
     <section
-        class="relative min-h-screen flex flex-col justify-center items-center px-[8vw] overflow-hidden bg-cover bg-[center_80%]"
+        class="relative h-[89vh] flex flex-col justify-center items-center px-[8vw] overflow-hidden bg-cover bg-[center_80%]"
         style="background-image: url('{{ asset('assets/images/asset-1.jpg') }}');">
 
         {{-- <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 pointer-events-none"></div> --}}

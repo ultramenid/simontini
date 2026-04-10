@@ -403,7 +403,7 @@ body.is-preloading { overflow: hidden; }
 /* ── SECTION LABEL ── */
 .section-label {
   font-family: 'Poppins', sans-serif;
-  font-size: 20px; font-weight: 600; letter-spacing: .22em;
+  font-size: 24px; font-weight: 700; letter-spacing: .22em;
   text-transform: uppercase; color: var(--red);
   display: flex; align-items: center; gap: 10px;
   margin-bottom: 16px;
@@ -744,7 +744,7 @@ body.is-preloading { overflow: hidden; }
   padding: 20px 0;
   margin-top: -10px;
   margin-bottom: 5px;
-  
+
 }
 
 .method-step:last-child { border-bottom: none; }
@@ -1336,7 +1336,7 @@ footer {
 #peta-embed .peta-grid-lines span:nth-child(5){top:100%}
 #peta-embed .peta-bar.hi { background:#8b2a1a !important; box-shadow:0 0 8px rgba(139,42,26,.55); }
 #peta-embed .peta-bub.on { background:#8b2a1a; border-color:#8b2a1a; color:#fff; transform:scale(1.1); box-shadow:0 0 20px rgba(139,42,26,.45); }
-#peta-table-section::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#8b2a1a,#c04030,#8b2a1a); }
+/* #peta-table-section::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#8b2a1a,#c04030,#8b2a1a); } */
 #peta-embed .peta-bub { cursor:pointer; }
 
 /* ════════════════════════════════════════════
@@ -1416,9 +1416,9 @@ footer {
 .map-legend-item.active .map-legend-knob { transform: translateX(14px); opacity: 1; }
 
 /* ── MODE PILL BAR (above map) ── */
-#mode-pill-bar { background: #151515; padding: 10px 14px 12px; border-bottom: 1px solid rgba(255,255,255,.08); }
+#mode-pill-bar { background: #151515; padding: 10px 14px 12px; border-bottom: 1px solid rgba(255,255,255,.08); text-align: center; }
 .pill-bar-label { font-size: .52rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: rgba(212,196,160,.5); margin-bottom: 8px; }
-#mode-pill-bar #mode-btn-rail { display: flex; flex-wrap: wrap; gap: 6px; overflow: visible; -webkit-mask-image: none; mask-image: none; border-bottom: none; padding: 0; }
+#mode-pill-bar #mode-btn-rail { display: flex; flex-wrap: wrap; gap: 6px; overflow: visible; -webkit-mask-image: none; mask-image: none; border-bottom: none; padding: 0; justify-content: center; }
 #mode-pill-bar .mode-btn { width: auto; display: inline-flex; justify-content: flex-start; gap: 8px; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,.15); border-bottom: 1px solid rgba(255,255,255,.15); background: rgba(255,255,255,.06); color: rgba(245,240,232,.65); font-size: .72rem; white-space: nowrap; }
 #mode-pill-bar .mode-btn:hover { background: rgba(255,255,255,.11); color: #f5f0e8; }
 #mode-pill-bar .mode-btn.active { background: rgba(139,42,26,.25); border-color: rgba(139,42,26,.55); color: #f5f0e8; }
@@ -1469,9 +1469,11 @@ footer {
 .td-up   { color: #c04030 !important; }
 .td-down { color: #5a5040 !important; }
 .td-same { color: #d4c4a0 !important; }
+#map { background: #ece8df !important; }
+
 
 /* ── LEAFLET OVERRIDES ── */
-.leaflet-container { background: #efebe3 !important; }
+.leaflet-container { background: #ece8df !important; }
 .leaflet-tooltip.label-tip { background: transparent; border: none; box-shadow: none; padding: 0; }
 .leaflet-tooltip::before { display: none !important; }
 .leaflet-popup-content-wrapper { border-radius: 8px !important; padding: 0 !important; overflow: hidden; border-top: 3px solid #8b2a1a; font-family: 'Poppins',sans-serif; box-shadow: 0 8px 28px rgba(26,26,26,.18); min-width: 180px; }
@@ -2311,11 +2313,10 @@ footer {
   }
 
   /* Right-anchor Papua so it never overflows the right edge */
-  #peta-chart-papua {
-    left: auto !important;
-    right: 26% !important;
-  }
+
 }
+
+
 
 /* ── MAP LOADING INDICATOR ── */
 #map-loading { background: rgba(236,232,223,0.72); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); gap: 12px; }
@@ -2345,7 +2346,7 @@ footer {
 /* ── Peta table section — desktop compact ── */
 @media (min-width: 640px) {
   #peta-table-section {
-    padding-top: 36px !important;
+    /* padding-top: 36px !important; */
     padding-bottom: 36px !important;
     padding-left: 32px !important;
     padding-right: 32px !important;
