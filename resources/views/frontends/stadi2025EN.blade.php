@@ -47,9 +47,9 @@
             </div>
             <div class="hero-divider"></div>
             <!-- <div class="hero-stat">
-                                                                 <span class="hs-val">+66%</span>
-                                                                 <span class="hs-unit">Peningkatan dari 2024</span>
-                                                                 </div> -->
+                                                                         <span class="hs-val">+66%</span>
+                                                                         <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                         </div> -->
             <div class="hero-divider"></div>
             <div class="hero-desc">
                 Deforestation is on the rise; it’s time for the government to issue regulations to protect all remaining
@@ -1135,21 +1135,21 @@
                     reached 125,997 hectares, or 28% of national deforestation.
                 </p>
                 <!-- <ul class="insight-list">
-                                                              <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                                              <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                                              <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                                              <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                                            </ul> -->
+                                                                      <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                      <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                      <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                      <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                    </ul> -->
             </div>
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
                         <div x-data="{ active: 0, images: [
-                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                    ]}">
+                              { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                            ]}">
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" alt="Simontini"
                                     @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1228,10 +1228,10 @@
                 <div class="viz-frame viz-frame--padded">
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
                         <div x-data="{ active: 0, images: [
-                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                    ]}">
+                              { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                            ]}">
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" alt="Simontini"
                                     @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1318,23 +1318,23 @@
                 </p>
 
                 <!-- <div class="callout">
-                                                              <strong>Faktor pendorong utama:</strong>
-                                                              <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                                                <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                                                <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                                                <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                                              </ul>
-                                                            </div> -->
+                                                                      <strong>Faktor pendorong utama:</strong>
+                                                                      <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                        <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                        <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                        <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                      </ul>
+                                                                    </div> -->
             </div>
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
                         <div x-data="{ active: 0, images: [
-                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                    ]}">
+                              { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                            ]}">
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" alt="Simontini"
                                     @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1407,10 +1407,10 @@
                 <div class="viz-frame viz-frame--padded">
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
                         <div x-data="{ active: 0, images: [
-                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                    ]}">
+                              { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                            ]}">
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" alt="Simontini"
                                     @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1482,10 +1482,10 @@
                 <div class="viz-frame viz-frame--padded">
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
                         <div x-data="{ active: 0, images: [
-                      { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                      { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                    ]}">
+                              { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                              { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
+                            ]}">
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" alt="Simontini"
                                     @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1567,19 +1567,19 @@
                             <div class="viz-frame viz-frame--padded">
 
                                 <div x-data="{
-                              currentSlide: 0,
-                              totalSlides: 5,
-                              startX: 0,
-                              startSwipe(e) { this.startX = e.touches[0].clientX; },
-                              handleTouchMove(e) {
-                                let diff = this.startX - e.touches[0].clientX;
-                                if (Math.abs(diff) > 50) {
-                                  if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                  else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                  this.startX = e.touches[0].clientX;
-                                }
-                              }
-                            }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                                      currentSlide: 0,
+                                      totalSlides: 5,
+                                      startX: 0,
+                                      startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                      handleTouchMove(e) {
+                                        let diff = this.startX - e.touches[0].clientX;
+                                        if (Math.abs(diff) > 50) {
+                                          if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                          else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                          this.startX = e.touches[0].clientX;
+                                        }
+                                      }
+                                    }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
                                     class="relative bg-gray-100 pb-4 mt-4 max-w-5xl mx-auto z-20 overflow-hidden">
 
 
@@ -1592,8 +1592,8 @@
 
                                                     <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
                                                         alt="RDPU RUU Kehutanan {{ $i }}" class="w-full object-cover object-top cursor-pointer
-                                                             h-[220px] 
-                                                             sm:h-[60vh]" />
+                                                                             h-[220px] 
+                                                                             sm:h-[60vh]" />
 
                                                 </a>
                                             </div>
@@ -1603,22 +1603,23 @@
 
                                     <!-- BUTTON -->
                                     <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
-                                        class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                                        class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50 rounded-full">
                                         ◀
                                     </button>
 
+                                    <!-- BUTTON NEXT -->
                                     <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
                                         x-show="currentSlide < totalSlides - 1"
-                                        class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                                        class="absolute right-2 top-1/2 -translate-y-1/2 bg-black text-white w-9 h-9 rounded-full z-50 flex items-center justify-center">
                                         ▶
                                     </button>
 
                                     <!-- DOT -->
-                                    <div class="flex justify-center gap-2 mt-3">
+                                    <div class="flex justify-center gap-2 mt-3 rounded-full">
                                         <template x-for="i in totalSlides" :key="i">
                                             <button @click="currentSlide = i - 1"
                                                 :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
-                                                class="w-2 h-2">
+                                                class="w-2 h-2 rounded-full">
                                             </button>
                                         </template>
                                     </div>
@@ -1701,19 +1702,19 @@
                             <div class="viz-frame viz-frame--padded">
 
                                 <div x-data="{
-                          currentSlide: 0,
-                          totalSlides: 2,
-                          startX: 0,
-                          startSwipe(e) { this.startX = e.touches[0].clientX; },
-                          handleTouchMove(e) {
-                            let diff = this.startX - e.touches[0].clientX;
-                            if (Math.abs(diff) > 50) {
-                              if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                              else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                              this.startX = e.touches[0].clientX;
-                            }
-                          }
-                        }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                                  currentSlide: 0,
+                                  totalSlides: 2,
+                                  startX: 0,
+                                  startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                  handleTouchMove(e) {
+                                    let diff = this.startX - e.touches[0].clientX;
+                                    if (Math.abs(diff) > 50) {
+                                      if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                      else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                      this.startX = e.touches[0].clientX;
+                                    }
+                                  }
+                                }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
                                     class="relative bg-gray-100 pb-4 mt-4 max-w-5xl mx-auto z-20 overflow-hidden">
 
 
@@ -1726,8 +1727,8 @@
 
                                                     <img src="{{ asset('assets/images/stadi2025/RDPU RUU Kehutanan' . $i . '.jpg') }}"
                                                         alt="RDPU RUU Kehutanan {{ $i }}" class="w-full object-cover object-top cursor-pointer
-                                                     h-[220px] 
-                                                     sm:h-[60vh]" />
+                                                                     h-[220px] 
+                                                                     sm:h-[60vh]" />
 
                                                 </a>
                                             </div>
@@ -1737,22 +1738,23 @@
 
                                     <!-- BUTTON -->
                                     <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
-                                        class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                                        class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50 rounded-full">
                                         ◀
                                     </button>
 
+                                    <!-- BUTTON NEXT -->
                                     <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
                                         x-show="currentSlide < totalSlides - 1"
-                                        class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white p-2 z-50">
+                                        class="absolute right-2 top-1/2 -translate-y-1/2 bg-black text-white w-9 h-9 rounded-full z-50 flex items-center justify-center">
                                         ▶
                                     </button>
 
                                     <!-- DOT -->
-                                    <div class="flex justify-center gap-2 mt-3">
+                                    <div class="flex justify-center gap-2 mt-3 rounded-full">
                                         <template x-for="i in totalSlides" :key="i">
                                             <button @click="currentSlide = i - 1"
                                                 :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
-                                                class="w-2 h-2">
+                                                class="w-2 h-2 rounded-full">
                                             </button>
                                         </template>
                                     </div>
@@ -2959,14 +2961,14 @@
                     badge.dataset.species = item.name;
                     const shortName = item.name.split(' ').slice(-2).join(' ');
                     badge.innerHTML = `
-                                                                <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                                                <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                                                <div class="satwa-badge-detail">
-                                                                  <span class="si-name">${item.name}</span>
-                                                                  <span class="si-val">${item.value}</span>
-                                                                  <span class="si-unit">habitat terdampak</span>
-                                                                </div>
-                                                              `;
+                                                                        <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                                                        <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                                                        <div class="satwa-badge-detail">
+                                                                          <span class="si-name">${item.name}</span>
+                                                                          <span class="si-val">${item.value}</span>
+                                                                          <span class="si-unit">habitat terdampak</span>
+                                                                        </div>
+                                                                      `;
                     badge.addEventListener('click', async (e) => {
                         e.stopPropagation();
                         const isActive = badge.classList.contains('active');
