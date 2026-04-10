@@ -248,8 +248,10 @@
 
   {{-- step 1 --}}
   <div class="viz-block viz-block--full alur" style="margin-top: -60px !important;">
+    <img src="{{ asset('assets/Tahap_ok_Ind.png') }}" alt="Simontini - 2025 Methodology"
+      class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:block hidden">
     <img src="{{ asset('assets/Tahap.png') }}" alt="Simontini - 2025 Methodology"
-      class="sm:max-w-3xl w-full mx-auto h-auto object-contain">
+    class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
 
     <section class="page-section px-[5vw] pt-8 pb-6">
       <div class="body-text">
@@ -597,7 +599,7 @@
                     Deforestasi (ha)</th>
                   <th colspan="2"
                     class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase py-1 sm:py-[9px] px-2 sm:px-[14px] text-center border-b border-[rgba(255,255,255,.1)]"
-                    style="color:#ff6b4a">Perluasan 2025 vs 2024</th>
+                    style="color:#c04030">Perluasan 2025 vs 2024</th>
                 </tr>
                 <tr class="border-b-2 border-[#8b2a1a]">
                   <th
