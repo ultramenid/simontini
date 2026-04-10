@@ -46,9 +46,9 @@
       </div>
       <div class="hero-divider"></div>
       <!-- <div class="hero-stat">
-                                                                                           <span class="hs-val">+66%</span>
-                                                                                           <span class="hs-unit">Peningkatan dari 2024</span>
-                                                                                           </div> -->
+                                                                                                                       <span class="hs-val">+66%</span>
+                                                                                                                       <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                                                                       </div> -->
       <div class="hero-divider"></div>
       <div class="hero-desc">
         Deforestasi melonjak, saatnya pemerintah menerbitkan
@@ -945,7 +945,8 @@
           class="w-full shrink-0 bg-[#1a1a1a] text-[#f5f0e8] border-t border-white/[.08] flex flex-col overflow-hidden"
           style="max-height:400px">
           <span id="sidebar-mode-label" class="hidden"></span>
-          <div id="sidebar-table-wrap" class="flex-1 flex flex-row items-stretch justify-center overflow-y-hidden overflow-x-auto"></div>
+          <div id="sidebar-table-wrap"
+            class="flex-1 flex flex-row items-stretch justify-center overflow-y-hidden overflow-x-auto"></div>
         </aside>
 
       </div><br><br>
@@ -1038,54 +1039,29 @@
 
 
         <!-- <ul class="insight-list">
-                                                                                                                    <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                                                                                                    <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                                                                                                    <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                                                                                                    <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                                                                                                  </ul> -->
+                                                                                                                                                <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                                                                                                <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                                                                                                <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                                                                                                <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                                                                                              </ul> -->
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
-          <div class="max-w-5xl mx-auto px-4 z-20 relative">
-            <div x-data="{ active: 0, images: [
-                                                                              { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                                                                              { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                                                                              { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                                                                            ]}">
-              <div class="relative" x-ref="mainImg">
-                <img :src="images[active].src" alt="Simontini"
-                  @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
-                  class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
-                <button x-show="active > 0" @click="active--"
-                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                  </svg>
-                </button>
-                <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </button>
-              </div>
-              <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
-                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
-                  <template x-for="(img, index) in images" :key="index">
-                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
-                      <img :src="img.src" alt="thumbnail"
-                        class="w-full h-full object-cover object-top transition duration-200" />
-                    </div>
-                  </template>
-                </div>
-                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
-                  x-html="images[active].caption"></p>
-              </div>
-            </div>
+          <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-6 z-20">
+
+            <a href="{{ asset('assets/images/stadi2025/PLTA Mentarang, Malinau.jpg') }}" class="glightbox1 mt-4 gbox"
+              data-gallery="gallery1" data-glightbox="description:   PLTA Mentarang, Malinau,
+                  <br>Kalimantan Utara, Oktober 2025">
+
+              <img src="{{ asset('assets/images/stadi2025/PLTA Mentarang, Malinau.jpg') }}"
+                class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300" />
+            </a>
+
+            <p class="text-black font-light sm:text-sm text-xs mt-2 text-right px-2">
+              PLTA Mentarang, Malinau,
+              <br>Kalimantan Utara, Oktober 2025
+            </p>
+
           </div>
         </div>
       </div><br>
@@ -1125,45 +1101,41 @@
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
-          <div class="max-w-5xl mx-auto px-4 z-20 relative">
-            <div x-data="{ active: 0, images: [
-                                                                            { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                                                                            { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                                                                            { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                                                                          ]}">
-              <div class="relative" x-ref="mainImg">
-                <img :src="images[active].src" alt="Simontini"
-                  @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
-                  class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
-                <button x-show="active > 0" @click="active--"
-                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                  </svg>
-                </button>
-                <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </button>
+          <div class="w-full mx-auto px-4 z-20 relative">
+            <div class="grid grid-cols-2 gap-3">
+
+              <!-- IMAGE 1 -->
+              <div>
+                <a href="{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Anugerah Surya Utama  2.jpg') }}"
+                  class="glightbox2 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:  Konsesi Tambang, PT Anugerah Surya Utama,
+                            <br>Raja Ampat, Papua, September 2025">
+
+                  <img src="{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Anugerah Surya Utama  2.jpg') }}"
+                    class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
+                </a>
+
+                <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
+                  Konsesi Tambang, PT Anugerah Surya Utama,
+                  <br>Raja Ampat, Papua, September 2025
+                </p>
               </div>
-              <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
-                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
-                  <template x-for="(img, index) in images" :key="index">
-                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
-                      <img :src="img.src" alt="thumbnail"
-                        class="w-full h-full object-cover object-top transition duration-200" />
-                    </div>
-                  </template>
-                </div>
-                <p class="text-black font-light sm:text-sm text-xs text-right leading-relaxed"
-                  x-html="images[active].caption"></p>
+
+              <!-- IMAGE 2 -->
+              <div>
+                <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Jati Dharma Indah Plywood 2.jpg') }}"
+                  class="glightbox2 mt-4 gbox" data-gallery="gallery1" data-glightbox="description: Konsesi PBPH, PT Jati Dharma Indah Plywood
+                            <br>Industries, Nabire, Papua Tengah, Desember 2025">
+
+                  <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Jati Dharma Indah Plywood 2.jpg') }}"
+                    class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
+                </a>
+
+                <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
+                  Konsesi PBPH, PT Jati Dharma Indah Plywood
+                  <br>Industries, Nabire, Papua Tengah, Desember 2025
+                </p>
               </div>
+
             </div>
           </div>
         </div>
@@ -1215,22 +1187,22 @@
         </p>
 
         <!-- <div class="callout">
-                                                                                                                    <strong>Faktor pendorong utama:</strong>
-                                                                                                                    <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                                                                                                      <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                                                                                                      <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                                                                                                      <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                                                                                                    </ul>
-                                                                                                                  </div> -->
+                                                                                                                                                <strong>Faktor pendorong utama:</strong>
+                                                                                                                                                <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                                                                                                  <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                                                                                                  <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                                                                                                  <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                                                                                                </ul>
+                                                                                                                                              </div> -->
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
             <div x-data="{ active: 0, images: [
-                                                                          { src: '{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}', caption: 'Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025' },
-                                                                          { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                                                                          { src: '{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Hutan Lindung.jpg') }}', caption: 'Deforestasi, Kawasan Hutan Lindung, <br> Sijunjung, Sumatera Barat, Desember 2025' }
-                                                                        ]}">
+              { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
+              { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+              { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
+              ]}">
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" alt="Simontini"
                   @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1307,31 +1279,33 @@
 
               <!-- IMAGE 1 -->
               <div>
-                <a href="{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}" class="glightbox1 mt-4 gbox"
-                  data-gallery="gallery1"
-                  data-glightbox="description: Kawasan Hutan Produksi, Bireun, Aceh, Desember 2025">
+                <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Hutan Berau Lestari .jpg') }}"
+                  class="glightbox4 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:  Konsesi PBPH, PT Hutan Berau Lestari,
+                                    <br>Berau, Kalimantan Timur, Mei 2025">
 
-                  <img src="{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}"
+                  <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Hutan Berau Lestari .jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
                 </a>
 
                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                  Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025
+                  Konsesi PBPH, PT Hutan Berau Lestari,
+                  <br>Berau, Kalimantan Timur, Mei 2025
                 </p>
               </div>
 
               <!-- IMAGE 2 -->
               <div>
-                <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}"
-                  class="glightbox2 mt-4 gbox" data-gallery="gallery1"
-                  data-glightbox="description: Konsesi PBPH, PT Toba Pulp Lestari, Aek Raja, Sumatera Utara, Desember 2025">
+                <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}"
+                  class="glightbox4 mt-4 gbox" data-gallery="gallery1" data-glightbox="description: Konsesi PBPH, PT Indosubur Sukses Makmur,
+                                  <br>Kutai Timur, Kalimantan Timur, Januari 2025">
 
-                  <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}"
+                  <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
                 </a>
 
                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                  Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025
+                  Konsesi PBPH, PT Indosubur Sukses Makmur,
+                  <br>Kutai Timur, Kalimantan Timur, Januari 2025
                 </p>
               </div>
 
@@ -1373,15 +1347,18 @@
         <div class="viz-frame viz-frame--padded">
           <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-6 z-20">
 
-            <a href="{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}" class="glightboxdiskusi5 gbox"
-              data-glightbox="description: Kawasan Hutan Produksi, Bireun, Aceh, Desember 2025">
+            <a href="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2025.jpg') }}"
+              class="glightbox5 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:    Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, <br>
+                                      Aceh Selatan, Aceh, Agustus 2025, @ Haka">
 
-              <img src="{{ asset('assets/images/stadi2025/Kawasan Hutan Produksi.jpg') }}"
-                class="w-full h-[60vh] md:h-[75vh] object-cover object-top cursor-pointer hover:brightness-75 transition duration-300" />
+              <img
+                src="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2025.jpg') }}"
+                class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300" />
             </a>
 
             <p class="text-black font-light sm:text-sm text-xs mt-2 text-right px-2">
-              Kawasan Hutan Produksi, <br> Bireun, Aceh, Desember 2025
+              Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, <br>
+              Aceh Selatan, Aceh, Agustus 2025, @ Haka
             </p>
 
           </div>
@@ -1426,20 +1403,20 @@
               <div class="viz-frame !p-0 flex items-start">
 
                 <div x-data="{
-                                                    currentSlide: 0,
-                                                    totalSlides: 5,
-                                                    startX: 0,
-                                                    startSwipe(e) { this.startX = e.touches[0].clientX; },
-                                                    handleTouchMove(e) {
-                                                        let diff = this.startX - e.touches[0].clientX;
-                                                        if (Math.abs(diff) > 50) {
-                                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                                            this.startX = e.touches[0].clientX;
-                                                        }
-                                                    }
-                                                }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
-                  class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+                                                                                currentSlide: 0,
+                                                                                totalSlides: 5,
+                                                                                startX: 0,
+                                                                                startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                                                handleTouchMove(e) {
+                                                                                    let diff = this.startX - e.touches[0].clientX;
+                                                                                    if (Math.abs(diff) > 50) {
+                                                                                        if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                                                        else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                                                        this.startX = e.touches[0].clientX;
+                                                                                    }
+                                                                                }
+                                                                            }" @touchstart="startSwipe($event)"
+                  @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                   <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
                     @foreach([1, 2, 3, 4, 5] as $i)
@@ -1546,20 +1523,20 @@
               <div class="viz-frame !p-0 flex items-start">
 
                 <div x-data="{
-                                                    currentSlide: 0,
-                                                    totalSlides: 2,
-                                                    startX: 0,
-                                                    startSwipe(e) { this.startX = e.touches[0].clientX; },
-                                                    handleTouchMove(e) {
-                                                        let diff = this.startX - e.touches[0].clientX;
-                                                        if (Math.abs(diff) > 50) {
-                                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                                            this.startX = e.touches[0].clientX;
-                                                        }
-                                                    }
-                                                }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
-                  class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+                                                                                currentSlide: 0,
+                                                                                totalSlides: 2,
+                                                                                startX: 0,
+                                                                                startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                                                handleTouchMove(e) {
+                                                                                    let diff = this.startX - e.touches[0].clientX;
+                                                                                    if (Math.abs(diff) > 50) {
+                                                                                        if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                                                        else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                                                        this.startX = e.touches[0].clientX;
+                                                                                    }
+                                                                                }
+                                                                            }" @touchstart="startSwipe($event)"
+                  @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                   <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
                     @foreach([6, 7] as $i)
@@ -2789,14 +2766,14 @@
           badge.dataset.species = item.name;
           const shortName = item.name.split(' ').slice(-2).join(' ');
           badge.innerHTML = `
-                                                                                      <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                                                                      <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                                                                      <div class="satwa-badge-detail">
-                                                                                        <span class="si-name">${item.name}</span>
-                                                                                        <span class="si-val">${item.value}</span>
-                                                                                        <span class="si-unit">habitat terdampak</span>
-                                                                                      </div>
-                                                                                    `;
+                                                                                                                  <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                                                                                                  <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                                                                                                  <div class="satwa-badge-detail">
+                                                                                                                    <span class="si-name">${item.name}</span>
+                                                                                                                    <span class="si-val">${item.value}</span>
+                                                                                                                    <span class="si-unit">habitat terdampak</span>
+                                                                                                                  </div>
+                                                                                                                `;
           badge.addEventListener('click', async (e) => {
             e.stopPropagation();
             const isActive = badge.classList.contains('active');
@@ -3025,7 +3002,7 @@
                 markers.forEach(m => rows.push([m.name, m.value]));
                 if (totalVal) rows.push(['Total', totalVal]);
                 if (othersVal) rows.push(['Lainnya', othersVal]);
-                const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+                const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
                 const a = document.createElement('a');
                 a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
                 a.download = heading.replace(/[^a-z0-9]/gi, '_') + '.csv';
