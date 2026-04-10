@@ -1945,7 +1945,7 @@
             { name: 'Megawati', start: 2001, end: 2004, photo: '/assets/images/presiden/meg.jpeg' },
             { name: 'Susilo Bambang Yudhoyono', start: 2005, end: 2014, photo: '/assets/images/presiden/sby.jpg' },
             { name: 'Jokowi', start: 2015, end: 2024, photo: '/assets/images/presiden/jok.jpeg' },
-            { name: 'Prabowo', start: 2025, end: 2028, photo: '/assets/images/presiden/pra.jpeg' }
+            { name: 'Prabowo', start: 2025, end: 2028, labelEnd: 2025, photo: '/assets/images/presiden/pra.jpeg' }
           ];
 
           function getPresident(year) {
@@ -2004,7 +2004,7 @@
               el.style.cssText = 'opacity:0;pointer-events:none;transition:opacity .25s;min-width:140px;padding:8px 10px;background:rgba(255,255,255,0.96);border-left:2px solid rgba(0,0,0,.1);box-shadow:4px 4px 16px rgba(0,0,0,.1);cursor:pointer;align-self:stretch;display:flex;flex-direction:column;justify-content:center;';
               el.innerHTML =
                 '<div style="font-size:.72rem;font-weight:700;color:#1a1a1a;line-height:1.2;white-space:nowrap;margin-bottom:2px;">' + p.name + '</div>' +
-                '<div style="font-size:.68rem;color:rgba(0,0,0,.4);margin-bottom:5px;white-space:nowrap;">' + (p.start === p.end ? p.start : p.start + '\u2013' + p.end) + '</div>' +
+                '<div style="font-size:.68rem;color:rgba(0,0,0,.4);margin-bottom:5px;white-space:nowrap;">' + (p.start === (p.labelEnd || p.end) ? p.start : p.start + '\u2013' + (p.labelEnd || p.end)) + '</div>' +
                 '<div style="font-size:.88rem;font-weight:800;color:#8b2a1a;line-height:1;white-space:nowrap;">' + total.toLocaleString('id-ID') + '</div>' +
                 '<div style="font-size:.58rem;color:#8b7355;margin-top:2px;white-space:nowrap;">ha hilang</div>';
 
@@ -2031,7 +2031,7 @@
               mInfo.style.cssText = 'padding:10px 12px;display:flex;flex-direction:column;justify-content:center;min-width:0;';
               mInfo.innerHTML =
                 '<div style="font-size:.72rem;font-weight:700;color:#1a1a1a;line-height:1.2;margin-bottom:2px;">' + p.name + '</div>' +
-                '<div style="font-size:.58rem;color:rgba(0,0,0,.4);margin-bottom:5px;white-space:nowrap;">' + (p.start === p.end ? p.start : p.start + '\u2013' + p.end) + '</div>' +
+                '<div style="font-size:.58rem;color:rgba(0,0,0,.4);margin-bottom:5px;white-space:nowrap;">' + (p.start === (p.labelEnd || p.end) ? p.start : p.start + '\u2013' + (p.labelEnd || p.end)) + '</div>' +
                 '<div style="font-size:.88rem;font-weight:800;color:#8b2a1a;line-height:1;white-space:nowrap;">' + total.toLocaleString('id-ID') + '</div>' +
                 '<div style="font-size:.58rem;color:#8b7355;margin-top:2px;white-space:nowrap;">ha hilang</div>';
               mel.appendChild(mPhoto);
