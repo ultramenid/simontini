@@ -47,6 +47,12 @@ class InsightContoller extends Controller
         return view('frontends.stadi2025JP', compact('title', 'description'));
     }
 
+    public function penjelasan(){
+        $title = 'Penjelasan Data Deforestasi Indonesia';
+        $description = 'Simontini’s Insight is a series of articles that provide in-depth analysis of the latest issues related to deforestation and land use change in Indonesia.';
+        return view('frontends.penjelasan-data', compact('title', 'description'));
+    }
+
     public function dummy2025(){
         $title = 'Status deforestasi Indonesia 2025 ';
         $description = 'Tahun lalu Auriga merilis data deforestasi 2024 pada Maret. Mulai tahun ini, deforestasi tahunan akan dirilis setiap Januari.';
