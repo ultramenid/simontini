@@ -1845,18 +1845,18 @@
 
                 <div class="author-block film-credit-block">
                     <div class="ab-group">
-                        <div class="ab-label">Penulis</div>
+                        <div class="ab-label">Authors</div>
                         <div class="ab-names">Timer Manurung, Dedy Sukmara, Andhika Younastya</div>
                     </div>
                     <div class="ab-group">
-                        <div class="ab-label">Pengolah Data</div>
+                        <div class="ab-label">Data and processing</div>
                         <div class="ab-names">Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika
                             Laura, Dedy
                             Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
                         </div>
                     </div>
                     <div class="ab-group">
-                        <div class="ab-label">Tim Verifikasi</div>
+                        <div class="ab-label">Verification Team</div>
                         <div class="ab-names">Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika
                             Younastya,
                             Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika Laura,
@@ -1872,17 +1872,17 @@
                             Nofiandi, Yustinus Seno, Zerin Darma Kusuma</div>
                     </div>
                     <div class="ab-group">
-                        <div class="ab-label">Tim Uji Akurasi</div>
+                        <div class="ab-label">Accuracy Team</div>
                         <div class="ab-names">Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul,
                             M. Dendi
                             Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno</div>
                     </div>
                     <div class="ab-group">
-                        <div class="ab-label">Kreatif Desain</div>
+                        <div class="ab-label">Creative Design</div>
                         <div class="ab-names">Robby Eebor, Tim Teknologi</div>
                     </div>
                     <div class="ab-group">
-                        <div class="ab-label">Tim Teknologi</div>
+                        <div class="ab-label">Technology Team</div>
                         <div class="ab-names">M. Alichamdan, M. Fachri, Thoriq Fa'iqoh</div>
                     </div>
                     <div class="ab-group">
