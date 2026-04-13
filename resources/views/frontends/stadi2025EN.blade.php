@@ -1271,9 +1271,9 @@
                         <div x-data="{
                                                     active: 0,
                                                     images: [
-                                                        { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
-                                                        { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                                                        { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
+                                                         { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Other Land Use Areas, Plantation Concessions, PT Equator Sumber Rezeki, <br> Kapuas Hulu, West Kalimantan, June 2025' },
+                    { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}', caption: 'Production Forest Area, PBPH Concession, PT Toba Pulp Lestari, <br> Aek Raja, North Sumatra, December 2025' },
+                    { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Other Land Use, Mining Concession, PT Bencoolen Mining, <br> North Bengkulu, Bengkulu, May 2025' }
                                                     ]
                                                 }">
                             <div class="relative" x-ref="mainImg">
