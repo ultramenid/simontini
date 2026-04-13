@@ -1071,14 +1071,14 @@
 
             <a href="{{ asset('assets/images/stadi2025/PLTA Mentarang, Malinau.jpg') }}" class="glightbox1 mt-4 gbox"
               data-gallery="gallery1"
-              data-glightbox="description:   PLTA Mentarang, Malinau, <br> Kalimantan Utara, Oktober 2025">
+              data-glightbox="description: Kawasan Hutan Produksi Terbatas, PLTA Mentarang, Malinau, <br> Kalimantan Utara, Oktober 2025">
 
               <img src="{{ asset('assets/images/stadi2025/PLTA Mentarang, Malinau.jpg') }}"
                 class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300" />
             </a>
 
             <p class="text-black font-light sm:text-sm text-xs mt-2 text-right px-2">
-              PLTA Mentarang, Malinau,
+              Kawasan Hutan Produksi Terbatas, PLTA Mentarang, Malinau,
               <br>Kalimantan Utara, Oktober 2025
             </p>
 
@@ -1144,14 +1144,14 @@
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Jati Dharma Indah Plywood 2.jpg') }}"
                   class="glightbox2 mt-4 gbox" data-gallery="gallery1"
-                  data-glightbox="description: Konsesi PBPH, PT Jati Dharma Indah Plywood, <br> Industries, Nabire, Papua Tengah, Desember 2025">
+                  data-glightbox="description: Kawasan Hutan Produksi Terbatas, Konsesi PBPH, PT Jati Dharma Indah Plywood, <br> Industries, Nabire, Papua Tengah, Desember 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Jati Dharma Indah Plywood 2.jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
                 </a>
 
                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                  Konsesi PBPH, PT Jati Dharma Indah Plywood
+                  Kawasan Hutan Produksi Terbatas, Konsesi PBPH, PT Jati Dharma Indah Plywood
                   <br>Industries, Nabire, Papua Tengah, Desember 2025
                 </p>
               </div>
@@ -1219,10 +1219,10 @@
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
             <div x-data="{ active: 0, images: [
-                                            { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
-                                            { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                                            { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
-                                            ]}">
+              { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Other Land Use Areas, Plantation Concessions, PT Equator Sumber Rezeki, <br> Kapuas Hulu, West Kalimantan, June 2025' },
+              { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Production Forest Area, PBPH Concession, PT Toba Pulp Lestari, <br> Aek Raja, North Sumatra, December 2025' },
+              { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Other Land Use, Mining Concession, PT Bencoolen Mining, <br> North Bengkulu, Bengkulu, May 2025' }
+              ]}">
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" alt="Simontini"
                   @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1301,14 +1301,14 @@
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Hutan Berau Lestari .jpg') }}"
                   class="glightbox4 mt-4 gbox" data-gallery="gallery1"
-                  data-glightbox="description:  Konsesi PBPH, PT Hutan Berau Lestari, <br> Berau, Kalimantan Timur, Mei 2025">
+                  data-glightbox="description:  Kawasan Hutan Produksi, Konsesi PBPH, PT Hutan Berau Lestari, <br> Berau, Kalimantan Timur, Mei 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Hutan Berau Lestari .jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
                 </a>
 
                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                  Konsesi PBPH, PT Hutan Berau Lestari,
+                  Kawasan Hutan Produksi, Konsesi PBPH, PT Hutan Berau Lestari,
                   <br>Berau, Kalimantan Timur, Mei 2025
                 </p>
               </div>
@@ -1317,14 +1317,14 @@
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}"
                   class="glightbox4 mt-4 gbox" data-gallery="gallery1"
-                  data-glightbox="description: Konsesi PBPH, PT Indosubur Sukses Makmur, <br> Kutai Timur, Kalimantan Timur, Januari 2025">
+                  data-glightbox="description: Kawasan Hutan Produksi, Konsesi PBPH, PT Indosubur Sukses Makmur, <br> Kutai Timur, Kalimantan Timur, Januari 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
                 </a>
 
                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                  Konsesi PBPH, PT Indosubur Sukses Makmur,
+                  Kawasan Hutan Produksi, Konsesi PBPH, PT Indosubur Sukses Makmur,
                   <br>Kutai Timur, Kalimantan Timur, Januari 2025
                 </p>
               </div>
@@ -1503,7 +1503,7 @@
               </div>
             </div>
             <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
-              <div class="viz-frame !p-0 flex items-start">
+              <div class="viz-frame !p-0 flex items-start ">
 
                 <div x-data="{
                                                       currentSlide: 0,

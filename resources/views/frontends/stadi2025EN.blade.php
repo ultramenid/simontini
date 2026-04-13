@@ -1083,15 +1083,15 @@
 
                         <a href="{{ asset('assets/images/stadi2025/PLTA Mentarang, Malinau.jpg') }}"
                             class="glightbox1 mt-4 gbox" data-gallery="gallery1"
-                            data-glightbox="description:   PLTA Mentarang, Malinau, <br> Kalimantan Utara, Oktober 2025">
+                            data-glightbox="description: Limited Production Forest Area, Mentarang Hydroelectric Power Plant, Malinau, <br> North Kalimantan, October 2025">
 
                             <img src="{{ asset('assets/images/stadi2025/PLTA Mentarang, Malinau.jpg') }}"
                                 class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300" />
                         </a>
 
                         <p class="text-black font-light sm:text-sm text-xs mt-2 text-right px-2">
-                            PLTA Mentarang, Malinau,
-                            <br>Kalimantan Utara, Oktober 2025
+                                Limited Production Forest Area, Mentarang Hydroelectric Power Plant, Malinau, 
+                                <br> North Kalimantan, October 2025
                         </p>
 
                     </div>
@@ -1124,15 +1124,14 @@
                             <div>
                                 <a href="{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Anugerah Surya Utama  2.jpg') }}"
                                     class="glightbox2 mt-4 gbox" data-gallery="gallery1"
-                                    data-glightbox="description:  Konsesi Tambang, PT Anugerah Surya Utama, <br> Raja Ampat, Papua, September 2025">
+                                    data-glightbox="description:  Mining Concession, PT Anugerah Surya Utama, <br> Raja Ampat, Papua, September 2025">
 
                                     <img src="{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Anugerah Surya Utama  2.jpg') }}"
                                         class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
                                 </a>
 
                                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                                    Konsesi Tambang, PT Anugerah Surya Utama,
-                                    <br>Raja Ampat, Papua, September 2025
+                                     Mining Concession, PT Anugerah Surya Utama, <br> Raja Ampat, Papua, September 2025
                                 </p>
                             </div>
 
@@ -1140,15 +1139,15 @@
                             <div>
                                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Jati Dharma Indah Plywood 2.jpg') }}"
                                     class="glightbox2 mt-4 gbox" data-gallery="gallery1"
-                                    data-glightbox="description: Konsesi PBPH, PT Jati Dharma Indah Plywood, <br> Industries, Nabire, Papua Tengah, Desember 2025">
+                                    data-glightbox="description: Limited Production Forest Area, PBPH Concession, PT Jati Dharma Indah Plywood, <br> Industries, Nabire, Central Papua, December 2025">
 
                                     <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Jati Dharma Indah Plywood 2.jpg') }}"
                                         class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
                                 </a>
 
                                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                                    Konsesi PBPH, PT Jati Dharma Indah Plywood
-                                    <br>Industries, Nabire, Papua Tengah, Desember 2025
+                                    Limited Production Forest Area, PBPH Concession, PT Jati Dharma Indah Plywood, 
+                                    <br> Industries, Nabire, Central Papua, December 2025
                                 </p>
                             </div>
 
@@ -1274,15 +1273,15 @@
                             <div>
                                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Hutan Berau Lestari .jpg') }}"
                                     class="glightbox4 mt-4 gbox" data-gallery="gallery1"
-                                    data-glightbox="description:  Konsesi PBPH, PT Hutan Berau Lestari, <br> Berau, Kalimantan Timur, Mei 2025">
+                                    data-glightbox="description:  Production Forest Area, PBPH Concession, PT Hutan Berau Lestari, <br> Berau, East Kalimantan, May 2025">
 
                                     <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Hutan Berau Lestari .jpg') }}"
                                         class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
                                 </a>
 
                                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                                    Konsesi PBPH, PT Hutan Berau Lestari,
-                                    <br>Berau, Kalimantan Timur, Mei 2025
+                                    Production Forest Area, PBPH Concession, PT Hutan Berau Lestari, 
+                                    <br> Berau, East Kalimantan, May 2025
                                 </p>
                             </div>
 
@@ -1290,15 +1289,15 @@
                             <div>
                                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}"
                                     class="glightbox4 mt-4 gbox" data-gallery="gallery1"
-                                    data-glightbox="description: Konsesi PBPH, PT Indosubur Sukses Makmur, <br> Kutai Timur, Kalimantan Timur, Januari 2025">
+                                    data-glightbox="description: Production Forest Area, PBPH Concession, PT Indosubur Sukses Makmur, <br> East Kutai, East Kalimantan, January 2025">
 
                                     <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}"
                                         class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
                                 </a>
 
                                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                                    Konsesi PBPH, PT Indosubur Sukses Makmur,
-                                    <br>Kutai Timur, Kalimantan Timur, Januari 2025
+                                   Production Forest Area, PBPH Concession, PT Indosubur Sukses Makmur, 
+                                   <br> East Kutai, East Kalimantan, January 2025
                                 </p>
                             </div>
 
@@ -1334,15 +1333,15 @@
 
                         <a href="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2025.jpg') }}"
                             class="glightbox5 mt-4 gbox" data-gallery="gallery1"
-                            data-glightbox="description:    Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, <br> Aceh Selatan, Aceh, Agustus 2025, @ Haka">
+                            data-glightbox="description: Deforestation, Conservation Areas, Rawa Singkil Wildlife Sanctuary, <br> South Aceh, Aceh, August 2025, @ Haka">
 
                             <img src="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2025.jpg') }}"
                                 class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300" />
                         </a>
 
                         <p class="text-black font-light sm:text-sm text-xs mt-2 text-right px-2">
-                            Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, <br>
-                            Aceh Selatan, Aceh, Agustus 2025, @ Haka
+                           Deforestation, Conservation Areas, Rawa Singkil Wildlife Sanctuary, 
+                           <br> South Aceh, Aceh, August 2025, @ Haka
                         </p>
 
                     </div>
