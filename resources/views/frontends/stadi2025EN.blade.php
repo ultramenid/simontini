@@ -9,7 +9,7 @@
         <div class="loader-mark">
             <img src="{{ asset('assets/images/logo1.png') }}" alt="" class="">
             <!-- <div class="loader-title">SIMONTINI</div> -->
-            <div class="loader-sub">Status Deforestasi di Indonesia 2025</div>
+            <div class="loader-sub">Status of deforestation in Indonesia 2025</div>
             <div class="loader-bar"><span></span></div>
         </div>
     </div>
@@ -39,7 +39,7 @@
         </div>
     </nav>
     <section id="hero">
-        <h1>INDONESIA DEFORESTATION STATUS 2025</h1>
+        <h1>Status of Deforestation in Indonesia 2025</h1>
         <div class="hero-meta">
             <div class="hero-stat">
                 <span class="hs-val">433.751</span>
@@ -1052,37 +1052,32 @@
 
         <!-- KONSESI -->
         {{-- <span class="s-anchor" id="konsesi"></span>
-        <section class="page-section px-[5vw] py-10">
-            <div class="section-body">
-                <div class="section-label">04 / Deforestasi dalam Konsesi</div>
+    <section class="page-section px-[5vw] py-10">
+      <div class="section-body">
+        <div class="section-label">04 / Deforestasi dalam Konsesi</div>
 
-                <p class="body-text">
-                    Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan
-                    hutan alam
-                    juga menjadi pemicu deforestasi. Analisis Auriga Nusantara menunjukkan bahwa per 2024 terdapat 9,6 juta
-                    hektare
-                    tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam konsesi seperti ini
-                    mencapai
-                    114.823 hektare atau 26% dari deforestasi nasional. Visual berikut menampilkan sepuluh teratas
-                    deforestasi dalam
-                    konsesi per kategori.
-                </p>
+        <p class="body-text">
+          Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan hutan alam
+          juga menjadi pemicu deforestasi. Analisis Auriga Nusantara menunjukkan bahwa per 2024 terdapat 9,6 juta hektare
+          tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam konsesi seperti ini mencapai
+          114.823 hektare atau 26% dari deforestasi nasional. Visual berikut menampilkan sepuluh teratas deforestasi dalam
+          konsesi per kategori.
+        </p>
 
-                <!-- <div class="viz-block viz-block--full" data-include-html="partials/konsesi-embed.html"></div> -->
+        <!-- <div class="viz-block viz-block--full" data-include-html="partials/konsesi-embed.html"></div> -->
 
 
-                <!-- <hr class="divider"> -->
+        <!-- <hr class="divider"> -->
 
-                <div class="callout">
-                    <p>
-                        <strong>Catatan:</strong> Hanya 3% deforestasi 2025 yang terjadi di kawasan konservasi, sementara
-                        49% di hutan
-                        produksi dan 43% di luar kawasan hutan. Artinya, <strong>97% deforestasi yang terjadi berpotensi
-                            legal</strong> karena dilakukan di daerah berizin.
-                    </p>
-                </div>
-            </div>
-        </section> --}}
+        <div class="callout">
+          <p>
+            <strong>Catatan:</strong> Hanya 3% deforestasi 2025 yang terjadi di kawasan konservasi, sementara 49% di hutan
+            produksi dan 43% di luar kawasan hutan. Artinya, <strong>97% deforestasi yang terjadi berpotensi
+              legal</strong> karena dilakukan di daerah berizin.
+          </p>
+        </div>
+      </div>
+    </section> --}}
 
         <!-- DISKUSI -->
         <span class="s-anchor" id="diskusi"></span>
@@ -1110,39 +1105,24 @@
                     plants in eastern Indonesia, despite sago being a staple food in the region.
                 </p>
                 <p class="body-text">
-                    At the end of December 2024, two months after the inauguration of Prabowo–Gibran, the government
-                    launched a program to designate 20 million hectares of forest for food, energy, and water reserves. As
-                    things progressed, the total area became 20.6 million hectares. Auriga Nusantara analysis shows 8.8
-                    million hectares of natural forest inside these designated reserves, and 18% of deforestation in 2025
-                    occurring within such areas. This deforestation was driven by populist food programs, such as the
-                    Community Ricefield Development or Cetak Sawah Rakyat (CSR) program in Central Kalimantan – the province
-                    with the highest deforestation area in 2025, despite ranking third in 2024.
+                    At the end of December 2024, two months after the inauguration of Prabowo–Gibran, the government launched a program to designate 20 million hectares of forest for food, energy, and water reserves. As things progressed, the total area became 20.6 million hectares. Auriga Nusantara analysis shows 8.8 million hectares of natural forest inside these designated reserves, and 18% of deforestation in 2025 occurring within such areas. This deforestation was driven by populist food programs, such as the Community Ricefield Development or Cetak Sawah Rakyat (CSR) program in Central Kalimantan – the province with the highest deforestation area in 2025, despite ranking third in 2024.
                 </p>
                 <p class="body-text">
-                    The issuing of conversion permits for mining, oil palm plantations, and industrial timber plantations in
-                    areas with natural forest is another major driver of deforestation. Auriga Nusantara’s analysis
-                    indicates that, as of 2024, there were 9.6 million hectares of natural forest cover within conversion
-                    concessions. In 2025, deforestation inside these concessions reached 114,823 hectares, or 26% of
-                    national deforestation.
+                    The issuing of conversion permits for mining, oil palm plantations, and industrial timber plantations in areas with natural forest is another major driver of deforestation. Auriga Nusantara’s analysis indicates that, as of 2024, there were 9.6 million hectares of natural forest cover within conversion concessions. In 2025, deforestation inside these concessions reached 114,823 hectares, or 26% of national deforestation.
                 </p>
                 <p class="body-text">
-                    Additionally, the release of forest estate to become other land use (APL) areas, despite still having
-                    natural forest cover, often marks the initial step towards deforestation, as logging inside APL areas is
-                    not against the law. Such forest estate releases frequently occur to accommodate specific concessions or
-                    at the request of regional governments through spatial planning revisions (RTRW). As of 2024, there were
-                    10.2 million hectares of natural forest inside APL areas, and in 2025, deforestation in such areas
-                    reached 125,997 hectares, or 28% of national deforestation.
+                    Additionally, the release of forest estate to become other land use (APL) areas, despite still having natural forest cover, often marks the initial step towards deforestation, as logging inside APL areas is not against the law. Such forest estate releases frequently occur to accommodate specific concessions or at the request of regional governments through spatial planning revisions (RTRW). As of 2024, there were 10.2 million hectares of natural forest inside APL areas, and in 2025, deforestation in such areas reached 125,997 hectares, or 28% of national deforestation.
                 </p>
 
 
 
 
                 <!-- <ul class="insight-list">
-                                                                                                                                                                                                  <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                                                                                                                                                                                  <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                                                                                                                                                                                  <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                                                                                                                                                                                  <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                                                                                                                                                                                </ul> -->
+                                                                                                                                                                          <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                                                                                                                          <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                                                                                                                          <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                                                                                                                          <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                                                                                                                        </ul> -->
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
@@ -1157,8 +1137,8 @@
                         </a>
 
                         <p class="text-black font-light sm:text-sm text-xs mt-2 text-right px-2">
-                            Limited Production Forest Area, Mentarang Hydroelectric Power Plant, Malinau,
-                            <br> North Kalimantan, October 2025
+                                Limited Production Forest Area, Mentarang Hydroelectric Power Plant, Malinau,
+                                <br> North Kalimantan, October 2025
                         </p>
 
                     </div>
@@ -1283,14 +1263,7 @@
                     concessions.
                 </p>
 
-                <!-- <div class="callout">
-                                                                                                                                                                                                  <strong>Faktor pendorong utama:</strong>
-                                                                                                                                                                                                  <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                                                                                                                                                                                    <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                                                                                                                                                                                    <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                                                                                                                                                                                    <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                                                                                                                                                                                  </ul>
-                                                                                                                                                                                                </div> -->
+
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
@@ -1363,11 +1336,7 @@
                     revisions.
                 </p>
                 <p class="body-text">
-                    Of all deforestation in 2025, the only deforestation that could be directly classified as illegal was
-                    deforestation in conservation areas (20,077 hectares), in protection forests (80,023 hectares), logging
-                    concessions (74,409 hectares), and ecosystem restoration concessions (617 hectares), totaling 180,370
-                    hectares or 42% of national deforestation. In other words, 58% of deforestation in 2025 constituted
-                    legal deforestation.
+                    Of all deforestation in 2025, the only deforestation that could be directly classified as illegal was deforestation in conservation areas (20,077 hectares), in protection forests (80,023 hectares), logging concessions (74,409 hectares), and ecosystem restoration concessions (617 hectares), totaling 180,370 hectares or 42% of national deforestation. In other words, 58% of deforestation in 2025 constituted legal deforestation.
                 </p>
 
 
@@ -1405,8 +1374,8 @@
                                 </a>
 
                                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                                    Production Forest Area, PBPH Concession, PT Indosubur Sukses Makmur,
-                                    <br> East Kutai, East Kalimantan, January 2025
+                                   Production Forest Area, PBPH Concession, PT Indosubur Sukses Makmur,
+                                   <br> East Kutai, East Kalimantan, January 2025
                                 </p>
                             </div>
 
@@ -1458,8 +1427,8 @@
                         </a>
 
                         <p class="text-black font-light sm:text-sm text-xs mt-2 text-right px-2">
-                            Deforestation, Conservation Areas, Rawa Singkil Wildlife Sanctuary,
-                            <br> South Aceh, Aceh, August 2025, @ Haka
+                           Deforestation, Conservation Areas, Rawa Singkil Wildlife Sanctuary,
+                           <br> South Aceh, Aceh, August 2025, @ Haka
                         </p>
 
                     </div>
@@ -1471,7 +1440,7 @@
         <span class="s-anchor" id="rekomendasi"></span>
         <section class="page-section px-[5vw] pt-10 pb-20">
             <div class="mx-auto max-w-[820px]">
-                <div class="section-label">V. Recomendations</div>
+                <div class="section-label">V. Recommendations</div>
 
                 {{-- <p class="body-text">
                     Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
@@ -1504,19 +1473,20 @@
                             <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
 
                                 <div x-data="{
-                                                  currentSlide: 4,
-                                                  totalSlides: 5,
-                                                  startX: 0,
-                                                  startSwipe(e) { this.startX = e.touches[0].clientX; },
-                                                  handleTouchMove(e) {
-                                                  let diff = this.startX - e.touches[0].clientX;
-                                                  if (Math.abs(diff) > 50) {
-                                                  if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                                  else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                                  this.startX = e.touches[0].clientX;
-                                                  }
-                                                   }
-                                                  }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                                    currentSlide: 4,
+                                    totalSlides: 5,
+                                    startX: 4,
+                                    startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                    handleTouchMove(e) {
+                                        let diff = this.startX - e.touches[0].clientX;
+                                        if (Math.abs(diff) > 50) {
+                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                            this.startX = e.touches[0].clientX;
+                                        }
+                                    }
+                                }" @touchstart="startSwipe($event)"
+                                    @touchmove="handleTouchMove($event)"
                                     class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                                     <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">

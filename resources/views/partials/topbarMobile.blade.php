@@ -38,7 +38,7 @@
                     <a   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">about<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
-                <div class=" px-6" x-data="{open1: false}"><a>
+                {{-- <div class=" px-6" x-data="{open1: false}"><a>
                     <div class="flex items-center  mb-4 px-2" @click=" open1 =! open1"><a>
                         <a   class="px-2 inline-block  leading-5 text-white text-xl font-semibold ">stadi<a>
                         <svg xmlns="http://www.w3.org/2000/svg" :class="{'rotate-180': open1, 'rotate-0': !open1}" class="w-6 text-white rotate-180" viewBox="0 0 20 20" fill="currentColor">
@@ -52,7 +52,7 @@
                         <a href="" class="text-sm text-landy mr-6">2023</a>
                     </div>
                     <p class="border-b border-gray-300"></p>
-                </div>
+                </div> --}}
                 <div class=" px-6">
                     <a  href="{{ route('insight', app()->getLocale()) }}" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
                     <p class="border-b border-gray-300"></p>
