@@ -1423,9 +1423,9 @@
               <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
 
                 <div x-data="{
-                                currentSlide: 0,
+                                currentSlide: 4,
                               totalSlides: 5,
-                              startX: 0,
+                              startX: 4,
                               startSwipe(e) { this.startX = e.touches[0].clientX; },
                               handleTouchMove(e) {
                               let diff = this.startX - e.touches[0].clientX;
