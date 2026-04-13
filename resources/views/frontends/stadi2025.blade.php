@@ -91,7 +91,7 @@
       di bawah 2°C, sembari berupaya membatasi kenaikannya maksimum 1,5°C dari era pra-industri. Dalam kerangka ini,
       Pemerintah Indonesia menerbitkan
       <a href="https://peraturan.bpk.go.id/Download/180699/Perpres%20Nomor%2098%20Tahun%202021.pdf" target="_blank"
-        rel="noopener noreferrer" style="color: #bc4a3c;">Peraturan Presiden No. 98 tahun 2021</a>
+        rel="noopener noreferrer" style="color: #bc4a3c;">Peraturan Presiden No. 98 Tahun 2021</a>
       tentang Penyelenggaraan Nilai Ekonomi Karbon dan menerjemahkannya lebih rinci melalui Keputusan Menteri LHK No. 168
       tahun 2022 tentang Indonesia’s
       <a href="https://eos.co.id/main/wp-content/uploads/2022/03/1647210373656.pdf" target="_blank"
@@ -100,7 +100,7 @@
     </p>
     <p class="body-text">
       Berbagai kebijakan tersebut membuat deforestasi di Indonesia menurun dalam lima tahun berturut-turut sejak 2017.
-      Namun, sejak 2022 deforestasi Indonesia kembali meningkat, sebagaimana terlihat dalam grafik berikut. Bahkan,
+      Namun, sejak 2022 deforestasi di Indonesia kembali meningkat, sebagaimana terlihat dalam grafik berikut. Bahkan,
       deforestasi di Indonesia melonjak pada 2025.
     </p>
     <!-- embedded chart using TailwindUI layout -->
@@ -110,7 +110,7 @@
           <div id="chart-inner" class="px-6 w-full max-w-[1400px] mx-auto">
             <div id="chart-viz" class="w-full min-w-0">
               <div class="chart-header mb-4">
-                <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi Indonesia,
+                <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi di Indonesia,
                   2001–2025</h2>
                 <p class="chart-sub text-sm" style="color:#8b7355;">Luas hutan yang hilang per tahun · hektare</p>
               </div>
@@ -416,7 +416,7 @@
         peringkat ketiga menggantikan Sulawesi.
       </p>
       <p class="body-text">
-        Tabel berikut menampilkan data deforestasi per pulau besar di Indonesia tahun 2023-2025.
+        Tabel berikut menampilkan data deforestasi per pulau besar di Indonesia periode 2023-2025.
       </p>
 
 
@@ -1166,7 +1166,7 @@
       <div>
         <div class="chapter-header">
           <span class="ms-num">3.</span>
-          <h3 class="chapter-title">Ekspansi komoditas industrial menjadi pemicu deforestasi Indonesia</h3>
+          <h3 class="chapter-title">Ekspansi komoditas industrial menjadi pemicu deforestasi di Indonesia</h3>
         </div>
         <p class="body-text">
           Ekspansi komoditas industrial tetap menjadi momok bagi hutan alam tersisa di Indonesia. Pengembangan kebun-kebun
@@ -1284,7 +1284,7 @@
         </p>
         <p class="body-text">
           Dari total deforestasi 2025, deforestasi yang secara langsung bisa dikategorikan ilegal hanya deforestasi di
-          kawasan konservasi (25.077 hektare), di hutan lindung (80.023 hektare), di konsesi logging (74.409 hektare), dan
+          kawasan konservasi (25.077 hektare), di hutan lindung (80.213 hektare), di konsesi logging (74.409 hektare), dan
           konsesi restorasi ekosistem (617 hektare), yang seluruhnya berjumlah 180.315 hektare atau 42% deforestasi
           nasional. Dengan kata lain, 58% deforestasi 2025 berupa deforestasi legal (<em>legal deforestation</em>).
         </p>
@@ -1710,7 +1710,7 @@
             <div class="ab-names">M. Alichamdan, M. Fachri, Thoriq Fa'iqoh</div>
           </div>
           <div class="ab-group">
-            <div class="ab-names">© Auriga Nusantara. 2026. <br><em>Status Deforestasi Indonesia 2025, diakses pada
+            <div class="ab-names">© Auriga Nusantara. 2026. <br><em>Status Deforestasi di Indonesia 2025, diakses pada
                 [DD/MM/YYYY] melalui tautan [LINK].
                 Auriga Nusantara. 2025 </em><br>.</div>
           </div>
