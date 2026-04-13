@@ -408,7 +408,7 @@
       <div class="section-label">III. Deforestasi 2025</div>
 
       <p class="body-text">
-        Dengan metode tersebut, di Indonesia pada 2025 mencapai 433.751 hektare. Deforestasi ini meningkat sebesar 66%
+        Dengan metode tersebut, deforestasi di Indonesia pada 2025 mencapai 433.751 hektare. Deforestasi ini meningkat sebesar 66%
         dari tahun sebelumnya seluas <a href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank"
           rel="noopener noreferrer" style="color: #bc4a3c;">261.575 hektare</a>. Deforestasi terluas kembali terjadi di
         Kalimantan, disusul Sumatera. Tanah Papua, yang pada 2024 berada di peringkat keempat, pada tahun 2025 menempati
@@ -1036,22 +1036,22 @@
           Pada akhir Desember 2024, dua bulan setelah Prabowo-Gibran dilantik, pemerintah mencanangkan program 20 juta
           hektare hutan untuk cadangan pangan, energi, dan air. Pada perkembangannya, total area untuk program ini menjadi
           20,6 juta hektare. Analisis Auriga Nusantara menunjukkan bahwa terdapat 8,8 juta hektare hutan alam di dalam
-          area pencadangan ini dan 18% deforestasi 2025 terjadi di dalam area ini. Deforestasi ini terjadi melalui
+          area pencadangan ini dan 18% deforestasi 2025 terjadi di dalam area ini. Deforestasi juga terjadi melalui
           program-program pangan populis, seperti Cetak Sawah Rakyat (CSR) di Kalimantan Tengah, provinsi yang menjadi
           pemuncak deforestasi pada 2025. Padahal pada 2024 provinsi ini berada di urutan ketiga provinsi terdeforestasi.
         </p>
         <p class="body-text">
           Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan hutan alam
           juga menjadi pemicu deforestasi. Analisis Auriga Nusantara menunjukkan bahwa per 2024 terdapat 9,6 juta hektare
-          tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam konsesi ini mencapai 114.823
-          hektare atau 26% dari deforestasi nasional.
+          tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam konsesi ini mencapai 189.970
+          hektare atau 43% dari deforestasi nasional.
         </p>
         <p class="body-text">
           Selain itu, pelepasan kawasan hutan menjadi area penggunaan lain (APL) namun memiliki tutupan hutan alam juga
           menjadi langkah awal deforestasi, karena penebangan hutan di dalam APL tidak melanggar hukum. Pelepasan kawasan
           hutan seperti ini kerap terjadi untuk konsesi tertentu atau oleh permintaan pemerintah daerah melalui revisi
           rencana tata ruang (RTRW). Per 2024 terdapat 10,2 juta hektare hutan alam di dalam APL. Dan, pada 2025
-          deforestasi dalam APL seluas 125.997 hektare atau 28% deforestasi nasional.
+          deforestasi dalam APL seluas 125.890 hektare atau 28% deforestasi nasional.
         </p>
 
 
@@ -1283,8 +1283,8 @@
         </p>
         <p class="body-text">
           Dari total deforestasi 2025, deforestasi yang secara langsung bisa dikategorikan ilegal hanya deforestasi di
-          kawasan konservasi (20.077 hektare), di hutan lindung (80.023 hektare), di konsesi logging (74.409 hektare), dan
-          konsesi restorasi ekosistem (617 hektare), yang seluruhnya berjumlah 180.370 hektare atau 42% deforestasi
+          kawasan konservasi (25.077 hektare), di hutan lindung (80.023 hektare), di konsesi logging (74.409 hektare), dan
+          konsesi restorasi ekosistem (617 hektare), yang seluruhnya berjumlah 180.315 hektare atau 42% deforestasi
           nasional. Dengan kata lain, 58% deforestasi 2025 berupa deforestasi legal (<em>legal deforestation</em>).
         </p>
 
