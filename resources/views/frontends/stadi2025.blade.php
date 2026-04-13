@@ -1441,9 +1441,13 @@
                   <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
                     @foreach([1, 2, 3, 4, 5] as $i)
                       <div class="w-full flex-shrink-0">
+<<<<<<< Updated upstream
                         <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox6 gbox"
+=======
+                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" class="glightbox1 gbox"
+>>>>>>> Stashed changes
                           data-glightbox="description:">
-                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
+                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" alt="RUDP {{ $i }}"
                             class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
                         </a>
                       </div>
@@ -1601,6 +1605,7 @@
               <div class="viz-frame !p-0 flex items-start">
 
                 <div x-data="{
+<<<<<<< Updated upstream
                                                         currentSlide: 0,
                                                         totalSlides: 2,
                                                         startX: 0,
@@ -1614,15 +1619,37 @@
                                                             }
                                                         }
                                                     }" @touchstart="startSwipe($event)"
+=======
+                                                                                currentSlide: 0,
+                                                                                totalSlides: 3,
+                                                                                startX: 0,
+                                                                                startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                                                handleTouchMove(e) {
+                                                                                    let diff = this.startX - e.touches[0].clientX;
+                                                                                    if (Math.abs(diff) > 50) {
+                                                                                        if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                                                        else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                                                        this.startX = e.touches[0].clientX;
+                                                                                    }
+                                                                                }
+                                                                            }" @touchstart="startSwipe($event)"
+>>>>>>> Stashed changes
                   @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                   <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                    @foreach([6, 7] as $i)
+                    @foreach([6, 7, 8] as $i)
                       <div class="w-full flex-shrink-0">
+<<<<<<< Updated upstream
                         <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox8 gbox"
                           data-glightbox="description:">
                           <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
                             class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
+=======
+                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" class="glightbox1 gbox"
+                          data-glightbox="description:">
+                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" alt="RUDP {{ $i }}"
+                            class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
+>>>>>>> Stashed changes
                         </a>
                       </div>
                     @endforeach
