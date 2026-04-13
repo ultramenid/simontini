@@ -46,9 +46,9 @@
       </div>
       <div class="hero-divider"></div>
       <!-- <div class="hero-stat">
-                                                                                                                                             <span class="hs-val">+66%</span>
-                                                                                                                                             <span class="hs-unit">Peningkatan dari 2024</span>
-                                                                                                                                             </div> -->
+                                                                                                                                                     <span class="hs-val">+66%</span>
+                                                                                                                                                     <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                                                                                                     </div> -->
       <div class="hero-divider"></div>
       <div class="hero-desc">
         Deforestasi melonjak, saatnya pemerintah menerbitkan
@@ -408,7 +408,8 @@
       <div class="section-label">III. Deforestasi 2025</div>
 
       <p class="body-text">
-        Dengan metode tersebut, deforestasi di Indonesia pada 2025 mencapai 433.751 hektare. Deforestasi ini meningkat sebesar 66%
+        Dengan metode tersebut, deforestasi di Indonesia pada 2025 mencapai 433.751 hektare. Deforestasi ini meningkat
+        sebesar 66%
         dari tahun sebelumnya seluas <a href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank"
           rel="noopener noreferrer" style="color: #bc4a3c;">261.575 hektare</a>. Deforestasi terluas kembali terjadi di
         Kalimantan, disusul Sumatera. Tanah Papua, yang pada 2024 berada di peringkat keempat, pada tahun 2025 menempati
@@ -1058,11 +1059,11 @@
 
 
         <!-- <ul class="insight-list">
-                                                                                                                                                                      <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                                                                                                                                                      <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                                                                                                                                                      <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                                                                                                                                                      <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                                                                                                                                                    </ul> -->
+                                                                                                                                                                              <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                                                                                                                              <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                                                                                                                              <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                                                                                                                              <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                                                                                                                            </ul> -->
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
@@ -1206,22 +1207,22 @@
         </p>
 
         <!-- <div class="callout">
-                                                                                                                                                                      <strong>Faktor pendorong utama:</strong>
-                                                                                                                                                                      <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                                                                                                                                                        <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                                                                                                                                                        <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                                                                                                                                                        <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                                                                                                                                                      </ul>
-                                                                                                                                                                    </div> -->
+                                                                                                                                                                              <strong>Faktor pendorong utama:</strong>
+                                                                                                                                                                              <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                                                                                                                                <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                                                                                                                                <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                                                                                                                                <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                                                                                                                              </ul>
+                                                                                                                                                                            </div> -->
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
             <div x-data="{ active: 0, images: [
-                                    { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
-                                    { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                                    { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
-                                    ]}">
+                                            { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
+                                            { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                                            { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
+                                            ]}">
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" alt="Simontini"
                   @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1419,30 +1420,30 @@
             </div>
 
             <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
-              <div class="viz-frame !p-0 flex items-start">
+              <div class="viz-frame !p-0 flex items-start !mt-[-50px]">
 
                 <div x-data="{
-                                              currentSlide: 3,
-                                              totalSlides: 4,
-                                              startX: 4,
-                                              startSwipe(e) { this.startX = e.touches[0].clientX; },
-                                              handleTouchMove(e) {
-                                                  let diff = this.startX - e.touches[0].clientX;
-                                                  if (Math.abs(diff) > 50) {
-                                                      if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                                      else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                                      this.startX = e.touches[0].clientX;
-                                                  }
-                                              }
-                                          }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                                currentSlide: 0,
+                              totalSlides: 5,
+                              startX: 0,
+                              startSwipe(e) { this.startX = e.touches[0].clientX; },
+                              handleTouchMove(e) {
+                              let diff = this.startX - e.touches[0].clientX;
+                              if (Math.abs(diff) > 50) {
+                              if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                              else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                              this.startX = e.touches[0].clientX;
+                              }
+                               }
+                              }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
                   class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                   <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
                     @foreach([1, 2, 3, 4, 5] as $i)
                       <div class="w-full flex-shrink-0">
-                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" class="glightbox6 gbox"
+                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox6 gbox"
                           data-glightbox="description:">
-                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" alt="RUDP {{ $i }}"
+                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
                             class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
                         </a>
                       </div>
@@ -1505,20 +1506,20 @@
               <div class="viz-frame !p-0 flex items-start">
 
                 <div x-data="{
-                                              currentSlide: 0,
-                                              totalSlides: 1,
-                                              startX: 0,
-                                              startSwipe(e) { this.startX = e.touches[0].clientX; },
-                                              handleTouchMove(e) {
-                                                  let diff = this.startX - e.touches[0].clientX;
-                                                  if (Math.abs(diff) > 50) {
-                                                      if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                                      else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                                      this.startX = e.touches[0].clientX;
-                                                  }
-                                              }
-                                          }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
-                  class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+                                                      currentSlide: 0,
+                                                      totalSlides: 1,
+                                                      startX: 0,
+                                                      startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                      handleTouchMove(e) {
+                                                          let diff = this.startX - e.touches[0].clientX;
+                                                          if (Math.abs(diff) > 50) {
+                                                              if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                              else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                              this.startX = e.touches[0].clientX;
+                                                          }
+                                                      }
+                                                  }" @touchstart="startSwipe($event)"
+                  @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                   <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
                     @foreach([8] as $i)
@@ -1596,28 +1597,28 @@
               <div class="viz-frame !p-0 flex items-start">
 
                 <div x-data="{
-                        currentSlide: 0,
-                      totalSlides: 2,
-                      startX: 0,
-                      startSwipe(e) { this.startX = e.touches[0].clientX; },
-                      handleTouchMove(e) {
-                      let diff = this.startX - e.touches[0].clientX;
-                      if (Math.abs(diff) > 50) {
-                      if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                      else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                      this.startX = e.touches[0].clientX;
-                      }
-                       }
-                      }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
-                  class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+                                                      currentSlide: 0,
+                                                      totalSlides: 2,
+                                                      startX: 0,
+                                                      startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                      handleTouchMove(e) {
+                                                          let diff = this.startX - e.touches[0].clientX;
+                                                          if (Math.abs(diff) > 50) {
+                                                              if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                              else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                              this.startX = e.touches[0].clientX;
+                                                          }
+                                                      }
+                                                  }" @touchstart="startSwipe($event)"
+                  @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                   <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
                     @foreach([6, 7] as $i)
                       <div class="w-full flex-shrink-0">
-                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" class="glightbox8 gbox"
+                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox8 gbox"
                           data-glightbox="description:">
-                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" alt="RUDP {{ $i }}"
-                            class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
+                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
+                            class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
                         </a>
                       </div>
                     @endforeach
@@ -1636,12 +1637,7 @@
                     <span style="font-size: 14px; color: #222;">▶</span>
                   </button>
 
-                  <div class="flex justify-center gap-2 mt-3">
-                    <template x-for="i in totalSlides" :key="i">
-                      <button @click="currentSlide = i - 1" :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
-                        class="w-2 h-2 rounded-full"></button>
-                    </template>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -2973,15 +2969,15 @@
           badge.dataset.species = item.name;
           const shortName = item.name.split(' ').slice(-2).join(' ');
           badge.innerHTML = `
-                                      <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                      <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                      <div class="satwa-badge-detail">
-                                      <span class="si-name">${item.name}</span>
-                                      <span class="si-val">${item.value}</span>
-                                      <span class="si-val">${item.lokal}</span>
-                                      <span class="si-unit">deforestasi di habitat</span>
-                                      </div>
-                                  `;
+                                              <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                              <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                              <div class="satwa-badge-detail">
+                                              <span class="si-name">${item.name}</span>
+                                              <span class="si-val">${item.value}</span>
+                                              <span class="si-val">${item.lokal}</span>
+                                              <span class="si-unit">deforestasi di habitat</span>
+                                              </div>
+                                          `;
           badge.addEventListener('click', async (e) => {
             e.stopPropagation();
             const isActive = badge.classList.contains('active');
