@@ -1250,9 +1250,9 @@
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
             <div x-data="{ active: 0, images: [
-                          { src: '{{ asset('assets/images/stadi2025/Diskusi 3/HTI.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
-                          { src: '{{ asset('assets/images/stadi2025/Diskusi 3/Sawit.jpg') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                          { src: '{{ asset('assets/images/stadi2025/Diskusi 3/Tambang.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
+                          { src: '{{ asset('assets/images/stadi2025/diskusi 3/HTI.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
+                          { src: '{{ asset('assets/images/stadi2025/diskusi 3/Sawit.jpg') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                          { src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
                           ]}">
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" alt="Simontini"
