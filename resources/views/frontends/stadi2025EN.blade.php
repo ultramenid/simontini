@@ -20,8 +20,7 @@
         class="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[52px] px-[5vw]  backdrop-blur-md border-b border-[#e2d8cc]">
         <div
             class="nav-brand flex items-center gap-1.5 uppercase tracking-[0.18em] text-[#8b2a1a] text-[.65rem] font-semibold">
-            <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt=""
-                    class="h-8"></a>
+            <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt="" class="h-8"></a>
         </div>
         <div class="nav-actions">
             <ul class="nav-links flex list-none">
@@ -48,9 +47,9 @@
             </div>
             <div class="hero-divider"></div>
             <!-- <div class="hero-stat">
-                                                                                                                                                 <span class="hs-val">+66%</span>
-                                                                                                                                                 <span class="hs-unit">Peningkatan dari 2024</span>
-                                                                                                                                                 </div> -->
+                                                                                                                                                                         <span class="hs-val">+66%</span>
+                                                                                                                                                                         <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                                                                                                                         </div> -->
             <div class="hero-divider"></div>
             <div class="hero-desc">
                 Deforestation is on the rise; it’s time for the government to issue
@@ -109,7 +108,8 @@
                     <div id="chart-inner" class="px-6 w-full max-w-[1400px] mx-auto">
                         <div id="chart-viz" class="w-full min-w-0">
                             <div class="chart-header mb-4">
-                                <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestation in Indonesia,
+                                <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestation
+                                    in Indonesia,
                                     2001–2025</h2>
                                 <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
                                     hectares</p>
@@ -134,8 +134,9 @@
                             </div>
                             <!-- Mobile-only era totals -->
                             {{-- <div id="mobile-era-totals" class="md:hidden grid grid-cols-2 gap-[2px] mt-3"></div> --}}
-                            {{-- <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland Lossyear ·
-                Auriga STADI · simontini.id</div> --}}
+                            {{-- <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland
+                                Lossyear ·
+                                Auriga STADI · simontini.id</div> --}}
                         </div>
                     </div>
                 </div>
@@ -224,7 +225,11 @@
                     <div class="ms-num">6.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p>filtering: Focusing on deforestation caused by human activity (anthropogenic deforestation), filtering was conducted to exclude deforestation areas resulting from landslides or river shifts. For example, 11,693 hectares of forest cover were lost due to landslides in Aceh, North Sumatra, and West Sumatra in the hydrometeorological disaster at the end of 2025. Loss of forest cover due to river shifts was also relatively prevalent in conservation areas.
+                        <p>filtering: Focusing on deforestation caused by human activity (anthropogenic deforestation),
+                            filtering was conducted to exclude deforestation areas resulting from landslides or river
+                            shifts. For example, 11,693 hectares of forest cover were lost due to landslides in Aceh, North
+                            Sumatra, and West Sumatra in the hydrometeorological disaster at the end of 2025. Loss of forest
+                            cover due to river shifts was also relatively prevalent in conservation areas.
                         </p>
                     </div>
                 </div>
@@ -242,14 +247,20 @@
         <section class="page-section px-[5vw] pt-8 pb-6">
             <div class="body-text">
                 <p>
-                    <strong>Accuracy Testing:</strong>. To determine the level of precision of the 2025 deforestation data, an accuracy assessment was conducted by visually inspecting deforestation polygons using PlanetScope imagery with a spatial resolution of 3.7 meters. The polygons selected for inspection were chosen randomly using a stratified random sampling method. Deforestation polygons were grouped by area, namely: <0.5 ha, 0.5–1 ha, 1–5 ha, 5–10 ha, 10–50 ha, and >50 ha. The number of samples was determined using the Slovin formula with a 5% margin of error.
+                    <strong>Accuracy Testing:</strong>. To determine the level of precision of the 2025 deforestation data,
+                    an accuracy assessment was conducted by visually inspecting deforestation polygons using PlanetScope
+                    imagery with a spatial resolution of 3.7 meters. The polygons selected for inspection were chosen
+                    randomly using a stratified random sampling method. Deforestation polygons were grouped by area, namely:
+                    <0.5 ha, 0.5–1 ha, 1–5 ha, 5–10 ha, 10–50 ha, and>50 ha. The number of samples was determined using the
+                        Slovin formula with a 5% margin of error.
                 </p><br>
                 <p>
-                    Results of this accuracy testing showed the 2025 deforestation data having an accuracy level of 89%, as presented in the table below.
+                    Results of this accuracy testing showed the 2025 deforestation data having an accuracy level of 89%, as
+                    presented in the table below.
                 </p><br>
                 {{-- <p>
-          Hasil pengujian akurasi data deforestasi 2025 ini sebesar 89%, sebagaimana terlihat dalam tabel berikut.
-        </p> --}}
+                    Hasil pengujian akurasi data deforestasi 2025 ini sebesar 89%, sebagaimana terlihat dalam tabel berikut.
+                </p> --}}
             </div>
 
             <div class="viz-block viz-block--full mt-12 mb-2">
@@ -390,7 +401,8 @@
                             Geser tabel ke samping untuk melihat semua kolom.
                         </div>
                         <div class="tight text-[10px] px-2 mb-2 w-full">
-                            Interactive table of the results of the 2025 deforestation data accuracy test, broken down by polygon area.
+                            Interactive table of the results of the 2025 deforestation data accuracy test, broken down by
+                            polygon area.
                         </div>
                     </div>
                 </div>
@@ -407,7 +419,12 @@
             <div class="section-label">III. Deforestasi 2025</div>
 
             <p class="body-text">
-                With the methodology outlined above, <strong>deforestation in Indonesia in 2025 reached 433,751 hectares</strong>, an increase of 66% compared to the <a href="https://simontini.id/id/status-deforestasi-indonesia-2024" class="text-[#bc4a3c] hover:underline" target="_blank" rel="noopener noreferrer">261,575 hectares</a> recorded for the previous year. The largest area of deforestation once again occurred in Kalimantan, followed by Sumatra. Papua, which ranked fourth in 2024, rose to third place in 2025, overtaking Sulawesi.
+                With the methodology outlined above, <strong>deforestation in Indonesia in 2025 reached 433,751
+                    hectares</strong>, an increase of 66% compared to the <a
+                    href="https://simontini.id/id/status-deforestasi-indonesia-2024" class="text-[#bc4a3c] hover:underline"
+                    target="_blank" rel="noopener noreferrer">261,575 hectares</a> recorded for the previous year. The
+                largest area of deforestation once again occurred in Kalimantan, followed by Sumatra. Papua, which ranked
+                fourth in 2024, rose to third place in 2025, overtaking Sulawesi.
             </p>
             <p class="body-text">
                 The following table displays the deforestation data per major island in Indonesia for the years 2023-2025.
@@ -425,8 +442,8 @@
 
                     <!-- Year ghost -->
                     {{-- <div id="peta-year-ghost"
-            class="absolute bottom-[15px] sm:bottom-[90px] right-2 sm:right-10 z-10 pointer-events-none font-poppins font-black text-[#f5f0e8] opacity-10 leading-none tracking-tighter"
-            style="font-size:clamp(4rem,10vw,10rem)">2025</div> --}}
+                        class="absolute bottom-[15px] sm:bottom-[90px] right-2 sm:right-10 z-10 pointer-events-none font-poppins font-black text-[#f5f0e8] opacity-10 leading-none tracking-tighter"
+                        style="font-size:clamp(4rem,10vw,10rem)">2025</div> --}}
 
                     <!-- Charts layer -->
                     <div class="absolute inset-0 z-20 pointer-events-none">
@@ -583,8 +600,7 @@
                 <div id="peta-table-section" class="bg-[#ece8df] text-black  px-4 sm:px-12 relative">
                     <div class="flex items-center gap-1.5  sm:hidden"
                         style="background:#ece8df; border-bottom:1px solid rgba(255,255,255,.05);">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black"
-                            stroke-width="2">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                         <span style="font-size:.6rem; color:black; letter-spacing:.08em;">geser untuk melihat alur
@@ -792,42 +808,61 @@
 
 
             <p class="body-text">
-                Deforestation occurred in all Indonesian provinces except the Jakarta Special Capital Region and the Special Region of Yogyakarta. Where the top ten provinces for deforestation in 2024, in order, were: (1) East Kalimantan, (2) West Kalimantan, (3) Central Kalimantan, (4) Riau, (5) South Sumatra, (6) Jambi, (7) Aceh, (8) North Kalimantan, (9) Bangka Belitung, and (10) North Sumatra, the top ten ranking in 2025 shifted to: (1) Central Kalimantan, (2) East Kalimantan, (3) Aceh, (4) West Kalimantan, (5) Central Papua, (6) West Sumatra, (7) North Sumatra, (8) North Kalimantan, (9) Riau, and (10) Highland Papua.
+                Deforestation occurred in all Indonesian provinces except the Jakarta Special Capital Region and the Special
+                Region of Yogyakarta. Where the top ten provinces for deforestation in 2024, in order, were: (1) East
+                Kalimantan, (2) West Kalimantan, (3) Central Kalimantan, (4) Riau, (5) South Sumatra, (6) Jambi, (7) Aceh,
+                (8) North Kalimantan, (9) Bangka Belitung, and (10) North Sumatra, the top ten ranking in 2025 shifted to:
+                (1) Central Kalimantan, (2) East Kalimantan, (3) Aceh, (4) West Kalimantan, (5) Central Papua, (6) West
+                Sumatra, (7) North Sumatra, (8) North Kalimantan, (9) Riau, and (10) Highland Papua.
             </p>
 
             <p class="body-text">
-                Three provinces that experienced catastrophic landslides and flooding in northern Sumatra at the end of 2025 recorded dramatic increases in deforestation: Aceh (426%), North Sumatra (281%), and West Sumatra (1,034%).<br>
+                Three provinces that experienced catastrophic landslides and flooding in northern Sumatra at the end of 2025
+                recorded dramatic increases in deforestation: Aceh (426%), North Sumatra (281%), and West Sumatra
+                (1,034%).<br>
             </p>
 
             <p class="body-text">
-                Deforestation occurred in 383 regencies/municipalities, or 74% of Indonesia’s total of 514, down from 428 in the previous year. The top ten regencies for deforestation were in Kalimantan and Papua, accounting for 95,733 hectares or 22% of national deforestation.<br>
+                Deforestation occurred in 383 regencies/municipalities, or 74% of Indonesia’s total of 514, down from 428 in
+                the previous year. The top ten regencies for deforestation were in Kalimantan and Papua, accounting for
+                95,733 hectares or 22% of national deforestation.<br>
             </p>
 
             <p class="body-text">
-                Seen in terms of land control status, 307,861 hectares (71%) of deforestation occurred inside forest estates managed by the Ministry of Forestry, while 125,890 hectares occurred in other land use areas (APL) managed by regional governments or land/concession holders.<br>
+                Seen in terms of land control status, 307,861 hectares (71%) of deforestation occurred inside forest estates
+                managed by the Ministry of Forestry, while 125,890 hectares occurred in other land use areas (APL) managed
+                by regional governments or land/concession holders.<br>
             </p>
 
 
             <p class="body-text">
-                Deforestation in conservation areas surged from 7,704 hectares in 2024 to 25,077 hectares in 2025 This deforestation occurred in 163 conservation areas. The top ten conservation areas alone accounted for 17,153 hectares, or 68% of total deforestation within all conservation areas.<br>
+                Deforestation in conservation areas surged from 7,704 hectares in 2024 to 25,077 hectares in 2025 This
+                deforestation occurred in 163 conservation areas. The top ten conservation areas alone accounted for 17,153
+                hectares, or 68% of total deforestation within all conservation areas.<br>
             </p>
 
             <p class="body-text">
-                Deforestation of 156,463 hectares – excluding double counting in overlapping habitats – occurred in 29 million hectares of tiger, rhino, elephant and orangutan habitats.<br>
+                Deforestation of 156,463 hectares – excluding double counting in overlapping habitats – occurred in 29
+                million hectares of tiger, rhino, elephant and orangutan habitats.<br>
             </p>
 
 
 
             <p class="body-text">
-                In late December 2024, two months after the inauguration of President Prabowo Subianto and Vice President Gibran Rakabuming Raka, the Government of Indonesia launched a food security program allocating 20.6 million hectares of the forest estate for food, energy, and water reserves. A total of 78,213 hectares, or 18% of national deforestation occurred within these designated areas.<br>
+                In late December 2024, two months after the inauguration of President Prabowo Subianto and Vice President
+                Gibran Rakabuming Raka, the Government of Indonesia launched a food security program allocating 20.6 million
+                hectares of the forest estate for food, energy, and water reserves. A total of 78,213 hectares, or 18% of
+                national deforestation occurred within these designated areas.<br>
             </p>
 
             <p class="body-text">
-                Around 44% of deforestation occurred inside concession areas, with forestry concessions accounting for the highest percentage (58%). The majority of deforestation in concessions (65%) occurred in Kalimantan.<br>
+                Around 44% of deforestation occurred inside concession areas, with forestry concessions accounting for the
+                highest percentage (58%). The majority of deforestation in concessions (65%) occurred in Kalimantan.<br>
             </p>
 
             <p class="body-text">
-                Deforestation amounting to 41,162 hectares occurred inside 1,140 mining permit or concession areas, with the top ten accounting for 22% (8,929 hectares).<br>
+                Deforestation amounting to 41,162 hectares occurred inside 1,140 mining permit or concession areas, with the
+                top ten accounting for 22% (8,929 hectares).<br>
             </p><br>
 
             {{-- chart bulanan --}}
@@ -863,11 +898,14 @@
             </div>
 
             <p class="body-text">
-                Deforestation amounting to 37,910 hectares occurred inside 719 oil palm concessions throughout 2025, with the top ten concessions accounting for 36% (13,610 hectares).<br>
+                Deforestation amounting to 37,910 hectares occurred inside 719 oil palm concessions throughout 2025, with
+                the top ten concessions accounting for 36% (13,610 hectares).<br>
             </p>
 
             <p class="body-text">
-                Deforestation amounting to 110,898 hectares occurred inside 486 forestry concessions, with 74,409 hectares in logging concessions, 33,063 hectares in pulpwood concessions, 671 hectares in ecosystem restoration concessions, and 2,754 hectares in other forestry concessions.<br>
+                Deforestation amounting to 110,898 hectares occurred inside 486 forestry concessions, with 74,409 hectares
+                in logging concessions, 33,063 hectares in pulpwood concessions, 671 hectares in ecosystem restoration
+                concessions, and 2,754 hectares in other forestry concessions.<br>
             </p>
 
             <p class="body-text">
@@ -916,14 +954,13 @@
                             <button class="cat-btn" data-cat="kebun-kayu"><span class="cat-btn-switch"
                                     aria-hidden="true"><span class="cat-btn-knob"></span></span><span
                                     class="cat-btn-label">Kebun Kayu</span></button>
-                            <button class="cat-btn" data-cat="logging"><span class="cat-btn-switch"
-                                    aria-hidden="true"><span class="cat-btn-knob"></span></span><span
+                            <button class="cat-btn" data-cat="logging"><span class="cat-btn-switch" aria-hidden="true"><span
+                                        class="cat-btn-knob"></span></span><span
                                     class="cat-btn-label">Logging</span></button>
-                            <button class="cat-btn" data-cat="sawit"><span class="cat-btn-switch"
-                                    aria-hidden="true"><span class="cat-btn-knob"></span></span><span
-                                    class="cat-btn-label">Sawit</span></button>
-                            <button class="cat-btn" data-cat="tambang"><span class="cat-btn-switch"
-                                    aria-hidden="true"><span class="cat-btn-knob"></span></span><span
+                            <button class="cat-btn" data-cat="sawit"><span class="cat-btn-switch" aria-hidden="true"><span
+                                        class="cat-btn-knob"></span></span><span class="cat-btn-label">Sawit</span></button>
+                            <button class="cat-btn" data-cat="tambang"><span class="cat-btn-switch" aria-hidden="true"><span
+                                        class="cat-btn-knob"></span></span><span
                                     class="cat-btn-label">Tambang</span></button>
                         </div>
                     </div>
@@ -1005,7 +1042,8 @@
 
 
             <div class="pull-quote">
-                <p>Deforestation in Kalimantan has increased dramatically every year since 2021, driven by the expansion of timber,
+                <p>Deforestation in Kalimantan has increased dramatically every year since 2021, driven by the expansion of
+                    timber,
                     palm oil,
                     and mining concessions operating legally under government-issued permits.</p>
                 <cite>—SIMONTINI 2025 Analysis</cite>
@@ -1014,32 +1052,37 @@
 
         <!-- KONSESI -->
         {{-- <span class="s-anchor" id="konsesi"></span>
-    <section class="page-section px-[5vw] py-10">
-      <div class="section-body">
-        <div class="section-label">04 / Deforestasi dalam Konsesi</div>
+        <section class="page-section px-[5vw] py-10">
+            <div class="section-body">
+                <div class="section-label">04 / Deforestasi dalam Konsesi</div>
 
-        <p class="body-text">
-          Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan hutan alam
-          juga menjadi pemicu deforestasi. Analisis Auriga Nusantara menunjukkan bahwa per 2024 terdapat 9,6 juta hektare
-          tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam konsesi seperti ini mencapai
-          114.823 hektare atau 26% dari deforestasi nasional. Visual berikut menampilkan sepuluh teratas deforestasi dalam
-          konsesi per kategori.
-        </p>
+                <p class="body-text">
+                    Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan
+                    hutan alam
+                    juga menjadi pemicu deforestasi. Analisis Auriga Nusantara menunjukkan bahwa per 2024 terdapat 9,6 juta
+                    hektare
+                    tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam konsesi seperti ini
+                    mencapai
+                    114.823 hektare atau 26% dari deforestasi nasional. Visual berikut menampilkan sepuluh teratas
+                    deforestasi dalam
+                    konsesi per kategori.
+                </p>
 
-        <!-- <div class="viz-block viz-block--full" data-include-html="partials/konsesi-embed.html"></div> -->
+                <!-- <div class="viz-block viz-block--full" data-include-html="partials/konsesi-embed.html"></div> -->
 
 
-        <!-- <hr class="divider"> -->
+                <!-- <hr class="divider"> -->
 
-        <div class="callout">
-          <p>
-            <strong>Catatan:</strong> Hanya 3% deforestasi 2025 yang terjadi di kawasan konservasi, sementara 49% di hutan
-            produksi dan 43% di luar kawasan hutan. Artinya, <strong>97% deforestasi yang terjadi berpotensi
-              legal</strong> karena dilakukan di daerah berizin.
-          </p>
-        </div>
-      </div>
-    </section> --}}
+                <div class="callout">
+                    <p>
+                        <strong>Catatan:</strong> Hanya 3% deforestasi 2025 yang terjadi di kawasan konservasi, sementara
+                        49% di hutan
+                        produksi dan 43% di luar kawasan hutan. Artinya, <strong>97% deforestasi yang terjadi berpotensi
+                            legal</strong> karena dilakukan di daerah berizin.
+                    </p>
+                </div>
+            </div>
+        </section> --}}
 
         <!-- DISKUSI -->
         <span class="s-anchor" id="diskusi"></span>
@@ -1052,30 +1095,54 @@
                     <h3 class="chapter-title"><strong>Government Policies have Contribute to Deforestation</strong></h3>
                 </div>
                 <p class="body-text">
-                    During the Joko Widodo presidency, particularly the second term, environmental protection weakened, especially with the enactment of the Job Creation Law or Omnibus Law. For example, the requirement for every region to maintain at least 30% forest cover was removed from regulatory text. Further, government projects, particularly those labeled National Strategic Projects, were afforded flexibility to encroach on forest estates. Such projects are often not accompanied by adequate planning, including spatial planning.
+                    During the Joko Widodo presidency, particularly the second term, environmental protection weakened,
+                    especially with the enactment of the Job Creation Law or Omnibus Law. For example, the requirement for
+                    every region to maintain at least 30% forest cover was removed from regulatory text. Further, government
+                    projects, particularly those labeled National Strategic Projects, were afforded flexibility to encroach
+                    on forest estates. Such projects are often not accompanied by adequate planning, including spatial
+                    planning.
                 </p>
                 <p class="body-text">
-                    The Prabowo–Gibran presidential era appears to be persisting with this policy. Its doggedness in continuing the food estate program in Merauke is one such example. The government is developing rice fields in Merauke while, at the same time, eradicating rice fields in Sulawesi for smelter construction and nickel mining expansion. Not only that, these nickel mines have triggered the destruction of sago plants in eastern Indonesia, despite sago being a staple food in the region.
+                    The Prabowo–Gibran presidential era appears to be persisting with this policy. Its doggedness in
+                    continuing the food estate program in Merauke is one such example. The government is developing rice
+                    fields in Merauke while, at the same time, eradicating rice fields in Sulawesi for smelter construction
+                    and nickel mining expansion. Not only that, these nickel mines have triggered the destruction of sago
+                    plants in eastern Indonesia, despite sago being a staple food in the region.
                 </p>
                 <p class="body-text">
-                    At the end of December 2024, two months after the inauguration of Prabowo–Gibran, the government launched a program to designate 20 million hectares of forest for food, energy, and water reserves. As things progressed, the total area became 20.6 million hectares. Auriga Nusantara analysis shows 8.8 million hectares of natural forest inside these designated reserves, and 18% of deforestation in 2025 occurring within such areas. This deforestation was driven by populist food programs, such as the Community Ricefield Development or Cetak Sawah Rakyat (CSR) program in Central Kalimantan – the province with the highest deforestation area in 2025, despite ranking third in 2024.
+                    At the end of December 2024, two months after the inauguration of Prabowo–Gibran, the government
+                    launched a program to designate 20 million hectares of forest for food, energy, and water reserves. As
+                    things progressed, the total area became 20.6 million hectares. Auriga Nusantara analysis shows 8.8
+                    million hectares of natural forest inside these designated reserves, and 18% of deforestation in 2025
+                    occurring within such areas. This deforestation was driven by populist food programs, such as the
+                    Community Ricefield Development or Cetak Sawah Rakyat (CSR) program in Central Kalimantan – the province
+                    with the highest deforestation area in 2025, despite ranking third in 2024.
                 </p>
                 <p class="body-text">
-                    The issuing of conversion permits for mining, oil palm plantations, and industrial timber plantations in areas with natural forest is another major driver of deforestation. Auriga Nusantara’s analysis indicates that, as of 2024, there were 9.6 million hectares of natural forest cover within conversion concessions. In 2025, deforestation inside these concessions reached 114,823 hectares, or 26% of national deforestation.
+                    The issuing of conversion permits for mining, oil palm plantations, and industrial timber plantations in
+                    areas with natural forest is another major driver of deforestation. Auriga Nusantara’s analysis
+                    indicates that, as of 2024, there were 9.6 million hectares of natural forest cover within conversion
+                    concessions. In 2025, deforestation inside these concessions reached 114,823 hectares, or 26% of
+                    national deforestation.
                 </p>
                 <p class="body-text">
-                    Additionally, the release of forest estate to become other land use (APL) areas, despite still having natural forest cover, often marks the initial step towards deforestation, as logging inside APL areas is not against the law. Such forest estate releases frequently occur to accommodate specific concessions or at the request of regional governments through spatial planning revisions (RTRW). As of 2024, there were 10.2 million hectares of natural forest inside APL areas, and in 2025, deforestation in such areas reached 125,997 hectares, or 28% of national deforestation.
+                    Additionally, the release of forest estate to become other land use (APL) areas, despite still having
+                    natural forest cover, often marks the initial step towards deforestation, as logging inside APL areas is
+                    not against the law. Such forest estate releases frequently occur to accommodate specific concessions or
+                    at the request of regional governments through spatial planning revisions (RTRW). As of 2024, there were
+                    10.2 million hectares of natural forest inside APL areas, and in 2025, deforestation in such areas
+                    reached 125,997 hectares, or 28% of national deforestation.
                 </p>
 
 
 
 
                 <!-- <ul class="insight-list">
-                                                                                                                                                                          <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                                                                                                                                                          <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                                                                                                                                                          <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                                                                                                                                                          <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                                                                                                                                                        </ul> -->
+                                                                                                                                                                                                  <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                                                                                                                                                  <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                                                                                                                                                  <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                                                                                                                                                  <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                                                                                                                                                </ul> -->
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
@@ -1090,8 +1157,8 @@
                         </a>
 
                         <p class="text-black font-light sm:text-sm text-xs mt-2 text-right px-2">
-                                Limited Production Forest Area, Mentarang Hydroelectric Power Plant, Malinau, 
-                                <br> North Kalimantan, October 2025
+                            Limited Production Forest Area, Mentarang Hydroelectric Power Plant, Malinau,
+                            <br> North Kalimantan, October 2025
                         </p>
 
                     </div>
@@ -1106,13 +1173,28 @@
                     <h3 class="chapter-title">The epicenter of deforestation is shifting to Papua</h3>
                 </div>
                 <p class="body-text">
-                    Kalimantan once again recorded the greatest extent of deforestation, making it the region with Indonesia’s highest deforestation rate for consecutive years <a href="" class="text-[#bc4a3c]" target="_blank">since 2013</a>, or for 13 years in a row. However, the greatest increase in deforestation in 2025 occurred in Papua, with 60,337 hectares positioning the island in third place behind Kalimantan and Sumatra, overtaking Sulawesi which ranked third for deforestation in 2024.
+                    Kalimantan once again recorded the greatest extent of deforestation, making it the region with
+                    Indonesia’s highest deforestation rate for consecutive years <a href="" class="text-[#bc4a3c]"
+                        target="_blank">since 2013</a>, or for 13 years in a row. However, the greatest increase in
+                    deforestation in 2025 occurred in Papua, with 60,337 hectares positioning the island in third place
+                    behind Kalimantan and Sumatra, overtaking Sulawesi which ranked third for deforestation in 2024.
                 </p>
                 <p class="body-text">
-                    Government programs, such as National Strategic Projects and food estates, are key drivers of increasing deforestation in Papua. Infrastructure development, which frequently follows fragmentation to form new administrative regions, has also contributed to forest loss on the island. Similarly, the expansion of monoculture commodities, particularly oil palm, has further accelerated deforestation.
+                    Government programs, such as National Strategic Projects and food estates, are key drivers of increasing
+                    deforestation in Papua. Infrastructure development, which frequently follows fragmentation to form new
+                    administrative regions, has also contributed to forest loss on the island. Similarly, the expansion of
+                    monoculture commodities, particularly oil palm, has further accelerated deforestation.
                 </p>
                 <p class="body-text">
-                    This combination of factors must be afforded serious attention in efforts to curb deforestation in Papua moving forward. Simulations conducted by Auriga Nusantara in Aceh and Riau show that deforestation surges once palm oil mills begin operating, and the closer an area is to a mill, the higher its deforestation rate will be. A similar phenomenon has occurred in Sulawesi and North Maluku since nickel smelters began operating in 2016. Accordingly, infrastructure development and fragmentation of administrative regions in Papua will make the establishment of new mills or processing industries a likelihood. Moreover, most oil palm plantations in Papua are still young and are expected to reach peak production within the next 5–10 years, increasing the need for processing mills. If such mills do appear, and infrastructure continues to improve, how can deforestation rates on the island be held back?
+                    This combination of factors must be afforded serious attention in efforts to curb deforestation in Papua
+                    moving forward. Simulations conducted by Auriga Nusantara in Aceh and Riau show that deforestation
+                    surges once palm oil mills begin operating, and the closer an area is to a mill, the higher its
+                    deforestation rate will be. A similar phenomenon has occurred in Sulawesi and North Maluku since nickel
+                    smelters began operating in 2016. Accordingly, infrastructure development and fragmentation of
+                    administrative regions in Papua will make the establishment of new mills or processing industries a
+                    likelihood. Moreover, most oil palm plantations in Papua are still young and are expected to reach peak
+                    production within the next 5–10 years, increasing the need for processing mills. If such mills do
+                    appear, and infrastructure continues to improve, how can deforestation rates on the island be held back?
                 </p>
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
@@ -1131,7 +1213,7 @@
                                 </a>
 
                                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                                     Mining Concession, PT Anugerah Surya Utama, <br> Raja Ampat, Papua, September 2025
+                                    Mining Concession, PT Anugerah Surya Utama, <br> Raja Ampat, Papua, September 2025
                                 </p>
                             </div>
 
@@ -1146,7 +1228,7 @@
                                 </a>
 
                                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                                    Limited Production Forest Area, PBPH Concession, PT Jati Dharma Indah Plywood, 
+                                    Limited Production Forest Area, PBPH Concession, PT Jati Dharma Indah Plywood,
                                     <br> Industries, Nabire, Central Papua, December 2025
                                 </p>
                             </div>
@@ -1161,76 +1243,93 @@
             <div>
                 <div class="chapter-header">
                     <span class="ms-num">3.</span>
-                    <h3 class="chapter-title">Expansion of industrial commodities is a key driver of deforestation in Indonesia</h3>
+                    <h3 class="chapter-title">Expansion of industrial commodities is a key driver of deforestation in
+                        Indonesia</h3>
                 </div>
                 <p class="body-text">
-                    Expansion of industrial commodities remains a major threat to Indonesia’s remaining natural forests. The development of new oil palm plantations is a primary driver of deforestation in Sumatra, as has happened in Sijunjung Protection Forest in West Sumatra. Deforestation for oil palm development has even encroached into conservation areas like Rawa Singkil Wildlife Sanctuary in Aceh.
+                    Expansion of industrial commodities remains a major threat to Indonesia’s remaining natural forests. The
+                    development of new oil palm plantations is a primary driver of deforestation in Sumatra, as has happened
+                    in Sijunjung Protection Forest in West Sumatra. Deforestation for oil palm development has even
+                    encroached into conservation areas like Rawa Singkil Wildlife Sanctuary in Aceh.
                 </p>
                 <p class="body-text">
-                    Deforestation from oil palm expansion has tended to slow, partly due to market saturation. However, government biodiesel subsidy policies, unaccompanied by safeguard mechanisms for forests, continue to drive deforestation. After previously mandating a biodiesel blend containing 30% palm oil (B30), which then increased to B35, since early 2025, the government has been applying its <a href="https://www.esdm.go.id/id/media-center/arsip-berita/wujudkan-ketahanan-energi-dan-kurangi-impor-menteri-esdm-mandatori-b40-berlaku-1-januari-2025" class="text-[#bc4a3c]" target="_blank">B40 policy</a>.
+                    Deforestation from oil palm expansion has tended to slow, partly due to market saturation. However,
+                    government biodiesel subsidy policies, unaccompanied by safeguard mechanisms for forests, continue to
+                    drive deforestation. After previously mandating a biodiesel blend containing 30% palm oil (B30), which
+                    then increased to B35, since early 2025, the government has been applying its <a
+                        href="https://www.esdm.go.id/id/media-center/arsip-berita/wujudkan-ketahanan-energi-dan-kurangi-impor-menteri-esdm-mandatori-b40-berlaku-1-januari-2025"
+                        class="text-[#bc4a3c]" target="_blank">B40 policy</a>.
 
                 </p>
                 <p class="body-text">
-                    In Kalimantan, the main driver of deforestation is the expansion of pulpwood plantations for the pulp and paper industry. The issuing of a license to build the giant PT Phoenix Resources International pulp mill in Tarakan, North Kalimantan, is the main cause, as the mill lacks its own managed supplier concessions. Much of the deforestation occurring in Central and East Kalimantan leads to this mill.
+                    In Kalimantan, the main driver of deforestation is the expansion of pulpwood plantations for the pulp
+                    and paper industry. The issuing of a license to build the giant PT Phoenix Resources International pulp
+                    mill in Tarakan, North Kalimantan, is the main cause, as the mill lacks its own managed supplier
+                    concessions. Much of the deforestation occurring in Central and East Kalimantan leads to this mill.
                 </p>
                 <p class="body-text">
-                    The global boom in electric vehicles is a driver of nickel mining and processing industry expansion. Permits for these industries being issued without clarity over raw material sources, particularly to avoid deforestation, resulted in a surge in deforestation in Sulawesi and North Maluku.
+                    The global boom in electric vehicles is a driver of nickel mining and processing industry expansion.
+                    Permits for these industries being issued without clarity over raw material sources, particularly to
+                    avoid deforestation, resulted in a surge in deforestation in Sulawesi and North Maluku.
                 <p class="body-text">
-                    Nickel mining is nothing new in Sulawesi, and dates back to the 1930s, with nickel smelters being in operation since 1973. Prior to 2014, only three smelters were operating in Sulawesi, before the number grew rapidly during the Joko Widodo presidency. From 2014 to 2024, at least 16 new nickel smelters began operating on the island, which has one of the world’s highest levels of endemism.
+                    Nickel mining is nothing new in Sulawesi, and dates back to the 1930s, with nickel smelters being in
+                    operation since 1973. Prior to 2014, only three smelters were operating in Sulawesi, before the number
+                    grew rapidly during the Joko Widodo presidency. From 2014 to 2024, at least 16 new nickel smelters began
+                    operating on the island, which has one of the world’s highest levels of endemism.
                 </p>
                 <p class="body-text">
-                    Rising gold prices have also contributed to deforestation. Notably, two gold mining concessions – PT Agincourt Resources and PT Blok Waringin Agung – rank among the top ten deforesters among mining concessions.
+                    Rising gold prices have also contributed to deforestation. Notably, two gold mining concessions – PT
+                    Agincourt Resources and PT Blok Waringin Agung – rank among the top ten deforesters among mining
+                    concessions.
                 </p>
 
                 <!-- <div class="callout">
-                                                                                                                                                                          <strong>Faktor pendorong utama:</strong>
-                                                                                                                                                                          <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                                                                                                                                                            <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                                                                                                                                                            <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                                                                                                                                                            <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                                                                                                                                                          </ul>
-                                                                                                                                                                        </div> -->
+                                                                                                                                                                                                  <strong>Faktor pendorong utama:</strong>
+                                                                                                                                                                                                  <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                                                                                                                                                    <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                                                                                                                                                    <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                                                                                                                                                    <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                                                                                                                                                  </ul>
+                                                                                                                                                                                                </div> -->
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
                         <div x-data="{
-                            active: 0,
-                            images: [
-                                { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
-                                { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                                { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
-                            ]
-                        }">
+                                                    active: 0,
+                                                    images: [
+                                                        { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
+                                                        { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                                                        { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
+                                                    ]
+                                                }">
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" alt="Simontini"
                                     @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
                                     class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
                                 <button x-show="active > 0" @click="active--"
                                     class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M15.75 19.5L8.25 12l7.5-7.5" />
                                     </svg>
                                 </button>
                                 <button x-show="active < images.length - 1" @click="active++"
                                     class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                     </svg>
                                 </button>
                             </div>
                             <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2" :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
+                                                                .offsetWidth + 'px' : ''">
                                     <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20" :class="active === index ? 'opacity-100 ring-2 ring-black' :
+                                                                        'opacity-50 hover:opacity-80'">
                                             <img :src="img.src" alt="thumbnail"
                                                 class="w-full h-full object-cover object-top transition duration-200" />
                                         </div>
@@ -1252,13 +1351,23 @@
                     <h3 class="chapter-title">Legal deforestation as a root cause</h3>
                 </div>
                 <p class="body-text">
-                    One effect of Indonesia’s convoluted regulatory framework is difficulty in recognizing whether deforestation is legal or illegal. While many regulations aim to protect forests, numerous loopholes render them unprotected.
+                    One effect of Indonesia’s convoluted regulatory framework is difficulty in recognizing whether
+                    deforestation is legal or illegal. While many regulations aim to protect forests, numerous loopholes
+                    render them unprotected.
                 </p>
                 <p class="body-text">
-                    In a presentation to Commission IV of the Republic of Indonesia House of Representatives (DPR RI) on July 15, 2025, Auriga Nusantara revealed that, as of 2024, 41.6 million hectares, or 44% of Indonesia’s natural forest cover, had no legal protection. Under the current situation, causing forest loss is still possible through legally permissible mechanisms, such as conversion permit issuance or spatial plan revisions.
+                    In a presentation to Commission IV of the Republic of Indonesia House of Representatives (DPR RI) on
+                    July 15, 2025, Auriga Nusantara revealed that, as of 2024, 41.6 million hectares, or 44% of Indonesia’s
+                    natural forest cover, had no legal protection. Under the current situation, causing forest loss is still
+                    possible through legally permissible mechanisms, such as conversion permit issuance or spatial plan
+                    revisions.
                 </p>
                 <p class="body-text">
-                    Of all deforestation in 2025, the only deforestation that could be directly classified as illegal was deforestation in conservation areas (20,077 hectares), in protection forests (80,023 hectares), logging concessions (74,409 hectares), and ecosystem restoration concessions (617 hectares), totaling 180,370 hectares or 42% of national deforestation. In other words, 58% of deforestation in 2025 constituted legal deforestation.
+                    Of all deforestation in 2025, the only deforestation that could be directly classified as illegal was
+                    deforestation in conservation areas (20,077 hectares), in protection forests (80,023 hectares), logging
+                    concessions (74,409 hectares), and ecosystem restoration concessions (617 hectares), totaling 180,370
+                    hectares or 42% of national deforestation. In other words, 58% of deforestation in 2025 constituted
+                    legal deforestation.
                 </p>
 
 
@@ -1280,7 +1389,7 @@
                                 </a>
 
                                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                                    Production Forest Area, PBPH Concession, PT Hutan Berau Lestari, 
+                                    Production Forest Area, PBPH Concession, PT Hutan Berau Lestari,
                                     <br> Berau, East Kalimantan, May 2025
                                 </p>
                             </div>
@@ -1296,8 +1405,8 @@
                                 </a>
 
                                 <p class="text-black font-light sm:text-sm text-xs mt-2 text-right">
-                                   Production Forest Area, PBPH Concession, PT Indosubur Sukses Makmur, 
-                                   <br> East Kutai, East Kalimantan, January 2025
+                                    Production Forest Area, PBPH Concession, PT Indosubur Sukses Makmur,
+                                    <br> East Kutai, East Kalimantan, January 2025
                                 </p>
                             </div>
 
@@ -1317,13 +1426,22 @@
                     <h3 class="chapter-title">Significant deforestation in conservation areas</h3>
                 </div>
                 <p class="body-text">
-                    Currently, government conservation efforts tend to focus only on designated conservation areas within the forest estate. These include natural sanctuaries such as nature reserves and wildlife sanctuaries; and conservation estates such as national parks and grand forest parks. Indonesia currently has 22.1 million hectares of conservation areas.
+                    Currently, government conservation efforts tend to focus only on designated conservation areas within
+                    the forest estate. These include natural sanctuaries such as nature reserves and wildlife sanctuaries;
+                    and conservation estates such as national parks and grand forest parks. Indonesia currently has 22.1
+                    million hectares of conservation areas.
                 </p>
                 <p class="body-text">
-                    However, a large number of ecologically important areas lie outside conservation areas. These include 22.8 million hectares of habitat for iconic species – tigers, rhinos, elephants, and orangutans; and 21.6 million hectares of key biodiversity areas (KBAs) identified by the International Union for Conservation of Nature (IUCN). These areas combined, without double counting, cover 63.5 million hectares.
+                    However, a large number of ecologically important areas lie outside conservation areas. These include
+                    22.8 million hectares of habitat for iconic species – tigers, rhinos, elephants, and orangutans; and
+                    21.6 million hectares of key biodiversity areas (KBAs) identified by the International Union for
+                    Conservation of Nature (IUCN). These areas combined, without double counting, cover 63.5 million
+                    hectares.
                 </p>
                 <p class="body-text">
-                    Deforestation within conservation areas surged from 7,704 hectares in 2024 to 25,077 hectares in 2025, an increase of 225%. Meanwhile, deforestation across all conservation areas reached 186,465 hectares, accounting for 43% of national deforestation.
+                    Deforestation within conservation areas surged from 7,704 hectares in 2024 to 25,077 hectares in 2025,
+                    an increase of 225%. Meanwhile, deforestation across all conservation areas reached 186,465 hectares,
+                    accounting for 43% of national deforestation.
                 </p>
             </div>
 
@@ -1340,8 +1458,8 @@
                         </a>
 
                         <p class="text-black font-light sm:text-sm text-xs mt-2 text-right px-2">
-                           Deforestation, Conservation Areas, Rawa Singkil Wildlife Sanctuary, 
-                           <br> South Aceh, Aceh, August 2025, @ Haka
+                            Deforestation, Conservation Areas, Rawa Singkil Wildlife Sanctuary,
+                            <br> South Aceh, Aceh, August 2025, @ Haka
                         </p>
 
                     </div>
@@ -1367,39 +1485,46 @@
                         <div class="method-step">
                             <div class="ms-num">1.</div>
                             <div>
-                                <h4 class="chapter-title">Issue legislation to ensure the protection of all remaining natural forests in Indonesia: </h4><br>
+                                <h4 class="chapter-title">Issue legislation to ensure the protection of all remaining
+                                    natural forests in Indonesia: </h4><br>
                                 <p class="body-text">
-                                    Legal protection over natural forests should ideally be in the form of a law. However, enacting laws is not easy and often takes years. Even lower tier legislation like government regulations can take considerable time to develop, largely due to the intricacies and complexities involved in the cross-ministerial approvals required in their formulation. Consequently, a presidential regulation would constitute a tactical breakthrough that could act as an emergency brake to address this issue. Thus, it is time for President Prabowo Subianto to issue a presidential regulation on the protection of all remaining natural forests in Indonesia.
+                                    Legal protection over natural forests should ideally be in the form of a law. However,
+                                    enacting laws is not easy and often takes years. Even lower tier legislation like
+                                    government regulations can take considerable time to develop, largely due to the
+                                    intricacies and complexities involved in the cross-ministerial approvals required in
+                                    their formulation. Consequently, a presidential regulation would constitute a tactical
+                                    breakthrough that could act as an emergency brake to address this issue. Thus, it is
+                                    time for President Prabowo Subianto to issue a presidential regulation on the protection
+                                    of all remaining natural forests in Indonesia.
                                 </p>
                             </div>
                         </div>
 
                         <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
-                            <div class="viz-frame !p-0 flex items-start">
+                            <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
 
                                 <div x-data="{
-                                    currentSlide: 3,
-                                    totalSlides: 4,
-                                    startX: 4,
-                                    startSwipe(e) { this.startX = e.touches[0].clientX; },
-                                    handleTouchMove(e) {
-                                        let diff = this.startX - e.touches[0].clientX;
-                                        if (Math.abs(diff) > 50) {
-                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                            this.startX = e.touches[0].clientX;
-                                        }
-                                    }
-                                }" @touchstart="startSwipe($event)"
-                                    @touchmove="handleTouchMove($event)"
+                                                  currentSlide: 4,
+                                                  totalSlides: 5,
+                                                  startX: 0,
+                                                  startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                  handleTouchMove(e) {
+                                                  let diff = this.startX - e.touches[0].clientX;
+                                                  if (Math.abs(diff) > 50) {
+                                                  if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                  else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                  this.startX = e.touches[0].clientX;
+                                                  }
+                                                   }
+                                                  }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
                                     class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                                     <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                                        @foreach ([1, 2, 3, 4, 5] as $i)
+                                        @foreach([1, 2, 3, 4, 5] as $i)
                                             <div class="w-full flex-shrink-0">
-                                                <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}"
+                                                <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}"
                                                     class="glightbox6 gbox" data-glightbox="description:">
-                                                    <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}"
+                                                    <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}"
                                                         alt="RUDP {{ $i }}"
                                                         class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
                                                 </a>
@@ -1434,41 +1559,155 @@
 
 
                     <div class="method-steps border-b">
-                        <div class="method-step ">
-                            <div class="ms-num">2.</div>
-                            <div class="-mb-12">
-                                <h4 class="chapter-title">Establish and apply instruments to control spatial plan revisions:</h4><br>
-                                <p class="body-text ">
-                                    In mid-2023, the public was surprised by a proposed revision to the spatial plan for East Kalimantan Province, which would enable the release of 612,355 hectares of forest estate to become other land use (APL) areas, and downgrade the status of 101,788 hectares of forest estate to make it eligible for mining, despite at least 389,596 hectares <a href="https://www.youtube.com/watch?v=Mx4638DmEjI" class="text-[#bc4a3c]" target="_blank">(55%) of this area having natural forest cover</a>. Meanwhile, several months earlier, the North Kalimantan Provincial Government had proposed a spatial plan revision that would reclassify <a href="https://korankaltara.com/762-ribu-hektare-hutan-diusulkan-beralih-fungsi" class="text-[#bc4a3c]" target="_blank">762,000 hectares</a> of forest estate. In Aceh, regional government maneuvering is expected to threaten the protected status of the Leuser Ecosystem Area, a designated biosphere reserve and buffer zone for Mount Leuser National Park. These examples highlight the urgent need for instruments to control regional spatial planning revisions, guaranteeing such processes are transparent and ensuring impacted parties are involved so that any revisions are only in the public interest.
-                                </p>
+                        <div class="border-b pt-0 pb-12">
+                            <div class="method-step ">
+                                <div class="ms-num">2.</div>
+                                <div class="-mb-12">
+                                    <h4 class="chapter-title">Establish and apply instruments to control spatial plan
+                                        revisions:
+                                    </h4><br>
+                                    <p class="body-text ">
+                                        In mid-2023, the public was surprised by a proposed revision to the spatial plan for
+                                        East Kalimantan Province, which would enable the release of 612,355 hectares of
+                                        forest
+                                        estate to become other land use (APL) areas, and downgrade the status of 101,788
+                                        hectares of forest estate to make it eligible for mining, despite at least 389,596
+                                        hectares <a href="https://www.youtube.com/watch?v=Mx4638DmEjI"
+                                            class="text-[#bc4a3c]" target="_blank">(55%) of this area having natural forest
+                                            cover</a>. Meanwhile,
+                                        several months earlier, the North Kalimantan Provincial Government had proposed a
+                                        spatial plan revision that would reclassify <a
+                                            href="https://korankaltara.com/762-ribu-hektare-hutan-diusulkan-beralih-fungsi"
+                                            class="text-[#bc4a3c]" target="_blank">762,000 hectares</a> of forest estate. In
+                                        Aceh, regional government maneuvering is expected to threaten the protected status
+                                        of
+                                        the Leuser Ecosystem Area, a designated biosphere reserve and buffer zone for Mount
+                                        Leuser National Park. These examples highlight the urgent need for instruments to
+                                        control regional spatial planning revisions, guaranteeing such processes are
+                                        transparent
+                                        and ensuring impacted parties are involved so that any revisions are only in the
+                                        public
+                                        interest.
+                                    </p>
 
+                                </div>
+                            </div>
+                            <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
+                                <div class="viz-frame !p-0 flex items-start mt-2">
+
+                                    <div x-data="{
+                                        currentSlide: 0,
+                                        totalSlides: 1,
+                                        startX: 0,
+                                        startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                        handleTouchMove(e) {
+                                        let diff = this.startX - e.touches[0].clientX;
+                                        if (Math.abs(diff) > 50) {
+                                        if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                        else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                        this.startX = e.touches[0].clientX;
+                                        }
+                                         }
+                                        }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                                        class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+
+                                        <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                                            @foreach([8] as $i)
+                                                <div class="w-full flex-shrink-0">
+                                                    <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}"
+                                                        class="glightbox7 gbox" data-glightbox="description:">
+                                                        <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}"
+                                                            alt="RUDP {{ $i }}"
+                                                            class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
+                                                    </a>
+                                                </div>
+                                            @endforeach
+                                        </div>
+
+                                        <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                                            class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                                            <span style="font-size: 14px; color: #222;">◀</span>
+                                        </button>
+
+                                        <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                                            x-show="currentSlide < totalSlides - 1"
+                                            class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                                            <span style="font-size: 14px; color: #222;">▶</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="method-step border-b">
+                        <div class="ms-num">3.</div>
+                        <div class="">
+                            <h4 class="chapter-title">Accelerate the expansion of preservation areas, especially outside the
+                                forest estate:
+                            </h4><br>
+                            <p class="body-text">
+                                As noted above, existing conservation estates are far from sufficient to cover all
+                                conservation areas. At least 31,358 hectares of iconic species’ habitats and key
+                                biodiversity areas are located inside APL areas. The Ministry of Forestry’s weak
+                                conservation performance inside the forest estate necessitates new models for managing
+                                conservation areas. Conservation Law No. 32/2024 has opened space for this through its
+                                concept of preservation areas. However, the absence of any implementing regulation has meant
+                                such areas have yet to be realized. Therefore, the establishment of an implementing
+                                regulation should be expedited. Nevertheless, it should be underlined that such preservation
+                                areas should adopt new management models; for example, being managed by and for regional
+                                governments or local communities, with them being the recipients of any economic benefits,
+                                and coordination or supervision by the Ministry of Forestry.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b py-12">
+                        <div class="method-step">
+                            <div class="ms-num">4.</div>
+                            <div class="">
+                                <h4 class="chapter-title">Redistribute forest management institutions and personnel so that
+                                    all natural forests have rangers to protect them:</h4><br>
+                                <p class="body-text">
+                                    President Prabowo Subianto has reportedly instructed a doubling of the number of forest
+                                    rangers – a step deserving of appreciation. However, as Auriga Nusantara has previously
+                                    <a href="https://www.youtube.com/watch?v=fXpCyo4TrlU&t=7193s" class="text-[#bc4a3c]"
+                                        target="_blank">outlined</a> to Commission IV of the Indonesian House of
+                                    Representatives (DPR RI), forest protection personnel have tended to be concentrated on
+                                    the island of Java. The same applies to budgeting, with allocations per hectare of
+                                    forest estate being significantly higher in Java than elsewhere. Therefore, in addition
+                                    to increasing personnel numbers – or redistributing authority and management functions
+                                    to regional governments – there is also a need to redistribute personnel so that all
+                                    remaining natural forest areas have rangers and associated budgets.
+                                </p>
+                            </div>
+                        </div>
+
                         <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
                             <div class="viz-frame !p-0 flex items-start">
 
                                 <div x-data="{
-                                    currentSlide: 0,
-                                    totalSlides: 1,
-                                    startX: 0,
-                                    startSwipe(e) { this.startX = e.touches[0].clientX; },
-                                    handleTouchMove(e) {
-                                        let diff = this.startX - e.touches[0].clientX;
-                                        if (Math.abs(diff) > 50) {
-                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                            this.startX = e.touches[0].clientX;
-                                        }
-                                    }
-                                }" @touchstart="startSwipe($event)"
+                                                                      currentSlide: 0,
+                                                                      totalSlides: 2,
+                                                                      startX: 0,
+                                                                      startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                                      handleTouchMove(e) {
+                                                                          let diff = this.startX - e.touches[0].clientX;
+                                                                          if (Math.abs(diff) > 50) {
+                                                                              if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                                              else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                                              this.startX = e.touches[0].clientX;
+                                                                          }
+                                                                      }
+                                                                  }" @touchstart="startSwipe($event)"
                                     @touchmove="handleTouchMove($event)"
                                     class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                                     <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                                        @foreach ([8] as $i)
+                                        @foreach([6, 7] as $i)
                                             <div class="w-full flex-shrink-0">
                                                 <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}"
-                                                    class="glightbox7 gbox" data-glightbox="description:">
+                                                    class="glightbox8 gbox" data-glightbox="description:">
                                                     <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}"
                                                         alt="RUDP {{ $i }}"
                                                         class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
@@ -1491,77 +1730,6 @@
                                     </button>
 
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="method-step border-b">
-                        <div class="ms-num">3.</div>
-                        <div class="">
-                            <h4 class="chapter-title">Accelerate the expansion of preservation areas, especially outside the forest estate:
-                            </h4><br>
-                            <p class="body-text">
-                               As noted above, existing conservation estates are far from sufficient to cover all conservation areas. At least 31,358 hectares of iconic species’ habitats and key biodiversity areas are located inside APL areas. The Ministry of Forestry’s weak conservation performance inside the forest estate necessitates new models for managing conservation areas. Conservation Law No. 32/2024 has opened space for this through its concept of preservation areas. However, the absence of any implementing regulation has meant such areas have yet to be realized. Therefore, the establishment of an implementing regulation should be expedited. Nevertheless, it should be underlined that such preservation areas should adopt new management models; for example, being managed by and for regional governments or local communities, with them being the recipients of any economic benefits, and coordination or supervision by the Ministry of Forestry.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="border-b py-12">
-                        <div class="method-step">
-                            <div class="ms-num">4.</div>
-                            <div class="">
-                                <h4 class="chapter-title">Redistribute forest management institutions and personnel so that all natural forests have rangers to protect them:</h4><br>
-                                <p class="body-text">
-                                    President Prabowo Subianto has reportedly instructed a doubling of the number of forest rangers – a step deserving of appreciation. However, as Auriga Nusantara has previously <a href="https://www.youtube.com/watch?v=fXpCyo4TrlU&t=7193s" class="text-[#bc4a3c]" target="_blank">outlined</a> to Commission IV of the Indonesian House of Representatives (DPR RI), forest protection personnel have tended to be concentrated on the island of Java. The same applies to budgeting, with allocations per hectare of forest estate being significantly higher in Java than elsewhere. Therefore, in addition to increasing personnel numbers – or redistributing authority and management functions to regional governments – there is also a need to redistribute personnel so that all remaining natural forest areas have rangers and associated budgets.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
-                            <div class="viz-frame !p-0 flex items-start">
-
-                                <div x-data="{
-                                    currentSlide: 0,
-                                    totalSlides: 2,
-                                    startX: 0,
-                                    startSwipe(e) { this.startX = e.touches[0].clientX; },
-                                    handleTouchMove(e) {
-                                        let diff = this.startX - e.touches[0].clientX;
-                                        if (Math.abs(diff) > 50) {
-                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                            this.startX = e.touches[0].clientX;
-                                        }
-                                    }
-                                }" @touchstart="startSwipe($event)"
-                                    @touchmove="handleTouchMove($event)"
-                                    class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
-
-                                    <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                                        @foreach ([6, 7] as $i)
-                                            <div class="w-full flex-shrink-0">
-                                                <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}"
-                                                    class="glightbox8 gbox" data-glightbox="description:">
-                                                    <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}"
-                                                        alt="RUDP {{ $i }}"
-                                                        class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
-                                                </a>
-                                            </div>
-                                        @endforeach
-                                    </div>
-
-                                    <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
-                                        class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
-                                        style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
-                                        <span style="font-size: 14px; color: #222;">◀</span>
-                                    </button>
-
-                                    <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
-                                        x-show="currentSlide < totalSlides - 1"
-                                        class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
-                                        style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
-                                        <span style="font-size: 14px; color: #222;">▶</span>
-                                    </button>
-
                                     <div class="flex justify-center gap-2 mt-3">
                                         <template x-for="i in totalSlides" :key="i">
                                             <button @click="currentSlide = i - 1"
@@ -1569,6 +1737,8 @@
                                                 class="w-2 h-2 rounded-full"></button>
                                         </template>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -1576,18 +1746,32 @@
                     <div class="method-step border-b">
                         <div class="ms-num">5.</div>
                         <div class="">
-                            <h4 class="chapter-title">Companies that manage areas with natural forest cover should make environmental, social, and good governance (ESG) commitments:</h4><br>
+                            <h4 class="chapter-title">Companies that manage areas with natural forest cover should make
+                                environmental, social, and good governance (ESG) commitments:</h4><br>
                             <p class="body-text">
-                               Nearly half of deforestation in 2025 occurred inside concession areas. Meanwhile there are more than nine million hectares of natural forest cover remaining within conversion concessions (mining, oil palm, industrial timber). Corporations managing these areas should declare environmental, social, and good governance (ESG) commitments, including not perpetrating nor being involved in deforestation.
+                                Nearly half of deforestation in 2025 occurred inside concession areas. Meanwhile there are
+                                more than nine million hectares of natural forest cover remaining within conversion
+                                concessions (mining, oil palm, industrial timber). Corporations managing these areas should
+                                declare environmental, social, and good governance (ESG) commitments, including not
+                                perpetrating nor being involved in deforestation.
                             </p>
                         </div>
                     </div>
                     <div class="method-step border-b">
                         <div class="ms-num">6.</div>
                         <div class="">
-                            <h4 class="chapter-title">Provide incentives for regional governments, local communities and corporations that protect natural forest:</h4><br>
+                            <h4 class="chapter-title">Provide incentives for regional governments, local communities and
+                                corporations that protect natural forest:</h4><br>
                             <p class="body-text">Perlindungan hutan semestinya dipandang sebagai investasi, selain karena
-                                Forest protection should be viewed as an investment, not only because forests provide environmental services for the public, but also because economic activities will be disrupted if the environment is degraded or does not function in the way it should. Therefore, the state should provide incentives to those who protect forests, including local communities, regional governments (provincial, regency, and village), and corporations. In addition to incentives, economic benefits, such as carbon services, should also be accessible to those protecting forests. Such incentives and benefits could serve as both a stimulus for forest protection and a provider of financing for long-term protection efforts by such parties.
+                                Forest protection should be viewed as an investment, not only because forests provide
+                                environmental services for the public, but also because economic activities will be
+                                disrupted if the environment is degraded or does not function in the way it should.
+                                Therefore, the state should provide incentives to those who protect forests, including local
+                                communities, regional governments (provincial, regency, and village), and corporations. In
+                                addition to incentives, economic benefits, such as carbon services, should also be
+                                accessible to those protecting forests. Such incentives and benefits could serve as both a
+                                stimulus for forest protection and a provider of financing for long-term protection efforts
+                                by such parties.
                             </p>
                         </div>
                     </div>
@@ -1647,12 +1831,12 @@
                 </div>
             </div>
         </section>
-    @endsection
+@endsection
 
 
     @push('scripts')
         <script>
-            (function() {
+            (function () {
                 function createLightbox(selectorID) {
                     const lightbox = GLightbox({
                         selector: selectorID,
@@ -1674,21 +1858,21 @@
                     try {
                         var nav = document.getElementById('sitenav');
                         if (nav) nav.classList.add('show');
-                    } catch (e) {}
+                    } catch (e) { }
 
                     // Re-enable page scrolling (removed during preloading)
                     try {
                         document.body.classList.remove('is-preloading');
-                    } catch (e) {}
+                    } catch (e) { }
                     try {
                         document.documentElement.style.overflow = '';
                         document.body.style.overflow = '';
-                    } catch (e) {}
+                    } catch (e) { }
 
                     // Prevent the loader from blocking pointer events while it fades
                     try {
                         loader.style.pointerEvents = 'none';
-                    } catch (e) {}
+                    } catch (e) { }
 
                     loader.setAttribute('aria-hidden', 'true');
                     loader.removeAttribute('aria-live');
@@ -1738,10 +1922,10 @@
 
                 // Nav active links on scroll (sticky nav always visible)
                 var navLinks = document.querySelectorAll('.nav-links a');
-                var sectionIds = Array.from(navLinks).map(function(link) {
+                var sectionIds = Array.from(navLinks).map(function (link) {
                     return link.getAttribute('href').replace('#', '');
                 });
-                var sections = sectionIds.map(function(id) {
+                var sections = sectionIds.map(function (id) {
                     return document.getElementById(id) || document.querySelector('[id="' + id + '"]');
                 });
 
@@ -1755,7 +1939,7 @@
                         if (section) {
                             var rect = section.getBoundingClientRect();
                             if (rect.top <= offset) {
-                                navLinks.forEach(function(link) {
+                                navLinks.forEach(function (link) {
                                     link.classList.remove('active');
                                 });
                                 navLinks[i].classList.add('active');
@@ -1765,7 +1949,7 @@
                         }
                     }
                     if (!found) {
-                        navLinks.forEach(function(link) {
+                        navLinks.forEach(function (link) {
                             link.classList.remove('active');
                         });
                     }
@@ -1775,131 +1959,131 @@
                         hero.style.backgroundPosition = 'center calc(80% + ' + y + 'px)';
                     }
                 }
-                window.addEventListener('scroll', function() {
+                window.addEventListener('scroll', function () {
                     window.requestAnimationFrame(onScroll);
                 });
                 // Initial highlight + parallax position
-                window.addEventListener('DOMContentLoaded', function() {
+                window.addEventListener('DOMContentLoaded', function () {
                     onScroll();
                 });
 
                 // --- Chart code injected from chart-deforestasi.html ---
                 function buildDeforestationChart() {
                     var DATA = [{
-                            year: 2001,
-                            val: 133913
-                        },
-                        {
-                            year: 2002,
-                            val: 281030
-                        },
-                        {
-                            year: 2003,
-                            val: 253907
-                        },
-                        {
-                            year: 2004,
-                            val: 486010
-                        },
-                        {
-                            year: 2005,
-                            val: 483324
-                        },
-                        {
-                            year: 2006,
-                            val: 474863
-                        },
-                        {
-                            year: 2007,
-                            val: 533334
-                        },
-                        {
-                            year: 2008,
-                            val: 472889
-                        },
-                        {
-                            year: 2009,
-                            val: 691985
-                        },
-                        {
-                            year: 2010,
-                            val: 546069
-                        },
-                        {
-                            year: 2011,
-                            val: 621836
-                        },
-                        {
-                            year: 2012,
-                            val: 876456
-                        },
-                        {
-                            year: 2013,
-                            val: 523588
-                        },
-                        {
-                            year: 2014,
-                            val: 829144
-                        },
-                        {
-                            year: 2015,
-                            val: 768991
-                        },
-                        {
-                            year: 2016,
-                            val: 1055796
-                        },
-                        {
-                            year: 2017,
-                            val: 424048
-                        },
-                        {
-                            year: 2018,
-                            val: 389052
-                        },
-                        {
-                            year: 2019,
-                            val: 371087
-                        },
-                        {
-                            year: 2020,
-                            val: 307532
-                        },
-                        {
-                            year: 2021,
-                            val: 229982
-                        },
-                        {
-                            year: 2022,
-                            val: 230760
-                        },
-                        {
-                            year: 2023,
-                            val: 257384
-                        },
-                        {
-                            year: 2024,
-                            val: 261575
-                        },
-                        {
-                            year: 2025,
-                            val: 433751
-                        },
-                        {
-                            year: 2026,
-                            val: 0
-                        },
-                        {
-                            year: 2027,
-                            val: 0
-                        },
-                        {
-                            year: 2028,
-                            val: 0
-                        }
+                        year: 2001,
+                        val: 133913
+                    },
+                    {
+                        year: 2002,
+                        val: 281030
+                    },
+                    {
+                        year: 2003,
+                        val: 253907
+                    },
+                    {
+                        year: 2004,
+                        val: 486010
+                    },
+                    {
+                        year: 2005,
+                        val: 483324
+                    },
+                    {
+                        year: 2006,
+                        val: 474863
+                    },
+                    {
+                        year: 2007,
+                        val: 533334
+                    },
+                    {
+                        year: 2008,
+                        val: 472889
+                    },
+                    {
+                        year: 2009,
+                        val: 691985
+                    },
+                    {
+                        year: 2010,
+                        val: 546069
+                    },
+                    {
+                        year: 2011,
+                        val: 621836
+                    },
+                    {
+                        year: 2012,
+                        val: 876456
+                    },
+                    {
+                        year: 2013,
+                        val: 523588
+                    },
+                    {
+                        year: 2014,
+                        val: 829144
+                    },
+                    {
+                        year: 2015,
+                        val: 768991
+                    },
+                    {
+                        year: 2016,
+                        val: 1055796
+                    },
+                    {
+                        year: 2017,
+                        val: 424048
+                    },
+                    {
+                        year: 2018,
+                        val: 389052
+                    },
+                    {
+                        year: 2019,
+                        val: 371087
+                    },
+                    {
+                        year: 2020,
+                        val: 307532
+                    },
+                    {
+                        year: 2021,
+                        val: 229982
+                    },
+                    {
+                        year: 2022,
+                        val: 230760
+                    },
+                    {
+                        year: 2023,
+                        val: 257384
+                    },
+                    {
+                        year: 2024,
+                        val: 261575
+                    },
+                    {
+                        year: 2025,
+                        val: 433751
+                    },
+                    {
+                        year: 2026,
+                        val: 0
+                    },
+                    {
+                        year: 2027,
+                        val: 0
+                    },
+                    {
+                        year: 2028,
+                        val: 0
+                    }
                     ];
 
-                    var MAX_VAL = Math.max.apply(null, DATA.map(function(d) {
+                    var MAX_VAL = Math.max.apply(null, DATA.map(function (d) {
                         return d.val;
                     }));
                     var AXIS_MAX = 1500000;
@@ -1914,7 +2098,7 @@
                     var yAxis = document.getElementById('y-axis');
                     if (!yAxis) return;
                     yAxis.innerHTML = '';
-                    Y_TICKS.forEach(function(t) {
+                    Y_TICKS.forEach(function (t) {
                         var el = document.createElement('div');
                         el.className = 'y-tick text-[0.6rem] text-right pr-3 font-normal whitespace-nowrap';
                         el.style.color = '#8b7355';
@@ -1925,7 +2109,7 @@
 
                     var gridWrap = document.getElementById('grid-lines');
                     gridWrap.innerHTML = '';
-                    Y_TICKS.forEach(function(t) {
+                    Y_TICKS.forEach(function (t) {
                         var line = document.createElement('div');
                         line.className = 'grid-line absolute inset-x-0 h-[1px]';
                         line.style.background = 'rgba(139,115,85,0.18)';
@@ -1944,7 +2128,7 @@
                     xAxis.style.gridTemplateColumns = colsTemplate;
                     xAxis.style.justifyItems = 'center';
 
-                    DATA.forEach(function(d, i) {
+                    DATA.forEach(function (d, i) {
                         var col = document.createElement('div');
                         col.className =
                             'bar-col flex flex-col items-center justify-end h-full cursor-pointer relative';
@@ -1987,7 +2171,7 @@
                         xAxis.appendChild(lbl);
                     });
 
-                    gsap.to(barEls.map(function(b) {
+                    gsap.to(barEls.map(function (b) {
                         return b.rect;
                     }), {
                         scaleY: 1,
@@ -1998,42 +2182,42 @@
                     });
 
                     var PRESIDENTS = [{
-                            name: 'Megawati',
-                            start: 2001,
-                            end: 2004,
-                            photo: '/assets/images/presiden/meg.jpeg'
-                        },
-                        {
-                            name: 'Susilo Bambang Yudhoyono',
-                            start: 2005,
-                            end: 2014,
-                            photo: '/assets/images/presiden/sby.jpg'
-                        },
-                        {
-                            name: 'Jokowi',
-                            start: 2015,
-                            end: 2024,
-                            photo: '/assets/images/presiden/jok.jpeg'
-                        },
-                        {
-                            name: 'Prabowo',
-                            start: 2025,
-                            end: 2028,
-                            labelEnd: 2025,
-                            photo: '/assets/images/presiden/pra.jpeg'
-                        }
+                        name: 'Megawati',
+                        start: 2001,
+                        end: 2004,
+                        photo: '/assets/images/presiden/meg.jpeg'
+                    },
+                    {
+                        name: 'Susilo Bambang Yudhoyono',
+                        start: 2005,
+                        end: 2014,
+                        photo: '/assets/images/presiden/sby.jpg'
+                    },
+                    {
+                        name: 'Jokowi',
+                        start: 2015,
+                        end: 2024,
+                        photo: '/assets/images/presiden/jok.jpeg'
+                    },
+                    {
+                        name: 'Prabowo',
+                        start: 2025,
+                        end: 2028,
+                        labelEnd: 2025,
+                        photo: '/assets/images/presiden/pra.jpeg'
+                    }
                     ];
 
                     function getPresident(year) {
-                        return PRESIDENTS.find(function(p) {
+                        return PRESIDENTS.find(function (p) {
                             return year >= p.start && year <= p.end;
                         }) || null;
                     }
 
                     function calcTotal(p) {
-                        return DATA.filter(function(d) {
+                        return DATA.filter(function (d) {
                             return d.year >= p.start && d.year <= p.end;
-                        }).reduce(function(s, d) {
+                        }).reduce(function (s, d) {
                             return s + d.val;
                         }, 0);
                     }
@@ -2055,10 +2239,10 @@
                         'rgba(188,74,60,0.18)'
                     ];
 
-                    PRESIDENTS.forEach(function(p, pi) {
+                    PRESIDENTS.forEach(function (p, pi) {
                         var total = calcTotal(p);
                         var yearCount = p.end - p.start + 1;
-                        var startIdx = DATA.findIndex(function(d) {
+                        var startIdx = DATA.findIndex(function (d) {
                             return d.year === p.start;
                         });
                         var leftPct = (startIdx / totalYears) * 100;
@@ -2079,7 +2263,7 @@
                         if (isDesktop) {
                             var photoOffset = p.name === 'Jokowi' ? (widthPct * 0.4) + '%' :
                                 p.name === 'Susilo Bambang Yudhoyono' ? (widthPct * 0.5) + '%' :
-                                '4px';
+                                    '4px';
                             var presGroup = document.createElement('div');
                             presGroup.style.cssText = 'position:absolute;left:calc(' + leftPct + '% + ' +
                                 photoOffset +
@@ -2092,7 +2276,7 @@
                             img.alt = p.name;
                             img.style.cssText =
                                 'height:100px;width:auto;object-fit:cover;object-position:top center;display:block;';
-                            img.onerror = function() {
+                            img.onerror = function () {
                                 this.style.display = 'none';
                             };
                             photoWrap.appendChild(img);
@@ -2133,7 +2317,7 @@
                             mPhoto.alt = p.name;
                             mPhoto.style.cssText =
                                 'width:64px;flex-shrink:0;object-fit:cover;object-position:top center;display:block;';
-                            mPhoto.onerror = function() {
+                            mPhoto.onerror = function () {
                                 this.style.display = 'none';
                             };
                             var mInfo = document.createElement('div');
@@ -2163,7 +2347,7 @@
 
                     function setEra(name) {
                         activeEra = name;
-                        barEls.forEach(function(item, i) {
+                        barEls.forEach(function (item, i) {
                             var p = getPresident(DATA[i].year);
                             var match = p && p.name === name;
                             gsap.to(item.col, {
@@ -2173,7 +2357,7 @@
                             });
                             item.rect.style.background = match ? '#8b2a1a' : '#d4c4a0';
                         });
-                        stripEls.forEach(function(el, i) {
+                        stripEls.forEach(function (el, i) {
                             var match = presName(i) === name;
                             var isMobile = el.dataset.mobile === '1';
                             if (isMobile) {
@@ -2185,7 +2369,7 @@
                                 el.style.borderTopColor = match ? '#8b2a1a' : 'rgba(0,0,0,.1)';
                             }
                         });
-                        photoOverlayEls.forEach(function(ov, i) {
+                        photoOverlayEls.forEach(function (ov, i) {
                             ov.photo.style.opacity = PRESIDENTS[i].name === name ? '1' : '0.2';
                             ov.bg.style.background = PRESIDENTS[i].name === name ? 'rgba(139,42,26,0.1)' :
                                 'rgba(0,0,0,0.02)';
@@ -2194,7 +2378,7 @@
 
                     function clearEra() {
                         activeEra = null;
-                        barEls.forEach(function(item) {
+                        barEls.forEach(function (item) {
                             gsap.to(item.col, {
                                 opacity: 1,
                                 duration: 0.3,
@@ -2202,7 +2386,7 @@
                             });
                             item.rect.style.background = '#bc4a3c';
                         });
-                        stripEls.forEach(function(el) {
+                        stripEls.forEach(function (el) {
                             var isMobile = el.dataset.mobile === '1';
                             if (isMobile) {
                                 el.style.display = 'none';
@@ -2212,22 +2396,22 @@
                             }
                             el.style.borderTopColor = 'rgba(0,0,0,.1)';
                         });
-                        photoOverlayEls.forEach(function(ov) {
+                        photoOverlayEls.forEach(function (ov) {
                             ov.photo.style.opacity = '';
                             ov.bg.style.background = ERA_COLORS[ov.idx];
                         });
                     }
 
-                    stripEls.forEach(function(el, i) {
-                        el.addEventListener('click', function() {
+                    stripEls.forEach(function (el, i) {
+                        el.addEventListener('click', function () {
                             var name = presName(i);
                             if (activeEra === name) clearEra();
                             else setEra(name);
                         });
                     });
 
-                    barEls.forEach(function(item, i) {
-                        item.col.addEventListener('mouseenter', function() {
+                    barEls.forEach(function (item, i) {
+                        item.col.addEventListener('mouseenter', function () {
                             gsap.to(item.rect, {
                                 scaleY: 1.025,
                                 transformOrigin: 'bottom center',
@@ -2238,12 +2422,12 @@
                             item.label.style.opacity = '1';
                             if (!activeEra) {
                                 var hovPres = getPresident(DATA[i].year);
-                                barEls.forEach(function(bi, ci) {
+                                barEls.forEach(function (bi, ci) {
                                     bi.rect.style.background = hovPres && getPresident(DATA[ci]
-                                            .year) && getPresident(DATA[ci].year).name === hovPres
-                                        .name ? '#bc4a3c' : '#d4c4a0';
+                                        .year) && getPresident(DATA[ci].year).name === hovPres
+                                            .name ? '#bc4a3c' : '#d4c4a0';
                                 });
-                                stripEls.forEach(function(el, ci) {
+                                stripEls.forEach(function (el, ci) {
                                     var match = hovPres && presName(ci) === hovPres.name;
                                     var isMobile = el.dataset.mobile === '1';
                                     if (isMobile) {
@@ -2253,7 +2437,7 @@
                                         el.style.pointerEvents = match ? 'auto' : 'none';
                                     }
                                 });
-                                photoOverlayEls.forEach(function(ov, ci) {
+                                photoOverlayEls.forEach(function (ov, ci) {
                                     var match = hovPres && PRESIDENTS[ci].name === hovPres.name;
                                     ov.photo.style.opacity = match ? '1' : '0.15';
                                     ov.bg.style.background = match ? 'rgba(188,74,60,0.1)' :
@@ -2261,7 +2445,7 @@
                                 });
                             }
                         });
-                        item.col.addEventListener('mouseleave', function() {
+                        item.col.addEventListener('mouseleave', function () {
                             gsap.to(item.rect, {
                                 scaleY: 1,
                                 duration: .22,
@@ -2270,10 +2454,10 @@
                             item.hoverBg.style.opacity = '0';
                             item.label.style.opacity = '0';
                             if (!activeEra) {
-                                barEls.forEach(function(bi) {
+                                barEls.forEach(function (bi) {
                                     bi.rect.style.background = '#bc4a3c';
                                 });
-                                stripEls.forEach(function(el) {
+                                stripEls.forEach(function (el) {
                                     var isMobile = el.dataset.mobile === '1';
                                     if (isMobile) {
                                         el.style.display = 'none';
@@ -2282,13 +2466,13 @@
                                         el.style.pointerEvents = 'none';
                                     }
                                 });
-                                photoOverlayEls.forEach(function(ov) {
+                                photoOverlayEls.forEach(function (ov) {
                                     ov.photo.style.opacity = '';
                                     ov.bg.style.background = ERA_COLORS[ov.idx];
                                 });
                             }
                         });
-                        item.col.addEventListener('click', function() {
+                        item.col.addEventListener('click', function () {
                             var pres = getPresident(DATA[i].year);
                             if (!pres) return;
                             if (activeEra === pres.name) clearEra();
@@ -2296,60 +2480,60 @@
                         });
                     });
 
-                    document.addEventListener('keydown', function(e) {
+                    document.addEventListener('keydown', function (e) {
                         if (e.key === 'Escape') clearEra();
                     });
                 }
 
                 function buildMonthlyChart() {
                     var MONTHLY_DATA = [{
-                            month: 'Jan',
-                            val: 2710
-                        },
-                        {
-                            month: 'Feb',
-                            val: 10367
-                        },
-                        {
-                            month: 'Mar',
-                            val: 29539
-                        },
-                        {
-                            month: 'Apr',
-                            val: 57982
-                        },
-                        {
-                            month: 'Mei',
-                            val: 75082
-                        },
-                        {
-                            month: 'Jun',
-                            val: 48351
-                        },
-                        {
-                            month: 'Jul',
-                            val: 34669
-                        },
-                        {
-                            month: 'Agu',
-                            val: 54847
-                        },
-                        {
-                            month: 'Sep',
-                            val: 33204
-                        },
-                        {
-                            month: 'Okt',
-                            val: 48364
-                        },
-                        {
-                            month: 'Nov',
-                            val: 19559
-                        },
-                        {
-                            month: 'Des',
-                            val: 19076
-                        }
+                        month: 'Jan',
+                        val: 2710
+                    },
+                    {
+                        month: 'Feb',
+                        val: 10367
+                    },
+                    {
+                        month: 'Mar',
+                        val: 29539
+                    },
+                    {
+                        month: 'Apr',
+                        val: 57982
+                    },
+                    {
+                        month: 'Mei',
+                        val: 75082
+                    },
+                    {
+                        month: 'Jun',
+                        val: 48351
+                    },
+                    {
+                        month: 'Jul',
+                        val: 34669
+                    },
+                    {
+                        month: 'Agu',
+                        val: 54847
+                    },
+                    {
+                        month: 'Sep',
+                        val: 33204
+                    },
+                    {
+                        month: 'Okt',
+                        val: 48364
+                    },
+                    {
+                        month: 'Nov',
+                        val: 19559
+                    },
+                    {
+                        month: 'Des',
+                        val: 19076
+                    }
                     ];
 
                     var M_AXIS_MAX = 80000;
@@ -2364,7 +2548,7 @@
                     var yAxis = document.getElementById('chart-monthly-yaxis');
                     if (!yAxis) return;
                     yAxis.innerHTML = '';
-                    M_TICKS.forEach(function(t) {
+                    M_TICKS.forEach(function (t) {
                         var el = document.createElement('div');
                         el.className = 'text-[0.6rem] text-right pr-3 font-normal whitespace-nowrap';
                         el.style.color = '#8b7355';
@@ -2374,7 +2558,7 @@
 
                     var gridWrap = document.getElementById('chart-monthly-grid');
                     gridWrap.innerHTML = '';
-                    M_TICKS.forEach(function(t) {
+                    M_TICKS.forEach(function (t) {
                         var line = document.createElement('div');
                         line.className = 'absolute inset-x-0 h-[1px]';
                         line.style.cssText =
@@ -2395,7 +2579,7 @@
 
                     var barRects = [];
 
-                    MONTHLY_DATA.forEach(function(d) {
+                    MONTHLY_DATA.forEach(function (d) {
                         var pct = (d.val / M_AXIS_MAX) * 100;
 
                         var col = document.createElement('div');
@@ -2437,13 +2621,13 @@
                                 delay: 0.1
                             });
                         } else {
-                            barRects.forEach(function(r) {
+                            barRects.forEach(function (r) {
                                 r.style.transform = 'scaleY(1)';
                             });
                         }
                     }
 
-                    var obs = new IntersectionObserver(function(entries) {
+                    var obs = new IntersectionObserver(function (entries) {
                         if (entries[0].isIntersecting) {
                             animateMonthly();
                             obs.disconnect();
@@ -2458,7 +2642,7 @@
                 if (typeof gsap === 'undefined') {
                     var gsapScript = document.createElement('script');
                     gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
-                    gsapScript.onload = function() {
+                    gsapScript.onload = function () {
                         buildDeforestationChart();
                         buildMonthlyChart();
                     };
@@ -2474,10 +2658,10 @@
                     var isHidden = desc.classList.contains('hidden');
                     var embed = document.getElementById('alur-embed');
                     if (embed) {
-                        embed.querySelectorAll('.card-desc').forEach(function(d) {
+                        embed.querySelectorAll('.card-desc').forEach(function (d) {
                             d.classList.add('hidden');
                         });
-                        embed.querySelectorAll('.card.active').forEach(function(c) {
+                        embed.querySelectorAll('.card.active').forEach(function (c) {
                             c.classList.remove('active');
                         });
                     }
@@ -2596,7 +2780,7 @@
 
                     // ── Connector 1: Output Model → Normalisasi Citra Sentinel 2
                     // Right-side corridor. When collapsed, row right edge + lane cy used.
-                    (function() {
+                    (function () {
                         var fr = getAnchor('outmodel');
                         var tr = getAnchor('normcit');
                         if (!fr || !tr) return;
@@ -2610,7 +2794,7 @@
 
                     // ── Connector 2: Agregasi True Alert → Bounding Box
                     // Cubic bezier bowing right. When collapsed, lane-centre x + row boundary.
-                    (function() {
+                    (function () {
                         var fr = getAnchor('agreg');
                         var tr = getAnchor('bbox');
                         if (!fr || !tr) return;
@@ -2629,7 +2813,7 @@
 
                     // ── Connector 3: Data Deforestasi Indikatif → Overlay & Filter Area
                     // Straight vertical using source cx (both cards are leftmost in their rows).
-                    (function() {
+                    (function () {
                         var fr = getAnchor('dataindikatif');
                         var tr = getAnchor('r4c1');
                         if (!fr || !tr) return;
@@ -2641,9 +2825,9 @@
                     dwrap.appendChild(svg);
                 }
 
-                window.addEventListener('load', function() {
+                window.addEventListener('load', function () {
                     // rAF ensures layout is complete before measuring positions
-                    requestAnimationFrame(function() {
+                    requestAnimationFrame(function () {
                         requestAnimationFrame(drawAlurConnector);
                     });
                 });
@@ -2823,7 +3007,7 @@
         <script src="https://unpkg.com/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js"></script>
         <script>
             // ── peta-bg-map: decorative background Leaflet map ──
-            (function() {
+            (function () {
                 var _isMobile = window.innerWidth < 640;
                 var bgMap = L.map('peta-bg-map', {
                     zoomControl: false,
@@ -2843,7 +3027,7 @@
             })();
         </script>
         <script>
-            (function() {
+            (function () {
                 const isMobile = window.innerWidth < 640;
                 const map = L.map('map', {
                     zoomControl: false,
@@ -2888,7 +3072,7 @@
                 const markerLayer = L.layerGroup().addTo(map);
                 const polygonLayer = L.layerGroup().addTo(map);
                 const calloutLayer = {
-                    clearLayers: () => {}
+                    clearLayers: () => { }
                 };
                 let markerRegistry = [];
                 let activeMarker = null;
@@ -2920,85 +3104,85 @@
                             unit: 'hektare'
                         },
                         markers: [{
-                                lat: -1.60615374,
-                                lng: 113.416,
-                                rank: 1,
-                                name: 'Kalimantan Tengah',
-                                value: '56.900',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 0.45468874,
-                                lng: 116.451,
-                                rank: 2,
-                                name: 'Kalimantan Timur',
-                                value: '47.135',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 4.22572873,
-                                lng: 96.912,
-                                rank: 3,
-                                name: 'Aceh',
-                                value: '38.157',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -0.08652108,
-                                lng: 111.121,
-                                rank: 4,
-                                name: 'Kalimantan Barat',
-                                value: '31.876',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -3.91073545,
-                                lng: 136.624,
-                                rank: 5,
-                                name: 'Papua Tengah',
-                                value: '26.978',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -0.84851756,
-                                lng: 100.465,
-                                rank: 6,
-                                name: 'Sumatera Barat',
-                                value: '26.940',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 2.18843942,
-                                lng: 99.058,
-                                rank: 7,
-                                name: 'Sumatera Utara',
-                                value: '20.512',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 2.91502507,
-                                lng: 116.246,
-                                rank: 8,
-                                name: 'Kalimantan Utara',
-                                value: '19.716',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 0.50874453,
-                                lng: 101.815,
-                                rank: 9,
-                                name: 'Riau',
-                                value: '17.812',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -4.22893963,
-                                lng: 139.454,
-                                rank: 10,
-                                name: 'Papua Pegunungan',
-                                value: '16.468',
-                                dir: 'left'
-                            }
+                            lat: -1.60615374,
+                            lng: 113.416,
+                            rank: 1,
+                            name: 'Kalimantan Tengah',
+                            value: '56.900',
+                            dir: 'right'
+                        },
+                        {
+                            lat: 0.45468874,
+                            lng: 116.451,
+                            rank: 2,
+                            name: 'Kalimantan Timur',
+                            value: '47.135',
+                            dir: 'right'
+                        },
+                        {
+                            lat: 4.22572873,
+                            lng: 96.912,
+                            rank: 3,
+                            name: 'Aceh',
+                            value: '38.157',
+                            dir: 'right'
+                        },
+                        {
+                            lat: -0.08652108,
+                            lng: 111.121,
+                            rank: 4,
+                            name: 'Kalimantan Barat',
+                            value: '31.876',
+                            dir: 'left'
+                        },
+                        {
+                            lat: -3.91073545,
+                            lng: 136.624,
+                            rank: 5,
+                            name: 'Papua Tengah',
+                            value: '26.978',
+                            dir: 'left'
+                        },
+                        {
+                            lat: -0.84851756,
+                            lng: 100.465,
+                            rank: 6,
+                            name: 'Sumatera Barat',
+                            value: '26.940',
+                            dir: 'right'
+                        },
+                        {
+                            lat: 2.18843942,
+                            lng: 99.058,
+                            rank: 7,
+                            name: 'Sumatera Utara',
+                            value: '20.512',
+                            dir: 'right'
+                        },
+                        {
+                            lat: 2.91502507,
+                            lng: 116.246,
+                            rank: 8,
+                            name: 'Kalimantan Utara',
+                            value: '19.716',
+                            dir: 'right'
+                        },
+                        {
+                            lat: 0.50874453,
+                            lng: 101.815,
+                            rank: 9,
+                            name: 'Riau',
+                            value: '17.812',
+                            dir: 'left'
+                        },
+                        {
+                            lat: -4.22893963,
+                            lng: 139.454,
+                            rank: 10,
+                            name: 'Papua Pegunungan',
+                            value: '16.468',
+                            dir: 'left'
+                        }
                         ],
                         dlUrl: 'https://simontini.id/assets/2025-data/provinsi.xlsx',
 
@@ -3020,85 +3204,85 @@
                             unit: 'hektare'
                         },
                         markers: [{
-                                lat: 1.908,
-                                lng: 117.537,
-                                rank: 1,
-                                name: 'Berau',
-                                value: '19.163',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 0.87,
-                                lng: 117.191,
-                                rank: 2,
-                                name: 'Kutai Timur',
-                                value: '12.781',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -1.314,
-                                lng: 114.326,
-                                rank: 3,
-                                name: 'Kapuas',
-                                value: '11.850',
-                                dir: 'left'
-                            },
-                            {
-                                lat: 0.808,
-                                lng: 112.386,
-                                rank: 4,
-                                name: 'Kapuas Hulu',
-                                value: '9.393',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -1.314,
-                                lng: 113.074,
-                                rank: 5,
-                                name: 'Katingan',
-                                value: '8.934',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -1.251,
-                                lng: 131.34,
-                                rank: 6,
-                                name: 'Sorong',
-                                value: '7.168',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -0.236,
-                                lng: 114.48,
-                                rank: 7,
-                                name: 'Murung Raya',
-                                value: '7.140',
-                                dir: 'bottom'
-                            },
-                            {
-                                lat: -7.88,
-                                lng: 140.237,
-                                rank: 8,
-                                name: 'Merauke',
-                                value: '6.557',
-                                dir: 'top'
-                            },
-                            {
-                                lat: -1.108,
-                                lng: 113.541,
-                                rank: 9,
-                                name: 'Gunung Mas',
-                                value: '6.539',
-                                dir: 'bottom'
-                            },
-                            {
-                                lat: 2.686,
-                                lng: 117.22,
-                                rank: 10,
-                                name: 'Bulungan',
-                                value: '6.208',
-                                dir: 'right'
-                            }
+                            lat: 1.908,
+                            lng: 117.537,
+                            rank: 1,
+                            name: 'Berau',
+                            value: '19.163',
+                            dir: 'right'
+                        },
+                        {
+                            lat: 0.87,
+                            lng: 117.191,
+                            rank: 2,
+                            name: 'Kutai Timur',
+                            value: '12.781',
+                            dir: 'left'
+                        },
+                        {
+                            lat: -1.314,
+                            lng: 114.326,
+                            rank: 3,
+                            name: 'Kapuas',
+                            value: '11.850',
+                            dir: 'left'
+                        },
+                        {
+                            lat: 0.808,
+                            lng: 112.386,
+                            rank: 4,
+                            name: 'Kapuas Hulu',
+                            value: '9.393',
+                            dir: 'left'
+                        },
+                        {
+                            lat: -1.314,
+                            lng: 113.074,
+                            rank: 5,
+                            name: 'Katingan',
+                            value: '8.934',
+                            dir: 'left'
+                        },
+                        {
+                            lat: -1.251,
+                            lng: 131.34,
+                            rank: 6,
+                            name: 'Sorong',
+                            value: '7.168',
+                            dir: 'right'
+                        },
+                        {
+                            lat: -0.236,
+                            lng: 114.48,
+                            rank: 7,
+                            name: 'Murung Raya',
+                            value: '7.140',
+                            dir: 'bottom'
+                        },
+                        {
+                            lat: -7.88,
+                            lng: 140.237,
+                            rank: 8,
+                            name: 'Merauke',
+                            value: '6.557',
+                            dir: 'top'
+                        },
+                        {
+                            lat: -1.108,
+                            lng: 113.541,
+                            rank: 9,
+                            name: 'Gunung Mas',
+                            value: '6.539',
+                            dir: 'bottom'
+                        },
+                        {
+                            lat: 2.686,
+                            lng: 117.22,
+                            rank: 10,
+                            name: 'Bulungan',
+                            value: '6.208',
+                            dir: 'right'
+                        }
                         ],
                         tables: [],
                         dlUrl: 'https://simontini.id/assets/2025-data/kabupaten.xlsx'
@@ -3122,85 +3306,85 @@
                         },
 
                         markers: [{
-                                lat: -2.33,
-                                lng: 101.684,
-                                rank: 1,
-                                name: 'TN Kerinci Seblat',
-                                value: '6.362',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -4.244,
-                                lng: 140.255,
-                                rank: 2,
-                                name: 'SM Pegunungan Jayawijaya',
-                                value: '3.210',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 3.744,
-                                lng: 97.703,
-                                rank: 3,
-                                name: 'TN Gunung Leuser',
-                                value: '1.379',
-                                dir: 'left'
-                            },
-                            {
-                                lat: 4.423,
-                                lng: 97.159,
-                                rank: 4,
-                                name: 'TB Lingga Isaq',
-                                value: '1.199',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -3.757,
-                                lng: 136.263,
-                                rank: 5,
-                                name: 'CA Enarotali',
-                                value: '1.049',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -2.84,
-                                lng: 138.797,
-                                rank: 6,
-                                name: 'SM Mamberamo Foja',
-                                value: '950',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -4.223,
-                                lng: 138.023,
-                                rank: 7,
-                                name: 'TN Lorentz',
-                                value: '889',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -1.15,
-                                lng: 133.295,
-                                rank: 8,
-                                name: 'CA Pegunungan Tamrau Selatan',
-                                value: '796',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -0.819,
-                                lng: 101.211,
-                                rank: 9,
-                                name: 'CA Batang Pangean I',
-                                value: '779',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -0.352,
-                                lng: 101.105,
-                                rank: 10,
-                                name: 'SM Bukit Rimbang Bukit Baling',
-                                value: '539',
-                                dir: 'left'
-                            }
+                            lat: -2.33,
+                            lng: 101.684,
+                            rank: 1,
+                            name: 'TN Kerinci Seblat',
+                            value: '6.362',
+                            dir: 'left'
+                        },
+                        {
+                            lat: -4.244,
+                            lng: 140.255,
+                            rank: 2,
+                            name: 'SM Pegunungan Jayawijaya',
+                            value: '3.210',
+                            dir: 'right'
+                        },
+                        {
+                            lat: 3.744,
+                            lng: 97.703,
+                            rank: 3,
+                            name: 'TN Gunung Leuser',
+                            value: '1.379',
+                            dir: 'left'
+                        },
+                        {
+                            lat: 4.423,
+                            lng: 97.159,
+                            rank: 4,
+                            name: 'TB Lingga Isaq',
+                            value: '1.199',
+                            dir: 'left'
+                        },
+                        {
+                            lat: -3.757,
+                            lng: 136.263,
+                            rank: 5,
+                            name: 'CA Enarotali',
+                            value: '1.049',
+                            dir: 'right'
+                        },
+                        {
+                            lat: -2.84,
+                            lng: 138.797,
+                            rank: 6,
+                            name: 'SM Mamberamo Foja',
+                            value: '950',
+                            dir: 'right'
+                        },
+                        {
+                            lat: -4.223,
+                            lng: 138.023,
+                            rank: 7,
+                            name: 'TN Lorentz',
+                            value: '889',
+                            dir: 'right'
+                        },
+                        {
+                            lat: -1.15,
+                            lng: 133.295,
+                            rank: 8,
+                            name: 'CA Pegunungan Tamrau Selatan',
+                            value: '796',
+                            dir: 'right'
+                        },
+                        {
+                            lat: -0.819,
+                            lng: 101.211,
+                            rank: 9,
+                            name: 'CA Batang Pangean I',
+                            value: '779',
+                            dir: 'left'
+                        },
+                        {
+                            lat: -0.352,
+                            lng: 101.105,
+                            rank: 10,
+                            name: 'SM Bukit Rimbang Bukit Baling',
+                            value: '539',
+                            dir: 'left'
+                        }
                         ]
                     },
 
@@ -3215,82 +3399,82 @@
                         ],
                         notesBox: [''],
                         species: [{
-                                lokal: 'Harimau Sumatra',
-                                lat: 3.4,
-                                lng: 94.2,
-                                icon: '🐅',
-                                image: '/assets/images/satwa/image.png',
-                                name: 'Panthera tigris sumatrae',
-                                value: '78.049 hektare',
-                                dir: 'left',
-                                geojsonUrl: '/geojson/def_harimau.json'
-                            },
-                            {
-                                lokal: 'Gajah Sumatra',
-                                lat: -0.38,
-                                lng: 96.0,
-                                icon: '🐘',
-                                image: '/assets/images/satwa/image-2.png',
-                                name: 'Elephas maximus sumatranus',
-                                value: '25.301',
-                                dir: 'left',
-                                geojsonUrl: '/geojson/def_gajah.json'
-                            },
-                            {
-                                lokal: 'Badak Sumatra',
-                                lat: -6.2,
-                                lng: 101.7,
-                                icon: '🦏',
-                                image: '/assets/images/satwa/image-3.png',
-                                name: 'Dicerorhinus sumatrensis sumatrensis',
-                                value: '18.477',
-                                dir: 'left',
-                                geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json'
-                            },
-                            {
-                                lokal: 'Orangutan Tapanuli',
-                                lat: 5.7,
-                                lng: 98.2,
-                                icon: '🦧',
-                                image: '/assets/images/satwa/image-4.png',
-                                name: 'Pongo tapanuliensis',
-                                value: '505',
-                                dir: 'right',
-                                geojsonUrl: '/geojson/def_pongo_tapanuliensis.json'
-                            },
-                            {
-                                lokal: 'Orangutan Sumatra',
-                                lat: 1.0,
-                                lng: 102.6,
-                                icon: '🦧',
-                                image: '/assets/images/satwa/image-5.png',
-                                name: 'Pongo abelii',
-                                value: '16.519',
-                                dir: 'right',
-                                geojsonUrl: '/geojson/def_pongo_abelii.json'
-                            },
-                            {
-                                lokal: 'Orangutan Kalimantan',
-                                lat: 3.5,
-                                lng: 111.5,
-                                icon: '🦧',
-                                image: '/assets/images/satwa/image-6.png',
-                                name: 'Pongo pygmaeus',
-                                value: '66.890',
-                                dir: 'left',
-                                geojsonUrl: '/geojson/def_pongo_pygmaeus.json'
-                            },
-                            {
-                                lokal: 'Badak Kalimantan',
-                                lat: 2.5,
-                                lng: 121.5,
-                                icon: '🦏',
-                                image: '/assets/images/satwa/image-7.png',
-                                name: 'Dicerorhinus sumatrensis harrissoni',
-                                value: '3.057',
-                                dir: 'right',
-                                geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json'
-                            }
+                            lokal: 'Harimau Sumatra',
+                            lat: 3.4,
+                            lng: 94.2,
+                            icon: '🐅',
+                            image: '/assets/images/satwa/image.png',
+                            name: 'Panthera tigris sumatrae',
+                            value: '78.049 hektare',
+                            dir: 'left',
+                            geojsonUrl: '/geojson/def_harimau.json'
+                        },
+                        {
+                            lokal: 'Gajah Sumatra',
+                            lat: -0.38,
+                            lng: 96.0,
+                            icon: '🐘',
+                            image: '/assets/images/satwa/image-2.png',
+                            name: 'Elephas maximus sumatranus',
+                            value: '25.301',
+                            dir: 'left',
+                            geojsonUrl: '/geojson/def_gajah.json'
+                        },
+                        {
+                            lokal: 'Badak Sumatra',
+                            lat: -6.2,
+                            lng: 101.7,
+                            icon: '🦏',
+                            image: '/assets/images/satwa/image-3.png',
+                            name: 'Dicerorhinus sumatrensis sumatrensis',
+                            value: '18.477',
+                            dir: 'left',
+                            geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json'
+                        },
+                        {
+                            lokal: 'Orangutan Tapanuli',
+                            lat: 5.7,
+                            lng: 98.2,
+                            icon: '🦧',
+                            image: '/assets/images/satwa/image-4.png',
+                            name: 'Pongo tapanuliensis',
+                            value: '505',
+                            dir: 'right',
+                            geojsonUrl: '/geojson/def_pongo_tapanuliensis.json'
+                        },
+                        {
+                            lokal: 'Orangutan Sumatra',
+                            lat: 1.0,
+                            lng: 102.6,
+                            icon: '🦧',
+                            image: '/assets/images/satwa/image-5.png',
+                            name: 'Pongo abelii',
+                            value: '16.519',
+                            dir: 'right',
+                            geojsonUrl: '/geojson/def_pongo_abelii.json'
+                        },
+                        {
+                            lokal: 'Orangutan Kalimantan',
+                            lat: 3.5,
+                            lng: 111.5,
+                            icon: '🦧',
+                            image: '/assets/images/satwa/image-6.png',
+                            name: 'Pongo pygmaeus',
+                            value: '66.890',
+                            dir: 'left',
+                            geojsonUrl: '/geojson/def_pongo_pygmaeus.json'
+                        },
+                        {
+                            lokal: 'Badak Kalimantan',
+                            lat: 2.5,
+                            lng: 121.5,
+                            icon: '🦏',
+                            image: '/assets/images/satwa/image-7.png',
+                            name: 'Dicerorhinus sumatrensis harrissoni',
+                            value: '3.057',
+                            dir: 'right',
+                            geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json'
+                        }
                         ],
                         tables: [],
                         dlUrl: ''
@@ -3317,85 +3501,85 @@
                                 geojsonFile: '/geojson/kebun-kayu.geojson',
                                 dlUrl: 'https://simontini.id/assets/2025-data/kebun-kayu.xlsx',
                                 markers: [{
-                                        lat: 2.17,
-                                        lng: 117.521,
-                                        rank: 1,
-                                        name: 'PT TANJUNG REDEB HUTANI',
-                                        value: 1408,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 0.394,
-                                        lng: 110.954,
-                                        rank: 2,
-                                        name: 'PT FINNANTARA INTIGA',
-                                        value: 1341,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: 0.417,
-                                        lng: 116.378,
-                                        rank: 3,
-                                        name: 'PT MAHAKARYA PERDANA GEMILANG UNIT II',
-                                        value: 1324,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 0.527,
-                                        lng: 117.221,
-                                        rank: 4,
-                                        name: 'PT DIVA PERDANA PESONA',
-                                        value: 1296,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -1.333,
-                                        lng: 114.131,
-                                        rank: 5,
-                                        name: 'PT BUMI HIJAU PRIMA',
-                                        value: 1294,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -1.974,
-                                        lng: 111.138,
-                                        rank: 6,
-                                        name: 'PT GRACE PUTRI PERDANA',
-                                        value: 1171,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: 1.858,
-                                        lng: 117.738,
-                                        rank: 7,
-                                        name: 'PT HUTAN BERAU LESTARI',
-                                        value: 1097,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 0.056,
-                                        lng: 115.924,
-                                        rank: 8,
-                                        name: 'PT SENDAWAR ADHI KARYA',
-                                        value: 1019,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 1.354,
-                                        lng: 118.134,
-                                        rank: 9,
-                                        name: 'PT SWADAYA PERKASA',
-                                        value: 662,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 1.4,
-                                        lng: 101.685,
-                                        rank: 10,
-                                        name: 'PT SEKATO PRATAMA MAKMUR',
-                                        value: 652,
-                                        dir: 'bottom'
-                                    }
+                                    lat: 2.17,
+                                    lng: 117.521,
+                                    rank: 1,
+                                    name: 'PT TANJUNG REDEB HUTANI',
+                                    value: 1408,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: 0.394,
+                                    lng: 110.954,
+                                    rank: 2,
+                                    name: 'PT FINNANTARA INTIGA',
+                                    value: 1341,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: 0.417,
+                                    lng: 116.378,
+                                    rank: 3,
+                                    name: 'PT MAHAKARYA PERDANA GEMILANG UNIT II',
+                                    value: 1324,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: 0.527,
+                                    lng: 117.221,
+                                    rank: 4,
+                                    name: 'PT DIVA PERDANA PESONA',
+                                    value: 1296,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -1.333,
+                                    lng: 114.131,
+                                    rank: 5,
+                                    name: 'PT BUMI HIJAU PRIMA',
+                                    value: 1294,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: -1.974,
+                                    lng: 111.138,
+                                    rank: 6,
+                                    name: 'PT GRACE PUTRI PERDANA',
+                                    value: 1171,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: 1.858,
+                                    lng: 117.738,
+                                    rank: 7,
+                                    name: 'PT HUTAN BERAU LESTARI',
+                                    value: 1097,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: 0.056,
+                                    lng: 115.924,
+                                    rank: 8,
+                                    name: 'PT SENDAWAR ADHI KARYA',
+                                    value: 1019,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: 1.354,
+                                    lng: 118.134,
+                                    rank: 9,
+                                    name: 'PT SWADAYA PERKASA',
+                                    value: 662,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: 1.4,
+                                    lng: 101.685,
+                                    rank: 10,
+                                    name: 'PT SEKATO PRATAMA MAKMUR',
+                                    value: 652,
+                                    dir: 'bottom'
+                                }
                                 ]
                             },
                             'logging': {
@@ -3408,85 +3592,85 @@
                                 geojsonFile: '/geojson/logging.geojson',
                                 dlUrl: 'https://simontini.id/assets/2025-data/logging.xlsx',
                                 markers: [{
-                                        lat: 0.881264893236657,
-                                        lng: 117.026904047300249,
-                                        rank: 1,
-                                        name: 'PT KIANI LESTARI',
-                                        value: 3739,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -1.252358059458737,
-                                        lng: 114.487610383463576,
-                                        rank: 2,
-                                        name: 'PT DASA INTIGA',
-                                        value: 3195,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: 2.098063545278295,
-                                        lng: 101.015865352762475,
-                                        rank: 3,
-                                        name: 'PT DIAMOND RAYA TIMBER',
-                                        value: 2741,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -3.017296513002015,
-                                        lng: 101.832872347710747,
-                                        rank: 4,
-                                        name: 'PT ANUGERAH PRATAMA INSPIRASI',
-                                        value: 2211,
-                                        dir: 'bottom'
-                                    },
-                                    {
-                                        lat: -0.75146963045224,
-                                        lng: 116.510730877588813,
-                                        rank: 5,
-                                        name: 'PT ITCI KARTIKA UTAMA (ITCIKU)',
-                                        value: 1902,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 2.028798962469609,
-                                        lng: 117.080426147312622,
-                                        rank: 6,
-                                        name: 'PT INHUTANI I UNIT LABANAN',
-                                        value: 1688,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -3.502650172817841,
-                                        lng: 135.621210438578998,
-                                        rank: 7,
-                                        name: 'PT JATI DHARMA INDAH PLYWOOD INDUSTRIES',
-                                        value: 1415,
-                                        dir: 'bottom'
-                                    },
-                                    {
-                                        lat: 2.474287034103671,
-                                        lng: 117.210276665613563,
-                                        rank: 8,
-                                        name: 'PT INHUTANI I UNIT SAMBARATA',
-                                        value: 1330,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -1.051472046229932,
-                                        lng: 113.055533404223866,
-                                        rank: 9,
-                                        name: 'PT DWIMA JAYA UTAMA',
-                                        value: 1267,
-                                        dir: 'top'
-                                    },
-                                    {
-                                        lat: 1.288242736097689,
-                                        lng: 99.580298186802281,
-                                        rank: 10,
-                                        name: 'PT BARUMUN RAYA PADANG LANGKAT',
-                                        value: 1260,
-                                        dir: 'left'
-                                    }
+                                    lat: 0.881264893236657,
+                                    lng: 117.026904047300249,
+                                    rank: 1,
+                                    name: 'PT KIANI LESTARI',
+                                    value: 3739,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -1.252358059458737,
+                                    lng: 114.487610383463576,
+                                    rank: 2,
+                                    name: 'PT DASA INTIGA',
+                                    value: 3195,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: 2.098063545278295,
+                                    lng: 101.015865352762475,
+                                    rank: 3,
+                                    name: 'PT DIAMOND RAYA TIMBER',
+                                    value: 2741,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -3.017296513002015,
+                                    lng: 101.832872347710747,
+                                    rank: 4,
+                                    name: 'PT ANUGERAH PRATAMA INSPIRASI',
+                                    value: 2211,
+                                    dir: 'bottom'
+                                },
+                                {
+                                    lat: -0.75146963045224,
+                                    lng: 116.510730877588813,
+                                    rank: 5,
+                                    name: 'PT ITCI KARTIKA UTAMA (ITCIKU)',
+                                    value: 1902,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: 2.028798962469609,
+                                    lng: 117.080426147312622,
+                                    rank: 6,
+                                    name: 'PT INHUTANI I UNIT LABANAN',
+                                    value: 1688,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -3.502650172817841,
+                                    lng: 135.621210438578998,
+                                    rank: 7,
+                                    name: 'PT JATI DHARMA INDAH PLYWOOD INDUSTRIES',
+                                    value: 1415,
+                                    dir: 'bottom'
+                                },
+                                {
+                                    lat: 2.474287034103671,
+                                    lng: 117.210276665613563,
+                                    rank: 8,
+                                    name: 'PT INHUTANI I UNIT SAMBARATA',
+                                    value: 1330,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: -1.051472046229932,
+                                    lng: 113.055533404223866,
+                                    rank: 9,
+                                    name: 'PT DWIMA JAYA UTAMA',
+                                    value: 1267,
+                                    dir: 'top'
+                                },
+                                {
+                                    lat: 1.288242736097689,
+                                    lng: 99.580298186802281,
+                                    rank: 10,
+                                    name: 'PT BARUMUN RAYA PADANG LANGKAT',
+                                    value: 1260,
+                                    dir: 'left'
+                                }
                                 ]
                             },
                             'sawit': {
@@ -3499,85 +3683,85 @@
                                 geojsonFile: '/geojson/sawit.geojson',
                                 dlUrl: 'https://simontini.id/assets/2025-data/sawit.xlsx',
                                 markers: [{
-                                        lat: -1.163,
-                                        lng: 131.378,
-                                        rank: 1,
-                                        name: 'Inti Kebun Lestari',
-                                        value: 2624,
-                                        dir: 'top'
-                                    },
-                                    {
-                                        lat: 0.679,
-                                        lng: 121.502,
-                                        rank: 2,
-                                        name: 'Banyan Tumbuh Lestari',
-                                        value: 2094,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -1.316,
-                                        lng: 131.233,
-                                        rank: 3,
-                                        name: 'Inti Kebun Sejahtera',
-                                        value: 2053,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -7.918,
-                                        lng: 140.71,
-                                        rank: 4,
-                                        name: 'Merauke Sawit Jaya',
-                                        value: 1808,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -1.391,
-                                        lng: 131.193,
-                                        rank: 5,
-                                        name: 'Papua Lestari Abadi',
-                                        value: 1300,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 0.868,
-                                        lng: 112.804,
-                                        rank: 6,
-                                        name: 'Borneo International Anugerah',
-                                        value: 877,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -1.673,
-                                        lng: 113.417,
-                                        rank: 7,
-                                        name: 'Agro Kalimantan Lestari',
-                                        value: 784,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: 1.229,
-                                        lng: 118.277,
-                                        rank: 8,
-                                        name: 'Anugrah Surya Mandiri',
-                                        value: 713,
-                                        dir: 'top'
-                                    },
-                                    {
-                                        lat: 0.996,
-                                        lng: 112.031,
-                                        rank: 9,
-                                        name: 'Khatulistiwa Agro Abadi',
-                                        value: 682,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -0.191,
-                                        lng: 104.85,
-                                        rank: 10,
-                                        name: 'Citra Sugi Aditya',
-                                        value: 676,
-                                        dir: 'bottom'
-                                    }
+                                    lat: -1.163,
+                                    lng: 131.378,
+                                    rank: 1,
+                                    name: 'Inti Kebun Lestari',
+                                    value: 2624,
+                                    dir: 'top'
+                                },
+                                {
+                                    lat: 0.679,
+                                    lng: 121.502,
+                                    rank: 2,
+                                    name: 'Banyan Tumbuh Lestari',
+                                    value: 2094,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -1.316,
+                                    lng: 131.233,
+                                    rank: 3,
+                                    name: 'Inti Kebun Sejahtera',
+                                    value: 2053,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -7.918,
+                                    lng: 140.71,
+                                    rank: 4,
+                                    name: 'Merauke Sawit Jaya',
+                                    value: 1808,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: -1.391,
+                                    lng: 131.193,
+                                    rank: 5,
+                                    name: 'Papua Lestari Abadi',
+                                    value: 1300,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: 0.868,
+                                    lng: 112.804,
+                                    rank: 6,
+                                    name: 'Borneo International Anugerah',
+                                    value: 877,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -1.673,
+                                    lng: 113.417,
+                                    rank: 7,
+                                    name: 'Agro Kalimantan Lestari',
+                                    value: 784,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: 1.229,
+                                    lng: 118.277,
+                                    rank: 8,
+                                    name: 'Anugrah Surya Mandiri',
+                                    value: 713,
+                                    dir: 'top'
+                                },
+                                {
+                                    lat: 0.996,
+                                    lng: 112.031,
+                                    rank: 9,
+                                    name: 'Khatulistiwa Agro Abadi',
+                                    value: 682,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: -0.191,
+                                    lng: 104.85,
+                                    rank: 10,
+                                    name: 'Citra Sugi Aditya',
+                                    value: 676,
+                                    dir: 'bottom'
+                                }
                                 ]
                             },
                             'tambang': {
@@ -3590,85 +3774,85 @@
                                 geojsonFile: '/geojson/tambang.geojson',
                                 dlUrl: 'https://simontini.id/assets/2025-data/tambang.xlsx',
                                 markers: [{
-                                        lat: 2.09,
-                                        lng: 117.323,
-                                        rank: 1,
-                                        name: 'Berau Coal (Batubara)',
-                                        value: 1473,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -3.013,
-                                        lng: 121.841,
-                                        rank: 2,
-                                        name: 'Sulawesi Cahaya Mineral (Nikel)',
-                                        value: 1085,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -0.102,
-                                        lng: 114.889,
-                                        rank: 3,
-                                        name: 'Maruwai Coal (Batubara)',
-                                        value: 920,
-                                        dir: 'top'
-                                    },
-                                    {
-                                        lat: 0.64,
-                                        lng: 127.99,
-                                        rank: 4,
-                                        name: 'Weda Bay Nickel (Nikel)',
-                                        value: 902,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -2.633,
-                                        lng: 121.621,
-                                        rank: 5,
-                                        name: 'Vale Indonesia TBK (Nikel)',
-                                        value: 842,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: 1.109,
-                                        lng: 99.205,
-                                        rank: 6,
-                                        name: 'Agincourt Resources (Emas)',
-                                        value: 840,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -0.278,
-                                        lng: 114.902,
-                                        rank: 7,
-                                        name: 'Lahai Coal (Batubara)',
-                                        value: 770,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -1.537,
-                                        lng: 112.523,
-                                        rank: 8,
-                                        name: 'Blok Waringin Agung (Emas)',
-                                        value: 764,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -1.068,
-                                        lng: 114.624,
-                                        rank: 9,
-                                        name: 'Suprabari Mapanindo Mineral',
-                                        value: 673,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -2.891,
-                                        lng: 122.045,
-                                        rank: 10,
-                                        name: 'Bintang Delapan Mineral (Nikel)',
-                                        value: 659,
-                                        dir: 'bottom'
-                                    }
+                                    lat: 2.09,
+                                    lng: 117.323,
+                                    rank: 1,
+                                    name: 'Berau Coal (Batubara)',
+                                    value: 1473,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -3.013,
+                                    lng: 121.841,
+                                    rank: 2,
+                                    name: 'Sulawesi Cahaya Mineral (Nikel)',
+                                    value: 1085,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -0.102,
+                                    lng: 114.889,
+                                    rank: 3,
+                                    name: 'Maruwai Coal (Batubara)',
+                                    value: 920,
+                                    dir: 'top'
+                                },
+                                {
+                                    lat: 0.64,
+                                    lng: 127.99,
+                                    rank: 4,
+                                    name: 'Weda Bay Nickel (Nikel)',
+                                    value: 902,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -2.633,
+                                    lng: 121.621,
+                                    rank: 5,
+                                    name: 'Vale Indonesia TBK (Nikel)',
+                                    value: 842,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: 1.109,
+                                    lng: 99.205,
+                                    rank: 6,
+                                    name: 'Agincourt Resources (Emas)',
+                                    value: 840,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: -0.278,
+                                    lng: 114.902,
+                                    rank: 7,
+                                    name: 'Lahai Coal (Batubara)',
+                                    value: 770,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: -1.537,
+                                    lng: 112.523,
+                                    rank: 8,
+                                    name: 'Blok Waringin Agung (Emas)',
+                                    value: 764,
+                                    dir: 'right'
+                                },
+                                {
+                                    lat: -1.068,
+                                    lng: 114.624,
+                                    rank: 9,
+                                    name: 'Suprabari Mapanindo Mineral',
+                                    value: 673,
+                                    dir: 'left'
+                                },
+                                {
+                                    lat: -2.891,
+                                    lng: 122.045,
+                                    rank: 10,
+                                    name: 'Bintang Delapan Mineral (Nikel)',
+                                    value: 659,
+                                    dir: 'bottom'
+                                }
                                 ]
                             }
                         }
@@ -3859,15 +4043,15 @@
                     badge.dataset.species = item.name;
                     const shortName = item.name.split(' ').slice(-2).join(' ');
                     badge.innerHTML = `
-                                      <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                      <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                      <div class="satwa-badge-detail">
-                                      <span class="si-name">${item.name}</span>
-                                      <span class="si-val">${item.value}</span>
-                                      <span class="si-val">${item.lokal}</span>
-                                      <span class="si-unit">deforestasi di habitat</span>
-                                      </div>
-                                  `;
+                                                              <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                                              <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                                              <div class="satwa-badge-detail">
+                                                              <span class="si-name">${item.name}</span>
+                                                              <span class="si-val">${item.value}</span>
+                                                              <span class="si-val">${item.lokal}</span>
+                                                              <span class="si-unit">deforestasi di habitat</span>
+                                                              </div>
+                                                          `;
                     badge.addEventListener('click', async (e) => {
                         e.stopPropagation();
                         const isActive = badge.classList.contains('active');
@@ -4530,7 +4714,7 @@
                             kpiEl.style.maxHeight = Math.round(fullH * 0.4) + 'px';
                         }
                         requestAnimationFrame(() => setTimeout(kpiMeasure, 120));
-                        window.kpiFloatToggle = function() {
+                        window.kpiFloatToggle = function () {
                             if (!fullH) {
                                 kpiEl.style.maxHeight = 'none';
                                 fullH = kpiEl.scrollHeight;
