@@ -46,9 +46,9 @@
       </div>
       <div class="hero-divider"></div>
       <!-- <div class="hero-stat">
-                                                                                                                       <span class="hs-val">+66%</span>
-                                                                                                                       <span class="hs-unit">Peningkatan dari 2024</span>
-                                                                                                                       </div> -->
+                                                                                                                                             <span class="hs-val">+66%</span>
+                                                                                                                                             <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                                                                                             </div> -->
       <div class="hero-divider"></div>
       <div class="hero-desc">
         Deforestasi melonjak, saatnya pemerintah menerbitkan
@@ -251,7 +251,7 @@
     <img src="{{ asset('assets/Tahap_ok_Ind.png') }}" alt="Simontini - 2025 Methodology"
       class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:block hidden">
     <img src="{{ asset('assets/Tahap.png') }}" alt="Simontini - 2025 Methodology"
-    class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
+      class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
 
     <section class="page-section px-[5vw] pt-8 pb-6">
       <div class="body-text">
@@ -817,16 +817,21 @@
         <div class="max-w-4xl mx-auto">
           <div class="">
             <div class=" px-4  sm:px-6">
-              <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">Deforestasi Indonesia per Bulan, 2025</div>
+              <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">Deforestasi
+                Indonesia per Bulan, 2025</div>
               <div class="text-[11px] mt-0.5" style="color:#8b7355;">Luas hutan yang hilang per bulan · hektare</div>
             </div>
             <div id="chart-monthly-inner" class="px-4 sm:px-6 py-4 w-full min-w-0">
               <div id="chart-monthly-body" class="relative flex" style="height:380px;">
-                <div id="chart-monthly-yaxis" class="flex flex-col-reverse justify-between pb-[48px] w-[42px] md:w-[56px] shrink-0"></div>
+                <div id="chart-monthly-yaxis"
+                  class="flex flex-col-reverse justify-between pb-[48px] w-[42px] md:w-[56px] shrink-0"></div>
                 <div id="chart-monthly-bars-wrap" class="relative flex-1 flex flex-col">
                   <div id="chart-monthly-grid" class="relative flex flex-col-reverse justify-between flex-1"></div>
-                  <div id="chart-monthly-bars" class="absolute inset-x-0 top-0 bottom-[48px] grid items-end gap-[3px] md:gap-[5px] px-1"></div>
-                  <div id="chart-monthly-xaxis" class="relative grid gap-[3px] md:gap-[5px] px-[4px] mt-2 h-[48px] items-center" style="background:white;z-index:2;"></div>
+                  <div id="chart-monthly-bars"
+                    class="absolute inset-x-0 top-0 bottom-[48px] grid items-end gap-[3px] md:gap-[5px] px-1"></div>
+                  <div id="chart-monthly-xaxis"
+                    class="relative grid gap-[3px] md:gap-[5px] px-[4px] mt-2 h-[48px] items-center"
+                    style="background:white;z-index:2;"></div>
                 </div>
               </div>
             </div>
@@ -933,7 +938,8 @@
               </div>
             </div>
 
-            <div id="map-legend" class="absolute left-[14px] bottom-[52px] z-[620] flex flex-col gap-[4px]" style="display:none"></div>
+            <div id="map-legend" class="absolute left-[14px] bottom-[52px] z-[620] flex flex-col gap-[4px]"
+              style="display:none"></div>
 
             <div id="table-panel"
               class="absolute right-0 top-0 bottom-0 w-[min(600px,56vw)] bg-[#1a1a1a] z-[650] translate-x-full transition-transform duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] flex flex-col border-l-2 border-white/[.1] shadow-[-10px_0_40px_rgba(0,0,0,.45)]">
@@ -1052,18 +1058,19 @@
 
 
         <!-- <ul class="insight-list">
-                                                                                                                                                <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                                                                                                                                <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                                                                                                                                <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                                                                                                                                <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                                                                                                                              </ul> -->
+                                                                                                                                                                      <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                                                                                                                      <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                                                                                                                      <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                                                                                                                      <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                                                                                                                    </ul> -->
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
           <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-6 z-20">
 
             <a href="{{ asset('assets/images/stadi2025/PLTA Mentarang, Malinau.jpg') }}" class="glightbox1 mt-4 gbox"
-              data-gallery="gallery1" data-glightbox="description:   PLTA Mentarang, Malinau, <br> Kalimantan Utara, Oktober 2025">
+              data-gallery="gallery1"
+              data-glightbox="description:   PLTA Mentarang, Malinau, <br> Kalimantan Utara, Oktober 2025">
 
               <img src="{{ asset('assets/images/stadi2025/PLTA Mentarang, Malinau.jpg') }}"
                 class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300" />
@@ -1119,7 +1126,8 @@
               <!-- IMAGE 1 -->
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Anugerah Surya Utama  2.jpg') }}"
-                  class="glightbox2 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:  Konsesi Tambang, PT Anugerah Surya Utama, <br> Raja Ampat, Papua, September 2025">
+                  class="glightbox2 mt-4 gbox" data-gallery="gallery1"
+                  data-glightbox="description:  Konsesi Tambang, PT Anugerah Surya Utama, <br> Raja Ampat, Papua, September 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Anugerah Surya Utama  2.jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
@@ -1134,7 +1142,8 @@
               <!-- IMAGE 2 -->
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Jati Dharma Indah Plywood 2.jpg') }}"
-                  class="glightbox2 mt-4 gbox" data-gallery="gallery1" data-glightbox="description: Konsesi PBPH, PT Jati Dharma Indah Plywood, <br> Industries, Nabire, Papua Tengah, Desember 2025">
+                  class="glightbox2 mt-4 gbox" data-gallery="gallery1"
+                  data-glightbox="description: Konsesi PBPH, PT Jati Dharma Indah Plywood, <br> Industries, Nabire, Papua Tengah, Desember 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Jati Dharma Indah Plywood 2.jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
@@ -1197,22 +1206,22 @@
         </p>
 
         <!-- <div class="callout">
-                                                                                                                                                <strong>Faktor pendorong utama:</strong>
-                                                                                                                                                <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                                                                                                                                  <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                                                                                                                                  <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                                                                                                                                  <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                                                                                                                                </ul>
-                                                                                                                                              </div> -->
+                                                                                                                                                                      <strong>Faktor pendorong utama:</strong>
+                                                                                                                                                                      <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                                                                                                                        <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                                                                                                                        <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                                                                                                                        <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                                                                                                                      </ul>
+                                                                                                                                                                    </div> -->
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
             <div x-data="{ active: 0, images: [
-              { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
-              { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-              { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
-              ]}">
+                                    { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
+                                    { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
+                                    { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
+                                    ]}">
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" alt="Simontini"
                   @click="GLightbox({ elements: images.map(img => ({ href: img.src, description: img.caption })), startAt: active }).open()"
@@ -1290,7 +1299,8 @@
               <!-- IMAGE 1 -->
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Hutan Berau Lestari .jpg') }}"
-                  class="glightbox4 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:  Konsesi PBPH, PT Hutan Berau Lestari, <br> Berau, Kalimantan Timur, Mei 2025">
+                  class="glightbox4 mt-4 gbox" data-gallery="gallery1"
+                  data-glightbox="description:  Konsesi PBPH, PT Hutan Berau Lestari, <br> Berau, Kalimantan Timur, Mei 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Hutan Berau Lestari .jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
@@ -1305,7 +1315,8 @@
               <!-- IMAGE 2 -->
               <div>
                 <a href="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}"
-                  class="glightbox4 mt-4 gbox" data-gallery="gallery1" data-glightbox="description: Konsesi PBPH, PT Indosubur Sukses Makmur, <br> Kutai Timur, Kalimantan Timur, Januari 2025">
+                  class="glightbox4 mt-4 gbox" data-gallery="gallery1"
+                  data-glightbox="description: Konsesi PBPH, PT Indosubur Sukses Makmur, <br> Kutai Timur, Kalimantan Timur, Januari 2025">
 
                   <img src="{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}"
                     class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
@@ -1356,7 +1367,8 @@
           <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-6 z-20">
 
             <a href="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2025.jpg') }}"
-              class="glightbox5 mt-4 gbox" data-gallery="gallery1" data-glightbox="description:    Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, <br> Aceh Selatan, Aceh, Agustus 2025, @ Haka">
+              class="glightbox5 mt-4 gbox" data-gallery="gallery1"
+              data-glightbox="description:    Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, <br> Aceh Selatan, Aceh, Agustus 2025, @ Haka">
 
               <img
                 src="{{ asset('assets/images/stadi2025/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2025.jpg') }}"
@@ -1373,167 +1385,169 @@
       </div><br>
     </section>
 
-<!-- REKOMENDASI -->
-<span class="s-anchor" id="rekomendasi"></span>
-<section class="page-section px-[5vw] pt-10 pb-20">
-    <div class="mx-auto max-w-[820px]">
-    <div class="section-label">V. Rekomendasi</div>
+    <!-- REKOMENDASI -->
+    <span class="s-anchor" id="rekomendasi"></span>
+    <section class="page-section px-[5vw] pt-10 pb-20">
+      <div class="mx-auto max-w-[820px]">
+        <div class="section-label">V. Rekomendasi</div>
 
-    <p class="body-text">
-        Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
-        tanggung jawab para pemegang izin. Rekomendasi berikut menempatkan perlindungan hutan sebagai agenda kebijakan
-        yang harus dijalankan secara serentak.
-    </p>
+        <p class="body-text">
+          Perlindungan hutan alam tersisa perlu diperkuat melalui kombinasi regulasi, tata ruang, kelembagaan, dan
+          tanggung jawab para pemegang izin. Rekomendasi berikut menempatkan perlindungan hutan sebagai agenda kebijakan
+          yang harus dijalankan secara serentak.
+        </p>
 
-    <div class="method-steps">
-        <div class="border-b pt-0 pb-12">
+        <div class="method-steps">
+          <div class="border-b pt-0 pb-12">
             <div class="method-step">
-                <div class="ms-num">1.</div>
-                <div>
-                    <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di
-                        Indonesia.</h4><br>
-                    <p class="body-text">
-                        Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun, menghadirkan sebuah
-                        undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di bawahnya, yakni
-                        peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama oleh kerumitan
-                        dan
-                        kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam penyusunan peraturan
-                        pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup menjawab
-                        persoalan,
-                        sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden mengenai perlindungan
-                        <strong>seluruh</strong> hutan alam tersisa di Indonesia.
-                    </p>
-                </div>
+              <div class="ms-num">1.</div>
+              <div>
+                <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan alam tersisa di
+                  Indonesia.</h4><br>
+                <p class="body-text">
+                  Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun, menghadirkan sebuah
+                  undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di bawahnya, yakni
+                  peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama oleh kerumitan
+                  dan
+                  kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam penyusunan peraturan
+                  pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup menjawab
+                  persoalan,
+                  sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden mengenai perlindungan
+                  <strong>seluruh</strong> hutan alam tersisa di Indonesia.
+                </p>
+              </div>
             </div>
 
             <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
-                <div class="viz-frame !p-0 flex items-start">
+              <div class="viz-frame !p-0 flex items-start">
 
-                    <div x-data="{
-                        currentSlide: 3,
-                        totalSlides: 4,
-                        startX: 4,
-                        startSwipe(e) { this.startX = e.touches[0].clientX; },
-                        handleTouchMove(e) {
-                            let diff = this.startX - e.touches[0].clientX;
-                            if (Math.abs(diff) > 50) {
-                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                this.startX = e.touches[0].clientX;
-                            }
-                        }
-                    }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
-                        class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+                <div x-data="{
+                                              currentSlide: 3,
+                                              totalSlides: 4,
+                                              startX: 4,
+                                              startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                              handleTouchMove(e) {
+                                                  let diff = this.startX - e.touches[0].clientX;
+                                                  if (Math.abs(diff) > 50) {
+                                                      if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                      else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                      this.startX = e.touches[0].clientX;
+                                                  }
+                                              }
+                                          }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                  class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
-                        <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                            @foreach([1, 2, 3, 4, 5] as $i)
-                            <div class="w-full flex-shrink-0">
-                                <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox1 gbox"
-                                data-glightbox="description:">
-                                <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
-                                    class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
-                                </a>
-                            </div>
-                            @endforeach
-                        </div>
+                  <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                    @foreach([1, 2, 3, 4, 5] as $i)
+                      <div class="w-full flex-shrink-0">
+                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" class="glightbox6 gbox"
+                          data-glightbox="description:">
+                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" alt="RUDP {{ $i }}"
+                            class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
+                        </a>
+                      </div>
+                    @endforeach
+                  </div>
 
-                        <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
-                            class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
-                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
-                            <span style="font-size: 14px; color: #222;">◀</span>
-                        </button>
+                  <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                    class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                    style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                    <span style="font-size: 14px; color: #222;">◀</span>
+                  </button>
 
-                        <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
-                            x-show="currentSlide < totalSlides - 1"
-                            class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
-                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
-                            <span style="font-size: 14px; color: #222;">▶</span>
-                        </button>
+                  <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                    x-show="currentSlide < totalSlides - 1"
+                    class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                    style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                    <span style="font-size: 14px; color: #222;">▶</span>
+                  </button>
 
-                        <div class="flex justify-center gap-2 mt-3">
-                            <template x-for="i in totalSlides" :key="i">
-                            <button @click="currentSlide = i - 1" :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
-                                class="w-2 h-2 rounded-full"></button>
-                            </template>
-                        </div>
-                        </div>
-                    </div>
+                  <div class="flex justify-center gap-2 mt-3">
+                    <template x-for="i in totalSlides" :key="i">
+                      <button @click="currentSlide = i - 1" :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
+                        class="w-2 h-2 rounded-full"></button>
+                    </template>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
 
           <div class="method-steps border-b">
             <div class="method-step ">
-            <div class="ms-num">2.</div>
-            <div class="-mb-12">
-              <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.</h4><br>
-              <p class="body-text ">
-                pertengahan 2023 publik dikejutkan dengan usulan revisi tata ruang Provinsi Kalimantan Timur yang
-                ditengarai akan melepaskan 612.355 hektare kawasan hutan (menjadi area penggunaan lain), menurunkan fungsi
-                kawasan hutan (sehingga memungkinkan ditambang) seluas 101.788 hektare. Padahal, setidaknya 389.596
-                hektare
-                <a href="https://www.youtube.com/watch?v=Mx4638DmEjI" target="_blank" rel="noopener noreferrer"
-                  style="color: #bc4a3c;">(55%) area ini bertutupan hutan alam</a>.
-                Sementara, beberapa bulan sebelumnya Pemerintah Provinsi Kalimantan Utara mengusulkan revisi tata ruang
-                yang akan mengalihkan fungsi kawasan hutan seluas
-                <a href="https://korankaltara.com/762-ribu-hektare-hutan-diusulkan-beralih-fungsi" target="_blank"
-                  rel="noopener noreferrer" style="color: #bc4a3c;">762.000 hektare</a>.
-                Di Aceh, manuver pemerintah daerah ditengarai akan berdampak pada hilangnya status perlindungan Kawasan
-                Ekosistem Leuser yang telah ditetapkan sebagai cagar biosfer sekaligus sebagai penyangga Taman Nasional
-                Gunung Leuser. Sekelumit kecil contoh empirik ini menunjukkan kemendesakan perlunya instrumen pengendalian
-                revisi tata ruang wilayah yang menjamin prosesnya berlangsung secara transparan dan memastikan pelibatan
-                pihak terdampak sehingga hasil revisinya semata-mata demi kepentingan publik.
-              </p>
+              <div class="ms-num">2.</div>
+              <div class="-mb-12">
+                <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.</h4><br>
+                <p class="body-text ">
+                  pertengahan 2023 publik dikejutkan dengan usulan revisi tata ruang Provinsi Kalimantan Timur yang
+                  ditengarai akan melepaskan 612.355 hektare kawasan hutan (menjadi area penggunaan lain), menurunkan
+                  fungsi
+                  kawasan hutan (sehingga memungkinkan ditambang) seluas 101.788 hektare. Padahal, setidaknya 389.596
+                  hektare
+                  <a href="https://www.youtube.com/watch?v=Mx4638DmEjI" target="_blank" rel="noopener noreferrer"
+                    style="color: #bc4a3c;">(55%) area ini bertutupan hutan alam</a>.
+                  Sementara, beberapa bulan sebelumnya Pemerintah Provinsi Kalimantan Utara mengusulkan revisi tata ruang
+                  yang akan mengalihkan fungsi kawasan hutan seluas
+                  <a href="https://korankaltara.com/762-ribu-hektare-hutan-diusulkan-beralih-fungsi" target="_blank"
+                    rel="noopener noreferrer" style="color: #bc4a3c;">762.000 hektare</a>.
+                  Di Aceh, manuver pemerintah daerah ditengarai akan berdampak pada hilangnya status perlindungan Kawasan
+                  Ekosistem Leuser yang telah ditetapkan sebagai cagar biosfer sekaligus sebagai penyangga Taman Nasional
+                  Gunung Leuser. Sekelumit kecil contoh empirik ini menunjukkan kemendesakan perlunya instrumen
+                  pengendalian
+                  revisi tata ruang wilayah yang menjamin prosesnya berlangsung secara transparan dan memastikan pelibatan
+                  pihak terdampak sehingga hasil revisinya semata-mata demi kepentingan publik.
+                </p>
 
-            </div>
+              </div>
             </div>
             <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
-                <div class="viz-frame !p-0 flex items-start">
+              <div class="viz-frame !p-0 flex items-start">
 
-                    <div x-data="{
-                        currentSlide: 0,
-                        totalSlides: 1,
-                        startX: 0,
-                        startSwipe(e) { this.startX = e.touches[0].clientX; },
-                        handleTouchMove(e) {
-                            let diff = this.startX - e.touches[0].clientX;
-                            if (Math.abs(diff) > 50) {
-                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                                this.startX = e.touches[0].clientX;
-                            }
-                        }
-                    }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
-                        class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+                <div x-data="{
+                                              currentSlide: 0,
+                                              totalSlides: 1,
+                                              startX: 0,
+                                              startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                              handleTouchMove(e) {
+                                                  let diff = this.startX - e.touches[0].clientX;
+                                                  if (Math.abs(diff) > 50) {
+                                                      if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                      else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                      this.startX = e.touches[0].clientX;
+                                                  }
+                                              }
+                                          }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                  class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
-                        <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
-                            @foreach([8] as $i)
-                            <div class="w-full flex-shrink-0">
-                                <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox1 gbox"
-                                data-glightbox="description:">
-                                <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
-                                    class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
-                                </a>
-                            </div>
-                            @endforeach
-                        </div>
+                  <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                    @foreach([8] as $i)
+                      <div class="w-full flex-shrink-0">
+                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox7 gbox"
+                          data-glightbox="description:">
+                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
+                            class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
+                        </a>
+                      </div>
+                    @endforeach
+                  </div>
 
-                        <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
-                            class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
-                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
-                            <span style="font-size: 14px; color: #222;">◀</span>
-                        </button>
+                  <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                    class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                    style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                    <span style="font-size: 14px; color: #222;">◀</span>
+                  </button>
 
-                        <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
-                            x-show="currentSlide < totalSlides - 1"
-                            class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
-                            style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
-                            <span style="font-size: 14px; color: #222;">▶</span>
-                        </button>
+                  <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                    x-show="currentSlide < totalSlides - 1"
+                    class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                    style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                    <span style="font-size: 14px; color: #222;">▶</span>
+                  </button>
 
 
-                        </div>
-                    </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="method-step border-b">
@@ -1582,28 +1596,28 @@
               <div class="viz-frame !p-0 flex items-start">
 
                 <div x-data="{
-                    currentSlide: 0,
-                    totalSlides: 2,
-                    startX: 0,
-                    startSwipe(e) { this.startX = e.touches[0].clientX; },
-                    handleTouchMove(e) {
-                        let diff = this.startX - e.touches[0].clientX;
-                        if (Math.abs(diff) > 50) {
-                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
-                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
-                            this.startX = e.touches[0].clientX;
-                        }
-                    }
-                }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                        currentSlide: 0,
+                      totalSlides: 2,
+                      startX: 0,
+                      startSwipe(e) { this.startX = e.touches[0].clientX; },
+                      handleTouchMove(e) {
+                      let diff = this.startX - e.touches[0].clientX;
+                      if (Math.abs(diff) > 50) {
+                      if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                      else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                      this.startX = e.touches[0].clientX;
+                      }
+                       }
+                      }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
                   class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
 
                   <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
                     @foreach([6, 7] as $i)
                       <div class="w-full flex-shrink-0">
-                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox1 gbox"
+                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" class="glightbox8 gbox"
                           data-glightbox="description:">
-                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
-                            class="w-full object-contain cursor-pointer h-[220px]sm:h-[60vh]" />
+                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.png') }}" alt="RUDP {{ $i }}"
+                            class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
                         </a>
                       </div>
                     @endforeach
@@ -2624,9 +2638,9 @@
         }).addTo(map);
 
         var wmsLayer = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-            layers: 'proteus:POLITICAL_LEVEL_1_dissolved ',
-            format: 'image/png',
-            transparent: true
+          layers: 'proteus:POLITICAL_LEVEL_1_dissolved ',
+          format: 'image/png',
+          transparent: true
         }).addTo(map);
 
         // Custom panes so toggling choropleth layers is a single CSS display flip
@@ -2753,13 +2767,13 @@
             ],
             notesBox: [''],
             species: [
-              { lokal:'Harimau Sumatra', lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/def_harimau.json' },
-              { lokal:'Gajah Sumatra', lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/def_gajah.json' },
-              { lokal:'Badak Sumatra', lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json' },
-              { lokal:'Orangutan Tapanuli', lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/def_pongo_tapanuliensis.json' },
-              { lokal:'Orangutan Sumatra', lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/def_pongo_abelii.json' },
-              { lokal:'Orangutan Kalimantan', lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/def_pongo_pygmaeus.json' },
-              { lokal:'Badak Kalimantan', lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json' }
+              { lokal: 'Harimau Sumatra', lat: 3.4, lng: 94.2, icon: '🐅', image: '/assets/images/satwa/image.png', name: 'Panthera tigris sumatrae', value: '78.049 hektare', dir: 'left', geojsonUrl: '/geojson/def_harimau.json' },
+              { lokal: 'Gajah Sumatra', lat: -0.38, lng: 96.0, icon: '🐘', image: '/assets/images/satwa/image-2.png', name: 'Elephas maximus sumatranus', value: '25.301', dir: 'left', geojsonUrl: '/geojson/def_gajah.json' },
+              { lokal: 'Badak Sumatra', lat: -6.2, lng: 101.7, icon: '🦏', image: '/assets/images/satwa/image-3.png', name: 'Dicerorhinus sumatrensis sumatrensis', value: '18.477', dir: 'left', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json' },
+              { lokal: 'Orangutan Tapanuli', lat: 5.7, lng: 98.2, icon: '🦧', image: '/assets/images/satwa/image-4.png', name: 'Pongo tapanuliensis', value: '505', dir: 'right', geojsonUrl: '/geojson/def_pongo_tapanuliensis.json' },
+              { lokal: 'Orangutan Sumatra', lat: 1.0, lng: 102.6, icon: '🦧', image: '/assets/images/satwa/image-5.png', name: 'Pongo abelii', value: '16.519', dir: 'right', geojsonUrl: '/geojson/def_pongo_abelii.json' },
+              { lokal: 'Orangutan Kalimantan', lat: 3.5, lng: 111.5, icon: '🦧', image: '/assets/images/satwa/image-6.png', name: 'Pongo pygmaeus', value: '66.890', dir: 'left', geojsonUrl: '/geojson/def_pongo_pygmaeus.json' },
+              { lokal: 'Badak Kalimantan', lat: 2.5, lng: 121.5, icon: '🦏', image: '/assets/images/satwa/image-7.png', name: 'Dicerorhinus sumatrensis harrissoni', value: '3.057', dir: 'right', geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json' }
             ],
             tables: [],
             dlUrl: ''
@@ -2959,15 +2973,15 @@
           badge.dataset.species = item.name;
           const shortName = item.name.split(' ').slice(-2).join(' ');
           badge.innerHTML = `
-                <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                <div class="satwa-badge-detail">
-                <span class="si-name">${item.name}</span>
-                <span class="si-val">${item.value}</span>
-                <span class="si-val">${item.lokal}</span>
-                <span class="si-unit">deforestasi di habitat</span>
-                </div>
-            `;
+                                      <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                      <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                      <div class="satwa-badge-detail">
+                                      <span class="si-name">${item.name}</span>
+                                      <span class="si-val">${item.value}</span>
+                                      <span class="si-val">${item.lokal}</span>
+                                      <span class="si-unit">deforestasi di habitat</span>
+                                      </div>
+                                  `;
           badge.addEventListener('click', async (e) => {
             e.stopPropagation();
             const isActive = badge.classList.contains('active');
