@@ -1745,23 +1745,23 @@
                                                             startX: 0,
                                                             images: [
                                                               {
-                                                                src: '{{ asset('assets/images/stadi2025/RUDP1 in.jpg') }}',
+                                                                src: '{{ asset('assets/images/stadi2025/RUDP1 en.jpg') }}',
                                                                 desc: 'Nearly half of Indonesia’s natural forests lack legal protection. Indonesia has 118.7 million hectares of terrestrial forest areas. It is worth noting that a forest area is a region designated as such. It is not uncommon for forest areas to lack forest cover. Conversely, a significant amount of natural forest cover lies outside designated forest areas.'
                                                               },
                                                               {
-                                                                src: '{{ asset('assets/images/stadi2025/RUDP2 in.jpg') }}',
+                                                                src: '{{ asset('assets/images/stadi2025/RUDP2 en.jpg') }}',
                                                                 desc: 'Nearly half of Indonesia’s natural forests lack legal protection. Of the 22 million hectares of conservation forest areas, 4.7 million hectares are not covered by natural forest. Legally, all natural forests within conservation forest areas are protected.'
                                                               },
                                                               {
-                                                                src: '{{ asset('assets/images/stadi2025/RUDP3 in.jpg') }}',
+                                                                src: '{{ asset('assets/images/stadi2025/RUDP3 en.jpg') }}',
                                                                 desc: 'Nearly half of Indonesia’s natural forests lack legal protection. There are 227,127 hectares of natural forest cover within protected forests that lie outside the moratorium area, leaving them vulnerable to deforestation due to government policies or projects.'
                                                               },
                                                               {
-                                                                src: '{{ asset('assets/images/stadi2025/RUDP4 in.jpg') }}',
+                                                                src: '{{ asset('assets/images/stadi2025/RUDP4 en.jpg') }}',
                                                                 desc: 'Nearly half of Indonesia’s natural forests lack legal protection. There are 22.5 million hectares of natural forest cover in production forests located outside the moratorium area, making them vulnerable to deforestation because they lack legal protection.'
                                                               },
                                                               {
-                                                                src: '{{ asset('assets/images/stadi2025/RUDP5 in.jpg') }}',
+                                                                src: '{{ asset('assets/images/stadi2025/RUDP5 en.jpg') }}',
                                                                 desc: 'Nearly half of Indonesia’s natural forests lack legal protection. There are 9 million hectares of natural forest cover outside designated forest areas—or located within Other Land Use Areas (APL)—and 8.1 million hectares of that are outside the moratorium area. In total, 41.6 million hectares (44%) of Indonesia’s natural forest cover lack legal protection.'
                                                               }
                                                             ],
