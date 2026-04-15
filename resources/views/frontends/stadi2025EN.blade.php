@@ -126,6 +126,7 @@
                                     </div>
                                     <div id="x-axis"
                                         class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden"
+<<<<<<< HEAD
                                         style="background:white;z-index:2;"></div>
 <<<<<<< HEAD
 =======
@@ -135,6 +136,14 @@
             <i>Deforestation in Indonesia, 2001–2025</i>
         </small>
 >>>>>>> 743e607db70149b4567a456f69b24f1641f5ecfc
+=======
+                                        style="background:white;z-index:2;">
+                                        
+                                    </div>
+                                    <small style="font-size: 12px !important;" class="text-black">
+                                        <i>Deforestation in Indonesia, 2001-2025</i>
+                                    </small>
+>>>>>>> parent of 743e607 (Merge pull request #32 from Fachri27/main)
                                 </div>
                             </div>
                             <div class="md:hidden mt-3">
@@ -252,11 +261,17 @@
         <img src="{{ asset('assets/Tahap-Eng.png') }}" alt="Simontini - 2025 Methodology"
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             <small 
             class="block w-full sm:max-w-6xl mx-auto text-black" 
+=======
+
+        <small 
+            class="block w-full sm:max-w-6xl mx-auto" 
+>>>>>>> parent of 743e607 (Merge pull request #32 from Fachri27/main)
             style="font-size: 12px !important;">
-            <i>Stages and processing of deforestation data for 2025</i>
+            <i>Stages and processing of deforestation data 2025</i>
         </small>
 >>>>>>> 743e607db70149b4567a456f69b24f1641f5ecfc
 
@@ -822,11 +837,18 @@
 <<<<<<< HEAD
 =======
                 <small 
+<<<<<<< HEAD
             class="block w-full sm:max-w-6xl mx-auto text-center text-black" 
             style="font-size: 12px !important;">
             <i>Deforestation by Major Islands of Indonesia</i>
         </small>
 >>>>>>> 743e607db70149b4567a456f69b24f1641f5ecfc
+=======
+                  class="block w-full sm:max-w-6xl mx-auto text-center" 
+                  style="font-size: 12px !important;">
+                    <i>Deforestation per major island in Indonesia</i>
+                </small>
+>>>>>>> parent of 743e607 (Merge pull request #32 from Fachri27/main)
             </div><br><br>
 
 
@@ -919,11 +941,18 @@
 <<<<<<< HEAD
 =======
                             <small 
+<<<<<<< HEAD
             class="block w-full sm:max-w-6xl mx-auto text-black" 
             style="font-size: 12px !important;">
             <i>Deforestation by Month in Indonesia, 2025</i>
         </small><br><br>
 >>>>>>> 743e607db70149b4567a456f69b24f1641f5ecfc
+=======
+                  class="block w-full sm:max-w-6xl mx-auto text-center" 
+                  style="font-size: 12px !important;">
+                    <i>Monthly deforestation in Indonesia in 2025</i>
+                </small><br><br>
+>>>>>>> parent of 743e607 (Merge pull request #32 from Fachri27/main)
                         </div>
                     </div>
                 </div>
@@ -1073,10 +1102,10 @@
 <<<<<<< HEAD
 =======
                 <small 
-            class="block w-full sm:max-w-6xl mx-auto text-center text-black" 
-            style="font-size: 12px !important;">
-            <i>Deforestation in 2025 by administrative region, conservation area, and concession</i>
-        </small>
+                  class="block w-full sm:max-w-6xl mx-auto text-center" 
+                  style="font-size: 12px !important;">
+                  <i>Deforestation 2025 by administrative region, conservation area, and concession</i>
+                </small>
 
 >>>>>>> 743e607db70149b4567a456f69b24f1641f5ecfc
             </div><br><br>

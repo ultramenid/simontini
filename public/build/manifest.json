@@ -1,6 +1,10 @@
 {
   "resources/css/app.css": {
+<<<<<<< HEAD
     "file": "assets/app-BDYidbZp.css",
+=======
+    "file": "assets/app-BE_l_vaf.css",
+>>>>>>> parent of 743e607 (Merge pull request #32 from Fachri27/main)
     "src": "resources/css/app.css",
     "isEntry": true
   },
