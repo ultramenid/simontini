@@ -127,6 +127,14 @@
                                     <div id="x-axis"
                                         class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden"
                                         style="background:white;z-index:2;"></div>
+<<<<<<< HEAD
+=======
+                                    <small 
+            class="block w-full sm:max-w-6xl mx-auto text-black" 
+            style="font-size: 12px !important;">
+            <i>Deforestation in Indonesia, 2001–2025</i>
+        </small>
+>>>>>>> 743e607db70149b4567a456f69b24f1641f5ecfc
                                 </div>
                             </div>
                             <div class="md:hidden mt-3">
@@ -243,6 +251,14 @@
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:block hidden">
         <img src="{{ asset('assets/Tahap-Eng.png') }}" alt="Simontini - 2025 Methodology"
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
+<<<<<<< HEAD
+=======
+            <small 
+            class="block w-full sm:max-w-6xl mx-auto text-black" 
+            style="font-size: 12px !important;">
+            <i>Stages and processing of deforestation data for 2025</i>
+        </small>
+>>>>>>> 743e607db70149b4567a456f69b24f1641f5ecfc
 
         <section class="page-section px-[5vw] pt-8 pb-6">
             <div class="body-text">
@@ -803,6 +819,14 @@
                         </table>
                     </div>
                 </div>
+<<<<<<< HEAD
+=======
+                <small 
+            class="block w-full sm:max-w-6xl mx-auto text-center text-black" 
+            style="font-size: 12px !important;">
+            <i>Deforestation by Major Islands of Indonesia</i>
+        </small>
+>>>>>>> 743e607db70149b4567a456f69b24f1641f5ecfc
             </div><br><br>
 
 
@@ -892,6 +916,14 @@
                                         style="background:white;z-index:2;"></div>
                                 </div>
                             </div>
+<<<<<<< HEAD
+=======
+                            <small 
+            class="block w-full sm:max-w-6xl mx-auto text-black" 
+            style="font-size: 12px !important;">
+            <i>Deforestation by Month in Indonesia, 2025</i>
+        </small><br><br>
+>>>>>>> 743e607db70149b4567a456f69b24f1641f5ecfc
                         </div>
                     </div>
                 </div>
@@ -1038,6 +1070,15 @@
                         class="flex-1 flex flex-row items-stretch justify-center overflow-y-hidden overflow-x-auto"></div>
                 </aside>
 
+<<<<<<< HEAD
+=======
+                <small 
+            class="block w-full sm:max-w-6xl mx-auto text-center text-black" 
+            style="font-size: 12px !important;">
+            <i>Deforestation in 2025 by administrative region, conservation area, and concession</i>
+        </small>
+
+>>>>>>> 743e607db70149b4567a456f69b24f1641f5ecfc
             </div><br><br>
 
 
