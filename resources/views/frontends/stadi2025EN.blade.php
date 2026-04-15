@@ -1201,12 +1201,12 @@
                             </div>
 
                             <!-- DESC -->
-                            <div class="mt-4" x-show="images[active].desc">
+                            <div class="mt-4" x-show="images[active].desc" style="line-height:1;">
                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
                             </div>
 
                             <!-- THUMB + LOKASI -->
-                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                                     <template x-for="(img, index) in images" :key="index">
@@ -1319,17 +1319,16 @@
                             </div>
 
                             <!-- DESC -->
-                            <div class="mt-4" x-show="images[active].desc">
+                            <div class="mt-4" x-show="images[active].desc" style="line-height:1;">
                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
                             </div>
 
-                            <!-- THUMB + LOKASI -->
-                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
-                                <div
-                                    class="flex gap-2 overflow-x-auto flex-nowrap scroll-smooth sm:grid sm:grid-cols-3 sm:overflow-visible">
+                           <!-- THUMB + LOKASI -->
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                                     <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index"
-                                            class="cursor-pointer w-40 h-20 sm:w-20 sm:h-20 flex-shrink-0 aspect-square"
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
                                             :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                                             <img :src="img.src" alt="thumbnail"
                                                 class="w-full h-full object-cover object-top transition duration-200" />
@@ -1452,17 +1451,16 @@
                             </div>
 
                             <!-- DESC -->
-                            <div class="mt-4" x-show="images[active].desc">
+                            <div class="mt-4" x-show="images[active].desc" style="line-height:1;">
                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
                             </div>
 
                             <!-- THUMB + LOKASI -->
-                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
-                                <div
-                                    class="flex gap-2 overflow-x-auto flex-nowrap scroll-smooth sm:grid sm:grid-cols-3 sm:overflow-visible">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                                     <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index"
-                                            class="cursor-pointer w-40 h-20 sm:w-20 sm:h-20 flex-shrink-0 aspect-square"
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
                                             :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                                             <img :src="img.src" alt="thumbnail"
                                                 class="w-full h-full object-cover object-top transition duration-200" />
@@ -1568,17 +1566,16 @@
                             </div>
 
                             <!-- DESC -->
-                            <div class="mt-4" x-show="images[active].desc">
+                            <div class="mt-4" x-show="images[active].desc" style="line-height:1;">
                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
                             </div>
 
                             <!-- THUMB + LOKASI -->
-                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
-                                <div
-                                    class="flex gap-2 overflow-x-auto flex-nowrap scroll-smooth sm:grid sm:grid-cols-3 sm:overflow-visible">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                                     <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index"
-                                            class="cursor-pointer w-40 h-20 sm:w-20 sm:h-20 flex-shrink-0 aspect-square"
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
                                             :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                                             <img :src="img.src" alt="thumbnail"
                                                 class="w-full h-full object-cover object-top transition duration-200" />
@@ -1678,17 +1675,16 @@
                             </div>
 
                             <!-- DESC -->
-                            <div class="mt-4" x-show="images[active].desc">
+                            <div class="mt-4" x-show="images[active].desc" style="line-height:1;">
                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
                             </div>
 
                             <!-- THUMB + LOKASI -->
-                            <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
-                                <div
-                                    class="flex gap-2 overflow-x-auto flex-nowrap scroll-smooth sm:grid sm:grid-cols-3 sm:overflow-visible">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                                     <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index"
-                                            class="cursor-pointer w-40 h-20 sm:w-20 sm:h-20 flex-shrink-0 aspect-square"
+                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
                                             :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                                             <img :src="img.src" alt="thumbnail"
                                                 class="w-full h-full object-cover object-top transition duration-200" />
