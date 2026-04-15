@@ -126,12 +126,12 @@
                                     </div>
                                     <div id="x-axis"
                                         class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden"
-                                        style="background:white;z-index:2;">
-                                        
-                                    </div>
-                                    <small style="font-size: 12px !important;" class="text-black">
-                                        <i>Deforestation in Indonesia, 2001-2025</i>
-                                    </small>
+                                        style="background:white;z-index:2;"></div>
+                                    <small 
+            class="block w-full sm:max-w-6xl mx-auto text-black" 
+            style="font-size: 12px !important;">
+            <i>Deforestation in Indonesia, 2001–2025</i>
+        </small>
                                 </div>
                             </div>
                             <div class="md:hidden mt-3">
@@ -248,11 +248,10 @@
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:block hidden">
         <img src="{{ asset('assets/Tahap-Eng.png') }}" alt="Simontini - 2025 Methodology"
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
-
-        <small 
-            class="block w-full sm:max-w-6xl mx-auto" 
+            <small 
+            class="block w-full sm:max-w-6xl mx-auto text-black" 
             style="font-size: 12px !important;">
-            <i>Stages and processing of deforestation data 2025</i>
+            <i>Stages and processing of deforestation data for 2025</i>
         </small>
 
         <section class="page-section px-[5vw] pt-8 pb-6">
@@ -815,10 +814,10 @@
                     </div>
                 </div>
                 <small 
-                  class="block w-full sm:max-w-6xl mx-auto text-center" 
-                  style="font-size: 12px !important;">
-                    <i>Deforestation per major island in Indonesia</i>
-                </small>
+            class="block w-full sm:max-w-6xl mx-auto text-center text-black" 
+            style="font-size: 12px !important;">
+            <i>Deforestation by Major Islands of Indonesia</i>
+        </small>
             </div><br><br>
 
 
@@ -909,10 +908,10 @@
                                 </div>
                             </div>
                             <small 
-                  class="block w-full sm:max-w-6xl mx-auto text-center" 
-                  style="font-size: 12px !important;">
-                    <i>Monthly deforestation in Indonesia in 2025</i>
-                </small><br><br>
+            class="block w-full sm:max-w-6xl mx-auto text-black" 
+            style="font-size: 12px !important;">
+            <i>Deforestation by Month in Indonesia, 2025</i>
+        </small><br><br>
                         </div>
                     </div>
                 </div>
@@ -1060,10 +1059,10 @@
                 </aside>
 
                 <small 
-                  class="block w-full sm:max-w-6xl mx-auto text-center" 
-                  style="font-size: 12px !important;">
-                  <i>Deforestation 2025 by administrative region, conservation area, and concession</i>
-                </small>
+            class="block w-full sm:max-w-6xl mx-auto text-center text-black" 
+            style="font-size: 12px !important;">
+            <i>Deforestation in 2025 by administrative region, conservation area, and concession</i>
+        </small>
 
             </div><br><br>
 
