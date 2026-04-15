@@ -47,9 +47,15 @@
             </div>
             <div class="hero-divider"></div>
             <!-- <div class="hero-stat">
+<<<<<<< Updated upstream
                                                                                                                                                                                                                                              <span class="hs-val">+66%</span>
                                                                                                                                                                                                                                              <span class="hs-unit">Peningkatan dari 2024</span>
                                                                                                                                                                                                                                              </div> -->
+=======
+                                                                                                                                                                                                                                                                                     <span class="hs-val">+66%</span>
+                                                                                                                                                                                                                                                                                     <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                                                                                                                                                                                                                                     </div> -->
+>>>>>>> Stashed changes
             <div class="hero-divider"></div>
             <div class="hero-desc">
                 Deforestation is on the rise; it’s time for the government to issue
@@ -1133,11 +1139,19 @@
 
 
                 <!-- <ul class="insight-list">
+<<<<<<< Updated upstream
                                                                                                                                                                                                                                               <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
                                                                                                                                                                                                                                               <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
                                                                                                                                                                                                                                               <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
                                                                                                                                                                                                                                               <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
                                                                                                                                                                                                                                             </ul> -->
+=======
+                                                                                                                                                                                                                                                                                      <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                                                                                                                                                                                                                                      <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                                                                                                                                                                                                                                      <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                                                                                                                                                                                                                                      <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                                                                                                                                                                                                                                    </ul> -->
+>>>>>>> Stashed changes
             </div>
 
             <div class="viz-block viz-block--full mt-2 mb-2">
@@ -1145,6 +1159,7 @@
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
                         <div x-data="{
+<<<<<<< Updated upstream
                                           active: 0,
                                           images: [
                                             {
@@ -1169,10 +1184,37 @@
                                             }
                                           ]
                                         }">
+=======
+                                                              active: 0,
+                                                              images: [
+                                                                {
+                                                                  src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
+                                                                  desc: '<strong>Natural forest cover within the timber plantation concession of PT Malinau Hijau Lestari (MHL) in Malinau, North Kalimantan.</strong> The granting of timber plantation permits in areas covered by natural forest such as this constitutes a form of government-sanctioned deforestation, as it allows MHL to clear the natural forest and replace it (convert it) with an energy (biomass) timber plantation that will be harvested periodically. Photo: Auriga Nusantara, May 2024.',
+                                                                  title: 'Kawasan Hutan Produksi, Hutan Tanaman Energi, PT Malinau Hijau Lestari <br> Malinau, Kalimantan Utara, Mei 2024'
+                                                                },
+                                                                {
+                                                                  src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
+                                                                  desc: '<strong>Deforestation caused by the expansion of PT Weda Bay Nickel’s nickel mine in Central Halmahera, North Maluku.</strong> By issuing a mining permit for a forested area, the government is essentially planning deforestation to facilitate nickel extraction within this mining concession. Photo: Auriga Nusantara, December 2025.',
+                                                                  title: 'Konsesi Tambang, Weda By Nickel <br> Halmahera Tengah, Maluku Utara, Desember 2025'
+                                                                },
+                                                                {
+                                                                  src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
+                                                                  desc: '<strong>Deforestation caused by the development of the Pomalaa Industry Park (IPIP) in Kolaka, Southeast Sulawesi.</strong> This industrial park is one of the National Strategic Projects (PSN) and is located within a Conversion Production Forest Area. Photo: Auriga Nusantara, December 2025',
+                                                                  title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                                                },
+                                                                {
+                                                                  src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
+                                                                  desc: '<strong>Deforestation caused by the construction of the Mentarang hydroelectric power plant in Malinau, North Kalimantan.</strong> This project is one of the National Strategic Projects. Photo: Auriga Nusantara, October 2025.',
+                                                                  title: 'PLTA Mentarang, Malinau <br> Kalimantan Utara, Desember 2025'
+                                                                }
+                                                              ]
+                                                            }">
+>>>>>>> Stashed changes
 
                             <!-- IMAGE -->
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" @click="GLightbox({
+<<<<<<< Updated upstream
                                                 elements: images.map(img => ({
                                                   href: img.src,
                                                   description: img.desc
@@ -1180,6 +1222,15 @@
                                                 startAt: active
                                               }).open()"
                                     class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+=======
+                                                                    elements: images.map(img => ({
+                                                                      href: img.src,
+                                                                      description: img.desc
+                                                                    })),
+                                                                    startAt: active
+                                                                  }).open()"
+                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+>>>>>>> Stashed changes
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
@@ -1263,6 +1314,7 @@
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
                         <div x-data="{
+<<<<<<< Updated upstream
                                       active: 0,
                                       images: [
                                         {
@@ -1287,10 +1339,37 @@
                                         }
                                       ]
                                     }">
+=======
+                                                          active: 0,
+                                                          images: [
+                                                            {
+                                                              src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
+                                                              desc: '<strong>Deforestation within the logging concession of PT Jati Dharma Indah Plywood Industries in Nabire, Central Papua.</strong> Photo: Auriga Nusantara, December 2025.',
+                                                              title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                                            },
+                                                            {
+                                                              src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
+                                                              desc: '<strong> PT GAG Nikel, Raja Ampat, Papua Barat (Desember 2024)</strong> <br> Aktivitas tambang nikel di kawasan hutan lindung Raja Ampat menunjukkan ekspansi industri ekstraktif ke wilayah dengan nilai ekologis tinggi. Kasus ini mencerminkan pergeseran tekanan deforestasi ke Tanah Papua, seiring meningkatnya kebutuhan mineral dan kemudahan perizinan dalam kawasan hutan.',
+                                                              title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                                            },
+                                                            {
+                                                              src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
+                                                              desc: '<strong>Natural forest cover in Sarmi Regency, Papua.</strong> However, the government has issued a nickel mining permit to PT Iriana Mutiara Mining for this area, thereby paving the way for the loss of this natural forest cover. Photo: Auriga Nusantara, December 2024.',
+                                                              title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                                            },
+                                                            {
+                                                              src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
+                                                              desc: '<strong>Deforestation of natural forest by the food estate project in Sorong, West Papua.</strong> Photo: Auriga Nusantara, April 2026.',
+                                                              title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
+                                                            }
+                                                          ]
+                                                        }">
+>>>>>>> Stashed changes
 
                             <!-- IMAGE -->
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" @click="GLightbox({
+<<<<<<< Updated upstream
                                             elements: images.map(img => ({
                                               href: img.src,
                                               description: img.desc
@@ -1298,6 +1377,15 @@
                                             startAt: active
                                           }).open()"
                                     class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+=======
+                                                                elements: images.map(img => ({
+                                                                  href: img.src,
+                                                                  description: img.desc
+                                                                })),
+                                                                startAt: active
+                                                              }).open()"
+                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+>>>>>>> Stashed changes
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
@@ -1325,17 +1413,28 @@
 
                             <!-- THUMB + LOKASI -->
                             <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+<<<<<<< Updated upstream
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                                     <template x-for="(img, index) in images" :key="index">
                                         <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+=======
+                                <div
+                                    class="flex gap-2 overflow-x-auto flex-nowrap scroll-smooth sm:grid sm:grid-cols-3 sm:overflow-visible">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index"
+                                            class="cursor-pointer w-40 h-20 sm:w-20 sm:h-20 flex-shrink-0 aspect-square"
+>>>>>>> Stashed changes
                                             :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                                             <img :src="img.src" alt="thumbnail"
                                                 class="w-full h-full object-cover object-top transition duration-200" />
                                         </div>
                                     </template>
                                 </div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                             </div>
 
                         </div>
@@ -1396,6 +1495,7 @@
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
                         <div x-data="{
+<<<<<<< Updated upstream
                                 active: 0,
                                 images: [
                                   {
@@ -1420,10 +1520,37 @@
                                   }
                                 ]
                               }">
+=======
+                                                    active: 0,
+                                                    images: [
+                                                      {
+                                                        src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
+                                                        desc: '<strong>Deforestation caused by the construction of logging roads within PT Toba Pulp Lestari’s timber plantation concession.</strong> These roads will serve as gateways to massive deforestation in this area. Photo: Auriga Nusantara/Earthsight, December 2025.',
+                                                        title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                                      },
+                                                      {
+                                                        src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
+                                                        desc: '<strong>Deforestation of natural forest due to oil palm plantation development within the PT Equator Sumber Rezeki concession in Kapuas Hulu, West Kalimantan.</strong> Photo: Auriga Nusantara, June 2025.',
+                                                        title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                                      },
+                                                      {
+                                                        src: '{{ asset('assets/images/stadi2025/diskusi 3/konsesi pbph.jpg') }}',
+                                                        desc: '<strong>Deforestation caused by the development of timber plantations within PT Industrial Forest Plantation’s concession in Kapuas, Central Kalimantan.</strong> Photo: Auriga Nusantara/Earthsight, July 2025.',
+                                                        title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                                      },
+                                                      {
+                                                        src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
+                                                        desc: '<strong>Deforestation of natural forests caused by the expansion of a nickel mine in Kolonodale, North Morowali, Central Sulawesi.</strong> Photo: Auriga Nusantara, October 2025.',
+                                                        title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
+                                                      }
+                                                    ]
+                                                  }">
+>>>>>>> Stashed changes
 
                             <!-- IMAGE -->
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" @click="GLightbox({
+<<<<<<< Updated upstream
                                       elements: images.map(img => ({
                                         href: img.src,
                                         description: img.desc
@@ -1431,6 +1558,15 @@
                                       startAt: active
                                     }).open()"
                                     class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+=======
+                                                          elements: images.map(img => ({
+                                                            href: img.src,
+                                                            description: img.desc
+                                                          })),
+                                                          startAt: active
+                                                        }).open()"
+                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+>>>>>>> Stashed changes
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
@@ -1458,17 +1594,28 @@
 
                             <!-- THUMB + LOKASI -->
                             <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+<<<<<<< Updated upstream
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                                     <template x-for="(img, index) in images" :key="index">
                                         <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+=======
+                                <div
+                                    class="flex gap-2 overflow-x-auto flex-nowrap scroll-smooth sm:grid sm:grid-cols-3 sm:overflow-visible">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index"
+                                            class="cursor-pointer w-40 h-20 sm:w-20 sm:h-20 flex-shrink-0 aspect-square"
+>>>>>>> Stashed changes
                                             :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                                             <img :src="img.src" alt="thumbnail"
                                                 class="w-full h-full object-cover object-top transition duration-200" />
                                         </div>
                                     </template>
                                 </div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                             </div>
 
                         </div>
@@ -1512,6 +1659,7 @@
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
                         <div x-data="{
+<<<<<<< Updated upstream
                             active: 0,
                             images: [
                               {
@@ -1536,10 +1684,37 @@
                               }
                             ]
                           }">
+=======
+                                                active: 0,
+                                                images: [
+                                                  {
+                                                    src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
+                                                    desc: '<strong>Deforestation within the timber plantation concession of PT Indosubur Sukses Makmur in East Kutai, East Kalimantan.</strong> The issuance of timber plantation permits in areas covered by natural forest such as this is an example of legal deforestation in Indonesia. Photo: Auriga Nusantara/Earthsight, January 2025.',
+                                                    title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                                  },
+                                                  {
+                                                    src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}',
+                                                    desc: '<strong>Conversion of natural forest into large-scale oil palm plantations within the PT Borneo International Anugerah concession in Kapuas Hulu, West Kalimantan.</strong> The existence of permits for monoculture plantations in this area has allowed the company to clear the existing natural forest. Photo: Auriga Nusantara, June 2025.',
+                                                    title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                                  },
+                                                  {
+                                                    src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru.jpg') }}',
+                                                    desc: '<strong>Gold mining operations by PT Agincourt Resources in the Batang Toru landscape, North Sumatra.</strong> The Batang Toru landscape is the only habitat of the Tapanuli orangutan (Pongo tapanuliensis) in the world. The existence of mining permits indicates that the clearing of natural forests is occurring as a form of legal deforestation. Photo: Auriga Nusantara, May 2025.',
+                                                    title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                                  },
+                                                  {
+                                                    src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Banyan Tumbuh Lestari.jpg') }}',
+                                                    desc: '<strong>Deforestation of natural forest within the palm oil concession of PT Banyan Tumbuh Lestari in Pohuwato, Gorontalo.</strong> The company’s permit is technically for a palm oil plantation, but in practice, the company is establishing a biomass timber plantation. The government’s decision to reclassify this forest area as an “Other Use Area” has opened the door to legal deforestation in this region. Photo: Auriga Nusantara, May 2025.',
+                                                    title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
+                                                  }
+                                                ]
+                                              }">
+>>>>>>> Stashed changes
 
                             <!-- IMAGE -->
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" @click="GLightbox({
+<<<<<<< Updated upstream
                                   elements: images.map(img => ({
                                     href: img.src,
                                     description: img.desc
@@ -1547,6 +1722,15 @@
                                   startAt: active
                                 }).open()"
                                     class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+=======
+                                                      elements: images.map(img => ({
+                                                        href: img.src,
+                                                        description: img.desc
+                                                      })),
+                                                      startAt: active
+                                                    }).open()"
+                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+>>>>>>> Stashed changes
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
@@ -1574,17 +1758,28 @@
 
                             <!-- THUMB + LOKASI -->
                             <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+<<<<<<< Updated upstream
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                                     <template x-for="(img, index) in images" :key="index">
                                         <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+=======
+                                <div
+                                    class="flex gap-2 overflow-x-auto flex-nowrap scroll-smooth sm:grid sm:grid-cols-3 sm:overflow-visible">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index"
+                                            class="cursor-pointer w-40 h-20 sm:w-20 sm:h-20 flex-shrink-0 aspect-square"
+>>>>>>> Stashed changes
                                             :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                                             <img :src="img.src" alt="thumbnail"
                                                 class="w-full h-full object-cover object-top transition duration-200" />
                                         </div>
                                     </template>
                                 </div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                             </div>
 
                         </div>
@@ -1627,6 +1822,7 @@
                     <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
                         <div x-data="{
+<<<<<<< Updated upstream
                         active: 0,
                         images: [
                           {
@@ -1646,10 +1842,32 @@
                           }
                         ]
                       }">
+=======
+                                                                active: 0,
+                                                              images: [
+                                        {
+                                          src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
+                                          desc: '<strong>Deforestation of natural forest within the Rawa Singkil Wildlife Reserve, Aceh.</strong> The presence of canals indicates that this activity did not occur overnight, raising questions about the effectiveness of the management of this conservation area by the Aceh Natural Resources Conservation Agency (BKSDA).',
+                                          title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                        },
+                                        {
+                                          src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
+                                          desc: '<strong>Deforestation of natural forest within the Rawa Singkil Wildlife Reserve, Aceh.</strong> The presence of canals indicates that this activity did not occur overnight, raising questions about the effectiveness of the management of this conservation area by the Aceh Natural Resources Conservation Agency (BKSDA).',
+                                          title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                        },
+                                        {
+                                          src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
+                                          desc: '<strong>Deforestation of natural forest within the Rawa Singkil Wildlife Reserve, Aceh.</strong> The presence of canals indicates that this activity did not occur overnight, raising questions about the effectiveness of the management of this conservation area by the Aceh Natural Resources Conservation Agency (BKSDA).',
+                                          title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
+                                        }
+                                      ]
+                                                              }">
+>>>>>>> Stashed changes
 
                             <!-- IMAGE -->
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src" @click="GLightbox({
+<<<<<<< Updated upstream
                               elements: images.map(img => ({
                                 href: img.src,
                                 description: img.desc
@@ -1657,6 +1875,15 @@
                               startAt: active
                             }).open()"
                                     class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+=======
+                                                                      elements: images.map(img => ({
+                                                                        href: img.src,
+                                                                        description: img.desc
+                                                                      })),
+                                                                      startAt: active
+                                                                    }).open()"
+                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+>>>>>>> Stashed changes
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
@@ -1684,17 +1911,28 @@
 
                             <!-- THUMB + LOKASI -->
                             <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+<<<<<<< Updated upstream
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                                     <template x-for="(img, index) in images" :key="index">
                                         <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+=======
+                                <div
+                                    class="flex gap-2 overflow-x-auto flex-nowrap scroll-smooth sm:grid sm:grid-cols-3 sm:overflow-visible">
+                                    <template x-for="(img, index) in images" :key="index">
+                                        <div @click="active = index"
+                                            class="cursor-pointer w-40 h-20 sm:w-20 sm:h-20 flex-shrink-0 aspect-square"
+>>>>>>> Stashed changes
                                             :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                                             <img :src="img.src" alt="thumbnail"
                                                 class="w-full h-full object-cover object-top transition duration-200" />
                                         </div>
                                     </template>
                                 </div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                             </div>
 
                         </div>
@@ -1741,6 +1979,7 @@
                             <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
 
                                 <div x-data="{
+<<<<<<< Updated upstream
                                                             currentSlide: 4,
                                                             startX: 0,
                                                             images: [
@@ -1787,6 +2026,55 @@
                                                               }
                                                             }
                                                           }" @touchstart="startSwipe" @touchmove="handleTouchMove"
+=======
+                                                                                                    currentSlide: 4,
+                                                                                                    startX: 0,
+                                                                                                    images: [
+                                                                                                      {
+                                                                                                        src: '{{ asset('assets/images/stadi2025/RUDP1 en.jpg') }}',
+                                                                                                        desc: '<strong>Nearly half of Indonesia’s natural forests lack legal protection.</strong> Indonesia has 118.7 million hectares of terrestrial forest areas. It is worth noting that a forest area is a region designated as such. It is not uncommon for forest areas to lack forest cover. Conversely, a significant amount of natural forest cover lies outside designated forest areas.'
+                                                                                                      },
+                                                                                                      {
+                                                                                                        src: '{{ asset('assets/images/stadi2025/RUDP2 en.jpg') }}',
+                                                                                                        desc: '<strong>Nearly half of Indonesia’s natural forests lack legal protection.</strong> Of the 22 million hectares of conservation forest areas, 4.7 million hectares are not covered by natural forest. Legally, all natural forests within conservation forest areas are protected.'
+                                                                                                      },
+                                                                                                      {
+                                                                                                        src: '{{ asset('assets/images/stadi2025/RUDP3 en.jpg') }}',
+                                                                                                        desc: '<strong>Nearly half of Indonesia’s natural forests lack legal protection.</strong> There are 227,127 hectares of natural forest cover within protected forests that lie outside the moratorium area, leaving them vulnerable to deforestation due to government policies or projects.'
+                                                                                                      },
+                                                                                                      {
+                                                                                                        src: '{{ asset('assets/images/stadi2025/RUDP4 en.jpg') }}',
+                                                                                                        desc: '<strong>Nearly half of Indonesia’s natural forests lack legal protection.</strong> There are 22.5 million hectares of natural forest cover in production forests located outside the moratorium area, making them vulnerable to deforestation because they lack legal protection.'
+                                                                                                      },
+                                                                                                      {
+                                                                                                        src: '{{ asset('assets/images/stadi2025/RUDP5 en.jpg') }}',
+                                                                                                        desc: '<strong>Nearly half of Indonesia’s natural forests lack legal protection.</strong> There are 9 million hectares of natural forest cover outside designated forest areas—or located within Other Land Use Areas (APL)—and 8.1 million hectares of that are outside the moratorium area. In total, 41.6 million hectares (44%) of Indonesia’s natural forest cover lack legal protection.'
+                                                                                                      }
+                                                                                                    ],
+                                                                                                    get totalSlides() { return this.images.length },
+
+                                                                                                    openLightbox(index) {
+                                                                                                      GLightbox({
+                                                                                                        elements: this.images.map(img => ({
+                                                                                                          href: img.src,
+                                                                                                          description: img.desc
+                                                                                                        })),
+                                                                                                        startAt: index
+                                                                                                      }).open();
+                                                                                                    },
+
+                                                                                                    startSwipe(e) { this.startX = e.touches[0].clientX },
+                                                                                                    handleTouchMove(e) {
+                                                                                                      let diff = this.startX - e.touches[0].clientX
+                                                                                                      if (Math.abs(diff) > 50) {
+                                                                                                        if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                                                                                                        else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                                                                                                        this.startX = e.touches[0].clientX
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }"
+                                    @touchstart="startSwipe" @touchmove="handleTouchMove"
+>>>>>>> Stashed changes
                                     class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                                     <!-- SLIDER -->
@@ -1795,6 +2083,12 @@
 
                                         <template x-for="(item, index) in images" :key="index">
                                             <div class="w-full flex-shrink-0">
+
+                                                <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify"
+                                                    style="line-height: 1;">
+                                                    <small style="font-size: 12px;" x-html="item.desc"></small>
+                                                </div>
+
 
                                                 <!-- GAMBAR -->
                                                 <div class="relative">
@@ -1815,9 +2109,12 @@
                                                 </div>
 
                                                 <!-- CAPTION -->
+<<<<<<< Updated upstream
                                                 <div class="px-4 py-3">
                                                     <small style="font-size: 12px;" x-html="item.desc"></small>
                                                 </div>
+=======
+>>>>>>> Stashed changes
 
                                             </div>
                                         </template>
@@ -1908,6 +2205,7 @@
                                 <div class="viz-frame !p-0 flex items-start">
 
                                     <div x-data="{
+<<<<<<< Updated upstream
                                                                     currentSlide: 0,
                                                                     startX: 0,
                                                                     images: [
@@ -1938,6 +2236,39 @@
                                                                       }
                                                                     }
                                                                   }" @touchstart="startSwipe" @touchmove="handleTouchMove"
+=======
+                                                                                                            currentSlide: 0,
+                                                                                                            startX: 0,
+                                                                                                            images: [
+                                                                                                              {
+                                                                                                                src: '{{ asset('assets/images/stadi2025/RUDP8 in.jpg') }}',
+                                                                                                                desc: '<strong>There are at least 41.4 million hectares of ecologically important areas located outside conservation forest areas.</strong> These areas should be prioritized for preservation as stipulated in the Conservation Law.'
+                                                                                                              }
+                                                                                                            ],
+                                                                                                            get totalSlides() { return this.images.length },
+
+                                                                                                            openLightbox(index) {
+                                                                                                              GLightbox({
+                                                                                                                elements: this.images.map(img => ({
+                                                                                                                  href: img.src,
+                                                                                                                  description: img.desc
+                                                                                                                })),
+                                                                                                                startAt: index
+                                                                                                              }).open();
+                                                                                                            },
+
+                                                                                                            startSwipe(e) { this.startX = e.touches[0].clientX },
+                                                                                                            handleTouchMove(e) {
+                                                                                                              let diff = this.startX - e.touches[0].clientX
+                                                                                                              if (Math.abs(diff) > 50) {
+                                                                                                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                                                                                                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                                                                                                                this.startX = e.touches[0].clientX
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }"
+                                        @touchstart="startSwipe" @touchmove="handleTouchMove"
+>>>>>>> Stashed changes
                                         class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                                         <!-- SLIDER -->
@@ -1946,6 +2277,10 @@
 
                                             <template x-for="(item, index) in images" :key="index">
                                                 <div class="w-full flex-shrink-0">
+                                                    <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify"
+                                                        style="line-height: 1;">
+                                                        <small style="font-size: 12px;" x-html="item.desc"></small>
+                                                    </div>
 
                                                     <!-- GAMBAR -->
                                                     <div class="relative">
@@ -1955,9 +2290,13 @@
 
 
                                                         <!-- CAPTION -->
+<<<<<<< Updated upstream
                                                         <div class="px-4 py-3">
                                                             <small style="font-size: 12px;" x-html="item.desc"></small>
                                                         </div>
+=======
+
+>>>>>>> Stashed changes
 
                                                     </div>
                                             </template>
@@ -1999,6 +2338,7 @@
                             <div class="viz-frame !p-0 flex items-start">
 
                                 <div x-data="{
+<<<<<<< Updated upstream
                                                                   currentSlide: 0,
                                                                   startX: 0,
                                                                   images: [
@@ -2033,6 +2373,43 @@
                                                                     }
                                                                   }
                                                                 }" @touchstart="startSwipe" @touchmove="handleTouchMove"
+=======
+                                                                                                          currentSlide: 0,
+                                                                                                          startX: 0,
+                                                                                                          images: [
+                                                                                                            {
+                                                                                                              src: '{{ asset('assets/images/stadi2025/RUDP6 in.jpg') }}',
+                                                                                                              desc: '<strong> Forest protection budgets and personnel are concentrated on the island of Java.</strong> The budget available for managing one hectare of conservation forest outside national parks in Papua is only Rp 60,718 per hectare; in the Maluku Islands, Rp 82,374; in Kalimantan, Rp 361,395; in Sulawesi, Rp 530,208; in Sumatra, Rp 1,622,440; and in Bali and Nusa Tenggara, Rp 2,694,521. However, in Java, the budget per hectare is Rp 116,225,764.'
+                                                                                                            },
+                                                                                                            {
+                                                                                                              src: '{{ asset('assets/images/stadi2025/RUDP7 in.jpg') }}',
+                                                                                                              desc: '<strong> Forest protection budgets and personnel are concentrated on the island of Java.</strong> On average, each staff member at Lorentz National Park in Papua manages 38,548 hectares, while the budget available for management is Rp 6,707. Such a vast area per staff member, coupled with minimal budget availability, is relatively common across national parks outside Java. This stands in stark contrast, for example, to Gede Pangrango National Park, which has a budget of Rp 898,381 per hectare, with one staff member managing 157 hectares.'
+                                                                                                            }
+                                                                                                          ],
+                                                                                                          get totalSlides() { return this.images.length },
+
+                                                                                                          openLightbox(index) {
+                                                                                                            GLightbox({
+                                                                                                              elements: this.images.map(img => ({
+                                                                                                                href: img.src,
+                                                                                                                description: img.desc
+                                                                                                              })),
+                                                                                                              startAt: index
+                                                                                                            }).open();
+                                                                                                          },
+
+                                                                                                          startSwipe(e) { this.startX = e.touches[0].clientX },
+                                                                                                          handleTouchMove(e) {
+                                                                                                            let diff = this.startX - e.touches[0].clientX
+                                                                                                            if (Math.abs(diff) > 50) {
+                                                                                                              if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                                                                                                              else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                                                                                                              this.startX = e.touches[0].clientX
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }"
+                                    @touchstart="startSwipe" @touchmove="handleTouchMove"
+>>>>>>> Stashed changes
                                     class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                                     <!-- SLIDER -->
@@ -2041,6 +2418,11 @@
 
                                         <template x-for="(item, index) in images" :key="index">
                                             <div class="w-full flex-shrink-0">
+
+                                                <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify"
+                                                    style="line-height: 1;">
+                                                    <small style="font-size: 12px;" x-html="item.desc"></small>
+                                                </div>
 
                                                 <!-- GAMBAR -->
                                                 <div class="relative">
@@ -2061,9 +2443,12 @@
                                                 </div>
 
                                                 <!-- CAPTION -->
+<<<<<<< Updated upstream
                                                 <div class="px-4 py-3">
                                                     <small style="font-size: 12px;" x-html="item.desc"></small>
                                                 </div>
+=======
+>>>>>>> Stashed changes
 
                                             </div>
                                         </template>
@@ -4383,6 +4768,7 @@
                     badge.dataset.species = item.name;
                     const shortName = item.name.split(' ').slice(-2).join(' ');
                     badge.innerHTML = `
+<<<<<<< Updated upstream
                                                                                                                                   <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
                                                                                                                                   <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
                                                                                                                                   <div class="satwa-badge-detail">
@@ -4392,6 +4778,17 @@
                                                                                                                                   <span class="si-unit">deforestasi di habitat</span>
                                                                                                                                   </div>
                                                                                                                               `;
+=======
+                                                                                                                                                                          <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                                                                                                                                                          <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                                                                                                                                                          <div class="satwa-badge-detail">
+                                                                                                                                                                          <span class="si-name">${item.name}</span>
+                                                                                                                                                                          <span class="si-val">${item.value}</span>
+                                                                                                                                                                          <span class="si-val">${item.lokal}</span>
+                                                                                                                                                                          <span class="si-unit">deforestasi di habitat</span>
+                                                                                                                                                                          </div>
+                                                                                                                                                                      `;
+>>>>>>> Stashed changes
                     badge.addEventListener('click', async (e) => {
                         e.stopPropagation();
                         const isActive = badge.classList.contains('active');
