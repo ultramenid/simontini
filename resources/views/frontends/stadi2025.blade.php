@@ -1069,25 +1069,25 @@
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
-            <div x-data="{ 
-                      active: 0, 
+            <div x-data="{
+                      active: 0,
                       images: [
-                        { 
+                        {
                           src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
                           desc: '<strong> Hutan Tanaman Energi, PT Malinau Hijau Lestari, Malinau, Kalimantan Utara (Mei 2024)</strong> <br> Konversi hutan alam menjadi hutan tanaman energi di kawasan hutan produksi menunjukkan bagaimana skema perizinan kebun kayu tetap menjadi pendorong utama deforestasi. Meski diklaim sebagai bagian dari solusi energi, praktik ini sering menggantikan hutan alam dengan monokultur.',
                           title: 'Kawasan Hutan Produksi, Hutan Tanaman Energi, PT Malinau Hijau Lestari <br> Malinau, Kalimantan Utara, Mei 2024'
                         },
-                        { 
+                        {
                           src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
                           desc: '<strong> Weda Bay Nickel, Halmahera Tengah, Maluku Utara (Desember 2025)</strong> <br> Ekspansi tambang nikel di Halmahera Tengah memperlihatkan tekanan besar terhadap hutan hujan tropis di Indonesia Timur. Aktivitas pertambangan tidak hanya mendorong deforestasi, tetapi juga mengancam ekosistem penting dan sumber pangan lokal seperti sagu, di tengah kebijakan yang terus mempermudah perizinan tambang.',
                           title: 'Konsesi Tambang, Weda By Nickel <br> Halmahera Tengah, Maluku Utara, Desember 2025'
                         },
-                        { 
+                        {
                           src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
                           desc: '<strong> PT Indonesia Pomalaa Industry Park, Kolaka, Sulawesi Tenggara (Desember 2025)</strong> <br> Pembukaan kawasan hutan produksi konversi untuk pembangunan industri nikel di Pomalaa menunjukkan bagaimana proyek hilirisasi mineral yang didorong sebagai bagian dari Proyek Strategis Nasional berkontribusi pada hilangnya tutupan hutan alam. Ekspansi kawasan industri ini mencerminkan lemahnya perlindungan hutan dalam kebijakan pembangunan ekonomi.',
                           title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
                         },
-                        { 
+                        {
                           src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
                           desc: '<strong> PLTA Mentarang, Malinau, Kalimantan Utara (Oktober 2025)</strong> <br> Pembangunan proyek energi skala besar di kawasan hutan Kalimantan Utara membuka akses ke wilayah hutan primer yang sebelumnya relatif utuh. Proyek-proyek energi dalam kerangka transisi energi dan PSN kerap memicu deforestasi tidak langsung melalui pembukaan jalan dan fragmentasi hutan.',
                           title: 'PLTA Mentarang, Malinau <br> Kalimantan Utara, Desember 2025'
@@ -1097,12 +1097,12 @@
 
               <!-- IMAGE -->
               <div class="relative" x-ref="mainImg">
-                <img :src="images[active].src" @click="GLightbox({ 
-                            elements: images.map(img => ({ 
-                              href: img.src, 
-                              description: img.desc 
-                            })), 
-                            startAt: active 
+                <img :src="images[active].src" @click="GLightbox({
+                            elements: images.map(img => ({
+                              href: img.src,
+                              description: img.desc
+                            })),
+                            startAt: active
                           }).open()"
                   class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
@@ -1186,25 +1186,25 @@
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
-            <div x-data="{ 
-                      active: 0, 
+            <div x-data="{
+                      active: 0,
                       images: [
-                        { 
+                        {
                           src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
                           desc: '<strong> PT Jati Dharma Indah Plywood Industries, Nabire, Papua Tengah (Desember 2025)</strong> <br> Pembukaan hutan dalam konsesi PBPH di Nabire memperlihatkan peran industri kayu dalam mendorong deforestasi di Tanah Papua. Akses jalan dan aktivitas logging menjadi pintu masuk fragmentasi hutan yang lebih luas di wilayah yang sebelumnya relatif utuh.',
                           title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
                         },
-                        { 
+                        {
                           src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
                           desc: '<strong> PT GAG Nikel, Raja Ampat, Papua Barat (Desember 2024)</strong> <br> Aktivitas tambang nikel di kawasan hutan lindung Raja Ampat menunjukkan ekspansi industri ekstraktif ke wilayah dengan nilai ekologis tinggi. Kasus ini mencerminkan pergeseran tekanan deforestasi ke Tanah Papua, seiring meningkatnya kebutuhan mineral dan kemudahan perizinan dalam kawasan hutan.',
                           title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
                         },
-                        { 
+                        {
                           src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
                           desc: '<strong> PT Iriana Mutiara Mining, Sarmi, Papua (Desember 2024)</strong> <br> Pembukaan lahan awal dalam konsesi tambang di Sarmi menunjukkan fase awal deforestasi di Tanah Papua. Kehadiran tambang dan infrastruktur pendukung menjadi pemicu pembukaan hutan lebih lanjut di kawasan sekitarnya.',
                           title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
                         },
-                        { 
+                        {
                           src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
                           desc: '<strong> Kawasan Food Estate, Sorong, Papua (April 2026)</strong> <br> Pembukaan hutan skala luas untuk program lumbung pangan di Sorong menandai ekspansi deforestasi yang didorong kebijakan pangan nasional. Konversi ini memperlihatkan bagaimana program populis dapat mempercepat hilangnya hutan alam di Tanah Papua.',
                           title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
@@ -1214,12 +1214,12 @@
 
               <!-- IMAGE -->
               <div class="relative" x-ref="mainImg">
-                <img :src="images[active].src" @click="GLightbox({ 
-                            elements: images.map(img => ({ 
-                              href: img.src, 
-                              description: img.desc 
-                            })), 
-                            startAt: active 
+                <img :src="images[active].src" @click="GLightbox({
+                            elements: images.map(img => ({
+                              href: img.src,
+                              description: img.desc
+                            })),
+                            startAt: active
                           }).open()"
                   class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
@@ -1323,33 +1323,26 @@
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
-<<<<<<< Updated upstream
-            <div x-data="{ active: 0, images: [
-                          { src: '{{ asset('assets/images/stadi2025/diskusi 3/HTI.jpg') }}', caption: 'Konsesi Kebun, PT Equator Sumber Rezeki,<br> Kapuas Hulu, Kalimantan Barat, Juni 2025' },
-                          { src: '{{ asset('assets/images/stadi2025/diskusi 3/Sawit.jpg') }}', caption: 'Konsesi PBPH, PT Toba Pulp Lestari, <br> Aek Raja, Sumatera Utara, Desember 2025' },
-                          { src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}', caption: 'Konsesi Tambang, PT Bencoolen Mining,<br> Bengkulu Utara, Bengkulu, Mei 2025' }
-                          ]}">
-=======
 
-            <div x-data="{ 
-                    active: 0, 
+            <div x-data="{
+                    active: 0,
                     images: [
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
                         desc: '<strong> PT Toba Pulp Lestari, Aek Raja, Sumatera Utara (Desember 2025)</strong> <br> Pembukaan hutan dalam konsesi PBPH di Sumatera Utara menunjukkan bagaimana industri pulp & paper terus mendorong deforestasi. Pembangunan jaringan jalan dan pembukaan lahan menjadi tahapan awal konversi hutan alam menjadi kebun kayu.',
                         title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
                       },
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
                         desc: '<strong> PT Equator Sumber Rezeki, Kapuas Hulu, Kalimantan Barat (Juni 2025)</strong> <br> Ekspansi kebun sawit di Kapuas Hulu mencerminkan tekanan berkelanjutan dari komoditas perkebunan terhadap hutan alam. Pola pembukaan lahan skala luas menunjukkan konversi sistematis untuk monokultur, yang tetap berlangsung di tengah kebijakan peningkatan biodiesel.',
                         title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
                       },
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 3/HTI.jpg') }}',
                         desc: '<strong> PT Industrial Forest Plantation, Kapuas, Kalimantan Tengah (Juli 2025)</strong> <br> Pengembangan hutan tanaman industri skala besar di Kalimantan Tengah menjadi bagian dari rantai pasok pulp & paper. Fragmentasi hutan terlihat jelas dari pola blok-blok tanam, yang menggantikan tutupan hutan alam secara permanen.',
                         title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
                       },
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
                         desc: '<strong> PT Vale Indonesia, Bahodopi, Sulawesi Tengah (Oktober 2025)</strong> <br> Ekspansi tambang nikel di Sulawesi Tengah menunjukkan dampak langsung dari booming kendaraan listrik terhadap hutan tropis. Pembukaan lahan dan sedimentasi ke badan air menjadi konsekuensi dari percepatan industri nikel tanpa pengendalian sumber bahan baku yang ketat.',
                         title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
@@ -1358,14 +1351,13 @@
                   }">
 
               <!-- IMAGE -->
->>>>>>> Stashed changes
               <div class="relative" x-ref="mainImg">
-                <img :src="images[active].src" @click="GLightbox({ 
-                          elements: images.map(img => ({ 
-                            href: img.src, 
-                            description: img.desc 
-                          })), 
-                          startAt: active 
+                <img :src="images[active].src" @click="GLightbox({
+                          elements: images.map(img => ({
+                            href: img.src,
+                            description: img.desc
+                          })),
+                          startAt: active
                         }).open()"
                   class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
@@ -1447,25 +1439,25 @@
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
-            <div x-data="{ 
-                    active: 0, 
+            <div x-data="{
+                    active: 0,
                     images: [
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
                         desc: '<strong> PT Indosubur Sukses Makmur, Kutai Timur, Kalimantan Timur (Januari 2025)</strong> <br> Pembukaan hutan dalam konsesi PBPH di Kalimantan Timur menunjukkan bagaimana deforestasi dapat berlangsung secara legal melalui skema perizinan resmi. Aktivitas ini menegaskan bahwa hilangnya hutan tidak selalu melanggar hukum, tetapi tetap berdampak pada degradasi ekosistem.',
                         title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
                       },
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}',
                         desc: '<strong> PT Borneo International Anugerah, Kapuas Hulu, Kalimantan Barat (Juni 2025)</strong> <br> Konversi hutan alam menjadi kebun sawit skala besar di Kalimantan Barat mencerminkan praktik deforestasi legal yang difasilitasi oleh izin perkebunan. Lanskap monokultur menggantikan hutan alam dalam skala luas tanpa melanggar regulasi yang berlaku.',
                         title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
                       },
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru.jpg') }}',
                         desc: '<strong> PT Agincourt Resources, Batang Toru, Sumatera Utara (Mei 2025)</strong> <br> Aktivitas tambang emas di Batang Toru memperlihatkan bagaimana deforestasi di area penggunaan lain (APL) tetap sah secara hukum. Meski legal, pembukaan lahan ini berpotensi mengancam habitat penting dan mempercepat degradasi lingkungan.',
                         title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
                       },
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Banyan Tumbuh Lestari.jpg') }}',
                         desc: '<strong> PT Banyan Tumbuh Lestari, Pohuwato, Gorontalo (Mei 2025)</strong> <br> Pembukaan hutan dalam konsesi Hutan Tanaman Energi  di Gorontalo menunjukkan celah regulasi yang memungkinkan deforestasi terjadi secara legal. Jaringan jalan dan pembukaan lahan menjadi indikator awal hilangnya tutupan hutan dalam kerangka perizinan resmi.',
                         title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
@@ -1475,12 +1467,12 @@
 
               <!-- IMAGE -->
               <div class="relative" x-ref="mainImg">
-                <img :src="images[active].src" @click="GLightbox({ 
-                          elements: images.map(img => ({ 
-                            href: img.src, 
-                            description: img.desc 
-                          })), 
-                          startAt: active 
+                <img :src="images[active].src" @click="GLightbox({
+                          elements: images.map(img => ({
+                            href: img.src,
+                            description: img.desc
+                          })),
+                          startAt: active
                         }).open()"
                   class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
@@ -1560,20 +1552,20 @@
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
-            <div x-data="{ 
-                    active: 0, 
+            <div x-data="{
+                    active: 0,
                     images: [
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
                         desc: '<strong> Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh (Agustus 2025)</strong> <br> Pembukaan lahan di dalam kawasan konservasi Rawa Singkil menunjukkan bahwa bahkan area dengan status perlindungan tertinggi pun tidak luput dari deforestasi. Ekspansi kebun dan pembukaan kanal memperlihatkan lemahnya pengawasan di kawasan suaka margasatwa.',
                         title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
                       },
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
                         desc: '<strong> Habitat Orangutan, Kapuas Hulu, Kalimantan Barat (Juni 2025)</strong> <br> Konversi hutan menjadi kebun sawit di Kapuas Hulu terjadi pada lanskap yang merupakan habitat penting orangutan. Kasus ini menegaskan bahwa perlindungan keanekaragaman hayati tidak cukup jika hanya berfokus pada kawasan konservasi formal.',
                         title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
                       },
-                      { 
+                      {
                         src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
                         desc: '<strong> Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh (Agustus 2025)</strong> <br>Perubahan tutupan hutan menjadi lahan terbuka di dalam kawasan konservasi memperlihatkan tekanan deforestasi yang terus meningkat. Aktivitas ini berkontribusi pada lonjakan deforestasi di kawasan konservasi yang mencapai lebih dari dua kali lipat dalam satu tahun.',
                         title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
@@ -1583,12 +1575,12 @@
 
               <!-- IMAGE -->
               <div class="relative" x-ref="mainImg">
-                <img :src="images[active].src" @click="GLightbox({ 
-                          elements: images.map(img => ({ 
-                            href: img.src, 
-                            description: img.desc 
-                          })), 
-                          startAt: active 
+                <img :src="images[active].src" @click="GLightbox({
+                          elements: images.map(img => ({
+                            href: img.src,
+                            description: img.desc
+                          })),
+                          startAt: active
                         }).open()"
                   class="w-full sm:h-[60vh] h-[40vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
@@ -1676,23 +1668,23 @@
                                     currentSlide: 4,
                                     startX: 0,
                                     images: [
-                                      { 
+                                      {
                                         src: '{{ asset('assets/images/stadi2025/RUDP1 in.jpg') }}',
                                         desc: 'Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. Terdapat 118,7 juta hektare kawasan hutan darat Indonesia. Patut dicatat bahwa kawasan hutan adalah suatu wilayah yang ditetapkan sebagai kawasan hutan. Tak jarang kawasan hutan tidak bertutupan hutan. Sebaliknya, tak sedikit tutupan hutan alam yang berada di luar kawasan hutan.'
                                       },
-                                      { 
+                                      {
                                         src: '{{ asset('assets/images/stadi2025/RUDP2 in.jpg') }}',
                                         desc: 'Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. Dari 22 juta hektare kawasan hutan konservasi, tersapa 4,7 juta hektare yang tidak bertutupan hutan alam. Secara hukum, seluruh hutan alam di dalam kawasan hutan konservasi dilindungi.'
                                       },
-                                      { 
+                                      {
                                         src: '{{ asset('assets/images/stadi2025/RUDP3 in.jpg') }}',
                                         desc: 'Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. Terdapat 227.127 hektare tutupan hutan alam di dalam hutan lindung yang berada di luar area moratorium sehingga cukup terbuka menjadi sasaran deforestasi oleh kebijakan atau proyek pemerintah.'
                                       },
-                                      { 
+                                      {
                                         src: '{{ asset('assets/images/stadi2025/RUDP4 in.jpg') }}',
                                         desc: 'Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. Terdapat 22,5 juta hektare tutupan hutan alam di hutan produksi yang berada di luar area moratorium, sehingga rawan menjadi sasaran deforestasi karena tidak memiliki perlindungan hukum.'
                                       },
-                                      { 
+                                      {
                                         src: '{{ asset('assets/images/stadi2025/RUDP5 in.jpg') }}',
                                         desc: 'Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. Terdapat 9 juta hektare tutupan hutan alam di luar kawasan hutan, atau berada di dalam Area Penggunaan Lain (APL), dan 8,1 juta hektare di antaranya di luar area moratorium. Secara keseluruhan, 41,6 juta hektare (44%) tutupan hutan alam Indonesia tanpa perlindungan hukum.'
                                       }
@@ -1722,7 +1714,7 @@
                   class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                   <!-- SLIDER -->
-                  <div class="flex transition-transform duration-300"
+                  <div class="flex "
                     :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
                     <template x-for="(item, index) in images" :key="index">
@@ -1837,7 +1829,7 @@
                                     currentSlide: 0,
                                     startX: 0,
                                     images: [
-                                      { 
+                                      {
                                         src: '{{ asset('assets/images/stadi2025/RUDP8 in.jpg') }}',
                                         desc: 'Terdapat setidaknya 41,4 juta hektare area yang penting secara ekologis berada di luar kawasan hutan konservasi. Area-area ini semestinya diprioritaskan menjadi area preservasi sebagaimana diatur UU Konservasi.'
                                       }
@@ -1867,7 +1859,7 @@
                     class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                     <!-- SLIDER -->
-                    <div class="flex transition-transform duration-300"
+                    <div class="flex "
                       :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
                       <template x-for="(item, index) in images" :key="index">
@@ -1933,11 +1925,11 @@
                                       currentSlide: 0,
                                       startX: 0,
                                       images: [
-                                        { 
+                                        {
                                           src: '{{ asset('assets/images/stadi2025/RUDP6 in.jpg') }}',
                                           desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa.</strong> Anggaran yang tersedia untuk pengelolaan per hektare kawasan hutan konservasi di luar taman nasional di Papua hanya Rp 60.718 per hektare; di Kepulauan Maluku Rp 82.374; di Kalimantan Rp 361.395; di Sulawesi Rp 530.208; di Sumatera Rp 1.622.440; di Bali dan Nusa Tenggara Rp 2.694521. Tapi, di Jawa tersedia anggaran per hektare Rp 116.225.764.'
                                         },
-                                        { 
+                                        {
                                           src: '{{ asset('assets/images/stadi2025/RUDP7 in.jpg') }}',
                                           desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa.</strong> Rerata, per orang petugas TN Lorentz di Papua mengelola 38.548 hektare, sementara anggaran yang tersedia untuk pengelolaan Rp  6.707. Cakupan per staf yang sedemikian luas sementara ketersediaan anggaran yang minim relatif merata untuk taman nasional di luar Jawa. Sangat kontras, misalnya, dengan TN Gede Pangrango yang memiliki anggaran Rp 898.381 per hektare, dengan satu staf mengelola 157 hektare.'
                                         }
@@ -1967,7 +1959,7 @@
                     class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                     <!-- SLIDER -->
-                    <div class="flex transition-transform duration-300"
+                    <div class="flex "
                       :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
                       <template x-for="(item, index) in images" :key="index">
