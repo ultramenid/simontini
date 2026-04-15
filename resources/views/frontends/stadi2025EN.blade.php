@@ -107,13 +107,13 @@
                 <div id="chart-app" class="w-full py-4 md:py-8" style="background:white;">
                     <div id="chart-inner" class="px-6 w-full max-w-[1400px] mx-auto">
                         <div id="chart-viz" class="w-full min-w-0">
-                            <div class="chart-header mb-4">
+                            {{-- <div class="chart-header mb-4">
                                 <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestation
                                     in Indonesia,
                                     2001–2025</h2>
                                 <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
                                     hectares</p>
-                            </div>
+                            </div> --}}
                             <div id="chart-body" class="relative flex" style="height:420px;">
                                 <div id="y-axis"
                                     class="flex flex-col-reverse justify-between pb-[48px] w-[42px] md:w-[56px] shrink-0">
@@ -126,16 +126,12 @@
                                     </div>
                                     <div id="x-axis"
                                         class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden"
-<<<<<<< HEAD
-                                        style="background:white;z-index:2;"></div>
-=======
                                         style="background:white;z-index:2;">
-                                        
+
                                     </div>
-                                    <small style="font-size: 12px !important;" class="text-black">
+                                    <small style="font-size: 12px !important;" class="text-black text-center -mt-6 z-20">
                                         <i>Deforestation in Indonesia, 2001-2025</i>
                                     </small>
->>>>>>> parent of 743e607 (Merge pull request #32 from Fachri27/main)
                                 </div>
                             </div>
                             <div class="md:hidden mt-3">
@@ -252,15 +248,12 @@
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:block hidden">
         <img src="{{ asset('assets/Tahap-Eng.png') }}" alt="Simontini - 2025 Methodology"
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
-<<<<<<< HEAD
-=======
 
-        <small 
-            class="block w-full sm:max-w-6xl mx-auto" 
+        <small
+            class="block w-full sm:max-w-6xl mx-auto text-center mt-2"
             style="font-size: 12px !important;">
             <i>Stages and processing of deforestation data 2025</i>
         </small>
->>>>>>> parent of 743e607 (Merge pull request #32 from Fachri27/main)
 
         <section class="page-section px-[5vw] pt-8 pb-6">
             <div class="body-text">
@@ -821,14 +814,11 @@
                         </table>
                     </div>
                 </div>
-<<<<<<< HEAD
-=======
-                <small 
-                  class="block w-full sm:max-w-6xl mx-auto text-center" 
+                <small
+                  class="block w-full sm:max-w-6xl mx-auto text-center"
                   style="font-size: 12px !important;">
                     <i>Deforestation per major island in Indonesia</i>
                 </small>
->>>>>>> parent of 743e607 (Merge pull request #32 from Fachri27/main)
             </div><br><br>
 
 
@@ -895,13 +885,13 @@
             <div class="viz-block viz-block--full mt-10 mb-6" id="chart-monthly-wrap">
                 <div class="max-w-4xl mx-auto">
                     <div class="">
-                        <div class=" px-4  sm:px-6">
+                        {{-- <div class=" px-4  sm:px-6">
                             <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">
                                 Deforestation
                                 in Indonesia by Month, 2025</div>
                             <div class="text-[11px] mt-0.5" style="color:#8b7355;">Deforested area per month ·
                                 hectares</div>
-                        </div>
+                        </div> --}}
                         <div id="chart-monthly-inner" class="px-4 sm:px-6 py-4 w-full min-w-0">
                             <div id="chart-monthly-body" class="relative flex" style="height:380px;">
                                 <div id="chart-monthly-yaxis"
@@ -918,14 +908,11 @@
                                         style="background:white;z-index:2;"></div>
                                 </div>
                             </div>
-<<<<<<< HEAD
-=======
-                            <small 
-                  class="block w-full sm:max-w-6xl mx-auto text-center" 
-                  style="font-size: 12px !important;">
-                    <i>Monthly deforestation in Indonesia in 2025</i>
-                </small><br><br>
->>>>>>> parent of 743e607 (Merge pull request #32 from Fachri27/main)
+                            <small
+                            class="block w-full sm:max-w-6xl mx-auto text-center"
+                            style="font-size: 12px !important;">
+                                <i>Monthly deforestation in Indonesia in 2025</i>
+                            </small><br><br>
                         </div>
                     </div>
                 </div>
@@ -1072,15 +1059,12 @@
                         class="flex-1 flex flex-row items-stretch justify-center overflow-y-hidden overflow-x-auto"></div>
                 </aside>
 
-<<<<<<< HEAD
-=======
-                <small 
-                  class="block w-full sm:max-w-6xl mx-auto text-center" 
+                <small
+                  class="block w-full sm:max-w-6xl mx-auto text-center"
                   style="font-size: 12px !important;">
                   <i>Deforestation 2025 by administrative region, conservation area, and concession</i>
                 </small>
 
->>>>>>> parent of 743e607 (Merge pull request #32 from Fachri27/main)
             </div><br><br>
 
 
@@ -1093,39 +1077,7 @@
             </div>
         </section>
 
-        <!-- KONSESI -->
-        {{-- <span class="s-anchor" id="konsesi"></span>
-        <section class="page-section px-[5vw] py-10">
-            <div class="section-body">
-                <div class="section-label">04 / Deforestasi dalam Konsesi</div>
 
-                <p class="body-text">
-                    Pemberian izin-izin konversi, seperti tambang, sawit, kebun kayu, di area-area yang memiliki tutupan
-                    hutan alam
-                    juga menjadi pemicu deforestasi. Analisis Auriga Nusantara menunjukkan bahwa per 2024 terdapat 9,6 juta
-                    hektare
-                    tutupan hutan alam di dalam konsesi konversi. Pada 2025, deforestasi di dalam konsesi seperti ini
-                    mencapai
-                    114.823 hektare atau 26% dari deforestasi nasional. Visual berikut menampilkan sepuluh teratas
-                    deforestasi dalam
-                    konsesi per kategori.
-                </p>
-
-                <!-- <div class="viz-block viz-block--full" data-include-html="partials/konsesi-embed.html"></div> -->
-
-
-                <!-- <hr class="divider"> -->
-
-                <div class="callout">
-                    <p>
-                        <strong>Catatan:</strong> Hanya 3% deforestasi 2025 yang terjadi di kawasan konservasi, sementara
-                        49% di hutan
-                        produksi dan 43% di luar kawasan hutan. Artinya, <strong>97% deforestasi yang terjadi berpotensi
-                            legal</strong> karena dilakukan di daerah berizin.
-                    </p>
-                </div>
-            </div>
-        </section> --}}
 
         <!-- DISKUSI -->
         <span class="s-anchor" id="diskusi"></span>
