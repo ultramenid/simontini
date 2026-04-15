@@ -1759,7 +1759,7 @@ footer {
   min-width: 0;
 }
 
-.chart-header { margin-bottom: 14px; }
+.chart-header { margin-bottom: 4px; }
 .chart-title {
   font-size: 1.25rem;
   font-weight: 700;
