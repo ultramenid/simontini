@@ -1202,30 +1202,23 @@
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
-                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
-                                    </svg>
-                                </button>
-                                <button x-show="active < images.length - 1" @click="active++"
-                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                    </svg>
-                                </button>
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
+                </button>
+
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ▶
+                </button>
                             </div>
 
                             <!-- DESC -->
-                            <div class="mt-4" x-show="images[active].desc" style="line-height:1;">
+                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                            </div>
+                              </div> -->
 
                             <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1238,6 +1231,16 @@
                                         </div>
                                     </template>
                                 </div>
+
+                                <div
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                                    <div x-html="images[active].desc"></div>
+
+                                    <div class="opacity-60" x-html="images[active].cc"></div>
+
+                                </div>
+                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
                             </div>
 
                         </div>
@@ -1322,30 +1325,23 @@
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
-                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
-                                    </svg>
-                                </button>
-                                <button x-show="active < images.length - 1" @click="active++"
-                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                    </svg>
-                                </button>
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
+                </button>
+
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ▶
+                </button>
                             </div>
 
                             <!-- DESC -->
-                            <div class="mt-4" x-show="images[active].desc" style="line-height:1;">
+                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                            </div>
+                              </div> -->
 
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1358,6 +1354,16 @@
                                         </div>
                                     </template>
                                 </div>
+
+                                <div
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                                    <div x-html="images[active].desc"></div>
+
+                                    <div class="opacity-60" x-html="images[active].cc"></div>
+
+                                </div>
+                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
                             </div>
 
                         </div>
@@ -1456,30 +1462,23 @@
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
-                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
-                                    </svg>
-                                </button>
-                                <button x-show="active < images.length - 1" @click="active++"
-                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                    </svg>
-                                </button>
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
+                </button>
+
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ▶
+                </button>
                             </div>
 
                             <!-- DESC -->
-                            <div class="mt-4" x-show="images[active].desc" style="line-height:1;">
+                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                            </div>
+                              </div> -->
 
                             <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1492,8 +1491,17 @@
                                         </div>
                                     </template>
                                 </div>
-                            </div>
 
+                                <div
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                                    <div x-html="images[active].desc"></div>
+
+                                    <div class="opacity-60" x-html="images[active].cc"></div>
+
+                                </div>
+                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
+                            </div>
                         </div>
 
                     </div>
@@ -1573,30 +1581,23 @@
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
-                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
-                                    </svg>
-                                </button>
-                                <button x-show="active < images.length - 1" @click="active++"
-                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                    </svg>
-                                </button>
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
+                </button>
+
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ▶
+                </button>
                             </div>
 
                             <!-- DESC -->
-                            <div class="mt-4" x-show="images[active].desc" style="line-height:1;">
+                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                            </div>
+                              </div> -->
 
                             <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1609,6 +1610,16 @@
                                         </div>
                                     </template>
                                 </div>
+
+                                <div
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                                    <div x-html="images[active].desc"></div>
+
+                                    <div class="opacity-60" x-html="images[active].cc"></div>
+
+                                </div>
+                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
                             </div>
 
                         </div>
@@ -1684,30 +1695,23 @@
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
-                                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
-                                    </svg>
-                                </button>
-                                <button x-show="active < images.length - 1" @click="active++"
-                                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                    </svg>
-                                </button>
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
+                </button>
+
+                <button x-show="active < images.length - 1" @click="active++"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ▶
+                </button>
                             </div>
 
                             <!-- DESC -->
-                            <div class="mt-4" x-show="images[active].desc" style="line-height:1;">
+                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                            </div>
+                              </div> -->
 
                             <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1720,6 +1724,16 @@
                                         </div>
                                     </template>
                                 </div>
+
+                                <div
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                                    <div x-html="images[active].desc"></div>
+
+                                    <div class="opacity-60" x-html="images[active].cc"></div>
+
+                                </div>
+                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
                             </div>
 
                         </div>
@@ -1819,8 +1833,8 @@
                                         <template x-for="(item, index) in images" :key="index">
                                             <div class="w-full flex-shrink-0">
 
-                                                <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify"
-                                                    style="line-height: 1;">
+                                                <div class="max-w-4xl mx-auto px-12 sm:px-0 py-3 text-justify"
+                                                    style="line-height: 1; padding-right: 8rem; padding-left: 5rem;">
                                                     <small style="font-size: 12px;" x-html="item.desc"></small>
                                                 </div>
 
@@ -1832,14 +1846,15 @@
 
                                                     <!-- PREV -->
                                                     <button @click="currentSlide--" x-show="currentSlide > 0"
-                                                        class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/60 text-white">
+                                                        class="absolute top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center"
+                                                        style="left: 1rem;">
                                                         ◀
                                                     </button>
 
                                                     <!-- NEXT -->
-                                                    <button @click="currentSlide++"
-                                                        x-show="currentSlide < totalSlides - 1"
-                                                        class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/60 text-white">
+                                                    <button @click="currentSlide++" x-show="currentSlide < totalSlides - 1"
+                                                        class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center"
+                                                        style="right: 7rem;">
                                                         ▶
                                                     </button>
                                                 </div>
@@ -1966,8 +1981,7 @@
                                         class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                                         <!-- SLIDER -->
-                                        <div class="flex "
-                                            :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                                        <div class="flex " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
                                             <template x-for="(item, index) in images" :key="index">
                                                 <div class="w-full flex-shrink-0">
@@ -2077,16 +2091,15 @@
                                                         class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
 
                                                     <!-- PREV -->
-                                                    <button @click="currentSlide--" x-show="currentSlide > 0"
-                                                        class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/60 text-white">
-                                                        ◀
+                                                   <button @click="currentSlide--" x-show="currentSlide > 0"
+                                                    class="absolute top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center">
+                                                    ◀
                                                     </button>
 
                                                     <!-- NEXT -->
-                                                    <button @click="currentSlide++"
-                                                        x-show="currentSlide < totalSlides - 1"
-                                                        class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/60 text-white">
-                                                        ▶
+                                                    <button @click="currentSlide++" x-show="currentSlide < totalSlides - 1"
+                                                    class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center">
+                                                    ▶
                                                     </button>
                                                 </div>
 

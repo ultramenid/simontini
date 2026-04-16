@@ -46,9 +46,15 @@
       </div>
       <div class="hero-divider"></div>
       <!-- <div class="hero-stat">
-                                                                                                                                                                                                                                               <span class="hs-val">+66%</span>
-                                                                                                                                                                                                                                               <span class="hs-unit">Peningkatan dari 2024</span>
-                                                                                                                                                                                                                                               </div> -->
+<<<<<<< HEAD
+                                                                                                                                                                                                                                                                                 <span class="hs-val">+66%</span>
+                                                                                                                                                                                                                                                                                 <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                                                                                                                                                                                                                                 </div> -->
+=======
+                                                                                                                                                           <span class="hs-val">+66%</span>
+                                                                                                                                                           <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                                                                                                           </div> -->
+>>>>>>> b4ad616 (image fix rekomendasi 1)
       <div class="hero-divider"></div>
       <div class="hero-desc">
         Deforestasi melonjak, saatnya pemerintah menerbitkan
@@ -103,50 +109,73 @@
       Namun, sejak 2022 deforestasi di Indonesia kembali meningkat, sebagaimana terlihat dalam grafik berikut. Bahkan,
       deforestasi di Indonesia melonjak pada 2025.
     </p>
-   <!-- embedded chart using TailwindUI layout -->
-        <div class="viz-block viz-block--full mt-12 mb-2" id="chart-app-wrap">
-            <div class=" ">
-                <div id="chart-app" class="w-full py-4 md:py-8" style="background:white;">
-                    <div id="chart-inner" class="px-6 w-full max-w-[1400px] mx-auto">
-                        <div id="chart-viz" class="w-full min-w-0">
-                            <div class="block w-full sm:max-w-6xl mx-auto mb-4">
-                                <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi di Indonesia, 2001-2025</h2>
-                                {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
-                                    hectares</p> --}}
-                            </div>
-                            <div id="chart-body" class="relative flex" style="height:420px;">
-                                <div id="y-axis"
-                                    class="flex flex-col-reverse justify-between pb-[48px] w-[42px] md:w-[56px] shrink-0">
-                                </div>
-                                <div id="bars-wrap" class="relative flex-1 flex flex-col">
-                                    <div id="grid-lines" class="relative flex flex-col-reverse justify-between flex-1">
-                                    </div>
-                                    <div id="bars-svg-wrap"
-                                        class="absolute inset-x-0 top-0 bottom-[48px] grid items-end gap-[2px] px-0.5">
-                                    </div>
-                                    <div id="x-axis"
-                                        class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden"
-                                        style="background:white;z-index:2;">
-
-                                    </div>
-                                    {{-- <small style="font-size: 12px !important;" class="text-black font-bold text-center -mt-6 z-20">
-                                        <i>Deforestasi di Indonesia, 2001-2025</i>
-                                    </small> --}}
-                                </div>
-                            </div>
-                            <div class="md:hidden mt-3">
-                                <div id="pres-strip" class="flex flex-col gap-[2px]"></div>
-                            </div>
-                            <!-- Mobile-only era totals -->
-                            {{-- <div id="mobile-era-totals" class="md:hidden grid grid-cols-2 gap-[2px] mt-3"></div> --}}
-                            {{-- <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland
-                                Lossyear ·
-                                Auriga STADI · simontini.id</div> --}}
-                        </div>
-                    </div>
+    <!-- embedded chart using TailwindUI layout -->
+    <div class="viz-block viz-block--full mt-12 mb-2" id="chart-app-wrap">
+      <div class=" ">
+        <div id="chart-app" class="w-full py-4 md:py-8" style="background:white;">
+          <div id="chart-inner" class="px-6 w-full max-w-[1400px] mx-auto">
+            <div id="chart-viz" class="w-full min-w-0">
+              <div class="block w-full sm:max-w-6xl mx-auto mb-4">
+                <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi di Indonesia,
+                  2001-2025</h2>
+                {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+                  hectares</p> --}}
+              </div>
+              <div id="chart-body" class="relative flex" style="height:420px;">
+                <div id="y-axis" class="flex flex-col-reverse justify-between pb-[48px] w-[42px] md:w-[56px] shrink-0">
                 </div>
+                <div id="bars-wrap" class="relative flex-1 flex flex-col">
+                  <div id="grid-lines" class="relative flex flex-col-reverse justify-between flex-1">
+                  </div>
+                  <div id="bars-svg-wrap" class="absolute inset-x-0 top-0 bottom-[48px] grid items-end gap-[2px] px-0.5">
+                  </div>
+                  <div id="x-axis" class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden"
+                    style="background:white;z-index:2;">
+
+                  </div>
+                  {{-- <small style="font-size: 12px !important;" class="text-black font-bold text-center -mt-6 z-20">
+                    <i>Deforestasi di Indonesia, 2001-2025</i>
+                  </small> --}}
+                </div>
+              </div>
+              <div class="md:hidden mt-3">
+                <div id="pres-strip" class="flex flex-col gap-[2px]"></div>
+              </div>
+              <!-- Mobile-only era totals -->
+              {{-- <div id="mobile-era-totals" class="md:hidden grid grid-cols-2 gap-[2px] mt-3"></div> --}}
+              {{-- <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland
+                Lossyear ·
+                Auriga STADI · simontini.id</div> --}}
             </div>
+          </div>
         </div>
+        <div id="bars-wrap" class="relative flex-1 flex flex-col">
+          <div id="grid-lines" class="relative flex flex-col-reverse justify-between flex-1">
+          </div>
+          <div id="bars-svg-wrap" class="absolute inset-x-0 top-0 bottom-[48px] grid items-end gap-[2px] px-0.5">
+          </div>
+          <div id="x-axis" class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden"
+            style="background:white;z-index:2;">
+
+          </div>
+          <small style="font-size: 12px !important;" class="text-black font-bold text-center -mt-6 z-20">
+            <i>Deforestasi di Indonesia, 2001-2025</i>
+          </small>
+        </div>
+      </div>
+      <div class="md:hidden mt-3">
+        <div id="pres-strip" class="flex flex-col gap-[2px]"></div>
+      </div>
+      <!-- Mobile-only era totals -->
+      {{-- <div id="mobile-era-totals" class="md:hidden grid grid-cols-2 gap-[2px] mt-3"></div> --}}
+      {{-- <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland
+        Lossyear ·
+        Auriga STADI · simontini.id</div> --}}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
   </section>
 
   <!-- METODOLOGI -->
@@ -259,20 +288,19 @@
   {{-- step 1 --}}
   <div class="viz-block viz-block--full alur" style="margin-top: -60px !important;">
     <div class="block w-full sm:max-w-6xl mx-auto">
-        <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Tahapan dan pemrosesan data deforestasi 2025</h2>
-        {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
-            hectares</p> --}}
+      <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Tahapan dan pemrosesan data deforestasi
+        2025</h2>
+      {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+        hectares</p> --}}
     </div>
     <img src="{{ asset('assets/Tahap_ok_Ind.png') }}" alt="Simontini - 2025 Methodology"
       class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:block hidden">
     <img src="{{ asset('assets/Tahap.png') }}" alt="Simontini - 2025 Methodology"
       class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
 
-      {{-- <small
-            class="block w-full sm:max-w-6xl mx-auto text-center mt-2 font-bold"
-            style="font-size: 12px !important;">
-            <i>Tahapan dan pemrosesan data deforestasi 2025</i>
-        </small> --}}
+    {{-- <small class="block w-full sm:max-w-6xl mx-auto text-center mt-2 font-bold" style="font-size: 12px !important;">
+      <i>Tahapan dan pemrosesan data deforestasi 2025</i>
+    </small> --}}
     <section class="page-section px-[5vw] pt-8 pb-6">
       <div class="body-text">
         <p>
@@ -440,354 +468,386 @@
       </p><br><br>
 
 
-      
+
       <div>
-        
+
         <div id="peta-embed" class="mx-auto">
-        <div class="block sm:max-w-6xl mx-auto mb-4 text-left">
-              <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi per pulau besar Indonesia</h2>
-              {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
-                  hectares</p> --}}
+          <div class="block sm:max-w-6xl mx-auto mb-4 text-left">
+            <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi per pulau besar
+              Indonesia</h2>
+            {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+              hectares</p> --}}
           </div>
-        
-        <!-- MAP SECTION -->
-        <div class="relative bg-black overflow-hidden" style="height:500px;">
-          
+
+          <!-- MAP SECTION -->
+          <div class="relative bg-black overflow-hidden" style="height:500px;">
 
 
-          <!-- Map -->
-          <div id="peta-bg-map" class="absolute inset-0 z-10" style="background:#0a0a0a;"></div>
 
-          <!-- Year ghost -->
-          {{-- <div id="peta-year-ghost"
-            class="absolute bottom-[15px] sm:bottom-[90px] right-2 sm:right-10 z-10 pointer-events-none font-poppins font-black text-[#f5f0e8] opacity-10 leading-none tracking-tighter"
-            style="font-size:clamp(4rem,10vw,10rem)">2025</div> --}}
+            <!-- Map -->
+            <div id="peta-bg-map" class="absolute inset-0 z-10" style="background:#0a0a0a;"></div>
 
-          <!-- Charts layer -->
-          <div class="absolute inset-0 z-20 pointer-events-none">
+            <!-- Year ghost -->
+            {{-- <div id="peta-year-ghost"
+              class="absolute bottom-[15px] sm:bottom-[90px] right-2 sm:right-10 z-10 pointer-events-none font-poppins font-black text-[#f5f0e8] opacity-10 leading-none tracking-tighter"
+              style="font-size:clamp(4rem,10vw,10rem)">2025</div> --}}
 
-            <!-- Charts wrap: desktop = absolute inset-0 passthrough; mobile = single grid box -->
-            <div id="peta-charts-wrap" class="absolute inset-0 pointer-events-none">
+            <!-- Charts layer -->
+            <div class="absolute inset-0 z-20 pointer-events-none">
 
-              <!-- Sumatra chart -->
-              <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-sumatra" style="left:22%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-                <div
-                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-                  <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sumatera</div>
-                  <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
-                  <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-                    <div class="relative h-[78px] mt-[14px]" id="peta-axis-sumatra"></div>
-                    <div>
-                      <div class="relative h-[92px] flex items-end">
-                        <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                          <span></span><span></span><span></span><span></span><span></span>
+              <!-- Charts wrap: desktop = absolute inset-0 passthrough; mobile = single grid box -->
+              <div id="peta-charts-wrap" class="absolute inset-0 pointer-events-none">
+
+                <!-- Sumatra chart -->
+                <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                  id="peta-chart-sumatra" style="left:22%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                  <div
+                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                    <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sumatera</div>
+                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
+                    <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                      <div class="relative h-[78px] mt-[14px]" id="peta-axis-sumatra"></div>
+                      <div>
+                        <div class="relative h-[92px] flex items-end">
+                          <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                            <span></span><span></span><span></span><span></span><span></span>
+                          </div>
+                          <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                            id="peta-bars-sumatra"></div>
                         </div>
-                        <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
-                          id="peta-bars-sumatra"></div>
+                        <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sumatra"></div>
                       </div>
-                      <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sumatra"></div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Kalimantan chart -->
-              <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-kalimantan" style="left:35%;top:3%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-                <div
-                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-                  <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Kalimantan</div>
-                  <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
-                  <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-                    <div class="relative h-[78px] mt-[14px]" id="peta-axis-kalimantan"></div>
-                    <div>
-                      <div class="relative h-[92px] flex items-end">
-                        <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                          <span></span><span></span><span></span><span></span><span></span>
+                <!-- Kalimantan chart -->
+                <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                  id="peta-chart-kalimantan" style="left:35%;top:3%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                  <div
+                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                    <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Kalimantan
+                    </div>
+                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
+                    <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                      <div class="relative h-[78px] mt-[14px]" id="peta-axis-kalimantan"></div>
+                      <div>
+                        <div class="relative h-[92px] flex items-end">
+                          <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                            <span></span><span></span><span></span><span></span><span></span>
+                          </div>
+                          <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                            id="peta-bars-kalimantan"></div>
                         </div>
-                        <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
-                          id="peta-bars-kalimantan"></div>
+                        <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-kalimantan"></div>
                       </div>
-                      <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-kalimantan"></div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Sulawesi chart -->
-              <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-sulawesi" style="left:52%;top:3%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-                <div
-                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-                  <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sulawesi</div>
-                  <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
-                  <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-                    <div class="relative h-[78px] mt-[14px]" id="peta-axis-sulawesi"></div>
-                    <div>
-                      <div class="relative h-[92px] flex items-end">
-                        <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                          <span></span><span></span><span></span><span></span><span></span>
+                <!-- Sulawesi chart -->
+                <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                  id="peta-chart-sulawesi" style="left:52%;top:3%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                  <div
+                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                    <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Sulawesi</div>
+                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
+                    <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                      <div class="relative h-[78px] mt-[14px]" id="peta-axis-sulawesi"></div>
+                      <div>
+                        <div class="relative h-[92px] flex items-end">
+                          <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                            <span></span><span></span><span></span><span></span><span></span>
+                          </div>
+                          <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                            id="peta-bars-sulawesi"></div>
                         </div>
-                        <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
-                          id="peta-bars-sulawesi"></div>
+                        <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sulawesi"></div>
                       </div>
-                      <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-sulawesi"></div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Papua chart -->
-              <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
-                id="peta-chart-papua" style="left:65%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
-                <div
-                  class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
-                  <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Papua</div>
-                  <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
-                  <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
-                    <div class="relative h-[78px] mt-[14px]" id="peta-axis-papua"></div>
-                    <div>
-                      <div class="relative h-[92px] flex items-end">
-                        <div class="peta-grid-lines absolute inset-0 pointer-events-none">
-                          <span></span><span></span><span></span><span></span><span></span>
+                <!-- Papua chart -->
+                <div class="peta-island-chart hidden absolute pointer-events-auto origin-top-left scale-75 sm:scale-100"
+                  id="peta-chart-papua" style="left:65%;top:28%;filter:drop-shadow(0 6px 20px rgba(26,26,26,.2))">
+                  <div
+                    class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
+                    <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">Papua</div>
+                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare</div>
+                    <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
+                      <div class="relative h-[78px] mt-[14px]" id="peta-axis-papua"></div>
+                      <div>
+                        <div class="relative h-[92px] flex items-end">
+                          <div class="peta-grid-lines absolute inset-0 pointer-events-none">
+                            <span></span><span></span><span></span><span></span><span></span>
+                          </div>
+                          <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
+                            id="peta-bars-papua"></div>
                         </div>
-                        <div class="relative z-10 w-full flex items-end gap-1.5 h-[92px] border-b-2 border-[#1a1a1a]"
-                          id="peta-bars-papua"></div>
+                        <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-papua"></div>
                       </div>
-                      <div class="flex gap-1.5 pt-[3px]" id="peta-xlabels-papua"></div>
                     </div>
                   </div>
                 </div>
+
+              </div><!-- /peta-charts-wrap -->
+
+            </div><!-- /charts-layer -->
+
+            <!-- Bubbles -->
+            <div id="peta-bubbles"
+              class="absolute bottom-[30px] left-0 right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 flex gap-1 sm:gap-3 z-30 pointer-events-none items-center justify-center px-1 sm:px-0">
+              <div
+                class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+                id="peta-b0" onclick="petaSelectYear(0)">
+                <div class="b-yr text-[.6rem] font-semibold">2021</div>
+                <div class="b-val font-bold leading-[1.1]">229.982</div>
+                <div class="b-u text-[.58rem] opacity-85">ha</div>
               </div>
+              <div
+                class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+                id="peta-b1" onclick="petaSelectYear(1)">
+                <div class="b-yr text-[.6rem] font-semibold">2022</div>
+                <div class="b-val font-bold leading-[1.1]">230.760</div>
+                <div class="b-u text-[.58rem] opacity-85">ha</div>
+              </div>
+              <div
+                class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+                id="peta-b2" onclick="petaSelectYear(2)">
+                <div class="b-yr text-[.6rem] font-semibold">2023</div>
+                <div class="b-val font-bold leading-[1.1]">257.385</div>
+                <div class="b-u text-[.58rem] opacity-85">ha</div>
+              </div>
+              <div
+                class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+                id="peta-b3" onclick="petaSelectYear(3)">
+                <div class="b-yr text-[.6rem] font-semibold">2024</div>
+                <div class="b-val font-bold leading-[1.1]">261.574</div>
+                <div class="b-u text-[.58rem] opacity-85">ha</div>
+              </div>
+              <div
+                class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
+                id="peta-b4" onclick="petaSelectYear(4)">
+                <div class="b-yr font-semibold">2025</div>
+                <div class="b-val font-bold leading-[1.1]">433.751</div>
+                <div class="b-u text-[.58rem] opacity-85">ha</div>
+              </div>
+            </div>
 
-            </div><!-- /peta-charts-wrap -->
+          </div><!-- /map section -->
 
-          </div><!-- /charts-layer -->
-
-          <!-- Bubbles -->
-          <div id="peta-bubbles"
-            class="absolute bottom-[30px] left-0 right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 flex gap-1 sm:gap-3 z-30 pointer-events-none items-center justify-center px-1 sm:px-0">
-            <div
-              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
-              id="peta-b0" onclick="petaSelectYear(0)">
-              <div class="b-yr text-[.6rem] font-semibold">2021</div>
-              <div class="b-val font-bold leading-[1.1]">229.982</div>
-              <div class="b-u text-[.58rem] opacity-85">ha</div>
+          <!-- TABLE SECTION -->
+          <div id="peta-table-section" class="bg-[#ece8df] text-black  px-4 sm:px-12 relative">
+            <div class="flex items-center gap-1.5  sm:hidden"
+              style="background:#ece8df; border-bottom:1px solid rgba(255,255,255,.05);">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              <span style="font-size:.6rem; color:black; letter-spacing:.08em;">geser untuk melihat alur
+                lengkap</span>
             </div>
-            <div
-              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
-              id="peta-b1" onclick="petaSelectYear(1)">
-              <div class="b-yr text-[.6rem] font-semibold">2022</div>
-              <div class="b-val font-bold leading-[1.1]">230.760</div>
-              <div class="b-u text-[.58rem] opacity-85">ha</div>
-            </div>
-            <div
-              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
-              id="peta-b2" onclick="petaSelectYear(2)">
-              <div class="b-yr text-[.6rem] font-semibold">2023</div>
-              <div class="b-val font-bold leading-[1.1]">257.385</div>
-              <div class="b-u text-[.58rem] opacity-85">ha</div>
-            </div>
-            <div
-              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
-              id="peta-b3" onclick="petaSelectYear(3)">
-              <div class="b-yr text-[.6rem] font-semibold">2024</div>
-              <div class="b-val font-bold leading-[1.1]">261.574</div>
-              <div class="b-u text-[.58rem] opacity-85">ha</div>
-            </div>
-            <div
-              class="peta-bub flex flex-col items-center justify-center rounded-full border-2 border-[rgba(16,10,1,0.25)] sm:text-[rgba(16,10,1,0.25)] transition-all duration-300 shrink-0 pointer-events-auto cursor-pointer"
-              id="peta-b4" onclick="petaSelectYear(4)">
-              <div class="b-yr font-semibold">2025</div>
-              <div class="b-val font-bold leading-[1.1]">433.751</div>
-              <div class="b-u text-[.58rem] opacity-85">ha</div>
+            <div class="max-w-[980px] mx-auto overflow-x-auto">
+              <table class="w-full border-collapse min-w-[560px]">
+                <thead>
+                  <tr c lass="border-b-2 border-[#8b2a1a]">
+                    <th rowspan="2"
+                      class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-left align-bottom">
+                      Pulau</th>
+                    <th colspan="3"
+                      class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#c04030] py-1 sm:py-[9px] px-2 sm:px-[14px] text-center border-b border-[rgba(255,255,255,.1)]">
+                      Deforestasi (ha)</th>
+                    <th colspan="2"
+                      class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase py-1 sm:py-[9px] px-2 sm:px-[14px] text-center border-b border-[rgba(255,255,255,.1)]"
+                      style="color:#c04030">Perluasan 2025 vs 2024</th>
+                  </tr>
+                  <tr class="border-b-2 border-[#8b2a1a]">
+                    <th
+                      class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                      2023</th>
+                    <th
+                      class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                      2024</th>
+                    <th
+                      class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                      2025</th>
+                    <th
+                      class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                      Hektare</th>
+                    <th
+                      class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
+                      Persen</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
+                      Kalimantan</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      124.611</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      129.896</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      158.283</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      28.387</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                      22%</td>
+                  </tr>
+                  <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
+                      Sumatera</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      33.311</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      91.248</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      144.150</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      52.901</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                      58%</td>
+                  </tr>
+                  <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
+                      Papua</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      55.981</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      17.341</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      77.678</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      60.337</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                      348%</td>
+                  </tr>
+                  <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
+                      Sulawesi</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      36.814</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      17.361</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      39.685</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      22.324</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                      129%</td>
+                  </tr>
+                  <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
+                      Maluku</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      4.034</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      3.537</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      7.527</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      3.989</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                      113%</td>
+                  </tr>
+                  <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
+                      Bali &amp; Nusa Tenggara</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      2.052</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      1.780</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      4.209</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      2.429</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                      136%</td>
+                  </tr>
+                  <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
+                      Jawa</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      582</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      411</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      2.221</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      1.810</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
+                      440%</td>
+                  </tr>
+                  <tr class="tot border-t-2 border-[#8b2a1a] text-[#c04030] font-semibold">
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem]">
+                      Total</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      257.385</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      261.575</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      433.751</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
+                      172.177</td>
+                    <td
+                      class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct">
+                      66%</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-
-        </div><!-- /map section -->
-
-        <!-- TABLE SECTION -->
-        <div id="peta-table-section" class="bg-[#ece8df] text-black  px-4 sm:px-12 relative">
-          <div class="flex items-center gap-1.5  sm:hidden"
-            style="background:#ece8df; border-bottom:1px solid rgba(255,255,255,.05);">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-            <span style="font-size:.6rem; color:black; letter-spacing:.08em;">geser untuk melihat alur
-              lengkap</span>
-          </div>
-          <div class="max-w-[980px] mx-auto overflow-x-auto">
-            <table class="w-full border-collapse min-w-[560px]">
-              <thead>
-                <tr c lass="border-b-2 border-[#8b2a1a]">
-                  <th rowspan="2"
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-left align-bottom">
-                    Pulau</th>
-                  <th colspan="3"
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-[#c04030] py-1 sm:py-[9px] px-2 sm:px-[14px] text-center border-b border-[rgba(255,255,255,.1)]">
-                    Deforestasi (ha)</th>
-                  <th colspan="2"
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase py-1 sm:py-[9px] px-2 sm:px-[14px] text-center border-b border-[rgba(255,255,255,.1)]"
-                    style="color:#c04030">Perluasan 2025 vs 2024</th>
-                </tr>
-                <tr class="border-b-2 border-[#8b2a1a]">
-                  <th
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
-                    2023</th>
-                  <th
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
-                    2024</th>
-                  <th
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
-                    2025</th>
-                  <th
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
-                    Hektare</th>
-                  <th
-                    class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
-                    Persen</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
-                    Kalimantan</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    124.611</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    129.896</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    158.283</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    28.387</td>
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
-                    22%</td>
-                </tr>
-                <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
-                    Sumatera</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    33.311</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    91.248</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    144.150</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    52.901</td>
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
-                    58%</td>
-                </tr>
-                <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
-                    Papua</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    55.981</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    17.341</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    77.678</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    60.337</td>
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
-                    348%</td>
-                </tr>
-                <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
-                    Sulawesi</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    36.814</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    17.361</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    39.685</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    22.324</td>
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
-                    129%</td>
-                </tr>
-                <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
-                    Maluku</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    4.034</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    3.537</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    7.527</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    3.989</td>
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
-                    113%</td>
-                </tr>
-                <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
-                    Bali &amp; Nusa Tenggara</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    2.052</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    1.780</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    4.209</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    2.429</td>
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
-                    136%</td>
-                </tr>
-                <tr class="border-b border-[rgba(255,255,255,.07)] hover:bg-[rgba(255,255,255,.04)]">
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem] text-black">
-                    Jawa</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    582</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    411</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    2.221</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    1.810</td>
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct text-[#c04030] font-semibold">
-                    440%</td>
-                </tr>
-                <tr class="tot border-t-2 border-[#8b2a1a] text-[#c04030] font-semibold">
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-left font-semibold text-[.65rem] sm:text-[.88rem]">
-                    Total</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    257.385</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    261.575</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    433.751</td>
-                  <td class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem]">
-                    172.177</td>
-                  <td
-                    class="py-1.5 sm:py-[11px] px-2 sm:px-[14px] text-right font-poppins text-[.62rem] sm:text-[.8rem] pct">
-                    66%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-         {{-- <small
-            class="block w-full sm:max-w-6xl mx-auto text-center font-bold"
-            style="font-size: 12px !important;">
+          {{-- <small class="block w-full sm:max-w-6xl mx-auto text-center font-bold" style="font-size: 12px !important;">
             <i>Deforestasi per pulau besar Indonesia</i>
-        </small> --}}
-      </div><br><br>
+          </small> --}}
+        </div><br><br>
       </div>
 
 
@@ -852,9 +912,10 @@
       <div class="viz-block viz-block--full mt-10 mb-6" id="chart-monthly-wrap">
         <div class="max-w-4xl mx-auto">
           <div class="block w-full sm:max-w-6xl mx-auto mb-4">
-              <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi per bulan di Indonesia pada 2025</h2>
-              {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
-                  hectares</p> --}}
+            <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi per bulan di
+              Indonesia pada 2025</h2>
+            {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+              hectares</p> --}}
           </div>
           <div class="">
             {{-- <div class=" px-4  sm:px-6">
@@ -875,11 +936,10 @@
                     style="background:white;z-index:2;"></div>
                 </div>
               </div>
-              {{-- <small
-                class="block w-full sm:max-w-6xl mx-auto text-center font-bold"
+              {{-- <small class="block w-full sm:max-w-6xl mx-auto text-center font-bold"
                 style="font-size: 12px !important;">
-                    <i>Deforestasi per bulan di Indonesia pada 2025</i>
-                </small><br><br> --}}
+                <i>Deforestasi per bulan di Indonesia pada 2025</i>
+              </small><br><br> --}}
             </div>
           </div>
         </div>
@@ -908,10 +968,10 @@
       </p><br><br>
       <div class="viz-block viz-block--full">
         <div class="block sm:max-w-6xl mx-auto mb-4 text-left">
-              <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Peta Tematik Deforestasi 2025</h2>
-              {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
-                  hectares</p> --}}
-          </div>
+          <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Peta Tematik Deforestasi 2025</h2>
+          {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+            hectares</p> --}}
+        </div>
 
         <!-- PETA TEMATIK (inline) -->
         <!-- ── MODE PILL BAR ── -->
@@ -1019,12 +1079,10 @@
             class="flex-1 flex flex-row items-stretch justify-center overflow-y-hidden overflow-x-auto"></div>
         </aside>
 
-         {{-- <small
-                  class="block w-full sm:max-w-6xl mx-auto text-center font-bold"
-                  style="font-size: 12px !important;">
-                  <i>Deforestasi 2025 per wilayah administrasi, area konservasi, dan konsesi.</i>
-                </small> --}}
-    </div><br><br>
+        {{-- <small class="block w-full sm:max-w-6xl mx-auto text-center font-bold" style="font-size: 12px !important;">
+          <i>Deforestasi 2025 per wilayah administrasi, area konservasi, dan konsesi.</i>
+        </small> --}}
+      </div><br><br>
 
 
       <div class="pull-quote">
@@ -1087,77 +1145,80 @@
 
 
         <!-- <ul class="insight-list">
-                                                                                                                                                                                                                                                                        <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                                                                                                                                                                                                                                                        <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                                                                                                                                                                                                                                                        <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                                                                                                                                                                                                                                                        <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                                                                                                                                                                                                                                                      </ul> -->
+<<<<<<< HEAD
+                                                                                                                                                                                                                                                                                                          <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                                                                                                                                                                                                                                                          <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                                                                                                                                                                                                                                                          <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                                                                                                                                                                                                                                                          <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                                                                                                                                                                                                                                                        </ul> -->
+=======
+                                                                                                                                                                                    <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                                                                                                                                    <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                                                                                                                                    <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                                                                                                                                    <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                                                                                                                                  </ul> -->
+>>>>>>> b4ad616 (image fix rekomendasi 1)
       </div>
-      <div class="viz-block viz-block--full mt-2 mb-2">
+      <div class="viz-block viz-block--full mt-2 mb-2 ">
         <div class="viz-frame viz-frame--padded">
-          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+          <div class="max-w-5xl mx-auto px-10 z-20 relative">
 
             <div x-data="{
-                                        active: 0,
-                                        images: [
-                                          {
-                                            src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
-                                            desc: '<strong>Tutupan hutan alam dalam konsesi kebun kayu PT Malinau Hijau Lestari (MHL) di Malinau, Kalimantan Utara.</strong> Pemberian izin kebun kayu pada area bertutupan hutan alam seperti ini merupakan salah satu bentuk deforestasi terencana oleh pemerintah karena memberikan ruang bagi MHL untuk membabat hutan alam dan menggantinya (konversi) dengan kebun kayu energi (biomassa) yang akan ditebang secara periodik. Foto: Auriga Nusantara, Mei 2024.',
-                                            title: 'Kawasan Hutan Produksi, Hutan Tanaman Energi, PT Malinau Hijau Lestari <br> Malinau, Kalimantan Utara, Mei 2024'
-                                          },
-                                          {
-                                            src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
-                                            desc: '<strong>Deforestasi oleh ekspansi tambang nikel PT Weda Bay Nickel di Halmahera Tengah, Maluku Utara.</strong> Dengan menerbitkan izin tambang pada daerah bertutupan hutan, pemerintah dasarnya merencanakan deforestasi demi eksploitasi nikel di wilayah izin pertambangan ini. Foto: Auriga Nusantara, Desember 2025.',
-                                            title: 'Konsesi Tambang, Weda By Nickel <br> Halmahera Tengah, Maluku Utara, Desember 2025'
-                                          },
-                                          {
-                                            src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
-                                            desc: '<strong>Deforestasi oleh pembangunan kawasan industri Indonesia Pomalaa Industry Park (IPIP) di Kolaka, Sulawesi Tenggara.</strong> Kawasan industri ini merupakan salah satu Proyek Strategis Nasional (PSN) dan berada dalam Kawasan Hutan Produksi Konversi. Foto: Auriga Nusantara, Desember 2025',
-                                            title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
-                                          },
-                                          {
-                                            src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
-                                            desc: '<strong>Deforestasi oleh pembangunan pembangkit listrik tenaga air PLTA Mentarang di Malinau, Kalimantan Utara.</strong> Kegiatan ini merupakan salah satu Proyek Strategis Nasional. Foto: Auriga Nusantara, Oktober 2025.',
-                                            title: 'PLTA Mentarang, Malinau <br> Kalimantan Utara, Desember 2025'
-                                          }
-                                        ]
-                                      }">
+                                                                          active: 0,
+                                                                          images: [
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
+                                                                              desc: '<strong>Tutupan hutan alam dalam konsesi kebun kayu PT Malinau Hijau Lestari (MHL) di Malinau, Kalimantan Utara.</strong> Pemberian izin kebun kayu pada area bertutupan hutan alam seperti ini merupakan salah satu bentuk deforestasi terencana oleh pemerintah karena memberikan ruang bagi MHL untuk membabat hutan alam dan menggantinya (konversi) dengan kebun kayu energi (biomassa) yang akan ditebang secara periodik.',
+                                                                              cc: '© Auriga Nusantara, Mei 2024.'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
+                                                                              desc: '<strong>Deforestasi oleh ekspansi tambang nikel PT Weda Bay Nickel di Halmahera Tengah, Maluku Utara.</strong> Dengan menerbitkan izin tambang pada daerah bertutupan hutan, pemerintah dasarnya merencanakan deforestasi demi eksploitasi nikel di wilayah izin pertambangan ini.',
+                                                                              cc: '© Auriga Nusantara, Desember 2025.'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
+                                                                              desc: '<strong>Deforestasi oleh pembangunan kawasan industri Indonesia Pomalaa Industry Park (IPIP) di Kolaka, Sulawesi Tenggara.</strong> Kawasan industri ini merupakan salah satu Proyek Strategis Nasional (PSN) dan berada dalam Kawasan Hutan Produksi Konversi.',
+                                                                              cc: '© Auriga Nusantara, Desember 2025.'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
+                                                                              desc: '<strong>Deforestasi oleh pembangunan pembangkit listrik tenaga air PLTA Mentarang di Malinau, Kalimantan Utara.</strong> Kegiatan ini merupakan salah satu Proyek Strategis Nasional.',
+                                                                              cc: '© Auriga Nusantara, Oktober 2025.'
+                                                                            }
+                                                                          ]
+                                                                        }">
 
               <!-- IMAGE -->
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" @click="GLightbox({
-                                              elements: images.map(img => ({
-                                                href: img.src,
-                                                description: img.desc
-                                              })),
-                                              startAt: active
-                                            }).open()"
+                        elements: images.map(img => ({
+                            href: img.src,
+                            description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                        })),
+                        startAt: active
+                    }).open()"
                   class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
                 <!-- PREV -->
-                <button x-show="active > 0" @click="active--"
-                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                  </svg>
+                  <button x-show="active > 0" @click="active--"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
                 </button>
+
                 <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ▶
                 </button>
               </div>
 
               <!-- DESC -->
-              <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-              </div>
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                              <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                            </div> -->
 
               <!-- THUMB + LOKASI -->
-              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                   :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                   <template x-for="(img, index) in images" :key="index">
@@ -1168,7 +1229,17 @@
                     </div>
                   </template>
                 </div>
+
+                <div class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                  <div x-html="images[active].desc"></div>
+
+                  <div class="opacity-60" x-html="images[active].cc"></div>
+
+                </div>
+                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
               </div>
+
 
             </div>
 
@@ -1212,69 +1283,65 @@
 
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
-          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+          <div class="max-w-5xl mx-auto px-10 z-20 relative">
 
             <div x-data="{
-                                        active: 0,
-                                        images: [
-                                          {
-                                            src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
-                                            desc: '<strong>Deforestasi dalam konsesi logging PT Jati Dharma Indah Plywood Industries di Nabire, Papua Tengah.</strong> Foto: Auriga Nusantara, Desember 2025.',
-                                            title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
-                                          },
-                                          {
-                                            src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
-                                            desc: '<strong> PT GAG Nikel, Raja Ampat, Papua Barat (Desember 2024)</strong> <br> Aktivitas tambang nikel di kawasan hutan lindung Raja Ampat menunjukkan ekspansi industri ekstraktif ke wilayah dengan nilai ekologis tinggi. Kasus ini mencerminkan pergeseran tekanan deforestasi ke Tanah Papua, seiring meningkatnya kebutuhan mineral dan kemudahan perizinan dalam kawasan hutan.',
-                                            title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
-                                          },
-                                          {
-                                            src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
-                                            desc: '<strong>Tutupan hutan alam di Kabupaten Sarmi, Papua.</strong> Namun, pemerintah telah menerbitkan izin tambang nikel PT Iriana Mutiara Mining di area ini sehingga membuka ruang bagi hilangnya tutupan hutan alam tersebut. Foto: Auriga Nusantara, Desember 2024.',
-                                            title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
-                                          },
-                                          {
-                                            src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
-                                            desc: '<strong>Pembabatan hutan alam oleh proyek lumbung pangan (food estate) di Sorong, Papua Barat Daya.</strong> Foto: Auriga Nusantara, April 2026.',
-                                            title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
-                                          }
-                                        ]
-                                      }">
+                                                                          active: 0,
+                                                                          images: [
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
+                                                                              desc: '<strong>Deforestasi dalam konsesi logging PT Jati Dharma Indah Plywood Industries di Nabire, Papua Tengah.</strong> ',
+                                                                              cc: '© Auriga Nusantara, Desember 2025.'
+
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
+                                                                              desc: '<strong>Deforestasi oleh kegiatan pertambangan nikel PT Anugerah Surya Pratama, Pulau Manuram, Raja Ampat, Papua.</strong>',
+                                                                              cc: '© Auriga Nusantara, September 2025.',                                                          
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
+                                                                              desc: '<strong>Tutupan hutan alam di Kabupaten Sarmi, Papua.</strong> Namun, pemerintah telah menerbitkan izin tambang nikel PT Iriana Mutiara Mining di area ini sehingga membuka ruang bagi hilangnya tutupan hutan alam tersebut.',
+                                                                              cc: '© Auriga Nusantara, Desember 2024.',                                                          
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
+                                                                              desc: '<strong>Pembabatan hutan alam oleh proyek lumbung pangan (food estate) di Sorong, Papua Barat Daya.</strong>',
+                                                                              cc: '© Auriga Nusantara, April 2026.',
+                                                                            }
+                                                                          ]
+                                                                        }">
 
               <!-- IMAGE -->
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" @click="GLightbox({
-                                              elements: images.map(img => ({
-                                                href: img.src,
-                                                description: img.desc
-                                              })),
-                                              startAt: active
-                                            }).open()"
+                        elements: images.map(img => ({
+                            href: img.src,
+                            description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                        })),
+                        startAt: active
+                    }).open()"
                   class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
                 <!-- PREV -->
-                <button x-show="active > 0" @click="active--"
-                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                  </svg>
+                  <button x-show="active > 0" @click="active--"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
                 </button>
+
                 <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ▶
                 </button>
               </div>
 
               <!-- DESC -->
-              <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-              </div>
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                              <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                            </div> -->
 
               <!-- THUMB + LOKASI -->
-              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                   :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                   <template x-for="(img, index) in images" :key="index">
@@ -1286,6 +1353,14 @@
                   </template>
                 </div>
 
+                <div class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                  <div x-html="images[active].desc"></div>
+
+                  <div class="opacity-60" x-html="images[active].cc"></div>
+
+                </div>
+                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
               </div>
 
             </div>
@@ -1340,79 +1415,93 @@
         </p>
 
         <!-- <div class="callout">
-                                                                                                                                                                                                                                                                        <strong>Faktor pendorong utama:</strong>
-                                                                                                                                                                                                                                                                        <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
-                                                                                                                                                                                                                                                                          <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
-                                                                                                                                                                                                                                                                          <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
-                                                                                                                                                                                                                                                                          <li>Kenaikan harga komoditas seperti nikel dan emas</li>
-                                                                                                                                                                                                                                                                        </ul>
-                                                                                                                                                                                                                                                                      </div> -->
+<<<<<<< HEAD
+                                                                                                                                                                                                                                                                                                          <strong>Faktor pendorong utama:</strong>
+                                                                                                                                                                                                                                                                                                          <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                                                                                                                                                                                                                                                            <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                                                                                                                                                                                                                                                            <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                                                                                                                                                                                                                                                            <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                                                                                                                                                                                                                                                          </ul>
+                                                                                                                                                                                                                                                                                                        </div> -->
+      </div>
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-10 z-20 relative">
+
+            <div x-data="{
+                                                                        active: 0,
+                                                                        images: [
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
+                                                                            desc: '<strong>Deforestasi oleh kegiatan pembangunan jaringan jalan eksploitasi di dalam konsesi kebun kayu PT Toba Pulp Lestari.</strong> Jaringan jalan tersebut akan menjadi pintu masuk deforestasi masif di area ini.',
+                                                                            cc: '© Auriga Nusantara/Earthsight, Desember 2025.'
+                                                                          },
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
+                                                                            desc: '<strong>Pembabatan hutan alam oleh pembangunan kebun sawit di dalam konsesi PT Equator Sumber Rezeki di Kapuas Hulu, Kalimantan Barat.</strong>',
+                                                                            cc: '© Auriga Nusantara, Juni 2025.'
+                                                                          },
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 3/konsesi pbph.jpg') }}',
+                                                                            desc: '<strong>Deforestasi oleh pengembangan kebun kayu di dalam konsesi PT Industrial Forest Plantation di Kapuas, Kalimantan Tengah.</strong>',
+                                                                            cc: '© Auriga Nusantara/Earthsight, Juli 2025.'
+                                                                          },
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
+                                                                            desc: '<strong>Pembabatan hutan alam oleh ekspansi tambang nikel di Kolonodale, Morowali Utara, Sulawesi Tengah.</strong> ',
+                                                                            cc: '© Auriga Nusantara, Oktober 2025.'
+                                                                          }
+                                                                        ]
+                                                                      }">
+
+              <!-- IMAGE -->
+=======
+                                                                                                                                                                                    <strong>Faktor pendorong utama:</strong>
+                                                                                                                                                                                    <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                                                                                                                                      <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                                                                                                                                      <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                                                                                                                                      <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                                                                                                                                    </ul>
+                                                                                                                                                                                  </div> -->
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
           <div class="max-w-5xl mx-auto px-4 z-20 relative">
-
-            <div x-data="{
-                                      active: 0,
-                                      images: [
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
-                                          desc: '<strong>Deforestasi oleh kegiatan pembangunan jaringan jalan eksploitasi di dalam konsesi kebun kayu PT Toba Pulp Lestari.</strong> Jaringan jalan tersebut akan menjadi pintu masuk deforestasi masif di area ini. Foto: Auriga Nusantara/Earthsight, Desember 2025.',
-                                          title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
-                                        },
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
-                                          desc: '<strong>Pembabatan hutan alam oleh pembangunan kebun sawit di dalam konsesi PT Equator Sumber Rezeki di Kapuas Hulu, Kalimantan Barat.</strong> Foto: Auriga Nusantara, Juni 2025.',
-                                          title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
-                                        },
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 3/konsesi pbph.jpg') }}',
-                                          desc: '<strong>Deforestasi oleh pengembangan kebun kayu di dalam konsesi PT Industrial Forest Plantation di Kapuas, Kalimantan Tengah.</strong> Foto: Auriga Nusantara/Earthsight, Juli 2025.',
-                                          title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
-                                        },
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
-                                          desc: '<strong>Pembabatan hutan alam oleh ekspansi tambang nikel di Kolonodale, Morowali Utara, Sulawesi Tengah.</strong> Foto: Auriga Nusantara, Oktober 2025.',
-                                          title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
-                                        }
-                                      ]
-                                    }">
-
-              <!-- IMAGE -->
+            <div x-data="{ active: 0, images: [
+                    { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Other Land Use Areas, Plantation Concessions, PT Equator Sumber Rezeki, <br> Kapuas Hulu, West Kalimantan, June 2025' },
+                    { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Production Forest Area, PBPH Concession, PT Toba Pulp Lestari, <br> Aek Raja, North Sumatra, December 2025' },
+                    { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Other Land Use, Mining Concession, PT Bencoolen Mining, <br> North Bengkulu, Bengkulu, May 2025' }
+                    ]}">
+>>>>>>> b4ad616 (image fix rekomendasi 1)
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" @click="GLightbox({
-                                            elements: images.map(img => ({
-                                              href: img.src,
-                                              description: img.desc
-                                            })),
-                                            startAt: active
-                                          }).open()"
+                      elements: images.map(img => ({
+                          href: img.src,
+                          description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                      })),
+                      startAt: active
+                  }).open()"
                   class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
                 <!-- PREV -->
-                <button x-show="active > 0" @click="active--"
-                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                  </svg>
+                  <button x-show="active > 0" @click="active--"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
                 </button>
+
                 <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ▶
                 </button>
               </div>
 
               <!-- DESC -->
-              <div class="mt-4" x-show="images[active].desc" style="line-height: 1;">
-                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-              </div>
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                            <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                          </div> -->
 
               <!-- THUMB + LOKASI -->
-              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                   :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                   <template x-for="(img, index) in images" :key="index">
@@ -1424,6 +1513,14 @@
                   </template>
                 </div>
 
+                <div class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                  <div x-html="images[active].desc"></div>
+
+                  <div class="opacity-60" x-html="images[active].cc"></div>
+
+                </div>
+                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
               </div>
 
             </div>
@@ -1465,69 +1562,64 @@
 
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
-          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+          <div class="max-w-5xl mx-auto px-10 z-20 relative">
 
             <div x-data="{
-                                      active: 0,
-                                      images: [
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
-                                          desc: '<strong>Deforestasi di dalam konsesi kebun kayu PT Indosubur Sukses Makmur di Kutai Timur, Kalimantan Timur.</strong> Penerbitan izin kebun kayu di area bertutupan hutan alam seperti ini menjadi salah satu contoh deforestasi legal (legal deforestation) di Indonesia. Foto: Auriga Nusantara/Earthsight, Januari 2025.',
-                                          title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
-                                        },
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}',
-                                          desc: '<strong>Konversi hutan alam menjadi kebun sawit skala besar dalam konsesi PT Borneo International Anugerah di Kapuas Hulu, Kalimantan Barat.</strong> Keberadaan izin kebun monokultur di area ini membuka ruang bagi perusahaan membabat hutan alam yang ada. Foto: Auriga Nusantara, Juni 2025.',
-                                          title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
-                                        },
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru.jpg') }}',
-                                          desc: '<strong>Aktivitas tambang emas PT Agincourt Resources di bentang alam Batang Toru, Sumatera Utara.</strong> Bentang alam Batang Toru adalah satu-satunya habitat orangutan tapanuli (Pongo tapanuliensis) di dunia. Adanya izin tambang menjadi indikasi pembabatan hutan alam yang terjadi sebagai deforestasi legal. Foto: Auriga Nusantara, Mei 2025.',
-                                          title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
-                                        },
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Banyan Tumbuh Lestari.jpg') }}',
-                                          desc: '<strong>Pembabatan hutan alam di dalam konsesi sawit PT Banyan Tumbuh Lestari di Pohuwato, Gorontalo.</strong> Izin perusahaan ini sejatinya untuk perkebunan sawit, namun pada praktiknya perusahaan membangun kebun kayu biomassa. Langkah pemerintah melepas kawasan hutan ini menjadi Area Penggunaan Lain menjadi pintu masuk deforestasi legal di area ini. Foto: Auriga Nusantara, Mei 2025.',
-                                          title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
-                                        }
-                                      ]
-                                    }">
+                                                                        active: 0,
+                                                                        images: [
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
+                                                                            desc: '<strong>Deforestasi di dalam konsesi kebun kayu PT Indosubur Sukses Makmur di Kutai Timur, Kalimantan Timur.</strong> Penerbitan izin kebun kayu di area bertutupan hutan alam seperti ini menjadi salah satu contoh deforestasi legal (legal deforestation) di Indonesia.',
+                                                                            cc: '© Auriga Nusantara/Earthsight, Januari 2025.'
+                                                                          },
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}',
+                                                                            desc: '<strong>Konversi hutan alam menjadi kebun sawit skala besar dalam konsesi PT Borneo International Anugerah di Kapuas Hulu, Kalimantan Barat.</strong> Keberadaan izin kebun monokultur di area ini membuka ruang bagi perusahaan membabat hutan alam yang ada.',
+                                                                            cc: '© Auriga Nusantara, Juni 2025.'
+                                                                          },
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru.jpg') }}',
+                                                                            desc: '<strong>Aktivitas tambang emas PT Agincourt Resources di bentang alam Batang Toru, Sumatera Utara.</strong> Bentang alam Batang Toru adalah satu-satunya habitat orangutan tapanuli (Pongo tapanuliensis) di dunia. Adanya izin tambang menjadi indikasi pembabatan hutan alam yang terjadi sebagai deforestasi legal.',
+                                                                            cc: '© Auriga Nusantara, Mei 2025.'
+                                                                          },
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Banyan Tumbuh Lestari.jpg') }}',
+                                                                            desc: '<strong>Pembabatan hutan alam di dalam konsesi sawit PT Banyan Tumbuh Lestari di Pohuwato, Gorontalo.</strong> Izin perusahaan ini sejatinya untuk perkebunan sawit, namun pada praktiknya perusahaan membangun kebun kayu biomassa. Langkah pemerintah melepas kawasan hutan ini menjadi Area Penggunaan Lain menjadi pintu masuk deforestasi legal di area ini.',
+                                                                            cc: '© Auriga Nusantara, Mei 2025.'
+                                                                          }
+                                                                        ]
+                                                                      }">
 
               <!-- IMAGE -->
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" @click="GLightbox({
-                                            elements: images.map(img => ({
-                                              href: img.src,
-                                              description: img.desc
-                                            })),
-                                            startAt: active
-                                          }).open()"
+                    elements: images.map(img => ({
+                        href: img.src,
+                        description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                    })),
+                    startAt: active
+                }).open()"
                   class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
                 <!-- PREV -->
-                <button x-show="active > 0" @click="active--"
-                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                  </svg>
+                  <button x-show="active > 0" @click="active--"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
                 </button>
+
                 <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ▶
                 </button>
               </div>
 
               <!-- DESC -->
-              <div class="mt-4" x-show="images[active].desc" style="line-height: 1;">
-                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-              </div>
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                          <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                        </div> -->
 
               <!-- THUMB + LOKASI -->
-              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                   :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                   <template x-for="(img, index) in images" :key="index">
@@ -1539,6 +1631,14 @@
                   </template>
                 </div>
 
+                <div class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                  <div x-html="images[active].desc"></div>
+
+                  <div class="opacity-60" x-html="images[active].cc"></div>
+
+                </div>
+                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
               </div>
 
             </div>
@@ -1578,64 +1678,59 @@
 
       <div class="viz-block viz-block--full mt-2 mb-2">
         <div class="viz-frame viz-frame--padded">
-          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+          <div class="max-w-5xl mx-auto px-10 z-20 relative">
 
             <div x-data="{
-                                      active: 0,
-                                      images: [
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
-                                          desc: '<strong>Pembabatan hutan alam di dalam Suaka Margasatwa Rawa Singkil, Aceh.</strong> Adanya kanal mengindikasikan bahwa kegiatan ini tidak berlangsung dalam sekejap sehingga menjadi pertanyaan akan efektivitas pengelolaan kawasan konservasi ini oleh Balai Konservasi Sumber Daya Alam (BKSDA) Aceh.',
-                                          title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
-                                        },
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
-                                          desc: '<strong>Pembabatan hutan alam habitat orangutan untuk pembangunan kebun sawit di dalam konsesi PT Borneo Internasional Anugerah di Kapuas Hulu, Kalimantan Barat.</strong> Foto: Auriga Nusantara, Juni 2025.',
-                                          title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
-                                        },
-                                        {
-                                          src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
-                                          desc: '<strong>Deforestasi di Suaka Margasatwa Rawa Singkil, Aceh.</strong> Pembabatan hutan ini ditengarai untuk pembangunan kebun sawit di salah satu habitat orangutan terpadat di Indonesia ini. Foto: HAKA, Agustus 2025.',
-                                          title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
-                                        }
-                                      ]
-                                    }">
+                                                                        active: 0,
+                                                                        images: [
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
+                                                                            desc: '<strong>Pembabatan hutan alam di dalam Suaka Margasatwa Rawa Singkil, Aceh.</strong> Adanya kanal mengindikasikan bahwa kegiatan ini tidak berlangsung dalam sekejap sehingga menjadi pertanyaan akan efektivitas pengelolaan kawasan konservasi ini oleh Balai Konservasi Sumber Daya Alam (BKSDA) Aceh.',
+                                                                            cc: '© HAKA'
+                                                                          },
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
+                                                                            desc: '<strong>Pembabatan hutan alam habitat orangutan untuk pembangunan kebun sawit di dalam konsesi PT Borneo Internasional Anugerah di Kapuas Hulu, Kalimantan Barat.</strong> ',
+                                                                            cc: '© Auriga Nusantara, Juni 2025.'
+                                                                          },
+                                                                          {
+                                                                            src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
+                                                                            desc: '<strong>Deforestasi di Suaka Margasatwa Rawa Singkil, Aceh.</strong> Pembabatan hutan ini ditengarai untuk pembangunan kebun sawit di salah satu habitat orangutan terpadat di Indonesia ini.',
+                                                                            cc: '© HAKA, Agustus 2025.'
+                                                                          }
+                                                                        ]
+                                                                      }">
 
               <!-- IMAGE -->
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" @click="GLightbox({
-                                            elements: images.map(img => ({
-                                              href: img.src,
-                                              description: img.desc
-                                            })),
-                                            startAt: active
-                                          }).open()"
+                  elements: images.map(img => ({
+                      href: img.src,
+                      description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                  })),
+                  startAt: active
+              }).open()"
                   class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
                 <!-- PREV -->
                 <button x-show="active > 0" @click="active--"
-                  class="absolute left-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                  </svg>
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
                 </button>
+
                 <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-0 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-4 hover:bg-gray-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ▶
                 </button>
               </div>
 
               <!-- DESC -->
-              <div class="mt-4" x-show="images[active].desc" style="line-height: 1;">
-                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-              </div>
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                        <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                      </div> -->
 
               <!-- THUMB + LOKASI -->
-              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-3 mt-4">
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                   :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                   <template x-for="(img, index) in images" :key="index">
@@ -1647,6 +1742,14 @@
                   </template>
                 </div>
 
+                <div class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                  <div x-html="images[active].desc"></div>
+
+                  <div class="opacity-60" x-html="images[active].cc"></div>
+
+                </div>
+                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
               </div>
 
             </div>
@@ -1693,61 +1796,79 @@
               <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
 
                 <div x-data="{
-                                                      currentSlide: 4,
-                                                      startX: 0,
-                                                      images: [
-                                                        {
-                                                          src: '{{ asset('assets/images/stadi2025/RUDP1 in.jpg') }}',
-                                                          desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong Terdapat 118,7 juta hektare kawasan hutan darat Indonesia. Patut dicatat bahwa kawasan hutan adalah suatu wilayah yang ditetapkan sebagai kawasan hutan. Tak jarang kawasan hutan tidak bertutupan hutan. Sebaliknya, tak sedikit tutupan hutan alam yang berada di luar kawasan hutan.'
-                                                        },
-                                                        {
-                                                          src: '{{ asset('assets/images/stadi2025/RUDP2 in.jpg') }}',
-                                                          desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Dari 22 juta hektare kawasan hutan konservasi, tersapa 4,7 juta hektare yang tidak bertutupan hutan alam. Secara hukum, seluruh hutan alam di dalam kawasan hutan konservasi dilindungi.'
-                                                        },
-                                                        {
-                                                          src: '{{ asset('assets/images/stadi2025/RUDP3 in.jpg') }}',
-                                                          desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 227.127 hektare tutupan hutan alam di dalam hutan lindung yang berada di luar area moratorium sehingga cukup terbuka menjadi sasaran deforestasi oleh kebijakan atau proyek pemerintah.'
-                                                        },
-                                                        {
-                                                          src: '{{ asset('assets/images/stadi2025/RUDP4 in.jpg') }}',
-                                                          desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 22,5 juta hektare tutupan hutan alam di hutan produksi yang berada di luar area moratorium, sehingga rawan menjadi sasaran deforestasi karena tidak memiliki perlindungan hukum.'
-                                                        },
-                                                        {
-                                                          src: '{{ asset('assets/images/stadi2025/RUDP5 in.jpg') }}',
-                                                          desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 9 juta hektare tutupan hutan alam di luar kawasan hutan, atau berada di dalam Area Penggunaan Lain (APL), dan 8,1 juta hektare di antaranya di luar area moratorium. Secara keseluruhan, 41,6 juta hektare (44%) tutupan hutan alam Indonesia tanpa perlindungan hukum.'
-                                                        }
-                                                      ],
-                                                      get totalSlides() { return this.images.length },
+<<<<<<< HEAD
+                                                                                        currentSlide: 4,
+                                                                                        startX: 0,
+                                                                                        images: [
+                                                                                          {
+                                                                                            src: '{{ asset('assets/images/stadi2025/RUDP1 in.jpg') }}',
+                                                                                            desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 118,7 juta hektare kawasan hutan darat Indonesia. Patut dicatat bahwa kawasan hutan adalah suatu wilayah yang ditetapkan sebagai kawasan hutan. Tak jarang kawasan hutan tidak bertutupan hutan. Sebaliknya, tak sedikit tutupan hutan alam yang berada di luar kawasan hutan.'
+                                                                                          },
+                                                                                          {
+                                                                                            src: '{{ asset('assets/images/stadi2025/RUDP2 in.jpg') }}',
+                                                                                            desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Dari 22 juta hektare kawasan hutan konservasi, tersapa 4,7 juta hektare yang tidak bertutupan hutan alam. Secara hukum, seluruh hutan alam di dalam kawasan hutan konservasi dilindungi.'
+                                                                                          },
+                                                                                          {
+                                                                                            src: '{{ asset('assets/images/stadi2025/RUDP3 in.jpg') }}',
+                                                                                            desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 227.127 hektare tutupan hutan alam di dalam hutan lindung yang berada di luar area moratorium sehingga cukup terbuka menjadi sasaran deforestasi oleh kebijakan atau proyek pemerintah.'
+                                                                                          },
+                                                                                          {
+                                                                                            src: '{{ asset('assets/images/stadi2025/RUDP4 in.jpg') }}',
+                                                                                            desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 22,5 juta hektare tutupan hutan alam di hutan produksi yang berada di luar area moratorium, sehingga rawan menjadi sasaran deforestasi karena tidak memiliki perlindungan hukum.'
+                                                                                          },
+                                                                                          {
+                                                                                            src: '{{ asset('assets/images/stadi2025/RUDP5 in.jpg') }}',
+                                                                                            desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 9 juta hektare tutupan hutan alam di luar kawasan hutan, atau berada di dalam Area Penggunaan Lain (APL), dan 8,1 juta hektare di antaranya di luar area moratorium. Secara keseluruhan, 41,6 juta hektare (44%) tutupan hutan alam Indonesia tanpa perlindungan hukum.'
+                                                                                          }
+                                                                                        ],
+                                                                                        get totalSlides() { return this.images.length },
+=======
+                                                    currentSlide: 4,
+                                                    totalSlides: 5,
+                                                    startX: 0,
+                                                    startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                    handleTouchMove(e) {
+                                                    let diff = this.startX - e.touches[0].clientX;
+                                                    if (Math.abs(diff) > 50) {
+                                                    if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                    else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                    this.startX = e.touches[0].clientX;
+                                                    }
+                                                     }
+                                                    }" @touchstart="startSwipe($event)"
+                  @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+>>>>>>> b4ad616 (image fix rekomendasi 1)
 
-                                                      openLightbox(index) {
-                                                        GLightbox({
-                                                          elements: this.images.map(img => ({
-                                                            href: img.src,
-                                                            description: img.desc
-                                                          })),
-                                                          startAt: index
-                                                        }).open();
-                                                      },
+                                                                                        openLightbox(index) {
+                                                                                          GLightbox({
+                                                                                            elements: this.images.map(img => ({
+                                                                                              href: img.src,
+                                                                                              description: img.desc
+                                                                                            })),
+                                                                                            startAt: index
+                                                                                          }).open();
+                                                                                        },
 
-                                                      startSwipe(e) { this.startX = e.touches[0].clientX },
-                                                      handleTouchMove(e) {
-                                                        let diff = this.startX - e.touches[0].clientX
-                                                        if (Math.abs(diff) > 50) {
-                                                          if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
-                                                          else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
-                                                          this.startX = e.touches[0].clientX
-                                                        }
-                                                      }
-                                                    }" @touchstart="startSwipe" @touchmove="handleTouchMove"
-                  class="relative max-w-4xl mx-auto overflow-hidden w-full">
+                                                                                        startSwipe(e) { this.startX = e.touches[0].clientX },
+                                                                                        handleTouchMove(e) {
+                                                                                          let diff = this.startX - e.touches[0].clientX
+                                                                                          if (Math.abs(diff) > 50) {
+                                                                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                                                                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                                                                                            this.startX = e.touches[0].clientX
+                                                                                          }
+                                                                                        }
+                                                                                      }" @touchstart="startSwipe"
+                  @touchmove="handleTouchMove" class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                   <!-- SLIDER -->
-                  <div class="flex transition-transform duration-300"
-                    :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                  <div class="flex  " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
                     <template x-for="(item, index) in images" :key="index">
                       <div class="w-full flex-shrink-0">
-                        <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify" style="line-height: 1;">
+<<<<<<< HEAD
+                        <div class="max-w-4xl mx-auto px-12 sm:px-0 py-3 text-justify"
+                          style="line-height: 1; padding-right: 8rem; padding-left: 4rem;">
                           <small style="font-size: 12px;" x-html="item.desc"></small>
                         </div>
 
@@ -1756,22 +1877,29 @@
                         <div class="relative">
                           <img :src="item.src" @click="openLightbox(index)"
                             class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
-
                           <!-- PREV -->
                           <button @click="currentSlide--" x-show="currentSlide > 0"
-                            class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/60 text-white">
+                            class="absolute top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center">
                             ◀
                           </button>
 
                           <!-- NEXT -->
                           <button @click="currentSlide++" x-show="currentSlide < totalSlides - 1"
-                            class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/60 text-white">
+                            class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center"
+                            style="right: 6rem;">
                             ▶
                           </button>
                         </div>
 
                         <!-- CAPTION -->
 
+=======
+                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox6 gbox"
+                          data-glightbox="description:">
+                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
+                            class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
+                        </a>
+>>>>>>> b4ad616 (image fix rekomendasi 1)
                       </div>
                     </template>
 
@@ -1791,6 +1919,89 @@
           </div>
 
 
+<<<<<<< HEAD
+=======
+          <div class="method-steps border-b">
+            <div class="border-b pt-0 pb-12">
+              <div class="method-step ">
+                <div class="ms-num">2.</div>
+                <div class="-mb-12">
+                  <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.</h4><br>
+                  <p class="body-text ">
+                    pertengahan 2023 publik dikejutkan dengan usulan revisi tata ruang Provinsi Kalimantan Timur yang
+                    ditengarai akan melepaskan 612.355 hektare kawasan hutan (menjadi area penggunaan lain), menurunkan
+                    fungsi
+                    kawasan hutan (sehingga memungkinkan ditambang) seluas 101.788 hektare. Padahal, setidaknya 389.596
+                    hektare
+                    <a href="https://www.youtube.com/watch?v=Mx4638DmEjI" target="_blank" rel="noopener noreferrer"
+                      style="color: #bc4a3c;">(55%) area ini bertutupan hutan alam</a>.
+                    Sementara, beberapa bulan sebelumnya Pemerintah Provinsi Kalimantan Utara mengusulkan revisi tata
+                    ruang
+                    yang akan mengalihkan fungsi kawasan hutan seluas
+                    <a href="https://korankaltara.com/762-ribu-hektare-hutan-diusulkan-beralih-fungsi" target="_blank"
+                      rel="noopener noreferrer" style="color: #bc4a3c;">762.000 hektare</a>.
+                    Di Aceh, manuver pemerintah daerah ditengarai akan berdampak pada hilangnya status perlindungan
+                    Kawasan
+                    Ekosistem Leuser yang telah ditetapkan sebagai cagar biosfer sekaligus sebagai penyangga Taman
+                    Nasional
+                    Gunung Leuser. Sekelumit kecil contoh empirik ini menunjukkan kemendesakan perlunya instrumen
+                    pengendalian
+                    revisi tata ruang wilayah yang menjamin prosesnya berlangsung secara transparan dan memastikan
+                    pelibatan
+                    pihak terdampak sehingga hasil revisinya semata-mata demi kepentingan publik.
+                  </p>
+
+                </div>
+              </div>
+              <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
+                <div class="viz-frame !p-0 flex items-start mt-2">
+
+                  <div x-data="{
+                                    currentSlide: 0,
+                                    totalSlides: 1,
+                                    startX: 0,
+                                    startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                    handleTouchMove(e) {
+                                    let diff = this.startX - e.touches[0].clientX;
+                                    if (Math.abs(diff) > 50) {
+                                    if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                    else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                    this.startX = e.touches[0].clientX;
+                                    }
+                                     }
+                                    }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                    class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+
+                    <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                      @foreach([8] as $i)
+                        <div class="w-full flex-shrink-0">
+                          <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox7 gbox"
+                            data-glightbox="description:">
+                            <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
+                              class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
+                          </a>
+                        </div>
+                      @endforeach
+                    </div>
+
+                    <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                      class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                      style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                      <span style="font-size: 14px; color: #222;">◀</span>
+                    </button>
+
+                    <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                      x-show="currentSlide < totalSlides - 1"
+                      class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                      style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                      <span style="font-size: 14px; color: #222;">▶</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+>>>>>>> b4ad616 (image fix rekomendasi 1)
           <div class="method-step border-b">
             <div class="ms-num">2.</div>
             <div class="">
@@ -1855,48 +2066,47 @@
                 <div class="viz-frame !p-0 flex items-start">
 
                   <div x-data="{
-                                                      currentSlide: 0,
-                                                      startX: 0,
-                                                      images: [
-                                                        {
-                                                          src: '{{ asset('assets/images/stadi2025/RUDP8 in.jpg') }}',
-                                                          desc: '<strong>Terdapat setidaknya 41,4 juta hektare area yang penting secara ekologis berada di luar kawasan hutan konservasi.</strong> Area-area ini semestinya diprioritaskan menjadi area preservasi sebagaimana diatur UU Konservasi.'
-                                                        }
-                                                      ],
-                                                      get totalSlides() { return this.images.length },
+                                                                                        currentSlide: 0,
+                                                                                        startX: 0,
+                                                                                        images: [
+                                                                                          {
+                                                                                            src: '{{ asset('assets/images/stadi2025/RUDP8 in.jpg') }}',
+                                                                                            desc: '<strong>Terdapat setidaknya 41,4 juta hektare area yang penting secara ekologis berada di luar kawasan hutan konservasi.</strong> Area-area ini semestinya diprioritaskan menjadi area preservasi sebagaimana diatur UU Konservasi.'
+                                                                                          }
+                                                                                        ],
+                                                                                        get totalSlides() { return this.images.length },
 
-                                                      openLightbox(index) {
-                                                        GLightbox({
-                                                          elements: this.images.map(img => ({
-                                                            href: img.src,
-                                                            description: img.desc
-                                                          })),
-                                                          startAt: index
-                                                        }).open();
-                                                      },
+                                                                                        openLightbox(index) {
+                                                                                          GLightbox({
+                                                                                            elements: this.images.map(img => ({
+                                                                                              href: img.src,
+                                                                                              description: img.desc
+                                                                                            })),
+                                                                                            startAt: index
+                                                                                          }).open();
+                                                                                        },
 
-                                                      startSwipe(e) { this.startX = e.touches[0].clientX },
-                                                      handleTouchMove(e) {
-                                                        let diff = this.startX - e.touches[0].clientX
-                                                        if (Math.abs(diff) > 50) {
-                                                          if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
-                                                          else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
-                                                          this.startX = e.touches[0].clientX
-                                                        }
-                                                      }
-                                                    }" @touchstart="startSwipe" @touchmove="handleTouchMove"
-                    class="relative max-w-4xl mx-auto overflow-hidden w-full">
+                                                                                        startSwipe(e) { this.startX = e.touches[0].clientX },
+                                                                                        handleTouchMove(e) {
+                                                                                          let diff = this.startX - e.touches[0].clientX
+                                                                                          if (Math.abs(diff) > 50) {
+                                                                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                                                                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                                                                                            this.startX = e.touches[0].clientX
+                                                                                          }
+                                                                                        }
+                                                                                      }" @touchstart="startSwipe"
+                    @touchmove="handleTouchMove" class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                     <!-- SLIDER -->
-                    <div class="flex transition-transform duration-300"
-                      :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                    <div class="flex  " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
                       <template x-for="(item, index) in images" :key="index">
                         <div class="w-full flex-shrink-0">
 
                           <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify" style="line-height: 1;">
-                              <small style="font-size: 12px;" x-html="item.desc"></small>
-                            </div>
+                            <small style="font-size: 12px;" x-html="item.desc"></small>
+                          </div>
 
                           <!-- GAMBAR -->
                           <div class="relative">
@@ -1906,7 +2116,7 @@
 
 
                             <!-- CAPTION -->
-                          
+
 
                           </div>
                       </template>
@@ -1914,6 +2124,40 @@
                     </div>
 
 
+<<<<<<< HEAD
+=======
+                <div x-data="{
+<<<<<<< Updated upstream
+                                                        currentSlide: 0,
+                                                        totalSlides: 2,
+                                                        startX: 0,
+                                                        startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                        handleTouchMove(e) {
+                                                            let diff = this.startX - e.touches[0].clientX;
+                                                            if (Math.abs(diff) > 50) {
+                                                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                                this.startX = e.touches[0].clientX;
+                                                            }
+                                                        }
+                                                    }" @touchstart="startSwipe($event)"
+=======
+                                                            currentSlide: 0,
+                                                            totalSlides: 2,
+                                                            startX: 0,
+                                                            startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                            handleTouchMove(e) {
+                                                                let diff = this.startX - e.touches[0].clientX;
+                                                                if (Math.abs(diff) > 50) {
+                                                                    if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                                    else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                                    this.startX = e.touches[0].clientX;
+                                                                }
+                                                            }
+                                                        }" @touchstart="startSwipe($event)"
+>>>>>>> Stashed changes
+                  @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+>>>>>>> b4ad616 (image fix rekomendasi 1)
 
                   </div>
                 </div>
@@ -1953,45 +2197,44 @@
                 <div class="viz-frame !p-0 flex items-start">
 
                   <div x-data="{
-                                                        currentSlide: 0,
-                                                        startX: 0,
-                                                        images: [
-                                                          {
-                                                            src: '{{ asset('assets/images/stadi2025/RUDP6 in.jpg') }}',
-                                                            desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa.</strong> Anggaran yang tersedia untuk pengelolaan per hektare kawasan hutan konservasi di luar taman nasional di Papua hanya Rp 60.718 per hektare; di Kepulauan Maluku Rp 82.374; di Kalimantan Rp 361.395; di Sulawesi Rp 530.208; di Sumatera Rp 1.622.440; di Bali dan Nusa Tenggara Rp 2.694521. Tapi, di Jawa tersedia anggaran per hektare Rp 116.225.764.'
-                                                          },
-                                                          {
-                                                            src: '{{ asset('assets/images/stadi2025/RUDP7 in.jpg') }}',
-                                                            desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa.</strong> Rerata, per orang petugas TN Lorentz di Papua mengelola 38.548 hektare, sementara anggaran yang tersedia untuk pengelolaan Rp  6.707. Cakupan per staf yang sedemikian luas sementara ketersediaan anggaran yang minim relatif merata untuk taman nasional di luar Jawa. Sangat kontras, misalnya, dengan TN Gede Pangrango yang memiliki anggaran Rp 898.381 per hektare, dengan satu staf mengelola 157 hektare.'
-                                                          }
-                                                        ],
-                                                        get totalSlides() { return this.images.length },
+                                                                                          currentSlide: 0,
+                                                                                          startX: 0,
+                                                                                          images: [
+                                                                                            {
+                                                                                              src: '{{ asset('assets/images/stadi2025/RUDP6 in.jpg') }}',
+                                                                                              desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa.</strong> Anggaran yang tersedia untuk pengelolaan per hektare kawasan hutan konservasi di luar taman nasional di Papua hanya Rp 60.718 per hektare; di Kepulauan Maluku Rp 82.374; di Kalimantan Rp 361.395; di Sulawesi Rp 530.208; di Sumatera Rp 1.622.440; di Bali dan Nusa Tenggara Rp 2.694.521. Tapi, di Jawa tersedia anggaran per hektare Rp 116.225.764.'
+                                                                                            },
+                                                                                            {
+                                                                                              src: '{{ asset('assets/images/stadi2025/RUDP7 in.jpg') }}',
+                                                                                              desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa.</strong> Rerata, per orang petugas TN Lorentz di Papua mengelola 38.548 hektare, sementara anggaran yang tersedia untuk pengelolaan Rp  6.707. Cakupan per staf yang sedemikian luas sementara ketersediaan anggaran yang minim relatif merata untuk taman nasional di luar Jawa. Sangat kontras, misalnya, dengan TN Gede Pangrango yang memiliki anggaran Rp 898.381 per hektare, dengan satu staf mengelola 157 hektare.'
+                                                                                            }
+                                                                                          ],
+                                                                                          get totalSlides() { return this.images.length },
 
-                                                        openLightbox(index) {
-                                                          GLightbox({
-                                                            elements: this.images.map(img => ({
-                                                              href: img.src,
-                                                              description: img.desc
-                                                            })),
-                                                            startAt: index
-                                                          }).open();
-                                                        },
+                                                                                          openLightbox(index) {
+                                                                                            GLightbox({
+                                                                                              elements: this.images.map(img => ({
+                                                                                                href: img.src,
+                                                                                                description: img.desc
+                                                                                              })),
+                                                                                              startAt: index
+                                                                                            }).open();
+                                                                                          },
 
-                                                        startSwipe(e) { this.startX = e.touches[0].clientX },
-                                                        handleTouchMove(e) {
-                                                          let diff = this.startX - e.touches[0].clientX
-                                                          if (Math.abs(diff) > 50) {
-                                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
-                                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
-                                                            this.startX = e.touches[0].clientX
-                                                          }
-                                                        }
-                                                      }" @touchstart="startSwipe" @touchmove="handleTouchMove"
-                    class="relative max-w-4xl mx-auto overflow-hidden w-full">
+                                                                                          startSwipe(e) { this.startX = e.touches[0].clientX },
+                                                                                          handleTouchMove(e) {
+                                                                                            let diff = this.startX - e.touches[0].clientX
+                                                                                            if (Math.abs(diff) > 50) {
+                                                                                              if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                                                                                              else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                                                                                              this.startX = e.touches[0].clientX
+                                                                                            }
+                                                                                          }
+                                                                                        }" @touchstart="startSwipe"
+                    @touchmove="handleTouchMove" class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                     <!-- SLIDER -->
-                    <div class="flex transition-transform duration-300"
-                      :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                    <div class="flex  " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
                       <template x-for="(item, index) in images" :key="index">
                         <div class="w-full flex-shrink-0">
@@ -1999,6 +2242,12 @@
                             <small style="font-size: 12px;" x-html="item.desc"></small>
                           </div>
 
+                  <div class="flex justify-center gap-2 mt-3">
+                    <template x-for="i in totalSlides" :key="i">
+                      <button @click="currentSlide = i - 1" :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
+                        class="w-2 h-2 rounded-full"></button>
+                    </template>
+                  </div>
 
                           <!-- GAMBAR -->
                           <div class="relative">
@@ -2007,13 +2256,13 @@
 
                             <!-- PREV -->
                             <button @click="currentSlide--" x-show="currentSlide > 0"
-                              class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/60 text-white">
+                              class="absolute top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center">
                               ◀
                             </button>
 
                             <!-- NEXT -->
                             <button @click="currentSlide++" x-show="currentSlide < totalSlides - 1"
-                              class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/60 text-white">
+                              class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center">
                               ▶
                             </button>
                           </div>
@@ -2119,20 +2368,29 @@
     </section>
     <hr class="divider max-w-6xl mx-auto mt-[-60px] mb-5">
     <div class="max-w-6xl mx-auto text-center mb-[40px]">
-        <p class="text-[13px]">
-            <strong>PENULIS</strong> Timer Manurung, Andhika Younastya, Dedy Sukmara, Yustinus Seno, Wahyu Ananta Nugraha, Dendi Alfitrah
-            <strong>PENGOLAH DATA</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika Laura, Dedy Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
-            <strong>TIM VERIFIKASI</strong> Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika Younastya, Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika Laura, Chairul Soleh, Dedi Septyadi Wibisono, Fadela Yunika Sari, Hafid Azi Darma, Jonathan, Jumrio Nakul, Jundy Zaky Makarim, Luhut Simanjutak, M. Dendi Alfitrah, M. Irfan Nurrahman, M. Irfandi Andriansyah, Muhammad Nabil Astaqafi, Nebo Yok Jonah Marpaung, Reza Fahlevi, Rianti Gina Violeta, Riszki Is Hardianto, Sulih Primara Putra, Supintri Yohar Tri Wahyuni, Valentina Yulia Permatasari, Wahyu Ananta Nugraha, Yanuar Vira Febiyanti, Yudi Nofiandi, Yustinus Seno, Zerin Darma Kusuma
-            <strong>TIM VERIFIKASI</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
-            <strong>KREATIF DESAIN</strong> M. Alichamdan, M. Fachri, Robby Eebor, Thoriq Fa'iqoh
-        </p>
+      <p class="text-[13px]">
+        <strong>PENULIS</strong> Timer Manurung, Andhika Younastya, Dedy Sukmara, Yustinus Seno, Wahyu Ananta Nugraha,
+        Dendi Alfitrah
+        <strong>PENGOLAH DATA</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika Laura,
+        Dedy Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
+        <strong>TIM VERIFIKASI</strong> Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika
+        Younastya, Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika Laura, Chairul
+        Soleh, Dedi Septyadi Wibisono, Fadela Yunika Sari, Hafid Azi Darma, Jonathan, Jumrio Nakul, Jundy Zaky Makarim,
+        Luhut Simanjutak, M. Dendi Alfitrah, M. Irfan Nurrahman, M. Irfandi Andriansyah, Muhammad Nabil Astaqafi, Nebo Yok
+        Jonah Marpaung, Reza Fahlevi, Rianti Gina Violeta, Riszki Is Hardianto, Sulih Primara Putra, Supintri Yohar Tri
+        Wahyuni, Valentina Yulia Permatasari, Wahyu Ananta Nugraha, Yanuar Vira Febiyanti, Yudi Nofiandi, Yustinus Seno,
+        Zerin Darma Kusuma
+        <strong>TIM VERIFIKASI</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul, M.
+        Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
+        <strong>KREATIF DESAIN</strong> M. Alichamdan, M. Fachri, Robby Eebor, Thoriq Fa'iqoh
+      </p>
 
-        <p class="mt-4 text-[15px]">
-            <strong>SITASI:</strong><br>
-            Status Deforestasi di Indonesia 2025, diakses pada [DD/MM/YYYY] melalui tautan [LINK]. Auriga Nusantara. 2025
-        </p>
+      <p class="mt-4 text-[15px]">
+        <strong>SITASI:</strong><br>
+        Status Deforestasi di Indonesia 2025, diakses pada [DD/MM/YYYY] melalui tautan [LINK]. Auriga Nusantara. 2025
+      </p>
 
-        <p class="mt-2 text-[15px]">© Auriga Nusantara. 2026.</p>
+      <p class="mt-2 text-[15px]">© Auriga Nusantara. 2026.</p>
     </div>
 
 @endsection
@@ -3386,15 +3644,27 @@
           badge.dataset.species = item.name;
           const shortName = item.name.split(' ').slice(-2).join(' ');
           badge.innerHTML = `
-                                                                                                                                        <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                                                                                                                        <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                                                                                                                        <div class="satwa-badge-detail">
-                                                                                                                                        <span class="si-name">${item.name}</span>
-                                                                                                                                        <span class="si-val">${item.value}</span>
-                                                                                                                                        <span class="si-val">${item.lokal}</span>
-                                                                                                                                        <span class="si-unit">deforestasi di habitat</span>
-                                                                                                                                        </div>
-                                                                                                                                    `;
+<<<<<<< HEAD
+                                                                                                                                                                          <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                                                                                                                                                          <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                                                                                                                                                          <div class="satwa-badge-detail">
+                                                                                                                                                                          <span class="si-name">${item.name}</span>
+                                                                                                                                                                          <span class="si-val">${item.value}</span>
+                                                                                                                                                                          <span class="si-val">${item.lokal}</span>
+                                                                                                                                                                          <span class="si-unit">deforestasi di habitat</span>
+                                                                                                                                                                          </div>
+                                                                                                                                                                      `;
+=======
+                                                    <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                                    <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                                    <div class="satwa-badge-detail">
+                                                    <span class="si-name">${item.name}</span>
+                                                    <span class="si-val">${item.value}</span>
+                                                    <span class="si-val">${item.lokal}</span>
+                                                    <span class="si-unit">deforestasi di habitat</span>
+                                                    </div>
+                                                `;
+>>>>>>> b4ad616 (image fix rekomendasi 1)
           badge.addEventListener('click', async (e) => {
             e.stopPropagation();
             const isActive = badge.classList.contains('active');
