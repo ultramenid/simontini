@@ -46,9 +46,15 @@
       </div>
       <div class="hero-divider"></div>
       <!-- <div class="hero-stat">
+<<<<<<< HEAD
                                                                                                                                                                                                                                                                                  <span class="hs-val">+66%</span>
                                                                                                                                                                                                                                                                                  <span class="hs-unit">Peningkatan dari 2024</span>
                                                                                                                                                                                                                                                                                  </div> -->
+=======
+                                                                                                                                                           <span class="hs-val">+66%</span>
+                                                                                                                                                           <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                                                                                                           </div> -->
+>>>>>>> b4ad616 (image fix rekomendasi 1)
       <div class="hero-divider"></div>
       <div class="hero-desc">
         Deforestasi melonjak, saatnya pemerintah menerbitkan
@@ -1139,11 +1145,19 @@
 
 
         <!-- <ul class="insight-list">
+<<<<<<< HEAD
                                                                                                                                                                                                                                                                                                           <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
                                                                                                                                                                                                                                                                                                           <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
                                                                                                                                                                                                                                                                                                           <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
                                                                                                                                                                                                                                                                                                           <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
                                                                                                                                                                                                                                                                                                         </ul> -->
+=======
+                                                                                                                                                                                    <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                                                                                                                                    <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                                                                                                                                    <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                                                                                                                                    <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                                                                                                                                  </ul> -->
+>>>>>>> b4ad616 (image fix rekomendasi 1)
       </div>
       <div class="viz-block viz-block--full mt-2 mb-2 ">
         <div class="viz-frame viz-frame--padded">
@@ -1401,6 +1415,7 @@
         </p>
 
         <!-- <div class="callout">
+<<<<<<< HEAD
                                                                                                                                                                                                                                                                                                           <strong>Faktor pendorong utama:</strong>
                                                                                                                                                                                                                                                                                                           <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
                                                                                                                                                                                                                                                                                                             <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
@@ -1440,6 +1455,24 @@
                                                                       }">
 
               <!-- IMAGE -->
+=======
+                                                                                                                                                                                    <strong>Faktor pendorong utama:</strong>
+                                                                                                                                                                                    <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                                                                                                                                      <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                                                                                                                                      <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                                                                                                                                      <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                                                                                                                                    </ul>
+                                                                                                                                                                                  </div> -->
+      </div>
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+            <div x-data="{ active: 0, images: [
+                    { src: '{{ asset('assets/images/stadi2025/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}', caption: 'Other Land Use Areas, Plantation Concessions, PT Equator Sumber Rezeki, <br> Kapuas Hulu, West Kalimantan, June 2025' },
+                    { src: '{{ asset('assets/images/stadi2025/Konsesi PBPH, PT Toba Pulp Lestari.JPG') }}', caption: 'Production Forest Area, PBPH Concession, PT Toba Pulp Lestari, <br> Aek Raja, North Sumatra, December 2025' },
+                    { src: '{{ asset('assets/images/stadi2025/Konsesi Tambang, PT Bencoolen Mining.jpg') }}', caption: 'Other Land Use, Mining Concession, PT Bencoolen Mining, <br> North Bengkulu, Bengkulu, May 2025' }
+                    ]}">
+>>>>>>> b4ad616 (image fix rekomendasi 1)
               <div class="relative" x-ref="mainImg">
                 <img :src="images[active].src" @click="GLightbox({
                       elements: images.map(img => ({
@@ -1763,6 +1796,7 @@
               <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
 
                 <div x-data="{
+<<<<<<< HEAD
                                                                                         currentSlide: 4,
                                                                                         startX: 0,
                                                                                         images: [
@@ -1788,6 +1822,22 @@
                                                                                           }
                                                                                         ],
                                                                                         get totalSlides() { return this.images.length },
+=======
+                                                    currentSlide: 4,
+                                                    totalSlides: 5,
+                                                    startX: 0,
+                                                    startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                    handleTouchMove(e) {
+                                                    let diff = this.startX - e.touches[0].clientX;
+                                                    if (Math.abs(diff) > 50) {
+                                                    if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                    else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                    this.startX = e.touches[0].clientX;
+                                                    }
+                                                     }
+                                                    }" @touchstart="startSwipe($event)"
+                  @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+>>>>>>> b4ad616 (image fix rekomendasi 1)
 
                                                                                         openLightbox(index) {
                                                                                           GLightbox({
@@ -1816,6 +1866,7 @@
 
                     <template x-for="(item, index) in images" :key="index">
                       <div class="w-full flex-shrink-0">
+<<<<<<< HEAD
                         <div class="max-w-4xl mx-auto px-12 sm:px-0 py-3 text-justify"
                           style="line-height: 1; padding-right: 8rem; padding-left: 4rem;">
                           <small style="font-size: 12px;" x-html="item.desc"></small>
@@ -1842,6 +1893,13 @@
 
                         <!-- CAPTION -->
 
+=======
+                        <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox6 gbox"
+                          data-glightbox="description:">
+                          <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
+                            class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
+                        </a>
+>>>>>>> b4ad616 (image fix rekomendasi 1)
                       </div>
                     </template>
 
@@ -1861,6 +1919,89 @@
           </div>
 
 
+<<<<<<< HEAD
+=======
+          <div class="method-steps border-b">
+            <div class="border-b pt-0 pb-12">
+              <div class="method-step ">
+                <div class="ms-num">2.</div>
+                <div class="-mb-12">
+                  <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.</h4><br>
+                  <p class="body-text ">
+                    pertengahan 2023 publik dikejutkan dengan usulan revisi tata ruang Provinsi Kalimantan Timur yang
+                    ditengarai akan melepaskan 612.355 hektare kawasan hutan (menjadi area penggunaan lain), menurunkan
+                    fungsi
+                    kawasan hutan (sehingga memungkinkan ditambang) seluas 101.788 hektare. Padahal, setidaknya 389.596
+                    hektare
+                    <a href="https://www.youtube.com/watch?v=Mx4638DmEjI" target="_blank" rel="noopener noreferrer"
+                      style="color: #bc4a3c;">(55%) area ini bertutupan hutan alam</a>.
+                    Sementara, beberapa bulan sebelumnya Pemerintah Provinsi Kalimantan Utara mengusulkan revisi tata
+                    ruang
+                    yang akan mengalihkan fungsi kawasan hutan seluas
+                    <a href="https://korankaltara.com/762-ribu-hektare-hutan-diusulkan-beralih-fungsi" target="_blank"
+                      rel="noopener noreferrer" style="color: #bc4a3c;">762.000 hektare</a>.
+                    Di Aceh, manuver pemerintah daerah ditengarai akan berdampak pada hilangnya status perlindungan
+                    Kawasan
+                    Ekosistem Leuser yang telah ditetapkan sebagai cagar biosfer sekaligus sebagai penyangga Taman
+                    Nasional
+                    Gunung Leuser. Sekelumit kecil contoh empirik ini menunjukkan kemendesakan perlunya instrumen
+                    pengendalian
+                    revisi tata ruang wilayah yang menjamin prosesnya berlangsung secara transparan dan memastikan
+                    pelibatan
+                    pihak terdampak sehingga hasil revisinya semata-mata demi kepentingan publik.
+                  </p>
+
+                </div>
+              </div>
+              <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
+                <div class="viz-frame !p-0 flex items-start mt-2">
+
+                  <div x-data="{
+                                    currentSlide: 0,
+                                    totalSlides: 1,
+                                    startX: 0,
+                                    startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                    handleTouchMove(e) {
+                                    let diff = this.startX - e.touches[0].clientX;
+                                    if (Math.abs(diff) > 50) {
+                                    if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                    else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                    this.startX = e.touches[0].clientX;
+                                    }
+                                     }
+                                    }" @touchstart="startSwipe($event)" @touchmove="handleTouchMove($event)"
+                    class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+
+                    <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                      @foreach([8] as $i)
+                        <div class="w-full flex-shrink-0">
+                          <a href="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" class="glightbox7 gbox"
+                            data-glightbox="description:">
+                            <img src="{{ asset('assets/images/stadi2025/RUDP' . $i . ' in.jpg') }}" alt="RUDP {{ $i }}"
+                              class="w-full object-contain cursor-pointer h-[220px] sm:h-[60vh]" />
+                          </a>
+                        </div>
+                      @endforeach
+                    </div>
+
+                    <button @click="if (currentSlide > 0) currentSlide--" x-show="currentSlide > 0"
+                      class="absolute left-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                      style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                      <span style="font-size: 14px; color: #222;">◀</span>
+                    </button>
+
+                    <button @click="if (currentSlide < totalSlides - 1) currentSlide++"
+                      x-show="currentSlide < totalSlides - 1"
+                      class="absolute right-2 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+                      style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(180,180,180,0.85);">
+                      <span style="font-size: 14px; color: #222;">▶</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+>>>>>>> b4ad616 (image fix rekomendasi 1)
           <div class="method-step border-b">
             <div class="ms-num">2.</div>
             <div class="">
@@ -1983,6 +2124,40 @@
                     </div>
 
 
+<<<<<<< HEAD
+=======
+                <div x-data="{
+<<<<<<< Updated upstream
+                                                        currentSlide: 0,
+                                                        totalSlides: 2,
+                                                        startX: 0,
+                                                        startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                        handleTouchMove(e) {
+                                                            let diff = this.startX - e.touches[0].clientX;
+                                                            if (Math.abs(diff) > 50) {
+                                                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                                this.startX = e.touches[0].clientX;
+                                                            }
+                                                        }
+                                                    }" @touchstart="startSwipe($event)"
+=======
+                                                            currentSlide: 0,
+                                                            totalSlides: 2,
+                                                            startX: 0,
+                                                            startSwipe(e) { this.startX = e.touches[0].clientX; },
+                                                            handleTouchMove(e) {
+                                                                let diff = this.startX - e.touches[0].clientX;
+                                                                if (Math.abs(diff) > 50) {
+                                                                    if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++;
+                                                                    else if (diff < 0 && this.currentSlide > 0) this.currentSlide--;
+                                                                    this.startX = e.touches[0].clientX;
+                                                                }
+                                                            }
+                                                        }" @touchstart="startSwipe($event)"
+>>>>>>> Stashed changes
+                  @touchmove="handleTouchMove($event)" class="relative  max-w-4xl mx-auto z-20 overflow-hidden">
+>>>>>>> b4ad616 (image fix rekomendasi 1)
 
                   </div>
                 </div>
@@ -2067,6 +2242,12 @@
                             <small style="font-size: 12px;" x-html="item.desc"></small>
                           </div>
 
+                  <div class="flex justify-center gap-2 mt-3">
+                    <template x-for="i in totalSlides" :key="i">
+                      <button @click="currentSlide = i - 1" :class="currentSlide === i - 1 ? 'bg-black' : 'bg-gray-400'"
+                        class="w-2 h-2 rounded-full"></button>
+                    </template>
+                  </div>
 
                           <!-- GAMBAR -->
                           <div class="relative">
@@ -3463,6 +3644,7 @@
           badge.dataset.species = item.name;
           const shortName = item.name.split(' ').slice(-2).join(' ');
           badge.innerHTML = `
+<<<<<<< HEAD
                                                                                                                                                                           <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
                                                                                                                                                                           <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
                                                                                                                                                                           <div class="satwa-badge-detail">
@@ -3472,6 +3654,17 @@
                                                                                                                                                                           <span class="si-unit">deforestasi di habitat</span>
                                                                                                                                                                           </div>
                                                                                                                                                                       `;
+=======
+                                                    <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                                    <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                                    <div class="satwa-badge-detail">
+                                                    <span class="si-name">${item.name}</span>
+                                                    <span class="si-val">${item.value}</span>
+                                                    <span class="si-val">${item.lokal}</span>
+                                                    <span class="si-unit">deforestasi di habitat</span>
+                                                    </div>
+                                                `;
+>>>>>>> b4ad616 (image fix rekomendasi 1)
           badge.addEventListener('click', async (e) => {
             e.stopPropagation();
             const isActive = badge.classList.contains('active');
