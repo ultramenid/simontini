@@ -897,7 +897,7 @@
                         <div class=" px-4  sm:px-6">
                             <div class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">
                                 Deforestation
-                                in Indonesia by Month, 2025</div>
+                                in Indonesia by month, 2025</div>
                             {{-- <div class="text-[11px] mt-0.5" style="color:#8b7355;">Deforested area per month ·
                                 hectares</div> --}}
                         </div>
@@ -1082,13 +1082,13 @@
             </div><br><br>
 
 
-            <div class="mx-[50px] relative pl-10 py-2">
+            <div class="mx-[50px] relative pl-5 py-2">
                 <!-- Tanda kutip besar di kiri atas -->
-                <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">&rdquo;</span>
+                <span class="absolute top-0 left-0 text-black  leading-none font-extralight" style="font-size: 3.5rem; line-height: 1;">&rdquo;</span>
 
-                <p class="text-black text-[20px] md:text-[20px] leading-snug">
+                <p class="text-black text-[50px] md:text-[20px] leading-snug font-extralight italic ">
                     Of 433,751 hectares of deforestation area, 166,590 hectares are above 5 hectares deforestation spots. 62% of deforestation occurred on spots smaller than 5 hectares, with 149,159 hectares occurring on 1 to 5 hectare spots.
-                    <span class="font-black" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
+                    <span class="font-extralight" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
                 </p>
             </div>
         </section>
@@ -1103,7 +1103,7 @@
             <div class="mt-10">
                 <div class="chapter-header">
                     <span class="ms-num">1.</span>
-                    <h3 class="chapter-title"><strong>Government Policies have Contribute to Deforestation</strong></h3>
+                    <h3 class="chapter-title"><strong>Government policies have contribute to deforestation</strong></h3>
                 </div>
                 <p class="body-text">
                     During the Joko Widodo presidency, particularly the second term, environmental protection weakened,
