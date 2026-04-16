@@ -1168,23 +1168,23 @@
                             active: 0,
                             images: [{
                                     src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
-                                    desc: '<strong>Natural forest cover within the timber plantation concession of PT Malinau Hijau Lestari (MHL) in Malinau, North Kalimantan.</strong> The granting of timber plantation permits in areas covered by natural forest such as this constitutes a form of government-sanctioned deforestation, as it allows MHL to clear the natural forest and replace it (convert it) with an energy (biomass) timber plantation that will be harvested periodically. Photo: Auriga Nusantara, May 2024.',
-                                    title: 'Kawasan Hutan Produksi, Hutan Tanaman Energi, PT Malinau Hijau Lestari <br> Malinau, Kalimantan Utara, Mei 2024'
+                                    desc: '<strong>Natural forest cover within the timber plantation concession of PT Malinau Hijau Lestari (MHL) in Malinau, North Kalimantan.</strong> The granting of timber plantation permits in areas covered by natural forest such as this constitutes a form of government-sanctioned deforestation, as it allows MHL to clear the natural forest and replace it (convert it) with an energy (biomass) timber plantation that will be harvested periodically.',
+                                    cc: '© Auriga Nusantara, May 2024.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the expansion of PT Weda Bay Nickel’s nickel mine in Central Halmahera, North Maluku.</strong> By issuing a mining permit for a forested area, the government is essentially planning deforestation to facilitate nickel extraction within this mining concession. Photo: Auriga Nusantara, December 2025.',
-                                    title: 'Konsesi Tambang, Weda By Nickel <br> Halmahera Tengah, Maluku Utara, Desember 2025'
+                                    desc: '<strong>Deforestation caused by the expansion of PT Weda Bay Nickel’s nickel mine in Central Halmahera, North Maluku.</strong> By issuing a mining permit for a forested area, the government is essentially planning deforestation to facilitate nickel extraction within this mining concession.',
+                                    cc: '© Auriga Nusantara, December 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the development of the Pomalaa Industry Park (IPIP) in Kolaka, Southeast Sulawesi.</strong> This industrial park is one of the National Strategic Projects (PSN) and is located within a Conversion Production Forest Area. Photo: Auriga Nusantara, December 2025',
-                                    title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                    desc: '<strong>Deforestation caused by the development of the Pomalaa Industry Park (IPIP) in Kolaka, Southeast Sulawesi.</strong> This industrial park is one of the National Strategic Projects (PSN) and is located within a Conversion Production Forest Area. ',
+                                    cc: '© Auriga Nusantara, December 2025'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the construction of the Mentarang hydroelectric power plant in Malinau, North Kalimantan.</strong> This project is one of the National Strategic Projects. Photo: Auriga Nusantara, October 2025.',
-                                    title: 'PLTA Mentarang, Malinau <br> Kalimantan Utara, Desember 2025'
+                                    desc: '<strong>Deforestation caused by the construction of the Mentarang hydroelectric power plant in Malinau, North Kalimantan.</strong> This project is one of the National Strategic Projects. ',
+                                    cc: '© Auriga Nusantara, October 2025.'
                                 }
                             ]
                         }">
@@ -1219,7 +1219,7 @@
                               </div> -->
 
                             <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1291,23 +1291,23 @@
                             active: 0,
                             images: [{
                                     src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
-                                    desc: '<strong>Deforestation within the logging concession of PT Jati Dharma Indah Plywood Industries in Nabire, Central Papua.</strong> Photo: Auriga Nusantara, December 2025.',
-                                    title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                    desc: '<strong>Deforestation within the logging concession of PT Jati Dharma Indah Plywood Industries in Nabire, Central Papua.</strong> ',
+                                    cc: '© Auriga Nusantara, December 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
-                                    desc: '<strong> PT GAG Nikel, Raja Ampat, Papua Barat (Desember 2024)</strong> <br> Aktivitas tambang nikel di kawasan hutan lindung Raja Ampat menunjukkan ekspansi industri ekstraktif ke wilayah dengan nilai ekologis tinggi. Kasus ini mencerminkan pergeseran tekanan deforestasi ke Tanah Papua, seiring meningkatnya kebutuhan mineral dan kemudahan perizinan dalam kawasan hutan.',
-                                    title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                    desc: '<strong>Deforestation caused by the nickel mining operations of PT Anugerah Surya Pratama, Manuram Island, Raja Ampat, Papua.</strong>',
+                                    cc: '© Auriga Nusantara, September 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
-                                    desc: '<strong>Natural forest cover in Sarmi Regency, Papua.</strong> However, the government has issued a nickel mining permit to PT Iriana Mutiara Mining for this area, thereby paving the way for the loss of this natural forest cover. Photo: Auriga Nusantara, December 2024.',
-                                    title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                    desc: '<strong>Natural forest cover in Sarmi Regency, Papua.</strong> However, the government has issued a nickel mining permit to PT Iriana Mutiara Mining for this area, thereby paving the way for the loss of this natural forest cover. ',
+                                    cc: '© Auriga Nusantara, December 2024.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest by the food estate project in Sorong, West Papua.</strong> Photo: Auriga Nusantara, April 2026.',
-                                    title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
+                                    desc: '<strong>Deforestation of natural forest by the food estate project in Sorong, West Papua.</strong> ',
+                                    cc: '© Auriga Nusantara, April 2026.'
                                 }
                             ]
                         }">
@@ -1342,7 +1342,7 @@
                               </div> -->
 
 
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1428,23 +1428,23 @@
                             active: 0,
                             images: [{
                                     src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the construction of logging roads within PT Toba Pulp Lestari’s timber plantation concession.</strong> These roads will serve as gateways to massive deforestation in this area. Photo: Auriga Nusantara/Earthsight, December 2025.',
-                                    title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                    desc: '<strong>Deforestation caused by the construction of logging roads within PT Toba Pulp Lestari’s timber plantation concession.</strong> These roads will serve as gateways to massive deforestation in this area.',
+                                    cc: '© Auriga Nusantara/Earthsight, December 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest due to oil palm plantation development within the PT Equator Sumber Rezeki concession in Kapuas Hulu, West Kalimantan.</strong> Photo: Auriga Nusantara, June 2025.',
-                                    title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                    desc: '<strong>Deforestation of natural forest due to oil palm plantation development within the PT Equator Sumber Rezeki concession in Kapuas Hulu, West Kalimantan.</strong> ',
+                                    cc: '© Auriga Nusantara, June 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 3/konsesi pbph.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the development of timber plantations within PT Industrial Forest Plantation’s concession in Kapuas, Central Kalimantan.</strong> Photo: Auriga Nusantara/Earthsight, July 2025.',
-                                    title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                    desc: '<strong>Deforestation caused by the development of timber plantations within PT Industrial Forest Plantation’s concession in Kapuas, Central Kalimantan.</strong> ',
+                                    cc: '© Auriga Nusantara/Earthsight, July 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forests caused by the expansion of a nickel mine in Kolonodale, North Morowali, Central Sulawesi.</strong> Photo: Auriga Nusantara, October 2025.',
-                                    title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
+                                    desc: '<strong>Deforestation of natural forests caused by the expansion of a nickel mine in Kolonodale, North Morowali, Central Sulawesi.</strong>',
+                                    cc: '© Auriga Nusantara, October 2025.'
                                 }
                             ]
                         }">
@@ -1479,7 +1479,7 @@
                               </div> -->
 
                             <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1547,23 +1547,23 @@
                             active: 0,
                             images: [{
                                     src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
-                                    desc: '<strong>Deforestation within the timber plantation concession of PT Indosubur Sukses Makmur in East Kutai, East Kalimantan.</strong> The issuance of timber plantation permits in areas covered by natural forest such as this is an example of legal deforestation in Indonesia. Photo: Auriga Nusantara/Earthsight, January 2025.',
-                                    title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                    desc: '<strong>Deforestation within the timber plantation concession of PT Indosubur Sukses Makmur in East Kutai, East Kalimantan.</strong> The issuance of timber plantation permits in areas covered by natural forest such as this is an example of legal deforestation in Indonesia.',
+                                    cc: '© Auriga Nusantara/Earthsight, January 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}',
-                                    desc: '<strong>Conversion of natural forest into large-scale oil palm plantations within the PT Borneo International Anugerah concession in Kapuas Hulu, West Kalimantan.</strong> The existence of permits for monoculture plantations in this area has allowed the company to clear the existing natural forest. Photo: Auriga Nusantara, June 2025.',
-                                    title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                    desc: '<strong>Conversion of natural forest into large-scale oil palm plantations within the PT Borneo International Anugerah concession in Kapuas Hulu, West Kalimantan.</strong> The existence of permits for monoculture plantations in this area has allowed the company to clear the existing natural forest.',
+                                    cc: '© Auriga Nusantara, June 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru.jpg') }}',
-                                    desc: '<strong>Gold mining operations by PT Agincourt Resources in the Batang Toru landscape, North Sumatra.</strong> The Batang Toru landscape is the only habitat of the Tapanuli orangutan (Pongo tapanuliensis) in the world. The existence of mining permits indicates that the clearing of natural forests is occurring as a form of legal deforestation. Photo: Auriga Nusantara, May 2025.',
-                                    title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                    desc: '<strong>Gold mining operations by PT Agincourt Resources in the Batang Toru landscape, North Sumatra.</strong> The Batang Toru landscape is the only habitat of the Tapanuli orangutan (Pongo tapanuliensis) in the world. The existence of mining permits indicates that the clearing of natural forests is occurring as a form of legal deforestation.',
+                                    cc: '© Auriga Nusantara, May 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Banyan Tumbuh Lestari.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest within the palm oil concession of PT Banyan Tumbuh Lestari in Pohuwato, Gorontalo.</strong> The company’s permit is technically for a palm oil plantation, but in practice, the company is establishing a biomass timber plantation. The government’s decision to reclassify this forest area as an “Other Use Area” has opened the door to legal deforestation in this region. Photo: Auriga Nusantara, May 2025.',
-                                    title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
+                                    desc: '<strong>Deforestation of natural forest within the palm oil concession of PT Banyan Tumbuh Lestari in Pohuwato, Gorontalo.</strong> The company’s permit is technically for a palm oil plantation, but in practice, the company is establishing a biomass timber plantation. The government’s decision to reclassify this forest area as an “Other Use Area” has opened the door to legal deforestation in this region.',
+                                    cc: '© Auriga Nusantara, May 2025.'
                                 }
                             ]
                         }">
@@ -1598,7 +1598,7 @@
                               </div> -->
 
                             <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1658,44 +1658,44 @@
                     accounting for 43% of national deforestation.
                 </p>
             </div>
-            <div class="viz-block viz-block--full mt-2 mb-2">
-                <div class="viz-frame viz-frame--padded">
-                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+             <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
-                        <div x-data="{
-                            active: 0,
-                            images: [{
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
+            <div x-data="{
+                                                                          active: 0,
+                                                                          images: [
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
                                     desc: '<strong>Deforestation of natural forest within the Rawa Singkil Wildlife Reserve, Aceh.</strong> The presence of canals indicates that this activity did not occur overnight, raising questions about the effectiveness of the management of this conservation area by the Aceh Natural Resources Conservation Agency (BKSDA).',
-                                    title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                    cc: '© HAKA'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest within the Rawa Singkil Wildlife Reserve, Aceh.</strong> The presence of canals indicates that this activity did not occur overnight, raising questions about the effectiveness of the management of this conservation area by the Aceh Natural Resources Conservation Agency (BKSDA).',
-                                    title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                    desc: '<strong>Deforestation of natural forests—habitat of orangutans—for the development of oil palm plantations within the PT Borneo Internasional Anugerah concession in Kapuas Hulu, West Kalimantan.</strong>',
+                                    cc: '© Auriga Nusantara, June 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest within the Rawa Singkil Wildlife Reserve, Aceh.</strong> The presence of canals indicates that this activity did not occur overnight, raising questions about the effectiveness of the management of this conservation area by the Aceh Natural Resources Conservation Agency (BKSDA).',
-                                    title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
-                                }
-                            ]
-                        }">
+                                    desc: '<strong>Deforestation in the Rawa Singkil Wildlife Reserve, Aceh.</strong> This deforestation is believed to be for the development of oil palm plantations in one of Indonesia’s most densely populated orangutan habitats.',
+                                    cc: '© HAKA, Agustus 2025.'
+                                                                            }
+                                                                          ]
+                                                                        }">
 
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                                                                      elements: images.map(img => ({
-                                                                        href: img.src,
-                                                                        description: img.desc
-                                                                      })),
-                                                                      startAt: active
-                                                                    }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+              <!-- IMAGE -->
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" @click="GLightbox({
+                    elements: images.map(img => ({
+                        href: img.src,
+                        description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                    })),
+                    startAt: active
+                }).open()"
+                  class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
-                                <!-- PREV -->
-                                <button x-show="active > 0" @click="active--"
+                <!-- PREV -->
+                <button x-show="active > 0" @click="active--"
                   class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                   ◀
                 </button>
@@ -1704,44 +1704,41 @@
                   class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                   ▶
                 </button>
-                            </div>
+              </div>
 
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                              </div> -->
+              <!-- DESC -->
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                          <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                        </div> -->
 
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
-
-                        </div>
-
+              <!-- THUMB + LOKASI -->
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
                     </div>
+                  </template>
                 </div>
-            </div><br>
+
+                <div class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+
+                  <div x-html="images[active].desc"></div>
+
+                  <div class="opacity-60" x-html="images[active].cc"></div>
+
+                </div>
+                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div><br>
         </section>
 
         <!-- REKOMENDASI -->
