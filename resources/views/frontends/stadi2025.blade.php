@@ -15,6 +15,7 @@
     </div>
 
 
+<<<<<<< Updated upstream
     <!-- STICKY NAV -->
     <nav id="sitenav"
         class="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[52px] px-[5vw]  backdrop-blur-md border-b border-[#e2d8cc]">
@@ -36,6 +37,133 @@
                 <a href="{{ url('/id/status-deforestasi-indonesia-2025') }}" id="lang-id" class="g-lang-btn active">ID</a>
                 <a href="{{ url('/en/status-of-deforestation-in-indonesia-2025') }}" id="lang-en"
                     class="g-lang-btn">EN</a>
+=======
+  <!-- STICKY NAV -->
+  <nav id="sitenav"
+    class="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[52px] px-[5vw]  backdrop-blur-md border-b border-[#e2d8cc]">
+    <div
+      class="nav-brand flex items-center gap-1.5 uppercase tracking-[0.18em] text-[#8b2a1a] text-[.65rem] font-semibold">
+      <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt="" class="h-8"></a>
+    </div>
+    <div class="nav-actions">
+      <ul class="nav-links flex list-none">
+        <li><a href="#pendahuluan">Pendahuluan</a></li>
+        <li><a href="#metodologi">Metodologi</a></li>
+        <li><a href="#deforestasi">Deforestasi 2025</a></li>
+        {{-- <li><a href="#konsesi">Konsesi</a></li> --}}
+        <li><a href="#diskusi">Diskusi</a></li>
+        <li><a href="#rekomendasi">Rekomendasi</a></li>
+      </ul>
+      <div class="global-lang" aria-label="language switcher">
+        <a href="{{ url('/id/status-deforestasi-indonesia-2025') }}" id="lang-id" class="g-lang-btn active">ID</a>
+        <a href="{{ url('/en/status-of-deforestation-in-indonesia-2025') }}" id="lang-en" class="g-lang-btn">EN</a>
+      </div>
+    </div>
+  </nav>
+  <section id="hero">
+    <h1>Status Deforestasi <br>di Indonesia 2025</h1>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <span class="hs-val">433.751</span>
+        <span class="hs-unit">Hektare</span>
+      </div>
+      <div class="hero-divider"></div>
+      <!-- <div class="hero-stat">
+                                                                                                                                                                                                                                                                                   <span class="hs-val">+66%</span>
+                                                                                                                                                                                                                                                                                   <span class="hs-unit">Peningkatan dari 2024</span>
+                                                                                                                                                                                                                                                                                   </div> -->
+      <div class="hero-divider"></div>
+      <div class="hero-desc">
+        Deforestasi melonjak, saatnya pemerintah menerbitkan
+        regulasi yang melindungi seluruh hutan alam tersisa
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- PENDAHULUAN -->
+  <span class="s-anchor" id="pendahuluan"></span>
+
+  <section class="page-section px-[5vw]">
+    <div class="section-label">I. Pendahuluan</div>
+    <p class="lead">
+      Pada November 2021 dalam ajang KTT Iklim ke-26 Glasgow, Skotlandia, pemimpin 144 negara, termasuk Indonesia,
+      menandatangani
+      <a href="https://webarchive.nationalarchives.gov.uk/ukgwa/20230418175226/https:/ukcop26.org/glasgow-leaders-declaration-on-forests-and-land-use/"
+        target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">Glasgow Leaders</a>.
+      Declaration on Forest and Land Use atau Glasgow Declaration. Deklarasi ini merupakan kesepakatan untuk bekerja
+      secara kolektif menghentikan dan membalik hilangnya hutan dan degradasi lahan.
+    </p>
+    <p class="body-text">
+      Di Indonesia, upaya untuk menghentikan deforestasi atau hilangnya hutan alam tidak bermula dari deklarasi tersebut.
+      Satu dekade sebelumnya, Presiden Susilo Bambang Yudhoyono menandatangani Instruksi Presiden No. 10 tahun 2011, biasa
+      disebut
+      <a href="https://peraturan.bpk.go.id/Download/68485/Inpres_no_10_2011.pdf" target="_blank" rel="noopener noreferrer"
+        style="color: #bc4a3c;">Inpres Moratorium</a>,
+      yang melarang penerbitan izin konversi di hutan alam primer dan lahan gambut dilindungi. Presiden Joko Widodo yang
+      meneruskan kebijakan tersebut juga menerbitkan Instruksi Presiden No. 8 tahun 2018, atau Inpres
+      <a href="https://peraturan.bpk.go.id/Download/261461/Inpres%20Nomor%208%20Tahun%202018.PDF" target="_blank"
+        rel="noopener noreferrer" style="color: #bc4a3c;">Moratorium Sawit</a>,
+      yang diharapkan dapat mengoptimalkan kebun-kebun sawit eksisting dan menghentikan laju deforestasi oleh ekspansi
+      sawit.
+    </p>
+    <p class="body-text">
+      Indonesia pun meratifikasi Kesepakatan Paris (Paris Agreement), yang dimaksudkan untuk menahan kenaikan suhu global
+      di bawah 2°C, sembari berupaya membatasi kenaikannya maksimum 1,5°C dari era pra-industri. Dalam kerangka ini,
+      Pemerintah Indonesia menerbitkan
+      <a href="https://peraturan.bpk.go.id/Download/180699/Perpres%20Nomor%2098%20Tahun%202021.pdf" target="_blank"
+        rel="noopener noreferrer" style="color: #bc4a3c;">Peraturan Presiden No. 98 Tahun 2021</a>
+      tentang Penyelenggaraan Nilai Ekonomi Karbon dan menerjemahkannya lebih rinci melalui Keputusan Menteri LHK No. 168
+      tahun 2022 tentang Indonesia’s
+      <a href="https://eos.co.id/main/wp-content/uploads/2022/03/1647210373656.pdf" target="_blank"
+        rel="noopener noreferrer" style="color: #bc4a3c;">FOLU Net Sink 2030</a>
+      untuk Pengendalian Perubahan Iklim.
+    </p>
+    <p class="body-text">
+      Berbagai kebijakan tersebut membuat deforestasi di Indonesia menurun dalam lima tahun berturut-turut sejak 2017.
+      Namun, sejak 2022 deforestasi di Indonesia kembali meningkat, sebagaimana terlihat dalam grafik berikut. Bahkan,
+      deforestasi di Indonesia melonjak pada 2025.
+    </p>
+    <!-- embedded chart using TailwindUI layout -->
+    <div class="viz-block viz-block--full mt-12 mb-2" id="chart-app-wrap">
+      <div class=" ">
+        <div id="chart-app" class="w-full py-4 md:py-8" style="background:white;">
+          <div id="chart-inner" class="px-6 w-full max-w-[1400px] mx-auto">
+            <div id="chart-viz" class="w-full min-w-0">
+              <div class="block w-full sm:max-w-6xl mx-auto mb-4">
+                <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi di Indonesia,
+                  2001-2025</h2>
+                {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+                  hectares</p> --}}
+              </div>
+              <div id="chart-body" class="relative flex" style="height:420px;">
+                <div id="y-axis" class="flex flex-col-reverse justify-between pb-[48px] w-[42px] md:w-[56px] shrink-0">
+                </div>
+                <div id="bars-wrap" class="relative flex-1 flex flex-col">
+                  <div id="grid-lines" class="relative flex flex-col-reverse justify-between flex-1">
+                  </div>
+                  <div id="bars-svg-wrap" class="absolute inset-x-0 top-0 bottom-[48px] grid items-end gap-[2px] px-0.5">
+                  </div>
+                  <div id="x-axis" class="relative grid gap-[2px] px-[2px] mt-2 h-[48px] items-start overflow-hidden"
+                    style="background:white;z-index:2;">
+
+                  </div>
+                  {{-- <small style="font-size: 12px !important;" class="text-black font-bold text-center -mt-6 z-20">
+                    <i>Deforestasi di Indonesia, 2001-2025</i>
+                  </small> --}}
+                </div>
+              </div>
+              <div class="md:hidden mt-3">
+                <div id="pres-strip" class="flex flex-col gap-[2px]"></div>
+              </div>
+              <!-- Mobile-only era totals -->
+              {{-- <div id="mobile-era-totals" class="md:hidden grid grid-cols-2 gap-[2px] mt-3"></div> --}}
+              {{-- <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland
+                Lossyear ·
+                Auriga STADI · simontini.id</div> --}}
+>>>>>>> Stashed changes
             </div>
         </div>
     </nav>
@@ -1259,6 +1387,7 @@
 
 
 
+<<<<<<< Updated upstream
                 <!-- <ul class="insight-list">
                                                                                                                                                                                                                                                                                                               <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
                                                                                                                                                                                                                                                                                                               <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
@@ -1312,6 +1441,61 @@
                                     class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                                     ◀
                                 </button>
+=======
+        <!-- <ul class="insight-list">
+                                                                                                                                                                                                                                                                                                            <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
+                                                                                                                                                                                                                                                                                                            <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
+                                                                                                                                                                                                                                                                                                            <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
+                                                                                                                                                                                                                                                                                                            <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
+                                                                                                                                                                                                                                                                                                          </ul> -->
+      </div>
+      <div class="viz-block viz-block--full mt-2 mb-2 ">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-10 z-20 relative">
+
+            <div x-data="{
+                                                                            active: 0,
+                                                                            images: [
+                                                                              {
+                                                                                src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
+                                                                                desc: '<strong>Tutupan hutan alam dalam konsesi kebun kayu PT Malinau Hijau Lestari (MHL) di Malinau, Kalimantan Utara.</strong> Pemberian izin kebun kayu pada area bertutupan hutan alam seperti ini merupakan salah satu bentuk deforestasi terencana oleh pemerintah karena memberikan ruang bagi MHL untuk membabat hutan alam dan menggantinya (konversi) dengan kebun kayu energi (biomassa) yang akan ditebang secara periodik.',
+                                                                                cc: '© Auriga Nusantara, Mei 2024.'
+                                                                              },
+                                                                              {
+                                                                                src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
+                                                                                desc: '<strong>Deforestasi oleh ekspansi tambang nikel PT Weda Bay Nickel di Halmahera Tengah, Maluku Utara.</strong> Dengan menerbitkan izin tambang pada daerah bertutupan hutan, pemerintah dasarnya merencanakan deforestasi demi eksploitasi nikel di wilayah izin pertambangan ini.',
+                                                                                cc: '© Auriga Nusantara, Desember 2025.'
+                                                                              },
+                                                                              {
+                                                                                src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
+                                                                                desc: '<strong>Deforestasi oleh pembangunan kawasan industri Indonesia Pomalaa Industry Park (IPIP) di Kolaka, Sulawesi Tenggara.</strong> Kawasan industri ini merupakan salah satu Proyek Strategis Nasional (PSN) dan berada dalam Kawasan Hutan Produksi Konversi.',
+                                                                                cc: '© Auriga Nusantara, Desember 2025.'
+                                                                              },
+                                                                              {
+                                                                                src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
+                                                                                desc: '<strong>Deforestasi oleh pembangunan pembangkit listrik tenaga air PLTA Mentarang di Malinau, Kalimantan Utara.</strong> Kegiatan ini merupakan salah satu Proyek Strategis Nasional.',
+                                                                                cc: '© Auriga Nusantara, Oktober 2025.'
+                                                                              }
+                                                                            ]
+                                                                          }">
+
+              <!-- IMAGE -->
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" @click="GLightbox({
+                          elements: images.map(img => ({
+                              href: img.src,
+                              description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                          })),
+                          startAt: active
+                      }).open()"
+                  class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+
+                <!-- PREV -->
+                <button x-show="active > 0" @click="active--"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
+                </button>
+>>>>>>> Stashed changes
 
                                 <button x-show="active < images.length - 1" @click="active++"
                                     class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
@@ -1319,6 +1503,7 @@
                                 </button>
                             </div>
 
+<<<<<<< Updated upstream
                             <!-- DESC -->
                             <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                                   <small style="font-size: 12px;" x-html="images[active].desc"></small>
@@ -1353,6 +1538,22 @@
 
                         </div>
 
+=======
+              <!-- DESC -->
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                                <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                              </div> -->
+
+              <!-- THUMB + LOKASI -->
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div><br><br>
@@ -1434,6 +1635,7 @@
                             ]
                         }">
 
+<<<<<<< Updated upstream
                             <!-- IMAGE -->
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src"
@@ -1451,6 +1653,87 @@
                                     class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                                     ◀
                                 </button>
+=======
+      <div>
+        <div class="chapter-header">
+          <span class="ms-num">2.</span>
+          <h3 class="chapter-title">Episentrum deforestasi mengarah ke Tanah Papua</h3>
+        </div>
+        <p class="body-text">
+          Deforestasi tertinggi memang masih dipegang Kalimantan. Pulau ini menjadi pemuncak deforestasi di Indonesia
+          <a href="https://simontini.id/id/status-deforestasi-indonesia-2024" target="_blank" rel="noopener noreferrer"
+            style="color: #bc4a3c;">sejak 2013</a>,
+          atau 13 tahun terakhir secara berturut. Namun begitu, perluasan deforestasi terbesar pada 2025 terjadi di Tanah
+          Papua, yakni seluas 60.337 hektare, yang menempatkan pulau ini di peringkat ketiga, di bawah Kalimantan dan
+          Sumatera, menggantikan Sulawesi yang menempati posisi itu pada deforestasi 2024.
+        </p>
+        <p class="body-text">
+          Program pemerintah, seperti Proyek Strategis Nasional, lumbung pangan (food estate), menjadi pemicu peningkatan
+          deforestasi di Tanah Papua. Pembangunan infrastruktur yang tak jarang sebagai kelanjutan dari pemekaran wilayah
+          administrasi ditengarai turut memicu deforestasi di pulau ini. Demikian pula perluasan komoditas monokultur,
+          terutama sawit, turut memicu peningkatan deforestasi tersebut.
+        </p>
+        <p class="body-text">
+          Kombinasi hal-hal di atas harus menjadi perhatian serius dalam upaya menahan laju deforestasi di Tanah Papua ke
+          depan. Simulasi yang dilakukan Auriga Nusantara di Aceh dan Riau menunjukkan bahwa deforestasi melonjak setelah
+          pabrik sawit beroperasi, dan semakin dekat dengan pabrik akan semakin tinggi tingkat deforestasi. Fenomena mirip
+          terjadi di Sulawesi dan Maluku Utara dengan pengoperasian smelter-smelter nikel sejak 2016. Dengan demikian,
+          pembangunan infrastruktur dan pemekaran wilayah administrasi di Tanah Papua akan menjadi pemungkin terhadap
+          hadirnya pabrik-pabrik atau industri pengolahan baru. Apalagi sawit-sawit di Tanah Papua saat ini kebanyakan
+          pada usia muda dan akan mengalami puncak produksi pada 5-10 tahun ke depan sehingga akan membutuhkan
+          pabrik-pabrik sawit. Bila pabrik-pabrik sawit bermunculan, dan infrastruktur semakin baik, bagaimana menahan
+          laju deforestasi di pulau ini?
+        </p>
+      </div>
+
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-10 z-20 relative">
+
+            <div x-data="{
+                                                                            active: 0,
+                                                                            images: [
+                                                                              {
+                                                                                src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
+                                                                                desc: '<strong>Deforestasi dalam konsesi logging PT Jati Dharma Indah Plywood Industries di Nabire, Papua Tengah.</strong> ',
+                                                                                cc: '© Auriga Nusantara, Desember 2025.'
+
+                                                                              },
+                                                                              {
+                                                                                src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
+                                                                                desc: '<strong>Deforestasi oleh kegiatan pertambangan nikel PT Anugerah Surya Pratama, Pulau Manuram, Raja Ampat, Papua.</strong>',
+                                                                                cc: '© Auriga Nusantara, September 2025.',                                                          
+                                                                              },
+                                                                              {
+                                                                                src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
+                                                                                desc: '<strong>Tutupan hutan alam di Kabupaten Sarmi, Papua.</strong> Namun, pemerintah telah menerbitkan izin tambang nikel PT Iriana Mutiara Mining di area ini sehingga membuka ruang bagi hilangnya tutupan hutan alam tersebut.',
+                                                                                cc: '© Auriga Nusantara, Desember 2024.',                                                          
+                                                                              },
+                                                                              {
+                                                                                src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
+                                                                                desc: '<strong>Pembabatan hutan alam oleh proyek lumbung pangan (food estate) di Sorong, Papua Barat Daya.</strong>',
+                                                                                cc: '© Auriga Nusantara, April 2026.',
+                                                                              }
+                                                                            ]
+                                                                          }">
+
+              <!-- IMAGE -->
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" @click="GLightbox({
+                          elements: images.map(img => ({
+                              href: img.src,
+                              description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                          })),
+                          startAt: active
+                      }).open()"
+                  class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+
+                <!-- PREV -->
+                <button x-show="active > 0" @click="active--"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
+                </button>
+>>>>>>> Stashed changes
 
                                 <button x-show="active < images.length - 1" @click="active++"
                                     class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
@@ -1458,6 +1741,7 @@
                                 </button>
                             </div>
 
+<<<<<<< Updated upstream
                             <!-- DESC -->
                             <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                                   <small style="font-size: 12px;" x-html="images[active].desc"></small>
@@ -1491,6 +1775,22 @@
 
                         </div>
 
+=======
+              <!-- DESC -->
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                                <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                              </div> -->
+
+              <!-- THUMB + LOKASI -->
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div><br><br>
@@ -1592,6 +1892,7 @@
                             ]
                         }">
 
+<<<<<<< Updated upstream
                             <!-- IMAGE -->
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src"
@@ -1609,6 +1910,108 @@
                                     class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                                     ◀
                                 </button>
+=======
+      <hr class="divider"><br><br>
+
+      <div>
+        <div class="chapter-header">
+          <span class="ms-num">3.</span>
+          <h3 class="chapter-title">Ekspansi komoditas industrial menjadi pemicu deforestasi di Indonesia</h3>
+        </div>
+        <p class="body-text">
+          Ekspansi komoditas industrial tetap menjadi momok bagi hutan alam tersisa di Indonesia. Pengembangan kebun-kebun
+          baru sawit menjadi salah satu pemicu (driver) utama di Sumatera, sebagaimana terjadi di Hutan Lindung Sijunjung
+          di Sumatera Barat. Deforestasi demi pembangunan kebun sawit bahkan merangsek ke kawasan konservasi, seperti
+          terjadi di Suaka Margasatwa Rawa Singkil di Aceh.
+        </p>
+        <p class="body-text">
+          Deforestasi oleh ekspansi sawit sejatinya cenderung melambat, terutama karena pasar yang sudah mulai jenuh.
+          Tapi, kebijakan subsidi biodiesel oleh pemerintah yang tidak disertai dengan mekanisme pelindung (safeguard)
+          terhadap tutupan hutan turut memicu deforestasi ini. Setelah sebelumnya mewajibkan kandungan bahan bakar nabati
+          berbasis sawit dalam bahan bakar minyak jenis solar sebesar 30% (B30) kemudian meningkat menjadi 35% (B35),
+          sejak awal 2025 pemerintah menerapkan
+          <a href="https://www.esdm.go.id/id/media-center/arsip-berita/wujudkan-ketahanan-energi-dan-kurangi-impor-menteri-esdm-mandatori-b40-berlaku-1-januari-2025"
+            target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">kebijakan B40</a>.
+
+        </p>
+        <p class="body-text">
+          Di Kalimantan, pemicu utama deforestasi berupa perluasan kebun kayu demi industri <em>pulp & paper</em>.
+          Pemberian izin pembangunan pabrik pulp raksasa PT Phoenix Resources International di Tarakan, Kalimantan Utara
+          menjadi penyebab utama, karena dalam perencanaannya pabrik ini tidak memiliki konsesi pemasok yang dikelola
+          sendiri. Banyak deforestasi terjadi di Kalimantan Tengah dan Kalimantan Timur yang bermuara ke pabrik ini.
+        </p>
+        <p class="body-text">
+          <em>Booming</em> kendaraan listrik menjadi pemicu ekspansi tambang dan industri nikel. Namun, pemberian izin
+          industri yang tidak disertai dengan kejelasan sumber bahan baku, terutama untuk menghindari deforestasi,
+          mengakibatkan melonjaknya deforestasi di Sulawesi (dan Maluku Utara).
+        </p>
+        <p class="body-text">
+          Tambang dan industri nikel bukan barang baru di Sulawesi, karena penambangan nikel sudah ada sejak 1930-an, dan
+          industri pengolahan (smelter) nikel sudah beroperasi sejak 1973. Hingga 2014 hanya 3 smelter nikel yang
+          beroperasi di Sulawesi. Kemudian jumlahnya membengkak di era presidensi Joko Widodo. Pada 2014-2024 setidaknya
+          ada 16 smelter nikel baru yang beroperasi di pulau dengan tingkat endemisme tertinggi di dunia ini.
+        </p>
+        <p class="body-text">
+          Meningkatnya harga emas juga turut memicu deforestasi. Bahkan, 2 konsesi tambang emas bertengger dalam sepuluh
+          teratas deforestasi dalam konsesi tambang, yakni PT Agincourt Resources dan PT Blok Waringin Agung.
+        </p>
+
+        <!-- <div class="callout">
+                                                                                                                                                                                                                                                                                                            <strong>Faktor pendorong utama:</strong>
+                                                                                                                                                                                                                                                                                                            <ul style="margin-top:8px;padding-left:16px;font-size:.82rem;line-height:1.75;color:var(--ink-mid);">
+                                                                                                                                                                                                                                                                                                              <li>Ekspansi sawit dan kebun kayu di area berhutan</li>
+                                                                                                                                                                                                                                                                                                              <li>Pemberian izin industri tanpa kejelasan sumber bahan baku bebas deforestasi</li>
+                                                                                                                                                                                                                                                                                                              <li>Kenaikan harga komoditas seperti nikel dan emas</li>
+                                                                                                                                                                                                                                                                                                            </ul>
+                                                                                                                                                                                                                                                                                                          </div> -->
+      </div>
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-10 z-20 relative">
+
+            <div x-data="{
+                                                                          active: 0,
+                                                                          images: [
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
+                                                                              desc: '<strong>Deforestasi oleh kegiatan pembangunan jaringan jalan eksploitasi di dalam konsesi kebun kayu PT Toba Pulp Lestari.</strong> Jaringan jalan tersebut akan menjadi pintu masuk deforestasi masif di area ini.',
+                                                                              cc: '© Auriga Nusantara/Earthsight, Desember 2025.'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
+                                                                              desc: '<strong>Pembabatan hutan alam oleh pembangunan kebun sawit di dalam konsesi PT Equator Sumber Rezeki di Kapuas Hulu, Kalimantan Barat.</strong>',
+                                                                              cc: '© Auriga Nusantara, Juni 2025.'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 3/konsesi pbph.jpg') }}',
+                                                                              desc: '<strong>Deforestasi oleh pengembangan kebun kayu di dalam konsesi PT Industrial Forest Plantation di Kapuas, Kalimantan Tengah.</strong>',
+                                                                              cc: '© Auriga Nusantara/Earthsight, Juli 2025.'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
+                                                                              desc: '<strong>Pembabatan hutan alam oleh ekspansi tambang nikel di Kolonodale, Morowali Utara, Sulawesi Tengah.</strong> ',
+                                                                              cc: '© Auriga Nusantara, Oktober 2025.'
+                                                                            }
+                                                                          ]
+                                                                        }">
+
+              <!-- IMAGE -->
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" @click="GLightbox({
+                        elements: images.map(img => ({
+                            href: img.src,
+                            description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                        })),
+                        startAt: active
+                    }).open()"
+                  class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+
+                <!-- PREV -->
+                <button x-show="active > 0" @click="active--"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
+                </button>
+>>>>>>> Stashed changes
 
                                 <button x-show="active < images.length - 1" @click="active++"
                                     class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
@@ -1616,6 +2019,7 @@
                                 </button>
                             </div>
 
+<<<<<<< Updated upstream
                             <!-- DESC -->
                             <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
@@ -1649,6 +2053,22 @@
 
                         </div>
 
+=======
+              <!-- DESC -->
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                              <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                            </div> -->
+
+              <!-- THUMB + LOKASI -->
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div><br><br>
@@ -1720,6 +2140,7 @@
                             ]
                         }">
 
+<<<<<<< Updated upstream
                             <!-- IMAGE -->
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src"
@@ -1737,6 +2158,83 @@
                                     class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                                     ◀
                                 </button>
+=======
+      <div>
+        <div class="chapter-header">
+          <span class="ms-num">4.</span>
+          <h3 class="chapter-title">Legal deforestasi sebagai biang masalah</h3>
+        </div>
+        <p class="body-text">
+          Salah satu efek dari kerumitan aturan di Indonesia adalah ketidaklugasan dalam mengenali legal atau tidaknya
+          suatu deforestasi. Terdapat banyak aturan yang melindungi hutan, tapi tidak sedikit celah yang membuatnya tidak
+          terlindungi.
+        </p>
+        <p class="body-text">
+          Dalam sebuah presentasi pada
+          <a href="https://www.youtube.com/watch?v=fXpCyo4TrlU&t=7193s" target="_blank" rel="noopener noreferrer"
+            style="color: #bc4a3c;">Rapat Dengar Pendapat Umum</a>
+          di Komisi 4 Dewan Perwakilan Rakyat Republik Indonesia (DPR RI) pada 15 Juli 2025 Auriga Nusantara
+          mengungkapkan, per 2024, seluas 41,6 juta hektare atau 44% tutupan hutan alam di Indonesia tidak punya
+          perlindungan hukum. Dengan kondisi demikian, manuver yang tidak melanggar hukum yang akan menghilangkan hutan
+          tersebut, seperti melalui penerbitan izin konversi atau revisi tata ruang, masih memungkinkan.
+        </p>
+        <p class="body-text">
+          Dari total deforestasi 2025, deforestasi yang secara langsung bisa dikategorikan ilegal hanya deforestasi di
+          kawasan konservasi (25.077 hektare), di hutan lindung (80.213 hektare), di konsesi logging (74.409 hektare), dan
+          konsesi restorasi ekosistem (617 hektare), yang seluruhnya berjumlah 180.315 hektare atau 42% deforestasi
+          nasional. Dengan kata lain, 58% deforestasi 2025 berupa deforestasi legal (<em>legal deforestation</em>).
+        </p>
+
+
+      </div>
+
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-10 z-20 relative">
+
+            <div x-data="{
+                                                                          active: 0,
+                                                                          images: [
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
+                                                                              desc: '<strong>Deforestasi di dalam konsesi kebun kayu PT Indosubur Sukses Makmur di Kutai Timur, Kalimantan Timur.</strong> Penerbitan izin kebun kayu di area bertutupan hutan alam seperti ini menjadi salah satu contoh deforestasi legal (legal deforestation) di Indonesia.',
+                                                                              cc: '© Auriga Nusantara/Earthsight, Januari 2025.'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}',
+                                                                              desc: '<strong>Konversi hutan alam menjadi kebun sawit skala besar dalam konsesi PT Borneo International Anugerah di Kapuas Hulu, Kalimantan Barat.</strong> Keberadaan izin kebun monokultur di area ini membuka ruang bagi perusahaan membabat hutan alam yang ada.',
+                                                                              cc: '© Auriga Nusantara, Juni 2025.'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru.jpg') }}',
+                                                                              desc: '<strong>Aktivitas tambang emas PT Agincourt Resources di bentang alam Batang Toru, Sumatera Utara.</strong> Bentang alam Batang Toru adalah satu-satunya habitat orangutan tapanuli (Pongo tapanuliensis) di dunia. Adanya izin tambang menjadi indikasi pembabatan hutan alam yang terjadi sebagai deforestasi legal.',
+                                                                              cc: '© Auriga Nusantara, Mei 2025.'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Banyan Tumbuh Lestari.jpg') }}',
+                                                                              desc: '<strong>Pembabatan hutan alam di dalam konsesi sawit PT Banyan Tumbuh Lestari di Pohuwato, Gorontalo.</strong> Izin perusahaan ini sejatinya untuk perkebunan sawit, namun pada praktiknya perusahaan membangun kebun kayu biomassa. Langkah pemerintah melepas kawasan hutan ini menjadi Area Penggunaan Lain menjadi pintu masuk deforestasi legal di area ini.',
+                                                                              cc: '© Auriga Nusantara, Mei 2025.'
+                                                                            }
+                                                                          ]
+                                                                        }">
+
+              <!-- IMAGE -->
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" @click="GLightbox({
+                      elements: images.map(img => ({
+                          href: img.src,
+                          description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                      })),
+                      startAt: active
+                  }).open()"
+                  class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+
+                <!-- PREV -->
+                <button x-show="active > 0" @click="active--"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                  ◀
+                </button>
+>>>>>>> Stashed changes
 
                                 <button x-show="active < images.length - 1" @click="active++"
                                     class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
@@ -1744,6 +2242,7 @@
                                 </button>
                             </div>
 
+<<<<<<< Updated upstream
                             <!-- DESC -->
                             <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                               <small style="font-size: 12px;" x-html="images[active].desc"></small>
@@ -1777,6 +2276,22 @@
 
                         </div>
 
+=======
+              <!-- DESC -->
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                            <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                          </div> -->
+
+              <!-- THUMB + LOKASI -->
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div><br><br>
@@ -1843,6 +2358,7 @@
                             ]
                         }">
 
+<<<<<<< Updated upstream
                             <!-- IMAGE -->
                             <div class="relative" x-ref="mainImg">
                                 <img :src="images[active].src"
@@ -1854,6 +2370,71 @@
                   startAt: active
               }).open()"
                                     class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+=======
+
+
+      <hr class="divider"><br><br>
+
+      <div>
+        <div class="chapter-header">
+          <span class="ms-num">5.</span>
+          <h3 class="chapter-title">Deforestasi tinggi di area konservasi</h3>
+        </div>
+        <p class="body-text">
+          Saat ini, perlakuan konservasi oleh pemerintah cenderung hanya pada kawasan konservasi, yakni area konservasi
+          yang ada di dalam kawasan hutan. Kawasan konservasi adalah penggabungan kawasan suaka alam, seperti cagar alam,
+          suaka margasatwa; dan kawasan pelestarian alam, seperti taman nasional, taman hutan raya. Kawasan konservasi di
+          Indonesia saat ini seluas 22,1 juta hektare.
+        </p>
+        <p class="body-text">
+          Akan tetapi terdapat sejumlah besar area-area yang penting secara ekologi di luar kawasan konservasi. Area di
+          luar kawasan konservasi ini merupakan habitat spesies ikonik harimau, badak, gajah, orangutan seluas 22,8 juta
+          hektare; dan Key Biodiversity Area (KBA) yang dikembangkan IUCN seluas 21,6 juta hektare. Ketiga wilayah ini
+          bila digabungkan sebagai area konservasi seluruhnya –tanpa menghitung perulangan– seluas 63,5 juta hektare.
+        </p>
+        <p class="body-text">
+          Deforestasi di kawasan konservasi pada 2024 seluas 7.704 hektare, melonjak menjadi 25.077 hektare pada 2025,
+          atau meningkat 225%. Sementara, deforestasi di seluruh area konservasi terhitung seluas 186.465 hektare atau 43%
+          deforestasi nasional.
+        </p>
+      </div>
+
+      <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+
+            <div x-data="{
+                                                                          active: 0,
+                                                                          images: [
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
+                                                                              desc: '<strong>Pembabatan hutan alam di dalam Suaka Margasatwa Rawa Singkil, Aceh.</strong> Adanya kanal mengindikasikan bahwa kegiatan ini tidak berlangsung dalam sekejap sehingga menjadi pertanyaan akan efektivitas pengelolaan kawasan konservasi ini oleh Balai Konservasi Sumber Daya Alam (BKSDA) Aceh.',
+                                                                              cc: '© HAKA'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
+                                                                              desc: '<strong>Pembabatan hutan alam habitat orangutan untuk pembangunan kebun sawit di dalam konsesi PT Borneo Internasional Anugerah di Kapuas Hulu, Kalimantan Barat.</strong> ',
+                                                                              cc: '© Auriga Nusantara, Juni 2025.'
+                                                                            },
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
+                                                                              desc: '<strong>Deforestasi di Suaka Margasatwa Rawa Singkil, Aceh.</strong> Pembabatan hutan ini ditengarai untuk pembangunan kebun sawit di salah satu habitat orangutan terpadat di Indonesia ini.',
+                                                                              cc: '© HAKA, Agustus 2025.'
+                                                                            }
+                                                                          ]
+                                                                        }">
+
+              <!-- IMAGE -->
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" @click="GLightbox({
+                    elements: images.map(img => ({
+                        href: img.src,
+                        description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                    })),
+                    startAt: active
+                }).open()"
+                  class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+>>>>>>> Stashed changes
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
@@ -1867,6 +2448,7 @@
                                 </button>
                             </div>
 
+<<<<<<< Updated upstream
                             <!-- DESC -->
                             <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                             <small style="font-size: 12px;" x-html="images[active].desc"></small>
@@ -1900,6 +2482,22 @@
 
                         </div>
 
+=======
+              <!-- DESC -->
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                          <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                        </div> -->
+
+              <!-- THUMB + LOKASI -->
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div><br>
@@ -1918,6 +2516,7 @@
                     yang harus dijalankan secara serentak.
                 </p>
 
+<<<<<<< Updated upstream
                 <div class="method-steps">
                     <div class="border-b pt-0 pb-12">
                         <div class="method-step">
@@ -1944,6 +2543,68 @@
                                     <strong>seluruh</strong> hutan alam tersisa di Indonesia.
                                 </p>
                             </div>
+=======
+            <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
+              <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
+
+                <div x-data="{
+                                                                                          currentSlide: 4,
+                                                                                          startX: 0,
+                                                                                          images: [
+                                                                                            {
+                                                                                              src: '{{ asset('assets/images/stadi2025/RUDP1 in.jpg') }}',
+                                                                                              desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 118,7 juta hektare kawasan hutan darat Indonesia. Patut dicatat bahwa kawasan hutan adalah suatu wilayah yang ditetapkan sebagai kawasan hutan. Tak jarang kawasan hutan tidak bertutupan hutan. Sebaliknya, tak sedikit tutupan hutan alam yang berada di luar kawasan hutan.'
+                                                                                            },
+                                                                                            {
+                                                                                              src: '{{ asset('assets/images/stadi2025/RUDP2 in.jpg') }}',
+                                                                                              desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Dari 22 juta hektare kawasan hutan konservasi, tersapa 4,7 juta hektare yang tidak bertutupan hutan alam. Secara hukum, seluruh hutan alam di dalam kawasan hutan konservasi dilindungi.'
+                                                                                            },
+                                                                                            {
+                                                                                              src: '{{ asset('assets/images/stadi2025/RUDP3 in.jpg') }}',
+                                                                                              desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 227.127 hektare tutupan hutan alam di dalam hutan lindung yang berada di luar area moratorium sehingga cukup terbuka menjadi sasaran deforestasi oleh kebijakan atau proyek pemerintah.'
+                                                                                            },
+                                                                                            {
+                                                                                              src: '{{ asset('assets/images/stadi2025/RUDP4 in.jpg') }}',
+                                                                                              desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 22,5 juta hektare tutupan hutan alam di hutan produksi yang berada di luar area moratorium, sehingga rawan menjadi sasaran deforestasi karena tidak memiliki perlindungan hukum.'
+                                                                                            },
+                                                                                            {
+                                                                                              src: '{{ asset('assets/images/stadi2025/RUDP5 in.jpg') }}',
+                                                                                              desc: '<strong>Hampir separuh hutan alam Indonesia tanpa perlindungan hukum.</strong> Terdapat 9 juta hektare tutupan hutan alam di luar kawasan hutan, atau berada di dalam Area Penggunaan Lain (APL), dan 8,1 juta hektare di antaranya di luar area moratorium. Secara keseluruhan, 41,6 juta hektare (44%) tutupan hutan alam Indonesia tanpa perlindungan hukum.'
+                                                                                            }
+                                                                                          ],
+                                                                                          get totalSlides() { return this.images.length },
+
+                                                                                          openLightbox(index) {
+                                                                                            GLightbox({
+                                                                                              elements: this.images.map(img => ({
+                                                                                                href: img.src,
+                                                                                                description: img.desc
+                                                                                              })),
+                                                                                              startAt: index
+                                                                                            }).open();
+                                                                                          },
+
+                                                                                          startSwipe(e) { this.startX = e.touches[0].clientX },
+                                                                                          handleTouchMove(e) {
+                                                                                            let diff = this.startX - e.touches[0].clientX
+                                                                                            if (Math.abs(diff) > 50) {
+                                                                                              if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                                                                                              else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                                                                                              this.startX = e.touches[0].clientX
+                                                                                            }
+                                                                                          }
+                                                                                        }" @touchstart="startSwipe"
+                  @touchmove="handleTouchMove" class="relative max-w-4xl mx-auto overflow-hidden w-full">
+
+                  <!-- SLIDER -->
+                  <div class="flex  " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+
+                    <template x-for="(item, index) in images" :key="index">
+                      <div class="w-full flex-shrink-0">
+                        <div class="max-w-4xl mx-auto px-12 sm:px-0 py-3 text-justify"
+                          style="line-height: 1; padding-right: 8rem; padding-left: 4rem;">
+                          <small style="font-size: 12px;" x-html="item.desc"></small>
+>>>>>>> Stashed changes
                         </div>
 
                         <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
@@ -2046,6 +2707,150 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< Updated upstream
+=======
+
+                        <!-- CAPTION -->
+
+                      </div>
+                    </template>
+
+                  </div>
+
+                  <!-- DOTS -->
+                  <div class="flex justify-center gap-2 mt-3">
+                    <template x-for="(item, index) in images" :key="index">
+                      <button @click="currentSlide = index" :class="currentSlide === index ? 'bg-black' : 'bg-gray-400'"
+                        class="w-2 h-2 rounded-full"></button>
+                    </template>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="method-step border-b">
+            <div class="ms-num">2.</div>
+            <div class="">
+              <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.</h4><br>
+              <p class="body-text ">
+                pertengahan 2023 publik dikejutkan dengan usulan revisi tata ruang Provinsi Kalimantan Timur yang
+                ditengarai akan melepaskan 612.355 hektare kawasan hutan (menjadi area penggunaan lain), menurunkan
+                fungsi
+                kawasan hutan (sehingga memungkinkan ditambang) seluas 101.788 hektare. Padahal, setidaknya 389.596
+                hektare
+                <a href="https://www.youtube.com/watch?v=Mx4638DmEjI" target="_blank" rel="noopener noreferrer"
+                  style="color: #bc4a3c;">(55%) area ini bertutupan hutan alam</a>.
+                Sementara, beberapa bulan sebelumnya Pemerintah Provinsi Kalimantan Utara mengusulkan revisi tata
+                ruang
+                yang akan mengalihkan fungsi kawasan hutan seluas
+                <a href="https://korankaltara.com/762-ribu-hektare-hutan-diusulkan-beralih-fungsi" target="_blank"
+                  rel="noopener noreferrer" style="color: #bc4a3c;">762.000 hektare</a>.
+                Di Aceh, manuver pemerintah daerah ditengarai akan berdampak pada hilangnya status perlindungan
+                Kawasan
+                Ekosistem Leuser yang telah ditetapkan sebagai cagar biosfer sekaligus sebagai penyangga Taman
+                Nasional
+                Gunung Leuser. Sekelumit kecil contoh empirik ini menunjukkan kemendesakan perlunya instrumen
+                pengendalian
+                revisi tata ruang wilayah yang menjamin prosesnya berlangsung secara transparan dan memastikan
+                pelibatan
+                pihak terdampak sehingga hasil revisinya semata-mata demi kepentingan publik.
+              </p>
+            </div>
+          </div>
+
+          <div class="method-steps">
+            <div class="border-b pt-0 pb-12">
+              <div class="method-step ">
+                <div class="ms-num">3.</div>
+                <div class="">
+                  <h4 class="chapter-title">Percepatan perluasan area preservasi, terutama di luar kawasan hutan</h4>
+                  <br>
+                  <p class="body-text">
+                    Sebagaimana disampaikan di atas, kawasan konservasi eksisting jauh dari memadai untuk mencakup
+                    seluruh
+                    area konservasi. Bahkan, setidaknya 31.358 hektare habitat spesies ikonik dan area penting
+                    biodiversitas
+                    tersebut berada dalam area penggunaan lain (APL). Di tengah rendahnya kinerja pelestarian dalam
+                    kawasan
+                    konservasi oleh Kementerian Kehutanan, perlu model-model baru pengelolaan area konservasi.
+                    Undang-Undang
+                    Konservasi 32/2024 telah membuka ruang untuk ini, yakni sebagai area preservasi. Namun, kekosongan
+                    peraturan pelaksananya mengakibatkan belum adanya perwujudan area preservasi hingga saat ini. Oleh
+                    karena
+                    itu, pengadaan aturan pelaksana ini perlu disegerakan. Namun begitu, perlu digarisbawahi bahwa
+                    area
+                    preservasi ini semestinya merupakan model-model baru, semisal pengelolaannya, termasuk penerima
+                    manfaat
+                    ekonominya, oleh dan untuk pemerintah daerah atau komunitas lokal dengan kordinasi atau supervisi
+                    oleh
+                    Kementerian Kehutanan.
+                  </p>
+                </div>
+              </div>
+
+              <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
+                <div class="viz-frame !p-0 flex items-start">
+
+                  <div x-data="{
+                                                                                          currentSlide: 0,
+                                                                                          startX: 0,
+                                                                                          images: [
+                                                                                            {
+                                                                                              src: '{{ asset('assets/images/stadi2025/RUDP8 in.jpg') }}',
+                                                                                              desc: '<strong>Terdapat setidaknya 41,4 juta hektare area yang penting secara ekologis berada di luar kawasan hutan konservasi.</strong> Area-area ini semestinya diprioritaskan menjadi area preservasi sebagaimana diatur UU Konservasi.'
+                                                                                            }
+                                                                                          ],
+                                                                                          get totalSlides() { return this.images.length },
+
+                                                                                          openLightbox(index) {
+                                                                                            GLightbox({
+                                                                                              elements: this.images.map(img => ({
+                                                                                                href: img.src,
+                                                                                                description: img.desc
+                                                                                              })),
+                                                                                              startAt: index
+                                                                                            }).open();
+                                                                                          },
+
+                                                                                          startSwipe(e) { this.startX = e.touches[0].clientX },
+                                                                                          handleTouchMove(e) {
+                                                                                            let diff = this.startX - e.touches[0].clientX
+                                                                                            if (Math.abs(diff) > 50) {
+                                                                                              if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                                                                                              else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                                                                                              this.startX = e.touches[0].clientX
+                                                                                            }
+                                                                                          }
+                                                                                        }" @touchstart="startSwipe"
+                    @touchmove="handleTouchMove" class="relative max-w-4xl mx-auto overflow-hidden w-full">
+
+                    <!-- SLIDER -->
+                    <div class="flex  " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+
+                      <template x-for="(item, index) in images" :key="index">
+                        <div class="w-full flex-shrink-0">
+
+                          <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify" style="line-height: 1;">
+                            <small style="font-size: 12px;" x-html="item.desc"></small>
+                          </div>
+
+                          <!-- GAMBAR -->
+                          <div class="relative">
+                            <img :src="item.src" @click="openLightbox(index)"
+                              class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
+
+
+
+                            <!-- CAPTION -->
+
+
+                          </div>
+                      </template>
+
+>>>>>>> Stashed changes
                     </div>
 
 
@@ -2171,6 +2976,7 @@
                                             <template x-for="(item, index) in images" :key="index">
                                                 <div class="w-full flex-shrink-0">
 
+<<<<<<< Updated upstream
                                                     <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify"
                                                         style="line-height: 1;">
                                                         <small style="font-size: 12px;" x-html="item.desc"></small>
@@ -2180,6 +2986,53 @@
                                                     <div class="relative">
                                                         <img :src="item.src" @click="openLightbox(index)"
                                                             class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
+=======
+                  <div x-data="{
+                                                                                            currentSlide: 0,
+                                                                                            startX: 0,
+                                                                                            images: [
+                                                                                              {
+                                                                                                src: '{{ asset('assets/images/stadi2025/RUDP6 in.jpg') }}',
+                                                                                                desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa.</strong> Anggaran yang tersedia untuk pengelolaan per hektare kawasan hutan konservasi di luar taman nasional di Papua hanya Rp 60.718 per hektare; di Kepulauan Maluku Rp 82.374; di Kalimantan Rp 361.395; di Sulawesi Rp 530.208; di Sumatera Rp 1.622.440; di Bali dan Nusa Tenggara Rp 2.694.521. Tapi, di Jawa tersedia anggaran per hektare Rp 116.225.764.'
+                                                                                              },
+                                                                                              {
+                                                                                                src: '{{ asset('assets/images/stadi2025/RUDP7 in.jpg') }}',
+                                                                                                desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa.</strong> Rerata, per orang petugas TN Lorentz di Papua mengelola 38.548 hektare, sementara anggaran yang tersedia untuk pengelolaan Rp  6.707. Cakupan per staf yang sedemikian luas sementara ketersediaan anggaran yang minim relatif merata untuk taman nasional di luar Jawa. Sangat kontras, misalnya, dengan TN Gede Pangrango yang memiliki anggaran Rp 898.381 per hektare, dengan satu staf mengelola 157 hektare.'
+                                                                                              }
+                                                                                            ],
+                                                                                            get totalSlides() { return this.images.length },
+
+                                                                                            openLightbox(index) {
+                                                                                              GLightbox({
+                                                                                                elements: this.images.map(img => ({
+                                                                                                  href: img.src,
+                                                                                                  description: img.desc
+                                                                                                })),
+                                                                                                startAt: index
+                                                                                              }).open();
+                                                                                            },
+
+                                                                                            startSwipe(e) { this.startX = e.touches[0].clientX },
+                                                                                            handleTouchMove(e) {
+                                                                                              let diff = this.startX - e.touches[0].clientX
+                                                                                              if (Math.abs(diff) > 50) {
+                                                                                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                                                                                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                                                                                                this.startX = e.touches[0].clientX
+                                                                                              }
+                                                                                            }
+                                                                                          }" @touchstart="startSwipe"
+                    @touchmove="handleTouchMove" class="relative max-w-4xl mx-auto overflow-hidden w-full">
+
+                    <!-- SLIDER -->
+                    <div class="flex  " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+
+                      <template x-for="(item, index) in images" :key="index">
+                        <div class="w-full flex-shrink-0">
+                          <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify" style="line-height: 1;">
+                            <small style="font-size: 12px;" x-html="item.desc"></small>
+                          </div>
+>>>>>>> Stashed changes
 
 
 
@@ -3596,6 +4449,7 @@
                 petaRevealBars(maxIdx, 200);
             }
 
+<<<<<<< Updated upstream
             document.addEventListener('DOMContentLoaded', () => {
                 Object.keys(PETA_DATA).forEach(k => petaBuildBars(k, PETA_DATA[k]));
                 // Select all years by default
@@ -4717,6 +5571,46 @@
                         badge,
                         entry
                     };
+=======
+        function createSatwaBadge(item, entry) {
+          const badgesContainer = document.getElementById('satwa-badges');
+          const badge = document.createElement('div');
+          badge.className = 'satwa-badge';
+          badge.dataset.species = item.name;
+          const shortName = item.name.split(' ').slice(-2).join(' ');
+          badge.innerHTML = `
+                                                                                                                                                                            <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
+                                                                                                                                                                            <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
+                                                                                                                                                                            <div class="satwa-badge-detail">
+                                                                                                                                                                            <span class="si-name">${item.name}</span>
+                                                                                                                                                                            <span class="si-val">${item.value}</span>
+                                                                                                                                                                            <span class="si-val">${item.lokal}</span>
+                                                                                                                                                                            <span class="si-unit">deforestasi di habitat</span>
+                                                                                                                                                                            </div>
+                                                                                                                                                                        `;
+          badge.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            const isActive = badge.classList.contains('active');
+            document.querySelectorAll('.satwa-badge.active').forEach(b => b.classList.remove('active'));
+            badgesContainer.classList.remove('has-active');
+            polygonLayer.clearLayers();
+            activePolygonSpecies = null;
+            if (!isActive) {
+              badge.classList.add('active');
+              badgesContainer.classList.add('has-active');
+              activePolygonSpecies = item.name;
+              showCallout(entry);
+              if (!item.geojson && item.geojsonUrl) {
+                badge.classList.add('loading');
+                try {
+                  const res = await fetch(item.geojsonUrl);
+                  if (!res.ok) throw new Error('HTTP ' + res.status);
+                  item.geojson = await res.json();
+                } catch (err) {
+                  console.error('Failed to load GeoJSON for', item.name, err);
+                } finally {
+                  badge.classList.remove('loading');
+>>>>>>> Stashed changes
                 }
 
                 function positionSatwaBadges(species) {
