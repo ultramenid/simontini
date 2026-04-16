@@ -15,29 +15,6 @@
     </div>
 
 
-<<<<<<< Updated upstream
-    <!-- STICKY NAV -->
-    <nav id="sitenav"
-        class="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[52px] px-[5vw]  backdrop-blur-md border-b border-[#e2d8cc]">
-        <div
-            class="nav-brand flex items-center gap-1.5 uppercase tracking-[0.18em] text-[#8b2a1a] text-[.65rem] font-semibold">
-            <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt=""
-                    class="h-8"></a>
-        </div>
-        <div class="nav-actions">
-            <ul class="nav-links flex list-none">
-                <li><a href="#pendahuluan">Pendahuluan</a></li>
-                <li><a href="#metodologi">Metodologi</a></li>
-                <li><a href="#deforestasi">Deforestasi 2025</a></li>
-                {{-- <li><a href="#konsesi">Konsesi</a></li> --}}
-                <li><a href="#diskusi">Diskusi</a></li>
-                <li><a href="#rekomendasi">Rekomendasi</a></li>
-            </ul>
-            <div class="global-lang" aria-label="language switcher">
-                <a href="{{ url('/id/status-deforestasi-indonesia-2025') }}" id="lang-id" class="g-lang-btn active">ID</a>
-                <a href="{{ url('/en/status-of-deforestation-in-indonesia-2025') }}" id="lang-en"
-                    class="g-lang-btn">EN</a>
-=======
   <!-- STICKY NAV -->
   <nav id="sitenav"
     class="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[52px] px-[5vw]  backdrop-blur-md border-b border-[#e2d8cc]">
@@ -163,7 +140,6 @@
               {{-- <div class="text-[0.55rem] text-gray-500 mt-4 px-1 text-right">Data: University of Maryland
                 Lossyear ·
                 Auriga STADI · simontini.id</div> --}}
->>>>>>> Stashed changes
             </div>
         </div>
     </nav>
@@ -1387,61 +1363,6 @@
 
 
 
-<<<<<<< Updated upstream
-                <!-- <ul class="insight-list">
-                                                                                                                                                                                                                                                                                                              <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
-                                                                                                                                                                                                                                                                                                              <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
-                                                                                                                                                                                                                                                                                                              <li>Deforestasi dalam konsesi konversi mencapai 26% dari deforestasi nasional</li>
-                                                                                                                                                                                                                                                                                                              <li>Deforestasi dalam APL mencapai 28% dari deforestasi nasional</li>
-                                                                                                                                                                                                                                                                                                            </ul> -->
-            </div>
-            <div class="viz-block viz-block--full mt-2 mb-2 ">
-                <div class="viz-frame viz-frame--padded">
-                    <div class="max-w-5xl mx-auto px-10 z-20 relative">
-
-                        <div x-data="{
-                            active: 0,
-                            images: [{
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
-                                    desc: '<strong>Tutupan hutan alam dalam konsesi kebun kayu PT Malinau Hijau Lestari (MHL) di Malinau, Kalimantan Utara.</strong> Pemberian izin kebun kayu pada area bertutupan hutan alam seperti ini merupakan salah satu bentuk deforestasi terencana oleh pemerintah karena memberikan ruang bagi MHL untuk membabat hutan alam dan menggantinya (konversi) dengan kebun kayu energi (biomassa) yang akan ditebang secara periodik.',
-                                    cc: '© Auriga Nusantara, Mei 2024.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
-                                    desc: '<strong>Deforestasi oleh ekspansi tambang nikel PT Weda Bay Nickel di Halmahera Tengah, Maluku Utara.</strong> Dengan menerbitkan izin tambang pada daerah bertutupan hutan, pemerintah dasarnya merencanakan deforestasi demi eksploitasi nikel di wilayah izin pertambangan ini.',
-                                    cc: '© Auriga Nusantara, Desember 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
-                                    desc: '<strong>Deforestasi oleh pembangunan kawasan industri Indonesia Pomalaa Industry Park (IPIP) di Kolaka, Sulawesi Tenggara.</strong> Kawasan industri ini merupakan salah satu Proyek Strategis Nasional (PSN) dan berada dalam Kawasan Hutan Produksi Konversi.',
-                                    cc: '© Auriga Nusantara, Desember 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
-                                    desc: '<strong>Deforestasi oleh pembangunan pembangkit listrik tenaga air PLTA Mentarang di Malinau, Kalimantan Utara.</strong> Kegiatan ini merupakan salah satu Proyek Strategis Nasional.',
-                                    cc: '© Auriga Nusantara, Oktober 2025.'
-                                }
-                            ]
-                        }">
-
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                        elements: images.map(img => ({
-                            href: img.src,
-                            description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
-                        })),
-                        startAt: active
-                    }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
-
-                                <!-- PREV -->
-                                <button x-show="active > 0" @click="active--"
-                                    class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                                    ◀
-                                </button>
-=======
         <!-- <ul class="insight-list">
                                                                                                                                                                                                                                                                                                             <li>Pengenduran perlindungan lingkungan mempermudah pembukaan hutan</li>
                                                                                                                                                                                                                                                                                                             <li>Program pangan, energi, dan air beririsan dengan jutaan hektare hutan alam</li>
@@ -1495,7 +1416,6 @@
                   class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                   ◀
                 </button>
->>>>>>> Stashed changes
 
                                 <button x-show="active < images.length - 1" @click="active++"
                                     class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
@@ -1503,42 +1423,6 @@
                                 </button>
                             </div>
 
-<<<<<<< Updated upstream
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                                  <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                                                </div> -->
-
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
-
-
-                        </div>
-
-=======
               <!-- DESC -->
               <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
@@ -1553,7 +1437,6 @@
                       :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                       <img :src="img.src" alt="thumbnail"
                         class="w-full h-full object-cover object-top transition duration-200" />
->>>>>>> Stashed changes
                     </div>
                 </div>
             </div><br><br>
@@ -1635,25 +1518,6 @@
                             ]
                         }">
 
-<<<<<<< Updated upstream
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                        elements: images.map(img => ({
-                            href: img.src,
-                            description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
-                        })),
-                        startAt: active
-                    }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
-
-                                <!-- PREV -->
-                                <button x-show="active > 0" @click="active--"
-                                    class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                                    ◀
-                                </button>
-=======
       <div>
         <div class="chapter-header">
           <span class="ms-num">2.</span>
@@ -1733,7 +1597,6 @@
                   class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                   ◀
                 </button>
->>>>>>> Stashed changes
 
                                 <button x-show="active < images.length - 1" @click="active++"
                                     class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
@@ -1741,41 +1604,6 @@
                                 </button>
                             </div>
 
-<<<<<<< Updated upstream
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                                  <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                                                </div> -->
-
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
-
-                        </div>
-
-=======
               <!-- DESC -->
               <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                                 <small style="font-size: 12px;" x-html="images[active].desc"></small>
@@ -1790,7 +1618,6 @@
                       :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                       <img :src="img.src" alt="thumbnail"
                         class="w-full h-full object-cover object-top transition duration-200" />
->>>>>>> Stashed changes
                     </div>
                 </div>
             </div><br><br>
@@ -1892,25 +1719,6 @@
                             ]
                         }">
 
-<<<<<<< Updated upstream
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                      elements: images.map(img => ({
-                          href: img.src,
-                          description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
-                      })),
-                      startAt: active
-                  }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
-
-                                <!-- PREV -->
-                                <button x-show="active > 0" @click="active--"
-                                    class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                                    ◀
-                                </button>
-=======
       <hr class="divider"><br><br>
 
       <div>
@@ -2011,7 +1819,6 @@
                   class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                   ◀
                 </button>
->>>>>>> Stashed changes
 
                                 <button x-show="active < images.length - 1" @click="active++"
                                     class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
@@ -2019,41 +1826,6 @@
                                 </button>
                             </div>
 
-<<<<<<< Updated upstream
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                                              </div> -->
-
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
-
-                        </div>
-
-=======
               <!-- DESC -->
               <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                               <small style="font-size: 12px;" x-html="images[active].desc"></small>
@@ -2068,7 +1840,6 @@
                       :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                       <img :src="img.src" alt="thumbnail"
                         class="w-full h-full object-cover object-top transition duration-200" />
->>>>>>> Stashed changes
                     </div>
                 </div>
             </div><br><br>
@@ -2140,25 +1911,6 @@
                             ]
                         }">
 
-<<<<<<< Updated upstream
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                    elements: images.map(img => ({
-                        href: img.src,
-                        description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
-                    })),
-                    startAt: active
-                }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
-
-                                <!-- PREV -->
-                                <button x-show="active > 0" @click="active--"
-                                    class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                                    ◀
-                                </button>
-=======
       <div>
         <div class="chapter-header">
           <span class="ms-num">4.</span>
@@ -2234,7 +1986,6 @@
                   class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                   ◀
                 </button>
->>>>>>> Stashed changes
 
                                 <button x-show="active < images.length - 1" @click="active++"
                                     class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
@@ -2242,41 +1993,6 @@
                                 </button>
                             </div>
 
-<<<<<<< Updated upstream
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                              <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                                            </div> -->
-
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
-
-                        </div>
-
-=======
               <!-- DESC -->
               <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                             <small style="font-size: 12px;" x-html="images[active].desc"></small>
@@ -2291,7 +2007,6 @@
                       :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                       <img :src="img.src" alt="thumbnail"
                         class="w-full h-full object-cover object-top transition duration-200" />
->>>>>>> Stashed changes
                     </div>
                 </div>
             </div><br><br>
@@ -2358,19 +2073,6 @@
                             ]
                         }">
 
-<<<<<<< Updated upstream
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                  elements: images.map(img => ({
-                      href: img.src,
-                      description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
-                  })),
-                  startAt: active
-              }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
-=======
 
 
       <hr class="divider"><br><br>
@@ -2434,7 +2136,6 @@
                     startAt: active
                 }).open()"
                   class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
->>>>>>> Stashed changes
 
                                 <!-- PREV -->
                                 <button x-show="active > 0" @click="active--"
@@ -2448,41 +2149,6 @@
                                 </button>
                             </div>
 
-<<<<<<< Updated upstream
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                            <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                                          </div> -->
-
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
-
-                        </div>
-
-=======
               <!-- DESC -->
               <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
                                           <small style="font-size: 12px;" x-html="images[active].desc"></small>
@@ -2497,7 +2163,6 @@
                       :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
                       <img :src="img.src" alt="thumbnail"
                         class="w-full h-full object-cover object-top transition duration-200" />
->>>>>>> Stashed changes
                     </div>
                 </div>
             </div><br>
@@ -2516,34 +2181,6 @@
                     yang harus dijalankan secara serentak.
                 </p>
 
-<<<<<<< Updated upstream
-                <div class="method-steps">
-                    <div class="border-b pt-0 pb-12">
-                        <div class="method-step">
-                            <div class="ms-num">1.</div>
-                            <div>
-                                <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan
-                                    alam tersisa di
-                                    Indonesia.</h4><br>
-                                <p class="body-text">
-                                    Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun,
-                                    menghadirkan sebuah
-                                    undang-undang bukan perkara mudah, dan kerap butuh waktu bertahun-tahun. Peraturan di
-                                    bawahnya, yakni
-                                    peraturan pemerintah, pun tak jarang memerlukan waktu lama untuk pembuatannya, terutama
-                                    oleh kerumitan
-                                    dan
-                                    kompleksitas persetujuan lintas kementerian, sebuah prasyarat yang diperlukan dalam
-                                    penyusunan peraturan
-                                    pemerintah. Karenanya, peraturan presiden akan merupakan terobosan taktis, namun cukup
-                                    menjawab
-                                    persoalan,
-                                    sebagai rem darurat. Maka, saatnya Presiden Prabowo menerbitkan peraturan presiden
-                                    mengenai perlindungan
-                                    <strong>seluruh</strong> hutan alam tersisa di Indonesia.
-                                </p>
-                            </div>
-=======
             <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
               <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
 
@@ -2604,7 +2241,6 @@
                         <div class="max-w-4xl mx-auto px-12 sm:px-0 py-3 text-justify"
                           style="line-height: 1; padding-right: 8rem; padding-left: 4rem;">
                           <small style="font-size: 12px;" x-html="item.desc"></small>
->>>>>>> Stashed changes
                         </div>
 
                         <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
@@ -2707,8 +2343,6 @@
                                 </div>
                             </div>
                         </div>
-<<<<<<< Updated upstream
-=======
 
                         <!-- CAPTION -->
 
@@ -2850,7 +2484,6 @@
                           </div>
                       </template>
 
->>>>>>> Stashed changes
                     </div>
 
 
@@ -2976,17 +2609,6 @@
                                             <template x-for="(item, index) in images" :key="index">
                                                 <div class="w-full flex-shrink-0">
 
-<<<<<<< Updated upstream
-                                                    <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify"
-                                                        style="line-height: 1;">
-                                                        <small style="font-size: 12px;" x-html="item.desc"></small>
-                                                    </div>
-
-                                                    <!-- GAMBAR -->
-                                                    <div class="relative">
-                                                        <img :src="item.src" @click="openLightbox(index)"
-                                                            class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
-=======
                   <div x-data="{
                                                                                             currentSlide: 0,
                                                                                             startX: 0,
@@ -3032,7 +2654,6 @@
                           <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify" style="line-height: 1;">
                             <small style="font-size: 12px;" x-html="item.desc"></small>
                           </div>
->>>>>>> Stashed changes
 
 
 
@@ -4449,1129 +4070,6 @@
                 petaRevealBars(maxIdx, 200);
             }
 
-<<<<<<< Updated upstream
-            document.addEventListener('DOMContentLoaded', () => {
-                Object.keys(PETA_DATA).forEach(k => petaBuildBars(k, PETA_DATA[k]));
-                // Select all years by default
-                PETA_YEARS.forEach((_, i) => petaSelectYear(i));
-                const totals = [229982, 230760, 257385, 261574, 433751];
-                const minV = Math.min(...totals),
-                    maxV = Math.max(...totals);
-                const isMobile = window.innerWidth < 640;
-                const minS = isMobile ? 50 : 54,
-                    maxS = isMobile ? 48 : 90;
-                document.querySelectorAll('#peta-bubbles .peta-bub').forEach((bub, i) => {
-                    const t = (totals[i] - minV) / (maxV - minV);
-                    const s = Math.round(minS + t * (maxS - minS));
-                    bub.style.width = s + 'px';
-                    bub.style.height = s + 'px';
-                    const valEl = bub.querySelector('.b-val');
-                    if (valEl) valEl.style.fontSize = (isMobile ? 0.48 : 0.78) + (t * (isMobile ? 0.22 :
-                        0.46)) + 'rem';
-                    const yrEl = bub.querySelector('.b-yr');
-                    if (yrEl) yrEl.style.fontSize = (isMobile ? 0.42 : 0.60) + (t * (isMobile ? 0.06 : 0.14)) +
-                        'rem';
-                });
-            });
-        </script>
-
-        <!-- PETA TEMATIK: Leaflet + Map JS -->
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <script src="https://unpkg.com/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js"></script>
-        <script>
-            // ── peta-bg-map: decorative background Leaflet map ──
-            (function() {
-                var _isMobile = window.innerWidth < 640;
-                var bgMap = L.map('peta-bg-map', {
-                    zoomControl: false,
-                    attributionControl: false,
-                    dragging: false,
-                    touchZoom: false,
-                    doubleClickZoom: false,
-                    scrollWheelZoom: false,
-                    boxZoom: false,
-                    keyboard: false,
-                }).setView(_isMobile ? [-7.3, 118] : [-0.4, 119], _isMobile ? 3 : 3.5);
-                L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-                    layers: 'proteus:POLITICAL_LEVEL_1_dissolved',
-                    format: 'image/png',
-                    transparent: true,
-                }).addTo(bgMap);
-            })();
-        </script>
-        <script>
-            (function() {
-                const isMobile = window.innerWidth < 640;
-                const map = L.map('map', {
-                    zoomControl: false,
-                    attributionControl: false,
-                    gestureHandling: true,
-                    scrollWheelZoom: false,
-                    doubleClickZoom: false,
-                    minZoom: isMobile ? 0.1 : 4,
-                    maxZoom: isMobile ? 3 : 9
-                }).setView(isMobile ? [-7.3, 118] : [-3.4, 118], isMobile ? 3 : 5);
-
-                L.tileLayer('', {
-                    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
-                    maxZoom: 19
-                }).addTo(map);
-
-                var wmsLayer = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-                    layers: 'proteus:POLITICAL_LEVEL_1_dissolved ',
-                    format: 'image/png',
-                    transparent: true
-                }).addTo(map);
-
-                // Custom panes so toggling choropleth layers is a single CSS display flip
-                map.createPane('choroplethPane');
-                map.getPane('choroplethPane').style.zIndex = 350;
-                map.createPane('choroplethLabelPane');
-                map.getPane('choroplethLabelPane').style.zIndex = 351;
-                map.getPane('choroplethPane').style.display = 'none';
-                map.getPane('choroplethLabelPane').style.display = 'none';
-                map.createPane('kabupatenPane');
-                map.getPane('kabupatenPane').style.zIndex = 352;
-                map.createPane('kabupatenLabelPane');
-                map.getPane('kabupatenLabelPane').style.zIndex = 353;
-                map.getPane('kabupatenPane').style.display = 'none';
-                map.getPane('kabupatenLabelPane').style.display = 'none';
-
-                const stadi2025Layer = L.layerGroup().addTo(map);
-                const choroplethLayer = L.layerGroup().addTo(map);
-                const choroplethLabelLayer = L.layerGroup().addTo(map);
-                const kabupatenLayer = L.layerGroup().addTo(map);
-                const kabupatenLabelLayer = L.layerGroup().addTo(map);
-                const markerLayer = L.layerGroup().addTo(map);
-                const polygonLayer = L.layerGroup().addTo(map);
-                const calloutLayer = {
-                    clearLayers: () => {}
-                };
-                let markerRegistry = [];
-                let activeMarker = null;
-                let activeRow = null;
-                let currentMode = 'provinsi';
-                const activeModes = new Set();
-                let currentKonsesiCat = null;
-                const activeKonsesiCats = new Set();
-                let activeEntry = null;
-                let activePolygonSpecies = null;
-                let stadi2025Loaded = false;
-                let choroplethGeoLayer = null;
-                let kabupatenGeoLayer = null;
-
-                const MODES = {
-                    provinsi: {
-                        kpiLabel: 'Deforestasi di 10 provinsi teratas',
-                        kpiVal: '302.493',
-                        kpiUnit: 'hektare',
-                        notesSidebar: [
-                            '10 provinsi teratas didominasi Kalimantan dan Sumatera.',
-                            'Kalimantan Tengah naik ke peringkat pertama pada 2025.',
-                            'Aceh, Sumatera Utara, dan Sumatera Barat melonjak tajam.'
-                        ],
-                        notesBox: [''],
-                        bubble: {
-                            label: 'Kabupaten lainnya (373)',
-                            value: '131.258',
-                            unit: 'hektare'
-                        },
-                        markers: [{
-                                lat: -1.60615374,
-                                lng: 113.416,
-                                rank: 1,
-                                name: 'Kalimantan Tengah',
-                                value: '56.900',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 0.45468874,
-                                lng: 116.451,
-                                rank: 2,
-                                name: 'Kalimantan Timur',
-                                value: '47.135',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 4.22572873,
-                                lng: 96.912,
-                                rank: 3,
-                                name: 'Aceh',
-                                value: '38.157',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -0.08652108,
-                                lng: 111.121,
-                                rank: 4,
-                                name: 'Kalimantan Barat',
-                                value: '31.876',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -3.91073545,
-                                lng: 136.624,
-                                rank: 5,
-                                name: 'Papua Tengah',
-                                value: '26.978',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -0.84851756,
-                                lng: 100.465,
-                                rank: 6,
-                                name: 'Sumatera Barat',
-                                value: '26.940',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 2.18843942,
-                                lng: 99.058,
-                                rank: 7,
-                                name: 'Sumatera Utara',
-                                value: '20.512',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 2.91502507,
-                                lng: 116.246,
-                                rank: 8,
-                                name: 'Kalimantan Utara',
-                                value: '19.716',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 0.50874453,
-                                lng: 101.815,
-                                rank: 9,
-                                name: 'Riau',
-                                value: '17.812',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -4.22893963,
-                                lng: 139.454,
-                                rank: 10,
-                                name: 'Papua Pegunungan',
-                                value: '16.468',
-                                dir: 'left'
-                            }
-                        ],
-                        dlUrl: 'https://simontini.id/assets/2025-data/provinsi.xlsx',
-
-                    },
-
-                    kabupaten: {
-                        kpiLabel: 'Deforestasi di 10 kabupaten teratas',
-                        kpiVal: '95.733',
-                        kpiUnit: 'hektare',
-                        notesSidebar: [
-                            'Top-10 kabupaten mencakup 22% deforestasi nasional.',
-                            'Didominasi Kalimantan dan Tanah Papua.',
-                            'Kutai Timur dan Kapuas menjadi hotspot utama.'
-                        ],
-                        notesBox: [''],
-                        bubble: {
-                            label: 'Kabupaten lainnya (373)',
-                            value: '338.018',
-                            unit: 'hektare'
-                        },
-                        markers: [{
-                                lat: 1.908,
-                                lng: 117.537,
-                                rank: 1,
-                                name: 'Berau',
-                                value: '19.163',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 0.87,
-                                lng: 117.191,
-                                rank: 2,
-                                name: 'Kutai Timur',
-                                value: '12.781',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -1.314,
-                                lng: 114.326,
-                                rank: 3,
-                                name: 'Kapuas',
-                                value: '11.850',
-                                dir: 'left'
-                            },
-                            {
-                                lat: 0.808,
-                                lng: 112.386,
-                                rank: 4,
-                                name: 'Kapuas Hulu',
-                                value: '9.393',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -1.314,
-                                lng: 113.074,
-                                rank: 5,
-                                name: 'Katingan',
-                                value: '8.934',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -1.251,
-                                lng: 131.34,
-                                rank: 6,
-                                name: 'Sorong',
-                                value: '7.168',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -0.236,
-                                lng: 114.48,
-                                rank: 7,
-                                name: 'Murung Raya',
-                                value: '7.140',
-                                dir: 'bottom'
-                            },
-                            {
-                                lat: -7.88,
-                                lng: 140.237,
-                                rank: 8,
-                                name: 'Merauke',
-                                value: '6.557',
-                                dir: 'top'
-                            },
-                            {
-                                lat: -1.108,
-                                lng: 113.541,
-                                rank: 9,
-                                name: 'Gunung Mas',
-                                value: '6.539',
-                                dir: 'bottom'
-                            },
-                            {
-                                lat: 2.686,
-                                lng: 117.22,
-                                rank: 10,
-                                name: 'Bulungan',
-                                value: '6.208',
-                                dir: 'right'
-                            }
-                        ],
-                        tables: [],
-                        dlUrl: 'https://simontini.id/assets/2025-data/kabupaten.xlsx'
-                    },
-
-                    konservasi: {
-                        kpiLabel: 'Deforestasi di area kawasan konservasi',
-                        kpiVal: '25.077',
-                        kpiUnit: 'hektare',
-                        notesSidebar: [
-                            'Termasuk kawasan konservasi, KBA, dan habitat spesies dilindungi.',
-                            'Papua dan Sumatera menjadi lokasi dominan.',
-                            'Tekanan tertinggi terjadi di TN Kerinci Seblat dan Jayawijaya.'
-                        ],
-                        notesBox: [''],
-                        dlUrl: 'https://simontini.id/assets/2025-data/konservasi.xlsx',
-                        bubble: {
-                            label: 'konservasi lainnya (373)',
-                            value: '7.924',
-                            unit: 'hektare'
-                        },
-
-                        markers: [{
-                                lat: -2.33,
-                                lng: 101.684,
-                                rank: 1,
-                                name: 'TN Kerinci Seblat',
-                                value: '6.362',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -4.244,
-                                lng: 140.255,
-                                rank: 2,
-                                name: 'SM Pegunungan Jayawijaya',
-                                value: '3.210',
-                                dir: 'right'
-                            },
-                            {
-                                lat: 3.744,
-                                lng: 97.703,
-                                rank: 3,
-                                name: 'TN Gunung Leuser',
-                                value: '1.379',
-                                dir: 'left'
-                            },
-                            {
-                                lat: 4.423,
-                                lng: 97.159,
-                                rank: 4,
-                                name: 'TB Lingga Isaq',
-                                value: '1.199',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -3.757,
-                                lng: 136.263,
-                                rank: 5,
-                                name: 'CA Enarotali',
-                                value: '1.049',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -2.84,
-                                lng: 138.797,
-                                rank: 6,
-                                name: 'SM Mamberamo Foja',
-                                value: '950',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -4.223,
-                                lng: 138.023,
-                                rank: 7,
-                                name: 'TN Lorentz',
-                                value: '889',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -1.15,
-                                lng: 133.295,
-                                rank: 8,
-                                name: 'CA Pegunungan Tamrau Selatan',
-                                value: '796',
-                                dir: 'right'
-                            },
-                            {
-                                lat: -0.819,
-                                lng: 101.211,
-                                rank: 9,
-                                name: 'CA Batang Pangean I',
-                                value: '779',
-                                dir: 'left'
-                            },
-                            {
-                                lat: -0.352,
-                                lng: 101.105,
-                                rank: 10,
-                                name: 'SM Bukit Rimbang Bukit Baling',
-                                value: '539',
-                                dir: 'left'
-                            }
-                        ]
-                    },
-
-                    megafauna: {
-                        kpiLabel: 'Total habitat terdampak',
-                        kpiVal: '156.463',
-                        kpiUnit: 'hektare',
-                        notesSidebar: [
-                            'Mencakup habitat harimau, badak, gajah, dan orangutan.',
-                            'Sebaran terbesar terdapat di Sumatera dan Kalimantan.',
-                            'Nilai tidak menghitung duplikasi area habitat yang beririsan.'
-                        ],
-                        notesBox: [''],
-                        species: [{
-                                lokal: 'Harimau Sumatra',
-                                lat: 3.4,
-                                lng: 94.2,
-                                icon: '🐅',
-                                image: '/assets/images/satwa/image.png',
-                                name: 'Panthera tigris sumatrae',
-                                value: '78.049 hektare',
-                                dir: 'left',
-                                geojsonUrl: '/geojson/def_harimau.json'
-                            },
-                            {
-                                lokal: 'Gajah Sumatra',
-                                lat: -0.38,
-                                lng: 96.0,
-                                icon: '🐘',
-                                image: '/assets/images/satwa/image-2.png',
-                                name: 'Elephas maximus sumatranus',
-                                value: '25.301',
-                                dir: 'left',
-                                geojsonUrl: '/geojson/def_gajah.json'
-                            },
-                            {
-                                lokal: 'Badak Sumatra',
-                                lat: -6.2,
-                                lng: 101.7,
-                                icon: '🦏',
-                                image: '/assets/images/satwa/image-3.png',
-                                name: 'Dicerorhinus sumatrensis sumatrensis',
-                                value: '18.477',
-                                dir: 'left',
-                                geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis.json'
-                            },
-                            {
-                                lokal: 'Orangutan Tapanuli',
-                                lat: 5.7,
-                                lng: 98.2,
-                                icon: '🦧',
-                                image: '/assets/images/satwa/image-4.png',
-                                name: 'Pongo tapanuliensis',
-                                value: '505',
-                                dir: 'right',
-                                geojsonUrl: '/geojson/def_pongo_tapanuliensis.json'
-                            },
-                            {
-                                lokal: 'Orangutan Sumatra',
-                                lat: 1.0,
-                                lng: 102.6,
-                                icon: '🦧',
-                                image: '/assets/images/satwa/image-5.png',
-                                name: 'Pongo abelii',
-                                value: '16.519',
-                                dir: 'right',
-                                geojsonUrl: '/geojson/def_pongo_abelii.json'
-                            },
-                            {
-                                lokal: 'Orangutan Kalimantan',
-                                lat: 3.5,
-                                lng: 111.5,
-                                icon: '🦧',
-                                image: '/assets/images/satwa/image-6.png',
-                                name: 'Pongo pygmaeus',
-                                value: '66.890',
-                                dir: 'left',
-                                geojsonUrl: '/geojson/def_pongo_pygmaeus.json'
-                            },
-                            {
-                                lokal: 'Badak Kalimantan',
-                                lat: 2.5,
-                                lng: 121.5,
-                                icon: '🦏',
-                                image: '/assets/images/satwa/image-7.png',
-                                name: 'Dicerorhinus sumatrensis harrissoni',
-                                value: '3.057',
-                                dir: 'right',
-                                geojsonUrl: '/geojson/def_Dicerorhinus_Sumatrensis_Harrissoni.json'
-                            }
-                        ],
-                        tables: [],
-                        dlUrl: ''
-                    },
-
-                    konsesi: {
-                        kpiLabel: 'Pilih kategori konsesi',
-                        kpiVal: '—',
-                        kpiUnit: 'hektare',
-                        notesSidebar: ['Pilih kategori konsesi di atas untuk melihat data.',
-                            'Menampilkan 10 konsesi teratas per kategori.'
-                        ],
-                        notesBox: [''],
-                        markers: [],
-                        tables: [],
-                        subCategories: {
-                            'kebun-kayu': {
-                                title: 'Konsesi Kebun Kayu',
-                                kpiLabel: 'Total 10 teratas (kebun kayu)',
-                                kpiVal: '11.265',
-                                othersLabel: '202 izin Lainnya',
-                                othersVal: '21.799',
-                                bullets: [''],
-                                geojsonFile: '/geojson/kebun-kayu.geojson',
-                                dlUrl: 'https://simontini.id/assets/2025-data/kebun-kayu.xlsx',
-                                markers: [{
-                                        lat: 2.17,
-                                        lng: 117.521,
-                                        rank: 1,
-                                        name: 'PT TANJUNG REDEB HUTANI',
-                                        value: 1408,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 0.394,
-                                        lng: 110.954,
-                                        rank: 2,
-                                        name: 'PT FINNANTARA INTIGA',
-                                        value: 1341,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: 0.417,
-                                        lng: 116.378,
-                                        rank: 3,
-                                        name: 'PT MAHAKARYA PERDANA GEMILANG UNIT II',
-                                        value: 1324,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 0.527,
-                                        lng: 117.221,
-                                        rank: 4,
-                                        name: 'PT DIVA PERDANA PESONA',
-                                        value: 1296,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -1.333,
-                                        lng: 114.131,
-                                        rank: 5,
-                                        name: 'PT BUMI HIJAU PRIMA',
-                                        value: 1294,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -1.974,
-                                        lng: 111.138,
-                                        rank: 6,
-                                        name: 'PT GRACE PUTRI PERDANA',
-                                        value: 1171,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: 1.858,
-                                        lng: 117.738,
-                                        rank: 7,
-                                        name: 'PT HUTAN BERAU LESTARI',
-                                        value: 1097,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 0.056,
-                                        lng: 115.924,
-                                        rank: 8,
-                                        name: 'PT SENDAWAR ADHI KARYA',
-                                        value: 1019,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 1.354,
-                                        lng: 118.134,
-                                        rank: 9,
-                                        name: 'PT SWADAYA PERKASA',
-                                        value: 662,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 1.4,
-                                        lng: 101.685,
-                                        rank: 10,
-                                        name: 'PT SEKATO PRATAMA MAKMUR',
-                                        value: 652,
-                                        dir: 'bottom'
-                                    }
-                                ]
-                            },
-                            'logging': {
-                                title: 'Konsesi Logging',
-                                kpiLabel: 'Total 10 teratas (logging)',
-                                kpiVal: '20.749',
-                                othersLabel: '227 izin Lainnya',
-                                othersVal: '53.661',
-                                bullets: [''],
-                                geojsonFile: '/geojson/logging.geojson',
-                                dlUrl: 'https://simontini.id/assets/2025-data/logging.xlsx',
-                                markers: [{
-                                        lat: 0.881264893236657,
-                                        lng: 117.026904047300249,
-                                        rank: 1,
-                                        name: 'PT KIANI LESTARI',
-                                        value: 3739,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -1.252358059458737,
-                                        lng: 114.487610383463576,
-                                        rank: 2,
-                                        name: 'PT DASA INTIGA',
-                                        value: 3195,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: 2.098063545278295,
-                                        lng: 101.015865352762475,
-                                        rank: 3,
-                                        name: 'PT DIAMOND RAYA TIMBER',
-                                        value: 2741,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -3.017296513002015,
-                                        lng: 101.832872347710747,
-                                        rank: 4,
-                                        name: 'PT ANUGERAH PRATAMA INSPIRASI',
-                                        value: 2211,
-                                        dir: 'bottom'
-                                    },
-                                    {
-                                        lat: -0.75146963045224,
-                                        lng: 116.510730877588813,
-                                        rank: 5,
-                                        name: 'PT ITCI KARTIKA UTAMA (ITCIKU)',
-                                        value: 1902,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 2.028798962469609,
-                                        lng: 117.080426147312622,
-                                        rank: 6,
-                                        name: 'PT INHUTANI I UNIT LABANAN',
-                                        value: 1688,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -3.502650172817841,
-                                        lng: 135.621210438578998,
-                                        rank: 7,
-                                        name: 'PT JATI DHARMA INDAH PLYWOOD INDUSTRIES',
-                                        value: 1415,
-                                        dir: 'bottom'
-                                    },
-                                    {
-                                        lat: 2.474287034103671,
-                                        lng: 117.210276665613563,
-                                        rank: 8,
-                                        name: 'PT INHUTANI I UNIT SAMBARATA',
-                                        value: 1330,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -1.051472046229932,
-                                        lng: 113.055533404223866,
-                                        rank: 9,
-                                        name: 'PT DWIMA JAYA UTAMA',
-                                        value: 1267,
-                                        dir: 'top'
-                                    },
-                                    {
-                                        lat: 1.288242736097689,
-                                        lng: 99.580298186802281,
-                                        rank: 10,
-                                        name: 'PT BARUMUN RAYA PADANG LANGKAT',
-                                        value: 1260,
-                                        dir: 'left'
-                                    }
-                                ]
-                            },
-                            'sawit': {
-                                title: 'Konsesi Sawit',
-                                kpiLabel: 'Total 10 teratas (sawit)',
-                                kpiVal: '13.610',
-                                othersLabel: '709 izin Lainnya',
-                                othersVal: '24.300',
-                                bullets: [''],
-                                geojsonFile: '/geojson/sawit.geojson',
-                                dlUrl: 'https://simontini.id/assets/2025-data/sawit.xlsx',
-                                markers: [{
-                                        lat: -1.163,
-                                        lng: 131.378,
-                                        rank: 1,
-                                        name: 'Inti Kebun Lestari',
-                                        value: 2624,
-                                        dir: 'top'
-                                    },
-                                    {
-                                        lat: 0.679,
-                                        lng: 121.502,
-                                        rank: 2,
-                                        name: 'Banyan Tumbuh Lestari',
-                                        value: 2094,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -1.316,
-                                        lng: 131.233,
-                                        rank: 3,
-                                        name: 'Inti Kebun Sejahtera',
-                                        value: 2053,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -7.918,
-                                        lng: 140.71,
-                                        rank: 4,
-                                        name: 'Merauke Sawit Jaya',
-                                        value: 1808,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -1.391,
-                                        lng: 131.193,
-                                        rank: 5,
-                                        name: 'Papua Lestari Abadi',
-                                        value: 1300,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: 0.868,
-                                        lng: 112.804,
-                                        rank: 6,
-                                        name: 'Borneo International Anugerah',
-                                        value: 877,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -1.673,
-                                        lng: 113.417,
-                                        rank: 7,
-                                        name: 'Agro Kalimantan Lestari',
-                                        value: 784,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: 1.229,
-                                        lng: 118.277,
-                                        rank: 8,
-                                        name: 'Anugrah Surya Mandiri',
-                                        value: 713,
-                                        dir: 'top'
-                                    },
-                                    {
-                                        lat: 0.996,
-                                        lng: 112.031,
-                                        rank: 9,
-                                        name: 'Khatulistiwa Agro Abadi',
-                                        value: 682,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -0.191,
-                                        lng: 104.85,
-                                        rank: 10,
-                                        name: 'Citra Sugi Aditya',
-                                        value: 676,
-                                        dir: 'bottom'
-                                    }
-                                ]
-                            },
-                            'tambang': {
-                                title: 'Konsesi Tambang',
-                                kpiLabel: 'Total 10 teratas (tambang)',
-                                kpiVal: '8.929',
-                                othersLabel: '1.131 izin Lainnya',
-                                othersVal: '32.233',
-                                bullets: [''],
-                                geojsonFile: '/geojson/tambang.geojson',
-                                dlUrl: 'https://simontini.id/assets/2025-data/tambang.xlsx',
-                                markers: [{
-                                        lat: 2.09,
-                                        lng: 117.323,
-                                        rank: 1,
-                                        name: 'Berau Coal (Batubara)',
-                                        value: 1473,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -3.013,
-                                        lng: 121.841,
-                                        rank: 2,
-                                        name: 'Sulawesi Cahaya Mineral (Nikel)',
-                                        value: 1085,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -0.102,
-                                        lng: 114.889,
-                                        rank: 3,
-                                        name: 'Maruwai Coal (Batubara)',
-                                        value: 920,
-                                        dir: 'top'
-                                    },
-                                    {
-                                        lat: 0.64,
-                                        lng: 127.99,
-                                        rank: 4,
-                                        name: 'Weda Bay Nickel (Nikel)',
-                                        value: 902,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -2.633,
-                                        lng: 121.621,
-                                        rank: 5,
-                                        name: 'Vale Indonesia TBK (Nikel)',
-                                        value: 842,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: 1.109,
-                                        lng: 99.205,
-                                        rank: 6,
-                                        name: 'Agincourt Resources (Emas)',
-                                        value: 840,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -0.278,
-                                        lng: 114.902,
-                                        rank: 7,
-                                        name: 'Lahai Coal (Batubara)',
-                                        value: 770,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -1.537,
-                                        lng: 112.523,
-                                        rank: 8,
-                                        name: 'Blok Waringin Agung (Emas)',
-                                        value: 764,
-                                        dir: 'right'
-                                    },
-                                    {
-                                        lat: -1.068,
-                                        lng: 114.624,
-                                        rank: 9,
-                                        name: 'Suprabari Mapanindo Mineral',
-                                        value: 673,
-                                        dir: 'left'
-                                    },
-                                    {
-                                        lat: -2.891,
-                                        lng: 122.045,
-                                        rank: 10,
-                                        name: 'Bintang Delapan Mineral (Nikel)',
-                                        value: 659,
-                                        dir: 'bottom'
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                };
-
-                function clearModeVisuals() {
-                    markerLayer.clearLayers();
-                    polygonLayer.clearLayers();
-                    // Instantly hide/show choropleth layers via CSS pane display — zero DOM traversal.
-                    // Kabupaten overrides provinsi: hide provinsi pane when kabupaten is active
-                    if (!activeModes.has('provinsi') || activeModes.has('kabupaten')) {
-                        map.getPane('choroplethPane').style.display = 'none';
-                        map.getPane('choroplethLabelPane').style.display = 'none';
-                    }
-                    if (!activeModes.has('kabupaten')) {
-                        map.getPane('kabupatenPane').style.display = 'none';
-                        map.getPane('kabupatenLabelPane').style.display = 'none';
-                    }
-                    map.closePopup();
-                    markerRegistry = [];
-                    activeMarker = null;
-                    activeRow = null;
-                    activeEntry = null;
-                    activePolygonSpecies = null;
-                    document.getElementById('table-wrap').innerHTML = '';
-                    document.getElementById('table-panel').classList.remove('open');
-                    document.getElementById('table-toggle').style.display = 'none';
-                    const sp = document.getElementById('satwa-badges');
-                    sp.innerHTML = '';
-                    sp.classList.remove('visible', 'has-active');
-                }
-
-                function setActiveMarker(marker) {
-                    if (activeMarker && activeMarker._icon) {
-                        activeMarker._icon.querySelector('.rank-dot, .species-dot')?.classList.remove('active');
-                    }
-                    activeMarker = marker;
-                    if (activeMarker && activeMarker._icon) {
-                        activeMarker._icon.querySelector('.rank-dot, .species-dot')?.classList.add('active');
-                    }
-                }
-
-                function clearActiveRow() {
-                    if (activeRow) activeRow.classList.remove('active-row');
-                    activeRow = null;
-                }
-
-                function registerMarker(entry) {
-                    markerRegistry.push(entry);
-                }
-
-                function findMarkerByLabel(label) {
-                    const q = (label || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                    if (!q) return null;
-                    return markerRegistry.find(item => {
-                        const n = (item.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                        return n.includes(q) || q.includes(n);
-                    }) || null;
-                }
-
-                function focusMarkerByLabel(label, rowEl = null) {
-                    const found = findMarkerByLabel(label);
-                    if (!found) return;
-                    if (rowEl) {
-                        clearActiveRow();
-                        rowEl.classList.add('active-row');
-                        activeRow = rowEl;
-                    }
-                    setActiveMarker(found.marker);
-                    const satwaBadges = document.getElementById('satwa-badges');
-                    const isSatwaActive = currentMode === 'megafauna' && satwaBadges && satwaBadges.classList.contains(
-                        'has-active');
-                    if (!isSatwaActive) {
-                        map.flyTo(found.marker.getLatLng(), Math.max(map.getZoom(), 6), {
-                            duration: 0.6
-                        });
-                    }
-                    setTimeout(() => showCallout(found), 260);
-                }
-
-                function buildPopupHtml(entry) {
-                    const item = entry.item;
-                    const unitMap = {
-                        provinsi: 'hektare',
-                        kabupaten: 'hektare',
-                        konservasi: 'hektare',
-                        megafauna: 'hektare habitat terdampak'
-                    };
-                    const tagMap = {
-                        provinsi: 'provinsi',
-                        kabupaten: 'kabupaten',
-                        konservasi: 'kawasan konservasi',
-                        megafauna: 'megafauna'
-                    };
-                    const unit = unitMap[entry.mode] || 'hektare';
-                    const rank = entry.kind !== 'species' ? `<div class="popup-rank"></div>` :
-                        `<div class="popup-rank">Megafauna ikonik</div>`;
-                    return `<div class="popup-inner">${rank}<div class="popup-name">${item.name}</div><div class="popup-val">${item.value}</div><div class="popup-unit">${unit}</div></div>`;
-                }
-
-                function showCallout(entry) {
-                    if (!entry) return;
-                    activeEntry = entry;
-                    setActiveMarker(entry.marker);
-                    entry.marker.setPopupContent(buildPopupHtml(entry));
-                    entry.marker.openPopup();
-                }
-
-                function createRankMarker(item, modeOverride) {
-                    const mode = modeOverride || currentMode;
-                    const dotColors = {
-                        provinsi: '#c04030',
-                        kabupaten: '#e07840',
-                        konservasi: '#4a8c5c',
-                        megafauna: '#7060b0'
-                    };
-                    const catColors = {
-                        'kebun-kayu': '#b06020',
-                        logging: '#c04030',
-                        sawit: '#4a8c5c',
-                        tambang: '#7060b0'
-                    };
-                    const color = mode === 'konsesi' ? (catColors[item.cat] || '#b06020') : (dotColors[mode] || '#8b2a1a');
-                    const icon = L.divIcon({
-                        className: '',
-                        html: `<div class="rank-dot" style="background:${color};box-shadow:0 2px 8px ${color}88">${item.rank}</div>`,
-                        iconSize: [28, 28],
-                        iconAnchor: [14, 14]
-                    });
-                    const marker = L.marker([item.lat, item.lng], {
-                        icon
-                    }).addTo(markerLayer);
-                    const entry = {
-                        name: item.name,
-                        marker,
-                        value: item.value,
-                        mode,
-                        item,
-                        kind: 'rank'
-                    };
-                    marker.bindPopup('', {
-                        closeButton: true,
-                        maxWidth: 280,
-                        minWidth: 190
-                    });
-                    marker.on('mouseover', () => setActiveMarker(marker));
-                    marker.on('mouseout', () => {
-                        if (!activeEntry || activeEntry.marker !== marker) setActiveMarker(null);
-                    });
-                    marker.on('click', () => {
-                        showCallout(entry);
-                        clearActiveRow();
-                    });
-                    registerMarker(entry);
-                }
-
-                function createSpeciesMarker(item) {
-                    const icon = L.divIcon({
-                        className: '',
-                        html: '<div style="display:none;"></div>',
-                        iconSize: [0, 0],
-                        iconAnchor: [0, 0]
-                    });
-                    const marker = L.marker([item.lat, item.lng], {
-                        icon
-                    }).addTo(markerLayer);
-                    const entry = {
-                        name: item.name,
-                        marker,
-                        value: item.value,
-                        mode: currentMode,
-                        item,
-                        kind: 'species'
-                    };
-                    marker.on('click', () => {
-                        showCallout(entry);
-                        clearActiveRow();
-                    });
-                    registerMarker(entry);
-                    createSatwaBadge(item, entry);
-                }
-
-                function createSatwaBadge(item, entry) {
-                    const badgesContainer = document.getElementById('satwa-badges');
-                    const badge = document.createElement('div');
-                    badge.className = 'satwa-badge';
-                    badge.dataset.species = item.name;
-                    const shortName = item.name.split(' ').slice(-2).join(' ');
-                    badge.innerHTML =
-                        `
-                                                                                                                                                                          <div class="satwa-badge-circle"><img src="${item.image || ''}" alt="${item.name}"></div>
-                                                                                                                                                                          <div class="satwa-badge-name" title="${item.name}">${shortName}</div>
-                                                                                                                                                                          <div class="satwa-badge-detail">
-                                                                                                                                                                          <span class="si-name">${item.name}</span>
-                                                                                                                                                                          <span class="si-val">${item.value}</span>
-                                                                                                                                                                          <span class="si-val">${item.lokal}</span>
-                                                                                                                                                                          <span class="si-unit">deforestasi di habitat</span>
-                                                                                                                                                                          </div>
-                                                                                                                                                                      `;
-                    badge.addEventListener('click', async (e) => {
-                        e.stopPropagation();
-                        const isActive = badge.classList.contains('active');
-                        document.querySelectorAll('.satwa-badge.active').forEach(b => b.classList.remove(
-                            'active'));
-                        badgesContainer.classList.remove('has-active');
-                        polygonLayer.clearLayers();
-                        activePolygonSpecies = null;
-                        if (!isActive) {
-                            badge.classList.add('active');
-                            badgesContainer.classList.add('has-active');
-                            activePolygonSpecies = item.name;
-                            showCallout(entry);
-                            if (!item.geojson && item.geojsonUrl) {
-                                badge.classList.add('loading');
-                                try {
-                                    const res = await fetch(item.geojsonUrl);
-                                    if (!res.ok) throw new Error('HTTP ' + res.status);
-                                    item.geojson = await res.json();
-                                } catch (err) {
-                                    console.error('Failed to load GeoJSON for', item.name, err);
-                                } finally {
-                                    badge.classList.remove('loading');
-                                }
-                            }
-                            if (item.geojson) {
-                                L.geoJSON(item.geojson, {
-                                    style: {
-                                        color: '#bc4a3c',
-                                        weight: 1,
-                                        opacity: 0.85,
-                                        fillColor: '#bc4a3c',
-                                        fillOpacity: 1
-                                    }
-                                }).addTo(polygonLayer);
-                            }
-                        } else {
-                            map.closePopup();
-                        }
-                    });
-                    badgesContainer.appendChild(badge);
-                    return {
-                        badge,
-                        entry
-                    };
-=======
         function createSatwaBadge(item, entry) {
           const badgesContainer = document.getElementById('satwa-badges');
           const badge = document.createElement('div');
@@ -5610,7 +4108,6 @@
                   console.error('Failed to load GeoJSON for', item.name, err);
                 } finally {
                   badge.classList.remove('loading');
->>>>>>> Stashed changes
                 }
 
                 function positionSatwaBadges(species) {
