@@ -1175,14 +1175,14 @@
           <i>Deforestasi 2025 per wilayah administrasi, area konservasi, dan konsesi.</i>
         </small> --}}
             </div><br><br>
-            <div class="mx-[50px] relative pl-10 py-2">
-    <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">&ldquo;</span>
+           <div class="mx-[50px] relative pl-4 py-2">
+        <!-- Tanda kutip besar di kiri atas -->
+        <span class="absolute top-0 left-0 text-black  leading-none font-extralight" style="font-size: 3.5rem; line-height: 1;">&rdquo;</span>
 
-    <p class="text-black text-[20px] md:text-[20px] leading-snug">
-        Pada 2025, area deforestasi di atas 5 hektare seluas 166.590 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare.
-        <span class="font-black" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
-    </p>
-</div>
+        <p class="text-black text-[20px] md:text-[20px] leading-snug font-extralight italic ">
+           Pada 2025, area deforestasi di atas 5 hektare seluas 166.590 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare.<span class="font-extralight -pl-4" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
+        </p>
+    </div>
 
         </section>
 

@@ -1082,7 +1082,7 @@
             </div><br><br>
 
 
-            <div class="mx-[50px] relative pl-5 py-2">
+            <div class="mx-[50px] relative pl-4 py-2">
                 <!-- Tanda kutip besar di kiri atas -->
                 <span class="absolute top-0 left-0 text-black  leading-none font-extralight" style="font-size: 3.5rem; line-height: 1;">&rdquo;</span>
 
