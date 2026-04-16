@@ -1156,93 +1156,96 @@
                                                                                                                                                                                                                                                                                         </ul> -->
             </div>
 
-            <div class="viz-block viz-block--full mt-2 mb-2">
+            <div class="viz-block viz-block--full mt-2 mb-2 ">
                 <div class="viz-frame viz-frame--padded">
-                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+                <div class="max-w-5xl mx-auto px-10 z-20 relative">
 
-                        <div x-data="{
-                            active: 0,
-                            images: [{
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
-                                    desc: '<strong>Natural forest cover within the timber plantation concession of PT Malinau Hijau Lestari (MHL) in Malinau, North Kalimantan.</strong> The granting of timber plantation permits in areas covered by natural forest such as this constitutes a form of government-sanctioned deforestation, as it allows MHL to clear the natural forest and replace it (convert it) with an energy (biomass) timber plantation that will be harvested periodically.',
-                                    cc: '© Auriga Nusantara, May 2024.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the expansion of PT Weda Bay Nickel’s nickel mine in Central Halmahera, North Maluku.</strong> By issuing a mining permit for a forested area, the government is essentially planning deforestation to facilitate nickel extraction within this mining concession.',
-                                    cc: '© Auriga Nusantara, December 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the development of the Pomalaa Industry Park (IPIP) in Kolaka, Southeast Sulawesi.</strong> This industrial park is one of the National Strategic Projects (PSN) and is located within a Conversion Production Forest Area. ',
-                                    cc: '© Auriga Nusantara, December 2025'
-                                },
-                                {
+                    <div x-data="{
+                        active: 0,
+                        images: [{
+                            src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
+                                desc: 'Deforestasi oleh pembangunan kawasan industri Indonesia Pomalaa Industry Park (IPIP) di Kolaka, Sulawesi Tenggara. Kawasan industri ini merupakan salah satu Proyek Strategis Nasional (PSN) dan berada dalam Kawasan Hutan Produksi Konversi.',
+                                cc: '© Auriga Nusantara, Desember 2025.'
+
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
+                                desc: 'Deforestasi oleh ekspansi tambang nikel PT Weda Bay Nickel di Halmahera Tengah, Maluku Utara. Dengan menerbitkan izin tambang pada daerah bertutupan hutan, pemerintah dasarnya merencanakan deforestasi demi eksploitasi nikel di wilayah izin pertambangan ini.',
+                                cc: '© Auriga Nusantara, Desember 2025.'
+                            },
+                            {
+
+
                                     src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the construction of the Mentarang hydroelectric power plant in Malinau, North Kalimantan.</strong> This project is one of the National Strategic Projects. ',
-                                    cc: '© Auriga Nusantara, October 2025.'
-                                }
-                            ]
-                        }">
+                                desc: 'Deforestasi oleh pembangunan pembangkit listrik tenaga air PLTA Mentarang di Malinau, Kalimantan Utara. Kegiatan ini merupakan salah satu Proyek Strategis Nasional.',
+                                cc: '© Auriga Nusantara, Oktober 2025.'
+                            },
+                            {
 
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                                                                    elements: images.map(img => ({
-                                                                      href: img.src,
-                                                                      description: img.desc
-                                                                    })),
-                                                                    startAt: active
-                                                                  }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
-                                <!-- PREV -->
-                                <button x-show="active > 0" @click="active--"
-                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                  ◀
-                </button>
+                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
+                                desc: 'Tutupan hutan alam dalam konsesi kebun kayu PT Malinau Hijau Lestari (MHL) di Malinau, Kalimantan Utara. Pemberian izin kebun kayu pada area bertutupan hutan alam seperti ini merupakan salah satu bentuk deforestasi terencana oleh pemerintah karena memberikan ruang bagi MHL untuk membabat hutan alam dan menggantinya (konversi) dengan kebun kayu energi (biomassa) yang akan ditebang secara periodik.',
+                                cc: '© Auriga Nusantara, Mei 2024.'
+                            }
+                        ]
+                    }">
 
-                <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                  ▶
-                </button>
+                    <!-- IMAGE -->
+                    <div class="relative" x-ref="mainImg">
+                        <img :src="images[active].src" @click="GLightbox({
+                                elements: images.map(img => ({
+                                    href: img.src,
+                                    description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                                })),
+                                startAt: active
+                            }).open()"
+                        class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+
+                        <!-- PREV -->
+                        <button x-show="active > 0" @click="active--"
+                        class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                        ◀
+                        </button>
+
+                        <button x-show="active < images.length - 1" @click="active++"
+                        class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                        ▶
+                        </button>
+                    </div>
+
+                    <!-- DESC -->
+                    <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                                                                                            <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                                                                                            </div> -->
+
+                    <div
+                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+
+                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                        <template x-for="(img, index) in images" :key="index">
+                            <div @click="active = index"
+                            class="cursor-pointer aspect-square sm:w-20 transition-opacity duration-200"
+                            :class="active === index ? 'opacity-100 ring-2 ring-offset-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                            <img :src="img.src" alt="thumbnail" class="w-full h-12 object-cover object-top" />
                             </div>
-
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                              </div> -->
-
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
-
+                        </template>
                         </div>
 
+                        <div
+                        class="text-right text-[10px] leading-tight flex flex-col justify-start h-auto max-w-xl relative z-50">
+
+                        <div x-html="images[active].desc" class="font-medium mb-1"></div>
+
+                        <div class="opacity-60" x-html="images[active].cc"></div>
+
+                        </div>
                     </div>
+
+
+                    </div>
+
+                </div>
                 </div>
             </div><br><br>
 
@@ -1281,91 +1284,94 @@
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+                <div class="max-w-5xl mx-auto px-10 z-20 relative">
 
-                        <div x-data="{
-                            active: 0,
-                            images: [{
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
-                                    desc: '<strong>Deforestation within the logging concession of PT Jati Dharma Indah Plywood Industries in Nabire, Central Papua.</strong> ',
-                                    cc: '© Auriga Nusantara, December 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the nickel mining operations of PT Anugerah Surya Pratama, Manuram Island, Raja Ampat, Papua.</strong>',
-                                    cc: '© Auriga Nusantara, September 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
-                                    desc: '<strong>Natural forest cover in Sarmi Regency, Papua.</strong> However, the government has issued a nickel mining permit to PT Iriana Mutiara Mining for this area, thereby paving the way for the loss of this natural forest cover. ',
-                                    cc: '© Auriga Nusantara, December 2024.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest by the food estate project in Sorong, West Papua.</strong> ',
-                                    cc: '© Auriga Nusantara, April 2026.'
-                                }
-                            ]
-                        }">
+                    <div x-data="{
+                        active: 0,
+                        images: [{
 
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                                                                elements: images.map(img => ({
-                                                                  href: img.src,
-                                                                  description: img.desc
-                                                                })),
-                                                                startAt: active
-                                                              }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+                                src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
+                                desc: 'Deforestasi oleh kegiatan pertambangan nikel PT Anugerah Surya Pratama, Pulau Manuram, Raja Ampat, Papua.',
+                                cc: '© Auriga Nusantara, September 2025.',
 
-                                <!-- PREV -->
-                                <button x-show="active > 0" @click="active--"
-                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                  ◀
-                </button>
 
-                <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                  ▶
-                </button>
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
+                                desc: 'Deforestasi dalam konsesi logging PT Jati Dharma Indah Plywood Industries di Nabire, Papua Tengah. ',
+                                cc: '© Auriga Nusantara, Desember 2025.'
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
+                                desc: 'Tutupan hutan alam di Kabupaten Sarmi, Papua. Namun, pemerintah telah menerbitkan izin tambang nikel PT Iriana Mutiara Mining di area ini sehingga membuka ruang bagi hilangnya tutupan hutan alam tersebut.',
+                                cc: '© Auriga Nusantara, Desember 2024.',
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
+                                desc: 'Pembabatan hutan alam oleh proyek lumbung pangan (food estate) di Sorong, Papua Barat Daya.',
+                                cc: '© Auriga Nusantara, April 2026.',
+                            }
+                        ]
+                    }">
+
+                    <!-- IMAGE -->
+                    <div class="relative" x-ref="mainImg">
+                        <img :src="images[active].src" @click="GLightbox({
+                                                                                    elements: images.map(img => ({
+                                                                                        href: img.src,
+                                                                                        description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                                                                                    })),
+                                                                                    startAt: active
+                                                                                }).open()"
+                        class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+
+                        <!-- PREV -->
+                        <button x-show="active > 0" @click="active--"
+                        class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                        ◀
+                        </button>
+
+                        <button x-show="active < images.length - 1" @click="active++"
+                        class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                        ▶
+                        </button>
+                    </div>
+
+                    <!-- DESC -->
+                    <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                                                                                            <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                                                                                            </div> -->
+
+                    <!-- THUMB + LOKASI -->
+
+                    <div
+                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+
+                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                        <template x-for="(img, index) in images" :key="index">
+                            <div @click="active = index"
+                            class="cursor-pointer aspect-square sm:w-20 transition-opacity duration-200"
+                            :class="active === index ? 'opacity-100 ring-2 ring-offset-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                            <img :src="img.src" alt="thumbnail" class="w-full h-12 object-cover object-top" />
                             </div>
-
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                              </div> -->
-
-
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
-
+                        </template>
                         </div>
 
+                        <div
+                        class="text-right text-[10px] leading-tight flex flex-col justify-start h-auto max-w-xl relative z-50">
+
+                        <div x-html="images[active].desc" class="font-medium mb-1"></div>
+
+                        <div class="opacity-60" x-html="images[active].cc"></div>
+
+                        </div>
                     </div>
+
+
+                    </div>
+
+                </div>
                 </div>
             </div><br><br>
 
@@ -1418,90 +1424,89 @@
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+                <div class="max-w-5xl mx-auto px-10 z-20 relative">
 
-                        <div x-data="{
-                            active: 0,
-                            images: [{
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the construction of logging roads within PT Toba Pulp Lestari’s timber plantation concession.</strong> These roads will serve as gateways to massive deforestation in this area.',
-                                    cc: '© Auriga Nusantara/Earthsight, December 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest due to oil palm plantation development within the PT Equator Sumber Rezeki concession in Kapuas Hulu, West Kalimantan.</strong> ',
-                                    cc: '© Auriga Nusantara, June 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 3/konsesi pbph.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the development of timber plantations within PT Industrial Forest Plantation’s concession in Kapuas, Central Kalimantan.</strong> ',
-                                    cc: '© Auriga Nusantara/Earthsight, July 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forests caused by the expansion of a nickel mine in Kolonodale, North Morowali, Central Sulawesi.</strong>',
-                                    cc: '© Auriga Nusantara, October 2025.'
-                                }
-                            ]
-                        }">
+                    <div x-data="{
+                        active: 0,
+                        images: [{
+                                src: '{{ asset('assets/images/stadi2025/diskusi 3/HTI1.jpg') }}',
+                                desc: 'Pembabatan hutan alam untuk perluasan kebun kayu ekaliptus di dalam konsesi PT Toba Pulp Lestari. ',
+                                cc: '© Auriga Nusantara/Earthsight, Desember 2025.'
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
+                                desc: 'Pembabatan hutan alam oleh pembangunan kebun sawit di dalam konsesi PT Equator Sumber Rezeki di Kapuas Hulu, Kalimantan Barat.',
+                                cc: '© Auriga Nusantara, Juni 2025.'
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 3/konsesi pbph.jpg') }}',
+                                desc: 'Deforestasi oleh pengembangan kebun kayu di dalam konsesi PT Industrial Forest Plantation di Kapuas, Kalimantan Tengah.',
+                                cc: '© Auriga Nusantara/Earthsight, Juli 2025.'
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
+                                desc: 'Pembabatan hutan alam oleh ekspansi tambang nikel di Kolonodale, Morowali Utara, Sulawesi Tengah. ',
+                                cc: '© Auriga Nusantara, Oktober 2025.'
+                            }
+                        ]
+                    }">
 
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                                                          elements: images.map(img => ({
-                                                            href: img.src,
-                                                            description: img.desc
-                                                          })),
-                                                          startAt: active
-                                                        }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+                    <!-- IMAGE -->
+                    <div class="relative" x-ref="mainImg">
+                        <img :src="images[active].src" @click="GLightbox({
+                                                                                elements: images.map(img => ({
+                                                                                    href: img.src,
+                                                                                    description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                                                                                })),
+                                                                                startAt: active
+                                                                            }).open()"
+                        class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
-                                <!-- PREV -->
-                                <button x-show="active > 0" @click="active--"
-                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                  ◀
-                </button>
+                        <!-- PREV -->
+                        <button x-show="active > 0" @click="active--"
+                        class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                        ◀
+                        </button>
 
-                <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                  ▶
-                </button>
+                        <button x-show="active < images.length - 1" @click="active++"
+                        class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                        ▶
+                        </button>
+                    </div>
+
+                    <!-- DESC -->
+                    <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                                                                                            <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                                                                                        </div> -->
+
+                    <!-- THUMB + LOKASI -->
+                    <div
+                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+
+                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                        <template x-for="(img, index) in images" :key="index">
+                            <div @click="active = index"
+                            class="cursor-pointer aspect-square sm:w-20 transition-opacity duration-200"
+                            :class="active === index ? 'opacity-100 ring-2 ring-offset-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                            <img :src="img.src" alt="thumbnail" class="w-full h-12 object-cover object-top" />
                             </div>
-
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                              </div> -->
-
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
+                        </template>
                         </div>
 
+                        <div
+                        class="text-right text-[10px] leading-tight flex flex-col justify-start h-auto max-w-xl relative z-50">
+
+                        <div x-html="images[active].desc" class="font-medium mb-1"></div>
+
+                        <div class="opacity-60" x-html="images[active].cc"></div>
+
+                        </div>
                     </div>
+
+                    </div>
+
+                </div>
                 </div>
             </div><br><br>
 
@@ -1537,91 +1542,95 @@
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+                <div class="max-w-5xl mx-auto px-10 z-20 relative">
 
-                        <div x-data="{
-                            active: 0,
-                            images: [{
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
-                                    desc: '<strong>Deforestation within the timber plantation concession of PT Indosubur Sukses Makmur in East Kutai, East Kalimantan.</strong> The issuance of timber plantation permits in areas covered by natural forest such as this is an example of legal deforestation in Indonesia.',
-                                    cc: '© Auriga Nusantara/Earthsight, January 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}',
-                                    desc: '<strong>Conversion of natural forest into large-scale oil palm plantations within the PT Borneo International Anugerah concession in Kapuas Hulu, West Kalimantan.</strong> The existence of permits for monoculture plantations in this area has allowed the company to clear the existing natural forest.',
-                                    cc: '© Auriga Nusantara, June 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru.jpg') }}',
-                                    desc: '<strong>Gold mining operations by PT Agincourt Resources in the Batang Toru landscape, North Sumatra.</strong> The Batang Toru landscape is the only habitat of the Tapanuli orangutan (Pongo tapanuliensis) in the world. The existence of mining permits indicates that the clearing of natural forests is occurring as a form of legal deforestation.',
-                                    cc: '© Auriga Nusantara, May 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Banyan Tumbuh Lestari.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest within the palm oil concession of PT Banyan Tumbuh Lestari in Pohuwato, Gorontalo.</strong> The company’s permit is technically for a palm oil plantation, but in practice, the company is establishing a biomass timber plantation. The government’s decision to reclassify this forest area as an “Other Use Area” has opened the door to legal deforestation in this region.',
-                                    cc: '© Auriga Nusantara, May 2025.'
-                                }
-                            ]
-                        }">
+                    <div x-data="{
+                        active: 0,
+                        images: [{
+                                src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
+                                desc: 'Deforestasi oleh kegiatan pembangunan jaringan jalan eksploitasi di dalam konsesi kebun kayu PT Toba Pulp Lestari. Jaringan jalan tersebut akan menjadi pintu masuk deforestasi masif di area ini. ',
+                                cc: '© Auriga Nusantara/Earthsight, Desember 2025.'
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
+                                desc: 'Deforestasi di dalam konsesi kebun kayu PT Indosubur Sukses Makmur di Kutai Timur, Kalimantan Timur. Penerbitan izin kebun kayu di area bertutupan hutan alam seperti ini menjadi salah satu contoh deforestasi legal (legal deforestation) di Indonesia. ',
+                                cc: '© Auriga Nusantara/Earthsight, Januari 2025.'
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}',
+                                desc: 'Konversi hutan alam menjadi kebun sawit skala besar dalam konsesi PT Borneo International Anugerah di Kapuas Hulu, Kalimantan Barat. Keberadaan izin kebun monokultur di area ini membuka ruang bagi perusahaan membabat hutan alam yang ada.',
+                                cc: '© Auriga Nusantara, Juni 2025.'
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru_3.jpg') }}',
+                                desc: 'Aktivitas tambang emas PT Agincourt Resources di bentang alam Batang Toru, Sumatera Utara. Bentang alam Batang Toru adalah satu-satunya habitat orangutan tapanuli (Pongo tapanuliensis) di dunia. Adanya izin tambang menjadi indikasi pembabatan hutan alam yang terjadi sebagai deforestasi legal.',
+                                cc: '© Auriga Nusantara, Mei 2025.'
+                            },
 
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                                                      elements: images.map(img => ({
-                                                        href: img.src,
-                                                        description: img.desc
-                                                      })),
-                                                      startAt: active
-                                                    }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Banyan Tumbuh Lestari.jpg') }}',
+                                desc: 'Pembabatan hutan alam di dalam konsesi sawit PT Banyan Tumbuh Lestari di Pohuwato, Gorontalo. Izin perusahaan ini sejatinya untuk perkebunan sawit, namun pada praktiknya perusahaan membangun kebun kayu biomassa. Langkah pemerintah melepas kawasan hutan ini menjadi Area Penggunaan Lain menjadi pintu masuk deforestasi legal di area ini.',
+                                cc: '© Auriga Nusantara, Mei 2025.'
+                            }
+                        ]
+                    }">
 
-                                <!-- PREV -->
-                                <button x-show="active > 0" @click="active--"
-                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                  ◀
-                </button>
+                    <!-- IMAGE -->
+                    <div class="relative" x-ref="mainImg">
+                        <img :src="images[active].src" @click="GLightbox({
+                                                                                elements: images.map(img => ({
+                                                                                    href: img.src,
+                                                                                    description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                                                                                })),
+                                                                                startAt: active
+                                                                            }).open()"
+                        class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
-                <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                  ▶
-                </button>
+                        <!-- PREV -->
+                        <button x-show="active > 0" @click="active--"
+                        class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                        ◀
+                        </button>
+
+                        <button x-show="active < images.length - 1" @click="active++"
+                        class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                        ▶
+                        </button>
+                    </div>
+
+                    <!-- DESC -->
+                    <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                                                                                        <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                                                                                        </div> -->
+
+                    <!-- THUMB + LOKASI -->
+                    <div
+                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+
+                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                        <template x-for="(img, index) in images" :key="index">
+                            <div @click="active = index"
+                            class="cursor-pointer aspect-square sm:w-20 transition-opacity duration-200"
+                            :class="active === index ? 'opacity-100 ring-2 ring-offset-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                            <img :src="img.src" alt="thumbnail" class="w-full h-12 object-cover object-top" />
                             </div>
-
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                              </div> -->
-
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
-
+                        </template>
                         </div>
 
+                        <div
+                        class="text-right text-[10px] leading-tight flex flex-col justify-start h-auto max-w-xl relative z-50">
+
+                        <div x-html="images[active].desc" class="font-medium mb-1"></div>
+
+                        <div class="opacity-60" x-html="images[active].cc"></div>
+
+                        </div>
                     </div>
+
+                    </div>
+
+                </div>
                 </div>
             </div><br><br>
 
@@ -1654,87 +1663,87 @@
                     accounting for 43% of national deforestation.
                 </p>
             </div>
-             <div class="viz-block viz-block--full mt-2 mb-2">
-        <div class="viz-frame viz-frame--padded">
-          <div class="max-w-5xl mx-auto px-4 z-20 relative">
+            <div class="viz-block viz-block--full mt-2 mb-2">
+                <div class="viz-frame viz-frame--padded">
+                <div class="max-w-5xl mx-auto px-10 z-20 relative">
 
-            <div x-data="{
-                                                                          active: 0,
-                                                                          images: [
-                                                                            {
-                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest within the Rawa Singkil Wildlife Reserve, Aceh.</strong> The presence of canals indicates that this activity did not occur overnight, raising questions about the effectiveness of the management of this conservation area by the Aceh Natural Resources Conservation Agency (BKSDA).',
-                                    cc: '© HAKA'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forests—habitat of orangutans—for the development of oil palm plantations within the PT Borneo Internasional Anugerah concession in Kapuas Hulu, West Kalimantan.</strong>',
-                                    cc: '© Auriga Nusantara, June 2025.'
-                                },
-                                {
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
-                                    desc: '<strong>Deforestation in the Rawa Singkil Wildlife Reserve, Aceh.</strong> This deforestation is believed to be for the development of oil palm plantations in one of Indonesia’s most densely populated orangutan habitats.',
-                                    cc: '© HAKA, Agustus 2025.'
-                                                                            }
-                                                                          ]
-                                                                        }">
+                    <div x-data="{
+                        active: 0,
+                        images: [{
+                                src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
+                                desc: 'Pembaban hutan alam di dalam Suaka Margasatwa Rawa Singkil, Aceh. Adanya kanal mengindikasikan bahwa kegiatan ini tidak berlangsung dalam sekejap sehingga menjadi pertanyaan akan efektivitas pengelolaan kawasan konservasi ini oleh Balai Konservasi Sumber Daya Alam (BKSDA) Aceh.',
+                                cc: ' '
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
+                                desc: 'Pembabatan hutan alam habitat orangutan untuk pembangunan kebun sawit di dalam konsesi PT Borneo Internasional Anugerah di Kapuas Hulu, Kalimantan Barat.',
+                                cc: '© Auriga Nusantara, Juni 2025.'
+                            },
+                            {
+                                src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
+                                desc: 'Deforestasi di Suaka Margasatwa Rawa Singkil, Aceh. Pembabatan hutan ini ditengarai untuk pembangunan kebun sawit di salah satu habitat orangutan terpadat di Indonesia ini.',
+                                cc: '© HAKA, Agustus 2025.'
+                            }
+                        ]
+                    }">
 
-              <!-- IMAGE -->
-              <div class="relative" x-ref="mainImg">
-                <img :src="images[active].src" @click="GLightbox({
-                    elements: images.map(img => ({
-                        href: img.src,
-                        description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
-                    })),
-                    startAt: active
-                }).open()"
-                  class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+                    <!-- IMAGE -->
+                    <div class="relative" x-ref="mainImg">
+                        <img :src="images[active].src" @click="GLightbox({
+                                                                            elements: images.map(img => ({
+                                                                                href: img.src,
+                                                                                description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                                                                            })),
+                                                                            startAt: active
+                                                                        }).open()"
+                        class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
-                <!-- PREV -->
-                <button x-show="active > 0" @click="active--"
-                  class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                  ◀
-                </button>
+                        <!-- PREV -->
+                        <button x-show="active > 0" @click="active--"
+                        class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                        ◀
+                        </button>
 
-                <button x-show="active < images.length - 1" @click="active++"
-                  class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
-                  ▶
-                </button>
-              </div>
-
-              <!-- DESC -->
-              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                          <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                                        </div> -->
-
-              <!-- THUMB + LOKASI -->
-              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
-                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
-                  <template x-for="(img, index) in images" :key="index">
-                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
-                      <img :src="img.src" alt="thumbnail"
-                        class="w-full h-full object-cover object-top transition duration-200" />
+                        <button x-show="active < images.length - 1" @click="active++"
+                        class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
+                        ▶
+                        </button>
                     </div>
-                  </template>
+
+                    <!-- DESC -->
+                    <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                                                                                        <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                                                                                    </div> -->
+
+                    <div
+                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+
+                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                        <template x-for="(img, index) in images" :key="index">
+                            <div @click="active = index"
+                            class="cursor-pointer aspect-square sm:w-20 transition-opacity duration-200"
+                            :class="active === index ? 'opacity-100 ring-2 ring-offset-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                            <img :src="img.src" alt="thumbnail" class="w-full h-12 object-cover object-top" />
+                            </div>
+                        </template>
+                        </div>
+
+                        <div
+                        class="text-right text-[10px] leading-tight flex flex-col justify-start h-auto max-w-xl relative z-50">
+
+                        <div x-html="images[active].desc" class="font-medium mb-1"></div>
+
+                        <div class="opacity-60" x-html="images[active].cc"></div>
+
+                        </div>
+                    </div>
+
+                    </div>
+
                 </div>
-
-                <div class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
-
-                  <div x-html="images[active].desc"></div>
-
-                  <div class="opacity-60" x-html="images[active].cc"></div>
-
                 </div>
-                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div><br>
+            </div><br><br>
         </section>
 
         <!-- REKOMENDASI -->
@@ -1771,107 +1780,104 @@
                         </div>
 
                         <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
-                            <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
+              <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
 
-                                <div x-data="{
-                                    currentSlide: 4,
-                                    startX: 0,
-                                    images: [{
-                                            src: '{{ asset('assets/images/stadi2025/RUDP1 en.jpg') }}',
-                                            desc: '<strong>Nearly half of Indonesia’s natural forests lack legal protection.</strong> Indonesia has 118.7 million hectares of terrestrial forest areas. It is worth noting that a forest area is a region designated as such. It is not uncommon for forest areas to lack forest cover. Conversely, a significant amount of natural forest cover lies outside designated forest areas.'
-                                        },
-                                        {
-                                            src: '{{ asset('assets/images/stadi2025/RUDP2 en.jpg') }}',
-                                            desc: '<strong>Nearly half of Indonesia’s natural forests lack legal protection.</strong> Of the 22 million hectares of conservation forest areas, 4.7 million hectares are not covered by natural forest. Legally, all natural forests within conservation forest areas are protected.'
-                                        },
-                                        {
-                                            src: '{{ asset('assets/images/stadi2025/RUDP3 en.jpg') }}',
-                                            desc: '<strong>Nearly half of Indonesia’s natural forests lack legal protection.</strong> There are 227,127 hectares of natural forest cover within protected forests that lie outside the moratorium area, leaving them vulnerable to deforestation due to government policies or projects.'
-                                        },
-                                        {
-                                            src: '{{ asset('assets/images/stadi2025/RUDP4 en.jpg') }}',
-                                            desc: '<strong>Nearly half of Indonesia’s natural forests lack legal protection.</strong> There are 22.5 million hectares of natural forest cover in production forests located outside the moratorium area, making them vulnerable to deforestation because they lack legal protection.'
-                                        },
-                                        {
-                                            src: '{{ asset('assets/images/stadi2025/RUDP5 en.jpg') }}',
-                                            desc: '<strong>Nearly half of Indonesia’s natural forests lack legal protection.</strong> There are 9 million hectares of natural forest cover outside designated forest areas—or located within Other Land Use Areas (APL)—and 8.1 million hectares of that are outside the moratorium area. In total, 41.6 million hectares (44%) of Indonesia’s natural forest cover lack legal protection.'
-                                        }
-                                    ],
-                                    get totalSlides() { return this.images.length },
+                <div x-data="{
+                    currentSlide: 4,
+                    startX: 0,
+                    images: [{
+                            src: '{{ asset('assets/images/stadi2025/RUDP1 in.jpg') }}',
+                            desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 118,7 juta hektare kawasan hutan darat Indonesia. Patut dicatat bahwa kawasan hutan adalah suatu wilayah yang ditetapkan sebagai kawasan hutan. Tak jarang kawasan hutan tidak bertutupan hutan. Sebaliknya, tak sedikit tutupan hutan alam yang berada di luar kawasan hutan.'
+                        },
+                        {
+                            src: '{{ asset('assets/images/stadi2025/RUDP2 in.jpg') }}',
+                            desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Dari 22 juta hektare kawasan hutan konservasi, tersapa 4,7 juta hektare yang tidak bertutupan hutan alam. Secara hukum, seluruh hutan alam di dalam kawasan hutan konservasi dilindungi.'
+                        },
+                        {
+                            src: '{{ asset('assets/images/stadi2025/RUDP3 in.jpg') }}',
+                            desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 227.127 hektare tutupan hutan alam di dalam hutan lindung yang berada di luar area moratorium sehingga cukup terbuka menjadi sasaran deforestasi oleh kebijakan atau proyek pemerintah.'
+                        },
+                        {
+                            src: '{{ asset('assets/images/stadi2025/RUDP4 in.jpg') }}',
+                            desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 22,5 juta hektare tutupan hutan alam di hutan produksi yang berada di luar area moratorium, sehingga rawan menjadi sasaran deforestasi karena tidak memiliki perlindungan hukum.'
+                        },
+                        {
+                            src: '{{ asset('assets/images/stadi2025/RUDP5 in.jpg') }}',
+                            desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 9 juta hektare tutupan hutan alam di luar kawasan hutan, atau berada di dalam Area Penggunaan Lain (APL), dan 8,1 juta hektare di antaranya di luar area moratorium. Secara keseluruhan, 41,6 juta hektare (44%) tutupan hutan alam Indonesia tanpa perlindungan hukum.'
+                        }
+                    ],
+                    get totalSlides() { return this.images.length },
 
-                                    openLightbox(index) {
-                                        GLightbox({
-                                            elements: this.images.map(img => ({
-                                                href: img.src,
-                                                description: img.desc
-                                            })),
-                                            startAt: index
-                                        }).open();
-                                    },
+                    openLightbox(index) {
+                        GLightbox({
+                            elements: this.images.map(img => ({
+                                href: img.src,
+                                description: img.desc
+                            })),
+                            startAt: index
+                        }).open();
+                    },
 
-                                    startSwipe(e) { this.startX = e.touches[0].clientX },
-                                    handleTouchMove(e) {
-                                        let diff = this.startX - e.touches[0].clientX
-                                        if (Math.abs(diff) > 50) {
-                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
-                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
-                                            this.startX = e.touches[0].clientX
-                                        }
-                                    }
-                                }" @touchstart="startSwipe" @touchmove="handleTouchMove"
-                                    class="relative max-w-4xl mx-auto overflow-hidden w-full">
+                    startSwipe(e) { this.startX = e.touches[0].clientX },
+                    handleTouchMove(e) {
+                        let diff = this.startX - e.touches[0].clientX
+                        if (Math.abs(diff) > 50) {
+                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                            this.startX = e.touches[0].clientX
+                        }
+                    }
+                }" @touchstart="startSwipe"
+                  @touchmove="handleTouchMove" class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
-                                    <!-- SLIDER -->
-                                    <div class="flex " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                  <!-- SLIDER -->
+                  <div class="flex  " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
-                                        <template x-for="(item, index) in images" :key="index">
-                                            <div class="w-full flex-shrink-0">
-
-                                                <div class="max-w-4xl mx-auto px-12 sm:px-0 py-3 text-justify"
-                                                    style="line-height: 1; padding-right: 8rem; padding-left: 5rem;">
-                                                    <small style="font-size: 12px;" x-html="item.desc"></small>
-                                                </div>
+                    <template x-for="(item, index) in images" :key="index">
+                      <div class="w-full flex-shrink-0">
 
 
-                                                <!-- GAMBAR -->
-                                                <div class="relative">
-                                                    <img :src="item.src" @click="openLightbox(index)"
-                                                        class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
 
-                                                    <!-- PREV -->
-                                                    <button @click="currentSlide--" x-show="currentSlide > 0"
-                                                        class="absolute top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center"
-                                                        style="left: 1rem;">
-                                                        ◀
-                                                    </button>
+                        <!-- GAMBAR -->
+                        <div class="relative">
+                          <img :src="item.src" @click="openLightbox(index)"
+                            class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
+                          <!-- PREV -->
+                          <button @click="currentSlide--" x-show="currentSlide > 0"
+                            class="absolute top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center">
+                            ◀
+                          </button>
 
-                                                    <!-- NEXT -->
-                                                    <button @click="currentSlide++" x-show="currentSlide < totalSlides - 1"
-                                                        class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center"
-                                                        style="right: 7rem;">
-                                                        ▶
-                                                    </button>
-                                                </div>
-
-                                                <!-- CAPTION -->
-
-                                            </div>
-                                        </template>
-
-                                    </div>
-
-                                    <!-- DOTS -->
-                                    <div class="flex justify-center gap-2 mt-3">
-                                        <template x-for="(item, index) in images" :key="index">
-                                            <button @click="currentSlide = index"
-                                                :class="currentSlide === index ? 'bg-black' : 'bg-gray-400'"
-                                                class="w-2 h-2 rounded-full"></button>
-                                        </template>
-                                    </div>
-
-                                </div>
-                            </div>
+                          <!-- NEXT -->
+                          <button @click="currentSlide++" x-show="currentSlide < totalSlides - 1"
+                            class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center"
+                            style="right: 6rem;">
+                            ▶
+                          </button>
                         </div>
+
+                        <!-- CAPTION -->
+                        <div class="max-w-4xl mx-auto px-12 sm:px-0 text-left relative z-10"
+                          style="line-height: 1; padding-right: 7rem; padding-left: 2.5rem; margin-top: -1rem;">
+                          <small style="font-size: 12px;" x-html="item.desc"></small>
+                        </div>
+
+                      </div>
+                    </template>
+
+                  </div>
+
+                  <!-- DOTS -->
+                  <div class="flex justify-center gap-2 mt-3">
+                    <template x-for="(item, index) in images" :key="index">
+                      <button @click="currentSlide = index" :class="currentSlide === index ? 'bg-black' : 'bg-gray-400'"
+                        class="w-2 h-2 rounded-full"></button>
+                    </template>
+                  </div>
+
+                </div>
+              </div>
+            </div>
                     </div>
 
                     <div class="method-step border-b">
@@ -1940,69 +1946,68 @@
                                 </div>
                             </div>
 
-                            <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
-                                <div class="viz-frame !p-0 flex items-start">
+                             <div class="viz-block viz-block--full mb-2" style="margin-top: -5rem;">
+                            <div class="viz-frame !p-0 flex items-start">
 
-                                    <div x-data="{
-                                        currentSlide: 0,
-                                        startX: 0,
-                                        images: [{
-                                            src: '{{ asset('assets/images/stadi2025/RUDP8 in.jpg') }}',
-                                            desc: '<strong>There are at least 41.4 million hectares of ecologically important areas located outside conservation forest areas.</strong> These areas should be prioritized for preservation as stipulated in the Conservation Law.'
-                                        }],
-                                        get totalSlides() { return this.images.length },
+                            <div x-data="{
+                                    currentSlide: 0,
+                                    startX: 0,
+                                    images: [{
+                                        src: '{{ asset('assets/images/stadi2025/RUDP8 in.jpg') }}',
+                                        desc: '<strong> Terdapat setidaknya 41,4 juta hektare area yang penting secara ekologis berada di luar kawasan hutan konservasi. </strong> Area-area ini semestinya diprioritaskan menjadi area preservasi sebagaimana diatur UU Konservasi.'
+                                    }],
+                                    get totalSlides() { return this.images.length },
 
-                                        openLightbox(index) {
-                                            GLightbox({
-                                                elements: this.images.map(img => ({
-                                                    href: img.src,
-                                                    description: img.desc
-                                                })),
-                                                startAt: index
-                                            }).open();
-                                        },
+                                    openLightbox(index) {
+                                        GLightbox({
+                                            elements: this.images.map(img => ({
+                                                href: img.src,
+                                                description: img.desc
+                                            })),
+                                            startAt: index
+                                        }).open();
+                                    },
 
-                                        startSwipe(e) { this.startX = e.touches[0].clientX },
-                                        handleTouchMove(e) {
-                                            let diff = this.startX - e.touches[0].clientX
-                                            if (Math.abs(diff) > 50) {
-                                                if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
-                                                else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
-                                                this.startX = e.touches[0].clientX
-                                            }
+                                    startSwipe(e) { this.startX = e.touches[0].clientX },
+                                    handleTouchMove(e) {
+                                        let diff = this.startX - e.touches[0].clientX
+                                        if (Math.abs(diff) > 50) {
+                                            if (diff > 0 && this.currentSlide < this.totalSlides - 1) this.currentSlide++
+                                            else if (diff < 0 && this.currentSlide > 0) this.currentSlide--
+                                            this.startX = e.touches[0].clientX
                                         }
-                                    }" @touchstart="startSwipe" @touchmove="handleTouchMove"
-                                        class="relative max-w-4xl mx-auto overflow-hidden w-full">
+                                    }
+                                }" @touchstart="startSwipe"
+                                @touchmove="handleTouchMove" class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
-                                        <!-- SLIDER -->
-                                        <div class="flex " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                                <!-- SLIDER -->
+                                <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
-                                            <template x-for="(item, index) in images" :key="index">
-                                                <div class="w-full flex-shrink-0">
-                                                    <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify"
-                                                        style="line-height: 1;">
-                                                        <small style="font-size: 12px;" x-html="item.desc"></small>
-                                                    </div>
+                                <template x-for="(item, index) in images" :key="index">
+                                    <div class="w-full flex-shrink-0" style="margin-top: -3rem;">
 
-                                                    <!-- GAMBAR -->
-                                                    <div class="relative">
-                                                        <img :src="item.src" @click="openLightbox(index)"
-                                                            class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
+                                    <!-- GAMBAR -->
+                                    <div class="relative">
+                                        <img :src="item.src" @click="openLightbox(index)"
+                                        class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
 
-
-
-                                                        <!-- CAPTION -->
-
-                                                    </div>
-                                            </template>
-
+                                        <!-- CAPTION -->
+                                        <div class="max-w-3xl mx-auto text-left"
+                                        style="line-height: 1; margin-top: -3.5rem; padding-right: 3rem; padding-left: 4rem;">
+                                        <small style="font-size: 12px;" x-html="item.desc"></small>
                                         </div>
 
-
-
                                     </div>
+                                    </div>
+                                </template>
+
                                 </div>
+
+
+
                             </div>
+                            </div>
+                        </div>
 
                         </div>
                     </div>
@@ -2029,19 +2034,19 @@
                             </div>
                         </div>
 
-                        <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
-                            <div class="viz-frame !p-0 flex items-start">
+                       <div class="viz-block viz-block--full mb-2" style="margin-top: -3rem;">
+                                <div class="viz-frame !p-0 flex items-start">
 
                                 <div x-data="{
                                     currentSlide: 0,
                                     startX: 0,
                                     images: [{
                                             src: '{{ asset('assets/images/stadi2025/RUDP6 in.jpg') }}',
-                                            desc: '<strong> Forest protection budgets and personnel are concentrated on the island of Java.</strong> The budget available for managing one hectare of conservation forest outside national parks in Papua is only Rp 60,718 per hectare; in the Maluku Islands, Rp 82,374; in Kalimantan, Rp 361,395; in Sulawesi, Rp 530,208; in Sumatra, Rp 1,622,440; and in Bali and Nusa Tenggara, Rp 2,694,521. However, in Java, the budget per hectare is Rp 116,225,764.'
+                                            desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa. </strong> Anggaran yang tersedia untuk pengelolaan per hektare kawasan hutan konservasi di luar taman nasional di Papua hanya Rp 60.718 per hektare; di Kepulauan Maluku Rp 82.374; di Kalimantan Rp 361.395; di Sulawesi Rp 530.208; di Sumatera Rp 1.622.440; di Bali dan Nusa Tenggara Rp 2.694.521. Tapi, di Jawa tersedia anggaran per hektare Rp 116.225.764.'
                                         },
                                         {
                                             src: '{{ asset('assets/images/stadi2025/RUDP7 in.jpg') }}',
-                                            desc: '<strong> Forest protection budgets and personnel are concentrated on the island of Java.</strong> On average, each staff member at Lorentz National Park in Papua manages 38,548 hectares, while the budget available for management is Rp 6,707. Such a vast area per staff member, coupled with minimal budget availability, is relatively common across national parks outside Java. This stands in stark contrast, for example, to Gede Pangrango National Park, which has a budget of Rp 898,381 per hectare, with one staff member managing 157 hectares.'
+                                            desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa. </strong> Rerata, per orang petugas TN Lorentz di Papua mengelola 38.548 hektare, sementara anggaran yang tersedia untuk pengelolaan Rp  6.707. Cakupan per staf yang sedemikian luas sementara ketersediaan anggaran yang minim relatif merata untuk taman nasional di luar Jawa. Sangat kontras, misalnya, dengan TN Gede Pangrango yang memiliki anggaran Rp 898.381 per hektare, dengan satu staf mengelola 157 hektare.'
                                         }
                                     ],
                                     get totalSlides() { return this.images.length },
@@ -2065,57 +2070,56 @@
                                             this.startX = e.touches[0].clientX
                                         }
                                     }
-                                }" @touchstart="startSwipe" @touchmove="handleTouchMove"
-                                    class="relative max-w-4xl mx-auto overflow-hidden w-full">
+                                }" @touchstart="startSwipe"
+                                    @touchmove="handleTouchMove" class="relative max-w-4xl mx-auto overflow-hidden w-full">
 
                                     <!-- SLIDER -->
-                                    <div class="flex " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                                    <div class="flex  " :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
-                                        <template x-for="(item, index) in images" :key="index">
-                                            <div class="w-full flex-shrink-0">
+                                    <template x-for="(item, index) in images" :key="index">
+                                        <div class="w-full flex-shrink-0">
 
-                                                <div class="max-w-3xl mx-auto px-12 sm:px-0 py-3 text-justify"
-                                                    style="line-height: 1;">
-                                                    <small style="font-size: 12px;" x-html="item.desc"></small>
-                                                </div>
 
-                                                <!-- GAMBAR -->
-                                                <div class="relative">
-                                                    <img :src="item.src" @click="openLightbox(index)"
-                                                        class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
+                                        <!-- GAMBAR -->
+                                        <div class="relative">
+                                            <img :src="item.src" @click="openLightbox(index)"
+                                            class="w-full object-cover cursor-pointer max-h-[60vh]" />
 
-                                                    <!-- PREV -->
-                                                   <button @click="currentSlide--" x-show="currentSlide > 0"
-                                                    class="absolute top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center">
-                                                    ◀
-                                                    </button>
 
-                                                    <!-- NEXT -->
-                                                    <button @click="currentSlide++" x-show="currentSlide < totalSlides - 1"
-                                                    class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center">
-                                                    ▶
-                                                    </button>
-                                                </div>
+                                            <button @click="currentSlide--" x-show="currentSlide > 0"
+                                            class="absolute top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center">
+                                            ◀
+                                            </button>
 
-                                                <!-- CAPTION -->
+                                            <!-- NEXT -->
+                                            <button @click="currentSlide++" x-show="currentSlide < totalSlides - 1"
+                                            class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center">
+                                            ▶
+                                            </button>
+                                        </div>
 
-                                            </div>
-                                        </template>
+                                        <!-- CAPTION -->
+                                        <div class="max-w-6xl mx-auto px-12 sm:px-0 text-left relative z-10"
+                                            style="line-height: 1; padding-right: 11rem; padding-left: 11rem;">
+                                            <small style="font-size: 12px;" x-html="item.desc"></small>
+                                        </div>
+
+                                        </div>
+                                    </template>
 
                                     </div>
 
                                     <!-- DOTS -->
                                     <div class="flex justify-center gap-2 mt-3">
-                                        <template x-for="(item, index) in images" :key="index">
-                                            <button @click="currentSlide = index"
-                                                :class="currentSlide === index ? 'bg-black' : 'bg-gray-400'"
-                                                class="w-2 h-2 rounded-full"></button>
-                                        </template>
+                                    <template x-for="(item, index) in images" :key="index">
+                                        <button @click="currentSlide = index" :class="currentSlide === index ? 'bg-black' : 'bg-gray-400'"
+                                        class="w-2 h-2 rounded-full"></button>
+                                    </template>
                                     </div>
 
                                 </div>
+                                </div>
                             </div>
-                        </div>
                     </div>
                     <div class="method-step border-b">
                         <div class="ms-num">5.</div>
