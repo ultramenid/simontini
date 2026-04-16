@@ -492,8 +492,8 @@ body.is-preloading { overflow: hidden; }
 
 /* ── DIVIDER ── */
 .divider {
-  border: none; border-top: 1px solid var(--border);
-  margin: 48px 0;
+  border: none; border-top: 1px solid #bc4a3c;
+  /* margin: 60px 0; */
 }
 
 .divider.light { border-color: rgba(255,255,255,.08); }
@@ -950,7 +950,7 @@ body.is-preloading { overflow: hidden; }
 }
 
 .film-credit-block {
-  max-width: 560px;
+  max-width: 1200px;
   margin: 64px auto 0;
   padding-top: 34px;
   display: grid;

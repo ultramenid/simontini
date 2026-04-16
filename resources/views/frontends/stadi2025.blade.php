@@ -109,13 +109,11 @@
                 <div id="chart-app" class="w-full py-4 md:py-8" style="background:white;">
                     <div id="chart-inner" class="px-6 w-full max-w-[1400px] mx-auto">
                         <div id="chart-viz" class="w-full min-w-0">
-                            {{-- <div class="chart-header mb-4">
-                                <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestation
-                                    in Indonesia,
-                                    2001–2025</h2>
-                                <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
-                                    hectares</p>
-                            </div> --}}
+                            <div class="block w-full sm:max-w-6xl mx-auto mb-4">
+                                <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi di Indonesia, 2001-2025</h2>
+                                {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+                                    hectares</p> --}}
+                            </div>
                             <div id="chart-body" class="relative flex" style="height:420px;">
                                 <div id="y-axis"
                                     class="flex flex-col-reverse justify-between pb-[48px] w-[42px] md:w-[56px] shrink-0">
@@ -131,9 +129,9 @@
                                         style="background:white;z-index:2;">
 
                                     </div>
-                                    <small style="font-size: 12px !important;" class="text-black font-bold text-center -mt-6 z-20">
+                                    {{-- <small style="font-size: 12px !important;" class="text-black font-bold text-center -mt-6 z-20">
                                         <i>Deforestasi di Indonesia, 2001-2025</i>
-                                    </small>
+                                    </small> --}}
                                 </div>
                             </div>
                             <div class="md:hidden mt-3">
@@ -260,16 +258,21 @@
 
   {{-- step 1 --}}
   <div class="viz-block viz-block--full alur" style="margin-top: -60px !important;">
+    <div class="block w-full sm:max-w-6xl mx-auto">
+        <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Tahapan dan pemrosesan data deforestasi 2025</h2>
+        {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+            hectares</p> --}}
+    </div>
     <img src="{{ asset('assets/Tahap_ok_Ind.png') }}" alt="Simontini - 2025 Methodology"
       class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:block hidden">
     <img src="{{ asset('assets/Tahap.png') }}" alt="Simontini - 2025 Methodology"
       class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
 
-      <small
+      {{-- <small
             class="block w-full sm:max-w-6xl mx-auto text-center mt-2 font-bold"
             style="font-size: 12px !important;">
             <i>Tahapan dan pemrosesan data deforestasi 2025</i>
-        </small>
+        </small> --}}
     <section class="page-section px-[5vw] pt-8 pb-6">
       <div class="body-text">
         <p>
@@ -434,13 +437,22 @@
       </p>
       <p class="body-text">
         Tabel berikut menampilkan data deforestasi per pulau besar di Indonesia periode 2023-2025.
-      </p>
+      </p><br><br>
 
 
-
-      <div id="peta-embed" class="mx-auto">
+      
+      <div>
+        
+        <div id="peta-embed" class="mx-auto">
+        <div class="block sm:max-w-6xl mx-auto mb-4 text-left">
+              <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi per pulau besar Indonesia</h2>
+              {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+                  hectares</p> --}}
+          </div>
+        
         <!-- MAP SECTION -->
         <div class="relative bg-black overflow-hidden" style="height:500px;">
+          
 
 
           <!-- Map -->
@@ -770,12 +782,13 @@
             </table>
           </div>
         </div>
-         <small
+         {{-- <small
             class="block w-full sm:max-w-6xl mx-auto text-center font-bold"
             style="font-size: 12px !important;">
             <i>Deforestasi per pulau besar Indonesia</i>
-        </small>
+        </small> --}}
       </div><br><br>
+      </div>
 
 
 
@@ -838,6 +851,11 @@
       {{-- chart bulanan --}}
       <div class="viz-block viz-block--full mt-10 mb-6" id="chart-monthly-wrap">
         <div class="max-w-4xl mx-auto">
+          <div class="block w-full sm:max-w-6xl mx-auto mb-4">
+              <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Deforestasi per bulan di Indonesia pada 2025</h2>
+              {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+                  hectares</p> --}}
+          </div>
           <div class="">
             {{-- <div class=" px-4  sm:px-6">
               <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">Deforestasi
@@ -857,11 +875,11 @@
                     style="background:white;z-index:2;"></div>
                 </div>
               </div>
-              <small
+              {{-- <small
                 class="block w-full sm:max-w-6xl mx-auto text-center font-bold"
                 style="font-size: 12px !important;">
                     <i>Deforestasi per bulan di Indonesia pada 2025</i>
-                </small><br><br>
+                </small><br><br> --}}
             </div>
           </div>
         </div>
@@ -887,8 +905,13 @@
       <p class="body-text">
         Deforestasi berbasis provinsi Deforestasi berbasis kabupaten Deforestasi di kawasan konservasi Deforestasi di
         Habitat megafauna ikonik Deforestasi dalam Konsesi
-      </p>
+      </p><br><br>
       <div class="viz-block viz-block--full">
+        <div class="block sm:max-w-6xl mx-auto mb-4 text-left">
+              <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Peta Tematik Deforestasi 2025</h2>
+              {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+                  hectares</p> --}}
+          </div>
 
         <!-- PETA TEMATIK (inline) -->
         <!-- ── MODE PILL BAR ── -->
@@ -996,11 +1019,11 @@
             class="flex-1 flex flex-row items-stretch justify-center overflow-y-hidden overflow-x-auto"></div>
         </aside>
 
-         <small
+         {{-- <small
                   class="block w-full sm:max-w-6xl mx-auto text-center font-bold"
                   style="font-size: 12px !important;">
                   <i>Deforestasi 2025 per wilayah administrasi, area konservasi, dan konsesi.</i>
-                </small>
+                </small> --}}
     </div><br><br>
 
 
@@ -1151,9 +1174,9 @@
 
           </div>
         </div>
-      </div><br>
+      </div><br><br>
 
-      <hr class="divider">
+      <hr class="divider"><br><br>
 
       <div>
         <div class="chapter-header">
@@ -1269,9 +1292,9 @@
 
           </div>
         </div>
-      </div><br>
+      </div><br><br>
 
-      <hr class="divider">
+      <hr class="divider"><br><br>
 
       <div>
         <div class="chapter-header">
@@ -1407,9 +1430,9 @@
 
           </div>
         </div>
-      </div><br>
+      </div><br><br>
 
-      <hr class="divider">
+      <hr class="divider"><br><br>
 
       <div>
         <div class="chapter-header">
@@ -1522,12 +1545,12 @@
 
           </div>
         </div>
-      </div><br>
+      </div><br><br>
 
 
 
 
-      <hr class="divider">
+      <hr class="divider"><br><br>
 
       <div>
         <div class="chapter-header">
@@ -2044,16 +2067,13 @@
                 selain
                 sebagai stimulus untuk perlindungan hutan alam, juga sebagai penyedia pembiayaan untuk perlindungan
                 hutan
-                dalam jangka panjang oleh pihak-pihak tersebut.
+                dalam jangka panjang oleh pihak-pihak tersebut.<span class="text-[#bc4a3c] text-2xl">●</span>
               </p>
             </div>
           </div>
         </div>
 
-
-        <hr class="divider">
-
-        <div class="author-block film-credit-block">
+        {{-- <div class="author-block film-credit-block">
           <div class="ab-group">
             <div class="ab-label">Penulis</div>
             <div class="ab-names">Timer Manurung, Dedy Sukmara, Andhika Younastya</div>
@@ -2094,9 +2114,26 @@
                 [DD/MM/YYYY] melalui tautan [LINK].
                 Auriga Nusantara. 2025 </em><br>.</div>
           </div>
-        </div>
+        </div> --}}
       </div>
     </section>
+    <hr class="divider max-w-6xl mx-auto mt-[-60px] mb-5">
+    <div class="max-w-6xl mx-auto text-center mb-[40px]">
+        <p class="text-[13px]">
+            <strong>PENULIS</strong> Timer Manurung, Andhika Younastya, Dedy Sukmara, Yustinus Seno, Wahyu Ananta Nugraha, Dendi Alfitrah
+            <strong>PENGOLAH DATA</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika Laura, Dedy Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
+            <strong>TIM VERIFIKASI</strong> Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika Younastya, Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika Laura, Chairul Soleh, Dedi Septyadi Wibisono, Fadela Yunika Sari, Hafid Azi Darma, Jonathan, Jumrio Nakul, Jundy Zaky Makarim, Luhut Simanjutak, M. Dendi Alfitrah, M. Irfan Nurrahman, M. Irfandi Andriansyah, Muhammad Nabil Astaqafi, Nebo Yok Jonah Marpaung, Reza Fahlevi, Rianti Gina Violeta, Riszki Is Hardianto, Sulih Primara Putra, Supintri Yohar Tri Wahyuni, Valentina Yulia Permatasari, Wahyu Ananta Nugraha, Yanuar Vira Febiyanti, Yudi Nofiandi, Yustinus Seno, Zerin Darma Kusuma
+            <strong>TIM VERIFIKASI</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
+            <strong>KREATIF DESAIN</strong> M. Alichamdan, M. Fachri, Robby Eebor, Thoriq Fa'iqoh
+        </p>
+
+        <p class="mt-4 text-[15px]">
+            <strong>SITASI:</strong><br>
+            Status Deforestasi di Indonesia 2025, diakses pada [DD/MM/YYYY] melalui tautan [LINK]. Auriga Nusantara. 2025
+        </p>
+
+        <p class="mt-2 text-[15px]">© Auriga Nusantara. 2026.</p>
+    </div>
 
 @endsection
 
