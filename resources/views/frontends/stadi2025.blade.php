@@ -1201,7 +1201,7 @@
                 <p class="body-text">
                     Di era presidensi Joko Widodo, terutama pada periode kedua, perlindungan lingkungan mengalami
                     pengenduran,
-                    terutama melalui pengesahan Undang-Undang Cipta Kerja atau Omnibus Law. Batasan 30% hutan untuk setiap
+                    terutama melalui pengesahan Undang-Undang Cipta Kerja atau <i>Omnibus Law</i>. Batasan 30% hutan untuk setiap
                     wilayah,
                     sebagai misal, dihilangkan dari teks aturan. Tidak hanya itu, proyek-proyek pemerintah, terutama yang
                     dibungkus
@@ -1212,8 +1212,8 @@
                 <p class="body-text">
                     Era kepresidenan Prabowo-Gibran tampak meneruskan kebijakan ini. Kengototan meneruskan program lumbung
                     pangan
-                    (<em>estate</em>) di Merauke salah satu contohnya. Pemerintah membangun sawah di Merauke, tapi pada saat
-                    bersamaan menghilangkan banyak sawah di Sulawesi demi pembangunan smelter dan ekspansi tambang nikel.
+                    (<em>food estate</em>) di Merauke salah satu contohnya. Pemerintah membangun sawah di Merauke, tapi pada saat
+                    bersamaan menghilangkan banyak sawah di Sulawesi demi pembangunan <i>smelter</i> dan ekspansi tambang nikel.
                     Tidak
                     hanya itu, tambang-tambang nikel ini justru memicu pemusnahan tumbuhan sagu di Indonesia Timur, padahal
                     sagu
@@ -1388,7 +1388,7 @@
                     setelah
                     pabrik sawit beroperasi, dan semakin dekat dengan pabrik akan semakin tinggi tingkat deforestasi.
                     Fenomena mirip
-                    terjadi di Sulawesi dan Maluku Utara dengan pengoperasian smelter-smelter nikel sejak 2016. Dengan
+                    terjadi di Sulawesi dan Maluku Utara dengan pengoperasian <i>smelter-smelter</i> nikel sejak 2016. Dengan
                     demikian,
                     pembangunan infrastruktur dan pemekaran wilayah administrasi di Tanah Papua akan menjadi pemungkin
                     terhadap
@@ -1696,7 +1696,7 @@
                             active: 0,
                             images: [{
                                     src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
-                                    desc: '<strong>Deforestasi di dalam konsesi kebun kayu PT Indosubur Sukses Makmur di Kutai Timur, Kalimantan Timur.</strong> Penerbitan izin kebun kayu di area bertutupan hutan alam seperti ini menjadi salah satu contoh deforestasi legal (legal deforestation) di Indonesia.',
+                                    desc: '<strong>Deforestasi di dalam konsesi kebun kayu PT Indosubur Sukses Makmur di Kutai Timur, Kalimantan Timur.</strong> Penerbitan izin kebun kayu di area bertutupan hutan alam seperti ini menjadi salah satu contoh deforestasi legal <i>(legal deforestation)</i> di Indonesia.',
                                     cc: '© Auriga Nusantara/Earthsight, Januari 2025.'
                                 },
                                 {
@@ -1706,7 +1706,7 @@
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru.jpg') }}',
-                                    desc: '<strong>Aktivitas tambang emas PT Agincourt Resources di bentang alam Batang Toru, Sumatera Utara.</strong> Bentang alam Batang Toru adalah satu-satunya habitat orangutan tapanuli (Pongo tapanuliensis) di dunia. Adanya izin tambang menjadi indikasi pembabatan hutan alam yang terjadi sebagai deforestasi legal.',
+                                    desc: '<strong>Aktivitas tambang emas PT Agincourt Resources di bentang alam Batang Toru, Sumatera Utara.</strong> Bentang alam Batang Toru adalah satu-satunya habitat orangutan tapanuli <i>(Pongo tapanuliensis)</i> di dunia. Adanya izin tambang menjadi indikasi pembabatan hutan alam yang terjadi sebagai deforestasi legal.',
                                     cc: '© Auriga Nusantara, Mei 2025.'
                                 },
                                 {

@@ -209,7 +209,7 @@
                     <div class="ms-num">5.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p> <strong>Verification processes:</strong> Indicative deforestation outside intersections of the four forest cover
+                        <p> <strong>Verification processes:</strong> Indicative deforestation outside the four forest cover
                             references (forest-reference) were inspected visually. Due to the large numbers of
                             polygons and limited time available, polygons smaller than one hectare could not be inspected
                             and were consequently excluded from the deforestation area. For indicative deforestation inside
