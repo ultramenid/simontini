@@ -277,7 +277,7 @@
                             10 hektare
                             berikut seluruh area di bawah 10 hektare dalam konsesi dan kawasan konservasi. Area yang
                             dideteksi sebagai
-                            false atau bukan deforestasi dihilangkan dari data, sedangkan area yang tidak diinspeksi (di
+                            <i>false</i> atau bukan deforestasi dihilangkan dari data, sedangkan area yang tidak diinspeksi (di
                             bawah 10
                             hektare) dimasukkan ke dalam area deforestasi.
                         </p><br>

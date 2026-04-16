@@ -53,8 +53,7 @@
                                                                                                                                                                                                                                                                                          </div> -->
             <div class="hero-divider"></div>
             <div class="hero-desc">
-                Deforestation is on the rise; it’s time for the government to issue
-                regulations that protect all remaining natural forests
+                Deforestation surges - the time is right for Indonesia to protect all of its remaining natural forest.
             </div>
         </div>
         <div class="scroll-hint">
@@ -210,10 +209,10 @@
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
                         <p> <strong>Verification processes:</strong> Indicative deforestation outside the four forest cover
-                            references (forest-reference) were inspected visually. Due to the large numbers of
+                            references (forest-reference area) were inspected visually. Due to the large numbers of
                             polygons and limited time available, polygons smaller than one hectare could not be inspected
                             and were consequently excluded from the deforestation area. For indicative deforestation inside
-                            forest-reference, visual inspections and historical screening (temporal filtering) were
+                            forest-reference area, visual inspections and historical screening (temporal filtering) were
                             conducted on areas larger than 10 hectares, as well as on all areas under 10 hectares located
                             inside concessions and conservation areas. Areas identified as false positives or not having
                             deforestation were removed from the dataset, whereas areas that were not inspected (below 10
@@ -246,7 +245,7 @@
     {{-- step 1 --}}
     <div class="viz-block viz-block--full alur" style="margin-top: -60px !important;">
         <div class="block w-full sm:max-w-6xl mx-auto">
-            <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Stages and processing of
+            <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1 px-2">Stages and processing of
                 deforestation data 2025</h2>
             {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
                 hectares</p> --}}
@@ -435,7 +434,7 @@
         <!-- DEFORESTASI 2025 -->
         <span class="s-anchor" id="deforestasi"></span>
         <section class="page-section px-[5vw] py-8">
-            <div class="section-label">III. Deforestasi 2025</div>
+            <div class="section-label">III. Deforestation in 2025</div>
 
             <p class="body-text">
                 With the methodology outlined above, <strong>deforestation in Indonesia in 2025 reached 433,751
@@ -484,7 +483,7 @@
                                     class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Sumatera</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">thousand hectares
                                     </div>
                                     <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
                                         <div class="relative h-[78px] mt-[14px]" id="peta-axis-sumatra"></div>
@@ -510,7 +509,7 @@
                                     class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Kalimantan</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">thousand hectares
                                     </div>
                                     <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
                                         <div class="relative h-[78px] mt-[14px]" id="peta-axis-kalimantan"></div>
@@ -536,7 +535,7 @@
                                     class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Sulawesi</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">thousand hectares
                                     </div>
                                     <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
                                         <div class="relative h-[78px] mt-[14px]" id="peta-axis-sulawesi"></div>
@@ -562,7 +561,7 @@
                                     class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Papua</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">thousand hectares
                                     </div>
                                     <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
                                         <div class="relative h-[78px] mt-[14px]" id="peta-axis-papua"></div>
@@ -657,10 +656,10 @@
                                         2025</th>
                                     <th
                                         class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
-                                        Hektare</th>
+                                        Hectares</th>
                                     <th
                                         class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
-                                        Persen</th>
+                                        Percent</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -2221,8 +2220,8 @@
             </p>
 
             <p class="mt-4 text-[15px]">
-                <strong>SITASI:</strong><br>
-                Status Deforestasi di Indonesia 2025, diakses pada [DD/MM/YYYY] melalui tautan [LINK]. Auriga Nusantara. 2025
+                <strong>CITATION:</strong><br>
+                Status deforestation in Indonesia 2025, accessed on [DD/MM/YYYY] via the link [LINK]. Auriga Nusantara. 2025
             </p>
 
             <p class="mt-2 text-[15px]">© Auriga Nusantara. 2026.</p>
