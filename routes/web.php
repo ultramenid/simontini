@@ -55,15 +55,12 @@ Route::get('/id/status-deforestasi-indonesia-2024', [InsightContoller::class, 's
 Route::get('/en/status-of-deforestation-in-indonesia-2024', [InsightContoller::class, 'stadi2024EN'])->name('stadi2024EN');
 Route::get('/jp/status-of-deforestation-in-indonesia-2024', [InsightContoller::class, 'stadi2024JP'])->name('stadi2024JP');
 
+Route::get('/en/status-of-deforestation-in-indonesia-2025', [InsightContoller::class, 'stadi2025EN'])->name('stadi2025EN');
+Route::get('/id/status-deforestasi-di-indonesia-2025', [InsightContoller::class, 'stadi2025'])->name('stadi2025');
 
 
 // stadi 2025
 Route::middleware('httpauth')->group(function () {
-    Route::get('/id/status-deforestasi-indonesia-2025', [InsightContoller::class, 'stadi2025'])->name('stadi2025');
-});
-
-Route::middleware('httpauth')->group(function () {
-    Route::get('/en/status-of-deforestation-in-indonesia-2025', [InsightContoller::class, 'stadi2025EN'])->name('stadi2025EN');
 });
 
 Route::middleware('httpauth')->group(function () {
