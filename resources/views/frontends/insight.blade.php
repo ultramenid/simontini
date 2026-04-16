@@ -22,7 +22,7 @@
             @if (App::getLocale() == 'en')
                 <a href="{{ url('/en/status-of-deforestation-in-indonesia-2025')}}" class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Status of Deforestation in Indonesia')}} 2025</a>
             @else
-                <a href="{{ url('/id/status-deforestasi-indonesia-2025') }}" class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Status Deforestasi Indonesia')}} 2025</a>
+                <a href="{{ url('/id/status-deforestasi-di-indonesia-2025') }}" class="text-simontini font-bold sm:text-4xl text-2xl">{{__('Status Deforestasi Indonesia')}} 2025</a>
             @endif
             <p class="sm:text-sm text-xs mt-4">{{__('Tahun lalu Auriga merilis data deforestasi 2024 pada Maret. Mulai tahun ini, deforestasi tahunan akan dirilis setiap Januari.')}}</p>
         </div>
