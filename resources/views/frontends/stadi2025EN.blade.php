@@ -287,7 +287,7 @@
                     <div
                         class=" sm:mx-auto overflow-x-auto overflow-y-hidden  sm:rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible">
                         <div class="border-b border-[#ddd5c8] px-4 py-4 sm:px-6">
-                            <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">Deforestation in 2025Accuracy assessment result of the 2025 deforestation data</div>
+                            <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">Accuracy assessment result of the 2025 deforestation data</div>
                         </div>
 
                         <table
@@ -434,7 +434,7 @@
             <div class="section-label">III. Deforestation in 2025</div>
 
             <p class="body-text">
-                With the methodology outlined above, <strong>deforestation in Indonesia in 2025 reached 433,751
+                With the methodology outlined above, <strong>deforestation in Indonesia by 2025 reached 433,751
                     hectares</strong>, an increase of 66% compared to the <a
                     href="https://simontini.id/id/status-deforestasi-indonesia-2024"
                     class="text-[#bc4a3c] hover:underline" target="_blank" rel="noopener noreferrer">261,575 hectares</a>
