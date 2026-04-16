@@ -1786,23 +1786,23 @@
                     currentSlide: 4,
                     startX: 0,
                     images: [{
-                            src: '{{ asset('assets/images/stadi2025/RUDP1 in.jpg') }}',
+                            src: '{{ asset('assets/images/stadi2025/RUDP1 en.jpg') }}',
                             desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 118,7 juta hektare kawasan hutan darat Indonesia. Patut dicatat bahwa kawasan hutan adalah suatu wilayah yang ditetapkan sebagai kawasan hutan. Tak jarang kawasan hutan tidak bertutupan hutan. Sebaliknya, tak sedikit tutupan hutan alam yang berada di luar kawasan hutan.'
                         },
                         {
-                            src: '{{ asset('assets/images/stadi2025/RUDP2 in.jpg') }}',
+                            src: '{{ asset('assets/images/stadi2025/RUDP2 en.jpg') }}',
                             desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Dari 22 juta hektare kawasan hutan konservasi, tersapa 4,7 juta hektare yang tidak bertutupan hutan alam. Secara hukum, seluruh hutan alam di dalam kawasan hutan konservasi dilindungi.'
                         },
                         {
-                            src: '{{ asset('assets/images/stadi2025/RUDP3 in.jpg') }}',
+                            src: '{{ asset('assets/images/stadi2025/RUDP3 en.jpg') }}',
                             desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 227.127 hektare tutupan hutan alam di dalam hutan lindung yang berada di luar area moratorium sehingga cukup terbuka menjadi sasaran deforestasi oleh kebijakan atau proyek pemerintah.'
                         },
                         {
-                            src: '{{ asset('assets/images/stadi2025/RUDP4 in.jpg') }}',
+                            src: '{{ asset('assets/images/stadi2025/RUDP4 en.jpg') }}',
                             desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 22,5 juta hektare tutupan hutan alam di hutan produksi yang berada di luar area moratorium, sehingga rawan menjadi sasaran deforestasi karena tidak memiliki perlindungan hukum.'
                         },
                         {
-                            src: '{{ asset('assets/images/stadi2025/RUDP5 in.jpg') }}',
+                            src: '{{ asset('assets/images/stadi2025/RUDP5 en.jpg') }}',
                             desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 9 juta hektare tutupan hutan alam di luar kawasan hutan, atau berada di dalam Area Penggunaan Lain (APL), dan 8,1 juta hektare di antaranya di luar area moratorium. Secara keseluruhan, 41,6 juta hektare (44%) tutupan hutan alam Indonesia tanpa perlindungan hukum.'
                         }
                     ],
