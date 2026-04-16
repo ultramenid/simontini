@@ -492,8 +492,8 @@ body.is-preloading { overflow: hidden; }
 
 /* ── DIVIDER ── */
 .divider {
-  border: none; border-top: 1px solid var(--border);
-  margin: 48px 0;
+  border: none; border-top: 1px solid #bc4a3c;
+  /* margin: 60px 0; */
 }
 
 .divider.light { border-color: rgba(255,255,255,.08); }
@@ -546,8 +546,8 @@ body.is-preloading { overflow: hidden; }
 
 .chapter-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 24px;
-  font-weight: 700; line-height: 1.2;
+  font-size: 22px;
+  font-weight: bold; line-height: 1.2;
   letter-spacing: -.02em;
   color: var(--dark);
 }
@@ -751,10 +751,11 @@ body.is-preloading { overflow: hidden; }
 
 .ms-num {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px; letter-spacing: .1em;
+  font-size: 22px; letter-spacing: .1em;
+  font-weight: bold;
   color: var(--red); background: var(--red-pale);
   padding: 5px 8px; border-radius: 4px;
-  flex-shrink: 0; font-weight: 600; align-self: flex-start;
+  flex-shrink: 0; align-self: flex-start;
 }
 
 .ms-body h4 {
@@ -950,7 +951,7 @@ body.is-preloading { overflow: hidden; }
 }
 
 .film-credit-block {
-  max-width: 560px;
+  max-width: 1200px;
   margin: 64px auto 0;
   padding-top: 34px;
   display: grid;
