@@ -265,15 +265,15 @@
                     <div class="ms-num">5.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p> <strong>Proses verifikasi</strong>. Deforestasi indikatif yang terdapat di luar irisan keempat
+                        <p> <strong>Proses verifikasi</strong>. Deforestasi indikatif yang terdapat di luar keempat
                             tutupan
                             hutan
-                            referensi (forest-agreement area) diinspeksi secara visual. Berhubung banyaknya poligon,
+                            referensi <i>(forest-reference area)</i> diinspeksi secara visual. Berhubung banyaknya poligon,
                             sementara waktu
                             yang tersedia terbatas, poligon di bawah 1 hektare tidak dapat diinspeksi sehingga dihilangkan
                             dari area
-                            deforestasi. Untuk deforestasi indikatif di dalam irisan tutupan hutan referensi
-                            (forest-agreement area) ,
+                            deforestasi. Untuk deforestasi indikatif di dalam tutupan hutan referensi
+                            <i>(forest-reference area)</i> ,
                             inspeksi visual maupun penapisan historikal (temporal filter) dilakukan pada area-area di atas
                             10 hektare
                             berikut seluruh area di bawah 10 hektare dalam konsesi dan kawasan konservasi. Area yang
@@ -1180,7 +1180,7 @@
                 <!-- Tanda kutip besar di kiri atas -->
                 <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">"</span>
 
-                <p class="text-black text-[20px] md:text-[20px] font-semibold leading-snug">
+                <p class="text-black text-[20px] md:text-[20px] leading-snug">
                     Pada 2025, area deforestasi di atas 5 hektare seluas 166.590 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare."
                 </p>
             </div>
