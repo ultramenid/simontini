@@ -138,7 +138,7 @@
                                         style="background:white;z-index:2;">
 
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <div class="md:hidden mt-3">
@@ -1035,28 +1035,26 @@
             </p>
 
             <p class="body-text">
-                Deforestasi seluas 110.898 hektare terjadi pada 486 konsesi kehutanan, yakni 74.409 hektare konsesi logging,
+                Deforestasi seluas 110.898 hektare terjadi pada 486 konsesi kehutanan, yakni 74.409 hektare konsesi <i>logging</i>,
                 33.063 hektare konsesi kebun kayu, 671 hektare konsesi restorasi ekosistem, dan 2.754 hektare konsesi
                 kehutanan
                 lainnya. Deforestasi terjadi di 212 konsesi kebun kayu, 34 persennya terjadi di sepuluh teratas.<br>
             </p>
 
             <p class="body-text">
-                Deforestasi terjadi di 237 konsesi logging, 28 persennya terjadi di sepuluh teratas.<br>
+                Deforestasi terjadi di 237 konsesi <i>logging</i>, 28 persennya terjadi di sepuluh teratas.<br>
             </p>
 
 
-            {{-- <div class="section-label">IV. Peta Tematik Deforestasi</div> --}}
-            <p class="body-text">
-                Deforestasi berbasis provinsi Deforestasi berbasis kabupaten Deforestasi di kawasan konservasi Deforestasi
-                di
-                Habitat megafauna ikonik Deforestasi dalam Konsesi
-            </p><br><br>
-            <div class="viz-block viz-block--full">
-                <div class="block sm:max-w-6xl mx-auto mb-4 text-left">
-                    <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Peta Tematik Deforestasi
-                        2025</h2>
-                    {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
+      {{-- <div class="section-label">IV. Peta Tematik Deforestasi</div> --}}
+      <p class="body-text">
+        Deforestasi berbasis provinsi deforestasi berbasis kabupaten deforestasi di kawasan konservasi deforestasi di
+        habitat megafauna ikonik deforestasi dalam konsesi.
+      </p><br><br>
+      <div class="viz-block viz-block--full">
+        <div class="block sm:max-w-6xl mx-auto mb-4 text-left">
+          <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Peta Tematik Deforestasi 2025</h2>
+          {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
             hectares</p> --}}
                 </div>
 
@@ -1181,12 +1179,12 @@
             <div class="mx-[50px] relative pl-10 py-2">
                 <!-- Tanda kutip besar di kiri atas -->
                 <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">"</span>
-                
+
                 <p class="text-black text-[20px] md:text-[20px] font-semibold leading-snug">
-                    Pada 2025, area deforestasi di atas 5 ha seluas 166.590 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare."
+                    Pada 2025, area deforestasi di atas 5 hektare seluas 166.590 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare."
                 </p>
             </div>
-            
+
         </section>
 
 
@@ -1376,7 +1374,7 @@
                     Sumatera, menggantikan Sulawesi yang menempati posisi itu pada deforestasi 2024.
                 </p>
                 <p class="body-text">
-                    Program pemerintah, seperti Proyek Strategis Nasional, lumbung pangan (food estate), menjadi pemicu
+                    Program pemerintah, seperti Proyek Strategis Nasional, lumbung pangan <i>(food estate)</i>, menjadi pemicu
                     peningkatan
                     deforestasi di Tanah Papua. Pembangunan infrastruktur yang tak jarang sebagai kelanjutan dari pemekaran
                     wilayah
@@ -1414,7 +1412,7 @@
                                     src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
                                     desc: '<strong>Deforestasi dalam konsesi logging PT Jati Dharma Indah Plywood Industries di Nabire, Papua Tengah.</strong> ',
                                     cc: '© Auriga Nusantara, Desember 2025.'
-                        
+
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
@@ -1486,7 +1484,6 @@
                                     <div class="opacity-60" x-html="images[active].cc"></div>
 
                                 </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
                             </div>
 
                         </div>
@@ -1494,6 +1491,7 @@
                     </div>
                 </div>
             </div><br><br>
+
 
             <hr class="divider"><br><br>
 
@@ -1505,7 +1503,7 @@
                 <p class="body-text">
                     Ekspansi komoditas industrial tetap menjadi momok bagi hutan alam tersisa di Indonesia. Pengembangan
                     kebun-kebun
-                    baru sawit menjadi salah satu pemicu (driver) utama di Sumatera, sebagaimana terjadi di Hutan Lindung
+                    baru sawit menjadi salah satu pemicu <i>(driver)</i> utama di Sumatera, sebagaimana terjadi di Hutan Lindung
                     Sijunjung
                     di Sumatera Barat. Deforestasi demi pembangunan kebun sawit bahkan merangsek ke kawasan konservasi,
                     seperti
@@ -1515,7 +1513,7 @@
                     Deforestasi oleh ekspansi sawit sejatinya cenderung melambat, terutama karena pasar yang sudah mulai
                     jenuh.
                     Tapi, kebijakan subsidi biodiesel oleh pemerintah yang tidak disertai dengan mekanisme pelindung
-                    (safeguard)
+                    <i>(safeguard)</i>
                     terhadap tutupan hutan turut memicu deforestasi ini. Setelah sebelumnya mewajibkan kandungan bahan bakar
                     nabati
                     berbasis sawit dalam bahan bakar minyak jenis solar sebesar 30% (B30) kemudian meningkat menjadi 35%
@@ -1527,7 +1525,7 @@
                 </p>
                 <p class="body-text">
                     Di Kalimantan, pemicu utama deforestasi berupa perluasan kebun kayu demi industri <em>pulp & paper</em>.
-                    Pemberian izin pembangunan pabrik pulp raksasa PT Phoenix Resources International di Tarakan, Kalimantan
+                    Pemberian izin pembangunan pabrik <i>pulp</i> raksasa PT Phoenix Resources International di Tarakan, Kalimantan
                     Utara
                     menjadi penyebab utama, karena dalam perencanaannya pabrik ini tidak memiliki konsesi pemasok yang
                     dikelola
@@ -1543,10 +1541,10 @@
                 <p class="body-text">
                     Tambang dan industri nikel bukan barang baru di Sulawesi, karena penambangan nikel sudah ada sejak
                     1930-an, dan
-                    industri pengolahan (smelter) nikel sudah beroperasi sejak 1973. Hingga 2014 hanya 3 smelter nikel yang
+                    industri pengolahan <i>(smelter)</i> nikel sudah beroperasi sejak 1973. Hingga 2014 hanya 3 <i>smelter</i> nikel yang
                     beroperasi di Sulawesi. Kemudian jumlahnya membengkak di era presidensi Joko Widodo. Pada 2014-2024
                     setidaknya
-                    ada 16 smelter nikel baru yang beroperasi di pulau dengan tingkat endemisme tertinggi di dunia ini.
+                    ada 16 <i>smelter</i> nikel baru yang beroperasi di pulau dengan tingkat endemisme tertinggi di dunia ini.
                 </p>
                 <p class="body-text">
                     Meningkatnya harga emas juga turut memicu deforestasi. Bahkan, 2 konsesi tambang emas bertengger dalam
@@ -1680,7 +1678,7 @@
                 <p class="body-text">
                     Dari total deforestasi 2025, deforestasi yang secara langsung bisa dikategorikan ilegal hanya
                     deforestasi di
-                    kawasan konservasi (25.077 hektare), di hutan lindung (80.213 hektare), di konsesi logging (74.409
+                    kawasan konservasi (25.077 hektare), di hutan lindung (80.213 hektare), di konsesi <i>logging</i> (74.409
                     hektare), dan
                     konsesi restorasi ekosistem (617 hektare), yang seluruhnya berjumlah 180.315 hektare atau 42%
                     deforestasi
@@ -1805,7 +1803,7 @@
                     Area di
                     luar kawasan konservasi ini merupakan habitat spesies ikonik harimau, badak, gajah, orangutan seluas
                     22,8 juta
-                    hektare; dan Key Biodiversity Area (KBA) yang dikembangkan IUCN seluas 21,6 juta hektare. Ketiga wilayah
+                    hektare; dan <i>Key Biodiversity Area (KBA)</i> yang dikembangkan IUCN seluas 21,6 juta hektare. Ketiga wilayah
                     ini
                     bila digabungkan sebagai area konservasi seluruhnya –tanpa menghitung perulangan– seluas 63,5 juta
                     hektare.
@@ -1925,7 +1923,7 @@
                             <div>
                                 <h4 class="chapter-title">Penerbitan regulasi yang memastikan perlindungan seluruh hutan
                                     alam tersisa di
-                                    Indonesia.</h4><br>
+                                    Indonesia</h4><br>
                                 <p class="body-text">
                                     Perlindungan hukum terhadap hutan alam idealnya dalam bentuk undang-undang. Namun,
                                     menghadirkan sebuah
@@ -1974,7 +1972,7 @@
                                         }
                                     ],
                                     get totalSlides() { return this.images.length },
-                                
+
                                     openLightbox(index) {
                                         GLightbox({
                                             elements: this.images.map(img => ({
@@ -1984,7 +1982,7 @@
                                             startAt: index
                                         }).open();
                                     },
-                                
+
                                     startSwipe(e) { this.startX = e.touches[0].clientX },
                                     handleTouchMove(e) {
                                         let diff = this.startX - e.touches[0].clientX
@@ -2052,10 +2050,10 @@
                     <div class="method-step border-b">
                         <div class="ms-num">2.</div>
                         <div class="">
-                            <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang.
+                            <h4 class="chapter-title">Pengadaan dan pemberlakuan instrumen pengendalian revisi tata ruang
                             </h4><br>
                             <p class="body-text ">
-                                pertengahan 2023 publik dikejutkan dengan usulan revisi tata ruang Provinsi Kalimantan Timur
+                                Pertengahan 2023 publik dikejutkan dengan usulan revisi tata ruang Provinsi Kalimantan Timur
                                 yang
                                 ditengarai akan melepaskan 612.355 hektare kawasan hutan (menjadi area penggunaan lain),
                                 menurunkan
@@ -2141,7 +2139,7 @@
                                             desc: '<strong>Terdapat setidaknya 41,4 juta hektare area yang penting secara ekologis berada di luar kawasan hutan konservasi.</strong> Area-area ini semestinya diprioritaskan menjadi area preservasi sebagaimana diatur UU Konservasi.'
                                         }],
                                         get totalSlides() { return this.images.length },
-                                    
+
                                         openLightbox(index) {
                                             GLightbox({
                                                 elements: this.images.map(img => ({
@@ -2151,7 +2149,7 @@
                                                 startAt: index
                                             }).open();
                                         },
-                                    
+
                                         startSwipe(e) { this.startX = e.touches[0].clientX },
                                         handleTouchMove(e) {
                                             let diff = this.startX - e.touches[0].clientX
@@ -2208,7 +2206,7 @@
                                     <h4 class="chapter-title">Redistribusi kelembagaan dan aparatur pengelola hutan
                                         sehingga seluruh
                                         tutupan
-                                        hutan alam memiliki aparatur penjaga.</h4><br>
+                                        hutan alam memiliki aparatur penjaga</h4><br>
                                     <p class="body-text">
                                         Presiden Prabowo disebut telah memerintahkan penggandaan jumlah polisi hutan. Satu
                                         langkah yang
@@ -2249,7 +2247,7 @@
                                             }
                                         ],
                                         get totalSlides() { return this.images.length },
-                                    
+
                                         openLightbox(index) {
                                             GLightbox({
                                                 elements: this.images.map(img => ({
@@ -2259,7 +2257,7 @@
                                                 startAt: index
                                             }).open();
                                         },
-                                    
+
                                         startSwipe(e) { this.startX = e.touches[0].clientX },
                                         handleTouchMove(e) {
                                             let diff = this.startX - e.touches[0].clientX
@@ -2330,7 +2328,7 @@
                         <div class="">
                             <h4 class="chapter-title">Korporasi yang mengelola area bertutupan hutan alam berkomitmen
                                 terhadap
-                                lingkungan, sosial, dan tata kelola yang baik (ESG Commitment).</h4><br>
+                                lingkungan, sosial, dan tata kelola yang baik (<i>ESG Commitment</i>)</h4><br>
                             <p class="body-text">
                                 Hampir separuh deforestasi 2025 terjadi di dalam konsesi, sementara terdapat lebih dari 9
                                 juta hektare
@@ -2348,7 +2346,7 @@
                             <h4 class="chapter-title">Penyediaan insentif bagi pemerintah daerah, komunitas lokal, dan
                                 korporasi
                                 yang
-                                melakukan perlindungan hutan alam.</h4><br>
+                                melakukan perlindungan hutan alam</h4><br>
                             <p class="body-text">Perlindungan hutan semestinya dipandang sebagai investasi, selain karena
                                 fungsi dan
                                 jasa lingkungannya yang dinikmati publik, juga karena kegiatan ekonomi akan terganggu bila

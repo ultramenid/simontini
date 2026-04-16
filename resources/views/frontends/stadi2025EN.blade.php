@@ -44,7 +44,7 @@
         <div class="hero-meta">
             <div class="hero-stat">
                 <span class="hs-val">433.751</span>
-                <span class="hs-unit">Hektare</span>
+                <span class="hs-unit">Hectares</span>
             </div>
             <div class="hero-divider"></div>
             <!-- <div class="hero-stat">
@@ -197,7 +197,7 @@
                     <div class="ms-num">4.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p> areas where deforestation was identified (indicative deforestation) were overlaid with forest
+                        <p><strong> Areas where deforestation</strong> was identified (indicative deforestation) were overlaid with forest
                             cover maps. Four forest cover references were used: (1) MapBiomas Indonesia; (2) land cover maps
                             produced by the Ministry of Forestry; (3) tropical-moist forest (TMF) data produced by the
                             European Commission’s Joint Research Centre; and (4) the Forest Persistence dataset produced by
@@ -209,11 +209,11 @@
                     <div class="ms-num">5.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p> verification processes: Indicative deforestation outside intersections of the four forest cover
-                            references (forest-agreement areas) were inspected visually. Due to the large numbers of
+                        <p> <strong>Verification processes:</strong> Indicative deforestation outside intersections of the four forest cover
+                            references (forest-reference) were inspected visually. Due to the large numbers of
                             polygons and limited time available, polygons smaller than one hectare could not be inspected
                             and were consequently excluded from the deforestation area. For indicative deforestation inside
-                            forest-agreement areas, visual inspections and historical screening (temporal filtering) were
+                            forest-reference, visual inspections and historical screening (temporal filtering) were
                             conducted on areas larger than 10 hectares, as well as on all areas under 10 hectares located
                             inside concessions and conservation areas. Areas identified as false positives or not having
                             deforestation were removed from the dataset, whereas areas that were not inspected (below 10
@@ -231,7 +231,7 @@
                     <div class="ms-num">6.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p>filtering: Focusing on deforestation caused by human activity (anthropogenic deforestation),
+                        <p><strong>Filtering:</strong> Focusing on deforestation caused by human activity (anthropogenic deforestation),
                             filtering was conducted to exclude deforestation areas resulting from landslides or river
                             shifts. For example, 11,693 hectares of forest cover were lost due to landslides in Aceh, North
                             Sumatra, and West Sumatra in the hydrometeorological disaster at the end of 2025. Loss of forest
@@ -282,7 +282,7 @@
             </div>
 
             <div class="viz-block viz-block--full mt-12 mb-2">
-                
+
                 <div class="max-w-3xl mx-auto mt-4">
 
                     <div
@@ -1090,9 +1090,9 @@
             <div class="mx-[50px] relative pl-10 py-2">
                 <!-- Tanda kutip besar di kiri atas -->
                 <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">"</span>
-                
+
                 <p class="text-black text-[20px] md:text-[20px] font-semibold leading-snug">
-                    Pada 2025, area deforestasi di atas 5 ha seluas 166.590 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare."
+                    In 2025, deforested areas larger than 5 hectares covered a total of 166,590 hectares. A total of 62% of deforestation occurred on plots smaller than 5 hectares, with 149,159 hectares occurring on plots ranging from 1 to 5 hectares."
                 </p>
             </div>
         </section>
@@ -1760,7 +1760,7 @@
                             <div class="ms-num">1.</div>
                             <div>
                                 <h4 class="chapter-title">Issue legislation to ensure the protection of all remaining
-                                    natural forests in Indonesia: </h4><br>
+                                    natural forests in Indonesia </h4><br>
                                 <p class="body-text">
                                     Legal protection over natural forests should ideally be in the form of a law. However,
                                     enacting laws is not easy and often takes years. Even lower tier legislation like
@@ -1802,7 +1802,7 @@
                                         }
                                     ],
                                     get totalSlides() { return this.images.length },
-                                
+
                                     openLightbox(index) {
                                         GLightbox({
                                             elements: this.images.map(img => ({
@@ -1812,7 +1812,7 @@
                                             startAt: index
                                         }).open();
                                     },
-                                
+
                                     startSwipe(e) { this.startX = e.touches[0].clientX },
                                     handleTouchMove(e) {
                                         let diff = this.startX - e.touches[0].clientX
@@ -1882,7 +1882,7 @@
                         <div class="ms-num">2.</div>
                         <div class="">
                             <h4 class="chapter-title">Establish and apply instruments to control spatial plan
-                                revisions:
+                                revisions
                             </h4><br>
 
                             <p class="body-text ">
@@ -1919,7 +1919,7 @@
                                     <h4 class="chapter-title">Accelerate the expansion of preservation areas, especially
                                         outside
                                         the
-                                        forest estate:
+                                        forest estate
                                     </h4><br>
                                     <p class="body-text">
                                         As noted above, existing conservation estates are far from sufficient to cover all
@@ -1955,7 +1955,7 @@
                                             desc: '<strong>There are at least 41.4 million hectares of ecologically important areas located outside conservation forest areas.</strong> These areas should be prioritized for preservation as stipulated in the Conservation Law.'
                                         }],
                                         get totalSlides() { return this.images.length },
-                                    
+
                                         openLightbox(index) {
                                             GLightbox({
                                                 elements: this.images.map(img => ({
@@ -1965,7 +1965,7 @@
                                                 startAt: index
                                             }).open();
                                         },
-                                    
+
                                         startSwipe(e) { this.startX = e.touches[0].clientX },
                                         handleTouchMove(e) {
                                             let diff = this.startX - e.touches[0].clientX
@@ -2017,7 +2017,7 @@
                             <div class="ms-num">4.</div>
                             <div class="">
                                 <h4 class="chapter-title">Redistribute forest management institutions and personnel so that
-                                    all natural forests have rangers to protect them:</h4><br>
+                                    all natural forests have rangers to protect them</h4><br>
                                 <p class="body-text">
                                     President Prabowo Subianto has reportedly instructed a doubling of the number of forest
                                     rangers – a step deserving of appreciation. However, as Auriga Nusantara has previously
@@ -2049,7 +2049,7 @@
                                         }
                                     ],
                                     get totalSlides() { return this.images.length },
-                                
+
                                     openLightbox(index) {
                                         GLightbox({
                                             elements: this.images.map(img => ({
@@ -2059,7 +2059,7 @@
                                             startAt: index
                                         }).open();
                                     },
-                                
+
                                     startSwipe(e) { this.startX = e.touches[0].clientX },
                                     handleTouchMove(e) {
                                         let diff = this.startX - e.touches[0].clientX
@@ -2125,12 +2125,12 @@
                         <div class="ms-num">5.</div>
                         <div class="">
                             <h4 class="chapter-title">Companies that manage areas with natural forest cover should make
-                                environmental, social, and good governance (ESG) commitments:</h4><br>
+                                environmental, social, and good governance (ESG commitments) </h4><br>
                             <p class="body-text">
                                 Nearly half of deforestation in 2025 occurred inside concession areas. Meanwhile there are
                                 more than nine million hectares of natural forest cover remaining within conversion
                                 concessions (mining, oil palm, industrial timber). Corporations managing these areas should
-                                declare environmental, social, and good governance (ESG) commitments, including not
+                                declare environmental, social, and good governance (ESG commitments), including not
                                 perpetrating nor being involved in deforestation.
                             </p>
                         </div>
@@ -2139,7 +2139,7 @@
                         <div class="ms-num">6.</div>
                         <div class="">
                             <h4 class="chapter-title">Provide incentives for regional governments, local communities and
-                                corporations that protect natural forest:</h4><br>
+                                corporations that protect natural forest</h4><br>
                             <p class="body-text">Perlindungan hutan semestinya dipandang sebagai investasi, selain karena
                                 Forest protection should be viewed as an investment, not only because forests provide
                                 environmental services for the public, but also because economic activities will be
