@@ -508,7 +508,7 @@
                 dari tahun sebelumnya seluas <a href="https://simontini.id/id/status-deforestasi-indonesia-2024"
                     target="_blank" rel="noopener noreferrer" style="color: #bc4a3c;">261.575 hektare</a>. Deforestasi
                 terluas kembali terjadi di
-                Kalimantan, disusul Sumatera. Tanah Papua, yang pada 2024 berada di peringkat keempat, pada tahun 2025
+                Kalimantan, disusul Sumatera. Tanah Papua, yang pada 2024 berada di peringkat keempat, pada 2025
                 menempati
                 peringkat ketiga menggantikan Sulawesi.
             </p>
