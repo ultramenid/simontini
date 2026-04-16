@@ -1338,7 +1338,7 @@
                                 </div>
 
                                 <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
 
                                     <div x-html="images[active].desc"></div>
 
@@ -1477,7 +1477,7 @@
                                 </div>
 
                                 <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
 
                                     <div x-html="images[active].desc"></div>
 
@@ -1635,7 +1635,7 @@
                                 </div>
 
                                 <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
 
                                     <div x-html="images[active].desc"></div>
 
@@ -1763,7 +1763,7 @@
                                 </div>
 
                                 <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
 
                                     <div x-html="images[active].desc"></div>
 
@@ -1886,7 +1886,7 @@
                                 </div>
 
                                 <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
 
                                     <div x-html="images[active].desc"></div>
 
