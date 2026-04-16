@@ -417,7 +417,7 @@
                         </table>
 
                         <div class="border-t border-[#ddd5c8] px-2 py-2 text-[10px] text-[#7a6e60] sm:hidden">
-                            Geser tabel ke samping untuk melihat semua kolom.
+                            Swipe the table to the side to view all columns.
                         </div>
                         <div class="tight text-[10px] px-2 mb-2 w-full">
                             Interactive table of the results of the 2025 deforestation data accuracy test, broken down by
@@ -629,8 +629,7 @@
                             stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
-                        <span style="font-size:.6rem; color:black; letter-spacing:.08em;">geser untuk melihat alur
-                            lengkap</span>
+                        <span style="font-size:.6rem; color:black; letter-spacing:.08em;">Swipe the table to the side to view all columns</span>
                     </div>
                     <div class="max-w-[980px] mx-auto overflow-x-auto">
                         <table class="w-full border-collapse min-w-[560px]">
