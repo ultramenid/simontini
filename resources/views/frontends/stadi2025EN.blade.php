@@ -44,7 +44,7 @@
         <div class="hero-meta">
             <div class="hero-stat">
                 <span class="hs-val">433.751</span>
-                <span class="hs-unit">Hektare</span>
+                <span class="hs-unit">Hectares</span>
             </div>
             <div class="hero-divider"></div>
             <!-- <div class="hero-stat">
@@ -53,8 +53,7 @@
                                                                                                                                                                                                                                                                                          </div> -->
             <div class="hero-divider"></div>
             <div class="hero-desc">
-                Deforestation is on the rise; it’s time for the government to issue
-                regulations that protect all remaining natural forests
+                Deforestation surges - the time is right for Indonesia to protect all of its remaining natural forest.
             </div>
         </div>
         <div class="scroll-hint">
@@ -197,7 +196,7 @@
                     <div class="ms-num">4.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p> areas where deforestation was identified (indicative deforestation) were overlaid with forest
+                        <p><strong> Areas where deforestation</strong> was identified (indicative deforestation) were overlaid with forest
                             cover maps. Four forest cover references were used: (1) MapBiomas Indonesia; (2) land cover maps
                             produced by the Ministry of Forestry; (3) tropical-moist forest (TMF) data produced by the
                             European Commission’s Joint Research Centre; and (4) the Forest Persistence dataset produced by
@@ -209,11 +208,11 @@
                     <div class="ms-num">5.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p> verification processes: Indicative deforestation outside intersections of the four forest cover
-                            references (forest-agreement areas) were inspected visually. Due to the large numbers of
+                        <p> <strong>Verification processes:</strong> Indicative deforestation outside the four forest cover
+                            references (forest-reference area) were inspected visually. Due to the large numbers of
                             polygons and limited time available, polygons smaller than one hectare could not be inspected
                             and were consequently excluded from the deforestation area. For indicative deforestation inside
-                            forest-agreement areas, visual inspections and historical screening (temporal filtering) were
+                            forest-reference area, visual inspections and historical screening (temporal filtering) were
                             conducted on areas larger than 10 hectares, as well as on all areas under 10 hectares located
                             inside concessions and conservation areas. Areas identified as false positives or not having
                             deforestation were removed from the dataset, whereas areas that were not inspected (below 10
@@ -231,7 +230,7 @@
                     <div class="ms-num">6.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p>filtering: Focusing on deforestation caused by human activity (anthropogenic deforestation),
+                        <p><strong>Filtering:</strong> Focusing on deforestation caused by human activity (anthropogenic deforestation),
                             filtering was conducted to exclude deforestation areas resulting from landslides or river
                             shifts. For example, 11,693 hectares of forest cover were lost due to landslides in Aceh, North
                             Sumatra, and West Sumatra in the hydrometeorological disaster at the end of 2025. Loss of forest
@@ -246,7 +245,7 @@
     {{-- step 1 --}}
     <div class="viz-block viz-block--full alur" style="margin-top: -60px !important;">
         <div class="block w-full sm:max-w-6xl mx-auto">
-            <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1">Stages and processing of
+            <h2 class=" text-[#1a1a1a] text-lg md:text-xl font-bold tracking-tight mb-1 px-2">Stages and processing of
                 deforestation data 2025</h2>
             {{-- <p class="chart-sub text-sm" style="color:#8b7355;">Annual deforestation rate ·
                 hectares</p> --}}
@@ -282,7 +281,7 @@
             </div>
 
             <div class="viz-block viz-block--full mt-12 mb-2">
-                
+
                 <div class="max-w-3xl mx-auto mt-4">
 
                     <div
@@ -417,7 +416,7 @@
                         </table>
 
                         <div class="border-t border-[#ddd5c8] px-2 py-2 text-[10px] text-[#7a6e60] sm:hidden">
-                            Geser tabel ke samping untuk melihat semua kolom.
+                            Swipe the table to the side to view all columns.
                         </div>
                         <div class="tight text-[10px] px-2 mb-2 w-full">
                             Interactive table of the results of the 2025 deforestation data accuracy test, broken down by
@@ -435,7 +434,7 @@
         <!-- DEFORESTASI 2025 -->
         <span class="s-anchor" id="deforestasi"></span>
         <section class="page-section px-[5vw] py-8">
-            <div class="section-label">III. Deforestasi 2025</div>
+            <div class="section-label">III. Deforestation in 2025</div>
 
             <p class="body-text">
                 With the methodology outlined above, <strong>deforestation in Indonesia in 2025 reached 433,751
@@ -484,7 +483,7 @@
                                     class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Sumatera</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">thousand hectares
                                     </div>
                                     <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
                                         <div class="relative h-[78px] mt-[14px]" id="peta-axis-sumatra"></div>
@@ -510,7 +509,7 @@
                                     class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Kalimantan</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">thousand hectares
                                     </div>
                                     <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
                                         <div class="relative h-[78px] mt-[14px]" id="peta-axis-kalimantan"></div>
@@ -536,7 +535,7 @@
                                     class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Sulawesi</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">thousand hectares
                                     </div>
                                     <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
                                         <div class="relative h-[78px] mt-[14px]" id="peta-axis-sulawesi"></div>
@@ -562,7 +561,7 @@
                                     class="bg-[rgba(245,240,232,.96)] sm:bg-[rgba(16,10,1,0.25)] sm:backdrop-blur-xl border border-[rgba(212,196,160,.8)] border-t-[3px] border-t-[#8b2a1a] p-[14px_16px] min-w-[210px]">
                                     <div class="font-poppins text-[1.1rem] font-bold text-[#1a1a1a] mb-0.5 leading-[1.05]">
                                         Papua</div>
-                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">ribu hektare
+                                    <div class="font-poppins text-[.52rem] font-bold text-[#1a1a1a] mb-2.5">thousand hectares
                                     </div>
                                     <div class="grid grid-cols-[40px_1fr] gap-2 items-start">
                                         <div class="relative h-[78px] mt-[14px]" id="peta-axis-papua"></div>
@@ -629,8 +628,7 @@
                             stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
-                        <span style="font-size:.6rem; color:black; letter-spacing:.08em;">geser untuk melihat alur
-                            lengkap</span>
+                        <span style="font-size:.6rem; color:black; letter-spacing:.08em;">Swipe the table to the side to view all columns</span>
                     </div>
                     <div class="max-w-[980px] mx-auto overflow-x-auto">
                         <table class="w-full border-collapse min-w-[560px]">
@@ -658,10 +656,10 @@
                                         2025</th>
                                     <th
                                         class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
-                                        Hektare</th>
+                                        Hectares</th>
                                     <th
                                         class="font-poppins text-[.45rem] sm:text-[.65rem] tracking-[.07em] uppercase text-black py-1 sm:py-[9px] px-2 sm:px-[14px] text-right">
-                                        Persen</th>
+                                        Percent</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1090,9 +1088,9 @@
             <div class="mx-[50px] relative pl-10 py-2">
                 <!-- Tanda kutip besar di kiri atas -->
                 <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">"</span>
-                
-                <p class="text-black text-[20px] md:text-[20px] font-semibold leading-snug">
-                    Pada 2025, area deforestasi di atas 5 ha seluas 166.590 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare."
+
+                <p class="text-black text-[20px] md:text-[20px] leading-snug">
+                    Of 433,751 hectares of deforestation area, 166,590 hectares are above 5 hectares deforestation spots. 62% of deforestation occurred on spots smaller than 5 hectares, with 149,159 hectares occurring on 1 to 5 hectare spots."
                 </p>
             </div>
         </section>
@@ -1168,23 +1166,23 @@
                             active: 0,
                             images: [{
                                     src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
-                                    desc: '<strong>Natural forest cover within the timber plantation concession of PT Malinau Hijau Lestari (MHL) in Malinau, North Kalimantan.</strong> The granting of timber plantation permits in areas covered by natural forest such as this constitutes a form of government-sanctioned deforestation, as it allows MHL to clear the natural forest and replace it (convert it) with an energy (biomass) timber plantation that will be harvested periodically. Photo: Auriga Nusantara, May 2024.',
-                                    title: 'Kawasan Hutan Produksi, Hutan Tanaman Energi, PT Malinau Hijau Lestari <br> Malinau, Kalimantan Utara, Mei 2024'
+                                    desc: '<strong>Natural forest cover within the timber plantation concession of PT Malinau Hijau Lestari (MHL) in Malinau, North Kalimantan.</strong> The granting of timber plantation permits in areas covered by natural forest such as this constitutes a form of government-sanctioned deforestation, as it allows MHL to clear the natural forest and replace it (convert it) with an energy (biomass) timber plantation that will be harvested periodically.',
+                                    cc: '© Auriga Nusantara, May 2024.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the expansion of PT Weda Bay Nickel’s nickel mine in Central Halmahera, North Maluku.</strong> By issuing a mining permit for a forested area, the government is essentially planning deforestation to facilitate nickel extraction within this mining concession. Photo: Auriga Nusantara, December 2025.',
-                                    title: 'Konsesi Tambang, Weda By Nickel <br> Halmahera Tengah, Maluku Utara, Desember 2025'
+                                    desc: '<strong>Deforestation caused by the expansion of PT Weda Bay Nickel’s nickel mine in Central Halmahera, North Maluku.</strong> By issuing a mining permit for a forested area, the government is essentially planning deforestation to facilitate nickel extraction within this mining concession.',
+                                    cc: '© Auriga Nusantara, December 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the development of the Pomalaa Industry Park (IPIP) in Kolaka, Southeast Sulawesi.</strong> This industrial park is one of the National Strategic Projects (PSN) and is located within a Conversion Production Forest Area. Photo: Auriga Nusantara, December 2025',
-                                    title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                    desc: '<strong>Deforestation caused by the development of the Pomalaa Industry Park (IPIP) in Kolaka, Southeast Sulawesi.</strong> This industrial park is one of the National Strategic Projects (PSN) and is located within a Conversion Production Forest Area. ',
+                                    cc: '© Auriga Nusantara, December 2025'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the construction of the Mentarang hydroelectric power plant in Malinau, North Kalimantan.</strong> This project is one of the National Strategic Projects. Photo: Auriga Nusantara, October 2025.',
-                                    title: 'PLTA Mentarang, Malinau <br> Kalimantan Utara, Desember 2025'
+                                    desc: '<strong>Deforestation caused by the construction of the Mentarang hydroelectric power plant in Malinau, North Kalimantan.</strong> This project is one of the National Strategic Projects. ',
+                                    cc: '© Auriga Nusantara, October 2025.'
                                 }
                             ]
                         }">
@@ -1219,7 +1217,7 @@
                               </div> -->
 
                             <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1234,7 +1232,7 @@
                                 </div>
 
                                 <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
 
                                     <div x-html="images[active].desc"></div>
 
@@ -1291,23 +1289,23 @@
                             active: 0,
                             images: [{
                                     src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
-                                    desc: '<strong>Deforestation within the logging concession of PT Jati Dharma Indah Plywood Industries in Nabire, Central Papua.</strong> Photo: Auriga Nusantara, December 2025.',
-                                    title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                    desc: '<strong>Deforestation within the logging concession of PT Jati Dharma Indah Plywood Industries in Nabire, Central Papua.</strong> ',
+                                    cc: '© Auriga Nusantara, December 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
-                                    desc: '<strong> PT GAG Nikel, Raja Ampat, Papua Barat (Desember 2024)</strong> <br> Aktivitas tambang nikel di kawasan hutan lindung Raja Ampat menunjukkan ekspansi industri ekstraktif ke wilayah dengan nilai ekologis tinggi. Kasus ini mencerminkan pergeseran tekanan deforestasi ke Tanah Papua, seiring meningkatnya kebutuhan mineral dan kemudahan perizinan dalam kawasan hutan.',
-                                    title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                    desc: '<strong>Deforestation caused by the nickel mining operations of PT Anugerah Surya Pratama, Manuram Island, Raja Ampat, Papua.</strong>',
+                                    cc: '© Auriga Nusantara, September 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
-                                    desc: '<strong>Natural forest cover in Sarmi Regency, Papua.</strong> However, the government has issued a nickel mining permit to PT Iriana Mutiara Mining for this area, thereby paving the way for the loss of this natural forest cover. Photo: Auriga Nusantara, December 2024.',
-                                    title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                    desc: '<strong>Natural forest cover in Sarmi Regency, Papua.</strong> However, the government has issued a nickel mining permit to PT Iriana Mutiara Mining for this area, thereby paving the way for the loss of this natural forest cover. ',
+                                    cc: '© Auriga Nusantara, December 2024.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest by the food estate project in Sorong, West Papua.</strong> Photo: Auriga Nusantara, April 2026.',
-                                    title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
+                                    desc: '<strong>Deforestation of natural forest by the food estate project in Sorong, West Papua.</strong> ',
+                                    cc: '© Auriga Nusantara, April 2026.'
                                 }
                             ]
                         }">
@@ -1342,7 +1340,7 @@
                               </div> -->
 
 
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1357,7 +1355,7 @@
                                 </div>
 
                                 <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
 
                                     <div x-html="images[active].desc"></div>
 
@@ -1428,23 +1426,23 @@
                             active: 0,
                             images: [{
                                     src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the construction of logging roads within PT Toba Pulp Lestari’s timber plantation concession.</strong> These roads will serve as gateways to massive deforestation in this area. Photo: Auriga Nusantara/Earthsight, December 2025.',
-                                    title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                    desc: '<strong>Deforestation caused by the construction of logging roads within PT Toba Pulp Lestari’s timber plantation concession.</strong> These roads will serve as gateways to massive deforestation in this area.',
+                                    cc: '© Auriga Nusantara/Earthsight, December 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest due to oil palm plantation development within the PT Equator Sumber Rezeki concession in Kapuas Hulu, West Kalimantan.</strong> Photo: Auriga Nusantara, June 2025.',
-                                    title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                    desc: '<strong>Deforestation of natural forest due to oil palm plantation development within the PT Equator Sumber Rezeki concession in Kapuas Hulu, West Kalimantan.</strong> ',
+                                    cc: '© Auriga Nusantara, June 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 3/konsesi pbph.jpg') }}',
-                                    desc: '<strong>Deforestation caused by the development of timber plantations within PT Industrial Forest Plantation’s concession in Kapuas, Central Kalimantan.</strong> Photo: Auriga Nusantara/Earthsight, July 2025.',
-                                    title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                    desc: '<strong>Deforestation caused by the development of timber plantations within PT Industrial Forest Plantation’s concession in Kapuas, Central Kalimantan.</strong> ',
+                                    cc: '© Auriga Nusantara/Earthsight, July 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forests caused by the expansion of a nickel mine in Kolonodale, North Morowali, Central Sulawesi.</strong> Photo: Auriga Nusantara, October 2025.',
-                                    title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
+                                    desc: '<strong>Deforestation of natural forests caused by the expansion of a nickel mine in Kolonodale, North Morowali, Central Sulawesi.</strong>',
+                                    cc: '© Auriga Nusantara, October 2025.'
                                 }
                             ]
                         }">
@@ -1479,7 +1477,7 @@
                               </div> -->
 
                             <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1494,7 +1492,7 @@
                                 </div>
 
                                 <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
 
                                     <div x-html="images[active].desc"></div>
 
@@ -1547,23 +1545,23 @@
                             active: 0,
                             images: [{
                                     src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
-                                    desc: '<strong>Deforestation within the timber plantation concession of PT Indosubur Sukses Makmur in East Kutai, East Kalimantan.</strong> The issuance of timber plantation permits in areas covered by natural forest such as this is an example of legal deforestation in Indonesia. Photo: Auriga Nusantara/Earthsight, January 2025.',
-                                    title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                    desc: '<strong>Deforestation within the timber plantation concession of PT Indosubur Sukses Makmur in East Kutai, East Kalimantan.</strong> The issuance of timber plantation permits in areas covered by natural forest such as this is an example of legal deforestation in Indonesia.',
+                                    cc: '© Auriga Nusantara/Earthsight, January 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}',
-                                    desc: '<strong>Conversion of natural forest into large-scale oil palm plantations within the PT Borneo International Anugerah concession in Kapuas Hulu, West Kalimantan.</strong> The existence of permits for monoculture plantations in this area has allowed the company to clear the existing natural forest. Photo: Auriga Nusantara, June 2025.',
-                                    title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                    desc: '<strong>Conversion of natural forest into large-scale oil palm plantations within the PT Borneo International Anugerah concession in Kapuas Hulu, West Kalimantan.</strong> The existence of permits for monoculture plantations in this area has allowed the company to clear the existing natural forest.',
+                                    cc: '© Auriga Nusantara, June 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru.jpg') }}',
-                                    desc: '<strong>Gold mining operations by PT Agincourt Resources in the Batang Toru landscape, North Sumatra.</strong> The Batang Toru landscape is the only habitat of the Tapanuli orangutan (Pongo tapanuliensis) in the world. The existence of mining permits indicates that the clearing of natural forests is occurring as a form of legal deforestation. Photo: Auriga Nusantara, May 2025.',
-                                    title: 'Kawasan Hutan Produksi Konversi, PT Indonesia Pomalaa Industry Park <br> Kolaka, Sulawesi Tenggara, Desember 2025'
+                                    desc: '<strong>Gold mining operations by PT Agincourt Resources in the Batang Toru landscape, North Sumatra.</strong> The Batang Toru landscape is the only habitat of the Tapanuli orangutan (Pongo tapanuliensis) in the world. The existence of mining permits indicates that the clearing of natural forests is occurring as a form of legal deforestation.',
+                                    cc: '© Auriga Nusantara, May 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Banyan Tumbuh Lestari.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest within the palm oil concession of PT Banyan Tumbuh Lestari in Pohuwato, Gorontalo.</strong> The company’s permit is technically for a palm oil plantation, but in practice, the company is establishing a biomass timber plantation. The government’s decision to reclassify this forest area as an “Other Use Area” has opened the door to legal deforestation in this region. Photo: Auriga Nusantara, May 2025.',
-                                    title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
+                                    desc: '<strong>Deforestation of natural forest within the palm oil concession of PT Banyan Tumbuh Lestari in Pohuwato, Gorontalo.</strong> The company’s permit is technically for a palm oil plantation, but in practice, the company is establishing a biomass timber plantation. The government’s decision to reclassify this forest area as an “Other Use Area” has opened the door to legal deforestation in this region.',
+                                    cc: '© Auriga Nusantara, May 2025.'
                                 }
                             ]
                         }">
@@ -1598,7 +1596,7 @@
                               </div> -->
 
                             <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
+                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
                                 <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
                                     :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
                                         .offsetWidth + 'px' : ''">
@@ -1613,7 +1611,7 @@
                                 </div>
 
                                 <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
+                                    class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
 
                                     <div x-html="images[active].desc"></div>
 
@@ -1658,44 +1656,44 @@
                     accounting for 43% of national deforestation.
                 </p>
             </div>
-            <div class="viz-block viz-block--full mt-2 mb-2">
-                <div class="viz-frame viz-frame--padded">
-                    <div class="max-w-5xl mx-auto px-4 z-20 relative">
+             <div class="viz-block viz-block--full mt-2 mb-2">
+        <div class="viz-frame viz-frame--padded">
+          <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
-                        <div x-data="{
-                            active: 0,
-                            images: [{
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
+            <div x-data="{
+                                                                          active: 0,
+                                                                          images: [
+                                                                            {
+                                                                              src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
                                     desc: '<strong>Deforestation of natural forest within the Rawa Singkil Wildlife Reserve, Aceh.</strong> The presence of canals indicates that this activity did not occur overnight, raising questions about the effectiveness of the management of this conservation area by the Aceh Natural Resources Conservation Agency (BKSDA).',
-                                    title: 'Kawasan Hutan Produksi, Konsesi PBPH, PT Jati Dharma Indah Plywood Industries, <br> Nabire, Papua Tengah, Desember 2025'
+                                    cc: '© HAKA'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest within the Rawa Singkil Wildlife Reserve, Aceh.</strong> The presence of canals indicates that this activity did not occur overnight, raising questions about the effectiveness of the management of this conservation area by the Aceh Natural Resources Conservation Agency (BKSDA).',
-                                    title: 'Kawasan Hutan Lindung, Konsesi Tambang PT GAG Nikel, <br> Raja Ampat, Papua Barat, Desember 2024'
+                                    desc: '<strong>Deforestation of natural forests—habitat of orangutans—for the development of oil palm plantations within the PT Borneo Internasional Anugerah concession in Kapuas Hulu, West Kalimantan.</strong>',
+                                    cc: '© Auriga Nusantara, June 2025.'
                                 },
                                 {
                                     src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
-                                    desc: '<strong>Deforestation of natural forest within the Rawa Singkil Wildlife Reserve, Aceh.</strong> The presence of canals indicates that this activity did not occur overnight, raising questions about the effectiveness of the management of this conservation area by the Aceh Natural Resources Conservation Agency (BKSDA).',
-                                    title: 'Area Penggunaan Lain, Konsesi Food Estate <br> Sorong, Papua, April 2026'
-                                }
-                            ]
-                        }">
+                                    desc: '<strong>Deforestation in the Rawa Singkil Wildlife Reserve, Aceh.</strong> This deforestation is believed to be for the development of oil palm plantations in one of Indonesia’s most densely populated orangutan habitats.',
+                                    cc: '© HAKA, Agustus 2025.'
+                                                                            }
+                                                                          ]
+                                                                        }">
 
-                            <!-- IMAGE -->
-                            <div class="relative" x-ref="mainImg">
-                                <img :src="images[active].src"
-                                    @click="GLightbox({
-                                                                      elements: images.map(img => ({
-                                                                        href: img.src,
-                                                                        description: img.desc
-                                                                      })),
-                                                                      startAt: active
-                                                                    }).open()"
-                                    class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
+              <!-- IMAGE -->
+              <div class="relative" x-ref="mainImg">
+                <img :src="images[active].src" @click="GLightbox({
+                    elements: images.map(img => ({
+                        href: img.src,
+                        description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
+                    })),
+                    startAt: active
+                }).open()"
+                  class="w-full aspect-video sm:aspect-auto sm:h-[60vh] object-cover object-top cursor-pointer hover:brightness-50 transition duration-300" />
 
-                                <!-- PREV -->
-                                <button x-show="active > 0" @click="active--"
+                <!-- PREV -->
+                <button x-show="active > 0" @click="active--"
                   class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                   ◀
                 </button>
@@ -1704,44 +1702,41 @@
                   class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-gray-300 text-black rounded-full flex items-center justify-center transition">
                   ▶
                 </button>
-                            </div>
+              </div>
 
-                            <!-- DESC -->
-                            <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
-                                <small style="font-size: 12px;" x-html="images[active].desc"></small>
-                              </div> -->
+              <!-- DESC -->
+              <!-- <div class="mt-4" x-show="images[active].desc" style="line-height: 1;" style="line-height: 1;">
+                                          <small style="font-size: 12px;" x-html="images[active].desc"></small>
+                                        </div> -->
 
-                            <!-- THUMB + LOKASI -->
-                            <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-12 mt-4">
-                                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
-                                    :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg
-                                        .offsetWidth + 'px' : ''">
-                                    <template x-for="(img, index) in images" :key="index">
-                                        <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
-                                            :class="active === index ? 'opacity-100 ring-2 ring-black' :
-                                                'opacity-50 hover:opacity-80'">
-                                            <img :src="img.src" alt="thumbnail"
-                                                class="w-full h-full object-cover object-top transition duration-200" />
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <div
-                                    class="text-right text-[12px] leading-tight flex flex-col justify-between min-h-[60px] max-w-md">
-
-                                    <div x-html="images[active].desc"></div>
-
-                                    <div class="opacity-60" x-html="images[active].cc"></div>
-
-                                </div>
-                                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
-                            </div>
-
-                        </div>
-
+              <!-- THUMB + LOKASI -->
+              <div class="sm:flex hidden flex-col sm:flex-row sm:justify-between gap-4 mt-4">
+                <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2"
+                  :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
+                  <template x-for="(img, index) in images" :key="index">
+                    <div @click="active = index" class="cursor-pointer aspect-square sm:w-20"
+                      :class="active === index ? 'opacity-100 ring-2 ring-black' : 'opacity-50 hover:opacity-80'">
+                      <img :src="img.src" alt="thumbnail"
+                        class="w-full h-full object-cover object-top transition duration-200" />
                     </div>
+                  </template>
                 </div>
-            </div><br>
+
+                <div class="text-right text-[12px] leading-tight flex flex-col justify-between h-28 max-w-md">
+
+                  <div x-html="images[active].desc"></div>
+
+                  <div class="opacity-60" x-html="images[active].cc"></div>
+
+                </div>
+                <!-- <small style="font-size: 12px; line-height: 1;" x-html="images[active].desc" class="text-right"></small> -->
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div><br>
         </section>
 
         <!-- REKOMENDASI -->
@@ -1763,7 +1758,7 @@
                             <div class="ms-num">1.</div>
                             <div>
                                 <h4 class="chapter-title">Issue legislation to ensure the protection of all remaining
-                                    natural forests in Indonesia: </h4><br>
+                                    natural forests in Indonesia </h4><br>
                                 <p class="body-text">
                                     Legal protection over natural forests should ideally be in the form of a law. However,
                                     enacting laws is not easy and often takes years. Even lower tier legislation like
@@ -1805,7 +1800,7 @@
                                         }
                                     ],
                                     get totalSlides() { return this.images.length },
-                                
+
                                     openLightbox(index) {
                                         GLightbox({
                                             elements: this.images.map(img => ({
@@ -1815,7 +1810,7 @@
                                             startAt: index
                                         }).open();
                                     },
-                                
+
                                     startSwipe(e) { this.startX = e.touches[0].clientX },
                                     handleTouchMove(e) {
                                         let diff = this.startX - e.touches[0].clientX
@@ -1885,7 +1880,7 @@
                         <div class="ms-num">2.</div>
                         <div class="">
                             <h4 class="chapter-title">Establish and apply instruments to control spatial plan
-                                revisions:
+                                revisions
                             </h4><br>
 
                             <p class="body-text ">
@@ -1922,7 +1917,7 @@
                                     <h4 class="chapter-title">Accelerate the expansion of preservation areas, especially
                                         outside
                                         the
-                                        forest estate:
+                                        forest estate
                                     </h4><br>
                                     <p class="body-text">
                                         As noted above, existing conservation estates are far from sufficient to cover all
@@ -1958,7 +1953,7 @@
                                             desc: '<strong>There are at least 41.4 million hectares of ecologically important areas located outside conservation forest areas.</strong> These areas should be prioritized for preservation as stipulated in the Conservation Law.'
                                         }],
                                         get totalSlides() { return this.images.length },
-                                    
+
                                         openLightbox(index) {
                                             GLightbox({
                                                 elements: this.images.map(img => ({
@@ -1968,7 +1963,7 @@
                                                 startAt: index
                                             }).open();
                                         },
-                                    
+
                                         startSwipe(e) { this.startX = e.touches[0].clientX },
                                         handleTouchMove(e) {
                                             let diff = this.startX - e.touches[0].clientX
@@ -2020,7 +2015,7 @@
                             <div class="ms-num">4.</div>
                             <div class="">
                                 <h4 class="chapter-title">Redistribute forest management institutions and personnel so that
-                                    all natural forests have rangers to protect them:</h4><br>
+                                    all natural forests have rangers to protect them</h4><br>
                                 <p class="body-text">
                                     President Prabowo Subianto has reportedly instructed a doubling of the number of forest
                                     rangers – a step deserving of appreciation. However, as Auriga Nusantara has previously
@@ -2052,7 +2047,7 @@
                                         }
                                     ],
                                     get totalSlides() { return this.images.length },
-                                
+
                                     openLightbox(index) {
                                         GLightbox({
                                             elements: this.images.map(img => ({
@@ -2062,7 +2057,7 @@
                                             startAt: index
                                         }).open();
                                     },
-                                
+
                                     startSwipe(e) { this.startX = e.touches[0].clientX },
                                     handleTouchMove(e) {
                                         let diff = this.startX - e.touches[0].clientX
@@ -2128,12 +2123,12 @@
                         <div class="ms-num">5.</div>
                         <div class="">
                             <h4 class="chapter-title">Companies that manage areas with natural forest cover should make
-                                environmental, social, and good governance (ESG) commitments:</h4><br>
+                                environmental, social, and good governance (ESG commitments) </h4><br>
                             <p class="body-text">
                                 Nearly half of deforestation in 2025 occurred inside concession areas. Meanwhile there are
                                 more than nine million hectares of natural forest cover remaining within conversion
                                 concessions (mining, oil palm, industrial timber). Corporations managing these areas should
-                                declare environmental, social, and good governance (ESG) commitments, including not
+                                declare environmental, social, and good governance (ESG commitments), including not
                                 perpetrating nor being involved in deforestation.
                             </p>
                         </div>
@@ -2142,7 +2137,7 @@
                         <div class="ms-num">6.</div>
                         <div class="">
                             <h4 class="chapter-title">Provide incentives for regional governments, local communities and
-                                corporations that protect natural forest:</h4><br>
+                                corporations that protect natural forest</h4><br>
                             <p class="body-text">Perlindungan hutan semestinya dipandang sebagai investasi, selain karena
                                 Forest protection should be viewed as an investment, not only because forests provide
                                 environmental services for the public, but also because economic activities will be
@@ -2225,8 +2220,8 @@
             </p>
 
             <p class="mt-4 text-[15px]">
-                <strong>SITASI:</strong><br>
-                Status Deforestasi di Indonesia 2025, diakses pada [DD/MM/YYYY] melalui tautan [LINK]. Auriga Nusantara. 2025
+                <strong>CITATION:</strong><br>
+                Status deforestation in Indonesia 2025, accessed on [DD/MM/YYYY] via the link [LINK]. Auriga Nusantara. 2025
             </p>
 
             <p class="mt-2 text-[15px]">© Auriga Nusantara. 2026.</p>
