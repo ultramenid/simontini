@@ -1087,8 +1087,7 @@
                 <span class="absolute top-0 left-0 text-black  leading-none font-extralight" style="font-size: 3.5rem; line-height: 1;">&rdquo;</span>
 
                 <p class="text-black text-[20px] md:text-[20px] leading-snug font-extralight italic ">
-                    Of 433,751 hectares of deforestation area, 166,590 hectares are above 5 hectares deforestation spots. 62% of deforestation occurred on spots smaller than 5 hectares, with 149,159 hectares occurring on 1 to 5 hectare spots.
-                    <span class="font-extralight -pl-4" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
+                    Of 433,751 hectares of deforestation area, 166,590 hectares are above 5 hectares deforestation spots. 62% of deforestation occurred on spots smaller than 5 hectares, with 149,159 hectares occurring on 1 to 5 hectare spots.<span class="font-extralight -pl-4" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
                 </p>
             </div>
         </section>
