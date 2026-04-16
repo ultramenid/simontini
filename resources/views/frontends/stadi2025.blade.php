@@ -78,7 +78,7 @@
         <p class="body-text">
             Di Indonesia, upaya untuk menghentikan deforestasi atau hilangnya hutan alam tidak bermula dari deklarasi
             tersebut.
-            Satu dekade sebelumnya, Presiden Susilo Bambang Yudhoyono menandatangani Instruksi Presiden No. 10 tahun 2011,
+            Satu dekade sebelumnya, Presiden Susilo Bambang Yudhoyono menandatangani Instruksi Presiden No. 10 Tahun 2011,
             biasa
             disebut
             <a href="https://peraturan.bpk.go.id/Download/68485/Inpres_no_10_2011.pdf" target="_blank"
@@ -92,7 +92,7 @@
             sawit.
         </p>
         <p class="body-text">
-            Indonesia pun meratifikasi Kesepakatan Paris (Paris Agreement), yang dimaksudkan untuk menahan kenaikan suhu
+            Indonesia pun meratifikasi Kesepakatan Paris <i>(Paris Agreement)</i>, yang dimaksudkan untuk menahan kenaikan suhu
             global
             di bawah 2°C, sembari berupaya membatasi kenaikannya maksimum 1,5°C dari era pra-industri. Dalam kerangka ini,
             Pemerintah Indonesia menerbitkan
@@ -254,9 +254,8 @@
                             hutan yang
                             dipakai, yakni: (1)
                             MapBiomas Indonesia, (2) Peta Penutupan Lahan yang diproduksi Kementerian Kehutanan, (3)
-                            Tropical-moist
-                            forest (TMF) yang diproduksi European Commission’s Joint Research Centre, dan (4) Forest
-                            Persistence yang
+                            <i>Tropical-moist forest (TMF)</i> yang diproduksi European Commission’s Joint Research Centre, dan (4) <i>Forest
+                            Persistence</i> yang
                             diproduksi Google.
                         </p>
                     </div>
