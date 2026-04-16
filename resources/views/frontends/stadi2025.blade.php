@@ -228,7 +228,7 @@
                                 confidence</em>).
                             Isyarat-isyarat ini kemudian “diikat” atau diagregasi pada satu kotak (<em>bounding box</em>)
                             bersisi 10.240
-                            meter. Bounding boxes inilah yang menjadi area cakupan.
+                            meter. <i>Bounding boxes</i> inilah yang menjadi area cakupan.
 
                         </p>
                     </div>
