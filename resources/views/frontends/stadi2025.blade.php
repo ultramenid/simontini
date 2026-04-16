@@ -327,10 +327,7 @@
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:block hidden">
         <img src="{{ asset('assets/Tahap.png') }}" alt="Simontini - 2025 Methodology"
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
-
-        {{-- <small class="block w-full sm:max-w-6xl mx-auto text-center mt-2 font-bold" style="font-size: 12px !important;">
-      <i>Tahapan dan pemrosesan data deforestasi 2025</i>
-    </small> --}}
+            
         <section class="page-section px-[5vw] pt-8 pb-6">
             <div class="body-text">
                 <p>
