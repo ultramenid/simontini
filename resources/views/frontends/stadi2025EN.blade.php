@@ -1087,12 +1087,13 @@
             </div><br><br>
 
 
-            <div class="pull-quote">
-                <p>Deforestation in Kalimantan has increased dramatically every year since 2021, driven by the expansion of
-                    timber,
-                    palm oil,
-                    and mining concessions operating legally under government-issued permits.</p>
-                <cite>—SIMONTINI 2025 Analysis</cite>
+            <div class="mx-[50px] relative pl-10 py-2">
+                <!-- Tanda kutip besar di kiri atas -->
+                <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">"</span>
+                
+                <p class="text-black text-[20px] md:text-[20px] font-semibold leading-snug">
+                    Pada 2025, area deforestasi di atas 5 ha seluas 166.590 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare."
+                </p>
             </div>
         </section>
 
@@ -2219,7 +2220,7 @@
                 <strong>AUTHOR</strong> Timer Manurung, Andhika Younastya, Dedy Sukmara, Yustinus Seno, Wahyu Ananta Nugraha, Dendi Alfitrah
                 <strong>DATA PROCESSOR</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika Laura, Dedy Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
                 <strong>VERIFICATION TEAM</strong> Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika Younastya, Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika Laura, Chairul Soleh, Dedi Septyadi Wibisono, Fadela Yunika Sari, Hafid Azi Darma, Jonathan, Jumrio Nakul, Jundy Zaky Makarim, Luhut Simanjutak, M. Dendi Alfitrah, M. Irfan Nurrahman, M. Irfandi Andriansyah, Muhammad Nabil Astaqafi, Nebo Yok Jonah Marpaung, Reza Fahlevi, Rianti Gina Violeta, Riszki Is Hardianto, Sulih Primara Putra, Supintri Yohar Tri Wahyuni, Valentina Yulia Permatasari, Wahyu Ananta Nugraha, Yanuar Vira Febiyanti, Yudi Nofiandi, Yustinus Seno, Zerin Darma Kusuma
-                <strong>VERIFICATION TEAM</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
+                <strong>ACCURACY TEAM</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
                 <strong>CREATIVE DESIGN</strong> M. Alichamdan, M. Fachri, Robby Eebor, Thoriq Fa'iqoh
             </p>
 

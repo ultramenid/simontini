@@ -502,7 +502,7 @@ body.is-preloading { overflow: hidden; }
 .pull-quote {
   margin: 48px 0;
   padding: 32px 36px;
-  background: var(--dark);
+  /* background: var(--dark); */
   border-radius: 8px;
   position: relative;
 }
@@ -1034,7 +1034,7 @@ footer {
   .data-table th, .data-table td { padding: 8px 10px; }
   .pull-quote { padding: 24px 20px 20px; }
   .pull-quote::before { font-size: 3.5rem; top: 12px; left: 16px; }
-  .pull-quote p { font-size: 1rem; padding-left: 20px; }
+  .pull-quote p { font-size: 1rem; padding-left: 20px;  color: black;}
   .pull-quote cite { padding-left: 20px; }
   .rec-grid { grid-template-columns: 1fr; }
   .author-block { gap: 24px; }
