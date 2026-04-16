@@ -326,7 +326,10 @@
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:block hidden">
         <img src="{{ asset('assets/Tahap.png') }}" alt="Simontini - 2025 Methodology"
             class="sm:max-w-6xl w-full mx-auto h-auto object-contain sm:hidden block">
-            
+
+        {{-- <small class="block w-full sm:max-w-6xl mx-auto text-center mt-2 font-bold" style="font-size: 12px !important;">
+      <i>Tahapan dan pemrosesan data deforestasi 2025</i>
+    </small> --}}
         <section class="page-section px-[5vw] pt-8 pb-6">
             <div class="body-text">
                 <p>
@@ -481,9 +484,9 @@
                         <div class="border-t border-[#ddd5c8] px-2 py-2 text-[10px] text-[#7a6e60] sm:hidden">
                             Geser tabel ke samping untuk melihat semua kolom.
                         </div>
-                        <div class="tight text-[10px] px-2 mb-2 w-full">
+                        {{-- <div class="tight text-[10px] px-2 mb-2 w-full">
                             Tabel interaktif hasil uji akurasi data deforestasi 2025 berdasarkan strata luas poligon.
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 
@@ -1173,13 +1176,13 @@
         </small> --}}
             </div><br><br>
             <div class="mx-[50px] relative pl-10 py-2">
-                <!-- Tanda kutip besar di kiri atas -->
-                <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">"</span>
+    <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">&ldquo;</span>
 
-                <p class="text-black text-[20px] md:text-[20px] leading-snug">
-                    Pada 2025, area deforestasi di atas 5 hektare seluas 166.590 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare."
-                </p>
-            </div>
+    <p class="text-black text-[20px] md:text-[20px] leading-snug">
+        Pada 2025, area deforestasi di atas 5 hektare seluas 166.590 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare.
+        <span class="font-black" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
+    </p>
+</div>
 
         </section>
 

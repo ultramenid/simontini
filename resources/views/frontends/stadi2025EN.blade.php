@@ -264,7 +264,7 @@
         <section class="page-section px-[5vw] pt-8 pb-6">
             <div class="body-text">
                 <p>
-                    <strong>Accuracy Testing:</strong>. To determine the level of precision of the 2025 deforestation data,
+                    <strong>Accuracy Assessment:</strong>. To determine the level of precision of the 2025 deforestation data,
                     an accuracy assessment was conducted by visually inspecting deforestation polygons using PlanetScope
                     imagery with a spatial resolution of 3.7 meters. The polygons selected for inspection were chosen
                     randomly using a stratified random sampling method. Deforestation polygons were grouped by area, namely:
@@ -287,10 +287,7 @@
                     <div
                         class=" sm:mx-auto overflow-x-auto overflow-y-hidden  sm:rounded-none bg-white shadow-[0_4px_28px_rgba(26,26,26,.08)] md:overflow-x-visible">
                         <div class="border-b border-[#ddd5c8] px-4 py-4 sm:px-6">
-                            <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">Results
-                                of the
-                                accuracy test
-                                using 2025 deforestation data</div>
+                            <div class="text-[12px] font-semibold tracking-[-0.01em] text-[#1a1a1a] sm:text-[13px]">Deforestation in 2025Accuracy assessment result of the 2025 deforestation data</div>
                         </div>
 
                         <table
@@ -418,10 +415,10 @@
                         <div class="border-t border-[#ddd5c8] px-2 py-2 text-[10px] text-[#7a6e60] sm:hidden">
                             Swipe the table to the side to view all columns.
                         </div>
-                        <div class="tight text-[10px] px-2 mb-2 w-full">
+                        {{-- <div class="tight text-[10px] px-2 mb-2 w-full">
                             Interactive table of the results of the 2025 deforestation data accuracy test, broken down by
                             polygon area.
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 
@@ -1087,10 +1084,11 @@
 
             <div class="mx-[50px] relative pl-10 py-2">
                 <!-- Tanda kutip besar di kiri atas -->
-                <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">"</span>
+                <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">&rdquo;</span>
 
                 <p class="text-black text-[20px] md:text-[20px] leading-snug">
-                    Of 433,751 hectares of deforestation area, 166,590 hectares are above 5 hectares deforestation spots. 62% of deforestation occurred on spots smaller than 5 hectares, with 149,159 hectares occurring on 1 to 5 hectare spots."
+                    Of 433,751 hectares of deforestation area, 166,590 hectares are above 5 hectares deforestation spots. 62% of deforestation occurred on spots smaller than 5 hectares, with 149,159 hectares occurring on 1 to 5 hectare spots. 
+                    <span class="font-black" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
                 </p>
             </div>
         </section>
@@ -2686,7 +2684,7 @@
                                     .end)) + '</div>' +
                                 '<div style="font-size:.88rem;font-weight:800;color:#8b2a1a;line-height:1;white-space:nowrap;">' +
                                 total.toLocaleString('id-ID') + '</div>' +
-                                '<div style="font-size:.58rem;color:#8b7355;margin-top:2px;white-space:nowrap;">hectare deforestasi</div>';
+                                '<div style="font-size:.58rem;color:#8b7355;margin-top:2px;white-space:nowrap;">hectares deforestation</div>';
 
                             presGroup.appendChild(photoWrap);
                             presGroup.appendChild(el);
