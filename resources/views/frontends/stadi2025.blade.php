@@ -1180,7 +1180,7 @@
             <span class="absolute top-0 left-0 text-black  leading-none font-extralight" style="font-size: 3.5rem; line-height: 1;">&rdquo;</span>
 
             <p class="text-black text-[20px] md:text-[20px] leading-snug font-extralight italic ">
-            Dari 433.751 hektare deforestasi 2025, 166.590 hektare merupakan deforestasi yang terjadi pada skala luas di atas 5 hektare.<span class="font-extralight -pl-4" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
+            Dari 433.751 hektare deforestasi 2025, 166.590 hektare merupakan deforestasi yang terjadi pada skala luas di atas 5 hektare. Sebanyak 62% deforestasi terjadi pada skala luas di bawah 5 hektare, dengan 149.159 hektare terjadi pada skala luas 1–5 hektare.<span class="font-extralight -pl-4" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
             </p>
         </div>
 
