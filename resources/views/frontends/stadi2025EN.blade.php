@@ -272,7 +272,7 @@
                         Slovin formula with a 5% margin of error.
                 </p><br>
                 <p>
-                    Results of this accuracy testing showed the 2025 deforestation data having an accuracy level of 89%, as
+                    Results of this accuracy assessment showed the 2025 deforestation data having an accuracy level of 89%, as
                     presented in the table below.
                 </p><br>
                 {{-- <p>
@@ -1087,7 +1087,7 @@
                 <span class="absolute top-0 left-0 text-black font-black leading-none" style="font-size: 3.5rem; line-height: 1;">&rdquo;</span>
 
                 <p class="text-black text-[20px] md:text-[20px] leading-snug">
-                    Of 433,751 hectares of deforestation area, 166,590 hectares are above 5 hectares deforestation spots. 62% of deforestation occurred on spots smaller than 5 hectares, with 149,159 hectares occurring on 1 to 5 hectare spots. 
+                    Of 433,751 hectares of deforestation area, 166,590 hectares are above 5 hectares deforestation spots. 62% of deforestation occurred on spots smaller than 5 hectares, with 149,159 hectares occurring on 1 to 5 hectare spots.
                     <span class="font-black" style="font-size: 3.5rem; line-height: 0; vertical-align: -0.3em;">&rdquo;</span>
                 </p>
             </div>
