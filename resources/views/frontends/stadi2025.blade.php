@@ -1045,7 +1045,7 @@
       <div class="mt-10">
         <div class="chapter-header">
           <span class="ms-num">1.</span>
-          <h3 class="chapter-title"><strong>Kebijakan pemerintah turut memicu deforestasi</strong></h3>
+          <h3 class="chapter-title">Kebijakan pemerintah turut memicu deforestasi</h3>
         </div>
         <p class="body-text">
           Di era presidensi Joko Widodo, terutama pada periode kedua, perlindungan lingkungan mengalami pengenduran,
