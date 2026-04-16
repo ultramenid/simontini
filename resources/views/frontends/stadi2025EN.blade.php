@@ -1247,7 +1247,7 @@
             </div><br><br>
 
 
-            <hr class="divider"><br><br>
+            <br><br>
 
             <div>
                 <div class="chapter-header">
@@ -1369,7 +1369,7 @@
                 </div>
             </div><br><br>
 
-            <hr class="divider"><br><br>
+            <br><br>
 
             <div>
                 <div class="chapter-header">
@@ -1505,7 +1505,7 @@
                 </div>
             </div><br><br>
 
-            <hr class="divider"><br><br>
+            <br><br>
 
             <div>
                 <div class="chapter-header">
@@ -1628,7 +1628,7 @@
 
 
 
-            <hr class="divider"><br><br>
+            <br><br>
 
             <div>
                 <div class="chapter-header">

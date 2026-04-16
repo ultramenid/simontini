@@ -1356,7 +1356,7 @@
         </div>
       </div><br>
 
-            <hr class="divider"><br><br>
+            <br><br>
 
             <div>
                 <div class="chapter-header">
@@ -1497,7 +1497,7 @@
       </div><br><br>
 
 
-            <hr class="divider"><br><br>
+            <br><br>
 
             <div>
                 <div class="chapter-header">
@@ -1654,7 +1654,7 @@
       </div><br><br>
 
 
-            <hr class="divider"><br><br>
+            <br><br>
 
             <div>
                 <div class="chapter-header">
@@ -1789,7 +1789,7 @@
 
 
 
-            <hr class="divider"><br><br>
+            <br><br>
 
             <div>
                 <div class="chapter-header">
@@ -2226,7 +2226,7 @@
                     </div>
 
                     <div class="method-steps">
-                        <div class="border-b pt-0 pb-12">
+                        <div class=" pt-0 pb-12">
                             <div class="method-step ">
                                 <div class="ms-num">4.</div>
                                 <div class="">
