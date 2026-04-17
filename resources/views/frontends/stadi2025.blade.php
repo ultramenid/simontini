@@ -1,7 +1,7 @@
 @extends('layouts.stadi2025')
 
 @section('meta')
-    @include('partials.insightMeta')
+    @include('partials.insightMeta2025')
 @endsection
 
 @section('content')
@@ -1265,7 +1265,7 @@
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2 ">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-10 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1326,9 +1326,9 @@
                                                                                                             </div> -->
 
                     <div
-                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+                        class="flex flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 sm:h-24 h-32 relative z-10">
 
-                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        <div class="grid grid-cols-3 gap-2 sm:flex hidden sm:gap-2 shrink-0 h-12"
                         :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                         <template x-for="(img, index) in images" :key="index">
                             <div @click="active = index"
@@ -1403,7 +1403,7 @@
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-10 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1464,9 +1464,9 @@
                     <!-- THUMB + LOKASI -->
 
                     <div
-                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+                        class="flex flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 sm:h-24 h-32 relative z-10">
 
-                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        <div class="grid grid-cols-3 gap-2 sm:flex hidden sm:gap-2 shrink-0 h-12"
                         :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                         <template x-for="(img, index) in images" :key="index">
                             <div @click="active = index"
@@ -1492,11 +1492,7 @@
 
                 </div>
                 </div>
-            </div><br><br>
-
-
-            <br><br>
-
+            </div>
             <div>
                 <div class="chapter-header">
                     <span class="ms-num">3.</span>
@@ -1565,7 +1561,7 @@
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-10 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1622,9 +1618,9 @@
 
                     <!-- THUMB + LOKASI -->
                     <div
-                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+                        class="flex flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 sm:h-24 h-32 relative z-10">
 
-                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        <div class="grid grid-cols-3 gap-2 sm:flex hidden sm:gap-2 shrink-0 h-12"
                         :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                         <template x-for="(img, index) in images" :key="index">
                             <div @click="active = index"
@@ -1650,9 +1646,6 @@
                 </div>
                 </div>
             </div><br><br>
-
-
-            <br><br>
 
             <div>
                 <div class="chapter-header">
@@ -1692,7 +1685,7 @@
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-10 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1755,9 +1748,9 @@
 
                     <!-- THUMB + LOKASI -->
                     <div
-                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+                        class="flex flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 sm:h-24 h-32 relative z-10">
 
-                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        <div class="grid grid-cols-3 gap-2 sm:flex hidden sm:gap-2 shrink-0 h-12"
                         :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                         <template x-for="(img, index) in images" :key="index">
                             <div @click="active = index"
@@ -1783,7 +1776,6 @@
                 </div>
                 </div>
             </div><br><br>
-            <br><br>
 
             <div>
                 <div class="chapter-header">
@@ -1820,7 +1812,7 @@
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-10 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1871,9 +1863,9 @@
                                                                                                     </div> -->
 
                     <div
-                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+                        class="flex flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 sm:h-24 h-32 relative z-10">
 
-                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        <div class="grid grid-cols-3 gap-2 sm:flex hidden sm:gap-2 shrink-0 h-12"
                         :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                         <template x-for="(img, index) in images" :key="index">
                             <div @click="active = index"
@@ -2022,8 +2014,8 @@
                         </div>
 
                         <!-- CAPTION -->
-                        <div class="max-w-4xl mx-auto px-12 sm:px-0 text-left relative z-10"
-                          style="line-height: 1; padding-right: 7rem; padding-left: 2.5rem; margin-top: -1rem;">
+                        <div class="max-w-4xl mx-auto px-12 sm:px-0 text-left relative z-10 sm:-mt-[1rem]"
+                          style="line-height: 1; ">
                           <small style="font-size: 12px;" x-html="item.desc"></small>
                         </div>
 
@@ -2128,7 +2120,7 @@
                                 </div>
                             </div>
 
-                           <div class="viz-block viz-block--full mb-2" style="margin-top: -5rem;">
+                           <div class="viz-block viz-block--full mb-2 sm:-mt-[5rem] mt-4" style="">
                             <div class="viz-frame !p-0 flex items-start">
 
                             <div x-data="{
@@ -2166,16 +2158,16 @@
                                 <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
                                 <template x-for="(item, index) in images" :key="index">
-                                    <div class="w-full flex-shrink-0" style="margin-top: -3rem;">
+                                    <div class="w-full flex-shrink-0 sm:-mt-[3rem]" >
 
                                     <!-- GAMBAR -->
                                     <div class="relative">
                                         <img :src="item.src" @click="openLightbox(index)"
-                                        class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
+                                        class="w-full object-contain h-full sm:h-[60vh] cursor-pointer" />
 
                                         <!-- CAPTION -->
-                                        <div class="max-w-3xl mx-auto text-left"
-                                        style="line-height: 1; margin-top: -3.5rem; padding-right: 3rem; padding-left: 4rem;">
+                                        <div class="max-w-3xl mx-auto text-left sm:-mt-[3.2rem] px-4"
+                                        style="line-height: 1;">
                                         <small style="font-size: 12px;" x-html="item.desc"></small>
                                         </div>
 
@@ -2293,7 +2285,7 @@
 
                                         <!-- CAPTION -->
                                         <div class="max-w-6xl mx-auto px-12 sm:px-0 text-left relative z-10"
-                                            style="line-height: 1; padding-right: 11rem; padding-left: 11rem;">
+                                            style="line-height: 1; ">
                                             <small style="font-size: 12px;" x-html="item.desc"></small>
                                         </div>
 
