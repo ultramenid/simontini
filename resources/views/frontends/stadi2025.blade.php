@@ -1283,15 +1283,15 @@
                             {
 
 
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
+                                src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
                                 desc: 'Deforestasi oleh pembangunan pembangkit listrik tenaga air PLTA Mentarang di Malinau, Kalimantan Utara. Kegiatan ini merupakan salah satu Proyek Strategis Nasional.',
                                 cc: '© Auriga Nusantara, Oktober 2025.'
                             },
                             {
 
 
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
-                                desc: 'Tutupan hutan alam dalam konsesi kebun kayu PT Malinau Hijau Lestari (MHL) di Malinau, Kalimantan Utara. Pemberian izin kebun kayu pada area bertutupan hutan alam seperti ini merupakan salah satu bentuk deforestasi terencana oleh pemerintah karena memberikan ruang bagi MHL untuk membabat hutan alam dan menggantinya (konversi) dengan kebun kayu energi (biomassa) yang akan ditebang secara periodik.',
+                                src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
+                                desc: 'Tutupan hutan alam dalam konsesi kebun kayu PT Malinau Hijau Lestari di Malinau, Kalimantan Utara. Pemberian izin kebun kayu pada area bertutupan hutan alam seperti ini merupakan salah satu bentuk deforestasi terencana oleh pemerintah karena memberikan ruang bagi perusahaan untuk membabat hutan alam dan menggantinya dengan kebun kayu biomassa.',
                                 cc: '© Auriga Nusantara, Mei 2024.'
                             }
                         ]
@@ -1410,7 +1410,7 @@
                         images: [{
 
                                 src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
-                                desc: 'Deforestasi oleh kegiatan pertambangan nikel PT Anugerah Surya Pratama, Pulau Manuram, Raja Ampat, Papua.',
+                                desc: 'Deforestasi oleh kegiatan pertambangan nikel PT Anugerah Surya Pratama, Pulau Manuram, Raja Ampat, Papua Barat Daya.',
                                 cc: '© Auriga Nusantara, September 2025.',
 
 
@@ -1422,12 +1422,12 @@
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
-                                desc: 'Tutupan hutan alam di Kabupaten Sarmi, Papua. Namun, pemerintah telah menerbitkan izin tambang nikel PT Iriana Mutiara Mining di area ini sehingga membuka ruang bagi hilangnya tutupan hutan alam tersebut.',
+                                desc: 'Pembabatan hutan untuk kegiatan eksplorasi tambang di Sarmi, Papua. Area ini merupakan tutupan hutan alam masif <i>(intact forest)</i>, tapi pemerintah menerbitkan izin tambang nikel PT Iriana Mutiara Mining.',
                                 cc: '© Auriga Nusantara, Desember 2024.',
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
-                                desc: 'Pembabatan hutan alam oleh proyek lumbung pangan (food estate) di Sorong, Papua Barat Daya.',
+                                desc: 'Pembabatan hutan alam oleh proyek lumbung pangan <i>(food estate)</i> di Sorong, Papua Barat Daya. ',
                                 cc: '© Auriga Nusantara, April 2026.',
                             }
                         ]
@@ -1568,12 +1568,12 @@
                         active: 0,
                         images: [{
                                 src: '{{ asset('assets/images/stadi2025/diskusi 3/HTI1.jpg') }}',
-                                desc: 'Pembabatan hutan alam untuk perluasan kebun kayu ekaliptus di dalam konsesi PT Toba Pulp Lestari. ',
+                                desc: 'Pembabatan hutan alam untuk perluasan kebun kayu ekaliptus di dalam konsesi PT Toba Pulp Lestari sektor Aek Raja di Tapanuli Utara, Sumatera Utara.  ',
                                 cc: '© Auriga Nusantara/Earthsight, Desember 2025.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
-                                desc: 'Pembabatan hutan alam oleh pembangunan kebun sawit di dalam konsesi PT Equator Sumber Rezeki di Kapuas Hulu, Kalimantan Barat.',
+                                desc: 'Pembabatan hutan alam oleh pembangunan kebun sawit di dalam konsesi PT Equator Sumber Rezeki di Kapuas Hulu, Kalimantan Barat. ',
                                 cc: '© Auriga Nusantara, Juni 2025.'
                             },
                             {
@@ -1583,7 +1583,7 @@
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
-                                desc: 'Pembabatan hutan alam oleh ekspansi tambang nikel di Kolonodale, Morowali Utara, Sulawesi Tengah. ',
+                                desc: 'Pembabatan hutan alam oleh ekspansi tambang nikel di Kolonodale, Morowali Utara, Sulawesi Tengah.',
                                 cc: '© Auriga Nusantara, Oktober 2025.'
                             }
                         ]
@@ -1693,12 +1693,12 @@
                         active: 0,
                         images: [{
                                 src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
-                                desc: 'Deforestasi oleh kegiatan pembangunan jaringan jalan eksploitasi di dalam konsesi kebun kayu PT Toba Pulp Lestari. Jaringan jalan tersebut akan menjadi pintu masuk deforestasi masif di area ini. ',
+                                desc: 'Deforestasi oleh kegiatan pembangunan jaringan jalan eksploitasi di dalam konsesi kebun kayu PT Toba Pulp Lestari sektor Aek Raja di Tapanuli Utara, Sumatera Utara. Jaringan jalan tersebut akan menjadi pintu masuk deforestasi masif di area ini.',
                                 cc: '© Auriga Nusantara/Earthsight, Desember 2025.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
-                                desc: 'Deforestasi di dalam konsesi kebun kayu PT Indosubur Sukses Makmur di Kutai Timur, Kalimantan Timur. Penerbitan izin kebun kayu di area bertutupan hutan alam seperti ini menjadi salah satu contoh deforestasi legal (legal deforestation) di Indonesia. ',
+                                desc: 'Deforestasi di dalam konsesi kebun kayu PT Indosubur Sukses Makmur di Kutai Timur, Kalimantan Timur. Penerbitan izin kebun kayu di area bertutupan hutan alam seperti ini menjadi salah satu contoh deforestasi legal <i>(legal deforestation)</i> di Indonesia.',
                                 cc: '© Auriga Nusantara/Earthsight, Januari 2025.'
                             },
                             {
@@ -1708,7 +1708,7 @@
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru_3.jpg') }}',
-                                desc: 'Aktivitas tambang emas PT Agincourt Resources di bentang alam Batang Toru, Sumatera Utara. Bentang alam Batang Toru adalah satu-satunya habitat orangutan tapanuli (Pongo tapanuliensis) di dunia. Adanya izin tambang menjadi indikasi pembabatan hutan alam yang terjadi sebagai deforestasi legal.',
+                                desc: 'Aktivitas tambang emas PT Agincourt Resources di bentang alam Batang Toru, Sumatera Utara. Bentang alam Batang Toru adalah satu-satunya habitat orangutan tapanuli <i>(Pongo tapanuliensis)</i> di dunia. Adanya izin tambang menjadi indikasi pembabatan hutan alam yang terjadi sebagai deforestasi legal.',
                                 cc: '© Auriga Nusantara, Mei 2025.'
                             },
 
@@ -1822,7 +1822,7 @@
                         images: [{
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
                                 desc: 'Pembaban hutan alam di dalam Suaka Margasatwa Rawa Singkil, Aceh. Adanya kanal mengindikasikan bahwa kegiatan ini tidak berlangsung dalam sekejap sehingga menjadi pertanyaan akan efektivitas pengelolaan kawasan konservasi ini oleh Balai Konservasi Sumber Daya Alam (BKSDA) Aceh.',
-                                cc: ' '
+                                cc: '© HAKA, Agustus 2025'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
@@ -2232,7 +2232,7 @@
                                     startX: 0,
                                     images: [{
                                             src: '{{ asset('assets/images/stadi2025/RUDP6 in.jpg') }}',
-                                            desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa. </strong> Anggaran yang tersedia untuk pengelolaan per hektare kawasan hutan konservasi di luar taman nasional di Papua hanya Rp 60.718 per hektare; di Kepulauan Maluku Rp 82.374; di Kalimantan Rp 361.395; di Sulawesi Rp 530.208; di Sumatera Rp 1.622.440; di Bali dan Nusa Tenggara Rp 2.694.521. Tapi, di Jawa tersedia anggaran per hektare Rp 116.225.764.'
+                                            desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa. </strong> Anggaran yang tersedia untuk pengelolaan per hektare kawasan hutan konservasi di luar taman nasional di Papua hanya Rp 60.718 per hektare; di Kepulauan Maluku Rp 82.374; di Kalimantan Rp 361.395; di Sulawesi Rp 530.208; di Sumatera Rp 1.622.440; di Bali dan Nusa Tenggara Rp 2.694521. Tapi, di Jawa tersedia anggaran per hektare Rp 116.225.764.'
                                         },
                                         {
                                             src: '{{ asset('assets/images/stadi2025/RUDP7 in.jpg') }}',
