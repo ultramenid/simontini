@@ -2410,10 +2410,10 @@
                 <strong>PENULIS</strong> Timer Manurung, Andhika Younastya, Dedy Sukmara, Yustinus Seno, Wahyu Ananta
                 Nugraha,
                 Dendi Alfitrah
-                <strong>PENGOLAH DATA</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika
+                <strong>OLAH DATA</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika
                 Laura,
                 Dedy Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
-                <strong>TIM VERIFIKASI</strong> Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika
+                <strong>VERIFIKASI</strong> Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika
                 Younastya, Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika Laura, Chairul
                 Soleh, Dedi Septyadi Wibisono, Fadela Yunika Sari, Hafid Azi Darma, Jonathan, Jumrio Nakul, Jundy Zaky
                 Makarim,
@@ -2424,9 +2424,7 @@
                 Wahyuni, Valentina Yulia Permatasari, Wahyu Ananta Nugraha, Yanuar Vira Febiyanti, Yudi Nofiandi, Yustinus
                 Seno,
                 Zerin Darma Kusuma
-                <strong>UJI AKURASI</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul,
-                M.
-                Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
+                <strong>UJI AKURASI</strong> Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul.
                 <strong>KREATIF DESAIN</strong> M. Alichamdan, M. Fachri, Robby Eebor, Thoriq Fa'iqoh
             </p>
 

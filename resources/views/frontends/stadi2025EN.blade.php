@@ -1164,28 +1164,28 @@
                         active: 0,
                         images: [{
                             src: '{{ asset('assets/images/stadi2025/diskusi 1/IPIP.jpg') }}',
-                                desc: 'Deforestasi oleh pembangunan kawasan industri Indonesia Pomalaa Industry Park (IPIP) di Kolaka, Sulawesi Tenggara. Kawasan industri ini merupakan salah satu Proyek Strategis Nasional (PSN) dan berada dalam Kawasan Hutan Produksi Konversi.',
-                                cc: '© Auriga Nusantara, Desember 2025.'
+                                desc: 'Deforestation for the development of the industrial area of the Indonesia Pomalaa Industry Park (IPIP) in Kolaka District of Southeast Sulawesi Province. This industrial area is one of the National Strategic Projects.',
+                                cc: '© Auriga Nusantara, December 2025.'
 
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 1/IMIP.jpg') }}',
-                                desc: 'Deforestasi oleh ekspansi tambang nikel PT Weda Bay Nickel di Halmahera Tengah, Maluku Utara. Dengan menerbitkan izin tambang pada daerah bertutupan hutan, pemerintah dasarnya merencanakan deforestasi demi eksploitasi nikel di wilayah izin pertambangan ini.',
-                                cc: '© Auriga Nusantara, Desember 2025.'
+                                desc: 'Deforestation inside nickel mining concession PT Weda Bay Nickel in Central Halmahera District of North Molucca Province. By issuing the mining permits in forested area, the government is basically planning deforestation for the sake of nickel production.',
+                                cc: '© Auriga Nusantara, December 2025.'
                             },
                             {
 
 
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
-                                desc: 'Deforestasi oleh pembangunan pembangkit listrik tenaga air PLTA Mentarang di Malinau, Kalimantan Utara. Kegiatan ini merupakan salah satu Proyek Strategis Nasional.',
-                                cc: '© Auriga Nusantara, Oktober 2025.'
+                                src: '{{ asset('assets/images/stadi2025/diskusi 1/PLTA.jpg') }}',
+                                desc: 'Deforestation for a hydroelectric power plant development PLTA Mentarang in Malinau, North Kalimantan. The plant is one of the government’s National Strategic Projects.',
+                                cc: '© Auriga Nusantara, October 2025.'
                             },
                             {
 
 
-                                    src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
-                                desc: 'Tutupan hutan alam dalam konsesi kebun kayu PT Malinau Hijau Lestari (MHL) di Malinau, Kalimantan Utara. Pemberian izin kebun kayu pada area bertutupan hutan alam seperti ini merupakan salah satu bentuk deforestasi terencana oleh pemerintah karena memberikan ruang bagi MHL untuk membabat hutan alam dan menggantinya (konversi) dengan kebun kayu energi (biomassa) yang akan ditebang secara periodik.',
-                                cc: '© Auriga Nusantara, Mei 2024.'
+                                src: '{{ asset('assets/images/stadi2025/diskusi 1/HTE Kaltara.jpg') }}',
+                                desc: 'Forest cover inside the timber plantation concession PT Malinau Hijau Lestari in Malinau, North Kalimantan. Permit granting for timber plantations in forested areas like this is a government’s planned deforestation because it allows companies to clear the forest and convert it into biomass wood plantations.',
+                                cc: '© Auriga Nusantara, May 2024.'
                             }
                         ]
                     }">
@@ -1291,24 +1291,24 @@
                         images: [{
 
                                 src: '{{ asset('assets/images/stadi2025/diskusi 2/Raja Ampat.jpg') }}',
-                                desc: 'Deforestasi oleh kegiatan pertambangan nikel PT Anugerah Surya Pratama, Pulau Manuram, Raja Ampat, Papua.',
+                                desc: 'Deforestation caused by nickel mining operation of PT Anugerah Surya Pratama in Manuram Island of Raja Ampat District, Southwest Papua.',
                                 cc: '© Auriga Nusantara, September 2025.',
 
 
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 2/Nabire.jpg') }}',
-                                desc: 'Deforestasi dalam konsesi logging PT Jati Dharma Indah Plywood Industries di Nabire, Papua Tengah. ',
-                                cc: '© Auriga Nusantara, Desember 2025.'
+                                desc: 'Deforestation inside the logging concession PT Jati Dharma Indah Plywood Industries in Nabire District of Central Papua Province.',
+                                cc: '© Auriga Nusantara, December 2025.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 2/Sarmi.jpg') }}',
-                                desc: 'Tutupan hutan alam di Kabupaten Sarmi, Papua. Namun, pemerintah telah menerbitkan izin tambang nikel PT Iriana Mutiara Mining di area ini sehingga membuka ruang bagi hilangnya tutupan hutan alam tersebut.',
-                                cc: '© Auriga Nusantara, Desember 2024.',
+                                desc: 'Deforestation for mining exploration activities in Sami District of Papua Province. The area was an intact forest cover, but the government issued a nickel mining permit for PT Iriana Mutiara Mining in the area.',
+                                cc: '© Auriga Nusantara, December 2024.',
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 2/Sorong.jpg') }}',
-                                desc: 'Pembabatan hutan alam oleh proyek lumbung pangan (food estate) di Sorong, Papua Barat Daya.',
+                                desc: 'Deforestation for food estate project in Sorong District of Southwest Papua Province.',
                                 cc: '© Auriga Nusantara, April 2026.',
                             }
                         ]
@@ -1429,23 +1429,23 @@
                         active: 0,
                         images: [{
                                 src: '{{ asset('assets/images/stadi2025/diskusi 3/HTI1.jpg') }}',
-                                desc: 'Pembabatan hutan alam untuk perluasan kebun kayu ekaliptus di dalam konsesi PT Toba Pulp Lestari. ',
-                                cc: '© Auriga Nusantara/Earthsight, Desember 2025.'
+                                desc: 'Clearing of natural forest for eucalyptus plantation expansion inside PT Toba Pulp Lestari’s Aek Raja sector in North Tapanuli District of North Sumatra Province.',
+                                cc: '© Auriga Nusantara/Earthsight, December 2025.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 3/Konsesi Kebun, PT Equator Sumber Rezeki.jpg') }}',
-                                desc: 'Pembabatan hutan alam oleh pembangunan kebun sawit di dalam konsesi PT Equator Sumber Rezeki di Kapuas Hulu, Kalimantan Barat.',
-                                cc: '© Auriga Nusantara, Juni 2025.'
+                                desc: 'Deforestation inside oil palm concession PT Equator Sumber Rezeki in Kapuas Hulu District of West Kalimantan Province.',
+                                cc: '© Auriga Nusantara, June 2025.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 3/konsesi pbph.jpg') }}',
-                                desc: 'Deforestasi oleh pengembangan kebun kayu di dalam konsesi PT Industrial Forest Plantation di Kapuas, Kalimantan Tengah.',
-                                cc: '© Auriga Nusantara/Earthsight, Juli 2025.'
+                                desc: 'Deforestation inside timber plantations concession PT Industrial Forest Plantation in Kapuas District of Central Kalimantan Province.',
+                                cc: '© Auriga Nusantara/Earthsight, July 2025.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 3/Tambang.jpg') }}',
-                                desc: 'Pembabatan hutan alam oleh ekspansi tambang nikel di Kolonodale, Morowali Utara, Sulawesi Tengah. ',
-                                cc: '© Auriga Nusantara, Oktober 2025.'
+                                desc: 'Deforestation by nickel mining operation in Kolonodale of North Morowali District of Central Sulawesi Province.',
+                                cc: '© Auriga Nusantara, October 2025.'
                             }
                         ]
                     }">
@@ -1545,29 +1545,29 @@
                         active: 0,
                         images: [{
                                 src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Toba Pulp Lestari.jpg') }}',
-                                desc: 'Deforestasi oleh kegiatan pembangunan jaringan jalan eksploitasi di dalam konsesi kebun kayu PT Toba Pulp Lestari. Jaringan jalan tersebut akan menjadi pintu masuk deforestasi masif di area ini. ',
-                                cc: '© Auriga Nusantara/Earthsight, Desember 2025.'
+                                desc: 'Deforestation caused by exploitation road network development inside the timber plantation concession PT Toba Pulp Lestari’s  Aek Raja block in North Tapanuli District of North Sumatra Province. Such road network usually pose as an entry for a massive deforestation afterward.',
+                                cc: '© Auriga Nusantara/Earthsight, December 2025.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Indosubur Sukses Makmur.jpg') }}',
-                                desc: 'Deforestasi di dalam konsesi kebun kayu PT Indosubur Sukses Makmur di Kutai Timur, Kalimantan Timur. Penerbitan izin kebun kayu di area bertutupan hutan alam seperti ini menjadi salah satu contoh deforestasi legal (legal deforestation) di Indonesia. ',
-                                cc: '© Auriga Nusantara/Earthsight, Januari 2025.'
+                                desc: 'Deforestation inside the timber plantation concession PT Indosubur Sukses Makmur in East Kutai District of East Kalimantan Province. Timber plantation permits in these kind of forested areas are an example of legal deforestation in Indonesia.',
+                                cc: '© Auriga Nusantara/Earthsight, January 2025.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi Kebun Sawit, PT Borneo Internasional.jpg') }}',
-                                desc: 'Konversi hutan alam menjadi kebun sawit skala besar dalam konsesi PT Borneo International Anugerah di Kapuas Hulu, Kalimantan Barat. Keberadaan izin kebun monokultur di area ini membuka ruang bagi perusahaan membabat hutan alam yang ada.',
-                                cc: '© Auriga Nusantara, Juni 2025.'
+                                desc: 'Forest conversion into an palm oil plantation inside the PT Borneo International Anugerah concession in Kapuas Hulu District of West Kalimantan Province.',
+                                cc: '© Auriga Nusantara, June 2025.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 4/Batang Toru_3.jpg') }}',
-                                desc: 'Aktivitas tambang emas PT Agincourt Resources di bentang alam Batang Toru, Sumatera Utara. Bentang alam Batang Toru adalah satu-satunya habitat orangutan tapanuli (Pongo tapanuliensis) di dunia. Adanya izin tambang menjadi indikasi pembabatan hutan alam yang terjadi sebagai deforestasi legal.',
-                                cc: '© Auriga Nusantara, Mei 2025.'
+                                desc: 'Deforestation inside gold mining concession PT Agincourt Resources in the Batang Toru landscape of North Sumatra Province. The Batang Toru landscape is the only habitat for the Tapanuli Orangutan (Pongo tapanuliensis). The existence of a mining permit in this area indicates of a legal deforestation activities.',
+                                cc: '© Auriga Nusantara, May 2025.'
                             },
 
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 4/Konsesi PBPH, PT Banyan Tumbuh Lestari.jpg') }}',
-                                desc: 'Pembabatan hutan alam di dalam konsesi sawit PT Banyan Tumbuh Lestari di Pohuwato, Gorontalo. Izin perusahaan ini sejatinya untuk perkebunan sawit, namun pada praktiknya perusahaan membangun kebun kayu biomassa. Langkah pemerintah melepas kawasan hutan ini menjadi Area Penggunaan Lain menjadi pintu masuk deforestasi legal di area ini.',
-                                cc: '© Auriga Nusantara, Mei 2025.'
+                                desc: 'Deforestation inside oil palm concession PT Banyan Tumbuh Lestari in Pohuwato District of Gorontalo Province. The original permit of the concession were for oil palm, but it turns to become a biomass timber plantation. The Ministry of Forestry released the area from government’s forestry estate into other land use areas (APL), and it has become the gateway for legal deforestation in this area. ',
+                                cc: '© Auriga Nusantara, May 2025.'
                             }
                         ]
                     }">
@@ -1664,18 +1664,18 @@
                         active: 0,
                         images: [{
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
-                                desc: 'Pembaban hutan alam di dalam Suaka Margasatwa Rawa Singkil, Aceh. Adanya kanal mengindikasikan bahwa kegiatan ini tidak berlangsung dalam sekejap sehingga menjadi pertanyaan akan efektivitas pengelolaan kawasan konservasi ini oleh Balai Konservasi Sumber Daya Alam (BKSDA) Aceh.',
-                                cc: ' '
+                                desc: 'Deforestation inside Rawa Singkil Wildlife Reserve in Aceh Province. The existence of the canal indicates that this activity did not occur overnight, raising questions about the effectiveness of management of this conservation area.',
+                                cc: '© HAKA, August 2022.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
-                                desc: 'Pembabatan hutan alam habitat orangutan untuk pembangunan kebun sawit di dalam konsesi PT Borneo Internasional Anugerah di Kapuas Hulu, Kalimantan Barat.',
-                                cc: '© Auriga Nusantara, Juni 2025.'
+                                desc: 'Deforestation of the orangutan habitat for palm oil plantation inside the PT Borneo International Anugerah concession in Kapuas Hulu District of West Kalimantan Province.',
+                                cc: '© Auriga Nusantara, June 2025.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
-                                desc: 'Deforestasi di Suaka Margasatwa Rawa Singkil, Aceh. Pembabatan hutan ini ditengarai untuk pembangunan kebun sawit di salah satu habitat orangutan terpadat di Indonesia ini.',
-                                cc: '© HAKA, Agustus 2025.'
+                                desc: 'Deforestation in Rawa Singkil Wildlife Reserve in Aceh Province, one of the densest orangutan habitat in Indonesia. The deforestation is suspected for palm oil plantation development.',
+                                cc: '© HAKA, August 2025.'
                             }
                         ]
                     }">
@@ -1780,23 +1780,23 @@
                     startX: 0,
                     images: [{
                             src: '{{ asset('assets/images/stadi2025/RUDP1 in.jpg') }}',
-                            desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 118,7 juta hektare kawasan hutan darat Indonesia. Patut dicatat bahwa kawasan hutan adalah suatu wilayah yang ditetapkan sebagai kawasan hutan. Tak jarang kawasan hutan tidak bertutupan hutan. Sebaliknya, tak sedikit tutupan hutan alam yang berada di luar kawasan hutan.'
+                            desc: '<strong> Nearly half of Indonesia forest is without legal protection. </strong> There are 118,7 million hectares of terrestrial forest area in Indonesia. It's not uncommon for forest areas to be completely unforested. Conversely, there's a significant amount of natural forest cover located outside of forest areas which its legal term is other land uses area (Area Penggunaan Lain - APL).'
                         },
                         {
                             src: '{{ asset('assets/images/stadi2025/RUDP2 in.jpg') }}',
-                            desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Dari 22 juta hektare kawasan hutan konservasi, tersapa 4,7 juta hektare yang tidak bertutupan hutan alam. Secara hukum, seluruh hutan alam di dalam kawasan hutan konservasi dilindungi.'
+                            desc: '<strong> Nearly half of Indonesia forest is without legal protection. </strong> Out of 22 million hectares of conservation forest areas, 4.7 million hectares are currently without natural forest cover. By law, all natural forests within conservation forest are legally protected.'
                         },
                         {
                             src: '{{ asset('assets/images/stadi2025/RUDP3 in.jpg') }}',
-                            desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 227.127 hektare tutupan hutan alam di dalam hutan lindung yang berada di luar area moratorium sehingga cukup terbuka menjadi sasaran deforestasi oleh kebijakan atau proyek pemerintah.'
+                            desc: '<strong> Nearly half of Indonesia forest is without legal protection. </strong> There are 227,127 hectares of natural forest cover within protection forests located outside of moratorium zones, leaving these areas are highly susceptible to deforestation driven by government policies or projects.'
                         },
                         {
                             src: '{{ asset('assets/images/stadi2025/RUDP4 in.jpg') }}',
-                            desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 22,5 juta hektare tutupan hutan alam di hutan produksi yang berada di luar area moratorium, sehingga rawan menjadi sasaran deforestasi karena tidak memiliki perlindungan hukum.'
+                            desc: '<strong> Nearly half of Indonesia forest is without legal protection. </strong> There are 22.5 million hectares of natural forest cover within production forests located outside of moratorium zones; these areas are highly vulnerable to deforestation due to the absence of legal safeguards.'
                         },
                         {
                             src: '{{ asset('assets/images/stadi2025/RUDP5 in.jpg') }}',
-                            desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 9 juta hektare tutupan hutan alam di luar kawasan hutan, atau berada di dalam Area Penggunaan Lain (APL), dan 8,1 juta hektare di antaranya di luar area moratorium. Secara keseluruhan, 41,6 juta hektare (44%) tutupan hutan alam Indonesia tanpa perlindungan hukum.'
+                            desc: '<strong> Nearly half of Indonesia forest is without legal protection. </strong> There are 9 million hectares of natural forest cover located outside of the state forest area, specifically within Other Land-Use Areas (APL), with 8.1 million hectares of this total situated outside of moratorium zones. Overall, 41.6 million hectares—representing 44% of Indonesia’s natural forest cover—are without legal protection.'
                         }
                     ],
                     get totalSlides() { return this.images.length },
@@ -1948,7 +1948,7 @@
                                     startX: 0,
                                     images: [{
                                         src: '{{ asset('assets/images/stadi2025/RUDP8 in.jpg') }}',
-                                        desc: '<strong> Terdapat setidaknya 41,4 juta hektare area yang penting secara ekologis berada di luar kawasan hutan konservasi. </strong> Area-area ini semestinya diprioritaskan menjadi area preservasi sebagaimana diatur UU Konservasi.'
+                                        desc: '<strong> There are at least 41.4 million hectares of ecologically significant areas located outside of conservation forests. </strong> These areas should be prioritized for preservation, as mandated by the Conservation Law.'
                                     }],
                                     get totalSlides() { return this.images.length },
 
@@ -2037,11 +2037,11 @@
                                     startX: 0,
                                     images: [{
                                             src: '{{ asset('assets/images/stadi2025/RUDP6 in.jpg') }}',
-                                            desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa. </strong> Anggaran yang tersedia untuk pengelolaan per hektare kawasan hutan konservasi di luar taman nasional di Papua hanya Rp 60.718 per hektare; di Kepulauan Maluku Rp 82.374; di Kalimantan Rp 361.395; di Sulawesi Rp 530.208; di Sumatera Rp 1.622.440; di Bali dan Nusa Tenggara Rp 2.694.521. Tapi, di Jawa tersedia anggaran per hektare Rp 116.225.764.'
+                                            desc: '<strong> Budget allocation and forest rangers are heavily concentrated in Java. </strong> The available budget for conservation forest areas outside national parks is only IDR 60,718 per hectare in Papua; IDR 82,374 in the Maluku Islands; IDR 361,395 in Kalimantan; IDR 530,208 in Sulawesi; IDR 1,622,440 in Sumatra; and IDR 2,694,521 in Bali and Nusa Tenggara. In stark contrast, the budget available for Java reaches IDR 116,225,764 per hectare.'
                                         },
                                         {
                                             src: '{{ asset('assets/images/stadi2025/RUDP7 in.jpg') }}',
-                                            desc: '<strong> Anggaran dan aparat perlindungan hutan terkonsentrasi di Pulau Jawa. </strong> Rerata, per orang petugas TN Lorentz di Papua mengelola 38.548 hektare, sementara anggaran yang tersedia untuk pengelolaan Rp  6.707. Cakupan per staf yang sedemikian luas sementara ketersediaan anggaran yang minim relatif merata untuk taman nasional di luar Jawa. Sangat kontras, misalnya, dengan TN Gede Pangrango yang memiliki anggaran Rp 898.381 per hektare, dengan satu staf mengelola 157 hektare.'
+                                            desc: '<strong> Budget allocation and forest rangers are heavily concentrated in Java. </strong> In avarage, a single staff member at Lorentz National Park in Papua oversees 38,548 hectares, with an available management budget of only IDR 6,707 per hectare. Such vast staff coverage, coupled with minimal budget availability, is a relatively consistent trend across national parks outside Java. While national parks outside Java face severe underfunding and staffing shortages, the Gede Pangrango National Park in Wes Java Province, for instance, maintains a significantly higher budget of IDR 898,381 per hectare and a concentrated staffing ratio of one person per 157 hectares.'
                                         }
                                     ],
                                     get totalSlides() { return this.images.length },
@@ -2209,9 +2209,9 @@
         <div class="max-w-6xl mx-auto text-center mb-[40px]">
             <p class="text-[13px]">
                 <strong>AUTHOR</strong> Timer Manurung, Andhika Younastya, Dedy Sukmara, Yustinus Seno, Wahyu Ananta Nugraha, Dendi Alfitrah
-                <strong>DATA PROCESSOR</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika Laura, Dedy Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
-                <strong>VERIFICATION TEAM</strong> Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika Younastya, Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika Laura, Chairul Soleh, Dedi Septyadi Wibisono, Fadela Yunika Sari, Hafid Azi Darma, Jonathan, Jumrio Nakul, Jundy Zaky Makarim, Luhut Simanjutak, M. Dendi Alfitrah, M. Irfan Nurrahman, M. Irfandi Andriansyah, Muhammad Nabil Astaqafi, Nebo Yok Jonah Marpaung, Reza Fahlevi, Rianti Gina Violeta, Riszki Is Hardianto, Sulih Primara Putra, Supintri Yohar Tri Wahyuni, Valentina Yulia Permatasari, Wahyu Ananta Nugraha, Yanuar Vira Febiyanti, Yudi Nofiandi, Yustinus Seno, Zerin Darma Kusuma
-                <strong>ACCURACY TEAM</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
+                <strong>DATA PROCESSING</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika Laura, Dedy Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
+                <strong>VERIFICATION</strong> Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika Younastya, Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika Laura, Chairul Soleh, Dedi Septyadi Wibisono, Fadela Yunika Sari, Hafid Azi Darma, Jonathan, Jumrio Nakul, Jundy Zaky Makarim, Luhut Simanjutak, M. Dendi Alfitrah, M. Irfan Nurrahman, M. Irfandi Andriansyah, Muhammad Nabil Astaqafi, Nebo Yok Jonah Marpaung, Reza Fahlevi, Rianti Gina Violeta, Riszki Is Hardianto, Sulih Primara Putra, Supintri Yohar Tri Wahyuni, Valentina Yulia Permatasari, Wahyu Ananta Nugraha, Yanuar Vira Febiyanti, Yudi Nofiandi, Yustinus Seno, Zerin Darma Kusuma
+                <strong>ACCURACY ASSESSMENT</strong> Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul.
                 <strong>CREATIVE DESIGN</strong> M. Alichamdan, M. Fachri, Robby Eebor, Thoriq Fa'iqoh
             </p>
 
