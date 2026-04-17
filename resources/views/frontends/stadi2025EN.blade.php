@@ -1665,7 +1665,7 @@
                         images: [{
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
                                 desc: 'Deforestation inside Rawa Singkil Wildlife Reserve in Aceh Province. The existence of the canal indicates that this activity did not occur overnight, raising questions about the effectiveness of management of this conservation area.',
-                                cc: '© HAKA, August 2022.'
+                                cc: '© HAkA, August 2022.'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
@@ -1675,7 +1675,7 @@
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
                                 desc: 'Deforestation in Rawa Singkil Wildlife Reserve in Aceh Province, one of the densest orangutan habitat in Indonesia. The deforestation is suspected for palm oil plantation development.',
-                                cc: '© HAKA, August 2025.'
+                                cc: '© HAkA, August 2025.'
                             }
                         ]
                     }">

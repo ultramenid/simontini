@@ -1822,7 +1822,7 @@
                         images: [{
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Deforestasi, Kawasan Konservasi, Suaka Margasatwa Rawa Singkil, Aceh Selatan, Aceh, Agustus 2022.jpg') }}',
                                 desc: 'Pembaban hutan alam di dalam Suaka Margasatwa Rawa Singkil, Aceh. Adanya kanal mengindikasikan bahwa kegiatan ini tidak berlangsung dalam sekejap sehingga menjadi pertanyaan akan efektivitas pengelolaan kawasan konservasi ini oleh Balai Konservasi Sumber Daya Alam (BKSDA) Aceh.',
-                                cc: '© HAKA, Agustus 2025'
+                                cc: '© HAkA, Agustus 2025'
                             },
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Habitat Orang Utan.jpg') }}',
@@ -1832,7 +1832,7 @@
                             {
                                 src: '{{ asset('assets/images/stadi2025/diskusi 5/Rawa Singkil.jpg') }}',
                                 desc: 'Deforestasi di Suaka Margasatwa Rawa Singkil, Aceh. Pembabatan hutan ini ditengarai untuk pembangunan kebun sawit di salah satu habitat orangutan terpadat di Indonesia ini.',
-                                cc: '© HAKA, Agustus 2025.'
+                                cc: '© HAkA, Agustus 2025.'
                             }
                         ]
                     }">
