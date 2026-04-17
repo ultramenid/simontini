@@ -20,7 +20,7 @@
         class="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[52px] px-[5vw]  backdrop-blur-md border-b border-[#e2d8cc]">
         <div
             class="nav-brand flex items-center gap-1.5 uppercase tracking-[0.18em] text-[#8b2a1a] text-[.65rem] font-semibold">
-            <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt=""
+            <a href="{{ url('/id') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt=""
                     class="h-8"></a>
         </div>
         <div class="nav-actions">
@@ -1354,7 +1354,7 @@
 
                 </div>
                 </div>
-            </div>
+            </div><br><br>
 
             <div>
                 <div class="chapter-header">
@@ -1493,6 +1493,7 @@
                 </div>
                 </div>
             </div>
+            <br><br>
             <div>
                 <div class="chapter-header">
                     <span class="ms-num">3.</span>
@@ -1646,6 +1647,7 @@
                 </div>
                 </div>
             </div>
+            <br><br>
 
             <div>
                 <div class="chapter-header">
@@ -1776,7 +1778,8 @@
                 </div>
                 </div>
             </div>
-
+            <br>
+            <br>
             <div>
                 <div class="chapter-header">
                     <span class="ms-num">5.</span>
@@ -1891,6 +1894,8 @@
                 </div>
                 </div>
             </div>
+            <br>
+            <br>
         </section>
 
         <!-- REKOMENDASI -->

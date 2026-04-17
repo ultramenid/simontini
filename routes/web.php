@@ -5,7 +5,7 @@ use App\Http\Controllers\{DashboardController, DownloadController, IndexControll
 use App\Http\Middleware\{checkSession, hasSession, setLanguage};
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
-Route::redirect('/', '/id');
+Route::redirect('/', '/id/status-deforestasi-di-indonesia-2025');
 
 Route::get('/sitemap.xml', function () {
 
