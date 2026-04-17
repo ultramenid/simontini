@@ -2212,7 +2212,7 @@
                 <strong>DATA PROCESSING</strong> Andhika Younastya, Anggun Detrina Napitupulu, Bagus Sugiarto, Cecilinia Tika Laura, Dedy Sukmara, Jumrio Nakul, M. Alichamdan, M. Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno
                 <strong>VERIFICATION</strong> Achmad Rafly Gymnastiar, Aditya Prima Yudha, Adzra Aqila Muthia, Andhika Younastya, Anggun Detrina Napitupulu, Annisa Meira Nurfauziah, Bagus Sugiarto, Cecilinia Tika Laura, Chairul Soleh, Dedi Septyadi Wibisono, Fadela Yunika Sari, Hafid Azi Darma, Jonathan, Jumrio Nakul, Jundy Zaky Makarim, Luhut Simanjutak, M. Dendi Alfitrah, M. Irfan Nurrahman, M. Irfandi Andriansyah, Muhammad Nabil Astaqafi, Nebo Yok Jonah Marpaung, Reza Fahlevi, Rianti Gina Violeta, Riszki Is Hardianto, Sulih Primara Putra, Supintri Yohar Tri Wahyuni, Valentina Yulia Permatasari, Wahyu Ananta Nugraha, Yanuar Vira Febiyanti, Yudi Nofiandi, Yustinus Seno, Zerin Darma Kusuma
                 <strong>ACCURACY ASSESSMENT</strong> Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul.
-                <strong>CREATIVE DESIGN</strong> M. Alichamdan, M. Fachri, Robby Eebor, Thoriq Fa'iqoh
+                <strong>CREATIVE DESIGN</strong> M. Alichamdan, M. Fachri, Thoriq Fa'iqoh
             </p>
 
             <p class="mt-4 text-[15px]">

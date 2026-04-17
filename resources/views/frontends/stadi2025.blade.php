@@ -2425,7 +2425,7 @@
                 Seno,
                 Zerin Darma Kusuma
                 <strong>UJI AKURASI</strong> Dendi Alfitrah, Wahyu Ananta Nugraha, Yustinus Seno, Anggun Detrina Napitupulu, Bagus Sugiarto, Jumrio Nakul.
-                <strong>KREATIF DESAIN</strong> M. Alichamdan, M. Fachri, Robby Eebor, Thoriq Fa'iqoh
+                <strong>KREATIF DESAIN</strong> M. Alichamdan, M. Fachri, Thoriq Fa'iqoh
             </p>
 
             <p class="mt-4 text-[15px]">
