@@ -1158,7 +1158,7 @@
 
             <div class="viz-block viz-block--full mt-2 mb-2 ">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-10 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1219,9 +1219,9 @@
                                                                                                             </div> -->
 
                     <div
-                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+                        class="flex flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 sm:h-24 h-32 relative z-10">
 
-                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        <div class="grid grid-cols-3 gap-2 sm:flex hidden sm:gap-2 shrink-0 h-12"
                         :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                         <template x-for="(img, index) in images" :key="index">
                             <div @click="active = index"
@@ -1247,7 +1247,7 @@
 
                 </div>
                 </div>
-            </div><br><br>
+            </div>
 
 
             <br><br>
@@ -1284,7 +1284,7 @@
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-10 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1345,9 +1345,9 @@
                     <!-- THUMB + LOKASI -->
 
                     <div
-                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+                        class="flex flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 sm:h-24 h-32 relative z-10">
 
-                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        <div class="grid grid-cols-3 gap-2 sm:flex hidden sm:gap-2 shrink-0 h-12"
                         :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                         <template x-for="(img, index) in images" :key="index">
                             <div @click="active = index"
@@ -1373,9 +1373,7 @@
 
                 </div>
                 </div>
-            </div><br><br>
-
-            <br><br>
+            </div>
 
             <div>
                 <div class="chapter-header">
@@ -1424,7 +1422,7 @@
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-10 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1481,9 +1479,9 @@
 
                     <!-- THUMB + LOKASI -->
                     <div
-                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+                        class="flex flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 sm:h-24 h-32 relative z-10">
 
-                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        <div class="grid grid-cols-3 gap-2 sm:flex hidden sm:gap-2 shrink-0 h-12"
                         :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                         <template x-for="(img, index) in images" :key="index">
                             <div @click="active = index"
@@ -1508,9 +1506,7 @@
 
                 </div>
                 </div>
-            </div><br><br>
-
-            <br><br>
+            </div>
 
             <div>
                 <div class="chapter-header">
@@ -1540,9 +1536,9 @@
 
             </div>
 
-            <div class="viz-block viz-block--full mt-2 mb-2">
+             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-10 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1605,9 +1601,9 @@
 
                     <!-- THUMB + LOKASI -->
                     <div
-                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+                        class="flex flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 sm:h-24 h-32 relative z-10">
 
-                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        <div class="grid grid-cols-3 gap-2 sm:flex hidden sm:gap-2 shrink-0 h-12"
                         :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                         <template x-for="(img, index) in images" :key="index">
                             <div @click="active = index"
@@ -1632,12 +1628,7 @@
 
                 </div>
                 </div>
-            </div><br><br>
-
-
-
-
-            <br><br>
+            </div>
 
             <div>
                 <div class="chapter-header">
@@ -1665,7 +1656,7 @@
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto px-10 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1716,9 +1707,9 @@
                                                                                                     </div> -->
 
                     <div
-                        class="sm:flex hidden flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 h-24 relative z-10">
+                        class="flex flex-col sm:flex-row sm:justify-between items-start gap-12 mt-4 sm:h-24 h-32 relative z-10">
 
-                        <div class="grid grid-cols-3 gap-2 sm:flex sm:gap-2 shrink-0 h-12"
+                        <div class="grid grid-cols-3 gap-2 sm:flex hidden sm:gap-2 shrink-0 h-12"
                         :style="$el.offsetParent && window.innerWidth < 640 ? 'width: ' + $refs.mainImg.offsetWidth + 'px' : ''">
                         <template x-for="(img, index) in images" :key="index">
                             <div @click="active = index"
@@ -1743,7 +1734,7 @@
 
                 </div>
                 </div>
-            </div><br><br>
+            </div>
         </section>
 
         <!-- REKOMENDASI -->
@@ -1779,30 +1770,30 @@
                             </div>
                         </div>
 
-                        <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
+                         <div class="viz-block viz-block--full !mt-0 !pt-0 mb-2">
               <div class="viz-frame !p-0 flex items-start !mt-[-20px]">
 
                 <div x-data="{
                     currentSlide: 4,
                     startX: 0,
                     images: [{
-                            src: '{{ asset('assets/images/stadi2025/RUDP1 en.jpg') }}',
+                            src: '{{ asset('assets/images/stadi2025/RUDP1 in.jpg') }}',
                             desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 118,7 juta hektare kawasan hutan darat Indonesia. Patut dicatat bahwa kawasan hutan adalah suatu wilayah yang ditetapkan sebagai kawasan hutan. Tak jarang kawasan hutan tidak bertutupan hutan. Sebaliknya, tak sedikit tutupan hutan alam yang berada di luar kawasan hutan.'
                         },
                         {
-                            src: '{{ asset('assets/images/stadi2025/RUDP2 en.jpg') }}',
+                            src: '{{ asset('assets/images/stadi2025/RUDP2 in.jpg') }}',
                             desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Dari 22 juta hektare kawasan hutan konservasi, tersapa 4,7 juta hektare yang tidak bertutupan hutan alam. Secara hukum, seluruh hutan alam di dalam kawasan hutan konservasi dilindungi.'
                         },
                         {
-                            src: '{{ asset('assets/images/stadi2025/RUDP3 en.jpg') }}',
+                            src: '{{ asset('assets/images/stadi2025/RUDP3 in.jpg') }}',
                             desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 227.127 hektare tutupan hutan alam di dalam hutan lindung yang berada di luar area moratorium sehingga cukup terbuka menjadi sasaran deforestasi oleh kebijakan atau proyek pemerintah.'
                         },
                         {
-                            src: '{{ asset('assets/images/stadi2025/RUDP4 en.jpg') }}',
+                            src: '{{ asset('assets/images/stadi2025/RUDP4 in.jpg') }}',
                             desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 22,5 juta hektare tutupan hutan alam di hutan produksi yang berada di luar area moratorium, sehingga rawan menjadi sasaran deforestasi karena tidak memiliki perlindungan hukum.'
                         },
                         {
-                            src: '{{ asset('assets/images/stadi2025/RUDP5 en.jpg') }}',
+                            src: '{{ asset('assets/images/stadi2025/RUDP5 in.jpg') }}',
                             desc: '<strong> Hampir separuh hutan alam Indonesia tanpa perlindungan hukum. </strong> Terdapat 9 juta hektare tutupan hutan alam di luar kawasan hutan, atau berada di dalam Area Penggunaan Lain (APL), dan 8,1 juta hektare di antaranya di luar area moratorium. Secara keseluruhan, 41,6 juta hektare (44%) tutupan hutan alam Indonesia tanpa perlindungan hukum.'
                         }
                     ],
@@ -1857,8 +1848,8 @@
                         </div>
 
                         <!-- CAPTION -->
-                        <div class="max-w-4xl mx-auto px-12 sm:px-0 text-left relative z-10"
-                          style="line-height: 1; padding-right: 7rem; padding-left: 2.5rem; margin-top: -1rem;">
+                        <div class="max-w-4xl mx-auto px-12 sm:px-0 text-left relative z-10 sm:-mt-[1rem]"
+                          style="line-height: 1; ">
                           <small style="font-size: 12px;" x-html="item.desc"></small>
                         </div>
 
@@ -1877,6 +1868,7 @@
 
                 </div>
               </div>
+            </div>
             </div>
                     </div>
 
@@ -1946,7 +1938,7 @@
                                 </div>
                             </div>
 
-                             <div class="viz-block viz-block--full mb-2" style="margin-top: -5rem;">
+                             <div class="viz-block viz-block--full mb-2 sm:-mt-[5rem] mt-4" style="">
                             <div class="viz-frame !p-0 flex items-start">
 
                             <div x-data="{
@@ -1984,16 +1976,16 @@
                                 <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
                                 <template x-for="(item, index) in images" :key="index">
-                                    <div class="w-full flex-shrink-0" style="margin-top: -3rem;">
+                                    <div class="w-full flex-shrink-0 sm:-mt-[3rem]" >
 
                                     <!-- GAMBAR -->
                                     <div class="relative">
                                         <img :src="item.src" @click="openLightbox(index)"
-                                        class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
+                                        class="w-full object-contain h-full sm:h-[60vh] cursor-pointer" />
 
                                         <!-- CAPTION -->
-                                        <div class="max-w-3xl mx-auto text-left"
-                                        style="line-height: 1; margin-top: -3.5rem; padding-right: 3rem; padding-left: 4rem;">
+                                        <div class="max-w-3xl mx-auto text-left sm:-mt-[3.2rem] px-4"
+                                        style="line-height: 1;">
                                         <small style="font-size: 12px;" x-html="item.desc"></small>
                                         </div>
 
@@ -2007,6 +1999,7 @@
 
                             </div>
                             </div>
+                        </div>
                         </div>
 
                         </div>
@@ -2100,7 +2093,7 @@
 
                                         <!-- CAPTION -->
                                         <div class="max-w-6xl mx-auto px-12 sm:px-0 text-left relative z-10"
-                                            style="line-height: 1; padding-right: 11rem; padding-left: 11rem;">
+                                            style="line-height: 1; ">
                                             <small style="font-size: 12px;" x-html="item.desc"></small>
                                         </div>
 
@@ -2120,7 +2113,6 @@
                                 </div>
                                 </div>
                             </div>
-                    </div>
                     <div class="method-step border-b">
                         <div class="ms-num">5.</div>
                         <div class="">

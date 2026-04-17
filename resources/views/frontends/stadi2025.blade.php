@@ -1265,7 +1265,7 @@
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2 ">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1354,7 +1354,7 @@
 
                 </div>
                 </div>
-            </div><br><br>
+            </div>
 
             <div>
                 <div class="chapter-header">
@@ -1403,7 +1403,7 @@
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1561,7 +1561,7 @@
             </div>
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1645,7 +1645,7 @@
 
                 </div>
                 </div>
-            </div><br><br>
+            </div>
 
             <div>
                 <div class="chapter-header">
@@ -1685,7 +1685,7 @@
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1775,7 +1775,7 @@
 
                 </div>
                 </div>
-            </div><br><br>
+            </div>
 
             <div>
                 <div class="chapter-header">
@@ -1812,7 +1812,7 @@
 
             <div class="viz-block viz-block--full mt-2 mb-2">
                 <div class="viz-frame viz-frame--padded">
-                <div class="max-w-5xl mx-auto sm:px-10 px-4 z-20 relative">
+                <div class="max-w-5xl mx-auto sm:px-10 z-20 relative">
 
                     <div x-data="{
                         active: 0,
@@ -1890,7 +1890,7 @@
 
                 </div>
                 </div>
-            </div><br><br>
+            </div>
         </section>
 
         <!-- REKOMENDASI -->
