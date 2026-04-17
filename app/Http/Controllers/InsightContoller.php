@@ -31,13 +31,13 @@ class InsightContoller extends Controller
 
      public function stadi2025(){
         $title = 'Status deforestasi di Indonesia 2025 ';
-        $description = 'Tahun lalu Auriga merilis data deforestasi 2024 pada Maret. Mulai tahun ini, deforestasi tahunan akan dirilis setiap Januari.';
+        $description = 'Deforestasi melonjak, saatnya pemerintah menerbitkan regulasi yang melindungi seluruh hutan alam tersisa.';
         return view('frontends.stadi2025', compact('title', 'description'));
     }
 
     public function stadi2025EN(){
         $title = 'Status of deforestation in Indonesia 2025 ';
-        $description = 'Auriga released deforestation data for 2024 in March last year. Commencing this year, it will release annual deforestation data each January.';
+        $description = 'Deforestation surges - the time is right for Indonesia to protect all of its remaining natural forest.';
         return view('frontends.stadi2025EN', compact('title', 'description'));
     }
 
