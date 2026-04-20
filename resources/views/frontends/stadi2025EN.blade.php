@@ -187,7 +187,7 @@
                     <div class="ms-num">3.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p><strong>Deforestation Model</strong> the developed deforestation model was then run on 10-meter
+                        <p><strong> The developed deforestation model was then run on</strong> 10-meter
                             resolution Sentinel-2 satellite imagery in the defined scoping areas.
                         </p>
                     </div>
@@ -196,8 +196,8 @@
                     <div class="ms-num">4.</div>
                     <div class="body-text">
                         <!-- <h4>Pemantauan lapangan</h4> -->
-                        <p><strong> Areas where deforestation</strong> was identified (indicative deforestation) were overlaid with forest
-                            cover maps. Four forest cover references were used: (1) MapBiomas Indonesia; (2) land cover maps
+                        <p> Areas where deforestation was identified (indicative deforestation) were <strong> overlaid with forest
+                            cover maps</strong>. Four forest cover references were used: (1) MapBiomas Indonesia; (2) land cover maps
                             produced by the Ministry of Forestry; (3) tropical-moist forest (TMF) data produced by the
                             European Commission’s Joint Research Centre; and (4) the Forest Persistence dataset produced by
                             Google.
