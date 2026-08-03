@@ -31,4 +31,25 @@ return [
         ],
     ],
 
+    'deforestory' => [
+        'api_token' => env('DEFORESTORY_API_TOKEN'),
+    ],
+
+    'cloudflare_d1' => [
+        'account_id' => env('CLOUDFLARE_ACCOUNT_ID'),
+        'database_id' => env('CLOUDFLARE_D1_DATABASE_ID'),
+        'api_token' => env('CLOUDFLARE_D1_API_TOKEN'),
+    ],
+
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI'),
+    ],
+
+    'turnstile' => [
+        'site_key' => env('TURNSTILE_SITE_KEY'),
+        'secret_key' => env('TURNSTILE_SECRET_KEY'),
+    ],
+
 ];

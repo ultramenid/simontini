@@ -5,6 +5,18 @@
                 <a href="{{url('/cms/dashboard')}}" class=" px-0.5  @if($nav == 'dashboard' )   text-newgray-900 dark:text-gray-300 @endif   hover:text-newgray-900 dark:hover:text-gray-300 cursor-pointer" >Dashboard</a>
             </div>
 
+            <div class="hover:bg-gray-200 dark:hover:bg-newgray-700 py-3 px-2 rounded @if($nav == 'deforestory' )border-b-2 dark:border-gray-300 border-newgray-900 @endif ">
+                <a href="{{ route('cms.deforestory') }}" class="px-0.5 @if($nav == 'deforestory' ) text-newgray-900 dark:text-gray-300 @endif hover:text-newgray-900 dark:hover:text-gray-300 cursor-pointer">Deforestory</a>
+            </div>
+
+            <div class="hover:bg-gray-200 dark:hover:bg-newgray-700 py-3 px-2 rounded @if($nav == 'reference' )border-b-2 dark:border-gray-300 border-newgray-900 @endif ">
+                <a href="{{ route('cms.reference') }}" class="px-0.5 @if($nav == 'reference' ) text-newgray-900 dark:text-gray-300 @endif hover:text-newgray-900 dark:hover:text-gray-300 cursor-pointer">Reference</a>
+            </div>
+
+            <div class="hover:bg-gray-200 dark:hover:bg-newgray-700 py-3 px-2 rounded @if($nav == 'comments' )border-b-2 dark:border-gray-300 border-newgray-900 @endif ">
+                <a href="{{ route('cms.comments') }}" class="px-0.5 @if($nav == 'comments' ) text-newgray-900 dark:text-gray-300 @endif hover:text-newgray-900 dark:hover:text-gray-300 cursor-pointer">Komentar</a>
+            </div>
+
             <div class="hover:bg-gray-200 dark:hover:bg-newgray-700 py-3 px-2 rounded @if($nav == 'faq' )border-b-2  dark:border-gray-300 border-newgray-900 @endif ">
                 <a href="{{url('/cms/listfaq')}}" class=" px-0.5  @if($nav == 'faq' )   text-newgray-900 dark:text-gray-300 @endif   hover:text-newgray-900 dark:hover:text-gray-300 cursor-pointer" >faq</a>
             </div>
