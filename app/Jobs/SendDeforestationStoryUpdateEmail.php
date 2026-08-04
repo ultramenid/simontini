@@ -55,11 +55,6 @@ class SendDeforestationStoryUpdateEmail implements ShouldQueue
         $title = $locale === 'en' ? $notification->title_en : $notification->title_id;
         $storyTitle = $locale === 'en' ? $notification->story_title_en : $notification->story_title_id;
         $description = $locale === 'en' ? $notification->description_en : $notification->description_id;
-        $storyUrl = route('deforestation.show', [
-            'locale' => $locale,
-            'id' => $notification->story_id,
-            'slug' => $notification->slug,
-        ]);
 
         Mail::to($notification->email, $notification->name)->send(
             new DeforestationStoryUpdated([
@@ -68,7 +63,7 @@ class SendDeforestationStoryUpdateEmail implements ShouldQueue
                 'title' => $title,
                 'storyTitle' => $storyTitle,
                 'description' => $description,
-                'storyUrl' => $storyUrl,
+                'targetUrl' => $notification->target_url,
                 'publishedAt' => $notification->published_at,
             ]),
         );

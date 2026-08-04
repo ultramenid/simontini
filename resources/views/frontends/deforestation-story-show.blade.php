@@ -1,10 +1,46 @@
 @extends('layouts.indexLayout')
 
 @section('meta')
+    @php
+        $metaTitle = $story->localized_title;
+        $metaDescription = \Illuminate\Support\Str::limit(
+            trim(preg_replace('/\s+/', ' ', strip_tags($story->localized_description))),
+            160
+        );
+        $metaUrl = route(
+            $isPreview ? 'deforestation.preview.show' : 'deforestation.show',
+            ['locale' => $locale, 'id' => $story->id, 'slug' => $story->slug]
+        );
+        $metaImage = asset('assets/meta-image-2025.jpg');
+
+        if ($story->localized_image) {
+            $metaImage = \Illuminate\Support\Str::startsWith($story->localized_image, ['http://', 'https://'])
+                ? $story->localized_image
+                : url(\Illuminate\Support\Facades\Storage::url($story->localized_image));
+        }
+    @endphp
+
     @if ($isPreview)
         <meta name="robots" content="noindex, nofollow">
+    @else
+        <link rel="canonical" href="{{ $metaUrl }}">
     @endif
-    <meta name="description" content="{{ \Illuminate\Support\Str::limit(strip_tags($story->localized_description), 160) }}">
+    <meta name="description" content="{{ $metaDescription }}">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="SIMONTINI">
+    <meta property="og:locale" content="{{ $locale === 'en' ? 'en_US' : 'id_ID' }}">
+    <meta property="og:title" content="{{ $metaTitle }}">
+    <meta property="og:description" content="{{ $metaDescription }}">
+    <meta property="og:url" content="{{ $metaUrl }}">
+    <meta property="og:image" content="{{ $metaImage }}">
+    <meta property="og:image:alt" content="{{ $metaTitle }}">
+    <meta property="article:published_time" content="{{ \Carbon\Carbon::parse($story->date)->toIso8601String() }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $metaTitle }}">
+    <meta name="twitter:description" content="{{ $metaDescription }}">
+    <meta name="twitter:image" content="{{ $metaImage }}">
 @endsection
 
 @section('content')
@@ -26,9 +62,9 @@
             @endif
 
             <div class="mx-auto max-w-[720px] px-5 pt-10 sm:px-8 sm:pt-14">
-                <div class="flex items-start justify-between gap-5">
-                    <h1 class="min-w-0 flex-1 text-3xl font-black uppercase leading-[1.08] tracking-[-0.045em] sm:text-4xl">{{ $story->localized_title }}</h1>
-                    <button type="button" x-on:click="subscribeOpen = true; subscribed = false" class="shrink-0 rounded-lg bg-[#376A64] px-4 py-2.5 text-[9px] font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#2d5954] sm:px-5 sm:text-[10px]">Subscribe</button>
+                <div class="flow-root">
+                    <button type="button" x-on:click="subscribeOpen = true; subscribed = false" class="float-right mb-4 ml-5 shrink-0 rounded-lg bg-[#376A64] px-4 py-2.5 text-[9px] font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#2d5954] sm:px-5 sm:text-[10px]">Subscribe</button>
+                    <h1 class="text-3xl font-black uppercase leading-[1.08] tracking-[-0.045em] sm:text-4xl">{{ $story->localized_title }}</h1>
                 </div>
 
                 <div class="article-copy public-story-content mt-9 text-[15px] leading-[1.85] text-gray-800 sm:text-[17px]">

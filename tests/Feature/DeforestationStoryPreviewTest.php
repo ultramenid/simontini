@@ -60,6 +60,21 @@ it('returns 404 when a draft story is opened publicly', function () {
         ->assertNotFound();
 });
 
+it('renders social sharing metadata from the published story', function () {
+    $story = createDeforestationStory([
+        'title_id' => 'Judul Metadata Deforestory',
+        'desrkirpsi_id' => 'Deskripsi metadata untuk pratinjau tautan.',
+        'status' => 'publish',
+    ]);
+
+    $this->get("/id/deforestation-story/{$story->id}/{$story->slug}")
+        ->assertOk()
+        ->assertSee('<meta property="og:title" content="Judul Metadata Deforestory">', false)
+        ->assertSee('<meta property="og:description" content="Deskripsi metadata untuk pratinjau tautan.">', false)
+        ->assertSee('<meta property="og:image"', false)
+        ->assertSee('<meta name="twitter:card" content="summary_large_image">', false);
+});
+
 it('redirects guests from preview to login', function () {
     $this->get('/id/preview/deforestation-story')
         ->assertRedirect(route('login'));

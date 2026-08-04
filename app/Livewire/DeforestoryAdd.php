@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Services\DeforestationStoryNotificationDispatcher;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -86,7 +87,7 @@ class DeforestoryAdd extends Component
         ];
     }
 
-    public function save()
+    public function save(DeforestationStoryNotificationDispatcher $notifications)
     {
         $validated = $this->validate();
         unset($validated['image_id'], $validated['image_en']);
@@ -109,20 +110,29 @@ class DeforestoryAdd extends Component
         }
 
         if ($this->deforestoryId === null) {
-            DB::table('deforestory')->insert([
+            $storyId = DB::table('deforestory')->insertGetId([
                 ...$validated,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
 
+            if ($validated['status'] === 'publish') {
+                $notifications->queueNewStory($storyId);
+            }
+
             session()->flash('success', 'Data Deforestory berhasil ditambahkan.');
         } else {
+            $previousStatus = DB::table('deforestory')->where('id', $this->deforestoryId)->value('status');
             DB::table('deforestory')
                 ->where('id', $this->deforestoryId)
                 ->update([
                     ...$validated,
                     'updated_at' => now(),
                 ]);
+
+            if ($validated['status'] === 'publish' && $previousStatus !== 'publish') {
+                $notifications->queueNewStory($this->deforestoryId);
+            }
 
             session()->flash('success', 'Data Deforestory berhasil diperbarui.');
         }

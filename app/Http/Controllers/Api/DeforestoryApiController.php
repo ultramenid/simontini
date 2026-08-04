@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Services\DeforestationStoryNotificationDispatcher;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +13,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DeforestoryApiController extends Controller
 {
+    public function __construct(private DeforestationStoryNotificationDispatcher $notifications) {}
+
     public function index(Request $request): JsonResponse
     {
         $perPage = min(max($request->integer('per_page', 10), 1), 100);
@@ -61,9 +64,13 @@ class DeforestoryApiController extends Controller
         ]);
 
         $item = DB::table('deforestory')->find($id);
+        $queuedNotifications = $validated['status'] === 'publish'
+            ? $this->notifications->queueNewStory($id)
+            : 0;
 
         return response()->json([
             'message' => 'Data Deforestory berhasil dibuat.',
+            'queued_notifications' => $queuedNotifications,
             'data' => $item,
         ], Response::HTTP_CREATED);
     }
@@ -82,9 +89,10 @@ class DeforestoryApiController extends Controller
             'status' => ['required', Rule::in(['publish', 'draft'])],
         ]);
 
-        $exists = DB::table('deforestory')
+        $existing = DB::table('deforestory')
             ->where('external_id', $validated['external_id'])
-            ->exists();
+            ->first();
+        $exists = $existing !== null;
 
         $values = [
             'title_id' => $validated['title_id'],
@@ -114,12 +122,18 @@ class DeforestoryApiController extends Controller
         $item = DB::table('deforestory')
             ->where('external_id', $validated['external_id'])
             ->first();
+        $becamePublished = $item->status === 'publish'
+            && ($existing === null || $existing->status !== 'publish');
+        $queuedNotifications = $becamePublished
+            ? $this->notifications->queueNewStory((int) $item->id)
+            : 0;
 
         return response()->json([
             'message' => $exists
                 ? 'Data Deforestory berhasil diperbarui.'
                 : 'Data Deforestory berhasil dibuat.',
             'action' => $exists ? 'updated' : 'created',
+            'queued_notifications' => $queuedNotifications,
             'data' => $item,
         ], $exists ? Response::HTTP_OK : Response::HTTP_CREATED);
     }

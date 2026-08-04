@@ -79,8 +79,11 @@ class DeforestationStoryUpdateApiController extends Controller
 
         if ($shouldNotify) {
             $subscriptions = DB::table('deforestation_story_subscriptions')
-                ->where('deforestory_id', $story->id)
                 ->where('status', 'active')
+                ->where(function ($query) use ($story) {
+                    $query->where('deforestory_id', $story->id)
+                        ->orWhereNull('deforestory_id');
+                })
                 ->get(['id']);
 
             foreach ($subscriptions as $subscription) {

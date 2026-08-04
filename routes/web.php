@@ -88,6 +88,9 @@ Route::prefix('{locale}')
         Route::get('/deforestation-story/{id}/{slug}', [DeforestationStoryController::class, 'show'])
             ->whereNumber('id')
             ->name('deforestation.show');
+        Route::post('/deforestation-story/subscribe', [DeforestationStorySubscriptionController::class, 'storeAll'])
+            ->middleware('throttle:10,1')
+            ->name('deforestation.subscribe.all');
         Route::post('/deforestation-story/{id}/comments', [StoryCommentController::class, 'store'])
             ->whereNumber('id')
             ->middleware('throttle:comments')

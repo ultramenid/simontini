@@ -38,13 +38,14 @@
                 <h2 class="mt-2 pr-8 text-2xl font-black tracking-[-0.04em] sm:text-3xl">{{ $locale === 'en' ? 'Follow every Deforestory' : 'Ikuti semua Deforestory' }}</h2>
                 <p class="mt-3 text-sm leading-6 text-[#7a6e60]">{{ $locale === 'en' ? 'Enter your email address to follow new stories and updates.' : 'Masukkan alamat email untuk mengikuti story baru dan seluruh pembaruan yang muncul di halaman ini.' }}</p>
 
-                <form x-on:submit.prevent="subscribed = true" class="mt-6">
+                <form method="POST" action="{{ route('deforestation.subscribe.all', ['locale' => $locale]) }}" data-story-subscribe-form class="mt-6">
+                    @csrf
                     <label class="mb-2 block text-xs font-bold uppercase tracking-[0.1em]">{{ $locale === 'en' ? 'Full name' : 'Nama lengkap' }}</label>
-                    <input type="text" required maxlength="80" autocomplete="name" class="w-full rounded-full border border-[#e2d8cc] px-5 py-3.5 text-sm outline-none focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
+                    <input name="name" type="text" required maxlength="100" autocomplete="name" class="w-full rounded-full border border-[#e2d8cc] px-5 py-3.5 text-sm outline-none focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
                     <label class="mb-2 mt-4 block text-xs font-bold uppercase tracking-[0.1em]">Email</label>
-                    <input type="email" required autocomplete="email" class="w-full rounded-full border border-[#e2d8cc] px-5 py-3.5 text-sm outline-none focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
+                    <input name="email" type="email" required autocomplete="email" class="w-full rounded-full border border-[#e2d8cc] px-5 py-3.5 text-sm outline-none focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
                     <button type="submit" class="mt-5 w-full rounded-full bg-[#376A64] px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white hover:bg-[#2d5954]">{{ $locale === 'en' ? 'Subscribe' : 'Aktifkan langganan' }}</button>
-                    <p x-show="subscribed" x-cloak class="mt-3 text-center text-xs font-semibold text-[#376A64]">{{ $locale === 'en' ? 'Your subscription request has been recorded.' : 'Permintaan langganan berhasil dicatat.' }}</p>
+                    <p data-story-subscribe-feedback class="mt-3 hidden text-center text-xs font-semibold" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </div>

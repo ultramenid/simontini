@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Services\DeforestationStoryNotificationDispatcher;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
@@ -11,7 +12,7 @@ class DeforestoryIndex extends Component
 {
     use WithPagination;
 
-    public function toggleStatus(int $id): void
+    public function toggleStatus(int $id, DeforestationStoryNotificationDispatcher $notifications): void
     {
         $item = DB::table('deforestory')->select(['id', 'status'])->find($id);
 
@@ -27,6 +28,10 @@ class DeforestoryIndex extends Component
                 'status' => $status,
                 'updated_at' => now(),
             ]);
+
+        if ($status === 'publish') {
+            $notifications->queueNewStory($id);
+        }
 
         session()->flash('success', $status === 'publish'
             ? 'Data berhasil dipublikasikan.'
