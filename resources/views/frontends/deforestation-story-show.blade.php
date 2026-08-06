@@ -51,7 +51,11 @@
         <x-deforestation-preview-banner />
     @endif
 
-    <main class="pb-24" x-data="{ subscribeOpen: false, subscribed: false }">
+    <main
+        class="pb-24"
+        x-data="{ subscribeOpen: false }"
+        x-on:story-subscription-succeeded="window.setTimeout(() => subscribeOpen = false, 1000)"
+    >
         <article>
             @if ($story->localized_image)
                 <figure class="mx-auto max-w-[1200px] px-5 pt-9 sm:px-8 sm:pt-14 lg:px-12">
@@ -63,7 +67,7 @@
 
             <div class="mx-auto max-w-[720px] px-5 pt-10 sm:px-8 sm:pt-14">
                 <div class="flow-root">
-                    <button type="button" x-on:click="subscribeOpen = true; subscribed = false" class="float-right mb-4 ml-5 shrink-0 rounded-lg bg-[#376A64] px-4 py-2.5 text-[9px] font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#2d5954] sm:px-5 sm:text-[10px]">Subscribe</button>
+                    <button type="button" x-on:click="subscribeOpen = true" class="float-right mb-4 ml-5 shrink-0 rounded-lg bg-[#376A64] px-4 py-2.5 text-[9px] font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#2d5954] sm:px-5 sm:text-[10px]">Subscribe</button>
                     <h1 class="text-3xl font-black uppercase leading-[1.08] tracking-[-0.045em] sm:text-4xl">{{ $story->localized_title }}</h1>
                 </div>
 
@@ -131,5 +135,4 @@
         </div>
     </main>
 
-    <footer class="h-32 bg-gradient-to-b from-white to-[#dcefeb]" aria-hidden="true"></footer>
 @endsection

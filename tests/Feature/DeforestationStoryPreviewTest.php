@@ -47,16 +47,33 @@ it('only displays published stories on the public list', function () {
     $draft = createDeforestationStory(['title_id' => 'Cerita Draft']);
     $published = createDeforestationStory(['title_id' => 'Cerita Published', 'status' => 'publish']);
 
-    $this->get('/id/deforestation-story')
+    $this->get(route('deforestation.index', ['locale' => 'id']))
         ->assertOk()
         ->assertSee($published->title_id)
         ->assertDontSee($draft->title_id);
 });
 
+it('displays every published story without pagination', function () {
+    $stories = collect(range(1, 13))->map(fn (int $number) => createDeforestationStory([
+        'title_id' => "Cerita Tanpa Pagination {$number}",
+        'status' => 'publish',
+    ]));
+
+    $this->get(route('deforestation.index', ['locale' => 'id']))
+        ->assertOk()
+        ->assertSee($stories->first()->title_id)
+        ->assertSee($stories->last()->title_id)
+        ->assertDontSee('Showing 1 to');
+});
+
 it('returns 404 when a draft story is opened publicly', function () {
     $story = createDeforestationStory();
 
-    $this->get("/id/deforestation-story/{$story->id}/{$story->slug}")
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
         ->assertNotFound();
 });
 
@@ -67,7 +84,11 @@ it('renders social sharing metadata from the published story', function () {
         'status' => 'publish',
     ]);
 
-    $this->get("/id/deforestation-story/{$story->id}/{$story->slug}")
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
         ->assertOk()
         ->assertSee('<meta property="og:title" content="Judul Metadata Deforestory">', false)
         ->assertSee('<meta property="og:description" content="Deskripsi metadata untuk pratinjau tautan.">', false)
@@ -76,7 +97,7 @@ it('renders social sharing metadata from the published story', function () {
 });
 
 it('redirects guests from preview to login', function () {
-    $this->get('/id/preview/deforestation-story')
+    $this->get(route('deforestation.preview.index', ['locale' => 'id']))
         ->assertRedirect(route('login'));
 });
 
@@ -84,7 +105,7 @@ it('forbids a logged-in user without an admin or editor role', function () {
     $userId = createCmsPreviewUser(2);
 
     $this->withSession(['id' => $userId, 'role_id' => 2])
-        ->get('/id/preview/deforestation-story')
+        ->get(route('deforestation.preview.index', ['locale' => 'id']))
         ->assertForbidden();
 });
 
@@ -93,14 +114,18 @@ it('allows admins to preview drafts with noindex metadata', function () {
     $story = createDeforestationStory(['title_id' => 'Draft Rahasia']);
 
     $this->withSession(['id' => $userId, 'role_id' => 1])
-        ->get('/id/preview/deforestation-story')
+        ->get(route('deforestation.preview.index', ['locale' => 'id']))
         ->assertOk()
         ->assertSee('Draft Rahasia')
         ->assertSee('<meta name="robots" content="noindex, nofollow">', false)
         ->assertSee('MODE PREVIEW');
 
     $this->withSession(['id' => $userId, 'role_id' => 1])
-        ->get("/id/preview/deforestation-story/{$story->id}/{$story->slug}")
+        ->get(route('deforestation.preview.show', [
+            'locale' => 'id',
+            'id' => $story->id,
+            'slug' => $story->slug,
+        ]))
         ->assertOk()
         ->assertSee('Kembali ke CMS');
 });
@@ -109,7 +134,7 @@ it('allows editors to open preview pages', function () {
     $userId = createCmsPreviewUser(3);
 
     $this->withSession(['id' => $userId, 'role_id' => 3])
-        ->get('/en/preview/deforestation-story')
+        ->get(route('deforestation.preview.index', ['locale' => 'en']))
         ->assertOk();
 });
 
@@ -118,7 +143,11 @@ it('redirects an incorrect preview slug to the canonical preview URL', function 
     $story = createDeforestationStory();
 
     $this->withSession(['id' => $userId, 'role_id' => 1])
-        ->get("/id/preview/deforestation-story/{$story->id}/slug-salah")
+        ->get(route('deforestation.preview.show', [
+            'locale' => 'id',
+            'id' => $story->id,
+            'slug' => 'slug-salah',
+        ]))
         ->assertRedirect(route('deforestation.preview.show', [
             'locale' => 'id',
             'id' => $story->id,
