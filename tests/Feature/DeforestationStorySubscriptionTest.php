@@ -34,7 +34,10 @@ function createSubscribedStory(): object
 it('stores a subscription for a published story', function () {
     $story = createSubscribedStory();
 
-    $this->postJson("/id/deforestation-story/{$story->id}/subscribe", [
+    $this->postJson(route('deforestation.subscribe', [
+        'locale' => 'id',
+        'id' => $story->id,
+    ]), [
         'name' => 'Pelanggan Simontini',
         'email' => 'subscriber@example.test',
     ])->assertCreated();
@@ -47,7 +50,7 @@ it('stores a subscription for a published story', function () {
 });
 
 it('stores a global subscription from the deforestation story index', function () {
-    $this->postJson('/id/deforestation-story/subscribe', [
+    $this->postJson(route('deforestation.subscribe.all', ['locale' => 'id']), [
         'name' => 'Subscriber Global',
         'email' => 'global-subscriber@example.test',
     ])->assertCreated();
