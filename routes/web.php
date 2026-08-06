@@ -83,19 +83,19 @@ Route::prefix('{locale}')
     ->where(['locale' => 'id|en'])
     ->middleware('story.locale')
     ->group(function () {
-        Route::get('/deforestation-story', [DeforestationStoryController::class, 'index'])
+        Route::get('/deforestory', [DeforestationStoryController::class, 'index'])
             ->name('deforestation.index');
-        Route::get('/deforestation-story/{id}/{slug}', [DeforestationStoryController::class, 'show'])
+        Route::get('/deforestory/{id}/{slug}', [DeforestationStoryController::class, 'show'])
             ->whereNumber('id')
             ->name('deforestation.show');
-        Route::post('/deforestation-story/subscribe', [DeforestationStorySubscriptionController::class, 'storeAll'])
+        Route::post('/deforestory/subscribe', [DeforestationStorySubscriptionController::class, 'storeAll'])
             ->middleware('throttle:10,1')
             ->name('deforestation.subscribe.all');
-        Route::post('/deforestation-story/{id}/comments', [StoryCommentController::class, 'store'])
+        Route::post('/deforestory/{id}/comments', [StoryCommentController::class, 'store'])
             ->whereNumber('id')
             ->middleware('throttle:comments')
             ->name('deforestation.comments.store');
-        Route::post('/deforestation-story/{id}/subscribe', [DeforestationStorySubscriptionController::class, 'store'])
+        Route::post('/deforestory/{id}/subscribe', [DeforestationStorySubscriptionController::class, 'store'])
             ->whereNumber('id')
             ->middleware('throttle:10,1')
             ->name('deforestation.subscribe');
@@ -103,9 +103,9 @@ Route::prefix('{locale}')
         Route::middleware(['auth', 'role:admin,editor'])
             ->prefix('preview')
             ->group(function () {
-                Route::get('/deforestation-story', [DeforestationStoryController::class, 'previewIndex'])
+                Route::get('/deforestory', [DeforestationStoryController::class, 'previewIndex'])
                     ->name('deforestation.preview.index');
-                Route::get('/deforestation-story/{id}/{slug}', [DeforestationStoryController::class, 'previewShow'])
+                Route::get('/deforestory/{id}/{slug}', [DeforestationStoryController::class, 'previewShow'])
                     ->whereNumber('id')
                     ->name('deforestation.preview.show');
             });
