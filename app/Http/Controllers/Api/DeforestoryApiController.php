@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Services\DeforestationStoryNotificationDispatcher;
+use App\Services\DeforestationStoryWebhookDispatcher;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,7 +14,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DeforestoryApiController extends Controller
 {
-    public function __construct(private DeforestationStoryNotificationDispatcher $notifications) {}
+    public function __construct(
+        private DeforestationStoryNotificationDispatcher $notifications,
+        private DeforestationStoryWebhookDispatcher $webhooks,
+    ) {}
 
     public function index(Request $request): JsonResponse
     {
@@ -58,6 +62,7 @@ class DeforestoryApiController extends Controller
 
         $id = DB::table('deforestory')->insertGetId([
             ...$validated,
+            'uuid' => (string) Str::uuid(),
             'slug' => $this->uniqueSlug($validated['title_id']),
             'created_at' => now(),
             'updated_at' => now(),
@@ -67,6 +72,10 @@ class DeforestoryApiController extends Controller
         $queuedNotifications = $validated['status'] === 'publish'
             ? $this->notifications->queueNewStory($id)
             : 0;
+
+        if ($validated['status'] === 'publish') {
+            $this->webhooks->dispatch($id, 'created');
+        }
 
         return response()->json([
             'message' => 'Data Deforestory berhasil dibuat.',
@@ -111,7 +120,10 @@ class DeforestoryApiController extends Controller
         ];
 
         if (! $exists) {
+            $values['uuid'] = (string) Str::uuid();
             $values['created_at'] = now();
+        } elseif (blank($existing->uuid)) {
+            $values['uuid'] = (string) Str::uuid();
         }
 
         DB::table('deforestory')->updateOrInsert(
@@ -127,6 +139,15 @@ class DeforestoryApiController extends Controller
         $queuedNotifications = $becamePublished
             ? $this->notifications->queueNewStory((int) $item->id)
             : 0;
+
+        if ($item->status === 'publish') {
+            $this->webhooks->dispatch(
+                (int) $item->id,
+                $existing?->status === 'publish' ? 'updated' : 'created',
+            );
+        } elseif ($existing?->status === 'publish') {
+            $this->webhooks->dispatch((int) $item->id, 'unpublished');
+        }
 
         return response()->json([
             'message' => $exists

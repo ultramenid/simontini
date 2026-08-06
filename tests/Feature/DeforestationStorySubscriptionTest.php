@@ -2,6 +2,7 @@
 
 use App\Jobs\SendDeforestationStoryUpdateEmail;
 use App\Jobs\SendNewDeforestationStoryEmail;
+use App\Services\DeforestationStoryNotificationDispatcher;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Queue;
@@ -166,4 +167,33 @@ it('queues an email for global subscribers when a new story is published', funct
     ])->assertCreated()->assertJsonPath('queued_notifications', $expectedNotifications);
 
     Queue::assertPushed(SendNewDeforestationStoryEmail::class, $expectedNotifications);
+});
+
+it('does not email subscribers when the same story is republished', function () {
+    Queue::fake();
+
+    DB::table('deforestation_story_subscriptions')->insert([
+        'deforestory_id' => null,
+        'name' => 'Subscriber Publish Pertama',
+        'email' => 'first-publication@example.test',
+        'locale' => 'id',
+        'status' => 'active',
+        'unsubscribe_token' => hash('sha256', uniqid('', true)),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    $story = createSubscribedStory();
+    $dispatcher = app(DeforestationStoryNotificationDispatcher::class);
+    $firstQueued = $dispatcher->queueNewStory($story->id);
+
+    DB::table('deforestory')->where('id', $story->id)->update(['status' => 'draft']);
+    DB::table('deforestory')->where('id', $story->id)->update(['status' => 'publish']);
+    $republishQueued = $dispatcher->queueNewStory($story->id);
+
+    expect($firstQueued)->toBeGreaterThan(0)
+        ->and($republishQueued)->toBe(0)
+        ->and(DB::table('deforestory')->where('id', $story->id)->value('first_published_at'))
+        ->not->toBeNull();
+    Queue::assertPushed(SendNewDeforestationStoryEmail::class, $firstQueued);
 });

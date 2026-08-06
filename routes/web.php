@@ -137,6 +137,9 @@ Route::middleware([checkSession::class])->group(function () {
         ->whereNumber('id')
         ->name('cms.deforestory.edit');
     Route::get('/cms/reference', [DashboardController::class, 'reference'])->name('cms.reference');
+    Route::get('/cms/reference/{id}/download', [DashboardController::class, 'downloadReference'])
+        ->whereNumber('id')
+        ->name('cms.reference.download');
     Route::get('/cms/comments', [CmsCommentController::class, 'index'])->name('cms.comments');
     Route::patch('/cms/comments/{id}/{status}', [CmsCommentController::class, 'status'])
         ->whereNumber('id')

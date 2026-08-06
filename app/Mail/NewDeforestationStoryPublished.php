@@ -17,8 +17,7 @@ class NewDeforestationStoryPublished extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: ($this->mailData['locale'] === 'en' ? 'New Deforestory: ' : 'Deforestory baru: ')
-                .$this->mailData['title'],
+            subject: 'Deforestory Baru / New Deforestory: '.$this->mailData['titleId'],
         );
     }
 

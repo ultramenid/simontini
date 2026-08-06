@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Services\DeforestationStoryNotificationDispatcher;
+use App\Services\DeforestationStoryWebhookDispatcher;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -87,7 +88,10 @@ class DeforestoryAdd extends Component
         ];
     }
 
-    public function save(DeforestationStoryNotificationDispatcher $notifications)
+    public function save(
+        DeforestationStoryNotificationDispatcher $notifications,
+        DeforestationStoryWebhookDispatcher $webhooks,
+    )
     {
         $validated = $this->validate();
         unset($validated['image_id'], $validated['image_en']);
@@ -112,12 +116,14 @@ class DeforestoryAdd extends Component
         if ($this->deforestoryId === null) {
             $storyId = DB::table('deforestory')->insertGetId([
                 ...$validated,
+                'uuid' => (string) Str::uuid(),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
 
             if ($validated['status'] === 'publish') {
                 $notifications->queueNewStory($storyId);
+                $webhooks->dispatch($storyId, 'created');
             }
 
             session()->flash('success', 'Data Deforestory berhasil ditambahkan.');
@@ -132,6 +138,15 @@ class DeforestoryAdd extends Component
 
             if ($validated['status'] === 'publish' && $previousStatus !== 'publish') {
                 $notifications->queueNewStory($this->deforestoryId);
+            }
+
+            if ($validated['status'] === 'publish') {
+                $webhooks->dispatch(
+                    $this->deforestoryId,
+                    $previousStatus === 'publish' ? 'updated' : 'created',
+                );
+            } elseif ($previousStatus === 'publish') {
+                $webhooks->dispatch($this->deforestoryId, 'unpublished');
             }
 
             session()->flash('success', 'Data Deforestory berhasil diperbarui.');

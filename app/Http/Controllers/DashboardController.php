@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -46,5 +48,19 @@ class DashboardController extends Controller
         $editorKey = $request->string('editor')->toString();
 
         return view('backends.reference', compact('title', 'nav', 'picker', 'editorKey'));
+    }
+
+    public function downloadReference(int $id)
+    {
+        $file = DB::table('reference_images')->find($id);
+        abort_if($file === null, 404);
+
+        $disk = $file->disk ?: 'public';
+        abort_unless(Storage::disk($disk)->exists($file->image_path), 404);
+
+        return Storage::disk($disk)->download(
+            $file->image_path,
+            $file->original_name ?: basename($file->image_path)
+        );
     }
 }

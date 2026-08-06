@@ -9,34 +9,45 @@ class DeforestationStoryNotificationDispatcher
 {
     public function queueNewStory(int $storyId): int
     {
-        $storyIsPublished = DB::table('deforestory')
-            ->where('id', $storyId)
-            ->where('status', 'publish')
-            ->exists();
+        return DB::transaction(function () use ($storyId): int {
+            $story = DB::table('deforestory')
+                ->select(['id', 'status', 'first_published_at'])
+                ->where('id', $storyId)
+                ->lockForUpdate()
+                ->first();
 
-        if (! $storyIsPublished) {
-            return 0;
-        }
+            if ($story === null
+                || $story->status !== 'publish'
+                || $story->first_published_at !== null) {
+                return 0;
+            }
 
-        $queued = 0;
-        $subscriptions = DB::table('deforestation_story_subscriptions')
-            ->whereNull('deforestory_id')
-            ->where('status', 'active')
-            ->get(['id']);
+            // Tandai publish pertama walaupun subscriber belum tersedia. Dengan
+            // begitu draft -> publish berikutnya tidak dianggap story baru.
+            DB::table('deforestory')
+                ->where('id', $storyId)
+                ->update(['first_published_at' => now()]);
 
-        foreach ($subscriptions as $subscription) {
-            $notificationId = DB::table('deforestation_story_publication_notifications')->insertGetId([
-                'story_id' => $storyId,
-                'subscription_id' => $subscription->id,
-                'status' => 'queued',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+            $queued = 0;
+            $subscriptions = DB::table('deforestation_story_subscriptions')
+                ->whereNull('deforestory_id')
+                ->where('status', 'active')
+                ->get(['id']);
 
-            SendNewDeforestationStoryEmail::dispatch((int) $notificationId);
-            $queued++;
-        }
+            foreach ($subscriptions as $subscription) {
+                $notificationId = DB::table('deforestation_story_publication_notifications')->insertGetId([
+                    'story_id' => $storyId,
+                    'subscription_id' => $subscription->id,
+                    'status' => 'queued',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
 
-        return $queued;
+                SendNewDeforestationStoryEmail::dispatch((int) $notificationId);
+                $queued++;
+            }
+
+            return $queued;
+        });
     }
 }

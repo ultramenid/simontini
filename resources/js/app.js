@@ -59,6 +59,9 @@ const initializeTinyMceEditors = () => {
         const input = wrapper.querySelector('[data-tinymce-input]');
         if (!editorElement || !input) return;
 
+        const referenceStorageKey = `simontini-tiptap-selection:${wrapper.dataset.tinymcePickerId}`;
+        let lastReferenceSelection = 0;
+
         wrapper.dataset.tinymceInitialized = 'true';
 
         tinymce.init({
@@ -85,9 +88,57 @@ const initializeTinyMceEditors = () => {
             font_size_formats: '8pt 10pt 12pt 14pt 16pt 18pt 24pt 30pt 36pt 48pt',
             content_style: 'body { font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; padding: 16px; } img, video, iframe { max-width: 100%; }',
             setup(editor) {
+                const insertReferenceImage = (payload) => {
+                    if (
+                        payload?.type !== 'simontini-reference-selected'
+                        || payload.editor !== wrapper.dataset.tinymcePickerId
+                        || !payload.image?.url
+                        || (payload.selectedAt && payload.selectedAt <= lastReferenceSelection)
+                    ) return false;
+
+                    lastReferenceSelection = payload.selectedAt || Date.now();
+                    editor.insertContent(
+                        `<figure class="media-caption"><img src="${editor.dom.encode(payload.image.url)}" alt="${editor.dom.encode(payload.image.alt_text || payload.image.title || '')}" title="${editor.dom.encode(payload.image.title || '')}" width="100%"><figcaption class="media-caption-text">${editor.dom.encode(payload.image.alt_text || payload.image.title || '')}</figcaption></figure>`,
+                    );
+
+                    try {
+                        window.localStorage.removeItem(referenceStorageKey);
+                    } catch (error) {
+                        // The image is already inserted.
+                    }
+
+                    return true;
+                };
+
+                const consumeStoredReference = () => {
+                    try {
+                        const stored = window.localStorage.getItem(referenceStorageKey);
+                        if (stored) insertReferenceImage(JSON.parse(stored));
+                    } catch (error) {
+                        // Ignore unavailable storage or invalid data.
+                    }
+                };
+
                 editor.ui.registry.addButton('addImage', {
                     text: '+ Image',
-                    onAction: () => editor.insertContent("<figure class='media-caption'><img alt='' data-widget='image' src='https://placehold.co/800x450' width='100%'><figcaption class='media-caption-text'>Tulis caption gambar</figcaption></figure>"),
+                    tooltip: 'Pilih gambar dari Reference',
+                    onAction: () => {
+                        try {
+                            window.localStorage.removeItem(referenceStorageKey);
+                        } catch (error) {
+                            // Opening the picker does not require browser storage.
+                        }
+
+                        const referenceWindow = window.open(
+                            wrapper.dataset.tinymceReferencePageUrl,
+                            'simontiniReferencePicker',
+                            'width=1200,height=850,scrollbars=yes,resizable=yes',
+                        );
+
+                        if (!referenceWindow) {
+                            window.alert('Jendela Reference diblokir browser. Izinkan pop-up untuk situs ini lalu coba lagi.');
+                        }
+                    },
                 });
                 editor.ui.registry.addButton('addVideo', {
                     text: '+ Video',
@@ -111,6 +162,20 @@ const initializeTinyMceEditors = () => {
                     input.dispatchEvent(new Event('input', { bubbles: true }));
                     input.dispatchEvent(new Event('change', { bubbles: true }));
                 });
+
+                window.addEventListener('message', (event) => {
+                    if (event.origin === window.location.origin) insertReferenceImage(event.data);
+                });
+                window.addEventListener('storage', (event) => {
+                    if (event.key !== referenceStorageKey || !event.newValue) return;
+
+                    try {
+                        insertReferenceImage(JSON.parse(event.newValue));
+                    } catch (error) {
+                        // Ignore malformed storage events.
+                    }
+                });
+                window.addEventListener('focus', () => window.setTimeout(consumeStoredReference, 150));
             },
         }).catch(() => {
             wrapper.dataset.tinymceInitialized = 'false';

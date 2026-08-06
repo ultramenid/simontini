@@ -34,7 +34,7 @@ class ReferenceIndex extends Component
     protected function rules(): array
     {
         return [
-            'image' => ['required', 'image', 'max:5120'],
+            'image' => ['required', 'file', 'max:10240'],
             'title' => ['required', 'string', 'max:255'],
             'alt_text' => ['required', 'string', 'max:255'],
         ];
@@ -49,12 +49,20 @@ class ReferenceIndex extends Component
     public function save(): void
     {
         $validated = $this->validate();
-        $path = $this->image->store('references', 'public');
+        $mimeType = $this->image->getMimeType() ?: 'application/octet-stream';
+        $isImage = str_starts_with($mimeType, 'image/');
+        $disk = $isImage ? 'public' : 'local';
+        $directory = $isImage ? 'references' : 'reference-files';
+        $path = $this->image->store($directory, $disk);
 
         DB::table('reference_images')->insert([
             'title' => $validated['title'],
             'alt_text' => $validated['alt_text'],
             'image_path' => $path,
+            'disk' => $disk,
+            'original_name' => $this->image->getClientOriginalName(),
+            'mime_type' => $mimeType,
+            'file_size' => $this->image->getSize(),
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -63,7 +71,7 @@ class ReferenceIndex extends Component
         $this->showForm = false;
         $this->resetPage();
 
-        session()->flash('success', 'Gambar reference berhasil diunggah.');
+        session()->flash('success', 'File reference berhasil diunggah.');
     }
 
     public function delete(int $id): void
@@ -75,15 +83,22 @@ class ReferenceIndex extends Component
         }
 
         DB::table('reference_images')->where('id', $id)->delete();
-        Storage::disk('public')->delete($item->image_path);
+        Storage::disk($item->disk ?: 'public')->delete($item->image_path);
 
         $this->resetPage();
-        session()->flash('success', 'Gambar reference berhasil dihapus.');
+        session()->flash('success', 'File reference berhasil dihapus.');
     }
 
     public function render()
     {
         $items = DB::table('reference_images')
+            ->when($this->picker, function ($query) {
+                $query->where(function ($images) {
+                    $images
+                        ->where('mime_type', 'like', 'image/%')
+                        ->orWhereNull('mime_type');
+                });
+            })
             ->orderByDesc('id')
             ->paginate(12);
 
