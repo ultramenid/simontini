@@ -41,7 +41,7 @@ class SendDeforestationStoryUpdateEmail implements ShouldQueue
             ->first();
         $story = DB::table('deforestory')->find($this->storyId);
 
-        if (! $subscription || ! $story || ($this->article['status'] ?? 'on') !== 'on') {
+        if (! $subscription || ! $story) {
             return;
         }
 
@@ -54,7 +54,8 @@ class SendDeforestationStoryUpdateEmail implements ShouldQueue
                 'storyTitleId' => $story->title_id ?: $story->title_en,
                 'descriptionEn' => $this->article['description_en'] ?: $this->article['description_id'],
                 'descriptionId' => $this->article['description_id'] ?: $this->article['description_en'],
-                'targetUrl' => $this->article['target_url'],
+                'targetUrlId' => $this->article['target_url_id'],
+                'targetUrlEn' => $this->article['target_url_en'],
                 'publishedAt' => $this->article['published_at'],
             ]),
         );
@@ -65,7 +66,6 @@ class SendDeforestationStoryUpdateEmail implements ShouldQueue
         Log::error('Gagal mengirim email artikel Pasopati.', [
             'subscription_id' => $this->subscriptionId,
             'story_id' => $this->storyId,
-            'external_id' => $this->article['external_id'] ?? null,
             'error' => $exception?->getMessage() ?? 'Unknown queue error',
         ]);
     }
