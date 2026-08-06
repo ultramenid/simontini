@@ -6,7 +6,7 @@ use App\Services\CommentHtmlSanitizer;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 class DeforestationStoryController extends Controller
@@ -41,9 +41,9 @@ class DeforestationStoryController extends Controller
             $query->where('status', 'publish');
         }
 
-        $stories = $query->paginate(12)->withQueryString();
+        $stories = $query->get();
         $this->localizeStories($stories, $locale);
-        $storyGroups = $stories->getCollection()->groupBy(
+        $storyGroups = $stories->groupBy(
             fn ($story) => Carbon::parse($story->date)->locale($locale)->translatedFormat('F Y'),
         );
 
@@ -121,9 +121,9 @@ class DeforestationStoryController extends Controller
         ]);
     }
 
-    private function localizeStories(LengthAwarePaginator $stories, string $locale): void
+    private function localizeStories(Collection $stories, string $locale): void
     {
-        $stories->through(fn ($story) => $this->localizeStory($story, $locale));
+        $stories->transform(fn ($story) => $this->localizeStory($story, $locale));
     }
 
     private function localizeStory(object $story, string $locale): object

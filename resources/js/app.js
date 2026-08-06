@@ -361,6 +361,17 @@ document.addEventListener('submit', async (event) => {
             feedback.textContent = payload.message;
             feedback.className = 'mt-3 text-center text-xs font-semibold text-[#376A64]';
         }
+
+        form.dispatchEvent(new CustomEvent('story-subscription-succeeded', {
+            bubbles: true,
+        }));
+
+        window.setTimeout(() => {
+            if (!feedback) return;
+
+            feedback.textContent = '';
+            feedback.className = 'mt-3 hidden text-center text-xs font-semibold';
+        }, 1000);
     } catch (error) {
         if (feedback) {
             feedback.textContent = error instanceof Error ? error.message : 'Langganan belum dapat disimpan.';

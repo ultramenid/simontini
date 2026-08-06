@@ -15,7 +15,10 @@
         <x-deforestation-preview-banner />
     @endif
 
-    <div x-data="{ subscribeOpen: false, subscribed: false }">
+    <div
+        x-data="{ subscribeOpen: false }"
+        x-on:story-subscription-succeeded="window.setTimeout(() => subscribeOpen = false, 1000)"
+    >
         <section class="flex h-[40vh] min-h-[300px] w-full items-center bg-[#376A64] px-5 text-center text-white sm:min-h-[340px]">
             <div class="mx-auto w-full max-w-4xl">
                 <h1 class="text-3xl font-bold uppercase tracking-wide sm:text-6xl">DEFORESTORY</h1>
@@ -24,7 +27,7 @@
                         ? 'Simontini data is open and publicly accessible under the Creative Commons CC-BY-SA license, subject to its terms of use.'
                         : 'Data dalam Simontini bersifat terbuka dan dapat diakses oleh publik sesuai lisensi Creative Commons CC-CY-SA, dengan mematuhi aturan penggunaannya. Pengutipan terhadap data dalam Simontini harap mengikuti format yang berlaku.' }}
                 </p>
-                <button type="button" x-on:click="subscribeOpen = true; subscribed = false" class="mt-7 rounded-lg bg-white px-8 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#376A64] shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f0e8]">
+                <button type="button" x-on:click="subscribeOpen = true" class="mt-7 rounded-lg bg-white px-8 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#376A64] shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f0e8]">
                     Subscribe
                 </button>
             </div>
@@ -69,9 +72,6 @@
                     </div>
                 @endforelse
 
-                @if ($stories->hasPages())
-                    <div class="mt-10 border-t border-gray-200 pt-6">{{ $stories->links() }}</div>
-                @endif
             </div>
         </section>
     </main>
