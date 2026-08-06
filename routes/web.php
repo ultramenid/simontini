@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CmsCommentController;
+use App\Http\Controllers\CmsSubscriberController;
 use App\Http\Controllers\CommentAuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeforestationStoryController;
@@ -147,6 +148,7 @@ Route::middleware([checkSession::class])->group(function () {
     Route::delete('/cms/comments/{id}', [CmsCommentController::class, 'destroy'])
         ->whereNumber('id')
         ->name('cms.comments.destroy');
+    Route::get('/cms/subscribers', [CmsSubscriberController::class, 'index'])->name('cms.subscribers');
 
 });
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 uses(DatabaseTransactions::class);
 
@@ -9,6 +10,7 @@ function createStoryForUpdateApi(array $overrides = []): object
 {
     $values = [
         'external_id' => null,
+        'uuid' => (string) Str::uuid(),
         'image_id' => null,
         'image_en' => null,
         'title_id' => 'Story Timeline',
@@ -33,7 +35,7 @@ function storyUpdatePayload(object $story, array $overrides = []): array
 {
     return [
         'external_id' => 'remote-update-'.uniqid(),
-        'story_slug' => $story->slug,
+        'deforestory_uuid' => $story->uuid,
         'title_id' => 'Pemantauan Terbaru Bentang Alam',
         'title_en' => 'Latest Landscape Monitoring',
         'description_id' => 'Perubahan bentang alam masih berlangsung.',
@@ -62,6 +64,7 @@ it('creates and updates a story timeline item using a bearer token', function ()
         ->postJson('/api/deforestory/updates/sync', $payload)
         ->assertCreated()
         ->assertJsonPath('action', 'created')
+        ->assertJsonPath('deforestory_uuid', $story->uuid)
         ->assertJsonPath('data.deforestory_id', $story->id);
 
     $this->withToken('story-update-token')
@@ -111,7 +114,7 @@ it('shows active timeline updates but hides inactive updates publicly', function
         'updated_at' => now(),
     ]);
 
-    $this->get("/id/deforestation-story/{$story->id}/{$story->slug}")
+    $this->get("/id/deforestory/{$story->id}/{$story->slug}")
         ->assertOk()
         ->assertSee('Pembaruan Terlihat')
         ->assertDontSee('Pembaruan Disembunyikan')
