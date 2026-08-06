@@ -7,6 +7,15 @@
     <link rel="icon" href="{{ asset('assets/ico.png') }}" type="image/x-icon">
     <title>{{ $title ?? 'Page Title' }}</title>
     @yield('meta')
+    @if (request()->query('comment') === 'sent')
+        <style id="comment-position-guard">html { visibility: hidden; }</style>
+        <script>
+            if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+            window.setTimeout(function () {
+                document.getElementById('comment-position-guard')?.remove();
+            }, 3000);
+        </script>
+    @endif
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     @livewireScripts

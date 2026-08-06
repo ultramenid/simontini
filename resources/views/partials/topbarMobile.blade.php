@@ -7,9 +7,13 @@
               </svg>
 
               <div class="flex gap-2 z-50">
-                <a href="{{ route(Route::currentRouteName(), 'en') }}"  class="cursor-pointer  @if(App::getLocale() == 'en') text-white font-bold @else text-gray-700 @endif ">EN</a>
+                @php
+                    $mobileLanguageParameters = request()->route()?->parameters() ?? [];
+                    $mobileLanguageKey = array_key_exists('locale', $mobileLanguageParameters) ? 'locale' : 'lang';
+                @endphp
+                <a href="{{ route(Route::currentRouteName(), [...$mobileLanguageParameters, $mobileLanguageKey => 'en']) }}"  class="cursor-pointer  @if(App::getLocale() == 'en') text-white font-bold @else text-gray-700 @endif ">EN</a>
                 <div class="border-l border-white"></div>
-                <a href="{{ route(Route::currentRouteName(), 'id') }}"  class="cursor-pointer @if(App::getLocale() == 'id') text-white font-bold @else text-gray-700 @endif ">ID</a>
+                <a href="{{ route(Route::currentRouteName(), [...$mobileLanguageParameters, $mobileLanguageKey => 'id']) }}"  class="cursor-pointer @if(App::getLocale() == 'id') text-white font-bold @else text-gray-700 @endif ">ID</a>
             </div>
         </div>
 
@@ -55,6 +59,10 @@
                 </div> --}}
                 <div class=" px-6">
                     <a  href="{{ route('insight', app()->getLocale()) }}" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
+                    <p class="border-b border-gray-300"></p>
+                </div>
+                <div class="px-6">
+                    <a href="{{ route('deforestation.index', ['locale' => app()->getLocale()]) }}" class="mb-4 inline-block px-4 text-xl font-semibold leading-5 text-white">deforestory</a>
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">

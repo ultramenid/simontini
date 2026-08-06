@@ -7,10 +7,12 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.0",
+        "laravel/socialite": "^5.20",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.4",
         "masmerise/livewire-toaster": "^2.6",
-        "spatie/laravel-sitemap": "^7.4"
+        "spatie/laravel-sitemap": "^7.4",
+        "symfony/html-sanitizer": "^7.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
