@@ -31,11 +31,10 @@ function createStoryForUpdateApi(array $overrides = []): object
     return DB::table('deforestory')->find($id);
 }
 
-function storyUpdatePayload(object $story, array $overrides = []): array
+function storyUpdatePayload(array $overrides = []): array
 {
     return [
         'external_id' => 'remote-update-'.uniqid(),
-        'deforestory_uuid' => $story->uuid,
         'title_id' => 'Pemantauan Terbaru Bentang Alam',
         'title_en' => 'Latest Landscape Monitoring',
         'description_id' => 'Perubahan bentang alam masih berlangsung.',
@@ -51,24 +50,42 @@ function storyUpdatePayload(object $story, array $overrides = []): array
 it('rejects story update sync without a valid API token', function () {
     config(['services.deforestory.api_token' => 'story-update-token']);
 
-    $this->postJson('/api/deforestory/updates/sync', [])
+    $this->postJson('/api/deforestory/'.Str::uuid().'/updates/sync', [])
         ->assertUnauthorized();
+});
+
+it('requires the Deforestory UUID in the endpoint URL', function () {
+    config(['services.deforestory.api_token' => 'story-update-token']);
+
+    $this->withToken('story-update-token')
+        ->postJson('/api/deforestory/updates/sync', storyUpdatePayload())
+        ->assertNotFound();
+});
+
+it('rejects an unknown Deforestory UUID', function () {
+    config(['services.deforestory.api_token' => 'story-update-token']);
+
+    $this->withToken('story-update-token')
+        ->postJson('/api/deforestory/'.Str::uuid().'/updates/sync', storyUpdatePayload())
+        ->assertUnprocessable()
+        ->assertJsonValidationErrors('deforestory_uuid');
 });
 
 it('creates and updates a story timeline item using a bearer token', function () {
     config(['services.deforestory.api_token' => 'story-update-token']);
     $story = createStoryForUpdateApi();
-    $payload = storyUpdatePayload($story, ['external_id' => 'remote-fixed-123']);
+    $payload = storyUpdatePayload(['external_id' => 'remote-fixed-123']);
+    $endpoint = "/api/deforestory/{$story->uuid}/updates/sync";
 
     $this->withToken('story-update-token')
-        ->postJson('/api/deforestory/updates/sync', $payload)
+        ->postJson($endpoint, $payload)
         ->assertCreated()
         ->assertJsonPath('action', 'created')
         ->assertJsonPath('deforestory_uuid', $story->uuid)
         ->assertJsonPath('data.deforestory_id', $story->id);
 
     $this->withToken('story-update-token')
-        ->postJson('/api/deforestory/updates/sync', [
+        ->postJson($endpoint, [
             ...$payload,
             'title_id' => 'Judul Pembaruan Diubah',
         ])
@@ -82,7 +99,7 @@ it('creates and updates a story timeline item using a bearer token', function ()
 
 it('shows active timeline updates but hides inactive updates publicly', function () {
     $story = createStoryForUpdateApi();
-    $base = storyUpdatePayload($story);
+    $base = storyUpdatePayload();
 
     DB::table('deforestation_story_updates')->insert([
         'deforestory_id' => $story->id,
@@ -122,6 +139,6 @@ it('shows active timeline updates but hides inactive updates publicly', function
 });
 
 it('does not provide a public GET endpoint for raw timeline data', function () {
-    $this->getJson('/api/deforestory/updates/sync')
+    $this->getJson('/api/deforestory/'.Str::uuid().'/updates/sync')
         ->assertMethodNotAllowed();
 });
