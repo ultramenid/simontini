@@ -1,7 +1,9 @@
 <?php
 
+use App\Jobs\SendDeforestationStoryUpdateEmail;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Str;
 
 uses(DatabaseTransactions::class);
@@ -71,30 +73,34 @@ it('rejects an unknown Deforestory UUID', function () {
         ->assertJsonValidationErrors('deforestory_uuid');
 });
 
-it('creates and updates a story timeline item using a bearer token', function () {
+it('triggers subscriber emails without storing the Pasopati article', function () {
+    Queue::fake();
     config(['services.deforestory.api_token' => 'story-update-token']);
     $story = createStoryForUpdateApi();
     $payload = storyUpdatePayload(['external_id' => 'remote-fixed-123']);
     $endpoint = "/api/deforestory/{$story->uuid}/updates/sync";
+    $updatesBefore = DB::table('deforestation_story_updates')->count();
+    DB::table('deforestation_story_subscriptions')->insert([
+        'deforestory_id' => $story->id,
+        'name' => 'Subscriber API',
+        'email' => 'subscriber-api-'.uniqid().'@example.test',
+        'locale' => 'id',
+        'status' => 'active',
+        'unsubscribe_token' => hash('sha256', uniqid('', true)),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
 
     $this->withToken('story-update-token')
         ->postJson($endpoint, $payload)
-        ->assertCreated()
-        ->assertJsonPath('action', 'created')
+        ->assertAccepted()
+        ->assertJsonPath('action', 'triggered')
         ->assertJsonPath('deforestory_uuid', $story->uuid)
-        ->assertJsonPath('data.deforestory_id', $story->id);
+        ->assertJsonPath('external_id', 'remote-fixed-123')
+        ->assertJsonMissingPath('data');
 
-    $this->withToken('story-update-token')
-        ->postJson($endpoint, [
-            ...$payload,
-            'title_id' => 'Judul Pembaruan Diubah',
-        ])
-        ->assertOk()
-        ->assertJsonPath('action', 'updated')
-        ->assertJsonPath('data.title_id', 'Judul Pembaruan Diubah');
-
-    expect(DB::table('deforestation_story_updates')->where('external_id', 'remote-fixed-123')->count())
-        ->toBe(1);
+    expect(DB::table('deforestation_story_updates')->count())->toBe($updatesBefore);
+    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class);
 });
 
 it('shows active timeline updates but hides inactive updates publicly', function () {

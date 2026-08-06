@@ -37,41 +37,9 @@ class DeforestationStoryUpdateApiController extends Controller
             ]);
         }
 
-        $existing = DB::table('deforestation_story_updates')
-            ->where('external_id', $validated['external_id'])
-            ->first();
-
-        $values = [
-            'deforestory_id' => $story->id,
-            'title_id' => $validated['title_id'],
-            'title_en' => $validated['title_en'],
-            'description_id' => $validated['description_id'],
-            'description_en' => $validated['description_en'],
-            'image_url' => $validated['image_url'],
-            'target_url' => $validated['target_url'],
-            'published_at' => $validated['published_at'],
-            'status' => $validated['status'] ?? 'on',
-            'updated_at' => now(),
-        ];
-
-        if ($existing === null) {
-            $values['created_at'] = now();
-        }
-
-        DB::table('deforestation_story_updates')->updateOrInsert(
-            ['external_id' => $validated['external_id']],
-            $values,
-        );
-
-        $update = DB::table('deforestation_story_updates')
-            ->where('external_id', $validated['external_id'])
-            ->first();
-
-        $shouldNotify = $update->status === 'on'
-            && ($existing === null || $existing->status !== 'on');
         $queuedNotifications = 0;
 
-        if ($shouldNotify) {
+        if (($validated['status'] ?? 'on') === 'on') {
             $subscriptions = DB::table('deforestation_story_subscriptions')
                 ->where('status', 'active')
                 ->where(function ($query) use ($story) {
@@ -81,34 +49,21 @@ class DeforestationStoryUpdateApiController extends Controller
                 ->get(['id']);
 
             foreach ($subscriptions as $subscription) {
-                $inserted = DB::table('deforestation_story_update_notifications')->insertOrIgnore([
-                    'update_id' => $update->id,
-                    'subscription_id' => $subscription->id,
-                    'status' => 'queued',
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ]);
-
-                if ($inserted === 1) {
-                    $notificationId = DB::table('deforestation_story_update_notifications')
-                        ->where('update_id', $update->id)
-                        ->where('subscription_id', $subscription->id)
-                        ->value('id');
-
-                    SendDeforestationStoryUpdateEmail::dispatch((int) $notificationId);
-                    $queuedNotifications++;
-                }
+                SendDeforestationStoryUpdateEmail::dispatch(
+                    (int) $subscription->id,
+                    (int) $story->id,
+                    $validated,
+                );
+                $queuedNotifications++;
             }
         }
 
         return response()->json([
-            'message' => $existing
-                ? 'Pembaruan story berhasil diperbarui.'
-                : 'Pembaruan story berhasil dibuat.',
-            'action' => $existing ? 'updated' : 'created',
+            'message' => 'Trigger artikel Pasopati berhasil diterima.',
+            'action' => 'triggered',
             'deforestory_uuid' => $story->uuid,
+            'external_id' => $validated['external_id'],
             'queued_notifications' => $queuedNotifications,
-            'data' => $update,
-        ], $existing ? Response::HTTP_OK : Response::HTTP_CREATED);
+        ], Response::HTTP_ACCEPTED);
     }
 }
