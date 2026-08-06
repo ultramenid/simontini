@@ -19,7 +19,11 @@
         <span class="bg-gray-100 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-gray-500">TinyMCE custom</span>
     </div>
 
-    <div data-tinymce-wrapper>
+    <div
+        data-tinymce-wrapper
+        data-tinymce-picker-id="{{ $wireModel }}"
+        data-tinymce-reference-page-url="{{ route('cms.reference', ['picker' => 1, 'editor' => $wireModel]) }}"
+    >
         <div wire:ignore>
             <textarea data-tinymce-editor>{{ $value }}</textarea>
         </div>

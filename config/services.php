@@ -33,6 +33,9 @@ return [
 
     'deforestory' => [
         'api_token' => env('DEFORESTORY_API_TOKEN'),
+        'webhook_url' => env('ENDPOINT_PASOPATI', env('DEFORESTORY_WEBHOOK_URL')),
+        'webhook_token' => env('DEFORESTORY_API_KEY', env('DEFORESTORY_WEBHOOK_TOKEN')),
+        'webhook_timeout' => env('DEFORESTORY_WEBHOOK_TIMEOUT', 10),
     ],
 
     'cloudflare_d1' => [

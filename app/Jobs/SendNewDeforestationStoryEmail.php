@@ -39,26 +39,34 @@ class SendNewDeforestationStoryEmail implements ShouldQueue
             return;
         }
 
-        $locale = $data->locale === 'en' ? 'en' : 'id';
-        $title = $locale === 'en' ? $data->title_en : $data->title_id;
-        $description = $locale === 'en' ? $data->desrkirpsi_en : $data->desrkirpsi_id;
-        $image = $locale === 'en' && $data->image_en ? $data->image_en : $data->image_id;
+        $titleEn = $data->title_en ?: $data->title_id;
+        $titleId = $data->title_id ?: $data->title_en;
+        $descriptionEn = $data->desrkirpsi_en ?: $data->desrkirpsi_id;
+        $descriptionId = $data->desrkirpsi_id ?: $data->desrkirpsi_en;
+        $image = $data->image_en ?: $data->image_id;
         $imageUrl = ! app()->environment('local') && $image && Storage::disk('public')->exists($image)
             ? url(Storage::url($image))
             : null;
-        $storyUrl = route('deforestation.show', [
-            'locale' => $locale,
+        $storyUrlEn = route('deforestation.show', [
+            'locale' => 'en',
+            'id' => $data->story_id,
+            'slug' => $data->slug,
+        ]);
+        $storyUrlId = route('deforestation.show', [
+            'locale' => 'id',
             'id' => $data->story_id,
             'slug' => $data->slug,
         ]);
 
         Mail::to($data->email, $data->name)->send(new NewDeforestationStoryPublished([
             'name' => $data->name,
-            'locale' => $locale,
-            'title' => $title,
-            'description' => $description,
+            'titleEn' => $titleEn,
+            'titleId' => $titleId,
+            'descriptionEn' => $descriptionEn,
+            'descriptionId' => $descriptionId,
             'imageUrl' => $imageUrl,
-            'storyUrl' => $storyUrl,
+            'storyUrlEn' => $storyUrlEn,
+            'storyUrlId' => $storyUrlId,
             'publishedAt' => $data->date,
         ]));
 
