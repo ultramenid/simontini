@@ -40,7 +40,9 @@ return [
             'table' => env('DB_QUEUE_TABLE', 'jobs'),
             'queue' => env('DB_QUEUE', 'default'),
             'retry_after' => env('DB_QUEUE_RETRY_AFTER', 90),
-            'after_commit' => false,
+            // ponytail: dispatch only after the dispatcher's DB::transaction commits,
+            // so a worker can never pick up a job before its notification row is visible.
+            'after_commit' => true,
         ],
 
         'beanstalkd' => [
