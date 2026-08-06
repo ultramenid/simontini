@@ -13,11 +13,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DeforestationStoryUpdateApiController extends Controller
 {
-    public function sync(Request $request): JsonResponse
+    public function sync(Request $request, string $deforestoryUuid): JsonResponse
     {
         $validated = $request->validate([
             'external_id' => ['required', 'string', 'max:255'],
-            'deforestory_uuid' => ['required', 'uuid'],
             'title_id' => ['required', 'string', 'max:255'],
             'title_en' => ['required', 'string', 'max:255'],
             'description_id' => ['required', 'string'],
@@ -29,7 +28,7 @@ class DeforestationStoryUpdateApiController extends Controller
         ]);
 
         $story = DB::table('deforestory')
-            ->where('uuid', $validated['deforestory_uuid'])
+            ->where('uuid', $deforestoryUuid)
             ->first();
 
         if ($story === null) {

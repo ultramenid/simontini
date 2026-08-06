@@ -84,9 +84,8 @@ it('queues one email when a new active story update arrives', function () {
         ->where(fn ($query) => $query->where('deforestory_id', $story->id)->orWhereNull('deforestory_id'))
         ->count();
 
-    $response = $this->withToken('test-api-token')->postJson('/api/deforestory/updates/sync', [
+    $response = $this->withToken('test-api-token')->postJson("/api/deforestory/{$story->uuid}/updates/sync", [
         'external_id' => 'update-'.uniqid(),
-        'deforestory_uuid' => $story->uuid,
         'title_id' => 'Pembaruan Raja Ampat',
         'title_en' => 'Raja Ampat Update',
         'description_id' => 'Ada pembaruan terbaru.',
@@ -125,9 +124,8 @@ it('also queues update emails for global subscribers', function () {
         ->where('status', 'active')
         ->count();
 
-    $this->withToken('test-api-token')->postJson('/api/deforestory/updates/sync', [
+    $this->withToken('test-api-token')->postJson("/api/deforestory/{$story->uuid}/updates/sync", [
         'external_id' => 'global-update-'.uniqid(),
-        'deforestory_uuid' => $story->uuid,
         'title_id' => 'Pembaruan Global',
         'title_en' => 'Global Update',
         'description_id' => 'Pembaruan untuk seluruh subscriber.',
