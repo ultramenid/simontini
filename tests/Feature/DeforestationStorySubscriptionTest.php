@@ -2,9 +2,11 @@
 
 use App\Jobs\SendDeforestationStoryUpdateEmail;
 use App\Jobs\SendNewDeforestationStoryEmail;
+use App\Mail\DeforestationStoryUpdated;
 use App\Services\DeforestationStoryNotificationDispatcher;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Str;
 
@@ -69,7 +71,7 @@ it('queues one email when a new active story update arrives', function () {
     config(['services.deforestory.api_token' => 'test-api-token']);
 
     $story = createSubscribedStory();
-    $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
+    DB::table('deforestation_story_subscriptions')->insert([
         'deforestory_id' => $story->id,
         'name' => 'Pelanggan Simontini',
         'email' => 'subscriber@example.test',
@@ -84,23 +86,17 @@ it('queues one email when a new active story update arrives', function () {
         ->where(fn ($query) => $query->where('deforestory_id', $story->id)->orWhereNull('deforestory_id'))
         ->count();
 
-    $response = $this->withToken('test-api-token')->postJson("/api/deforestory/{$story->uuid}/updates/sync", [
-        'external_id' => 'update-'.uniqid(),
+    $response = $this->withToken('test-api-token')->postJson("/api/deforestory/sync/{$story->uuid}", [
         'title_id' => 'Pembaruan Raja Ampat',
         'title_en' => 'Raja Ampat Update',
         'description_id' => 'Ada pembaruan terbaru.',
         'description_en' => 'A new update is available.',
-        'image_url' => 'https://example.test/update.jpg',
-        'target_url' => 'https://example.test/update',
+        'target_url_id' => 'https://example.test/id/update',
+        'target_url_en' => 'https://example.test/en/update',
         'published_at' => '2026-08-03',
-        'status' => 'on',
     ]);
 
-    $response->assertCreated()->assertJsonPath('queued_notifications', $expectedNotifications);
-    $this->assertDatabaseHas('deforestation_story_update_notifications', [
-        'subscription_id' => $subscriptionId,
-        'status' => 'queued',
-    ]);
+    $response->assertAccepted()->assertJsonPath('queued_notifications', $expectedNotifications);
     Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, $expectedNotifications);
 });
 
@@ -124,19 +120,52 @@ it('also queues update emails for global subscribers', function () {
         ->where('status', 'active')
         ->count();
 
-    $this->withToken('test-api-token')->postJson("/api/deforestory/{$story->uuid}/updates/sync", [
-        'external_id' => 'global-update-'.uniqid(),
+    $this->withToken('test-api-token')->postJson("/api/deforestory/sync/{$story->uuid}", [
         'title_id' => 'Pembaruan Global',
         'title_en' => 'Global Update',
         'description_id' => 'Pembaruan untuk seluruh subscriber.',
         'description_en' => 'An update for every subscriber.',
-        'image_url' => 'https://example.test/global.jpg',
-        'target_url' => 'https://example.test/global',
+        'target_url_id' => 'https://example.test/id/global',
+        'target_url_en' => 'https://example.test/en/global',
         'published_at' => '2026-08-04',
-        'status' => 'on',
-    ])->assertCreated()->assertJsonPath('queued_notifications', $expectedNotifications);
+    ])->assertAccepted()->assertJsonPath('queued_notifications', $expectedNotifications);
 
     Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, $expectedNotifications);
+});
+
+it('sends an article email from the queued payload without storing the article', function () {
+    Mail::fake();
+    $story = createSubscribedStory();
+    $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
+        'deforestory_id' => $story->id,
+        'name' => 'Subscriber Payload',
+        'email' => 'payload@example.test',
+        'locale' => 'id',
+        'status' => 'active',
+        'unsubscribe_token' => hash('sha256', uniqid('', true)),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+    $updatesBefore = DB::table('deforestation_story_updates')->count();
+    $article = [
+        'title_id' => 'Artikel Pasopati Tanpa Penyimpanan',
+        'title_en' => 'Pasopati Article Without Storage',
+        'description_id' => 'Artikel hanya diteruskan ke email.',
+        'description_en' => 'The article is only forwarded to email.',
+        'target_url_id' => 'https://example.test/id/payload',
+        'target_url_en' => 'https://example.test/en/payload',
+        'published_at' => '2026-08-06',
+    ];
+
+    (new SendDeforestationStoryUpdateEmail($subscriptionId, $story->id, $article))->handle();
+
+    Mail::assertSent(DeforestationStoryUpdated::class, function (DeforestationStoryUpdated $mail): bool {
+        return $mail->hasTo('payload@example.test')
+            && $mail->mailData['titleId'] === 'Artikel Pasopati Tanpa Penyimpanan'
+            && $mail->mailData['targetUrlId'] === 'https://example.test/id/payload'
+            && $mail->mailData['targetUrlEn'] === 'https://example.test/en/payload';
+    });
+    expect(DB::table('deforestation_story_updates')->count())->toBe($updatesBefore);
 });
 
 it('queues an email for global subscribers when a new story is published', function () {

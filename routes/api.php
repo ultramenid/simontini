@@ -9,6 +9,6 @@ Route::post('/deforestory', [DeforestoryApiController::class, 'store'])
     ->middleware('deforestory.token');
 Route::post('/deforestory/sync', [DeforestoryApiController::class, 'sync'])
     ->middleware('deforestory.token');
-Route::post('/deforestory/{deforestoryUuid}/updates/sync', [DeforestationStoryUpdateApiController::class, 'sync'])
-    ->whereUuid('deforestoryUuid')
+Route::post('/deforestory/sync/{uuid}', [DeforestationStoryUpdateApiController::class, 'sync'])
+    ->whereUuid('uuid')
     ->middleware('deforestory.token');
