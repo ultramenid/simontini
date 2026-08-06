@@ -76,10 +76,4 @@
         </section>
     </main>
 
-    <footer class="bg-[#1a1a1a]">
-        <div class="mx-auto flex max-w-[1440px] flex-col gap-3 px-5 py-9 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
-            <p class="font-semibold uppercase tracking-[0.18em]">Auriga Nusantara</p>
-            <p>{{ $locale === 'en' ? 'Information for the protection of Indonesia’s natural resources.' : 'Informasi untuk perlindungan sumber daya alam Indonesia.' }}</p>
-        </div>
-    </footer>
 @endsection

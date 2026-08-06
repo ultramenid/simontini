@@ -131,5 +131,4 @@
         </div>
     </main>
 
-    <footer class="h-32 bg-gradient-to-b from-white to-[#dcefeb]" aria-hidden="true"></footer>
 @endsection
