@@ -17,8 +17,7 @@ class DeforestationStoryUpdateApiController extends Controller
     {
         $validated = $request->validate([
             'external_id' => ['required', 'string', 'max:255'],
-            'deforestory_id' => ['nullable', 'integer', 'required_without:story_slug'],
-            'story_slug' => ['nullable', 'string', 'max:255', 'required_without:deforestory_id'],
+            'deforestory_uuid' => ['required', 'uuid'],
             'title_id' => ['required', 'string', 'max:255'],
             'title_en' => ['required', 'string', 'max:255'],
             'description_id' => ['required', 'string'],
@@ -30,16 +29,12 @@ class DeforestationStoryUpdateApiController extends Controller
         ]);
 
         $story = DB::table('deforestory')
-            ->when(
-                isset($validated['deforestory_id']),
-                fn ($query) => $query->where('id', $validated['deforestory_id']),
-                fn ($query) => $query->where('slug', $validated['story_slug']),
-            )
+            ->where('uuid', $validated['deforestory_uuid'])
             ->first();
 
         if ($story === null) {
             throw ValidationException::withMessages([
-                isset($validated['deforestory_id']) ? 'deforestory_id' : 'story_slug' => 'Deforestation Story tidak ditemukan.',
+                'deforestory_uuid' => 'Deforestation Story dengan UUID tersebut tidak ditemukan.',
             ]);
         }
 
@@ -112,6 +107,7 @@ class DeforestationStoryUpdateApiController extends Controller
                 ? 'Pembaruan story berhasil diperbarui.'
                 : 'Pembaruan story berhasil dibuat.',
             'action' => $existing ? 'updated' : 'created',
+            'deforestory_uuid' => $story->uuid,
             'queued_notifications' => $queuedNotifications,
             'data' => $update,
         ], $existing ? Response::HTTP_OK : Response::HTTP_CREATED);

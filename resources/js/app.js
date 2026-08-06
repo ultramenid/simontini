@@ -340,6 +340,7 @@ document.addEventListener('submit', async (event) => {
     if (submitButton) submitButton.disabled = true;
 
     try {
+        const subscribedEmail = form.querySelector('[name="email"]')?.value || '';
         const response = await fetch(form.action, {
             method: 'POST',
             body: new FormData(form),
@@ -364,14 +365,11 @@ document.addEventListener('submit', async (event) => {
 
         form.dispatchEvent(new CustomEvent('story-subscription-succeeded', {
             bubbles: true,
+            detail: {
+                email: subscribedEmail,
+                message: payload.message,
+            },
         }));
-
-        window.setTimeout(() => {
-            if (!feedback) return;
-
-            feedback.textContent = '';
-            feedback.className = 'mt-3 hidden text-center text-xs font-semibold';
-        }, 1000);
     } catch (error) {
         if (feedback) {
             feedback.textContent = error instanceof Error ? error.message : 'Langganan belum dapat disimpan.';
