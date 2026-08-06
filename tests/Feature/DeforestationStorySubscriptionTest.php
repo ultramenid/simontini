@@ -3,6 +3,7 @@
 use App\Jobs\SendDeforestationStoryUpdateEmail;
 use App\Jobs\SendNewDeforestationStoryEmail;
 use App\Mail\DeforestationStoryUpdated;
+use App\Mail\NewDeforestationStoryPublished;
 use App\Services\DeforestationStoryNotificationDispatcher;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
@@ -199,6 +200,28 @@ it('queues an email for global subscribers when a new story is published', funct
     ])->assertCreated()->assertJsonPath('queued_notifications', $expectedNotifications);
 
     Queue::assertPushed(SendNewDeforestationStoryEmail::class, $expectedNotifications);
+});
+
+it('sends a new story email without a publication notification record', function () {
+    Mail::fake();
+    $story = createSubscribedStory();
+    $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
+        'deforestory_id' => null,
+        'name' => 'Subscriber Tanpa Record',
+        'email' => 'no-publication-record@example.test',
+        'locale' => 'id',
+        'status' => 'active',
+        'unsubscribe_token' => hash('sha256', uniqid('', true)),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    (new SendNewDeforestationStoryEmail($subscriptionId, $story->id))->handle();
+
+    Mail::assertSent(NewDeforestationStoryPublished::class, function (NewDeforestationStoryPublished $mail): bool {
+        return $mail->hasTo('no-publication-record@example.test')
+            && $mail->mailData['titleId'] === 'Story Berlangganan';
+    });
 });
 
 it('does not email subscribers when the same story is republished', function () {
