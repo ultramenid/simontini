@@ -22,7 +22,7 @@ return new class extends Migration
             $table->enum('status', ['on', 'off'])->default('on');
             $table->timestamps();
 
-            $table->index(['deforestory_id', 'status', 'published_at']);
+            $table->index(['deforestory_id', 'status', 'published_at'], 'dsu_deforestory_status_published_index');
         });
     }
 

@@ -9,7 +9,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('deforestation_story_publication_notifications', function (Blueprint $table) {
-            $table->dropUnique(['story_id', 'subscription_id']);
+            $table->index('story_id', 'dspn_story_id_index');
+            $table->dropUnique('dspn_story_subscription_unique');
         });
     }
 

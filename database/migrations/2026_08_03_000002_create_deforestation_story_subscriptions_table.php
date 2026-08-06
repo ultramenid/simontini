@@ -31,7 +31,7 @@ return new class extends Migration
             $table->text('error')->nullable();
             $table->timestamps();
 
-            $table->unique(['update_id', 'subscription_id']);
+            $table->unique(['update_id', 'subscription_id'], 'dsun_update_subscription_unique');
         });
     }
 
