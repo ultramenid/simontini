@@ -44,10 +44,10 @@ class SendNewDeforestationStoryEmail implements ShouldQueue
         $titleId = $story->title_id ?: $story->title_en;
         $descriptionEn = $story->desrkirpsi_en ?: $story->desrkirpsi_id;
         $descriptionId = $story->desrkirpsi_id ?: $story->desrkirpsi_en;
-        $image = $story->image_en ?: $story->image_id;
-        $imageUrl = ! app()->environment('local') && $image && Storage::disk('public')->exists($image)
-            ? url(Storage::url($image))
-            : null;
+        $imageId = $story->image_id ?: $story->image_en;
+        $imageEn = $story->image_en ?: $story->image_id;
+        $imageUrlId = $this->publicImageUrl($imageId);
+        $imageUrlEn = $this->publicImageUrl($imageEn);
         $storyUrlEn = route('deforestation.show', [
             'locale' => 'en',
             'id' => $story->id,
@@ -65,13 +65,26 @@ class SendNewDeforestationStoryEmail implements ShouldQueue
             'titleId' => $titleId,
             'descriptionEn' => $descriptionEn,
             'descriptionId' => $descriptionId,
-            'imageUrl' => $imageUrl,
+            'imageUrlId' => $imageUrlId,
+            'imageUrlEn' => $imageUrlEn,
             'storyUrlEn' => $storyUrlEn,
             'storyUrlId' => $storyUrlId,
             'publishedAt' => $story->date,
         ]));
     }
 
+    private function publicImageUrl(?string $image): ?string
+    {
+        if (blank($image)) {
+            return null;
+        }
+
+        if (filter_var($image, FILTER_VALIDATE_URL)) {
+            return $image;
+        }
+
+        return url(Storage::url($image));
+    }
     public function failed(?Throwable $exception): void
     {
         Log::error('Gagal mengirim email Deforestory baru.', [

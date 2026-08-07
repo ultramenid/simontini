@@ -29,20 +29,20 @@ function createWebhookStory(string $status): int
     ]);
 }
 
-it('queues an outbound webhook for a published story', function () {
-    Queue::fake();
+it('sends an outbound webhook for a published story', function () {
+    Http::fake(['https://pasopati.test/api/deforestory/cards' => Http::response(['received' => true])]);
     config(['services.deforestory.webhook_url' => 'https://pasopati.test/api']);
     $storyId = createWebhookStory('publish');
 
-    $queued = app(DeforestationStoryWebhookDispatcher::class)
+    $sent = app(DeforestationStoryWebhookDispatcher::class)
         ->dispatch($storyId, 'created');
 
-    expect($queued)->toBeTrue();
-    Queue::assertPushed(SendDeforestationStoryWebhook::class, function ($job) use ($storyId) {
-        return $job->payload['event'] === 'deforestory.created'
-            && $job->payload['data']['id'] === $storyId
-            && $job->payload['data']['status'] === 'publish';
-    });
+    expect($sent)->toBeTrue();
+    Http::assertSent(fn (Request $request) => $request->method() === 'POST'
+        && $request->url() === 'https://pasopati.test/api/deforestory/cards'
+        && $request['cards'][0]['uuid'] !== ''
+        && $request['cards'][0]['slug'] === 'story-webhook'
+        && $request['cards'][0]['status'] === 'publish');
 });
 
 it('does not queue an outbound webhook for a draft story', function () {
@@ -57,25 +57,24 @@ it('does not queue an outbound webhook for a draft story', function () {
     Queue::assertNothingPushed();
 });
 
-it('queues an unpublished webhook when a published story becomes draft', function () {
-    Queue::fake();
+it('sends an unpublished webhook when a published story becomes draft', function () {
+    Http::fake(['https://pasopati.test/api/deforestory/cards/*' => Http::response(['ok' => true])]);
     config(['services.deforestory.webhook_url' => 'https://pasopati.test/api']);
     $storyId = createWebhookStory('draft');
 
-    $queued = app(DeforestationStoryWebhookDispatcher::class)
+    $sent = app(DeforestationStoryWebhookDispatcher::class)
         ->dispatch($storyId, 'unpublished');
 
-    expect($queued)->toBeTrue();
-    Queue::assertPushed(SendDeforestationStoryWebhook::class, function ($job) use ($storyId) {
-        return $job->payload['event'] === 'deforestory.unpublished'
-            && $job->payload['data']['id'] === $storyId
-            && $job->payload['data']['status'] === 'draft';
-    });
+    expect($sent)->toBeTrue();
+    Http::assertSent(fn (Request $request) => $request->method() === 'PUT'
+        && str_starts_with($request->url(), 'https://pasopati.test/api/deforestory/cards/')
+        && $request['cards'][0]['slug'] === 'story-webhook'
+        && $request['cards'][0]['status'] === 'draft');
 });
 
-it('puts an updated card using its permanent UUID and bearer authentication', function () {
+it('puts an updated card with its permanent UUID and bearer authentication', function () {
     $uuid = '0e932e55-c03e-4fa8-a794-d9761445635c';
-    Http::fake(["https://pasopati.test/api/deforestory/cards/{$uuid}" => Http::response(['ok' => true])]);
+    Http::fake(['https://pasopati.test/api/deforestory/cards/*' => Http::response(['ok' => true])]);
     config([
         'services.deforestory.webhook_url' => 'https://pasopati.test/api',
         'services.deforestory.webhook_token' => 'webhook-secret',
@@ -118,7 +117,7 @@ it('puts an updated card using its permanent UUID and bearer authentication', fu
     });
 });
 
-it('posts a newly published card to the cards collection', function () {
+it('puts a newly published card to the cards collection', function () {
     Http::fake(['https://pasopati.test/api/deforestory/cards' => Http::response(['received' => true])]);
     config([
         'services.deforestory.webhook_url' => 'https://pasopati.test/api',
@@ -158,7 +157,7 @@ it('posts a newly published card to the cards collection', function () {
 
 it('puts draft status by UUID when a story is unpublished', function () {
     $uuid = '77153520-032c-463b-847e-40b7510c53d9';
-    Http::fake(["https://pasopati.test/api/deforestory/cards/{$uuid}" => Http::response(['ok' => true])]);
+    Http::fake(['https://pasopati.test/api/deforestory/cards/*' => Http::response(['ok' => true])]);
     config(['services.deforestory.webhook_url' => 'https://pasopati.test/api']);
 
     (new SendDeforestationStoryWebhook([
@@ -177,7 +176,7 @@ it('puts draft status by UUID when a story is unpublished', function () {
     ]))->handle();
 
     Http::assertSent(fn (Request $request) => $request->method() === 'PUT'
-        && $request->url() === "https://pasopati.test/api/deforestory/cards/{$uuid}"
+        && $request->url() === 'https://pasopati.test/api/deforestory/cards/'.$uuid
         && $request->hasHeader('X-Simontini-Event', 'deforestory.unpublished')
         && $request['cards'][0]['uuid'] === $uuid
         && $request['cards'][0]['status'] === 'draft');

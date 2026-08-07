@@ -40,6 +40,7 @@ function storyUpdatePayload(array $overrides = []): array
         'title_en' => 'Latest Landscape Monitoring',
         'description_id' => 'Perubahan bentang alam masih berlangsung.',
         'description_en' => 'Landscape changes are still ongoing.',
+        'image_url' => 'https://example.org/images/forest-update.jpg',
         'target_url_id' => 'https://example.org/id/news/forest-update',
         'target_url_en' => 'https://example.org/en/news/forest-update',
         'published_at' => '2026-08-03',
@@ -98,6 +99,18 @@ it('triggers subscriber emails without storing the Pasopati article', function (
 
     expect(DB::table('deforestation_story_updates')->count())->toBe($updatesBefore);
     Queue::assertPushed(SendDeforestationStoryUpdateEmail::class);
+});
+
+it('validates the optional update image as an HTTP URL', function () {
+    config(['services.deforestory.api_token' => 'story-update-token']);
+    $story = createStoryForUpdateApi();
+
+    $this->withToken('story-update-token')
+        ->postJson("/api/deforestory/sync/{$story->uuid}", storyUpdatePayload([
+            'image_url' => 'bukan-url-gambar',
+        ]))
+        ->assertUnprocessable()
+        ->assertJsonValidationErrors('image_url');
 });
 
 it('shows active timeline updates but hides inactive updates publicly', function () {
