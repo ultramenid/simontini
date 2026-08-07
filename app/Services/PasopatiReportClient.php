@@ -15,18 +15,22 @@ class PasopatiReportClient
         $baseUrl = rtrim((string) config('services.deforestory.reports_url'), '/');
         $token = (string) config('services.deforestory.reports_token');
 
-        if ($baseUrl === '' || $token === '' || ! Str::isUuid($uuid)) {
+        if ($baseUrl === '' || ! Str::isUuid($uuid)) {
             return null;
         }
 
         $url = $baseUrl.'/by-uuid/laporan/'.rawurlencode($uuid);
 
         try {
-            $response = Http::acceptJson()
-                ->withToken($token)
+            $request = Http::acceptJson()
                 ->timeout(8)
-                ->retry(2, 200, throw: false)
-                ->get($url);
+                ->retry(2, 200, throw: false);
+
+            if ($token !== '') {
+                $request = $request->withToken($token);
+            }
+
+            $response = $request->get($url);
 
             if (! $response->successful() || ! is_array($response->json())) {
                 Log::warning('Gagal mengambil laporan Deforestory dari Pasopati.', [
@@ -57,8 +61,8 @@ class PasopatiReportClient
                 ->map(function (array $item) use ($locale): object {
                     $titleId = (string) ($item['title_id'] ?? $item['title_en'] ?? '');
                     $titleEn = (string) ($item['title_en'] ?? $item['title_id'] ?? '');
-                    $descriptionId = (string) ($item['description_id'] ?? $item['description_en'] ?? '');
-                    $descriptionEn = (string) ($item['description_en'] ?? $item['description_id'] ?? '');
+                    $descriptionId = trim(strip_tags((string) ($item['description_id'] ?? $item['description_en'] ?? '')));
+                    $descriptionEn = trim(strip_tags((string) ($item['description_en'] ?? $item['description_id'] ?? '')));
 
                     return (object) [
                         'id' => $item['external_id'] ?? $item['uuid'] ?? substr(hash('sha256', json_encode($item)), 0, 16),
