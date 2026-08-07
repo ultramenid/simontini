@@ -4,8 +4,10 @@ namespace App\Services;
 
 use App\Jobs\SendDeforestationStoryWebhook;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Throwable;
 
 class DeforestationStoryWebhookDispatcher
 {
@@ -29,41 +31,50 @@ class DeforestationStoryWebhookDispatcher
             return false;
         }
 
-        // Status CMS harus langsung tercermin di Pasopati. Webhook dibuat
-        // sinkron agar publish/draft tidak tertahan ketika queue worker lokal
-        // belum dijalankan. Antrean email tetap berjalan secara terpisah.
-        SendDeforestationStoryWebhook::dispatchSync([
-            'event_id' => (string) Str::uuid(),
-            'event' => "deforestory.{$action}",
-            'occurred_at' => now()->toIso8601String(),
-            'data' => [
-                'id' => $story->id,
-                'uuid' => $story->uuid,
-                'external_id' => $story->external_id,
-                'title_id' => $story->title_id,
-                'title_en' => $story->title_en,
-                'slug' => $story->slug,
-                'desrkirpsi_id' => $story->desrkirpsi_id,
-                'desrkirpsi_en' => $story->desrkirpsi_en,
-                'date' => $story->date,
-                'content_id' => $story->content_id,
-                'content_en' => $story->content_en,
-                'image_id' => $this->publicFileUrl($story->image_id),
-                'image_en' => $this->publicFileUrl($story->image_en),
-                'status' => $story->status,
-                'url_id' => route('deforestation.show', [
-                    'locale' => 'id',
+        try {
+            // Antrean email tidak boleh gagal hanya karena sinkronisasi Pasopati
+            // sedang menolak payload atau card belum tersedia.
+            SendDeforestationStoryWebhook::dispatchSync([
+                'event_id' => (string) Str::uuid(),
+                'event' => "deforestory.{$action}",
+                'occurred_at' => now()->toIso8601String(),
+                'data' => [
                     'id' => $story->id,
+                    'uuid' => $story->uuid,
+                    'external_id' => $story->external_id,
+                    'title_id' => $story->title_id,
+                    'title_en' => $story->title_en,
                     'slug' => $story->slug,
-                ]),
-                'url_en' => route('deforestation.show', [
-                    'locale' => 'en',
-                    'id' => $story->id,
-                    'slug' => $story->slug,
-                ]),
-                'updated_at' => $story->updated_at,
-            ],
-        ]);
+                    'desrkirpsi_id' => $story->desrkirpsi_id,
+                    'desrkirpsi_en' => $story->desrkirpsi_en,
+                    'date' => $story->date,
+                    'content_id' => $story->content_id,
+                    'content_en' => $story->content_en,
+                    'image_id' => $this->publicFileUrl($story->image_id),
+                    'image_en' => $this->publicFileUrl($story->image_en),
+                    'status' => $story->status,
+                    'url_id' => route('deforestation.show', [
+                        'locale' => 'id',
+                        'id' => $story->id,
+                        'slug' => $story->slug,
+                    ]),
+                    'url_en' => route('deforestation.show', [
+                        'locale' => 'en',
+                        'id' => $story->id,
+                        'slug' => $story->slug,
+                    ]),
+                    'updated_at' => $story->updated_at,
+                ],
+            ]);
+        } catch (Throwable $exception) {
+            Log::warning('Sinkronisasi Deforestory ke Pasopati gagal.', [
+                'story_id' => $story->id,
+                'action' => $action,
+                'error' => $exception->getMessage(),
+            ]);
+
+            return false;
+        }
 
         return true;
     }

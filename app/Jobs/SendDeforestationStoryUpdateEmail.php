@@ -37,6 +37,7 @@ class SendDeforestationStoryUpdateEmail implements ShouldQueue
                 'subscription.name',
                 'subscription.email',
                 'subscription.locale',
+                'subscription.unsubscribe_token',
             ])
             ->first();
         $story = DB::table('deforestory')->find($this->storyId);
@@ -54,8 +55,15 @@ class SendDeforestationStoryUpdateEmail implements ShouldQueue
                 'storyTitleId' => $story->title_id ?: $story->title_en,
                 'descriptionEn' => $this->article['description_en'] ?: $this->article['description_id'],
                 'descriptionId' => $this->article['description_id'] ?: $this->article['description_en'],
+                'imageUrl' => $this->article['image_url'] ?? null,
                 'targetUrlId' => $this->article['target_url_id'],
                 'targetUrlEn' => $this->article['target_url_en'],
+                'unsubscribeUrl' => route('deforestation.unsubscribe', [
+                    'locale' => in_array($subscription->locale, ['id', 'en'], true)
+                        ? $subscription->locale
+                        : 'id',
+                    'token' => $subscription->unsubscribe_token,
+                ]),
                 'publishedAt' => $this->article['published_at'],
             ]),
         );

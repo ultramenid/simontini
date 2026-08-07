@@ -3,6 +3,7 @@
 use App\Jobs\SendDeforestationStoryUpdateEmail;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Str;
 
@@ -40,6 +41,7 @@ function storyUpdatePayload(array $overrides = []): array
         'title_en' => 'Latest Landscape Monitoring',
         'description_id' => 'Perubahan bentang alam masih berlangsung.',
         'description_en' => 'Landscape changes are still ongoing.',
+        'image_url' => 'https://example.org/images/forest-update.jpg',
         'target_url_id' => 'https://example.org/id/news/forest-update',
         'target_url_en' => 'https://example.org/en/news/forest-update',
         'published_at' => '2026-08-03',
@@ -98,6 +100,87 @@ it('triggers subscriber emails without storing the Pasopati article', function (
 
     expect(DB::table('deforestation_story_updates')->count())->toBe($updatesBefore);
     Queue::assertPushed(SendDeforestationStoryUpdateEmail::class);
+});
+
+it('validates the optional update image as an HTTP URL', function () {
+    config(['services.deforestory.api_token' => 'story-update-token']);
+    $story = createStoryForUpdateApi();
+
+    $this->withToken('story-update-token')
+        ->postJson("/api/deforestory/sync/{$story->uuid}", storyUpdatePayload([
+            'image_url' => 'bukan-url-gambar',
+        ]))
+        ->assertUnprocessable()
+        ->assertJsonValidationErrors('image_url');
+});
+
+it('consumes Pasopati reports by Deforestory UUID on the detail page', function () {
+    $story = createStoryForUpdateApi();
+    config([
+        'services.deforestory.reports_url' => 'https://pasopati.test/api/deforestory',
+        'services.deforestory.reports_token' => 'reports-token',
+    ]);
+    Http::fake([
+        "https://pasopati.test/api/deforestory/by-uuid/laporan/{$story->uuid}" => Http::response([
+            [
+                'title_id' => 'Laporan Pasopati Terbaru',
+                'title_en' => 'Latest Pasopati Report',
+                'description_id' => 'Deskripsi laporan dari API.',
+                'description_en' => 'Report description from API.',
+                'target_url_id' => 'https://pasopati.test/id/laporan/latest',
+                'target_url_en' => 'https://pasopati.test/en/report/latest',
+                'published_at' => '2026-08-07',
+            ],
+        ]),
+    ]);
+
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertSee('Laporan Pasopati Terbaru')
+        ->assertSee('Deskripsi laporan dari API.')
+        ->assertSee('https://pasopati.test/id/laporan/latest', false);
+
+    Http::assertSent(fn ($request) => $request->method() === 'GET'
+        && $request->url() === "https://pasopati.test/api/deforestory/by-uuid/laporan/{$story->uuid}"
+        && $request->hasHeader('Authorization', 'Bearer reports-token'));
+});
+
+it('falls back to local updates when Pasopati reports cannot be loaded', function () {
+    $story = createStoryForUpdateApi();
+    config([
+        'services.deforestory.reports_url' => 'https://pasopati.test/api/deforestory',
+        'services.deforestory.reports_token' => 'reports-token',
+    ]);
+    Http::fake([
+        'https://pasopati.test/*' => Http::response(['message' => 'Unauthorized'], 401),
+    ]);
+    DB::table('deforestation_story_updates')->insert([
+        'deforestory_id' => $story->id,
+        'external_id' => 'local-fallback',
+        'title_id' => 'Pembaruan Lokal Cadangan',
+        'title_en' => 'Local Fallback Update',
+        'description_id' => 'Data lokal tetap tampil.',
+        'description_en' => 'Local data remains visible.',
+        'image_url' => 'https://example.test/images/local-fallback.jpg',
+        'target_url' => 'https://example.test/local',
+        'published_at' => '2026-08-07',
+        'status' => 'on',
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertSee('Pembaruan Lokal Cadangan')
+        ->assertSee('Data lokal tetap tampil.');
 });
 
 it('shows active timeline updates but hides inactive updates publicly', function () {

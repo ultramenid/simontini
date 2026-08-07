@@ -35,15 +35,10 @@ class DeforestationStoryNotificationDispatcher
                 ->get(['id']);
 
             foreach ($subscriptions as $subscription) {
-                $notificationId = DB::table('deforestation_story_publication_notifications')->insertGetId([
-                    'story_id' => $storyId,
-                    'subscription_id' => $subscription->id,
-                    'status' => 'queued',
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ]);
-
-                SendNewDeforestationStoryEmail::dispatch((int) $notificationId);
+                SendNewDeforestationStoryEmail::dispatch(
+                    (int) $subscription->id,
+                    $storyId,
+                );
                 $queued++;
             }
 

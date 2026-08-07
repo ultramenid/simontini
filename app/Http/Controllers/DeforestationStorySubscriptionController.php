@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
 
 class DeforestationStorySubscriptionController extends Controller
 {
@@ -25,6 +26,26 @@ class DeforestationStorySubscriptionController extends Controller
     public function storeAll(Request $request, string $locale): JsonResponse|RedirectResponse
     {
         return $this->saveSubscription($request, $locale, null);
+    }
+
+    public function unsubscribe(string $locale, string $token): View
+    {
+        $subscription = DB::table('deforestation_story_subscriptions')
+            ->where('unsubscribe_token', $token)
+            ->first(['id']);
+
+        abort_unless($subscription, 404);
+
+        DB::table('deforestation_story_subscriptions')
+            ->where('id', $subscription->id)
+            ->update([
+                'status' => 'inactive',
+                'updated_at' => now(),
+            ]);
+
+        return view('frontends.deforestation-story-unsubscribed', [
+            'locale' => $locale,
+        ]);
     }
 
     private function saveSubscription(Request $request, string $locale, ?int $storyId): JsonResponse|RedirectResponse

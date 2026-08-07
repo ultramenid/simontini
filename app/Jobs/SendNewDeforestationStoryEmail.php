@@ -6,6 +6,7 @@ use App\Mail\NewDeforestationStoryPublished;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Throwable;
@@ -15,74 +16,87 @@ class SendNewDeforestationStoryEmail implements ShouldQueue
     use Queueable;
 
     public int $tries = 3;
+
     public int $backoff = 60;
 
-    public function __construct(public int $notificationId) {}
+    public function __construct(
+        public int $subscriptionId,
+        public int $storyId,
+    ) {}
 
     public function handle(): void
     {
-        $data = DB::table('deforestation_story_publication_notifications as notification')
-            ->join('deforestation_story_subscriptions as subscription', 'subscription.id', '=', 'notification.subscription_id')
-            ->join('deforestory as story', 'story.id', '=', 'notification.story_id')
-            ->where('notification.id', $this->notificationId)
-            ->where('subscription.status', 'active')
-            ->where('story.status', 'publish')
-            ->select([
-                'subscription.name', 'subscription.email', 'subscription.locale',
-                'story.id as story_id', 'story.slug', 'story.title_id', 'story.title_en',
-                'story.desrkirpsi_id', 'story.desrkirpsi_en', 'story.image_id', 'story.image_en',
-                'story.date',
-            ])
+        $subscription = DB::table('deforestation_story_subscriptions')
+            ->where('id', $this->subscriptionId)
+            ->whereNull('deforestory_id')
+            ->where('status', 'active')
+            ->first(['name', 'email', 'locale', 'unsubscribe_token']);
+        $story = DB::table('deforestory')
+            ->where('id', $this->storyId)
+            ->where('status', 'publish')
             ->first();
 
-        if (! $data) {
+        if (! $subscription || ! $story) {
             return;
         }
 
-        $titleEn = $data->title_en ?: $data->title_id;
-        $titleId = $data->title_id ?: $data->title_en;
-        $descriptionEn = $data->desrkirpsi_en ?: $data->desrkirpsi_id;
-        $descriptionId = $data->desrkirpsi_id ?: $data->desrkirpsi_en;
-        $image = $data->image_en ?: $data->image_id;
-        $imageUrl = ! app()->environment('local') && $image && Storage::disk('public')->exists($image)
-            ? url(Storage::url($image))
-            : null;
+        $titleEn = $story->title_en ?: $story->title_id;
+        $titleId = $story->title_id ?: $story->title_en;
+        $descriptionEn = $story->desrkirpsi_en ?: $story->desrkirpsi_id;
+        $descriptionId = $story->desrkirpsi_id ?: $story->desrkirpsi_en;
+        $imageId = $story->image_id ?: $story->image_en;
+        $imageEn = $story->image_en ?: $story->image_id;
+        $imageUrlId = $this->publicImageUrl($imageId);
+        $imageUrlEn = $this->publicImageUrl($imageEn);
         $storyUrlEn = route('deforestation.show', [
             'locale' => 'en',
-            'id' => $data->story_id,
-            'slug' => $data->slug,
+            'id' => $story->id,
+            'slug' => $story->slug,
         ]);
         $storyUrlId = route('deforestation.show', [
             'locale' => 'id',
-            'id' => $data->story_id,
-            'slug' => $data->slug,
+            'id' => $story->id,
+            'slug' => $story->slug,
         ]);
 
-        Mail::to($data->email, $data->name)->send(new NewDeforestationStoryPublished([
-            'name' => $data->name,
+        Mail::to($subscription->email, $subscription->name)->send(new NewDeforestationStoryPublished([
+            'name' => $subscription->name,
             'titleEn' => $titleEn,
             'titleId' => $titleId,
             'descriptionEn' => $descriptionEn,
             'descriptionId' => $descriptionId,
-            'imageUrl' => $imageUrl,
+            'imageUrlId' => $imageUrlId,
+            'imageUrlEn' => $imageUrlEn,
             'storyUrlEn' => $storyUrlEn,
             'storyUrlId' => $storyUrlId,
-            'publishedAt' => $data->date,
+            'unsubscribeUrl' => route('deforestation.unsubscribe', [
+                'locale' => in_array($subscription->locale, ['id', 'en'], true)
+                    ? $subscription->locale
+                    : 'id',
+                'token' => $subscription->unsubscribe_token,
+            ]),
+            'publishedAt' => $story->date,
         ]));
-
-        DB::table('deforestation_story_publication_notifications')
-            ->where('id', $this->notificationId)
-            ->update(['status' => 'sent', 'sent_at' => now(), 'error' => null, 'updated_at' => now()]);
     }
 
+    private function publicImageUrl(?string $image): ?string
+    {
+        if (blank($image)) {
+            return null;
+        }
+
+        if (filter_var($image, FILTER_VALIDATE_URL)) {
+            return $image;
+        }
+
+        return url(Storage::url($image));
+    }
     public function failed(?Throwable $exception): void
     {
-        DB::table('deforestation_story_publication_notifications')
-            ->where('id', $this->notificationId)
-            ->update([
-                'status' => 'failed',
-                'error' => mb_substr($exception?->getMessage() ?? 'Unknown queue error', 0, 2000),
-                'updated_at' => now(),
-            ]);
+        Log::error('Gagal mengirim email Deforestory baru.', [
+            'subscription_id' => $this->subscriptionId,
+            'story_id' => $this->storyId,
+            'error' => $exception?->getMessage() ?? 'Unknown queue error',
+        ]);
     }
 }

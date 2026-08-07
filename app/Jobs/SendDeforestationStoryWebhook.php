@@ -27,10 +27,6 @@ class SendDeforestationStoryWebhook implements ShouldQueue
             return;
         }
 
-        $cardsUrl = str_ends_with($baseUrl, '/deforestory/cards')
-            ? $baseUrl
-            : $baseUrl.'/deforestory/cards';
-
         $token = (string) config('services.deforestory.webhook_token', '');
         $story = $this->payload['data'] ?? [];
         $event = $this->payload['event'] ?? '';
@@ -62,39 +58,31 @@ class SendDeforestationStoryWebhook implements ShouldQueue
 
         $storyUuid = $story['uuid']
             ?? DB::table('deforestory')->where('id', $story['id'] ?? 0)->value('uuid');
-        $card = $isUpdate
-            ? [
-                'uuid' => $storyUuid ?? '',
-                'slug' => $story['slug'] ?? '',
-                'category' => 'deforestory',
-                'year' => isset($story['date']) ? substr((string) $story['date'], 0, 4) : '',
-                'image' => $story['image_id'] ?? $story['image_en'] ?? null,
-                'image_id' => $story['image_id'] ?? null,
-                'image_en' => $story['image_en'] ?? null,
-                'title_id' => $story['title_id'] ?? '',
-                'title_en' => $story['title_en'] ?? '',
-                'date' => $story['date'] ?? null,
-                'status' => $story['status'] ?? 'publish',
-                'excerpt_id' => strip_tags((string) ($story['desrkirpsi_id'] ?? '')),
-                'excerpt_en' => strip_tags((string) ($story['desrkirpsi_en'] ?? '')),
-                'sort' => (int) ($story['id'] ?? 0),
-            ]
-            : [
-                'uuid' => $storyUuid ?? '',
-                'slug' => $story['slug'] ?? '',
-                'category' => 'deforestory',
-                'year' => isset($story['date']) ? substr((string) $story['date'], 0, 4) : '',
-                'image' => $story['image_id'] ?? $story['image_en'] ?? null,
-                'image_id' => $story['image_id'] ?? null,
-                'image_en' => $story['image_en'] ?? null,
-                'title_id' => $story['title_id'] ?? '',
-                'title_en' => $story['title_en'] ?? '',
-                'date' => $story['date'] ?? null,
-                'status' => $story['status'] ?? 'publish',
-                'excerpt_id' => strip_tags((string) ($story['desrkirpsi_id'] ?? '')),
-                'excerpt_en' => strip_tags((string) ($story['desrkirpsi_en'] ?? '')),
-                'sort' => (int) ($story['id'] ?? 0),
-            ];
+        $card = [
+            'uuid' => $storyUuid ?? '',
+            'slug' => $story['slug'] ?? '',
+            'card_uuid' => $storyUuid ?? '',
+            'card_slug' => $story['slug'] ?? '',
+            'category' => 'deforestory',
+            'year' => isset($story['date']) ? substr((string) $story['date'], 0, 4) : '',
+            'image' => $story['image_id'] ?? $story['image_en'] ?? null,
+            'image_id' => $story['image_id'] ?? null,
+            'image_en' => $story['image_en'] ?? null,
+            'title_id' => $story['title_id'] ?? '',
+            'title_en' => $story['title_en'] ?? '',
+            'date' => $story['date'] ?? null,
+            'status' => $story['status'] ?? 'publish',
+            'excerpt_id' => strip_tags((string) ($story['desrkirpsi_id'] ?? '')),
+            'excerpt_en' => strip_tags((string) ($story['desrkirpsi_en'] ?? '')),
+            'sort' => (int) ($story['id'] ?? 0),
+        ];
+
+        if (blank($card['uuid']) && blank($card['slug'])) {
+            throw new RuntimeException(
+                'UUID atau slug belum tersedia untuk Deforestory ID '.($story['id'] ?? 0).'.'
+            );
+        }
+
         $pasopatiPayload = ['cards' => [$card]];
         $body = json_encode($pasopatiPayload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         $request = Http::acceptJson()
@@ -113,21 +101,23 @@ class SendDeforestationStoryWebhook implements ShouldQueue
         }
 
         $request = $request->withBody($body, 'application/json');
+        $cardsUrl = $this->cardsUrl($baseUrl);
 
-        if ($isUpdate) {
-            $uuid = $storyUuid;
-
-            if (! $uuid) {
-                throw new RuntimeException(
-                    'UUID belum tersedia untuk Deforestory ID '.($story['id'] ?? 0).'.'
-                );
-            }
-
-            $request->put($cardsUrl.'/'.$uuid)->throw();
+        if ($event === 'deforestory.created') {
+            $request->post($cardsUrl)->throw();
 
             return;
         }
 
-        $request->post($cardsUrl)->throw();
+        $request->put($cardsUrl.'/'.rawurlencode((string) $card['uuid']))->throw();
+    }
+
+    private function cardsUrl(string $baseUrl): string
+    {
+        if (str_ends_with($baseUrl, '/deforestory/cards')) {
+            return $baseUrl;
+        }
+
+        return $baseUrl.'/deforestory/cards';
     }
 }

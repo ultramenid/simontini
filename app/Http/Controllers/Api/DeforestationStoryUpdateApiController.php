@@ -19,6 +19,7 @@ class DeforestationStoryUpdateApiController extends Controller
             'title_en' => ['required', 'string', 'max:255'],
             'description_id' => ['required', 'string'],
             'description_en' => ['required', 'string'],
+            'image_url' => ['nullable', 'url:http,https', 'max:2048'],
             'target_url_id' => ['required', 'url:http,https', 'max:2048'],
             'target_url_en' => ['required', 'url:http,https', 'max:2048'],
             'published_at' => ['required', 'date'],
