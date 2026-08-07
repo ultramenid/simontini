@@ -30,7 +30,7 @@ class SendNewDeforestationStoryEmail implements ShouldQueue
             ->where('id', $this->subscriptionId)
             ->whereNull('deforestory_id')
             ->where('status', 'active')
-            ->first(['name', 'email', 'locale']);
+            ->first(['name', 'email', 'locale', 'unsubscribe_token']);
         $story = DB::table('deforestory')
             ->where('id', $this->storyId)
             ->where('status', 'publish')
@@ -69,6 +69,12 @@ class SendNewDeforestationStoryEmail implements ShouldQueue
             'imageUrlEn' => $imageUrlEn,
             'storyUrlEn' => $storyUrlEn,
             'storyUrlId' => $storyUrlId,
+            'unsubscribeUrl' => route('deforestation.unsubscribe', [
+                'locale' => in_array($subscription->locale, ['id', 'en'], true)
+                    ? $subscription->locale
+                    : 'id',
+                'token' => $subscription->unsubscribe_token,
+            ]),
             'publishedAt' => $story->date,
         ]));
     }

@@ -26,6 +26,7 @@
                                         <p style="margin:0 0 20px;color:#555555;font-size:15px;line-height:1.7">{{ $descriptionId }}</p>
                                         <p style="margin:0 0 24px;color:#7a6e60;font-size:13px">{{ \Carbon\Carbon::parse($publishedAt)->locale('id')->translatedFormat('d F Y') }}</p>
                                         <a href="{{ $targetUrlId }}" style="display:inline-block;background:#376A64;color:#ffffff;padding:13px 20px;text-decoration:none;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em">Buka Pembaruan Sumber</a>
+                                        <a href="{{ $unsubscribeUrl }}" style="display:inline-block;margin-left:8px;border:1px solid #b94a3c;color:#b94a3c;padding:12px 19px;text-decoration:none;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em">Berhenti Berlangganan</a>
                                     </td>
                                 </tr>
                             </table>
@@ -45,6 +46,7 @@
                                         <p style="margin:0 0 20px;color:#555555;font-size:15px;line-height:1.7">{{ $descriptionEn }}</p>
                                         <p style="margin:0 0 24px;color:#7a6e60;font-size:13px">{{ \Carbon\Carbon::parse($publishedAt)->locale('en')->translatedFormat('d F Y') }}</p>
                                         <a href="{{ $targetUrlEn }}" style="display:inline-block;background:#376A64;color:#ffffff;padding:13px 20px;text-decoration:none;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em">Open Source Update</a>
+                                        <a href="{{ $unsubscribeUrl }}" style="display:inline-block;margin-left:8px;border:1px solid #b94a3c;color:#b94a3c;padding:12px 19px;text-decoration:none;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em">Unsubscribe</a>
                                     </td>
                                 </tr>
                             </table>

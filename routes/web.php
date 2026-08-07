@@ -100,6 +100,10 @@ Route::prefix('{locale}')
             ->whereNumber('id')
             ->middleware('throttle:10,1')
             ->name('deforestation.subscribe');
+        Route::get('/deforestory/unsubscribe/{token}', [DeforestationStorySubscriptionController::class, 'unsubscribe'])
+            ->where('token', '[A-Fa-f0-9]{64}')
+            ->middleware('throttle:10,1')
+            ->name('deforestation.unsubscribe');
 
         Route::middleware(['auth', 'role:admin,editor'])
             ->prefix('preview')

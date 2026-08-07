@@ -67,6 +67,30 @@ it('stores a global subscription from the deforestation story index', function (
     ]);
 });
 
+it('deactivates a subscription through its unsubscribe token', function () {
+    $token = hash('sha256', uniqid('', true));
+    $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
+        'deforestory_id' => null,
+        'name' => 'Subscriber Unsubscribe',
+        'email' => 'unsubscribe@example.test',
+        'locale' => 'id',
+        'status' => 'active',
+        'unsubscribe_token' => $token,
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    $this->get(route('deforestation.unsubscribe', [
+        'locale' => 'id',
+        'token' => $token,
+    ]))
+        ->assertOk()
+        ->assertSee('Langganan dihentikan');
+
+    expect(DB::table('deforestation_story_subscriptions')->where('id', $subscriptionId)->value('status'))
+        ->toBe('inactive');
+});
+
 it('queues one email when a new active story update arrives', function () {
     Queue::fake();
     config(['services.deforestory.api_token' => 'test-api-token']);
@@ -166,7 +190,8 @@ it('sends an article email from the queued payload without storing the article',
             && $mail->mailData['titleId'] === 'Artikel Pasopati Tanpa Penyimpanan'
             && $mail->mailData['imageUrl'] === 'https://example.test/images/pasopati-update.jpg'
             && $mail->mailData['targetUrlId'] === 'https://example.test/id/payload'
-            && $mail->mailData['targetUrlEn'] === 'https://example.test/en/payload';
+            && $mail->mailData['targetUrlEn'] === 'https://example.test/en/payload'
+            && str_contains($mail->mailData['unsubscribeUrl'], '/id/deforestory/unsubscribe/');
     });
     expect(DB::table('deforestation_story_updates')->count())->toBe($updatesBefore);
 });
@@ -183,6 +208,7 @@ it('renders remote images from URLs without attaching image files', function () 
         'imageUrl' => $updateImageUrl,
         'targetUrlId' => 'https://example.test/id/update',
         'targetUrlEn' => 'https://example.test/en/update',
+        'unsubscribeUrl' => 'https://simontini.test/id/deforestory/unsubscribe/token-update',
         'publishedAt' => '2026-08-06',
     ]);
     $newStoryImageId = 'https://example.test/images/story-id.jpg';
@@ -196,16 +222,21 @@ it('renders remote images from URLs without attaching image files', function () 
         'imageUrlEn' => $newStoryImageEn,
         'storyUrlId' => 'https://example.test/id/story',
         'storyUrlEn' => 'https://example.test/en/story',
+        'unsubscribeUrl' => 'https://simontini.test/id/deforestory/unsubscribe/token-story',
         'publishedAt' => '2026-08-06',
     ]);
 
     expect($updateMail->render())
         ->toContain($updateImageUrl)
         ->toContain('<img')
+        ->toContain('Unsubscribe')
+        ->toContain('token-update')
         ->and($newStoryMail->render())
         ->toContain($newStoryImageId)
         ->toContain($newStoryImageEn)
         ->toContain('<img')
+        ->toContain('Unsubscribe')
+        ->toContain('token-story')
         ->and($updateMail->attachments())->toBeEmpty();
 });
 
@@ -260,7 +291,8 @@ it('sends a new story email without a publication notification record', function
 
     Mail::assertSent(NewDeforestationStoryPublished::class, function (NewDeforestationStoryPublished $mail): bool {
         return $mail->hasTo('no-publication-record@example.test')
-            && $mail->mailData['titleId'] === 'Story Berlangganan';
+            && $mail->mailData['titleId'] === 'Story Berlangganan'
+            && str_contains($mail->mailData['unsubscribeUrl'], '/id/deforestory/unsubscribe/');
     });
 });
 
