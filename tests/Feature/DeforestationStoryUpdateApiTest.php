@@ -117,8 +117,7 @@ it('validates the optional update image as an HTTP URL', function () {
 it('consumes Pasopati reports by Deforestory UUID on the detail page', function () {
     $story = createStoryForUpdateApi();
     config([
-        'services.deforestory.reports_url' => 'https://pasopati.test/api/deforestory',
-        'services.deforestory.reports_token' => 'reports-token',
+        'services.deforestory.webhook_url' => 'https://pasopati.test/api',
     ]);
     Http::fake([
         "https://pasopati.test/api/deforestory/by-uuid/laporan/{$story->uuid}" => Http::response([
@@ -146,15 +145,13 @@ it('consumes Pasopati reports by Deforestory UUID on the detail page', function 
         ->assertSee('https://pasopati.test/id/laporan/latest', false);
 
     Http::assertSent(fn ($request) => $request->method() === 'GET'
-        && $request->url() === "https://pasopati.test/api/deforestory/by-uuid/laporan/{$story->uuid}"
-        && $request->hasHeader('Authorization', 'Bearer reports-token'));
+        && $request->url() === "https://pasopati.test/api/deforestory/by-uuid/laporan/{$story->uuid}");
 });
 
 it('falls back to local updates when Pasopati reports cannot be loaded', function () {
     $story = createStoryForUpdateApi();
     config([
-        'services.deforestory.reports_url' => 'https://pasopati.test/api/deforestory',
-        'services.deforestory.reports_token' => 'reports-token',
+        'services.deforestory.webhook_url' => 'https://pasopati.test/api',
     ]);
     Http::fake([
         'https://pasopati.test/*' => Http::response(['message' => 'Unauthorized'], 401),

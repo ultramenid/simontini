@@ -12,25 +12,19 @@ class PasopatiReportClient
 {
     public function forStory(string $uuid, string $locale, bool $includeInactive = false): ?Collection
     {
-        $baseUrl = rtrim((string) config('services.deforestory.reports_url'), '/');
-        $token = (string) config('services.deforestory.reports_token');
+        $baseUrl = rtrim((string) config('services.deforestory.webhook_url'), '/');
 
         if ($baseUrl === '' || ! Str::isUuid($uuid)) {
             return null;
         }
 
-        $url = $baseUrl.'/by-uuid/laporan/'.rawurlencode($uuid);
+        $url = $baseUrl.'/deforestory/by-uuid/laporan/'.rawurlencode($uuid);
 
         try {
-            $request = Http::acceptJson()
+            $response = Http::acceptJson()
                 ->timeout(8)
-                ->retry(2, 200, throw: false);
-
-            if ($token !== '') {
-                $request = $request->withToken($token);
-            }
-
-            $response = $request->get($url);
+                ->retry(2, 200, throw: false)
+                ->get($url);
 
             if (! $response->successful() || ! is_array($response->json())) {
                 Log::warning('Gagal mengambil laporan Deforestory dari Pasopati.', [
