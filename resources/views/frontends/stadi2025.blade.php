@@ -2125,7 +2125,7 @@
                                 </div>
                             </div>
 
-                           <div class="viz-block viz-block--full mb-2 sm:-mt-[5rem] mt-4" style="">
+                           <div class="viz-block viz-block--full mb-2 mt-4" style="">
                             <div class="viz-frame !p-0 flex items-start">
 
                             <div x-data="{
@@ -2163,15 +2163,15 @@
                                 <div class="flex" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
 
                                 <template x-for="(item, index) in images" :key="index">
-                                    <div class="w-full flex-shrink-0 sm:-mt-[3rem]" >
+                                    <div class="w-full flex-shrink-0" >
 
                                     <!-- GAMBAR -->
                                     <div class="relative">
                                         <img :src="item.src" @click="openLightbox(index)"
-                                        class="w-full object-contain h-full sm:h-[60vh] cursor-pointer" />
+                                        class="w-full object-contain h-auto sm:h-[60vh] cursor-pointer" />
 
                                         <!-- CAPTION -->
-                                        <div class="max-w-3xl mx-auto text-left sm:-mt-[3.2rem] px-4"
+                                        <div class="max-w-3xl mx-auto text-left mt-2 px-4"
                                         style="line-height: 1;">
                                         <small style="font-size: 12px;" x-html="item.desc"></small>
                                         </div>
