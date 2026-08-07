@@ -125,8 +125,8 @@ it('consumes Pasopati reports by Deforestory UUID on the detail page', function 
             [
                 'title_id' => 'Laporan Pasopati Terbaru',
                 'title_en' => 'Latest Pasopati Report',
-                'description_id' => 'Deskripsi laporan dari API.',
-                'description_en' => 'Report description from API.',
+                'description_id' => '<p>Deskripsi laporan dari API.</p>',
+                'description_en' => '<p>Report description from API.</p>',
                 'target_url_id' => 'https://pasopati.test/id/laporan/latest',
                 'target_url_en' => 'https://pasopati.test/en/report/latest',
                 'published_at' => '2026-08-07',
@@ -142,6 +142,7 @@ it('consumes Pasopati reports by Deforestory UUID on the detail page', function 
         ->assertOk()
         ->assertSee('Laporan Pasopati Terbaru')
         ->assertSee('Deskripsi laporan dari API.')
+        ->assertDontSee('&lt;p&gt;Deskripsi laporan dari API.&lt;/p&gt;', false)
         ->assertSee('https://pasopati.test/id/laporan/latest', false);
 
     Http::assertSent(fn ($request) => $request->method() === 'GET'
