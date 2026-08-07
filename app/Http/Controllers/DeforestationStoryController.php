@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\CommentHtmlSanitizer;
+use App\Services\PasopatiReportClient;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -79,21 +80,11 @@ class DeforestationStoryController extends Controller
         }
 
         $story = $this->localizeStory($story, $locale);
-        $updatesQuery = DB::table('deforestation_story_updates')
-            ->where('deforestory_id', $story->id)
-            ->orderByDesc('published_at')
-            ->orderByDesc('id');
-
-        if (! $isPreview) {
-            $updatesQuery->where('status', 'on');
-        }
-
-        $updates = $updatesQuery->get()->map(function ($update) use ($locale) {
-            $update->localized_title = $locale === 'en' ? $update->title_en : $update->title_id;
-            $update->localized_description = $locale === 'en' ? $update->description_en : $update->description_id;
-
-            return $update;
-        });
+        $updates = app(PasopatiReportClient::class)->forStory(
+            (string) $story->uuid,
+            $locale,
+            $isPreview,
+        ) ?? $this->localUpdates((int) $story->id, $locale, $isPreview);
 
         $comments = DB::table('story_comments')
             ->where('story_id', $story->id)
@@ -124,6 +115,25 @@ class DeforestationStoryController extends Controller
     private function localizeStories(Collection $stories, string $locale): void
     {
         $stories->transform(fn ($story) => $this->localizeStory($story, $locale));
+    }
+
+    private function localUpdates(int $storyId, string $locale, bool $isPreview): Collection
+    {
+        $query = DB::table('deforestation_story_updates')
+            ->where('deforestory_id', $storyId)
+            ->orderByDesc('published_at')
+            ->orderByDesc('id');
+
+        if (! $isPreview) {
+            $query->where('status', 'on');
+        }
+
+        return $query->get()->map(function ($update) use ($locale) {
+            $update->localized_title = $locale === 'en' ? $update->title_en : $update->title_id;
+            $update->localized_description = $locale === 'en' ? $update->description_en : $update->description_id;
+
+            return $update;
+        });
     }
 
     private function localizeStory(object $story, string $locale): object

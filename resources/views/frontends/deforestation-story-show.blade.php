@@ -96,7 +96,9 @@
                                     <article class="w-full overflow-hidden border border-[#e2d8cc] bg-white shadow-sm sm:aspect-[320/63]">
                                         <a href="{{ $update->target_url }}" target="_blank" rel="noopener noreferrer" class="group block sm:grid sm:h-full sm:grid-cols-[35%_1fr]">
                                             <div class="aspect-video overflow-hidden bg-[#e8e8e8] sm:h-full sm:aspect-auto">
-                                                <img src="{{ $update->image_url }}" alt="{{ $update->localized_title }}" class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" loading="lazy" decoding="async">
+                                                @if (filled($update->image_url))
+                                                    <img src="{{ $update->image_url }}" alt="{{ $update->localized_title }}" class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" loading="lazy" decoding="async">
+                                                @endif
                                             </div>
                                             <div class="flex min-h-0 flex-col overflow-hidden p-5 sm:h-full sm:p-3">
                                                 <h3 class="update-card-title text-lg font-black uppercase leading-tight tracking-[-0.03em] transition group-hover:text-[#bc4a3c]">{{ $update->localized_title }}</h3>

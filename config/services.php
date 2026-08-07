@@ -36,6 +36,8 @@ return [
         'webhook_url' => env('ENDPOINT_PASOPATI', env('DEFORESTORY_WEBHOOK_URL')),
         'webhook_token' => env('DEFORESTORY_API_KEY', env('DEFORESTORY_WEBHOOK_TOKEN')),
         'webhook_timeout' => env('DEFORESTORY_WEBHOOK_TIMEOUT', 10),
+        'reports_url' => env('PASOPATI_REPORTS_URL', env('ENDPOINT_PASOPATI')),
+        'reports_token' => env('PASOPATI_REPORTS_API_KEY', env('DEFORESTORY_API_KEY')),
     ],
 
     'cloudflare_d1' => [
