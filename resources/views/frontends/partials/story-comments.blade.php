@@ -229,20 +229,21 @@
         x-on:keydown.escape.window="if (expanded) expanded = false"
         x-show="visible"
         x-cloak
-        x-transition:enter="transition ease-out duration-200"
-        x-transition:enter-start="translate-y-4 opacity-0"
-        x-transition:enter-end="translate-y-0 opacity-100"
-        x-transition:leave="transition ease-in duration-150"
-        x-transition:leave-start="translate-y-0 opacity-100"
-        x-transition:leave-end="translate-y-4 opacity-0"
-        class="fixed inset-x-0 bottom-0 z-[70] border-t border-[#d6dfdd] bg-white/95 p-3 shadow-[0_-10px_30px_rgba(28,54,51,0.12)] backdrop-blur sm:p-4"
+        x-transition:enter="transition-opacity ease-out duration-200"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition-opacity ease-in duration-150"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="fixed inset-x-0 bottom-0 z-[70] border-t border-[#d6dfdd]/70 bg-white/95 p-3 shadow-[0_-8px_24px_rgba(28,54,51,0.08)] backdrop-blur-md sm:p-4"
     >
         <form
             method="POST"
             action="{{ route('deforestation.comments.store', ['locale' => $locale, 'id' => $story->id]) }}"
             data-comment-ajax-form
             data-quick-comment-form
-            class="mx-auto max-h-[78vh] max-w-[760px] overflow-y-auto"
+            x-bind:class="expanded ? 'max-h-[70vh]' : 'max-h-[4.5rem]'"
+            class="mx-auto max-w-[760px] overflow-y-auto overscroll-contain transition-[max-height] duration-300 ease-out"
         >
             @csrf
 
@@ -335,7 +336,13 @@
             x-on:keydown.escape.window="expanded = false"
             x-show="visible"
             x-cloak
-            class="fixed inset-x-0 bottom-0 z-[70] border-t border-[#d6dfdd] bg-white/95 p-3 shadow-[0_-10px_30px_rgba(28,54,51,0.12)] backdrop-blur sm:p-4"
+            x-transition:enter="transition-opacity ease-out duration-200"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity ease-in duration-150"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="fixed inset-x-0 bottom-0 z-[70] border-t border-[#d6dfdd]/70 bg-white/95 p-3 shadow-[0_-8px_24px_rgba(28,54,51,0.08)] backdrop-blur-md sm:p-4"
         >
             <div x-on:click.outside="expanded = false" class="mx-auto max-w-[760px]">
                 <button
