@@ -55,8 +55,8 @@ class PasopatiReportClient
                 ->map(function (array $item) use ($locale): object {
                     $titleId = (string) ($item['title_id'] ?? $item['title_en'] ?? '');
                     $titleEn = (string) ($item['title_en'] ?? $item['title_id'] ?? '');
-                    $descriptionId = trim(strip_tags((string) ($item['description_id'] ?? $item['description_en'] ?? '')));
-                    $descriptionEn = trim(strip_tags((string) ($item['description_en'] ?? $item['description_id'] ?? '')));
+                    $descriptionId = $this->plainText($item['description_id'] ?? $item['description_en'] ?? '');
+                    $descriptionEn = $this->plainText($item['description_en'] ?? $item['description_id'] ?? '');
 
                     return (object) [
                         'id' => $item['external_id'] ?? $item['uuid'] ?? substr(hash('sha256', json_encode($item)), 0, 16),
@@ -84,5 +84,20 @@ class PasopatiReportClient
 
             return null;
         }
+    }
+
+    private function plainText(mixed $value): string
+    {
+        $decoded = (string) $value;
+
+        // Pasopati dapat mengirim HTML mentah maupun HTML entity-encoded.
+        // Decode dua kali agar &lt;p&gt; dan &amp;lt;p&amp;gt; sama-sama bersih.
+        for ($iteration = 0; $iteration < 2; $iteration++) {
+            $decoded = html_entity_decode($decoded, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        }
+
+        $text = strip_tags($decoded);
+
+        return trim((string) preg_replace('/\s+/u', ' ', $text));
     }
 }

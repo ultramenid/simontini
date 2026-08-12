@@ -44,7 +44,7 @@
                     @if ($commentUser)
                         <button type="button" data-comment-reply-toggle="{{ $comment->id }}" class="hover:text-[#bc4a3c]">{{ $locale === 'en' ? 'Reply' : 'Balas' }}</button>
                     @else
-                        <a href="{{ route('comments.login.google') }}" class="hover:text-[#bc4a3c]">{{ $locale === 'en' ? 'Reply' : 'Balas' }}</a>
+                        <a href="{{ route('comments.login.google', ['return_to' => url()->current().'#comments']) }}" class="hover:text-[#bc4a3c]">{{ $locale === 'en' ? 'Reply' : 'Balas' }}</a>
                     @endif
                 @endif
 

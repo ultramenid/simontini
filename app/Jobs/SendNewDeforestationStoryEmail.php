@@ -42,8 +42,8 @@ class SendNewDeforestationStoryEmail implements ShouldQueue
 
         $titleEn = $story->title_en ?: $story->title_id;
         $titleId = $story->title_id ?: $story->title_en;
-        $descriptionEn = $story->desrkirpsi_en ?: $story->desrkirpsi_id;
-        $descriptionId = $story->desrkirpsi_id ?: $story->desrkirpsi_en;
+        $descriptionEn = $this->plainText($story->desrkirpsi_en ?: $story->desrkirpsi_id);
+        $descriptionId = $this->plainText($story->desrkirpsi_id ?: $story->desrkirpsi_en);
         $imageId = $story->image_id ?: $story->image_en;
         $imageEn = $story->image_en ?: $story->image_id;
         $imageUrlId = $this->publicImageUrl($imageId);
@@ -89,8 +89,20 @@ class SendNewDeforestationStoryEmail implements ShouldQueue
             return $image;
         }
 
-        return url(Storage::url($image));
+        return Storage::disk('public')->url($image);
     }
+
+    private function plainText(?string $value): string
+    {
+        $decoded = (string) $value;
+
+        for ($iteration = 0; $iteration < 2; $iteration++) {
+            $decoded = html_entity_decode($decoded, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        }
+
+        return trim((string) preg_replace('/\s+/u', ' ', strip_tags($decoded)));
+    }
+
     public function failed(?Throwable $exception): void
     {
         Log::error('Gagal mengirim email Deforestory baru.', [

@@ -18,7 +18,13 @@ class CommentAuthController extends Controller
             );
         }
 
-        $request->session()->put('comment_login_intended', url()->previous());
+        $returnTo = $request->query('return_to');
+
+        if (! is_string($returnTo) || ! $this->isSafeReturnUrl($returnTo, $request)) {
+            $returnTo = url()->previous();
+        }
+
+        $request->session()->put('comment_login_intended', $returnTo);
 
         return Socialite::driver('google')
             ->scopes(['openid', 'profile', 'email'])
@@ -79,5 +85,19 @@ class CommentAuthController extends Controller
         $request->session()->regenerateToken();
 
         return back();
+    }
+
+    private function isSafeReturnUrl(string $url, Request $request): bool
+    {
+        if (str_starts_with($url, '/')) {
+            return ! str_starts_with($url, '//');
+        }
+
+        $parts = parse_url($url);
+
+        return is_array($parts)
+            && in_array($parts['scheme'] ?? null, ['http', 'https'], true)
+            && isset($parts['host'])
+            && strcasecmp($parts['host'], $request->getHost()) === 0;
     }
 }

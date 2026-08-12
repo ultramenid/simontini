@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendStoryCommentReplyNotificationEmail;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -79,10 +80,35 @@ class CmsCommentController extends Controller
     {
         abort_unless(in_array($status, ['approved', 'rejected', 'spam'], true), 404);
 
-        DB::table('story_comments')->where('id', $id)->update([
-            'status' => $status,
-            'updated_at' => now(),
-        ]);
+        $comment = DB::table('story_comments')
+            ->select(['id', 'parent_id', 'status', 'reply_notification_sent_at'])
+            ->where('id', $id)
+            ->first();
+        abort_unless($comment, 404);
+
+        $statusChanged = $status === 'approved'
+            ? DB::table('story_comments')
+                ->where('id', $id)
+                ->where('status', '!=', 'approved')
+                ->update([
+                    'status' => $status,
+                    'updated_at' => now(),
+                ]) === 1
+            : DB::table('story_comments')
+                ->where('id', $id)
+                ->update([
+                    'status' => $status,
+                    'updated_at' => now(),
+                ]) === 1;
+
+        if (
+            $status === 'approved'
+            && $statusChanged
+            && $comment->parent_id !== null
+            && $comment->reply_notification_sent_at === null
+        ) {
+            SendStoryCommentReplyNotificationEmail::dispatchAfterResponse((int) $comment->id);
+        }
 
         return back()->with('message', 'Status komentar berhasil diperbarui.');
     }

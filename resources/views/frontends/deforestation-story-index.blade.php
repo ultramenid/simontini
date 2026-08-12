@@ -17,7 +17,7 @@
 
     <div
         x-data="{ subscribeOpen: false, subscribed: false, subscriptionEmail: '' }"
-        x-on:story-subscription-succeeded="subscribed = true; subscriptionEmail = $event.detail.email"
+        x-on:story-subscription-succeeded="subscribeOpen = true; subscribed = true; subscriptionEmail = $event.detail.email"
     >
         <section class="flex h-[40vh] min-h-[300px] w-full items-center bg-[#376A64] px-5 text-center text-white sm:min-h-[340px]">
             <div class="mx-auto w-full max-w-4xl">
@@ -43,20 +43,20 @@
                     <h2 class="mt-2 pr-8 text-2xl font-black tracking-[-0.04em] sm:text-3xl">{{ $locale === 'en' ? 'Follow every Deforestory' : 'Ikuti semua Deforestory' }}</h2>
                     <p class="mt-3 text-sm leading-6 text-[#7a6e60]">{{ $locale === 'en' ? 'Enter your email address to follow new stories and updates.' : 'Masukkan alamat email untuk mengikuti story baru dan seluruh pembaruan yang muncul di halaman ini.' }}</p>
 
-                    <form method="POST" action="{{ route('deforestation.subscribe.all', ['locale' => $locale]) }}" data-story-subscribe-form class="mt-6">
+                    <form method="POST" action="{{ route('deforestation.subscribe.all', ['locale' => $locale]) }}" data-story-subscribe-form data-loading-label="{{ $locale === 'en' ? 'Processing...' : 'Memproses...' }}" class="mt-6">
                         @csrf
                         <label class="mb-2 block text-xs font-bold uppercase tracking-[0.1em]">{{ $locale === 'en' ? 'Full name' : 'Nama lengkap' }}</label>
                         <input name="name" type="text" required maxlength="100" autocomplete="name" class="w-full rounded-full border border-[#e2d8cc] px-5 py-3.5 text-sm outline-none focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
                         <label class="mb-2 mt-4 block text-xs font-bold uppercase tracking-[0.1em]">Email</label>
                         <input name="email" type="email" required autocomplete="email" class="w-full rounded-full border border-[#e2d8cc] px-5 py-3.5 text-sm outline-none focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
-                        <button type="submit" class="mt-5 w-full rounded-full bg-[#376A64] px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white hover:bg-[#2d5954]">{{ $locale === 'en' ? 'Subscribe' : 'Aktifkan langganan' }}</button>
+                        <button type="submit" class="mt-5 w-full rounded-full bg-[#376A64] px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white hover:bg-[#2d5954] disabled:cursor-wait disabled:opacity-70">{{ $locale === 'en' ? 'Subscribe' : 'Aktifkan langganan' }}</button>
                         <p data-story-subscribe-feedback class="mt-3 hidden text-center text-xs font-semibold" role="status" aria-live="polite"></p>
                     </form>
                 </div>
 
                 <div x-show="subscribed" x-cloak class="px-3 py-10 text-center" role="status" aria-live="polite">
-                    <span class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#e5efed] text-[#376A64]">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="h-10 w-10" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="subscription-success-icon mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#e5efed] text-[#376A64]">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="h-10 w-10" aria-hidden="true"><path class="subscription-success-check" d="m5 12 4 4L19 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </span>
                     <h2 class="mt-6 text-2xl font-black tracking-[-0.03em]">{{ $locale === 'en' ? 'Email successfully registered' : 'Email berhasil didaftarkan' }}</h2>
                     <p class="mt-3 break-all text-sm font-semibold text-[#376A64]" x-text="subscriptionEmail"></p>

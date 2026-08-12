@@ -1,7 +1,9 @@
 <?php
 
 use App\Jobs\SendDeforestationStoryUpdateEmail;
+use App\Jobs\SendDeforestationSubscriptionConfirmationEmail;
 use App\Jobs\SendNewDeforestationStoryEmail;
+use App\Mail\DeforestationSubscriptionConfirmed;
 use App\Mail\DeforestationStoryUpdated;
 use App\Mail\NewDeforestationStoryPublished;
 use App\Services\DeforestationStoryNotificationDispatcher;
@@ -37,6 +39,7 @@ function createSubscribedStory(): object
 }
 
 it('stores a subscription for a published story', function () {
+    Queue::fake();
     $story = createSubscribedStory();
 
     $this->postJson(route('deforestation.subscribe', [
@@ -52,9 +55,11 @@ it('stores a subscription for a published story', function () {
         'email' => 'subscriber@example.test',
         'status' => 'active',
     ]);
+    Queue::assertPushed(SendDeforestationSubscriptionConfirmationEmail::class, 1);
 });
 
 it('stores a global subscription from the deforestation story index', function () {
+    Queue::fake();
     $this->postJson(route('deforestation.subscribe.all', ['locale' => 'id']), [
         'name' => 'Subscriber Global',
         'email' => 'global-subscriber@example.test',
@@ -65,9 +70,39 @@ it('stores a global subscription from the deforestation story index', function (
         'email' => 'global-subscriber@example.test',
         'status' => 'active',
     ]);
+    Queue::assertPushed(SendDeforestationSubscriptionConfirmationEmail::class, 1);
 });
 
-it('deactivates a subscription through its unsubscribe token', function () {
+it('sends a confirmation email after a subscription is activated', function () {
+    Mail::fake();
+    $story = createSubscribedStory();
+    $token = hash('sha256', uniqid('', true));
+    $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
+        'deforestory_id' => $story->id,
+        'name' => 'Subscriber Konfirmasi',
+        'email' => 'confirmation@example.test',
+        'locale' => 'id',
+        'status' => 'active',
+        'unsubscribe_token' => $token,
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    (new SendDeforestationSubscriptionConfirmationEmail($subscriptionId))->handle();
+
+    Mail::assertSent(DeforestationSubscriptionConfirmed::class, function (DeforestationSubscriptionConfirmed $mail) use ($story, $token): bool {
+        return $mail->hasTo('confirmation@example.test')
+            && $mail->mailData['storyTitle'] === 'Story Berlangganan'
+            && $mail->mailData['destinationUrl'] === route('deforestation.show', [
+                'locale' => 'id',
+                'id' => $story->id,
+                'slug' => $story->slug,
+            ])
+            && str_contains($mail->mailData['unsubscribeUrl'], $token);
+    });
+});
+
+it('deletes a subscription through its unsubscribe token', function () {
     $token = hash('sha256', uniqid('', true));
     $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
         'deforestory_id' => null,
@@ -87,8 +122,10 @@ it('deactivates a subscription through its unsubscribe token', function () {
         ->assertOk()
         ->assertSee('Langganan dihentikan');
 
-    expect(DB::table('deforestation_story_subscriptions')->where('id', $subscriptionId)->value('status'))
-        ->toBe('inactive');
+    $this->assertDatabaseMissing('deforestation_story_subscriptions', [
+        'id' => $subscriptionId,
+        'email' => 'unsubscribe@example.test',
+    ]);
 });
 
 it('queues one email when a new active story update arrives', function () {
@@ -235,6 +272,7 @@ it('renders remote images from URLs without attaching image files', function () 
         ->toContain($newStoryImageId)
         ->toContain($newStoryImageEn)
         ->toContain('<img')
+        ->toContain('border-top:1px solid #aebbb8')
         ->toContain('Unsubscribe')
         ->toContain('token-story')
         ->and($updateMail->attachments())->toBeEmpty();
@@ -275,7 +313,13 @@ it('queues an email for global subscribers when a new story is published', funct
 
 it('sends a new story email without a publication notification record', function () {
     Mail::fake();
+    config(['filesystems.disks.public.url' => 'https://stg.simontini.id/storage']);
     $story = createSubscribedStory();
+    DB::table('deforestory')->where('id', $story->id)->update([
+        'image_id' => 'deforestory/id/story-email.jpg',
+        'image_en' => 'deforestory/en/story-email.jpg',
+        'desrkirpsi_id' => '<p>Deskripsi story email.</p>',
+    ]);
     $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
         'deforestory_id' => null,
         'name' => 'Subscriber Tanpa Record',
@@ -292,6 +336,9 @@ it('sends a new story email without a publication notification record', function
     Mail::assertSent(NewDeforestationStoryPublished::class, function (NewDeforestationStoryPublished $mail): bool {
         return $mail->hasTo('no-publication-record@example.test')
             && $mail->mailData['titleId'] === 'Story Berlangganan'
+            && $mail->mailData['descriptionId'] === 'Deskripsi story email.'
+            && $mail->mailData['imageUrlId'] === 'https://stg.simontini.id/storage/deforestory/id/story-email.jpg'
+            && $mail->mailData['imageUrlEn'] === 'https://stg.simontini.id/storage/deforestory/en/story-email.jpg'
             && str_contains($mail->mailData['unsubscribeUrl'], '/id/deforestory/unsubscribe/');
     });
 });

@@ -160,7 +160,7 @@
                         <input type="radio" wire:model.live="content_type" value="custom" class="mt-1 border-gray-300 text-[#376A64] focus:ring-[#376A64]">
                         <span>
                             <strong class="block text-sm text-gray-900">Custom</strong>
-                            <span class="mt-1 block text-xs leading-5 text-gray-500">Gunakan TinyMCE dan Source Code untuk HTML khusus.</span>
+                            <span class="mt-1 block text-xs leading-5 text-gray-500">Gunakan TinyMCE kosong dan Source Code untuk membuat HTML khusus dari awal.</span>
                         </span>
                     </span>
                 </label>

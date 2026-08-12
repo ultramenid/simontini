@@ -51,6 +51,34 @@ const StoryFigure = Node.create({
     renderHTML: () => ['figure', { class: 'story-content-figure' }, 0],
 });
 
+const StoryGallery = Node.create({
+    name: 'storyGallery',
+    group: 'block',
+    content: 'storyFigure{2,}',
+    defining: true,
+    isolating: true,
+    parseHTML: () => [
+        { tag: 'div[data-story-gallery]' },
+        { tag: 'div.story-content-gallery' },
+    ],
+    renderHTML: () => [
+        'div',
+        {
+            class: 'story-content-gallery',
+            'data-story-gallery': '',
+        },
+        0,
+    ],
+});
+
+const storyGalleryTemplate = `
+    <div class="story-content-gallery" data-story-gallery>
+        <figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Gambar+Galeri+1" alt="Ganti dengan gambar galeri pertama" width="100%"><figcaption class="story-content-caption">Caption gambar pertama.</figcaption></figure>
+        <figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Gambar+Galeri+2" alt="Ganti dengan gambar galeri kedua" width="100%"><figcaption class="story-content-caption">Caption gambar kedua.</figcaption></figure>
+        <figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Gambar+Galeri+3" alt="Ganti dengan gambar galeri ketiga" width="100%"><figcaption class="story-content-caption">Caption gambar ketiga.</figcaption></figure>
+    </div>
+`;
+
 const initializeTinyMceEditors = () => {
     document.querySelectorAll('[data-tinymce-wrapper]').forEach((wrapper) => {
         if (wrapper.dataset.tinymceInitialized === 'true') return;
@@ -202,6 +230,111 @@ const syncContentEditorsFromInputs = () => {
     });
 };
 
+const initializePublicStoryGalleries = () => {
+    document.querySelectorAll('.public-story-content .story-content-gallery').forEach((gallery) => {
+        if (gallery.dataset.storyGalleryInitialized === 'true') return;
+
+        const slides = Array.from(gallery.querySelectorAll(':scope > .story-content-figure'));
+        if (slides.length < 2) return;
+
+        const shell = document.createElement('div');
+        const previous = document.createElement('button');
+        const next = document.createElement('button');
+        const counter = document.createElement('span');
+        let activeIndex = 0;
+        let scrollFrame = null;
+        let dragging = false;
+        let dragStartX = 0;
+        let dragStartScrollLeft = 0;
+
+        shell.className = 'story-gallery-shell';
+        gallery.before(shell);
+        shell.append(gallery);
+
+        previous.type = 'button';
+        previous.className = 'story-gallery-button story-gallery-button--previous';
+        previous.innerHTML = '&#8249;';
+        previous.setAttribute('aria-label', 'Gambar sebelumnya');
+
+        next.type = 'button';
+        next.className = 'story-gallery-button story-gallery-button--next';
+        next.innerHTML = '&#8250;';
+        next.setAttribute('aria-label', 'Gambar berikutnya');
+
+        counter.className = 'story-gallery-counter';
+        counter.setAttribute('aria-live', 'polite');
+
+        shell.append(previous, next, counter);
+        gallery.dataset.storyGalleryInitialized = 'true';
+        gallery.setAttribute('role', 'region');
+        gallery.setAttribute('aria-label', 'Galeri gambar story');
+        gallery.setAttribute('tabindex', '0');
+        gallery.querySelectorAll('img').forEach((image) => image.setAttribute('draggable', 'false'));
+
+        const updateControls = () => {
+            const slideWidth = gallery.clientWidth || 1;
+            activeIndex = Math.max(0, Math.min(slides.length - 1, Math.round(gallery.scrollLeft / slideWidth)));
+            previous.disabled = activeIndex === 0;
+            next.disabled = activeIndex === slides.length - 1;
+            counter.textContent = `${activeIndex + 1} / ${slides.length}`;
+        };
+
+        const goTo = (index) => {
+            const targetIndex = Math.max(0, Math.min(slides.length - 1, index));
+            gallery.scrollTo({ left: slides[targetIndex].offsetLeft - gallery.offsetLeft, behavior: 'smooth' });
+        };
+
+        previous.addEventListener('click', () => goTo(activeIndex - 1));
+        next.addEventListener('click', () => goTo(activeIndex + 1));
+        gallery.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                event.preventDefault();
+                goTo(activeIndex - 1);
+            }
+            if (event.key === 'ArrowRight') {
+                event.preventDefault();
+                goTo(activeIndex + 1);
+            }
+        });
+        gallery.addEventListener('scroll', () => {
+            if (scrollFrame !== null) window.cancelAnimationFrame(scrollFrame);
+            scrollFrame = window.requestAnimationFrame(updateControls);
+        }, { passive: true });
+        gallery.addEventListener('pointerdown', (event) => {
+            if (event.button !== 0) return;
+            dragging = true;
+            dragStartX = event.clientX;
+            dragStartScrollLeft = gallery.scrollLeft;
+            gallery.classList.add('is-dragging');
+            gallery.setPointerCapture(event.pointerId);
+        });
+        gallery.addEventListener('pointermove', (event) => {
+            if (!dragging) return;
+            gallery.scrollLeft = dragStartScrollLeft - (event.clientX - dragStartX);
+        });
+        const stopDragging = (event) => {
+            if (!dragging) return;
+            dragging = false;
+            gallery.classList.remove('is-dragging');
+            if (gallery.hasPointerCapture(event.pointerId)) gallery.releasePointerCapture(event.pointerId);
+            goTo(Math.round(gallery.scrollLeft / (gallery.clientWidth || 1)));
+        };
+        gallery.addEventListener('pointerup', stopDragging);
+        gallery.addEventListener('pointercancel', stopDragging);
+
+        updateControls();
+    });
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializePublicStoryGalleries);
+} else {
+    initializePublicStoryGalleries();
+}
+
+document.addEventListener('livewire:navigated', initializePublicStoryGalleries);
+window.addEventListener('resize', initializePublicStoryGalleries);
+
 window.tinymce = tinymce;
 
 const keepSubmittedCommentInView = () => {
@@ -269,7 +402,7 @@ document.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const submitButton = form.querySelector('[type="submit"]');
-    const feedback = document.querySelector('[data-comment-feedback]');
+    const feedback = form.querySelector('[data-comment-feedback]') || document.querySelector('[data-comment-feedback]');
     const parentId = form.querySelector('[name="parent_id"]')?.value || null;
 
     if (submitButton?.disabled) return;
@@ -307,7 +440,9 @@ document.addEventListener('submit', async (event) => {
             }));
             window.setTimeout(updateCommentThreadLines, 50);
         } else {
-            window.dispatchEvent(new CustomEvent('comment-submitted'));
+            const quick = form.matches('[data-quick-comment-form]');
+            if (quick) form.reset();
+            window.dispatchEvent(new CustomEvent('comment-submitted', { detail: { quick } }));
         }
 
         const turnstileWidget = form.querySelector('.cf-turnstile');
@@ -337,7 +472,12 @@ document.addEventListener('submit', async (event) => {
     const submitButton = form.querySelector('[type="submit"]');
     const feedback = form.querySelector('[data-story-subscribe-feedback]');
     if (submitButton?.disabled) return;
-    if (submitButton) submitButton.disabled = true;
+    if (submitButton) {
+        submitButton.dataset.originalLabel = submitButton.textContent;
+        submitButton.textContent = form.dataset.loadingLabel || 'Memproses...';
+        submitButton.disabled = true;
+        submitButton.setAttribute('aria-busy', 'true');
+    }
 
     try {
         const subscribedEmail = form.querySelector('[name="email"]')?.value || '';
@@ -376,7 +516,11 @@ document.addEventListener('submit', async (event) => {
             feedback.className = 'mt-3 text-center text-xs font-semibold text-[#bc4a3c]';
         }
     } finally {
-        if (submitButton) submitButton.disabled = false;
+        if (submitButton) {
+            submitButton.textContent = submitButton.dataset.originalLabel || submitButton.textContent;
+            submitButton.disabled = false;
+            submitButton.removeAttribute('aria-busy');
+        }
     }
 });
 
@@ -460,6 +604,7 @@ const executeTiptapCommand = (editor, command, value = null) => {
         case 'orderedList': chain.toggleOrderedList().run(); break;
         case 'blockquote': chain.toggleBlockquote().run(); break;
         case 'horizontalRule': chain.setHorizontalRule().run(); break;
+        case 'insertStoryGallery': chain.insertContent(storyGalleryTemplate).run(); break;
         case 'textAlign': chain.setTextAlign(value).run(); break;
         case 'fontSize':
             value ? chain.setFontSize(value).run() : chain.unsetFontSize().run();
@@ -587,6 +732,7 @@ const initializeTiptapEditors = () => {
                 }),
                 StoryFigure,
                 StoryFigcaption,
+                StoryGallery,
                 CodeBlockLowlight.configure({ lowlight }),
                 ContentImage.configure({
                     allowBase64: false,
@@ -658,6 +804,7 @@ const initializeTiptapEditors = () => {
         const selectedImageDelete = wrapper.querySelector('[data-tiptap-selected-image-delete]');
         const referenceStorageKey = `simontini-tiptap-selection:${wrapper.dataset.tiptapPickerId}`;
         let lastReferenceSelection = 0;
+        let referenceImagePosition = null;
 
         const insertReferenceImage = (payload) => {
             if (
@@ -669,13 +816,25 @@ const initializeTiptapEditors = () => {
 
             lastReferenceSelection = payload.selectedAt || Date.now();
 
-            editor.chain().focus().setImage({
+            const imageAttributes = {
                 src: payload.image.url,
                 alt: payload.image.alt_text || payload.image.title,
                 title: payload.image.title,
-                width: 'auto',
+                width: '100%',
                 height: 'auto',
-            }).run();
+            };
+            const imageChain = editor.chain().focus();
+
+            if (referenceImagePosition !== null) {
+                imageChain
+                    .setNodeSelection(referenceImagePosition)
+                    .updateAttributes('image', imageAttributes)
+                    .run();
+            } else {
+                imageChain.setImage(imageAttributes).run();
+            }
+
+            referenceImagePosition = null;
 
             try {
                 window.localStorage.removeItem(referenceStorageKey);
@@ -719,6 +878,9 @@ const initializeTiptapEditors = () => {
 
         imagePickerButton?.addEventListener('click', (event) => {
             event.preventDefault();
+            referenceImagePosition = editor.isActive('image')
+                ? editor.state.selection.from
+                : null;
             try {
                 window.localStorage.removeItem(referenceStorageKey);
             } catch (error) {

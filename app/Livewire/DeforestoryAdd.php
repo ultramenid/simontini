@@ -160,26 +160,42 @@ class DeforestoryAdd extends Component
         return view('livewire.deforestory-add');
     }
 
+    public function updatedContentType(string $contentType): void
+    {
+        if ($contentType === 'custom') {
+            $this->content_id = '';
+            $this->content_en = '';
+
+            return;
+        }
+
+        if ($contentType === 'template') {
+            $this->loadTemplateContent();
+        }
+    }
+
     public function loadTemplateContent(): void
     {
         $this->content_id = <<<'HTML'
-<p>Data dalam Simontini bersifat terbuka dan dapat diakses oleh publik sesuai lisensi Creative Commons CC-CY-SA, dengan mematuhi aturan penggunaannya. Pengutipan terhadap data dalam Simontini diharapkan mengikuti format yang berlaku.</p>
-<p>Tulis paragraf pembuka story di sini. Jelaskan konteks bentang alam, nilai ekologis, masyarakat, dan isu utama yang dibahas.</p>
-<figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Gambar+Story" alt="Ganti dengan deskripsi gambar" width="100%"><figcaption class="story-content-caption">Tulis caption, sumber gambar, dan kredit di sini.</figcaption></figure>
-<p>Tulis penjelasan mengenai tekanan, perubahan tutupan lahan, kegiatan ekstraktif, pembangunan infrastruktur, atau temuan penting lainnya.</p>
-<p>Tulis metode pemantauan, sumber data, hasil analisis citra satelit, informasi perizinan, dan hasil verifikasi lapangan.</p>
-<figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Gambar+Pendukung" alt="Ganti dengan deskripsi gambar pendukung" width="100%"><figcaption class="story-content-caption">Tulis caption gambar pendukung, sumber, dan kredit di sini.</figcaption></figure>
-<p>Tulis penutup, rekomendasi, atau tindakan yang diperlukan untuk merespons temuan story ini.</p>
+<figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Gambar+Pertama" alt="Ganti dengan deskripsi gambar pertama" width="100%"><figcaption class="story-content-caption">Caption, sumber, dan kredit gambar pertama.</figcaption></figure>
+<p>Paragraf pertama: tulis konteks bentang alam, nilai ekologis, masyarakat, dan isu utama yang dibahas.</p>
+<p>Paragraf kedua: jelaskan latar belakang serta alasan story ini penting bagi pembaca.</p>
+<figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Gambar+Utama" alt="Ganti dengan deskripsi gambar utama" width="100%"><figcaption class="story-content-caption">Caption, sumber gambar, dan kredit.</figcaption></figure>
+<p>Paragraf ketiga: jelaskan tekanan, perubahan tutupan lahan, kegiatan ekstraktif, atau temuan penting.</p>
+<p>Paragraf keempat: tulis metode pemantauan, sumber data, analisis citra, dan hasil verifikasi lapangan.</p>
+<figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Gambar+Pendukung" alt="Ganti dengan deskripsi gambar pendukung" width="100%"><figcaption class="story-content-caption">Caption gambar pendukung, sumber, dan kredit.</figcaption></figure>
+<p>Paragraf penutup: tulis kesimpulan, rekomendasi, atau tindakan yang diperlukan.</p>
 HTML;
 
         $this->content_en = <<<'HTML'
-<p>Simontini data is openly available to the public under the Creative Commons CC-BY-SA license, subject to its terms of use. Citations of Simontini data should follow the applicable format.</p>
-<p>Write the opening paragraph here. Explain the landscape context, ecological value, local communities, and the main issue covered by this story.</p>
-<figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Story+Image" alt="Replace with an image description" width="100%"><figcaption class="story-content-caption">Write the caption, image source, and credit here.</figcaption></figure>
-<p>Describe pressures, land-cover changes, extractive activities, infrastructure development, or other important findings.</p>
-<p>Explain the monitoring method, data sources, satellite imagery analysis, permit information, and field verification results.</p>
-<figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Supporting+Image" alt="Replace with a supporting image description" width="100%"><figcaption class="story-content-caption">Write the supporting image caption, source, and credit here.</figcaption></figure>
-<p>Write the conclusion, recommendations, or actions required in response to the findings.</p>
+<figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=First+Image" alt="Replace with the first image description" width="100%"><figcaption class="story-content-caption">Caption, source, and credit for the first image.</figcaption></figure>
+<p>First paragraph: explain the landscape context, ecological value, local communities, and the main issue.</p>
+<p>Second paragraph: provide the background and explain why this story matters to readers.</p>
+<figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Main+Image" alt="Replace with the main image description" width="100%"><figcaption class="story-content-caption">Caption, image source, and credit.</figcaption></figure>
+<p>Third paragraph: describe pressures, land-cover changes, extractive activities, or important findings.</p>
+<p>Fourth paragraph: explain monitoring methods, data sources, imagery analysis, and field verification.</p>
+<figure class="story-content-figure"><img src="https://placehold.co/1200x750?text=Supporting+Image" alt="Replace with a supporting image description" width="100%"><figcaption class="story-content-caption">Supporting image caption, source, and credit.</figcaption></figure>
+<p>Closing paragraph: write the conclusion, recommendations, or actions required.</p>
 HTML;
     }
 
