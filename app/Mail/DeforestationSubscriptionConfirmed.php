@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Mail\Concerns\HasUniqueEmailReference;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
@@ -10,16 +11,16 @@ use Illuminate\Queue\SerializesModels;
 
 class DeforestationSubscriptionConfirmed extends Mailable
 {
-    use Queueable, SerializesModels;
+    use HasUniqueEmailReference, Queueable, SerializesModels;
 
     public function __construct(public array $mailData) {}
 
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: $this->mailData['locale'] === 'en'
+            subject: $this->mailData['subject'] ?? ($this->mailData['locale'] === 'en'
                 ? 'Your SIMONTINI Deforestory subscription is active'
-                : 'Langganan Deforestory SIMONTINI Anda aktif',
+                : 'Langganan Deforestory SIMONTINI Anda aktif'),
         );
     }
 

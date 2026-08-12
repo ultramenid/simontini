@@ -3,8 +3,8 @@
 use App\Jobs\SendDeforestationStoryUpdateEmail;
 use App\Jobs\SendDeforestationSubscriptionConfirmationEmail;
 use App\Jobs\SendNewDeforestationStoryEmail;
-use App\Mail\DeforestationSubscriptionConfirmed;
 use App\Mail\DeforestationStoryUpdated;
+use App\Mail\DeforestationSubscriptionConfirmed;
 use App\Mail\NewDeforestationStoryPublished;
 use App\Services\DeforestationStoryNotificationDispatcher;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -215,6 +215,8 @@ it('sends an article email from the queued payload without storing the article',
         'description_id' => 'Artikel hanya diteruskan ke email.',
         'description_en' => 'The article is only forwarded to email.',
         'image_url' => 'https://example.test/images/pasopati-update.jpg',
+        'image_url_id' => 'https://example.test/images/pasopati-update-id.jpg',
+        'image_url_en' => 'https://example.test/images/pasopati-update-en.jpg',
         'target_url_id' => 'https://example.test/id/payload',
         'target_url_en' => 'https://example.test/en/payload',
         'published_at' => '2026-08-06',
@@ -225,7 +227,8 @@ it('sends an article email from the queued payload without storing the article',
     Mail::assertSent(DeforestationStoryUpdated::class, function (DeforestationStoryUpdated $mail): bool {
         return $mail->hasTo('payload@example.test')
             && $mail->mailData['titleId'] === 'Artikel Pasopati Tanpa Penyimpanan'
-            && $mail->mailData['imageUrl'] === 'https://example.test/images/pasopati-update.jpg'
+            && $mail->mailData['imageUrlId'] === 'https://example.test/images/pasopati-update-id.jpg'
+            && $mail->mailData['imageUrlEn'] === 'https://example.test/images/pasopati-update-en.jpg'
             && $mail->mailData['targetUrlId'] === 'https://example.test/id/payload'
             && $mail->mailData['targetUrlEn'] === 'https://example.test/en/payload'
             && str_contains($mail->mailData['unsubscribeUrl'], '/id/deforestory/unsubscribe/');

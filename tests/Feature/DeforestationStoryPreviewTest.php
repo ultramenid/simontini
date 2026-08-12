@@ -101,12 +101,12 @@ it('redirects guests from preview to login', function () {
         ->assertRedirect(route('login'));
 });
 
-it('forbids a logged-in user without an admin or editor role', function () {
+it('allows an active cms session to open preview without a second role check', function () {
     $userId = createCmsPreviewUser(2);
 
     $this->withSession(['id' => $userId, 'role_id' => 2])
         ->get(route('deforestation.preview.index', ['locale' => 'id']))
-        ->assertForbidden();
+        ->assertOk();
 });
 
 it('allows admins to preview drafts with noindex metadata', function () {

@@ -56,6 +56,8 @@ class SendDeforestationStoryUpdateEmail implements ShouldQueue
                 'descriptionEn' => $this->article['description_en'] ?: $this->article['description_id'],
                 'descriptionId' => $this->article['description_id'] ?: $this->article['description_en'],
                 'imageUrl' => $this->article['image_url'] ?? null,
+                'imageUrlId' => $this->article['image_url_id'] ?? $this->article['image_url'] ?? null,
+                'imageUrlEn' => $this->article['image_url_en'] ?? $this->article['image_url'] ?? null,
                 'targetUrlId' => $this->article['target_url_id'],
                 'targetUrlEn' => $this->article['target_url_en'],
                 'unsubscribeUrl' => route('deforestation.unsubscribe', [
