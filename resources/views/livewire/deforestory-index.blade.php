@@ -5,17 +5,32 @@
             <p class="mt-1 text-sm text-gray-500">Kelola daftar konten deforestory.</p>
         </div>
 
-        <a
-            id="add-deforestory-button"
-            href="{{ route('cms.deforestory.add') }}"
-            class="inline-flex shrink-0 items-center gap-2 rounded-md border border-transparent px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
-            style="background-color: #376A64; color: #ffffff;"
-        >
-            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
-            </svg>
-            Tambah Data
-        </a>
+        <div class="flex shrink-0 flex-wrap items-center justify-end gap-3">
+            <a
+                href="{{ route('deforestation.preview.index', ['locale' => 'id']) }}"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 rounded-md border border-[#376A64] bg-white px-4 py-2 text-sm font-semibold text-[#376A64] shadow-sm transition hover:bg-[#eef5f4]"
+            >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12s3.75-6.75 9.75-6.75S21.75 12 21.75 12 18 18.75 12 18.75 2.25 12 2.25 12Z" />
+                    <circle cx="12" cy="12" r="2.75" />
+                </svg>
+                Preview Halaman
+            </a>
+
+            <a
+                id="add-deforestory-button"
+                href="{{ route('cms.deforestory.add') }}"
+                class="inline-flex items-center gap-2 rounded-md border border-transparent px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
+                style="background-color: #376A64; color: #ffffff;"
+            >
+                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
+                </svg>
+                Tambah Data
+            </a>
+        </div>
     </div>
 
     @if (session('success'))

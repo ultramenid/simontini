@@ -127,7 +127,8 @@ it('allows admins to preview drafts with noindex metadata', function () {
             'slug' => $story->slug,
         ]))
         ->assertOk()
-        ->assertSee('Kembali ke CMS');
+        ->assertSee('MODE PREVIEW')
+        ->assertDontSee('Kembali ke CMS');
 });
 
 it('allows editors to open preview pages', function () {

@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendDeforestationSubscriptionConfirmationEmail;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
+use Throwable;
 
 class DeforestationStorySubscriptionController extends Controller
 {
@@ -38,10 +41,7 @@ class DeforestationStorySubscriptionController extends Controller
 
         DB::table('deforestation_story_subscriptions')
             ->where('id', $subscription->id)
-            ->update([
-                'status' => 'inactive',
-                'updated_at' => now(),
-            ]);
+            ->delete();
 
         return view('frontends.deforestation-story-unsubscribed', [
             'locale' => $locale,
@@ -61,14 +61,15 @@ class DeforestationStorySubscriptionController extends Controller
         $existing = $query->first();
 
         if ($existing) {
-            DB::table('deforestation_story_subscriptions')->where('id', $existing->id)->update([
+            $subscriptionId = (int) $existing->id;
+            DB::table('deforestation_story_subscriptions')->where('id', $subscriptionId)->update([
                 'name' => trim($validated['name']),
                 'locale' => $locale,
                 'status' => 'active',
                 'updated_at' => now(),
             ]);
         } else {
-            DB::table('deforestation_story_subscriptions')->insert([
+            $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
                 'deforestory_id' => $storyId,
                 'name' => trim($validated['name']),
                 'email' => $email,
@@ -77,6 +78,15 @@ class DeforestationStorySubscriptionController extends Controller
                 'unsubscribe_token' => hash('sha256', Str::uuid()->toString()),
                 'created_at' => now(),
                 'updated_at' => now(),
+            ]);
+        }
+
+        try {
+            SendDeforestationSubscriptionConfirmationEmail::dispatchAfterResponse($subscriptionId);
+        } catch (Throwable $exception) {
+            Log::warning('Email konfirmasi langganan Deforestory gagal dijadwalkan.', [
+                'subscription_id' => $subscriptionId,
+                'error' => $exception->getMessage(),
             ]);
         }
 

@@ -1,7 +1,7 @@
 @props(['status' => null])
 
 <div class="border-b border-amber-300 bg-amber-100">
-    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+    <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6">
         <div class="flex flex-wrap items-center gap-2">
             <span class="bg-amber-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">MODE PREVIEW</span>
             <span class="text-sm font-semibold text-amber-950">KONTEN BELUM DIPUBLIKASIKAN</span>
@@ -11,9 +11,5 @@
                 </span>
             @endif
         </div>
-
-        <a href="{{ route('cms.deforestory') }}" class="inline-flex items-center justify-center border border-amber-700 bg-white px-4 py-2 text-sm font-semibold text-amber-900 hover:bg-amber-50">
-            Kembali ke CMS
-        </a>
     </div>
 </div>
