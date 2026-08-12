@@ -13,10 +13,10 @@
 
                             <p lang="id" style="margin:0 0 9px;color:#376A64;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em">Indonesia</p>
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;border:1px solid #d9e1df">
-                                @if (! empty($imageUrl))
+                                @if (! empty($imageUrlId ?? $imageUrl ?? null))
                                     <tr>
                                         <td style="padding:0;line-height:0">
-                                            <img src="{{ $imageUrl }}" width="582" alt="{{ $titleId }}" style="display:block;width:100%;max-width:582px;height:auto;border:0">
+                                            <img src="{{ $imageUrlId ?? $imageUrl }}" width="582" alt="{{ $titleId }}" style="display:block;width:100%;max-width:582px;height:auto;border:0">
                                         </td>
                                     </tr>
                                 @endif
@@ -33,10 +33,10 @@
 
                             <p lang="en" style="margin:24px 0 9px;color:#376A64;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em">English</p>
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;border:1px solid #d9e1df">
-                                @if (! empty($imageUrl))
+                                @if (! empty($imageUrlEn ?? $imageUrl ?? null))
                                     <tr>
                                         <td style="padding:0;line-height:0">
-                                            <img src="{{ $imageUrl }}" width="582" alt="{{ $titleEn }}" style="display:block;width:100%;max-width:582px;height:auto;border:0">
+                                            <img src="{{ $imageUrlEn ?? $imageUrl }}" width="582" alt="{{ $titleEn }}" style="display:block;width:100%;max-width:582px;height:auto;border:0">
                                         </td>
                                     </tr>
                                 @endif

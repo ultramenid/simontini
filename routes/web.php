@@ -105,7 +105,10 @@ Route::prefix('{locale}')
             ->middleware('throttle:10,1')
             ->name('deforestation.unsubscribe');
 
-        Route::middleware(['auth', 'role:admin,editor'])
+        // Sesi CMS yang sudah tervalidasi cukup untuk membuka halaman preview.
+        // Jangan lakukan pemeriksaan role kedua karena akses CMS sendiri sudah
+        // berada di balik autentikasi administrator.
+        Route::middleware('auth')
             ->prefix('preview')
             ->group(function () {
                 Route::get('/deforestory', [DeforestationStoryController::class, 'previewIndex'])

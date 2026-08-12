@@ -7,7 +7,7 @@
                 <table role="presentation" width="640" cellspacing="0" cellpadding="0" border="0" style="width:100%;max-width:640px;background:#ffffff;border:1px solid #d9e1df">
                     <tr>
                         <td align="center" style="padding:42px 30px">
-                            <div style="width:72px;height:72px;line-height:72px;background:#e5efed;color:#376A64;font-size:38px;font-weight:bold;text-align:center;border-radius:50%">✓</div>
+                            <img src="{{ $message->embed(public_path('assets/subscription-success-check.png')) }}" width="72" height="72" alt="" style="display:block;width:72px;height:72px;border:0">
                             <p style="margin:26px 0 0;color:#376A64;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em">SIMONTINI · DEFORESTORY</p>
                             <h1 style="margin:12px 0 0;font-size:28px;line-height:1.3">
                                 {{ $locale === 'en' ? 'Subscription activated' : 'Langganan berhasil diaktifkan' }}

@@ -126,6 +126,7 @@ it('consumes Pasopati reports by Deforestory UUID on the detail page', function 
                 'title_en' => 'Latest Pasopati Report',
                 'description_id' => '&lt;p&gt;Deskripsi laporan dari API.&lt;/p&gt;',
                 'description_en' => '&amp;lt;p&amp;gt;Report description from API.&amp;lt;/p&amp;gt;',
+                'image_url' => 'https://pasopati.test/images/report.jpg',
                 'target_url_id' => 'https://pasopati.test/id/laporan/latest',
                 'target_url_en' => 'https://pasopati.test/en/report/latest',
                 'published_at' => '2026-08-07',
@@ -147,6 +148,35 @@ it('consumes Pasopati reports by Deforestory UUID on the detail page', function 
 
     Http::assertSent(fn ($request) => $request->method() === 'GET'
         && $request->url() === "https://pasopati.test/api/deforestory/by-uuid/laporan/{$story->uuid}");
+});
+
+it('uses the Pasopati page metadata image when the report payload has no image field', function () {
+    config([
+        'cache.default' => 'array',
+        'services.deforestory.webhook_url' => 'https://pasopati.test/api',
+    ]);
+    $story = createStoryForUpdateApi();
+    $targetUrl = 'https://pasopati.test/id/laporan/dengan-image';
+    $imageUrl = 'https://pasopati.test/storage/laporan/image.jpg';
+
+    Http::fake([
+        "https://pasopati.test/api/deforestory/by-uuid/laporan/{$story->uuid}" => Http::response([
+            storyUpdatePayload([
+                'image_url' => null,
+                'target_url_id' => $targetUrl,
+                'target_url_en' => $targetUrl,
+            ]),
+        ]),
+        $targetUrl => Http::response('<html><head><meta property="og:image" content="https://pasopati.test/img/generic.png"></head><body><figure><img src="'.$imageUrl.'"></figure></body></html>'),
+    ]);
+
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertSee($imageUrl, false);
 });
 
 it('falls back to local updates when Pasopati reports cannot be loaded', function () {

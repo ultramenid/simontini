@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Mail\Concerns\HasUniqueEmailReference;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
@@ -10,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 
 class NewDeforestationStoryPublished extends Mailable
 {
-    use Queueable, SerializesModels;
+    use HasUniqueEmailReference, Queueable, SerializesModels;
 
     public function __construct(public array $mailData) {}
 
