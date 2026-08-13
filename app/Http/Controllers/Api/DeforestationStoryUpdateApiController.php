@@ -38,21 +38,33 @@ class DeforestationStoryUpdateApiController extends Controller
             ]);
         }
 
-        $subscriberCount = DB::table('deforestation_story_subscriptions')
+        $subscriptions = DB::table('deforestation_story_subscriptions')
             ->where('status', 'active')
             ->where(function ($query) use ($story) {
                 $query->where('deforestory_id', $story->id)
                     ->orWhereNull('deforestory_id');
             })
-            ->distinct()
-            ->count('email');
+            ->orderByRaw('CASE WHEN deforestory_id = ? THEN 0 ELSE 1 END', [$story->id])
+            ->get(['id', 'email'])
+            ->unique(fn (object $subscription): string => mb_strtolower(trim($subscription->email)))
+            ->values();
+        $subscriberCount = $subscriptions->count();
 
         $fingerprint = hash('sha256', $uuid.'|'.json_encode($validated));
         $deduplicationKey = 'deforestory:update-trigger:'.$fingerprint;
         $queued = Cache::add($deduplicationKey, true, now()->addDay());
+        $queuedJobs = 0;
 
         if ($queued) {
-            SendDeforestationStoryUpdateEmail::dispatch((int) $story->id, $validated);
+            foreach ($subscriptions as $subscription) {
+                SendDeforestationStoryUpdateEmail::dispatch(
+                    (int) $subscription->id,
+                    (int) $story->id,
+                    $fingerprint,
+                    $validated,
+                );
+                $queuedJobs++;
+            }
         }
 
         return response()->json([
@@ -62,7 +74,7 @@ class DeforestationStoryUpdateApiController extends Controller
             'action' => $queued ? 'queued' : 'duplicate',
             'deforestory_uuid' => $story->uuid,
             'queue' => 'pasopati-updates',
-            'queued_jobs' => $queued ? 1 : 0,
+            'queued_jobs' => $queuedJobs,
             'subscriber_count' => $subscriberCount,
         ], Response::HTTP_ACCEPTED);
     }

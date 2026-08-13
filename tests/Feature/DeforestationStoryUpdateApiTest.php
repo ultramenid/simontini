@@ -1,9 +1,11 @@
 <?php
 
 use App\Jobs\SendDeforestationStoryUpdateEmail;
+use App\Mail\DeforestationStoryUpdated;
+use App\Services\DeforestationStoryUpdateNotifier;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Str;
@@ -98,6 +100,8 @@ it('triggers subscriber emails without storing the Pasopati article', function (
         ->where(fn ($query) => $query
             ->where('deforestory_id', $story->id)
             ->orWhereNull('deforestory_id'))
+        ->get(['email'])
+        ->unique(fn (object $subscription): string => mb_strtolower(trim($subscription->email)))
         ->count();
 
     $this->withToken('story-update-token')
@@ -105,7 +109,7 @@ it('triggers subscriber emails without storing the Pasopati article', function (
         ->assertAccepted()
         ->assertJsonPath('action', 'queued')
         ->assertJsonPath('queue', 'pasopati-updates')
-        ->assertJsonPath('queued_jobs', 1)
+        ->assertJsonPath('queued_jobs', $expectedNotifications)
         ->assertJsonPath('subscriber_count', $expectedNotifications)
         ->assertJsonPath('deforestory_uuid', $story->uuid)
         ->assertJsonMissingPath('data');
@@ -113,6 +117,8 @@ it('triggers subscriber emails without storing the Pasopati article', function (
     expect(DB::table('deforestation_story_updates')->count())->toBe($updatesBefore);
     Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, function ($job) use ($story): bool {
         return $job->storyId === $story->id
+            && $job->subscriptionId > 0
+            && strlen($job->eventKey) === 64
             && $job->article['title_id'] === 'Pemantauan Terbaru Bentang Alam';
     });
 });
@@ -127,18 +133,66 @@ it('does not queue the same Pasopati update payload twice', function () {
     $story = createStoryForUpdateApi();
     $endpoint = "/api/deforestory/sync/{$story->uuid}";
     $payload = storyUpdatePayload();
+    $expectedJobs = DB::table('deforestation_story_subscriptions')
+        ->where('status', 'active')
+        ->where(fn ($query) => $query
+            ->where('deforestory_id', $story->id)
+            ->orWhereNull('deforestory_id'))
+        ->get(['email'])
+        ->unique(fn (object $subscription): string => mb_strtolower(trim($subscription->email)))
+        ->count();
 
     $this->withToken('story-update-token')->postJson($endpoint, $payload)
         ->assertAccepted()
         ->assertJsonPath('action', 'queued')
-        ->assertJsonPath('queued_jobs', 1);
+        ->assertJsonPath('queued_jobs', $expectedJobs);
 
     $this->withToken('story-update-token')->postJson($endpoint, $payload)
         ->assertAccepted()
         ->assertJsonPath('action', 'duplicate')
         ->assertJsonPath('queued_jobs', 0);
 
-    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, 1);
+    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, $expectedJobs);
+});
+
+it('does not send the same update event twice when its job is retried', function () {
+    Mail::fake();
+    $story = createStoryForUpdateApi();
+    $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
+        'deforestory_id' => $story->id,
+        'name' => 'Subscriber Idempotent',
+        'email' => 'idempotent-'.uniqid().'@example.test',
+        'locale' => 'id',
+        'status' => 'active',
+        'unsubscribe_token' => hash('sha256', uniqid('', true)),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+    $article = storyUpdatePayload();
+    $eventKey = hash('sha256', $story->uuid.'|'.json_encode($article));
+    $notifier = app(DeforestationStoryUpdateNotifier::class);
+
+    (new SendDeforestationStoryUpdateEmail(
+        $subscriptionId,
+        $story->id,
+        $eventKey,
+        $article,
+    ))->handle($notifier);
+
+    (new SendDeforestationStoryUpdateEmail(
+        $subscriptionId,
+        $story->id,
+        $eventKey,
+        $article,
+    ))->handle($notifier);
+
+    Mail::assertSent(DeforestationStoryUpdated::class, 1);
+    expect(DB::table('deforestation_email_deliveries')
+        ->where('subscription_id', $subscriptionId)
+        ->where('story_id', $story->id)
+        ->where('event_key', $eventKey)
+        ->where('status', 'sent')
+        ->count())->toBe(1);
 });
 
 it('validates the optional update image as an HTTP URL', function () {

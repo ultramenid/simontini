@@ -1,7 +1,7 @@
 <?php
 
-use App\Jobs\SendDeforestationSubscriptionConfirmationEmail;
 use App\Jobs\SendDeforestationStoryUpdateEmail;
+use App\Jobs\SendDeforestationSubscriptionConfirmationEmail;
 use App\Jobs\SendNewDeforestationStoryEmail;
 use App\Mail\DeforestationStoryUpdated;
 use App\Mail\DeforestationSubscriptionConfirmed;
@@ -160,9 +160,9 @@ it('queues one job when a new active story update arrives', function () {
     ]);
 
     $response->assertAccepted()
-        ->assertJsonPath('queued_jobs', 1)
+        ->assertJsonPath('queued_jobs', $expectedNotifications)
         ->assertJsonPath('subscriber_count', $expectedNotifications);
-    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, 1);
+    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, $expectedNotifications);
 });
 
 it('also counts global subscribers for the queued update email', function () {
@@ -194,10 +194,10 @@ it('also counts global subscribers for the queued update email', function () {
         'target_url_en' => 'https://example.test/en/global',
         'published_at' => '2026-08-04',
     ])->assertAccepted()
-        ->assertJsonPath('queued_jobs', 1)
+        ->assertJsonPath('queued_jobs', $expectedNotifications)
         ->assertJsonPath('subscriber_count', $expectedNotifications);
 
-    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, 1);
+    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, $expectedNotifications);
 });
 
 it('sends only one update email when an address has global and story subscriptions', function () {
