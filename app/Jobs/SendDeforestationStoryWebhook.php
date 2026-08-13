@@ -6,6 +6,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use RuntimeException;
 
@@ -103,13 +104,24 @@ class SendDeforestationStoryWebhook implements ShouldQueue
         $request = $request->withBody($body, 'application/json');
         $cardsUrl = $this->cardsUrl($baseUrl);
 
-        if ($event === 'deforestory.created') {
-            $request->post($cardsUrl)->throw();
+        $method = $event === 'deforestory.created' ? 'POST' : 'PUT';
+        $targetUrl = $method === 'POST'
+            ? $cardsUrl
+            : $cardsUrl.'/'.rawurlencode((string) $card['uuid']);
+        $response = $method === 'POST'
+            ? $request->post($targetUrl)
+            : $request->put($targetUrl);
 
-            return;
-        }
+        $response->throw();
 
-        $request->put($cardsUrl.'/'.rawurlencode((string) $card['uuid']))->throw();
+        Log::info('Sinkronisasi Deforestory ke Pasopati berhasil.', [
+            'event' => $event,
+            'uuid' => $card['uuid'],
+            'slug' => $card['slug'],
+            'method' => $method,
+            'url' => $targetUrl,
+            'status' => $response->status(),
+        ]);
     }
 
     private function cardsUrl(string $baseUrl): string
