@@ -73,10 +73,10 @@ Email Deforestory baru dan pembaruan Pasopati menggunakan database queue. Pastik
 QUEUE_CONNECTION=database
 ```
 
-Worker harus dijalankan sebagai service permanen agar job pada queue `default` dan `pasopati-updates` diproses otomatis. Template Supervisor tersedia di:
+Worker harus dijalankan sebagai service permanen agar job pada queue `default` dan `pasopati-updates` diproses otomatis. Konfigurasi Supervisor tersedia di:
 
 ```text
-deploy/supervisor/simontini-worker.conf.example
+deploy/supervisor/simontini-worker.conf
 ```
 
 Sesuaikan `/var/www/simontini`, lokasi executable PHP, dan user `www-data` dengan server. Setelah menyalin konfigurasi ke direktori Supervisor server, jalankan:
