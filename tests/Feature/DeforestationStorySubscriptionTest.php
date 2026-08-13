@@ -9,6 +9,7 @@ use App\Mail\NewDeforestationStoryPublished;
 use App\Services\DeforestationStoryNotificationDispatcher;
 use App\Services\DeforestationStoryUpdateNotifier;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Queue;
@@ -130,7 +131,7 @@ it('deletes a subscription through its unsubscribe token', function () {
 });
 
 it('queues one job when a new active story update arrives', function () {
-    Queue::fake();
+    Bus::fake();
     config(['services.deforestory.api_token' => 'test-api-token']);
 
     $story = createSubscribedStory();
@@ -162,11 +163,11 @@ it('queues one job when a new active story update arrives', function () {
     $response->assertAccepted()
         ->assertJsonPath('queued_jobs', $expectedNotifications)
         ->assertJsonPath('subscriber_count', $expectedNotifications);
-    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, $expectedNotifications);
+    Bus::assertDispatchedAfterResponse(SendDeforestationStoryUpdateEmail::class, $expectedNotifications);
 });
 
 it('also counts global subscribers for the queued update email', function () {
-    Queue::fake();
+    Bus::fake();
     config(['services.deforestory.api_token' => 'test-api-token']);
 
     $story = createSubscribedStory();
@@ -197,7 +198,7 @@ it('also counts global subscribers for the queued update email', function () {
         ->assertJsonPath('queued_jobs', $expectedNotifications)
         ->assertJsonPath('subscriber_count', $expectedNotifications);
 
-    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, $expectedNotifications);
+    Bus::assertDispatchedAfterResponse(SendDeforestationStoryUpdateEmail::class, $expectedNotifications);
 });
 
 it('sends only one update email when an address has global and story subscriptions', function () {
@@ -320,7 +321,7 @@ it('renders remote images from URLs without attaching image files', function () 
 });
 
 it('queues an email for global subscribers when a new story is published', function () {
-    Queue::fake();
+    Bus::fake();
     config(['services.deforestory.api_token' => 'test-api-token']);
 
     DB::table('deforestation_story_subscriptions')->insert([
@@ -349,7 +350,7 @@ it('queues an email for global subscribers when a new story is published', funct
         'status' => 'publish',
     ])->assertCreated()->assertJsonPath('queued_notifications', $expectedNotifications);
 
-    Queue::assertPushed(SendNewDeforestationStoryEmail::class, $expectedNotifications);
+    Bus::assertDispatchedAfterResponse(SendNewDeforestationStoryEmail::class, $expectedNotifications);
 });
 
 it('sends a new story email without a publication notification record', function () {
@@ -385,7 +386,7 @@ it('sends a new story email without a publication notification record', function
 });
 
 it('does not email subscribers when the same story is republished', function () {
-    Queue::fake();
+    Bus::fake();
 
     DB::table('deforestation_story_subscriptions')->insert([
         'deforestory_id' => null,
@@ -410,5 +411,5 @@ it('does not email subscribers when the same story is republished', function () 
         ->and($republishQueued)->toBe(0)
         ->and(DB::table('deforestory')->where('id', $story->id)->value('first_published_at'))
         ->not->toBeNull();
-    Queue::assertPushed(SendNewDeforestationStoryEmail::class, $firstQueued);
+    Bus::assertDispatchedAfterResponse(SendNewDeforestationStoryEmail::class, $firstQueued);
 });

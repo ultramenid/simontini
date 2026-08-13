@@ -35,7 +35,7 @@ class DeforestationStoryNotificationDispatcher
                 ->get(['id']);
 
             foreach ($subscriptions as $subscription) {
-                SendNewDeforestationStoryEmail::dispatch(
+                SendNewDeforestationStoryEmail::dispatchAfterResponse(
                     (int) $subscription->id,
                     $storyId,
                 );
