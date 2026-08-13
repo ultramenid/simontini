@@ -64,3 +64,40 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Production queue worker
+
+Email Deforestory baru dan pembaruan Pasopati menggunakan database queue. Pastikan environment production menggunakan:
+
+```env
+QUEUE_CONNECTION=database
+```
+
+Worker harus dijalankan sebagai service permanen agar job pada queue `default` dan `pasopati-updates` diproses otomatis. Template Supervisor tersedia di:
+
+```text
+deploy/supervisor/simontini-worker.conf.example
+```
+
+Sesuaikan `/var/www/simontini`, lokasi executable PHP, dan user `www-data` dengan server. Setelah menyalin konfigurasi ke direktori Supervisor server, jalankan:
+
+```bash
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl start simontini-worker:*
+```
+
+Setiap deployment harus menjalankan:
+
+```bash
+php artisan migrate --force
+php artisan optimize:clear
+php artisan queue:restart
+```
+
+Verifikasi worker dan antrean:
+
+```bash
+sudo supervisorctl status simontini-worker:*
+php artisan queue:failed
+```

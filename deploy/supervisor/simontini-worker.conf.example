@@ -1,0 +1,13 @@
+[program:simontini-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=/usr/bin/php /var/www/simontini/artisan queue:work database --queue=default,pasopati-updates --sleep=3 --tries=3 --timeout=120 --max-time=3600
+directory=/var/www/simontini
+autostart=true
+autorestart=true
+stopasgroup=true
+killasgroup=true
+user=www-data
+numprocs=1
+redirect_stderr=true
+stdout_logfile=/var/www/simontini/storage/logs/queue-worker.log
+stopwaitsecs=130
