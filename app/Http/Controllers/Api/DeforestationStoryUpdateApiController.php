@@ -53,17 +53,17 @@ class DeforestationStoryUpdateApiController extends Controller
         $fingerprint = hash('sha256', $uuid.'|'.json_encode($validated));
         $deduplicationKey = 'deforestory:update-trigger:'.$fingerprint;
         $queued = Cache::add($deduplicationKey, true, now()->addDay());
-        $queuedJobs = 0;
+        $scheduledEmails = 0;
 
         if ($queued) {
             foreach ($subscriptions as $subscription) {
-                SendDeforestationStoryUpdateEmail::dispatch(
+                SendDeforestationStoryUpdateEmail::dispatchAfterResponse(
                     (int) $subscription->id,
                     (int) $story->id,
                     $fingerprint,
                     $validated,
                 );
-                $queuedJobs++;
+                $scheduledEmails++;
             }
         }
 
@@ -73,8 +73,11 @@ class DeforestationStoryUpdateApiController extends Controller
                 : 'Trigger artikel Pasopati sudah pernah diterima.',
             'action' => $queued ? 'queued' : 'duplicate',
             'deforestory_uuid' => $story->uuid,
+            'delivery' => 'after_response',
+            'scheduled_emails' => $scheduledEmails,
+            // Dipertahankan sementara agar consumer lama tidak rusak.
             'queue' => 'pasopati-updates',
-            'queued_jobs' => $queuedJobs,
+            'queued_jobs' => $scheduledEmails,
             'subscriber_count' => $subscriberCount,
         ], Response::HTTP_ACCEPTED);
     }
