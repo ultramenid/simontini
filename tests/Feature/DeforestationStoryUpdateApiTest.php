@@ -3,6 +3,7 @@
 use App\Jobs\SendDeforestationStoryUpdateEmail;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Str;
@@ -75,6 +76,8 @@ it('rejects an unknown Deforestory UUID', function () {
 
 it('triggers subscriber emails without storing the Pasopati article', function () {
     Queue::fake();
+    config(['cache.default' => 'array']);
+    Cache::flush();
     config(['services.deforestory.api_token' => 'story-update-token']);
     $story = createStoryForUpdateApi();
     $payload = storyUpdatePayload();
@@ -90,16 +93,52 @@ it('triggers subscriber emails without storing the Pasopati article', function (
         'created_at' => now(),
         'updated_at' => now(),
     ]);
+    $expectedNotifications = DB::table('deforestation_story_subscriptions')
+        ->where('status', 'active')
+        ->where(fn ($query) => $query
+            ->where('deforestory_id', $story->id)
+            ->orWhereNull('deforestory_id'))
+        ->count();
 
     $this->withToken('story-update-token')
         ->postJson($endpoint, $payload)
         ->assertAccepted()
-        ->assertJsonPath('action', 'triggered')
+        ->assertJsonPath('action', 'queued')
+        ->assertJsonPath('queue', 'pasopati-updates')
+        ->assertJsonPath('queued_jobs', 1)
+        ->assertJsonPath('subscriber_count', $expectedNotifications)
         ->assertJsonPath('deforestory_uuid', $story->uuid)
         ->assertJsonMissingPath('data');
 
     expect(DB::table('deforestation_story_updates')->count())->toBe($updatesBefore);
-    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class);
+    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, function ($job) use ($story): bool {
+        return $job->storyId === $story->id
+            && $job->article['title_id'] === 'Pemantauan Terbaru Bentang Alam';
+    });
+});
+
+it('does not queue the same Pasopati update payload twice', function () {
+    Queue::fake();
+    config([
+        'cache.default' => 'array',
+        'services.deforestory.api_token' => 'story-update-token',
+    ]);
+    Cache::flush();
+    $story = createStoryForUpdateApi();
+    $endpoint = "/api/deforestory/sync/{$story->uuid}";
+    $payload = storyUpdatePayload();
+
+    $this->withToken('story-update-token')->postJson($endpoint, $payload)
+        ->assertAccepted()
+        ->assertJsonPath('action', 'queued')
+        ->assertJsonPath('queued_jobs', 1);
+
+    $this->withToken('story-update-token')->postJson($endpoint, $payload)
+        ->assertAccepted()
+        ->assertJsonPath('action', 'duplicate')
+        ->assertJsonPath('queued_jobs', 0);
+
+    Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, 1);
 });
 
 it('validates the optional update image as an HTTP URL', function () {

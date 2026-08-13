@@ -6,6 +6,7 @@ use App\Mail\StoryCommentReplyNotification;
 use App\Services\CommentHtmlSanitizer;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -23,6 +24,31 @@ class SendStoryCommentReplyNotificationEmail implements ShouldQueue
 
     public function handle(CommentHtmlSanitizer $sanitizer): void
     {
+        $notificationKey = self::notificationCacheKey($this->replyId);
+
+        if (Cache::has($notificationKey)) {
+            return;
+        }
+
+        $lock = Cache::lock($notificationKey.':lock', 120);
+
+        if (! $lock->get()) {
+            return;
+        }
+
+        try {
+            if (Cache::has($notificationKey)) {
+                return;
+            }
+
+            $this->sendNotification($sanitizer, $notificationKey);
+        } finally {
+            $lock->release();
+        }
+    }
+
+    private function sendNotification(CommentHtmlSanitizer $sanitizer, string $notificationKey): void
+    {
         $reply = DB::table('story_comments as replies')
             ->join('story_comments as parents', 'parents.id', '=', 'replies.parent_id')
             ->join('deforestory as stories', 'stories.id', '=', 'replies.story_id')
@@ -34,7 +60,6 @@ class SendStoryCommentReplyNotificationEmail implements ShouldQueue
                 'replies.user_id as reply_user_id',
                 'replies.user_name as reply_user_name',
                 'replies.comment as reply_comment',
-                'replies.reply_notification_sent_at',
                 'parents.user_provider as parent_user_provider',
                 'parents.user_id as parent_user_id',
                 'parents.user_name as parent_user_name',
@@ -47,7 +72,7 @@ class SendStoryCommentReplyNotificationEmail implements ShouldQueue
             ])
             ->first();
 
-        if (! $reply || $reply->reply_notification_sent_at !== null || blank($reply->parent_user_email)) {
+        if (! $reply || blank($reply->parent_user_email)) {
             return;
         }
 
@@ -79,10 +104,12 @@ class SendStoryCommentReplyNotificationEmail implements ShouldQueue
             ]),
         );
 
-        DB::table('story_comments')
-            ->where('id', $this->replyId)
-            ->whereNull('reply_notification_sent_at')
-            ->update(['reply_notification_sent_at' => now()]);
+        Cache::forever($notificationKey, true);
+    }
+
+    public static function notificationCacheKey(int $replyId): string
+    {
+        return 'story-comment-reply-notification:'.$replyId;
     }
 
     public function failed(?Throwable $exception): void
