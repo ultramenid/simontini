@@ -44,7 +44,8 @@ function storyUpdatePayload(array $overrides = []): array
         'title_en' => 'Latest Landscape Monitoring',
         'description_id' => 'Perubahan bentang alam masih berlangsung.',
         'description_en' => 'Landscape changes are still ongoing.',
-        'image_url' => 'https://example.org/images/forest-update.jpg',
+        'image_id' => 'https://example.org/images/forest-update-id.jpg',
+        'image_en' => 'https://example.org/images/forest-update-en.jpg',
         'target_url_id' => 'https://example.org/id/news/forest-update',
         'target_url_en' => 'https://example.org/en/news/forest-update',
         'published_at' => '2026-08-03',
@@ -228,16 +229,16 @@ it('does not send the same update event twice when its job is retried', function
         ->count())->toBe(1);
 });
 
-it('validates the optional update image as an HTTP URL', function () {
+it('validates the optional Indonesian update image as an HTTP URL', function () {
     config(['services.deforestory.api_token' => 'story-update-token']);
     $story = createStoryForUpdateApi();
 
     $this->withToken('story-update-token')
         ->postJson("/api/deforestory/sync/{$story->uuid}", storyUpdatePayload([
-            'image_url' => 'bukan-url-gambar',
+            'image_id' => 'bukan-url-gambar',
         ]))
         ->assertUnprocessable()
-        ->assertJsonValidationErrors('image_url');
+        ->assertJsonValidationErrors('image_id');
 });
 
 it('normalizes Pasopati image aliases before scheduling update emails', function () {
@@ -262,7 +263,6 @@ it('normalizes Pasopati image aliases before scheduling update emails', function
     ]);
 
     $payload = storyUpdatePayload([
-        'image_url' => null,
         'image_id' => 'https://pasopati.id/storage/updates/image-id.jpg',
         'image_en' => 'https://pasopati.id/storage/updates/image-en.jpg',
     ]);
