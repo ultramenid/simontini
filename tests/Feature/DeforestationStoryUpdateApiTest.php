@@ -240,6 +240,44 @@ it('validates the optional update image as an HTTP URL', function () {
         ->assertJsonValidationErrors('image_url');
 });
 
+it('normalizes Pasopati image aliases before scheduling update emails', function () {
+    Bus::fake();
+    config([
+        'cache.default' => 'array',
+        'services.deforestory.api_token' => 'story-update-token',
+    ]);
+    Cache::flush();
+
+    $story = createStoryForUpdateApi();
+
+    DB::table('deforestation_story_subscriptions')->insert([
+        'deforestory_id' => $story->id,
+        'name' => 'Subscriber Image',
+        'email' => 'subscriber-image@example.test',
+        'locale' => 'id',
+        'status' => 'active',
+        'unsubscribe_token' => hash('sha256', Str::random(40)),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    $payload = storyUpdatePayload([
+        'image_url' => null,
+        'image_id' => 'https://pasopati.id/storage/updates/image-id.jpg',
+        'image_en' => 'https://pasopati.id/storage/updates/image-en.jpg',
+    ]);
+
+    $this->withToken('story-update-token')
+        ->postJson('/api/deforestory/sync/'.$story->uuid, $payload)
+        ->assertAccepted();
+
+    Bus::assertDispatchedAfterResponse(
+        SendDeforestationStoryUpdateEmail::class,
+        fn (SendDeforestationStoryUpdateEmail $job): bool => $job->article['image_url_id'] === 'https://pasopati.id/storage/updates/image-id.jpg'
+            && $job->article['image_url_en'] === 'https://pasopati.id/storage/updates/image-en.jpg',
+    );
+});
+
 it('consumes Pasopati reports by Deforestory UUID on the detail page', function () {
     $story = createStoryForUpdateApi();
     config([

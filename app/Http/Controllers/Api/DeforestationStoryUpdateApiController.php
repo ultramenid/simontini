@@ -24,10 +24,26 @@ class DeforestationStoryUpdateApiController extends Controller
             'image_url' => ['nullable', 'url:http,https', 'max:2048'],
             'image_url_id' => ['nullable', 'url:http,https', 'max:2048'],
             'image_url_en' => ['nullable', 'url:http,https', 'max:2048'],
+            'image' => ['nullable', 'url:http,https', 'max:2048'],
+            'image_id' => ['nullable', 'url:http,https', 'max:2048'],
+            'image_en' => ['nullable', 'url:http,https', 'max:2048'],
             'target_url_id' => ['required', 'url:http,https', 'max:2048'],
             'target_url_en' => ['required', 'url:http,https', 'max:2048'],
             'published_at' => ['required', 'date'],
         ]);
+
+        $fallbackImage = $validated['image_url'] ?? $validated['image'] ?? null;
+        $validated['image_url_id'] = $validated['image_url_id']
+            ?? $validated['image_id']
+            ?? $fallbackImage;
+        $validated['image_url_en'] = $validated['image_url_en']
+            ?? $validated['image_en']
+            ?? $fallbackImage;
+        $validated['image_url'] = $fallbackImage
+            ?? $validated['image_url_id']
+            ?? $validated['image_url_en'];
+
+        unset($validated['image'], $validated['image_id'], $validated['image_en']);
 
         $story = DB::table('deforestory')
             ->where('uuid', $uuid)
