@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\SendStoryCommentReplyNotificationEmail;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -32,7 +31,7 @@ class CmsCommentController extends Controller
         }
 
         $comments = $commentsQuery
-            ->orderByRaw("CASE comments.status WHEN 'pending' THEN 0 ELSE 1 END")
+            ->orderByRaw("CASE comments.status WHEN 'hidden' THEN 1 ELSE 0 END")
             ->orderByDesc('comments.created_at')
             ->limit(250)
             ->get()
@@ -78,44 +77,21 @@ class CmsCommentController extends Controller
 
     public function status(int $id, string $status): RedirectResponse
     {
-        abort_unless(in_array($status, ['approved', 'rejected', 'spam'], true), 404);
+        abort_unless(in_array($status, ['approved', 'hidden'], true), 404);
 
         $comment = DB::table('story_comments')
-            ->select(['id', 'parent_id', 'status'])
+            ->select(['id'])
             ->where('id', $id)
             ->first();
         abort_unless($comment, 404);
 
-        $statusChanged = $status === 'approved'
-            ? DB::table('story_comments')
-                ->where('id', $id)
-                ->where('status', '!=', 'approved')
-                ->update([
-                    'status' => $status,
-                    'updated_at' => now(),
-                ]) === 1
-            : DB::table('story_comments')
-                ->where('id', $id)
-                ->update([
-                    'status' => $status,
-                    'updated_at' => now(),
-                ]) === 1;
-
-        if (
-            $status === 'approved'
-            && $statusChanged
-            && $comment->parent_id !== null
-        ) {
-            SendStoryCommentReplyNotificationEmail::dispatchAfterResponse((int) $comment->id);
-        }
+        DB::table('story_comments')
+            ->where('id', $id)
+            ->update([
+                'status' => $status,
+                'updated_at' => now(),
+            ]);
 
         return back()->with('message', 'Status komentar berhasil diperbarui.');
-    }
-
-    public function destroy(int $id): RedirectResponse
-    {
-        DB::table('story_comments')->where('id', $id)->delete();
-
-        return back()->with('message', 'Komentar berhasil dihapus.');
     }
 }

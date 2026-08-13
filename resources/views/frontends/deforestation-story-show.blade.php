@@ -101,9 +101,9 @@
                                         <span class="h-4 w-4 shrink-0 rounded-full bg-[#376A64] ring-4 ring-[#e5efed]" aria-hidden="true"></span>
                                     </time>
 
-                                    <article class="w-full overflow-hidden border border-[#e2d8cc] bg-white shadow-sm sm:aspect-[320/63]">
-                                        <a href="{{ $update->target_url }}" target="_blank" rel="noopener noreferrer" class="block sm:grid sm:h-full sm:grid-cols-[35%_1fr]">
-                                            <div class="aspect-video overflow-hidden bg-[#e8e8e8] sm:h-full sm:aspect-auto">
+                                    <article class="w-full overflow-hidden border border-[#e2d8cc] bg-white shadow-sm">
+                                        <a href="{{ $update->target_url }}" target="_blank" rel="noopener noreferrer" class="block sm:grid sm:grid-cols-[28%_1fr]">
+                                            <div class="aspect-video overflow-hidden bg-[#e8e8e8] sm:self-start">
                                                 @if (filled($update->image_url))
                                                     <img src="{{ $update->image_url }}" alt="{{ $update->localized_title }}" class="h-full w-full object-cover" loading="lazy" decoding="async">
                                                 @endif

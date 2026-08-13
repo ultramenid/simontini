@@ -87,20 +87,18 @@
                                 @if ($comment['parent_id'])
                                     <span class="bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-gray-600">Balasan</span>
                                 @endif
-                                <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wide {{ $comment['status'] === 'approved' ? 'bg-green-100 text-green-800' : ($comment['status'] === 'pending' ? 'bg-amber-100 text-amber-800' : 'bg-red-100 text-red-800') }}">{{ $comment['status'] }}</span>
+                                <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wide {{ $comment['status'] === 'approved' ? 'bg-green-100 text-green-800' : 'bg-gray-200 text-gray-700' }}">{{ $comment['status'] === 'approved' ? 'Tampil' : 'Hidden' }}</span>
                             </div>
                             <p class="mt-3 whitespace-pre-line break-words text-sm leading-6 text-gray-700">{{ $comment['comment'] }}</p>
                             <p class="mt-3 text-xs text-gray-400">{{ $comment['user_email'] }} · {{ $comment['created_at'] }}</p>
                         </div>
 
                         <div class="flex shrink-0 flex-wrap content-start gap-2">
-                            @if ($comment['status'] !== 'approved')
-                                <form method="POST" action="{{ route('cms.comments.status', ['id' => $comment['id'], 'status' => 'approved']) }}">@csrf @method('PATCH')<button class="bg-green-700 px-3 py-2 text-xs font-bold text-white hover:bg-green-800">Setujui</button></form>
+                            @if ($comment['status'] === 'approved')
+                                <form method="POST" action="{{ route('cms.comments.status', ['id' => $comment['id'], 'status' => 'hidden']) }}">@csrf @method('PATCH')<button class="bg-gray-700 px-3 py-2 text-xs font-bold text-white hover:bg-gray-800">Sembunyikan</button></form>
+                            @else
+                                <form method="POST" action="{{ route('cms.comments.status', ['id' => $comment['id'], 'status' => 'approved']) }}">@csrf @method('PATCH')<button class="bg-green-700 px-3 py-2 text-xs font-bold text-white hover:bg-green-800">Tampilkan</button></form>
                             @endif
-                            @if ($comment['status'] !== 'rejected')
-                                <form method="POST" action="{{ route('cms.comments.status', ['id' => $comment['id'], 'status' => 'rejected']) }}">@csrf @method('PATCH')<button class="bg-amber-600 px-3 py-2 text-xs font-bold text-white hover:bg-amber-700">Tolak</button></form>
-                            @endif
-                            <form method="POST" action="{{ route('cms.comments.destroy', ['id' => $comment['id']]) }}" onsubmit="return confirm('Hapus komentar ini?')">@csrf @method('DELETE')<button class="bg-red-700 px-3 py-2 text-xs font-bold text-white hover:bg-red-800">Hapus</button></form>
                         </div>
                     </div>
                 </article>

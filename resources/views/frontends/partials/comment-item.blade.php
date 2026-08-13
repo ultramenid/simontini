@@ -5,6 +5,7 @@
 @endphp
 
 <article
+    id="comment-{{ $comment->id }}"
     data-comment-thread-item
     class="comment-thread-item {{ $depth === 0 ? 'border-b border-[#e2d8cc] pb-8' : '' }}"
     x-data="{
@@ -44,7 +45,7 @@
                     @if ($commentUser)
                         <button type="button" data-comment-reply-toggle="{{ $comment->id }}" class="hover:text-[#bc4a3c]">{{ $locale === 'en' ? 'Reply' : 'Balas' }}</button>
                     @else
-                        <a href="{{ route('comments.login.google', ['return_to' => url()->current().'#comments']) }}" class="hover:text-[#bc4a3c]">{{ $locale === 'en' ? 'Reply' : 'Balas' }}</a>
+                        <button type="button" data-comment-reply-toggle="{{ $comment->id }}" aria-expanded="false" class="hover:text-[#bc4a3c]">{{ $locale === 'en' ? 'Reply' : 'Balas' }}</button>
                     @endif
                 @endif
 
@@ -61,6 +62,8 @@
 
     @if ($commentUser && $canReply)
         @include('frontends.partials.comment-reply-form')
+    @elseif (! $commentUser && $canReply && $googleLoginReady)
+        @include('frontends.partials.comment-reply-login')
     @endif
 
     @if ($replies->isNotEmpty())

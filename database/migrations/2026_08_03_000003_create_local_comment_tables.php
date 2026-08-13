@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('user_email')->nullable();
             $table->string('user_avatar', 2048)->nullable();
             $table->text('comment');
-            $table->enum('status', ['pending', 'approved', 'rejected', 'spam'])->default('pending');
+            $table->enum('status', ['pending', 'approved', 'hidden', 'rejected', 'spam'])->default('pending');
             $table->timestamps();
 
             $table->index(['story_id', 'status', 'created_at']);

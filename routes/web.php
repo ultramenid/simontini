@@ -152,9 +152,6 @@ Route::middleware([checkSession::class])->group(function () {
     Route::patch('/cms/comments/{id}/{status}', [CmsCommentController::class, 'status'])
         ->whereNumber('id')
         ->name('cms.comments.status');
-    Route::delete('/cms/comments/{id}', [CmsCommentController::class, 'destroy'])
-        ->whereNumber('id')
-        ->name('cms.comments.destroy');
     Route::get('/cms/subscribers', [CmsSubscriberController::class, 'index'])->name('cms.subscribers');
 
 });

@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\CmsCommentController;
 use App\Jobs\SendStoryCommentReplyNotificationEmail;
 use App\Mail\StoryCommentReplyNotification;
 use App\Services\CommentHtmlSanitizer;
+use App\Services\TurnstileVerifier;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
@@ -68,21 +68,43 @@ function createCommentReplyFixture(bool $sameUser = false): array
     return compact('storyId', 'parentId', 'replyId');
 }
 
-it('queues a reply notification when a reply is approved for the first time', function () {
+it('publishes a reply immediately and queues its notification after submission', function () {
     Queue::fake();
-    ['replyId' => $replyId] = createCommentReplyFixture();
+    ['storyId' => $storyId, 'parentId' => $parentId, 'replyId' => $fixtureReplyId] = createCommentReplyFixture();
+    DB::table('story_comments')->where('id', $fixtureReplyId)->delete();
 
-    $this->withSession(['id' => 1])
-        ->patch(route('cms.comments.status', ['id' => $replyId, 'status' => 'approved']))
-        ->assertRedirect();
+    $turnstile = Mockery::mock(TurnstileVerifier::class);
+    $turnstile->shouldReceive('verify')->once()->andReturnTrue();
+    app()->instance(TurnstileVerifier::class, $turnstile);
+
+    $this->withSession([
+        'comment_user' => [
+            'provider' => 'google',
+            'id' => 'new-reply-google-id',
+            'name' => 'Pemberi Balasan',
+            'email' => 'reply@example.test',
+            'avatar' => null,
+        ],
+    ])->postJson(route('deforestation.comments.store', [
+        'locale' => 'id',
+        'id' => $storyId,
+    ]), [
+        'parent_id' => $parentId,
+        'display_name' => 'Pemberi Balasan',
+        'comment' => '<p>Balasan langsung tampil.</p>',
+        'cf-turnstile-response' => 'valid-turnstile-token',
+    ])->assertCreated()
+        ->assertJsonPath('message', 'Komentar berhasil diterbitkan.')
+        ->assertJsonPath('redirect_url', fn (string $url): bool => str_contains($url, 'comment_id=') && str_contains($url, '#comment-'));
+
+    $replyId = (int) DB::table('story_comments')
+        ->where('parent_id', $parentId)
+        ->where('user_id', 'new-reply-google-id')
+        ->value('id');
 
     Queue::assertPushed(SendStoryCommentReplyNotificationEmail::class, fn ($job) => $job->replyId === $replyId);
     Queue::assertPushed(SendStoryCommentReplyNotificationEmail::class, 1);
     expect(DB::table('story_comments')->where('id', $replyId)->value('status'))->toBe('approved');
-
-    app(CmsCommentController::class)->status($replyId, 'approved');
-
-    Queue::assertPushed(SendStoryCommentReplyNotificationEmail::class, 1);
 });
 
 it('sends a bilingual email to the parent comment owner', function () {
