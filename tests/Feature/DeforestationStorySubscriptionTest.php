@@ -7,6 +7,7 @@ use App\Mail\DeforestationStoryUpdated;
 use App\Mail\DeforestationSubscriptionConfirmed;
 use App\Mail\NewDeforestationStoryPublished;
 use App\Services\DeforestationStoryNotificationDispatcher;
+use App\Services\DeforestationStoryUpdateNotifier;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -128,7 +129,7 @@ it('deletes a subscription through its unsubscribe token', function () {
     ]);
 });
 
-it('queues one email when a new active story update arrives', function () {
+it('queues one job when a new active story update arrives', function () {
     Queue::fake();
     config(['services.deforestory.api_token' => 'test-api-token']);
 
@@ -158,11 +159,13 @@ it('queues one email when a new active story update arrives', function () {
         'published_at' => '2026-08-03',
     ]);
 
-    $response->assertAccepted()->assertJsonPath('queued_notifications', $expectedNotifications);
+    $response->assertAccepted()
+        ->assertJsonPath('queued_jobs', $expectedNotifications)
+        ->assertJsonPath('subscriber_count', $expectedNotifications);
     Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, $expectedNotifications);
 });
 
-it('also queues update emails for global subscribers', function () {
+it('also counts global subscribers for the queued update email', function () {
     Queue::fake();
     config(['services.deforestory.api_token' => 'test-api-token']);
 
@@ -190,12 +193,47 @@ it('also queues update emails for global subscribers', function () {
         'target_url_id' => 'https://example.test/id/global',
         'target_url_en' => 'https://example.test/en/global',
         'published_at' => '2026-08-04',
-    ])->assertAccepted()->assertJsonPath('queued_notifications', $expectedNotifications);
+    ])->assertAccepted()
+        ->assertJsonPath('queued_jobs', $expectedNotifications)
+        ->assertJsonPath('subscriber_count', $expectedNotifications);
 
     Queue::assertPushed(SendDeforestationStoryUpdateEmail::class, $expectedNotifications);
 });
 
-it('sends an article email from the queued payload without storing the article', function () {
+it('sends only one update email when an address has global and story subscriptions', function () {
+    Mail::fake();
+    $story = createSubscribedStory();
+    $email = 'duplicate-update@example.test';
+
+    foreach ([null, $story->id] as $storyId) {
+        DB::table('deforestation_story_subscriptions')->insert([
+            'deforestory_id' => $storyId,
+            'name' => 'Subscriber Ganda',
+            'email' => $email,
+            'locale' => 'id',
+            'status' => 'active',
+            'unsubscribe_token' => hash('sha256', uniqid('', true)),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+    }
+
+    app(DeforestationStoryUpdateNotifier::class)->sendToSubscribers($story->id, [
+        'title_id' => 'Pembaruan unik',
+        'title_en' => 'Unique update',
+        'description_id' => 'Deskripsi.',
+        'description_en' => 'Description.',
+        'target_url_id' => 'https://example.test/id/unique',
+        'target_url_en' => 'https://example.test/en/unique',
+        'published_at' => '2026-08-13',
+    ]);
+
+    expect(Mail::sent(DeforestationStoryUpdated::class)
+        ->filter(fn ($mail): bool => $mail->hasTo($email))
+        ->count())->toBe(1);
+});
+
+it('sends an article email directly without storing the article', function () {
     Mail::fake();
     $story = createSubscribedStory();
     $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
@@ -222,7 +260,7 @@ it('sends an article email from the queued payload without storing the article',
         'published_at' => '2026-08-06',
     ];
 
-    (new SendDeforestationStoryUpdateEmail($subscriptionId, $story->id, $article))->handle();
+    app(DeforestationStoryUpdateNotifier::class)->sendToSubscribers($story->id, $article);
 
     Mail::assertSent(DeforestationStoryUpdated::class, function (DeforestationStoryUpdated $mail): bool {
         return $mail->hasTo('payload@example.test')

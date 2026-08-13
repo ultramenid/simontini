@@ -2,12 +2,11 @@
 
 namespace App\Jobs;
 
-use App\Mail\DeforestationStoryUpdated;
+use App\Services\DeforestationStoryUpdateNotifier;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 use Throwable;
 
 class SendDeforestationStoryUpdateEmail implements ShouldQueue
@@ -18,64 +17,75 @@ class SendDeforestationStoryUpdateEmail implements ShouldQueue
 
     public int $backoff = 60;
 
+    public bool $failOnTimeout = true;
+
     public function __construct(
         public int $subscriptionId,
         public int $storyId,
+        public string $eventKey,
         public array $article,
-    ) {}
+    ) {
+        $this->onQueue('pasopati-updates');
+    }
 
-    public function handle(): void
+    public function handle(DeforestationStoryUpdateNotifier $notifier): void
     {
-        $subscription = DB::table('deforestation_story_subscriptions as subscription')
-            ->where('subscription.id', $this->subscriptionId)
-            ->where('subscription.status', 'active')
-            ->where(function ($query) {
-                $query->where('subscription.deforestory_id', $this->storyId)
-                    ->orWhereNull('subscription.deforestory_id');
-            })
-            ->select([
-                'subscription.name',
-                'subscription.email',
-                'subscription.locale',
-                'subscription.unsubscribe_token',
-            ])
-            ->first();
-        $story = DB::table('deforestory')->find($this->storyId);
+        $claimed = DB::table('deforestation_email_deliveries')->insertOrIgnore([
+            'subscription_id' => $this->subscriptionId,
+            'story_id' => $this->storyId,
+            'event_key' => $this->eventKey,
+            'status' => 'processing',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
 
-        if (! $subscription || ! $story) {
+        if ($claimed === 0) {
             return;
         }
 
-        Mail::to($subscription->email, $subscription->name)->send(
-            new DeforestationStoryUpdated([
-                'name' => $subscription->name,
-                'titleEn' => $this->article['title_en'] ?: $this->article['title_id'],
-                'titleId' => $this->article['title_id'] ?: $this->article['title_en'],
-                'storyTitleEn' => $story->title_en ?: $story->title_id,
-                'storyTitleId' => $story->title_id ?: $story->title_en,
-                'descriptionEn' => $this->article['description_en'] ?: $this->article['description_id'],
-                'descriptionId' => $this->article['description_id'] ?: $this->article['description_en'],
-                'imageUrl' => $this->article['image_url'] ?? null,
-                'imageUrlId' => $this->article['image_url_id'] ?? $this->article['image_url'] ?? null,
-                'imageUrlEn' => $this->article['image_url_en'] ?? $this->article['image_url'] ?? null,
-                'targetUrlId' => $this->article['target_url_id'],
-                'targetUrlEn' => $this->article['target_url_en'],
-                'unsubscribeUrl' => route('deforestation.unsubscribe', [
-                    'locale' => in_array($subscription->locale, ['id', 'en'], true)
-                        ? $subscription->locale
-                        : 'id',
-                    'token' => $subscription->unsubscribe_token,
-                ]),
-                'publishedAt' => $this->article['published_at'],
-            ]),
-        );
+        try {
+            $sent = $notifier->sendToSubscription(
+                $this->subscriptionId,
+                $this->storyId,
+                $this->article,
+            );
+
+            if (! $sent) {
+                DB::table('deforestation_email_deliveries')
+                    ->where('subscription_id', $this->subscriptionId)
+                    ->where('story_id', $this->storyId)
+                    ->where('event_key', $this->eventKey)
+                    ->delete();
+
+                return;
+            }
+
+            DB::table('deforestation_email_deliveries')
+                ->where('subscription_id', $this->subscriptionId)
+                ->where('story_id', $this->storyId)
+                ->where('event_key', $this->eventKey)
+                ->update([
+                    'status' => 'sent',
+                    'sent_at' => now(),
+                    'updated_at' => now(),
+                ]);
+        } catch (Throwable $exception) {
+            DB::table('deforestation_email_deliveries')
+                ->where('subscription_id', $this->subscriptionId)
+                ->where('story_id', $this->storyId)
+                ->where('event_key', $this->eventKey)
+                ->delete();
+
+            throw $exception;
+        }
     }
 
     public function failed(?Throwable $exception): void
     {
-        Log::error('Gagal mengirim email artikel Pasopati.', [
-            'subscription_id' => $this->subscriptionId,
+        Log::error('Gagal mengirim email pembaruan Deforestory.', [
             'story_id' => $this->storyId,
+            'subscription_id' => $this->subscriptionId,
+            'event_key' => $this->eventKey,
             'error' => $exception?->getMessage() ?? 'Unknown queue error',
         ]);
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\SendDeforestationStoryUpdateEmail;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,30 +38,44 @@ class DeforestationStoryUpdateApiController extends Controller
             ]);
         }
 
-        $queuedNotifications = 0;
-
         $subscriptions = DB::table('deforestation_story_subscriptions')
             ->where('status', 'active')
             ->where(function ($query) use ($story) {
                 $query->where('deforestory_id', $story->id)
                     ->orWhereNull('deforestory_id');
             })
-            ->get(['id']);
+            ->orderByRaw('CASE WHEN deforestory_id = ? THEN 0 ELSE 1 END', [$story->id])
+            ->get(['id', 'email'])
+            ->unique(fn (object $subscription): string => mb_strtolower(trim($subscription->email)))
+            ->values();
+        $subscriberCount = $subscriptions->count();
 
-        foreach ($subscriptions as $subscription) {
-            SendDeforestationStoryUpdateEmail::dispatch(
-                (int) $subscription->id,
-                (int) $story->id,
-                $validated,
-            );
-            $queuedNotifications++;
+        $fingerprint = hash('sha256', $uuid.'|'.json_encode($validated));
+        $deduplicationKey = 'deforestory:update-trigger:'.$fingerprint;
+        $queued = Cache::add($deduplicationKey, true, now()->addDay());
+        $queuedJobs = 0;
+
+        if ($queued) {
+            foreach ($subscriptions as $subscription) {
+                SendDeforestationStoryUpdateEmail::dispatch(
+                    (int) $subscription->id,
+                    (int) $story->id,
+                    $fingerprint,
+                    $validated,
+                );
+                $queuedJobs++;
+            }
         }
 
         return response()->json([
-            'message' => 'Trigger artikel Pasopati berhasil diterima.',
-            'action' => 'triggered',
+            'message' => $queued
+                ? 'Trigger artikel Pasopati berhasil diterima.'
+                : 'Trigger artikel Pasopati sudah pernah diterima.',
+            'action' => $queued ? 'queued' : 'duplicate',
             'deforestory_uuid' => $story->uuid,
-            'queued_notifications' => $queuedNotifications,
+            'queue' => 'pasopati-updates',
+            'queued_jobs' => $queuedJobs,
+            'subscriber_count' => $subscriberCount,
         ], Response::HTTP_ACCEPTED);
     }
 }

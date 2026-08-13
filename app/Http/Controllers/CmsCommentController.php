@@ -81,7 +81,7 @@ class CmsCommentController extends Controller
         abort_unless(in_array($status, ['approved', 'rejected', 'spam'], true), 404);
 
         $comment = DB::table('story_comments')
-            ->select(['id', 'parent_id', 'status', 'reply_notification_sent_at'])
+            ->select(['id', 'parent_id', 'status'])
             ->where('id', $id)
             ->first();
         abort_unless($comment, 404);
@@ -105,7 +105,6 @@ class CmsCommentController extends Controller
             $status === 'approved'
             && $statusChanged
             && $comment->parent_id !== null
-            && $comment->reply_notification_sent_at === null
         ) {
             SendStoryCommentReplyNotificationEmail::dispatchAfterResponse((int) $comment->id);
         }

@@ -5,6 +5,7 @@ use App\Jobs\SendStoryCommentReplyNotificationEmail;
 use App\Mail\StoryCommentReplyNotification;
 use App\Services\CommentHtmlSanitizer;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Queue;
@@ -62,6 +63,8 @@ function createCommentReplyFixture(bool $sameUser = false): array
         'updated_at' => now(),
     ]);
 
+    Cache::forget(SendStoryCommentReplyNotificationEmail::notificationCacheKey($replyId));
+
     return compact('storyId', 'parentId', 'replyId');
 }
 
@@ -97,7 +100,7 @@ it('sends a bilingual email to the parent comment owner', function () {
             && str_ends_with($mail->mailData['urlEn'], '#comments');
     });
 
-    expect(DB::table('story_comments')->where('id', $replyId)->value('reply_notification_sent_at'))->not->toBeNull();
+    expect(Cache::has(SendStoryCommentReplyNotificationEmail::notificationCacheKey($replyId)))->toBeTrue();
 });
 
 it('does not email users when they reply to their own comment', function () {
