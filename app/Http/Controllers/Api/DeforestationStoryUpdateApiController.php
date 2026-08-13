@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -31,6 +32,24 @@ class DeforestationStoryUpdateApiController extends Controller
         $story = DB::table('deforestory')
             ->where('uuid', $uuid)
             ->first();
+        $uuidReconciled = false;
+
+        if ($story === null) {
+            $story = $this->findStoryByPasopatiTarget($validated);
+
+            if ($story !== null
+                && ! DB::table('deforestory')->where('uuid', $uuid)->exists()) {
+                DB::table('deforestory')
+                    ->where('id', $story->id)
+                    ->update([
+                        'uuid' => $uuid,
+                        'updated_at' => now(),
+                    ]);
+
+                $story->uuid = $uuid;
+                $uuidReconciled = true;
+            }
+        }
 
         if ($story === null) {
             throw ValidationException::withMessages([
@@ -73,6 +92,7 @@ class DeforestationStoryUpdateApiController extends Controller
                 : 'Trigger artikel Pasopati sudah pernah diterima.',
             'action' => $queued ? 'queued' : 'duplicate',
             'deforestory_uuid' => $story->uuid,
+            'uuid_reconciled' => $uuidReconciled,
             'delivery' => 'after_response',
             'scheduled_emails' => $scheduledEmails,
             // Dipertahankan sementara agar consumer lama tidak rusak.
@@ -80,5 +100,52 @@ class DeforestationStoryUpdateApiController extends Controller
             'queued_jobs' => $scheduledEmails,
             'subscriber_count' => $subscriberCount,
         ], Response::HTTP_ACCEPTED);
+    }
+
+    private function findStoryByPasopatiTarget(array $validated): ?object
+    {
+        $pasopatiHost = parse_url(
+            (string) config('services.deforestory.webhook_url'),
+            PHP_URL_HOST,
+        );
+
+        if (blank($pasopatiHost)) {
+            return null;
+        }
+
+        foreach (['target_url_id', 'target_url_en'] as $field) {
+            $url = (string) ($validated[$field] ?? '');
+            $host = parse_url($url, PHP_URL_HOST);
+            $path = trim((string) parse_url($url, PHP_URL_PATH), '/');
+
+            if (! $host || ! hash_equals($pasopatiHost, $host)) {
+                continue;
+            }
+
+            $segments = explode('/', $path);
+
+            if (count($segments) < 4
+                || ! in_array($segments[0], ['id', 'en'], true)
+                || $segments[1] !== 'deforestory') {
+                continue;
+            }
+
+            $slug = Str::slug(rawurldecode($segments[2]));
+
+            if ($slug === '') {
+                continue;
+            }
+
+            $stories = DB::table('deforestory')
+                ->where('slug', $slug)
+                ->limit(2)
+                ->get();
+
+            if ($stories->count() === 1) {
+                return $stories->first();
+            }
+        }
+
+        return null;
     }
 }

@@ -76,6 +76,33 @@ it('rejects an unknown Deforestory UUID', function () {
         ->assertJsonValidationErrors('deforestory_uuid');
 });
 
+it('reconciles a legacy Pasopati card UUID through its exact story slug', function () {
+    Bus::fake();
+    config([
+        'cache.default' => 'array',
+        'services.deforestory.api_token' => 'story-update-token',
+        'services.deforestory.webhook_url' => 'https://pasopati.id/api',
+    ]);
+    Cache::flush();
+    $storySlug = 'legacy-card-'.Str::lower(Str::random(8));
+    $story = createStoryForUpdateApi(['slug' => $storySlug]);
+    $pasopatiUuid = (string) Str::uuid();
+    $payload = storyUpdatePayload([
+        'target_url_id' => "https://pasopati.id/id/deforestory/{$storySlug}/laporan-api-2",
+        'target_url_en' => "https://pasopati.id/en/deforestory/{$storySlug}/api-report-2",
+    ]);
+
+    $this->withToken('story-update-token')
+        ->postJson("/api/deforestory/sync/{$pasopatiUuid}", $payload)
+        ->assertAccepted()
+        ->assertJsonPath('deforestory_uuid', $pasopatiUuid)
+        ->assertJsonPath('uuid_reconciled', true);
+
+    expect(DB::table('deforestory')->where('id', $story->id)->value('uuid'))
+        ->toBe($pasopatiUuid);
+    Bus::assertDispatchedAfterResponse(SendDeforestationStoryUpdateEmail::class);
+});
+
 it('triggers subscriber emails without storing the Pasopati article', function () {
     Bus::fake();
     config(['cache.default' => 'array']);
