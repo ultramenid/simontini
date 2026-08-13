@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendStoryCommentReplyNotificationEmail;
 use App\Services\CommentHtmlSanitizer;
 use App\Services\TurnstileVerifier;
 use Illuminate\Http\JsonResponse;
@@ -25,7 +26,7 @@ class StoryCommentController extends Controller
             'locale' => $locale,
             'id' => $story->id,
             'slug' => $story->slug,
-        ]).'?comment=sent#comments';
+        ]);
 
         $user = $request->session()->get('comment_user');
         if (! is_array($user) || empty($user['id']) || empty($user['email'])) {
@@ -135,7 +136,7 @@ class StoryCommentController extends Controller
             }
         }
 
-        DB::table('story_comments')->insert([
+        $commentId = DB::table('story_comments')->insertGetId([
             'story_id' => $id,
             'parent_id' => $parentId,
             'comment_user_id' => $commentUserId,
@@ -145,19 +146,27 @@ class StoryCommentController extends Controller
             'user_email' => (string) $user['email'],
             'user_avatar' => $isAnonymous ? null : ($user['avatar'] ?? null),
             'comment' => $safeComment,
-            'status' => 'pending',
+            'status' => 'approved',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
-        $successMessage = $locale === 'en'
-            ? 'Your comment was submitted and is waiting for moderation.'
-            : 'Komentar berhasil dikirim dan sedang menunggu moderasi.';
-
-        if ($request->expectsJson()) {
-            return response()->json(['message' => $successMessage], 201);
+        if ($parentId !== null) {
+            SendStoryCommentReplyNotificationEmail::dispatchAfterResponse($commentId);
         }
 
-        return redirect()->to($commentsUrl)->with('comment_success', $successMessage);
+        $successMessage = $locale === 'en'
+            ? 'Your comment was published successfully.'
+            : 'Komentar berhasil diterbitkan.';
+        $commentUrl = $commentsUrl.'?comment=sent&comment_id='.$commentId.'#comment-'.$commentId;
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'message' => $successMessage,
+                'redirect_url' => $commentUrl,
+            ], 201);
+        }
+
+        return redirect()->to($commentUrl)->with('comment_success', $successMessage);
     }
 }

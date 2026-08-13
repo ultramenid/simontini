@@ -41,7 +41,10 @@ class DeforestationStorySubscriptionController extends Controller
 
         DB::table('deforestation_story_subscriptions')
             ->where('id', $subscription->id)
-            ->delete();
+            ->update([
+                'status' => 'inactive',
+                'updated_at' => now(),
+            ]);
 
         return view('frontends.deforestation-story-unsubscribed', [
             'locale' => $locale,

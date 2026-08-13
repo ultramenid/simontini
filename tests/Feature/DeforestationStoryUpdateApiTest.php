@@ -44,7 +44,8 @@ function storyUpdatePayload(array $overrides = []): array
         'title_en' => 'Latest Landscape Monitoring',
         'description_id' => 'Perubahan bentang alam masih berlangsung.',
         'description_en' => 'Landscape changes are still ongoing.',
-        'image_url' => 'https://example.org/images/forest-update.jpg',
+        'image_id' => 'https://example.org/images/forest-update-id.jpg',
+        'image_en' => 'https://example.org/images/forest-update-en.jpg',
         'target_url_id' => 'https://example.org/id/news/forest-update',
         'target_url_en' => 'https://example.org/en/news/forest-update',
         'published_at' => '2026-08-03',
@@ -228,16 +229,53 @@ it('does not send the same update event twice when its job is retried', function
         ->count())->toBe(1);
 });
 
-it('validates the optional update image as an HTTP URL', function () {
+it('validates the optional Indonesian update image as an HTTP URL', function () {
     config(['services.deforestory.api_token' => 'story-update-token']);
     $story = createStoryForUpdateApi();
 
     $this->withToken('story-update-token')
         ->postJson("/api/deforestory/sync/{$story->uuid}", storyUpdatePayload([
-            'image_url' => 'bukan-url-gambar',
+            'image_id' => 'bukan-url-gambar',
         ]))
         ->assertUnprocessable()
-        ->assertJsonValidationErrors('image_url');
+        ->assertJsonValidationErrors('image_id');
+});
+
+it('normalizes Pasopati image aliases before scheduling update emails', function () {
+    Bus::fake();
+    config([
+        'cache.default' => 'array',
+        'services.deforestory.api_token' => 'story-update-token',
+    ]);
+    Cache::flush();
+
+    $story = createStoryForUpdateApi();
+
+    DB::table('deforestation_story_subscriptions')->insert([
+        'deforestory_id' => $story->id,
+        'name' => 'Subscriber Image',
+        'email' => 'subscriber-image@example.test',
+        'locale' => 'id',
+        'status' => 'active',
+        'unsubscribe_token' => hash('sha256', Str::random(40)),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    $payload = storyUpdatePayload([
+        'image_id' => 'https://pasopati.id/storage/updates/image-id.jpg',
+        'image_en' => 'https://pasopati.id/storage/updates/image-en.jpg',
+    ]);
+
+    $this->withToken('story-update-token')
+        ->postJson('/api/deforestory/sync/'.$story->uuid, $payload)
+        ->assertAccepted();
+
+    Bus::assertDispatchedAfterResponse(
+        SendDeforestationStoryUpdateEmail::class,
+        fn (SendDeforestationStoryUpdateEmail $job): bool => $job->article['image_url_id'] === 'https://pasopati.id/storage/updates/image-id.jpg'
+            && $job->article['image_url_en'] === 'https://pasopati.id/storage/updates/image-en.jpg',
+    );
 });
 
 it('consumes Pasopati reports by Deforestory UUID on the detail page', function () {

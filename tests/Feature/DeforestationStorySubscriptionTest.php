@@ -104,7 +104,7 @@ it('sends a confirmation email after a subscription is activated', function () {
     });
 });
 
-it('deletes a subscription through its unsubscribe token', function () {
+it('keeps the subscription history and marks it inactive after unsubscribe', function () {
     $token = hash('sha256', uniqid('', true));
     $subscriptionId = DB::table('deforestation_story_subscriptions')->insertGetId([
         'deforestory_id' => null,
@@ -124,9 +124,10 @@ it('deletes a subscription through its unsubscribe token', function () {
         ->assertOk()
         ->assertSee('Langganan dihentikan');
 
-    $this->assertDatabaseMissing('deforestation_story_subscriptions', [
+    $this->assertDatabaseHas('deforestation_story_subscriptions', [
         'id' => $subscriptionId,
         'email' => 'unsubscribe@example.test',
+        'status' => 'inactive',
     ]);
 });
 

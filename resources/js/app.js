@@ -345,12 +345,37 @@ const keepSubmittedCommentInView = () => {
 
     const comments = document.getElementById('comments');
     if (!comments) return;
+    const commentId = url.searchParams.get('comment_id');
+    const submittedComment = commentId && /^\d+$/.test(commentId)
+        ? document.getElementById(`comment-${commentId}`)
+        : null;
 
     const scrollToComments = () => {
-        const top = comments.getBoundingClientRect().top + window.scrollY - 96;
-        window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
-        submittedCommentPositionApplied = true;
-        document.getElementById('comment-position-guard')?.remove();
+        if (submittedComment) {
+            const collapsedAncestors = [];
+            let threadChildren = submittedComment.parentElement?.closest('[data-comment-thread-children]');
+
+            while (threadChildren) {
+                collapsedAncestors.unshift(threadChildren);
+                threadChildren = threadChildren.parentElement?.closest('[data-comment-thread-children]');
+            }
+
+            collapsedAncestors.forEach((children) => {
+                if (children.offsetParent !== null) return;
+
+                children.closest('[data-comment-thread-item]')
+                    ?.querySelector(':scope > div [data-comment-replies-toggle]')
+                    ?.click();
+            });
+        }
+
+        const target = submittedComment || comments;
+        window.setTimeout(() => {
+            const top = target.getBoundingClientRect().top + window.scrollY - 96;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+            submittedCommentPositionApplied = true;
+            document.getElementById('comment-position-guard')?.remove();
+        }, submittedComment ? 250 : 0);
     };
 
     if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
@@ -423,6 +448,11 @@ document.addEventListener('submit', async (event) => {
         if (!response.ok) {
             const validationMessage = Object.values(payload.errors || {}).flat()[0];
             throw new Error(validationMessage || payload.message || 'Komentar belum dapat dikirim.');
+        }
+
+        if (payload.redirect_url) {
+            window.location.assign(payload.redirect_url);
+            return;
         }
 
         const editorWrapper = form.querySelector('[data-tiptap-wrapper]');
@@ -552,6 +582,25 @@ const updateCommentThreadLines = () => {
     });
 };
 
+const openIntendedCommentReply = () => {
+    const replyTo = new URLSearchParams(window.location.search).get('reply_to');
+
+    if (!replyTo || !/^\d+$/.test(replyTo)) return;
+
+    const panel = document.querySelector(`[data-comment-reply-panel="${replyTo}"]`);
+    const toggle = document.querySelector(`[data-comment-reply-toggle="${replyTo}"]`);
+
+    if (!panel || !toggle) return;
+
+    panel.classList.remove('hidden');
+    toggle.setAttribute('aria-expanded', 'true');
+    window.setTimeout(() => {
+        document.getElementById(`comment-${replyTo}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        panel.querySelector('[name="display_name"]')?.focus();
+        updateCommentThreadLines();
+    }, 100);
+};
+
 document.addEventListener('click', (event) => {
     if (event.target.closest('[data-comment-replies-toggle]')) {
         window.setTimeout(updateCommentThreadLines, 250);
@@ -561,9 +610,13 @@ document.addEventListener('click', (event) => {
 window.addEventListener('resize', updateCommentThreadLines);
 
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', updateCommentThreadLines);
+    document.addEventListener('DOMContentLoaded', () => {
+        updateCommentThreadLines();
+        openIntendedCommentReply();
+    });
 } else {
     updateCommentThreadLines();
+    openIntendedCommentReply();
 }
 
 document.addEventListener('livewire:navigated', updateCommentThreadLines);
@@ -1000,7 +1053,20 @@ document.addEventListener('click', (event) => {
     const close = event.target.closest('[data-comment-reply-close]');
     const trigger = toggle || close;
 
-    if (!trigger) return;
+    if (!trigger) {
+        document.querySelectorAll('[data-comment-reply-panel]:not(.hidden)').forEach((panel) => {
+            if (panel.contains(event.target)) return;
+
+            const commentId = panel.dataset.commentReplyPanel;
+            panel.classList.add('hidden');
+            document.querySelector(`[data-comment-reply-toggle="${commentId}"]`)
+                ?.setAttribute('aria-expanded', 'false');
+        });
+
+        window.setTimeout(updateCommentThreadLines, 250);
+
+        return;
+    }
 
     const commentId = trigger.dataset.commentReplyToggle || trigger.dataset.commentReplyClose;
     const panel = document.querySelector(`[data-comment-reply-panel="${commentId}"]`);

@@ -89,8 +89,8 @@ class DeforestationStoryController extends Controller
         $comments = DB::table('story_comments')
             ->where('story_id', $story->id)
             ->where('status', 'approved')
-            ->orderBy('created_at')
-            ->orderBy('id')
+            ->orderByDesc('created_at')
+            ->orderByDesc('id')
             ->get(['id', 'story_id', 'parent_id', 'user_name', 'user_avatar', 'comment', 'created_at'])
             ->map(function (object $comment) {
                 $comment->safe_comment = app(CommentHtmlSanitizer::class)->sanitize($comment->comment);

@@ -127,7 +127,7 @@
                         </div>
                     </div>
 
-                    <p class="mt-4 text-xs leading-5 text-[#7a6e60] sm:text-sm">{{ $locale === 'en' ? 'Comments are shown after moderation.' : 'Komentar akan tampil setelah disetujui admin.' }}</p>
+                    <p class="mt-4 text-xs leading-5 text-[#7a6e60] sm:text-sm">{{ $locale === 'en' ? 'Your comment will appear immediately after submission.' : 'Komentar akan langsung tampil setelah dikirim.' }}</p>
                 </div>
             </form>
 
