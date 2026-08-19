@@ -11,8 +11,9 @@
     x-data="{
         repliesOpen: false,
         replyVerified: false,
-        replyAnonymous: false,
-        replyDisplayName: @js(session('comment_display_name', $commentUser['name'] ?? ''))
+        replyDisplayName: @js(session('comment_display_name', '')),
+        replyEmail: @js(session('comment_email', '')),
+        replyAnonymous: false
     }"
     x-on:reply-turnstile-success.window="if ($event.detail.id === {{ $comment->id }}) replyVerified = true"
     x-on:reply-turnstile-expired.window="if ($event.detail.id === {{ $comment->id }}) replyVerified = false"
@@ -42,11 +43,7 @@
             @if ($canReply || $replies->isNotEmpty())
                 <div class="mt-4 flex flex-wrap items-center gap-5 text-[10px] font-black uppercase tracking-[0.14em] text-[#376A64]">
                 @if ($canReply)
-                    @if ($commentUser)
-                        <button type="button" data-comment-reply-toggle="{{ $comment->id }}" class="hover:text-[#bc4a3c]">{{ $locale === 'en' ? 'Reply' : 'Balas' }}</button>
-                    @else
-                        <button type="button" data-comment-reply-toggle="{{ $comment->id }}" aria-expanded="false" class="hover:text-[#bc4a3c]">{{ $locale === 'en' ? 'Reply' : 'Balas' }}</button>
-                    @endif
+                    <button type="button" data-comment-reply-toggle="{{ $comment->id }}" aria-expanded="false" class="hover:text-[#bc4a3c]">{{ $locale === 'en' ? 'Reply' : 'Balas' }}</button>
                 @endif
 
                 @if ($replies->isNotEmpty())
@@ -60,10 +57,8 @@
         </div>
     </div>
 
-    @if ($commentUser && $canReply)
+    @if ($canReply)
         @include('frontends.partials.comment-reply-form')
-    @elseif (! $commentUser && $canReply && $googleLoginReady)
-        @include('frontends.partials.comment-reply-login')
     @endif
 
     @if ($replies->isNotEmpty())

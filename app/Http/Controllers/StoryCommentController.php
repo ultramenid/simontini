@@ -28,25 +28,11 @@ class StoryCommentController extends Controller
             'slug' => $story->slug,
         ]);
 
-        $user = $request->session()->get('comment_user');
-        if (! is_array($user) || empty($user['id']) || empty($user['email'])) {
-            if ($request->expectsJson()) {
-                return response()->json([
-                    'message' => $locale === 'en'
-                        ? 'Please sign in with Google before commenting.'
-                        : 'Silakan masuk dengan Google sebelum berkomentar.',
-                ], 401);
-            }
-
-            return back()->with('comment_error', $locale === 'en'
-                ? 'Please sign in with Google before commenting.'
-                : 'Silakan masuk dengan Google sebelum berkomentar.');
-        }
-
         $validated = $request->validate([
             'comment' => ['required', 'string', 'max:5000'],
             'parent_id' => ['nullable', 'integer', 'min:1'],
-            'display_name' => ['required_unless:anonymous,1', 'nullable', 'string', 'min:2', 'max:60'],
+            'display_name' => ['required', 'string', 'min:2', 'max:60'],
+            'email' => ['required', 'email:rfc', 'max:255'],
             'anonymous' => ['nullable', 'boolean'],
             'cf-turnstile-response' => ['required', 'string', 'max:2048'],
         ]);
@@ -70,27 +56,41 @@ class StoryCommentController extends Controller
             ]);
         }
 
-        $isAnonymous = $request->boolean('anonymous');
-        $displayName = $isAnonymous ? 'Anonymous' : trim($validated['display_name']);
+        $displayName = trim($validated['display_name']);
+        $email = mb_strtolower(trim($validated['email']));
+        $emailIdentity = hash('sha256', $email);
+        $publicDisplayName = $request->boolean('anonymous') ? 'Anonymous' : $displayName;
 
-        if (! $isAnonymous) {
-            $request->session()->put('comment_display_name', $displayName);
-        }
+        $request->session()->put('comment_display_name', $displayName);
+        $request->session()->put('comment_email', $email);
+        $request->session()->put('comment_user', [
+            'provider' => 'email',
+            'id' => $emailIdentity,
+            'name' => $displayName,
+            'email' => $email,
+            'avatar' => null,
+        ]);
 
         $commentUser = DB::table('comment_users')
-            ->where('provider', $user['provider'] ?? 'google')
-            ->where('provider_user_id', (string) $user['id'])
+            ->where('provider', 'email')
+            ->where('provider_user_id', $emailIdentity)
             ->first();
 
         if ($commentUser) {
             $commentUserId = $commentUser->id;
+            DB::table('comment_users')->where('id', $commentUserId)->update([
+                'name' => $displayName,
+                'email' => $email,
+                'last_login_at' => now(),
+                'updated_at' => now(),
+            ]);
         } else {
             $commentUserId = DB::table('comment_users')->insertGetId([
-                'provider' => $user['provider'] ?? 'google',
-                'provider_user_id' => (string) $user['id'],
-                'name' => (string) ($user['name'] ?? 'Pengguna Google'),
-                'email' => (string) $user['email'],
-                'avatar' => $user['avatar'] ?? null,
+                'provider' => 'email',
+                'provider_user_id' => $emailIdentity,
+                'name' => $displayName,
+                'email' => $email,
+                'avatar' => null,
                 'last_login_at' => now(),
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -140,11 +140,11 @@ class StoryCommentController extends Controller
             'story_id' => $id,
             'parent_id' => $parentId,
             'comment_user_id' => $commentUserId,
-            'user_provider' => $user['provider'] ?? 'google',
-            'user_id' => (string) $user['id'],
-            'user_name' => $displayName,
-            'user_email' => (string) $user['email'],
-            'user_avatar' => $isAnonymous ? null : ($user['avatar'] ?? null),
+            'user_provider' => 'email',
+            'user_id' => $emailIdentity,
+            'user_name' => $publicDisplayName,
+            'user_email' => $email,
+            'user_avatar' => null,
             'comment' => $safeComment,
             'status' => 'approved',
             'created_at' => now(),
@@ -158,15 +158,14 @@ class StoryCommentController extends Controller
         $successMessage = $locale === 'en'
             ? 'Your comment was published successfully.'
             : 'Komentar berhasil diterbitkan.';
-        $commentUrl = $commentsUrl.'?comment=sent&comment_id='.$commentId.'#comment-'.$commentId;
-
         if ($request->expectsJson()) {
             return response()->json([
                 'message' => $successMessage,
-                'redirect_url' => $commentUrl,
+                'comment_id' => $commentId,
+                'parent_id' => $parentId,
             ], 201);
         }
 
-        return redirect()->to($commentUrl)->with('comment_success', $successMessage);
+        return redirect()->to($commentsUrl)->with('comment_success', $successMessage);
     }
 }

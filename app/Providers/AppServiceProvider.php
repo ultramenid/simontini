@@ -23,9 +23,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         RateLimiter::for('comments', function (Request $request) {
-            $commentUser = $request->session()->get('comment_user');
-            $identity = is_array($commentUser) && ! empty($commentUser['id'])
-                ? 'google:'.$commentUser['id']
+            $email = mb_strtolower(trim((string) $request->input('email', '')));
+            $identity = filter_var($email, FILTER_VALIDATE_EMAIL)
+                ? 'email:'.hash('sha256', $email)
                 : 'ip:'.$request->ip();
 
             $response = fn (Request $request, array $headers) => back()

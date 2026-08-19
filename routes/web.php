@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\CmsCommentController;
 use App\Http\Controllers\CmsSubscriberController;
-use App\Http\Controllers\CommentAuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeforestationStoryController;
 use App\Http\Controllers\DeforestationStorySubscriptionController;
@@ -21,13 +20,6 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
 Route::redirect('/', '/id/status-deforestasi-di-indonesia-2025');
-
-Route::get('/comment/login/google', [CommentAuthController::class, 'redirect'])
-    ->name('comments.login.google');
-Route::get('/comment/login/google/callback', [CommentAuthController::class, 'callback'])
-    ->name('comments.login.google.callback');
-Route::post('/comment/logout', [CommentAuthController::class, 'logout'])
-    ->name('comments.logout');
 
 Route::get('/sitemap.xml', function () {
 
