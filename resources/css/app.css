@@ -362,7 +362,7 @@
   }
 
   .quick-comment-editor[data-expanded='true'] .tiptap-content {
-    min-height: 8rem;
+    min-height: 7.5rem;
   }
 
   .comment-tiptap-editor .tiptap-content.ProseMirror-focused {
@@ -379,9 +379,20 @@
 
   .comment-reply-editor .tiptap-content,
   .comment-reply-editor[data-expanded='true'] .tiptap-content {
-    min-height: 7rem;
-    padding: 1rem;
-    font-size: .875rem;
+    min-height: 8.5rem;
+    padding: 1.125rem 1.25rem;
+    font-size: 1.0625rem;
+  }
+
+  @media (max-width: 639px) {
+    .quick-comment-editor[data-expanded='true'] .tiptap-content,
+    .comment-reply-editor .tiptap-content,
+    .comment-reply-editor[data-expanded='true'] .tiptap-content {
+      min-height: 7.25rem;
+      padding: 1rem;
+      font-size: 1rem;
+      line-height: 1.55;
+    }
   }
 
   .tiptap-button-active {

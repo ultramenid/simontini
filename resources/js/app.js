@@ -33,6 +33,28 @@ import 'tinymce/skins/ui/oxide/skin.min.css';
 
 const lowlight = createLowlight(common);
 let submittedCommentPositionApplied = false;
+let pendingSubmittedComment = null;
+
+const showPendingSubmittedComment = () => {
+    if (!pendingSubmittedComment) return;
+
+    const { commentId, parentId } = pendingSubmittedComment;
+    const target = document.getElementById(`comment-${commentId}`);
+    if (!target) return;
+
+    // Clear the pending state before scheduling the scroll. Livewire can run
+    // several DOM hooks during one response; this prevents duplicate scrolls.
+    pendingSubmittedComment = null;
+
+    if (parentId && target.getClientRects().length === 0) {
+        const parent = document.getElementById(`comment-${parentId}`);
+        parent?.querySelector('[data-comment-replies-toggle]')?.click();
+    }
+
+    window.setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, parentId ? 250 : 0);
+};
 
 const StoryFigcaption = Node.create({
     name: 'storyFigcaption',
@@ -341,41 +363,26 @@ const keepSubmittedCommentInView = () => {
     if (submittedCommentPositionApplied) return;
 
     const url = new URL(window.location.href);
-    if (url.searchParams.get('comment') !== 'sent' && window.location.hash !== '#comments') return;
+    const hasLegacyCommentMarker = url.searchParams.get('comment') === 'sent' || url.searchParams.has('comment_id');
+
+    if (hasLegacyCommentMarker) {
+        url.searchParams.delete('comment');
+        url.searchParams.delete('comment_id');
+        if (/^#comment-\d+$/.test(url.hash)) url.hash = '';
+        window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`);
+    }
+
+    if (window.location.hash !== '#comments') return;
 
     const comments = document.getElementById('comments');
     if (!comments) return;
-    const commentId = url.searchParams.get('comment_id');
-    const submittedComment = commentId && /^\d+$/.test(commentId)
-        ? document.getElementById(`comment-${commentId}`)
-        : null;
 
     const scrollToComments = () => {
-        if (submittedComment) {
-            const collapsedAncestors = [];
-            let threadChildren = submittedComment.parentElement?.closest('[data-comment-thread-children]');
-
-            while (threadChildren) {
-                collapsedAncestors.unshift(threadChildren);
-                threadChildren = threadChildren.parentElement?.closest('[data-comment-thread-children]');
-            }
-
-            collapsedAncestors.forEach((children) => {
-                if (children.offsetParent !== null) return;
-
-                children.closest('[data-comment-thread-item]')
-                    ?.querySelector(':scope > div [data-comment-replies-toggle]')
-                    ?.click();
-            });
-        }
-
-        const target = submittedComment || comments;
         window.setTimeout(() => {
-            const top = target.getBoundingClientRect().top + window.scrollY - 96;
+            const top = comments.getBoundingClientRect().top + window.scrollY - 96;
             window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
             submittedCommentPositionApplied = true;
-            document.getElementById('comment-position-guard')?.remove();
-        }, submittedComment ? 250 : 0);
+        }, 0);
     };
 
     if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
@@ -450,18 +457,18 @@ document.addEventListener('submit', async (event) => {
             throw new Error(validationMessage || payload.message || 'Komentar belum dapat dikirim.');
         }
 
-        if (payload.redirect_url) {
-            window.location.assign(payload.redirect_url);
-            return;
-        }
-
         const editorWrapper = form.querySelector('[data-tiptap-wrapper]');
         editorWrapper?.tiptapEditor?.commands.clearContent();
 
         if (feedback) {
-            feedback.textContent = payload.message;
-            feedback.className = 'mt-6 border-l-4 border-[#376A64] bg-[#e5efed] px-5 py-4 text-sm font-semibold text-[#244b47]';
+            feedback.textContent = '';
+            feedback.className = 'hidden';
         }
+
+        pendingSubmittedComment = {
+            commentId: Number(payload.comment_id),
+            parentId: payload.parent_id ? Number(payload.parent_id) : null,
+        };
 
         if (parentId) {
             form.closest('[data-comment-reply-panel]')?.classList.add('hidden');
@@ -473,6 +480,9 @@ document.addEventListener('submit', async (event) => {
             const quick = form.matches('[data-quick-comment-form]');
             if (quick) form.reset();
             window.dispatchEvent(new CustomEvent('comment-submitted', { detail: { quick } }));
+            window.dispatchEvent(new CustomEvent(quick
+                ? 'quick-comment-turnstile-expired'
+                : 'comment-turnstile-expired'));
         }
 
         const turnstileWidget = form.querySelector('.cf-turnstile');
@@ -483,6 +493,8 @@ document.addEventListener('submit', async (event) => {
                 // A fresh challenge will be rendered on the next interaction.
             }
         }
+
+        window.Livewire?.dispatch('comment-created', { commentId: Number(payload.comment_id) });
     } catch (error) {
         if (feedback) {
             feedback.textContent = error instanceof Error ? error.message : 'Komentar belum dapat dikirim.';
@@ -1030,14 +1042,32 @@ if (document.readyState === 'loading') {
 document.addEventListener('livewire:init', initializeTiptapEditors);
 document.addEventListener('livewire:init', initializeTinyMceEditors);
 document.addEventListener('livewire:init', () => {
-    window.Livewire?.hook('morph.updated', () => {
+    // `morphed` runs once after the whole component is updated. Using
+    // `morph.updated` here runs once for every changed DOM element and can
+    // repeatedly initialize editors/Turnstile after one comment submission.
+    window.Livewire?.hook('morphed', () => {
         window.setTimeout(() => {
             initializeTiptapEditors();
             initializeTinyMceEditors();
             syncContentEditorsFromInputs();
+            window.initializeCommentTurnstiles?.();
+            showPendingSubmittedComment();
         }, 0);
     });
     window.Livewire?.hook('morph.removing', ({ el }) => {
+        const turnstileElements = [];
+        if (el.matches?.('[data-turnstile-widget-id]')) turnstileElements.push(el);
+        el.querySelectorAll?.('[data-turnstile-widget-id]').forEach((element) => turnstileElements.push(element));
+        turnstileElements.forEach((element) => {
+            try {
+                window.turnstile?.remove(element.dataset.turnstileWidgetId);
+            } catch (error) {
+                // The widget may already have been removed by Cloudflare.
+            }
+        });
+        el.querySelectorAll?.('[data-tiptap-wrapper]').forEach((wrapper) => {
+            wrapper.tiptapEditor?.destroy();
+        });
         el.querySelectorAll?.('[data-tinymce-wrapper]').forEach((wrapper) => {
             wrapper.tinyMceEditor?.remove();
         });

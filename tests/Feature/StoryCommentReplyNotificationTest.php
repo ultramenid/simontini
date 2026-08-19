@@ -77,34 +77,120 @@ it('publishes a reply immediately and queues its notification after submission',
     $turnstile->shouldReceive('verify')->once()->andReturnTrue();
     app()->instance(TurnstileVerifier::class, $turnstile);
 
-    $this->withSession([
-        'comment_user' => [
-            'provider' => 'google',
-            'id' => 'new-reply-google-id',
-            'name' => 'Pemberi Balasan',
-            'email' => 'reply@example.test',
-            'avatar' => null,
-        ],
-    ])->postJson(route('deforestation.comments.store', [
+    $this->postJson(route('deforestation.comments.store', [
         'locale' => 'id',
         'id' => $storyId,
     ]), [
         'parent_id' => $parentId,
         'display_name' => 'Pemberi Balasan',
+        'email' => 'reply@example.test',
         'comment' => '<p>Balasan langsung tampil.</p>',
         'cf-turnstile-response' => 'valid-turnstile-token',
     ])->assertCreated()
         ->assertJsonPath('message', 'Komentar berhasil diterbitkan.')
-        ->assertJsonPath('redirect_url', fn (string $url): bool => str_contains($url, 'comment_id=') && str_contains($url, '#comment-'));
+        ->assertJsonPath('comment_id', fn (int $id): bool => $id > 0)
+        ->assertJsonPath('parent_id', $parentId)
+        ->assertJsonMissingPath('redirect_url');
 
     $replyId = (int) DB::table('story_comments')
         ->where('parent_id', $parentId)
-        ->where('user_id', 'new-reply-google-id')
+        ->where('user_email', 'reply@example.test')
         ->value('id');
 
     Queue::assertPushed(SendStoryCommentReplyNotificationEmail::class, fn ($job) => $job->replyId === $replyId);
     Queue::assertPushed(SendStoryCommentReplyNotificationEmail::class, 1);
     expect(DB::table('story_comments')->where('id', $replyId)->value('status'))->toBe('approved');
+});
+
+it('requires an email and stores a guest comment without exposing the email publicly', function () {
+    ['storyId' => $storyId] = createCommentReplyFixture();
+
+    $turnstile = Mockery::mock(TurnstileVerifier::class);
+    $turnstile->shouldReceive('verify')->once()->andReturnTrue();
+    app()->instance(TurnstileVerifier::class, $turnstile);
+
+    $route = route('deforestation.comments.store', [
+        'locale' => 'id',
+        'id' => $storyId,
+    ]);
+
+    $this->postJson($route, [
+        'display_name' => 'Komentator Tamu',
+        'comment' => '<p>Komentar tanpa email.</p>',
+        'cf-turnstile-response' => 'valid-turnstile-token',
+    ])->assertUnprocessable()->assertJsonValidationErrors('email');
+
+    $this->postJson($route, [
+        'display_name' => 'Komentator Tamu',
+        'email' => 'Guest.Comment@Example.test',
+        'comment' => '<p>Komentar dengan email wajib.</p>',
+        'cf-turnstile-response' => 'valid-turnstile-token',
+    ])->assertCreated();
+
+    $this->assertDatabaseHas('story_comments', [
+        'story_id' => $storyId,
+        'user_provider' => 'email',
+        'user_id' => hash('sha256', 'guest.comment@example.test'),
+        'user_name' => 'Komentator Tamu',
+        'user_email' => 'guest.comment@example.test',
+        'status' => 'approved',
+    ]);
+    $this->assertDatabaseHas('comment_users', [
+        'provider' => 'email',
+        'provider_user_id' => hash('sha256', 'guest.comment@example.test'),
+        'email' => 'guest.comment@example.test',
+    ]);
+
+    $this->flushSession();
+    $story = DB::table('deforestory')->where('id', $storyId)->first();
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $storyId,
+        'slug' => $story->slug,
+    ]))->assertOk()
+        ->assertSee('Komentar dengan email wajib.')
+        ->assertDontSee('guest.comment@example.test');
+});
+
+it('stores the required email while publishing the selected identity as anonymous', function () {
+    ['storyId' => $storyId] = createCommentReplyFixture();
+
+    $turnstile = Mockery::mock(TurnstileVerifier::class);
+    $turnstile->shouldReceive('verify')->once()->andReturnTrue();
+    app()->instance(TurnstileVerifier::class, $turnstile);
+
+    $this->postJson(route('deforestation.comments.store', [
+        'locale' => 'id',
+        'id' => $storyId,
+    ]), [
+        'display_name' => 'Nama Asli',
+        'email' => 'Nama.Asli@Example.test',
+        'anonymous' => '1',
+        'comment' => '<p>Komentar privat.</p>',
+        'cf-turnstile-response' => 'valid-turnstile-token',
+    ])->assertCreated();
+
+    $this->assertDatabaseHas('story_comments', [
+        'story_id' => $storyId,
+        'user_name' => 'Anonymous',
+        'user_email' => 'nama.asli@example.test',
+        'status' => 'approved',
+    ]);
+    $this->assertDatabaseHas('comment_users', [
+        'name' => 'Nama Asli',
+        'email' => 'nama.asli@example.test',
+    ]);
+
+    $this->flushSession();
+    $story = DB::table('deforestory')->where('id', $storyId)->first();
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $storyId,
+        'slug' => $story->slug,
+    ]))->assertOk()
+        ->assertSee('Anonim')
+        ->assertDontSee('Nama Asli')
+        ->assertDontSee('nama.asli@example.test');
 });
 
 it('sends a bilingual email to the parent comment owner', function () {

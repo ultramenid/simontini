@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\CommentHtmlSanitizer;
-use App\Services\PasopatiReportClient;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -80,34 +78,12 @@ class DeforestationStoryController extends Controller
         }
 
         $story = $this->localizeStory($story, $locale);
-        $updates = app(PasopatiReportClient::class)->forStory(
-            (string) $story->uuid,
-            $locale,
-            $isPreview,
-        ) ?? $this->localUpdates((int) $story->id, $locale, $isPreview);
-
-        $comments = DB::table('story_comments')
-            ->where('story_id', $story->id)
-            ->where('status', 'approved')
-            ->orderByDesc('created_at')
-            ->orderByDesc('id')
-            ->get(['id', 'story_id', 'parent_id', 'user_name', 'user_avatar', 'comment', 'created_at'])
-            ->map(function (object $comment) {
-                $comment->safe_comment = app(CommentHtmlSanitizer::class)->sanitize($comment->comment);
-
-                return $comment;
-            });
-        $commentsAvailable = true;
-
         return view('frontends.deforestation-story-show', [
             'title' => $story->localized_title.' - Simontini',
             'description' => $story->localized_description,
             'nav' => 'deforestation-story',
             'locale' => $locale,
             'story' => $story,
-            'updates' => $updates,
-            'comments' => $comments,
-            'commentsAvailable' => $commentsAvailable,
             'isPreview' => $isPreview,
         ]);
     }
@@ -115,25 +91,6 @@ class DeforestationStoryController extends Controller
     private function localizeStories(Collection $stories, string $locale): void
     {
         $stories->transform(fn ($story) => $this->localizeStory($story, $locale));
-    }
-
-    private function localUpdates(int $storyId, string $locale, bool $isPreview): Collection
-    {
-        $query = DB::table('deforestation_story_updates')
-            ->where('deforestory_id', $storyId)
-            ->orderByDesc('published_at')
-            ->orderByDesc('id');
-
-        if (! $isPreview) {
-            $query->where('status', 'on');
-        }
-
-        return $query->get()->map(function ($update) use ($locale) {
-            $update->localized_title = $locale === 'en' ? $update->title_en : $update->title_id;
-            $update->localized_description = $locale === 'en' ? $update->description_en : $update->description_id;
-
-            return $update;
-        });
     }
 
     private function localizeStory(object $story, string $locale): object

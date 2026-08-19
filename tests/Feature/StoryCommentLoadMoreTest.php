@@ -4,8 +4,46 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
+use Livewire\Livewire;
+use App\Livewire\DeforestationStoryInteractions;
 
 uses(DatabaseTransactions::class);
+
+it('refreshes comments without requesting Pasopati reports again', function () {
+    $story = DB::table('deforestory')->whereNotNull('uuid')->first(['id', 'uuid']);
+
+    expect($story)->not->toBeNull();
+
+    config(['services.deforestory.webhook_url' => 'https://pasopati.test/api']);
+    Http::fake([
+        "https://pasopati.test/api/deforestory/by-uuid/laporan/{$story->uuid}" => Http::response([
+            [
+                'external_id' => 'report-once',
+                'title_id' => 'Pembaruan Sekali Muat',
+                'title_en' => 'Loaded Once Update',
+                'description_id' => 'Deskripsi pembaruan.',
+                'description_en' => 'Update description.',
+                'image_url' => 'https://pasopati.test/images/update.jpg',
+                'target_url_id' => 'https://pasopati.test/id/update',
+                'target_url_en' => 'https://pasopati.test/en/update',
+                'published_at' => '2026-08-19',
+                'status' => 'on',
+            ],
+        ]),
+    ]);
+
+    Livewire::test(DeforestationStoryInteractions::class, [
+        'storyId' => (int) $story->id,
+        'storyUuid' => $story->uuid,
+        'locale' => 'id',
+        'isPreview' => false,
+    ])
+        ->assertSee('Pembaruan Sekali Muat')
+        ->dispatch('comment-created', commentId: 999)
+        ->assertSee('Pembaruan Sekali Muat');
+
+    Http::assertSentCount(1);
+});
 
 it('shows five main comments first and loads five more per click through the load more control', function () {
     Http::fake();
@@ -45,16 +83,7 @@ it('shows five main comments first and loads five more per click through the loa
         ]);
     }
 
-    $response = $this
-        ->withSession([
-            'comment_user' => [
-                'provider' => 'google',
-                'id' => 'floating-comment-user',
-                'name' => 'Pengguna Komentar',
-                'email' => 'floating-comment@example.test',
-            ],
-        ])
-        ->get(route('deforestation.show', [
+    $response = $this->get(route('deforestation.show', [
             'locale' => 'id',
             'id' => $storyId,
             'slug' => DB::table('deforestory')->where('id', $storyId)->value('slug'),
@@ -68,14 +97,17 @@ it('shows five main comments first and loads five more per click through the loa
         ->assertSee('data-main-comment-index="14"', false)
         ->assertSee('Lihat komentar lainnya')
         ->assertSee('data-floating-comment-composer', false)
-        ->assertSee('data-quick-comment-form', false)
-        ->assertSee('quick-comment-editor', false)
-        ->assertSee('quickCommentTurnstileSuccess', false)
+        ->assertSee('Tulis komentar')
         ->assertSee('Apa pendapat Anda?')
-        ->assertSee('Pengguna Komentar')
-        ->assertSee('Terverifikasi dengan Google')
+        ->assertSee('Nama *')
+        ->assertSee('Email *')
+        ->assertSee('Wajib diisi dan tidak ditampilkan ke publik.')
         ->assertSee('x-show="!turnstilePassed"', false)
-        ->assertSee('Tampilkan sebagai Anonymous')
+        ->assertSee('data-comment-turnstile', false)
+        ->assertSee('render=explicit&amp;onload=initializeCommentTurnstiles', false)
+        ->assertSee('x-on:comment-submitted.window="if (!$event.detail.quick) { turnstilePassed = false; expanded = false }"', false)
+        ->assertDontSee('Lanjutkan dengan Google')
+        ->assertDontSee('Terverifikasi dengan Google')
         ->assertSeeInOrder([
             'Komentar utama 15',
             'Komentar utama 14',
@@ -83,13 +115,8 @@ it('shows five main comments first and loads five more per click through the loa
         ]);
 });
 
-it('shows the Google login panel below a comment before a guest replies', function () {
+it('shows name and required email fields when a guest replies', function () {
     Http::fake();
-    config([
-        'services.google.client_id' => 'google-client-id',
-        'services.google.client_secret' => 'google-client-secret',
-    ]);
-
     $storyId = DB::table('deforestory')->insertGetId([
         'external_id' => null,
         'uuid' => (string) Str::uuid(),
@@ -133,9 +160,11 @@ it('shows the Google login panel below a comment before a guest replies', functi
         ->assertOk()
         ->assertSee('data-comment-reply-toggle="'.$commentId.'"', false)
         ->assertSee('data-comment-reply-panel="'.$commentId.'"', false)
-        ->assertSee('Masuk untuk membalas komentar')
-        ->assertSee('Lanjutkan dengan Google')
-        ->assertSee('reply_to%3D'.$commentId, false);
+        ->assertSee('name="display_name"', false)
+        ->assertSee('data-quick-comment-form', false)
+        ->assertSee('name="email"', false)
+        ->assertSee('Wajib diisi. Email tidak akan dipublikasikan.')
+        ->assertDontSee('Lanjutkan dengan Google');
 });
 
 it('lets the CMS hide and restore a published comment without deleting it', function () {
