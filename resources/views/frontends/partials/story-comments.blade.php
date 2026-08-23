@@ -2,7 +2,7 @@
     <div class="flex items-end justify-between gap-5">
         <div>
             <p class="text-[11px] font-black uppercase tracking-[0.24em] text-[#376A64]">{{ $locale === 'en' ? 'Discussion' : 'Diskusi' }}</p>
-            <h2 id="comments-title" class="mt-3 text-4xl font-black tracking-[-0.045em] sm:text-5xl">{{ $locale === 'en' ? 'Comments' : 'Komentar' }}</h2>
+            <h2 id="comments-title" class="mt-3 text-[28px] font-bold tracking-[-0.045em] sm:text-[32px]">{{ $locale === 'en' ? 'Comments' : 'Komentar' }}</h2>
         </div>
         <p class="pb-1 text-sm text-[#7a6e60] sm:text-base">{{ $comments->count() }} {{ $locale === 'en' ? 'comments' : 'komentar' }}</p>
     </div>
