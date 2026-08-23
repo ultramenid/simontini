@@ -7,6 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class DeforestationStoryController extends Controller
 {
@@ -71,13 +72,25 @@ class DeforestationStoryController extends Controller
         abort_if($story === null, 404);
 
         if (! hash_equals((string) $story->slug, $slug)) {
-            return redirect()->route(
-                $isPreview ? 'deforestation.preview.show' : 'deforestation.show',
-                ['locale' => $locale, 'id' => $story->id, 'slug' => $story->slug],
-            );
+            $routeParameters = ['locale' => $locale, 'id' => $story->id, 'slug' => $story->slug];
+
+            if ($isPreview) {
+                $expiresAt = request()->integer('expires')
+                    ? Carbon::createFromTimestamp(request()->integer('expires'))
+                    : now()->addDays(7);
+
+                return redirect()->to(URL::temporarySignedRoute(
+                    'deforestation.preview.show',
+                    $expiresAt,
+                    $routeParameters,
+                ));
+            }
+
+            return redirect()->route('deforestation.show', $routeParameters);
         }
 
         $story = $this->localizeStory($story, $locale);
+
         return view('frontends.deforestation-story-show', [
             'title' => $story->localized_title.' - Simontini',
             'description' => $story->localized_description,

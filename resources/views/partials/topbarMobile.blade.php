@@ -10,10 +10,24 @@
                 @php
                     $mobileLanguageParameters = request()->route()?->parameters() ?? [];
                     $mobileLanguageKey = array_key_exists('locale', $mobileLanguageParameters) ? 'locale' : 'lang';
+                    $mobileLanguageRouteName = Route::currentRouteName();
+                    $mobileLanguageUrl = function (string $language) use ($mobileLanguageRouteName, $mobileLanguageParameters, $mobileLanguageKey): string {
+                        $parameters = [...$mobileLanguageParameters, $mobileLanguageKey => $language];
+
+                        if (str_starts_with((string) $mobileLanguageRouteName, 'deforestation.preview.')) {
+                            $expiresAt = request()->integer('expires')
+                                ? \Carbon\Carbon::createFromTimestamp(request()->integer('expires'))
+                                : now()->addDays(7);
+
+                            return URL::temporarySignedRoute($mobileLanguageRouteName, $expiresAt, $parameters);
+                        }
+
+                        return route($mobileLanguageRouteName, $parameters);
+                    };
                 @endphp
-                <a href="{{ route(Route::currentRouteName(), [...$mobileLanguageParameters, $mobileLanguageKey => 'en']) }}"  class="cursor-pointer  @if(App::getLocale() == 'en') text-white font-bold @else text-gray-700 @endif ">EN</a>
+                <a href="{{ $mobileLanguageUrl('en') }}"  class="cursor-pointer  @if(App::getLocale() == 'en') text-white font-bold @else text-gray-700 @endif ">EN</a>
                 <div class="border-l border-white"></div>
-                <a href="{{ route(Route::currentRouteName(), [...$mobileLanguageParameters, $mobileLanguageKey => 'id']) }}"  class="cursor-pointer @if(App::getLocale() == 'id') text-white font-bold @else text-gray-700 @endif ">ID</a>
+                <a href="{{ $mobileLanguageUrl('id') }}"  class="cursor-pointer @if(App::getLocale() == 'id') text-white font-bold @else text-gray-700 @endif ">ID</a>
             </div>
         </div>
 

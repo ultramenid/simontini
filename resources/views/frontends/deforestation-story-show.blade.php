@@ -7,10 +7,17 @@
             trim(preg_replace('/\s+/', ' ', strip_tags($story->localized_description))),
             160
         );
-        $metaUrl = route(
-            $isPreview ? 'deforestation.preview.show' : 'deforestation.show',
-            ['locale' => $locale, 'id' => $story->id, 'slug' => $story->slug]
-        );
+        $metaRoute = $isPreview ? 'deforestation.preview.show' : 'deforestation.show';
+        $metaParameters = ['locale' => $locale, 'id' => $story->id, 'slug' => $story->slug];
+        $metaUrl = $isPreview
+            ? URL::temporarySignedRoute(
+                $metaRoute,
+                request()->integer('expires')
+                    ? \Carbon\Carbon::createFromTimestamp(request()->integer('expires'))
+                    : now()->addDays(7),
+                $metaParameters,
+            )
+            : route($metaRoute, $metaParameters);
         $metaImage = asset('assets/meta-image-2025.jpg');
 
         if ($story->localized_image) {
@@ -66,7 +73,7 @@
             @endif
 
             <div class="mx-auto max-w-[720px] px-5 pt-10 sm:px-8 sm:pt-14">
-                <h1 class="text-3xl font-black uppercase leading-[1.08] tracking-[-0.045em] sm:text-4xl">{{ $story->localized_title }}</h1>
+                <h1 class="text-3xl font-bold leading-[1.08] tracking-[-0.045em] sm:text-4xl">{{ $story->localized_title }}</h1>
 
                 <div class="article-copy public-story-content mt-9 text-[15px] leading-[1.85] text-gray-800 sm:text-[17px]">
                     {!! $story->localized_content !!}

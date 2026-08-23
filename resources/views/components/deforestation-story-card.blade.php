@@ -2,10 +2,20 @@
 
 @php
     $detailRoute = $isPreview ? 'deforestation.preview.show' : 'deforestation.show';
+    $detailParameters = ['locale' => $locale, 'id' => $story->id, 'slug' => $story->slug];
+    $detailUrl = $isPreview
+        ? URL::temporarySignedRoute(
+            $detailRoute,
+            request()->integer('expires')
+                ? \Carbon\Carbon::createFromTimestamp(request()->integer('expires'))
+                : now()->addDays(7),
+            $detailParameters,
+        )
+        : route($detailRoute, $detailParameters);
 @endphp
 
 <article class="story-card relative">
-    <a href="{{ route($detailRoute, ['locale' => $locale, 'id' => $story->id, 'slug' => $story->slug]) }}" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#bc4a3c]">
+    <a href="{{ $detailUrl }}" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#bc4a3c]">
         <div class="aspect-[16/10] overflow-hidden bg-[#e8e8e8]">
             @if ($story->localized_image)
                 <img src="{{ Storage::url($story->localized_image) }}" alt="{{ $story->localized_title }}" class="h-full w-full object-cover" loading="lazy" decoding="async">

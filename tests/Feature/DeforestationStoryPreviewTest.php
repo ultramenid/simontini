@@ -2,7 +2,7 @@
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\URL;
 
 uses(DatabaseTransactions::class);
 
@@ -30,17 +30,9 @@ function createDeforestationStory(array $overrides = []): object
     return DB::table('deforestory')->find($id);
 }
 
-function createCmsPreviewUser(int $roleId): int
+function temporaryDeforestationPreviewUrl(string $routeName, array $parameters): string
 {
-    return DB::table('users')->insertGetId([
-        'name' => 'Preview User',
-        'email' => 'preview-'.uniqid().'@simontini.test',
-        'password' => Hash::make('password'),
-        'role_id' => $roleId,
-        'status' => 1,
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    return URL::temporarySignedRoute($routeName, now()->addHour(), $parameters);
 }
 
 it('only displays published stories on the public list', function () {
@@ -96,64 +88,71 @@ it('renders social sharing metadata from the published story', function () {
         ->assertSee('<meta name="twitter:card" content="summary_large_image">', false);
 });
 
-it('redirects guests from preview to login', function () {
+it('rejects preview URLs without a valid signature', function () {
     $this->get(route('deforestation.preview.index', ['locale' => 'id']))
-        ->assertRedirect(route('login'));
+        ->assertForbidden();
 });
 
-it('allows an active cms session to open preview without a second role check', function () {
-    $userId = createCmsPreviewUser(2);
+it('allows guests to open a signed preview link', function () {
+    $story = createDeforestationStory(['title_id' => 'Draft Tautan Aman']);
 
-    $this->withSession(['id' => $userId, 'role_id' => 2])
-        ->get(route('deforestation.preview.index', ['locale' => 'id']))
-        ->assertOk();
+    $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertSee('Draft Tautan Aman')
+        ->assertSee('MODE PREVIEW');
 });
 
-it('allows admins to preview drafts with noindex metadata', function () {
-    $userId = createCmsPreviewUser(1);
+it('allows a signed preview index to display drafts with noindex metadata', function () {
     $story = createDeforestationStory(['title_id' => 'Draft Rahasia']);
 
-    $this->withSession(['id' => $userId, 'role_id' => 1])
-        ->get(route('deforestation.preview.index', ['locale' => 'id']))
+    $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.index', ['locale' => 'id']))
         ->assertOk()
         ->assertSee('Draft Rahasia')
         ->assertSee('<meta name="robots" content="noindex, nofollow">', false)
         ->assertSee('MODE PREVIEW');
 
-    $this->withSession(['id' => $userId, 'role_id' => 1])
-        ->get(route('deforestation.preview.show', [
-            'locale' => 'id',
-            'id' => $story->id,
-            'slug' => $story->slug,
-        ]))
+    $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
         ->assertOk()
         ->assertSee('MODE PREVIEW')
         ->assertDontSee('Kembali ke CMS');
 });
 
-it('allows editors to open preview pages', function () {
-    $userId = createCmsPreviewUser(3);
+it('rejects a signed preview URL after it is changed', function () {
+    $url = temporaryDeforestationPreviewUrl('deforestation.preview.index', ['locale' => 'en']);
 
-    $this->withSession(['id' => $userId, 'role_id' => 3])
-        ->get(route('deforestation.preview.index', ['locale' => 'en']))
-        ->assertOk();
+    $this->get($url.'&changed=1')->assertForbidden();
 });
 
 it('redirects an incorrect preview slug to the canonical preview URL', function () {
-    $userId = createCmsPreviewUser(1);
     $story = createDeforestationStory();
+    $expiresAt = now()->addHour();
 
-    $this->withSession(['id' => $userId, 'role_id' => 1])
-        ->get(route('deforestation.preview.show', [
+    $this->get(URL::temporarySignedRoute(
+        'deforestation.preview.show',
+        $expiresAt,
+        [
             'locale' => 'id',
             'id' => $story->id,
             'slug' => 'slug-salah',
-        ]))
-        ->assertRedirect(route('deforestation.preview.show', [
-            'locale' => 'id',
-            'id' => $story->id,
-            'slug' => $story->slug,
-        ]));
+        ],
+    ))
+        ->assertRedirect(URL::temporarySignedRoute(
+            'deforestation.preview.show',
+            $expiresAt,
+            [
+                'locale' => 'id',
+                'id' => $story->id,
+                'slug' => $story->slug,
+            ],
+        ));
 });
 
 it('does not include preview URLs in the sitemap', function () {
