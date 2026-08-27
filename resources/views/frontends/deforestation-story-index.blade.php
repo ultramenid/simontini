@@ -8,8 +8,8 @@
 @endsection
 
 @section('content')
-    @include('partials.topbarPC')
-    @include('partials.topbarMobile')
+    @include('partials.topbarPC', ['deforestoryIndex' => true])
+    @include('partials.topbarMobile', ['deforestoryIndex' => true])
 
     @if ($isPreview)
         <x-deforestation-preview-banner />
@@ -27,7 +27,7 @@
                         ? 'Simontini data is open and publicly accessible under the Creative Commons CC-BY-SA license, subject to its terms of use.'
                         : 'Data dalam Simontini bersifat terbuka dan dapat diakses oleh publik sesuai lisensi Creative Commons CC-CY-SA, dengan mematuhi aturan penggunaannya. Pengutipan terhadap data dalam Simontini harap mengikuti format yang berlaku.' }}
                 </p>
-                <button type="button" x-on:click="subscribed = false; subscriptionEmail = ''; subscribeOpen = true" class="mt-7 rounded-lg bg-white px-8 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#376A64] shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f0e8]">
+                <button type="button" x-on:click="subscribed = false; subscriptionEmail = ''; subscribeOpen = true" class="mt-7 rounded-lg bg-white px-8 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#376A64] shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f0e8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
                     Subscribe
                 </button>
             </div>
@@ -41,15 +41,15 @@
                 <div x-show="!subscribed">
                     <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#bc4a3c]">{{ $locale === 'en' ? 'Follow updates' : 'Ikuti pembaruan' }}</p>
                     <h2 class="mt-2 pr-8 text-2xl font-black tracking-[-0.04em] sm:text-3xl">{{ $locale === 'en' ? 'Follow every Deforestory' : 'Ikuti semua Deforestory' }}</h2>
-                    <p class="mt-3 text-sm leading-6 text-[#7a6e60]">{{ $locale === 'en' ? 'Enter your email address to follow new stories and updates.' : 'Masukkan alamat email untuk mengikuti story baru dan seluruh pembaruan yang muncul di halaman ini.' }}</p>
+                    <p class="mt-3 text-sm leading-6 text-[#7a6e60]">{{ $locale === 'en' ? 'Enter your email address to follow new stories and updates.' : 'Masukkan alamat email untuk mengikuti story baru dan seluruh pembaruan yang akan muncul di halaman ini.' }}</p>
 
                     <form method="POST" action="{{ route('deforestation.subscribe.all', ['locale' => $locale]) }}" data-story-subscribe-form data-loading-label="{{ $locale === 'en' ? 'Processing...' : 'Memproses...' }}" class="mt-6">
                         @csrf
-                        <label class="mb-2 block text-xs font-bold uppercase tracking-[0.1em]">{{ $locale === 'en' ? 'Full name' : 'Nama lengkap' }}</label>
-                        <input name="name" type="text" required maxlength="100" autocomplete="name" class="w-full rounded-full border border-[#e2d8cc] px-5 py-3.5 text-sm outline-none focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
-                        <label class="mb-2 mt-4 block text-xs font-bold uppercase tracking-[0.1em]">Email</label>
-                        <input name="email" type="email" required autocomplete="email" class="w-full rounded-full border border-[#e2d8cc] px-5 py-3.5 text-sm outline-none focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
-                        <button type="submit" class="mt-5 w-full rounded-full bg-[#376A64] px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white hover:bg-[#2d5954] disabled:cursor-wait disabled:opacity-70">{{ $locale === 'en' ? 'Subscribe' : 'Aktifkan langganan' }}</button>
+                        <label for="subscribe-name" class="mb-2 block text-xs font-bold uppercase tracking-[0.1em]">{{ $locale === 'en' ? 'Full name' : 'Nama lengkap' }}</label>
+                        <input id="subscribe-name" name="name" type="text" required maxlength="100" autocomplete="name" placeholder="{{ $locale === 'en' ? 'Your name' : 'Nama Anda' }}" class="w-full rounded-full border border-[#e2d8cc] bg-white px-5 py-3.5 text-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
+                        <label for="subscribe-email" class="mb-2 mt-4 block text-xs font-bold uppercase tracking-[0.1em]">{{ $locale === 'en' ? 'Email address' : 'Alamat email' }}</label>
+                        <input id="subscribe-email" name="email" type="email" required autocomplete="email" placeholder="nama@email.com" class="w-full rounded-full border border-[#e2d8cc] bg-white px-5 py-3.5 text-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
+                        <button type="submit" class="mt-5 w-full rounded-full bg-[#376A64] px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#2d5954] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#376A64] disabled:cursor-wait disabled:opacity-70">{{ $locale === 'en' ? 'Subscribe' : 'Aktifkan langganan' }}</button>
                         <p data-story-subscribe-feedback class="mt-3 hidden text-center text-xs font-semibold" role="status" aria-live="polite"></p>
                     </form>
                 </div>
@@ -70,8 +70,9 @@
     <main>
         <section id="publikasi" class="scroll-mt-24">
             <div class="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-                @forelse ($storyGroups as $month => $monthStories)
-                    <section class="mb-24 scroll-mt-40 last:mb-0 sm:mb-28">
+                <div class="space-y-24 sm:space-y-28">
+                    @forelse ($storyGroups as $month => $monthStories)
+                    <section class="scroll-mt-40">
                         <h2 class="mb-8 text-2xl font-bold uppercase tracking-wide text-[#376A64] sm:text-3xl">{{ $month }}</h2>
                         <div class="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 xl:grid-cols-4 xl:gap-x-7">
                             @foreach ($monthStories as $story)
@@ -79,14 +80,21 @@
                             @endforeach
                         </div>
                     </section>
-                @empty
-                    <div class="border border-dashed border-gray-300 px-6 py-16 text-center text-gray-500">
-                        {{ $locale === 'en' ? 'No deforestation stories are available yet.' : 'Belum ada Deforestory yang tersedia.' }}
-                    </div>
-                @endforelse
-
+                    @empty
+                        <div class="border border-dashed border-gray-300 px-6 py-16 text-center text-gray-500">
+                            {{ $locale === 'en' ? 'No deforestation stories are available yet.' : 'Belum ada Deforestory yang tersedia.' }}
+                        </div>
+                    @endforelse
+                </div>
             </div>
         </section>
     </main>
+
+    <footer class="bg-[#1a1a1a]">
+        <div class="mx-auto flex max-w-[1440px] flex-col gap-3 px-5 py-9 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
+            <p class="font-semibold uppercase tracking-[0.18em]">Auriga Nusantara</p>
+            <p>{{ $locale === 'en' ? 'Information for the protection of Indonesia\'s natural resources.' : 'Informasi untuk perlindungan sumber daya alam Indonesia.' }}</p>
+        </div>
+    </footer>
 
 @endsection

@@ -71,7 +71,7 @@
             @php
                 $isImage = str_starts_with($item->mime_type ?: 'image/', 'image/');
                 $fileUrl = ($item->disk ?: 'public') === 'public'
-                    ? Storage::url($item->image_path)
+                    ? url(Storage::url($item->image_path))
                     : route('cms.reference.download', $item->id);
                 $downloadUrl = route('cms.reference.download', $item->id);
                 $fileName = $item->original_name ?: basename($item->image_path);
@@ -106,7 +106,7 @@
                             type="button"
                             data-tiptap-reference-select
                             data-editor-key="{{ $editorKey }}"
-                            data-image-url="{{ url($fileUrl) }}"
+                            data-image-url="{{ $fileUrl }}"
                             data-image-title="{{ $item->title }}"
                             data-image-alt="{{ $item->alt_text }}"
                             class="w-full bg-[#376A64] px-3 py-2 text-xs font-semibold text-white hover:opacity-90"
