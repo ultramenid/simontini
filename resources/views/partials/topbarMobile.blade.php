@@ -75,10 +75,12 @@
                     <a  href="{{ route('insight', app()->getLocale()) }}" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
-                <div class="px-6">
-                    <a href="{{ route('deforestation.index', ['locale' => app()->getLocale()]) }}" class="mb-4 inline-block px-4 text-xl font-semibold leading-5 text-white">deforestory</a>
-                    <p class="border-b border-gray-300"></p>
-                </div>
+                @unless ($deforestoryIndex ?? false)
+                    <div class="px-6">
+                        <a href="{{ route('deforestation.index', ['locale' => app()->getLocale()]) }}" class="mb-4 inline-block px-4 text-xl font-semibold leading-5 text-white">deforestory</a>
+                        <p class="border-b border-gray-300"></p>
+                    </div>
+                @endunless
                 <div class=" px-6">
                     <a  href="{{ route('mapndata', app()->getLocale()) }}" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">map & data<a>
                     <p class="border-b border-gray-300"></p>

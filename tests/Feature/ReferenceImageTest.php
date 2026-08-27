@@ -69,10 +69,11 @@ it('renders a Tiptap selection button for the requested editor', function () {
     ]);
 
     $this->withSession(['id' => 1])
-        ->get('/cms/reference?picker=1&editor=content_id')
+        ->get('https://stg.simontini.id/cms/reference?picker=1&editor=content_id')
         ->assertOk()
         ->assertSee('data-tiptap-reference-select', false)
         ->assertSee('data-editor-key="content_id"', false)
+        ->assertSee('https://stg.simontini.id/storage/references/forest.jpg', false)
         ->assertSee('Pilih untuk Tiptap');
 });
 

@@ -117,6 +117,9 @@ const initializeTinyMceEditors = () => {
         tinymce.init({
             target: editorElement,
             license_key: 'gpl',
+            convert_urls: false,
+            relative_urls: false,
+            remove_script_host: false,
             skin: false,
             content_css: false,
             height: 560,

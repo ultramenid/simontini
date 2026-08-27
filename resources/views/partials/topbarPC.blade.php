@@ -1,4 +1,4 @@
-<section class="py-4 px-4 sm:block hidden sticky top-0 z-40 bg-white">
+<section class="py-4 px-4 sm:block hidden sticky top-0 {{ ($deforestoryIndex ?? false) ? 'z-50 border-b border-[#e5e7eb]' : 'z-40' }} bg-white">
     @include('partials.langSwitchPC')
     <div class=" max-w-7xl  mx-auto flex w-full justify-between mt-3">
         <a href="{{ route('index', app()->getLocale()) }}" class="text-simontini">
@@ -25,9 +25,11 @@
                 <a href="{{ route('insight', app()->getLocale()) }}" class="font-normal ">INSIGHT</a>
             </div>
 
-            <div class="py-2 hover:border-b hover:border-simontini @if($nav == 'deforestory') border-b border-simontini @endif">
-                <a href="{{ route('deforestation.index', ['locale' => app()->getLocale()]) }}" class="font-normal">DEFORESTORY</a>
-            </div>
+            @unless ($deforestoryIndex ?? false)
+                <div class="py-2 hover:border-b hover:border-simontini @if($nav == 'deforestory') border-b border-simontini @endif">
+                    <a href="{{ route('deforestation.index', ['locale' => app()->getLocale()]) }}" class="font-normal">DEFORESTORY</a>
+                </div>
+            @endunless
 
             <div class="py-2 hover:border-b hover:border-simontini @if($nav == 'map') border-b border-simontini @endif">
                 <a href="{{ route('mapndata', app()->getlocale() )}}" class="font-normal ">MAP & DATA</a>
