@@ -64,18 +64,31 @@
         x-on:story-subscription-succeeded="subscribeOpen = true; subscribed = true; subscriptionEmail = $event.detail.email"
     >
         <article>
+            <header class="mx-auto max-w-[720px] px-5 pt-10 text-center sm:px-8 sm:pt-14">
+                <h1 class="mx-auto mb-[42px] max-w-[720px] text-center text-[40px] font-bold leading-[1.28] text-black">{{ $story->localized_title }}</h1>
+
+                @if (filled($story->localized_description))
+                    <p class="mx-auto max-w-[720px] text-[20px] leading-[1.7] text-black">
+                        {{ strip_tags($story->localized_description) }}
+                    </p>
+                @endif
+            </header>
+
             @if ($story->localized_image)
-                <figure class="mx-auto max-w-[1200px] px-5 pt-9 sm:px-8 sm:pt-14 lg:px-12">
+                <figure class="mx-auto max-w-[1200px] px-5 pt-8 sm:px-8 sm:pt-10 lg:px-12">
                     <div class="aspect-[16/9] overflow-hidden bg-[#e8e8e8]">
                         <img src="{{ Storage::url($story->localized_image) }}" alt="{{ $story->localized_title }}" class="h-full w-full object-cover" fetchpriority="high">
                     </div>
+                    @if (filled($story->localized_image_description))
+                        <figcaption class="pt-1 text-left text-[14px] font-normal leading-[1.6] text-[#1a1a1a]/80">
+                            {{ $story->localized_image_description }}
+                        </figcaption>
+                    @endif
                 </figure>
             @endif
 
             <div class="mx-auto max-w-[720px] px-5 pt-10 sm:px-8 sm:pt-14">
-                <h1 class="text-[25px] font-bold leading-[1.08] tracking-[-0.045em]">{{ $story->localized_title }}</h1>
-
-                <div class="article-copy public-story-content mt-9 text-[15px] leading-[1.85] text-gray-800 sm:text-[17px]">
+                <div class="article-copy public-story-content text-[15px] leading-[1.85] text-gray-800 sm:text-[17px]">
                     {!! $story->localized_content !!}
                 </div>
 

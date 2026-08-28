@@ -14,8 +14,8 @@ class DeforestoryContentSeeder extends Seeder
             [
                 'title_id' => 'Menjaga Hutan Alam Papua dari Tekanan Jalan Baru',
                 'title_en' => 'Protecting Papua’s Natural Forests from New Road Pressure',
-                'description_id' => 'Pemantauan bentang alam Papua mengungkap perubahan tutupan hutan, tekanan akibat pembukaan jalan baru serta dampaknya bagi keanekaragaman hayati dan masyarakat adat yang bergantung pada hutan sebagai sumber pangan, air, dan kebudayaan setempat.',
-                'description_en' => 'Landscape monitoring in Papua reveals forest-cover change, pressure from new road development, and its impacts on biodiversity and Indigenous communities that depend on forests for food and water, livelihoods, cultural identity, and protection.',
+                'description_id' => 'Pemantauan ini menyoroti perubahan hutan Papua akibat jalan baru serta dampaknya pada keanekaragaman hayati dan kehidupan masyarakat adat.',
+                'description_en' => 'This story monitors forest change from new roads in Papua and its impacts on biodiversity and Indigenous communities that depend on the forest.',
                 'date' => '2026-08-17',
                 'images' => ['Hutan+Alam+Papua', 'Pemantauan+Papua', 'Bentang+Alam+Papua'],
                 'captions_id' => [
@@ -46,8 +46,8 @@ class DeforestoryContentSeeder extends Seeder
             [
                 'title_id' => 'Memulihkan Gambut Kalimantan setelah Kebakaran',
                 'title_en' => 'Restoring Kalimantan’s Peatlands after Fire',
-                'description_id' => 'Cerita ini menelusuri kebakaran gambut di Kalimantan, perubahan tata air, dan proses pemulihan ekosistem melalui pemantauan titik panas, pembasahan kembali, perlindungan area utuh, serta keterlibatan masyarakat dalam pencegahan kebakaran lokal.',
-                'description_en' => 'This story examines peat fires in Kalimantan, changing water systems, and ecosystem recovery through hotspot monitoring, rewetting, protection of intact areas and community involvement in long-term fire prevention & sustainable land management.',
+                'description_id' => 'Cerita ini membahas kebakaran gambut Kalimantan, perubahan tata air, pemantauan titik panas, pembasahan kembali, dan pencegahan bersama warga.',
+                'description_en' => 'This story examines peat fires in Kalimantan, water-system changes, hotspot monitoring, rewetting, and community-based fire prevention.',
                 'date' => '2026-08-16',
                 'images' => ['Gambut+Kalimantan', 'Kanal+Gambut', 'Pemulihan+Gambut'],
                 'captions_id' => [
@@ -78,8 +78,8 @@ class DeforestoryContentSeeder extends Seeder
             [
                 'title_id' => 'Koridor Gajah Sumatra yang Semakin Terdesak',
                 'title_en' => 'Sumatran Elephant Corridors under Growing Pressure',
-                'description_id' => 'Cerita ini menelusuri hubungan antara kehilangan hutan, menyempitnya koridor satwa, dan meningkatnya perjumpaan gajah dengan manusia dan menunjukkan pentingnya pemantauan, tata ruang, dan keterlibatan warga untuk melindungi ruang hidup bersama.',
-                'description_en' => 'This story traces the links between forest loss, shrinking wildlife corridors, and increasing encounters between elephants and people, while showing why monitoring, planning, and community participation are essential to safeguard shared spaces.',
+                'description_id' => 'Cerita ini menelusuri kehilangan hutan, penyempitan koridor gajah Sumatra, konflik dengan manusia, serta pentingnya pemantauan dan tata ruang.',
+                'description_en' => 'This story traces forest loss, shrinking Sumatran elephant corridors, human conflict, and the importance of monitoring and spatial planning.',
                 'date' => '2026-08-15',
                 'images' => ['Koridor+Gajah+Sumatra', 'Hutan+Sumatra', 'Pemantauan+Satwa'],
                 'captions_id' => [
@@ -110,8 +110,8 @@ class DeforestoryContentSeeder extends Seeder
             [
                 'title_id' => 'Mangrove sebagai Benteng Pesisir Indonesia',
                 'title_en' => 'Mangroves as Indonesia’s Coastal Shield',
-                'description_id' => 'Cerita ini melihat peran mangrove dalam melindungi pesisir, menyimpan karbon, menyediakan habitat biota dan menopang penghidupan masyarakat, serta mengulas mengapa pemulihan tata air dan perlindungan tegakan yang tersisa harus berjalan bersama.',
-                'description_en' => 'This story explores how mangroves protect coastlines, store carbon, provide habitat and support community livelihoods, while explaining why restoring water flows and protecting remaining stands must work together for lasting coastal resilience.',
+                'description_id' => 'Cerita ini membahas peran mangrove dalam melindungi pesisir, menyimpan karbon, menopang biota, serta mendukung penghidupan masyarakat pesisir.',
+                'description_en' => 'This story explores how mangroves protect coastlines, store carbon, support wildlife, and sustain the livelihoods of coastal communities.',
                 'date' => '2026-08-14',
                 'images' => ['Mangrove+Indonesia', 'Pesisir+Mangrove', 'Restorasi+Mangrove'],
                 'captions_id' => [
@@ -142,8 +142,8 @@ class DeforestoryContentSeeder extends Seeder
             [
                 'title_id' => 'Membaca Jejak Pertambangan Nikel di Sulawesi',
                 'title_en' => 'Tracing the Footprint of Nickel Mining in Sulawesi',
-                'description_id' => 'Pemantauan ini membaca perubahan bentang alam di sekitar pertambangan nikel Sulawesi, mulai dari pembukaan hutan dan pembangunan jalan hingga risiko sedimentasi di sungai dan pesisir, untuk mendorong tata kelola yang baik dan pemulihan terukur.',
-                'description_en' => 'This monitoring story examines landscape change around nickel mining in Sulawesi, from forest clearing and road construction to sediment risks in rivers and coastal waters, encouraging transparent governance and measurable ecosystem recoveries.',
+                'description_id' => 'Pemantauan ini membaca perubahan bentang alam akibat tambang nikel Sulawesi, dari pembukaan hutan hingga risiko sedimentasi di sungai dan pesisir.',
+                'description_en' => 'This story examines landscape change from nickel mining in Sulawesi, from forest clearing to sediment risks in rivers and coastal waters.',
                 'date' => '2026-08-13',
                 'images' => ['Tambang+Nikel+Sulawesi', 'Bentang+Alam+Sulawesi', 'Pesisir+Sulawesi'],
                 'captions_id' => [

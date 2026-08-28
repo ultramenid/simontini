@@ -25,6 +25,10 @@ class DeforestoryAdd extends Component
 
     public ?string $currentImageEn = null;
 
+    public string $image_description_id = '';
+
+    public string $image_description_en = '';
+
     public string $title_id = '';
 
     public string $title_en = '';
@@ -69,6 +73,8 @@ class DeforestoryAdd extends Component
         $this->status = $item->status;
         $this->currentImageId = $item->image_id;
         $this->currentImageEn = $item->image_en;
+        $this->image_description_id = $item->image_description_id ?? '';
+        $this->image_description_en = $item->image_description_en ?? '';
     }
 
     protected function rules(): array
@@ -76,10 +82,12 @@ class DeforestoryAdd extends Component
         return [
             'image_id' => ['nullable', 'image', 'max:3072'],
             'image_en' => ['nullable', 'image', 'max:3072'],
+            'image_description_id' => ['nullable', 'string'],
+            'image_description_en' => ['nullable', 'string'],
             'title_id' => ['required', 'string', 'max:255'],
             'title_en' => ['required', 'string', 'max:255'],
-            'desrkirpsi_id' => ['required', 'string'],
-            'desrkirpsi_en' => ['required', 'string'],
+            'desrkirpsi_id' => ['required', 'string', 'max:150'],
+            'desrkirpsi_en' => ['required', 'string', 'max:150'],
             'content_type' => ['required', Rule::in(['template', 'custom'])],
             'date' => ['required', 'date'],
             'content_id' => ['required', 'string'],

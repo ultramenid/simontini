@@ -88,6 +88,32 @@ it('renders social sharing metadata from the published story', function () {
         ->assertSee('<meta name="twitter:card" content="summary_large_image">', false);
 });
 
+it('renders the hero image description below the detail image', function () {
+    $story = createDeforestationStory([
+        'image_id' => 'deforestory/id/hero.jpg',
+        'image_description_id' => 'Foto udara hutan, sumber Auriga Nusantara.',
+        'image_description_en' => 'Aerial forest photo, source Auriga Nusantara.',
+        'status' => 'publish',
+    ]);
+
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertSee('Foto udara hutan, sumber Auriga Nusantara.');
+
+    $this->get(route('deforestation.show', [
+        'locale' => 'en',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertSee('Aerial forest photo, source Auriga Nusantara.')
+        ->assertDontSee('Foto udara hutan, sumber Auriga Nusantara.');
+});
+
 it('rejects preview URLs without a valid signature', function () {
     $this->get(route('deforestation.preview.index', ['locale' => 'id']))
         ->assertForbidden();
