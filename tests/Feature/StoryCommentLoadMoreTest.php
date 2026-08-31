@@ -104,6 +104,7 @@ it('shows five main comments first and loads five more per click through the loa
         ->assertSee('Wajib diisi dan tidak ditampilkan ke publik.')
         ->assertSee('x-show="!turnstilePassed"', false)
         ->assertSee('data-comment-turnstile', false)
+        ->assertSee('data-action="comment"', false)
         ->assertSee('render=explicit&amp;onload=initializeCommentTurnstiles', false)
         ->assertSee('x-on:comment-submitted.window="if (!$event.detail.quick) { turnstilePassed = false; expanded = false }"', false)
         ->assertDontSee('Lanjutkan dengan Google')

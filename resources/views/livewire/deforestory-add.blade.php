@@ -198,37 +198,45 @@
 
             <div class="space-y-7" wire:key="content-editors-{{ $content_type }}">
                 @if ($content_type === 'template')
-                    <x-tiptap-editor
-                        wire:model="content_id"
-                        :value="$content_id"
-                        label="Konten Indonesia"
-                        hint="Isi lengkap dalam Bahasa Indonesia"
-                    />
+                    <div id="content-editor-id" data-content-editor-language="id" class="scroll-mt-28" tabindex="-1">
+                        <x-tiptap-editor
+                            wire:model="content_id"
+                            :value="$content_id"
+                            label="Konten Indonesia"
+                            hint="Isi lengkap dalam Bahasa Indonesia"
+                        />
+                    </div>
 
                     <div class="border-t border-dashed border-gray-200"></div>
 
-                    <x-tiptap-editor
-                        wire:model="content_en"
-                        :value="$content_en"
-                        label="Konten Inggris"
-                        hint="Full content in English"
-                    />
+                    <div id="content-editor-en" data-content-editor-language="en" class="scroll-mt-28" tabindex="-1">
+                        <x-tiptap-editor
+                            wire:model="content_en"
+                            :value="$content_en"
+                            label="Konten Inggris"
+                            hint="Full content in English"
+                        />
+                    </div>
                 @else
-                    <x-tinymce-editor
-                        wire:model="content_id"
-                        :value="$content_id"
-                        label="Konten Custom Indonesia"
-                        hint="HTML lengkap dengan TinyMCE dan Source Code"
-                    />
+                    <div id="content-editor-id" data-content-editor-language="id" class="scroll-mt-28" tabindex="-1">
+                        <x-tinymce-editor
+                            wire:model="content_id"
+                            :value="$content_id"
+                            label="Konten Custom Indonesia"
+                            hint="HTML lengkap dengan TinyMCE dan Source Code"
+                        />
+                    </div>
 
                     <div class="border-t border-dashed border-gray-200"></div>
 
-                    <x-tinymce-editor
-                        wire:model="content_en"
-                        :value="$content_en"
-                        label="Konten Custom Inggris"
-                        hint="Full custom HTML with TinyMCE and Source Code"
-                    />
+                    <div id="content-editor-en" data-content-editor-language="en" class="scroll-mt-28" tabindex="-1">
+                        <x-tinymce-editor
+                            wire:model="content_en"
+                            :value="$content_en"
+                            label="Konten Custom Inggris"
+                            hint="Full custom HTML with TinyMCE and Source Code"
+                        />
+                    </div>
                 @endif
             </div>
         </section>

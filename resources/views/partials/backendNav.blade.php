@@ -13,6 +13,10 @@
                 <a href="{{ route('cms.reference') }}" class="px-0.5 @if($nav == 'reference' ) text-newgray-900 dark:text-gray-300 @endif hover:text-newgray-900 dark:hover:text-gray-300 cursor-pointer">Reference</a>
             </div>
 
+            <div class="hover:bg-gray-200 dark:hover:bg-newgray-700 py-3 px-2 rounded @if($nav == 'data-visualizations' )border-b-2 dark:border-gray-300 border-newgray-900 @endif ">
+                <a href="{{ route('cms.data-visualizations') }}" class="px-0.5 whitespace-nowrap @if($nav == 'data-visualizations' ) text-newgray-900 dark:text-gray-300 @endif hover:text-newgray-900 dark:hover:text-gray-300 cursor-pointer">Data &amp; Grafik</a>
+            </div>
+
             <div class="hover:bg-gray-200 dark:hover:bg-newgray-700 py-3 px-2 rounded @if($nav == 'comments' )border-b-2 dark:border-gray-300 border-newgray-900 @endif ">
                 <a href="{{ route('cms.comments') }}" class="px-0.5 @if($nav == 'comments' ) text-newgray-900 dark:text-gray-300 @endif hover:text-newgray-900 dark:hover:text-gray-300 cursor-pointer">Komentar</a>
             </div>

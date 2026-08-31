@@ -83,6 +83,7 @@
                     try {
                         const widgetId = window.turnstile.render(element, {
                             sitekey: element.dataset.sitekey,
+                            action: element.dataset.action,
                             theme: element.dataset.theme || 'light',
                             size: element.dataset.size || 'flexible',
                             callback: typeof callback === 'function' ? callback : undefined,

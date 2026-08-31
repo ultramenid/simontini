@@ -59,6 +59,7 @@
                 data-comment-turnstile
                 data-reply-turnstile-id="{{ $comment->id }}"
                 data-sitekey="{{ config('services.turnstile.site_key') }}"
+                data-action="comment"
                 data-size="flexible"
             ></div>
         </div>

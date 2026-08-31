@@ -60,7 +60,7 @@
         <div x-show="expanded" x-transition.opacity.duration.200ms>
             <div x-show="!turnstilePassed" class="mt-3 border border-[#e3e0dc] bg-[#fafafa] px-4 py-5 sm:px-5">
                 <p class="mb-4 text-[10px] font-black uppercase tracking-[0.14em] text-[#7a7167]">{{ $locale === 'en' ? 'Security verification' : 'Verifikasi keamanan' }}</p>
-                <div class="cf-turnstile" data-comment-turnstile data-sitekey="{{ config('services.turnstile.site_key') }}" data-theme="light" data-size="flexible" data-callback="commentTurnstileSuccess" data-expired-callback="commentTurnstileExpired" data-error-callback="commentTurnstileExpired"></div>
+                <div class="cf-turnstile" data-comment-turnstile data-sitekey="{{ config('services.turnstile.site_key') }}" data-action="comment" data-theme="light" data-size="flexible" data-callback="commentTurnstileSuccess" data-expired-callback="commentTurnstileExpired" data-error-callback="commentTurnstileExpired"></div>
                 @error('cf-turnstile-response')<p class="mt-3 text-xs font-semibold text-red-700">{{ $message }}</p>@enderror
             </div>
             <div class="mt-4 flex justify-end">
@@ -92,6 +92,7 @@
 
                 this.quickWidgetId = window.turnstile.render(this.$refs.quickTurnstile, {
                     sitekey: @js(config('services.turnstile.site_key')),
+                    action: 'comment',
                     theme: 'light',
                     size: 'flexible',
                     callback: window.quickCommentTurnstileSuccess,
