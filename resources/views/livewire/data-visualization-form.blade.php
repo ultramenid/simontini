@@ -39,24 +39,42 @@
                 <legend class="mb-1.5 block text-sm font-semibold text-gray-700">Jenis Grafik <span class="text-red-500">*</span></legend>
                 <div class="grid grid-cols-2 gap-2 bg-gray-50 p-2 sm:grid-cols-4">
                     @foreach ([
-                        'line' => ['Line Chart', 'Garis'],
-                        'area' => ['Area Chart', 'Area terisi'],
-                        'bar' => ['Bar Chart', 'Batang horizontal'],
-                        'column' => ['Column Chart', 'Batang vertikal'],
-                        'doughnut' => ['Donut Chart', 'Cincin'],
-                        'pie' => ['Pie Chart', 'Lingkaran'],
-                        'area-grid' => ['Grid of Area', 'Kumpulan area'],
-                        'sankey' => ['Sankey / Alluvial', 'Diagram aliran'],
-                    ] as $chartValue => [$chartLabel, $chartHint])
+                        'line' => 'Line Chart',
+                        'area' => 'Area Chart',
+                        'bar' => 'Bar Chart',
+                        'column' => 'Column Chart',
+                        'doughnut' => 'Donut Chart',
+                        'pie' => 'Pie Chart',
+                        'area-grid' => 'Grid of Area',
+                    ] as $chartValue => $chartLabel)
                         <label wire:key="chart-type-{{ $chartValue }}" class="relative cursor-pointer">
                             <input type="radio" wire:model.live="chart_type" value="{{ $chartValue }}" class="peer sr-only">
-                            <span class="flex min-h-[72px] items-center justify-between gap-3 border border-gray-200 bg-white px-4 py-3 text-left text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#376A64] hover:shadow peer-checked:border-[#376A64] peer-checked:bg-[#376A64] peer-checked:text-white peer-checked:shadow-md peer-checked:[&_.chart-check]:opacity-100 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[#376A64]">
-                                <span>
-                                    <span class="block text-sm font-bold leading-tight">{{ $chartLabel }}</span>
-                                    <span class="mt-1 block text-[11px] font-medium leading-tight opacity-60">{{ $chartHint }}</span>
-                                </span>
-                                <span class="chart-check flex h-6 w-6 shrink-0 items-center justify-center border border-current opacity-0 transition" aria-hidden="true">
-                                    <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m4 10 4 4 8-9" /></svg>
+                            <span class="flex min-h-[132px] flex-col justify-between gap-3 border border-gray-200 bg-white p-4 text-left text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#376A64] hover:shadow peer-checked:border-[#376A64] peer-checked:bg-[#376A64] peer-checked:text-white peer-checked:shadow-md peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[#376A64]">
+                                <span class="block text-sm font-bold leading-tight">{{ $chartLabel }}</span>
+                                <span class="block h-16 w-full opacity-75" aria-hidden="true">
+                                    @switch($chartValue)
+                                        @case('line')
+                                            <svg class="h-full w-full" viewBox="0 0 160 64" fill="none" stroke="currentColor"><path d="M4 56H156M12 48 44 32 76 40 110 13 148 24" stroke-width="3"/><circle cx="12" cy="48" r="3" fill="currentColor"/><circle cx="44" cy="32" r="3" fill="currentColor"/><circle cx="76" cy="40" r="3" fill="currentColor"/><circle cx="110" cy="13" r="3" fill="currentColor"/><circle cx="148" cy="24" r="3" fill="currentColor"/></svg>
+                                            @break
+                                        @case('area')
+                                            <svg class="h-full w-full" viewBox="0 0 160 64"><path d="M4 56 14 46 48 28 80 39 113 14 148 25 156 56Z" fill="currentColor" opacity=".24"/><path d="M14 46 48 28 80 39 113 14 148 25" fill="none" stroke="currentColor" stroke-width="3"/><path d="M4 56H156" stroke="currentColor" opacity=".4"/></svg>
+                                            @break
+                                        @case('bar')
+                                            <svg class="h-full w-full" viewBox="0 0 160 64" fill="currentColor"><rect x="8" y="7" width="93" height="10"/><rect x="8" y="27" width="137" height="10" opacity=".72"/><rect x="8" y="47" width="64" height="10" opacity=".45"/></svg>
+                                            @break
+                                        @case('column')
+                                            <svg class="h-full w-full" viewBox="0 0 160 64" fill="currentColor"><rect x="15" y="31" width="22" height="27" opacity=".45"/><rect x="51" y="12" width="22" height="46"/><rect x="87" y="23" width="22" height="35" opacity=".72"/><rect x="123" y="39" width="22" height="19" opacity=".38"/></svg>
+                                            @break
+                                        @case('doughnut')
+                                            <svg class="h-full w-full" viewBox="0 0 160 64"><circle cx="80" cy="32" r="23" fill="none" stroke="currentColor" stroke-width="12" opacity=".2"/><path d="M80 9a23 23 0 0 1 20 34" fill="none" stroke="currentColor" stroke-width="12"/><path d="M100 43a23 23 0 0 1-35 7" fill="none" stroke="currentColor" stroke-width="12" opacity=".62"/></svg>
+                                            @break
+                                        @case('pie')
+                                            <svg class="h-full w-full" viewBox="0 0 160 64"><circle cx="80" cy="32" r="25" fill="currentColor" opacity=".22"/><path d="M80 32V7a25 25 0 0 1 21 39Z" fill="currentColor"/><path d="m80 32 21 14a25 25 0 0 1-39 4Z" fill="currentColor" opacity=".62"/></svg>
+                                            @break
+                                        @case('area-grid')
+                                            <svg class="h-full w-full" viewBox="0 0 160 64" fill="currentColor"><rect x="20" y="8" width="32" height="20"/><rect x="57" y="8" width="48" height="20" opacity=".7"/><rect x="110" y="8" width="30" height="20" opacity=".4"/><rect x="20" y="33" width="50" height="23" opacity=".55"/><rect x="75" y="33" width="28" height="23" opacity=".32"/><rect x="108" y="33" width="32" height="23" opacity=".82"/></svg>
+                                            @break
+                                    @endswitch
                                 </span>
                             </span>
                         </label>

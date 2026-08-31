@@ -25,6 +25,7 @@
                 <a href="{{ route('cms.subscribers') }}" class="px-0.5 @if($nav == 'subscribers' ) text-newgray-900 dark:text-gray-300 @endif hover:text-newgray-900 dark:hover:text-gray-300 cursor-pointer">Subscriber</a>
             </div>
 
+            {{-- Menu FAQ, News, dan Pages disembunyikan sementara.
             <div class="hover:bg-gray-200 dark:hover:bg-newgray-700 py-3 px-2 rounded @if($nav == 'faq' )border-b-2  dark:border-gray-300 border-newgray-900 @endif ">
                 <a href="{{url('/cms/listfaq')}}" class=" px-0.5  @if($nav == 'faq' )   text-newgray-900 dark:text-gray-300 @endif   hover:text-newgray-900 dark:hover:text-gray-300 cursor-pointer" >faq</a>
             </div>
@@ -46,6 +47,7 @@
 
                 </div>
             </div>
+            --}}
 
 
         </nav>

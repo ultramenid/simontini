@@ -73,11 +73,11 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
         canvas.style.display = 'none';
         const grid = document.createElement('div');
         grid.dataset.areaChartGrid = '';
-        grid.className = 'grid grid-cols-1 gap-4 md:grid-cols-2';
+        grid.className = 'flex h-full min-h-0 w-full flex-col';
 
         if (topText) {
             const heading = document.createElement('h3');
-            heading.className = 'md:col-span-2 text-center text-lg font-semibold text-gray-900';
+            heading.className = 'mb-3 shrink-0 text-center text-lg font-semibold text-gray-900';
             heading.textContent = topText;
             heading.style.textAlign = chartData.top_align || 'center';
             heading.style.fontSize = `${topFontSize}px`;
@@ -88,41 +88,90 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
             grid.appendChild(heading);
         }
 
-        series.forEach((name, seriesIndex) => {
-            const panel = document.createElement('div');
-            panel.className = 'relative min-h-52 border border-gray-200 bg-white p-3';
-            const panelCanvas = document.createElement('canvas');
-            panel.appendChild(panelCanvas);
-            grid.appendChild(panel);
+        const entries = chartData.rows
+            .map((row, index) => ({
+                label: String(row[0] || `Data ${index + 1}`),
+                value: Math.max(0, Number(row[1]) || 0),
+            }))
+            .filter((entry) => entry.value > 0)
+            .sort((a, b) => b.value - a.value);
 
-            const color = visualizationColors[seriesIndex % visualizationColors.length];
-            new Chart(panelCanvas, {
-                type: 'line',
-                data: {
-                    labels,
-                    datasets: [{
-                        label: name,
-                        data: chartData.rows.map((row) => Number(row[seriesIndex + 1]) || 0),
-                        backgroundColor: `${color}35`,
-                        borderColor: color,
-                        borderWidth: 2,
-                        pointRadius: 2,
-                        tension: 0.25,
-                        fill: true,
-                    }],
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: showLegend, position: legendPosition } },
-                    scales: { x: { grid: { display: false } }, y: { beginAtZero: true } },
-                },
-            });
+        const treemap = document.createElement('div');
+        treemap.className = 'relative min-h-0 flex-1 overflow-hidden bg-white';
+        treemap.style.aspectRatio = '16 / 9';
+
+        const layoutTreemap = (items, x = 0, y = 0, width = 160, height = 90) => {
+            if (!items.length) return [];
+            if (items.length === 1) return [{ ...items[0], x, y, width, height }];
+
+            const total = items.reduce((sum, item) => sum + item.value, 0);
+            let splitIndex = 1;
+            let runningTotal = items[0].value;
+            let smallestDifference = Math.abs(total / 2 - runningTotal);
+
+            for (let index = 1; index < items.length - 1; index += 1) {
+                runningTotal += items[index].value;
+                const difference = Math.abs(total / 2 - runningTotal);
+                if (difference < smallestDifference) {
+                    splitIndex = index + 1;
+                    smallestDifference = difference;
+                }
+            }
+
+            const firstGroup = items.slice(0, splitIndex);
+            const secondGroup = items.slice(splitIndex);
+            const firstTotal = firstGroup.reduce((sum, item) => sum + item.value, 0);
+            const ratio = firstTotal / total;
+
+            if (width >= height) {
+                const firstWidth = width * ratio;
+                return [
+                    ...layoutTreemap(firstGroup, x, y, firstWidth, height),
+                    ...layoutTreemap(secondGroup, x + firstWidth, y, width - firstWidth, height),
+                ];
+            }
+
+            const firstHeight = height * ratio;
+            return [
+                ...layoutTreemap(firstGroup, x, y, width, firstHeight),
+                ...layoutTreemap(secondGroup, x, y + firstHeight, width, height - firstHeight),
+            ];
+        };
+
+        layoutTreemap(entries).forEach((entry, index) => {
+            const tile = document.createElement('div');
+            tile.className = 'group absolute flex items-center justify-center overflow-visible border border-white text-center font-bold uppercase leading-tight text-white';
+            tile.style.left = `${entry.x / 1.6}%`;
+            tile.style.top = `${entry.y / 0.9}%`;
+            tile.style.width = `${entry.width / 1.6}%`;
+            tile.style.height = `${entry.height / 0.9}%`;
+            tile.style.backgroundColor = visualizationColors[index % visualizationColors.length];
+            tile.style.fontSize = compactPreview ? '9px' : `${Math.max(11, Math.min(20, Math.sqrt(entry.width * entry.height) * 0.42))}px`;
+
+            const label = document.createElement('span');
+            label.className = 'max-w-[90%] break-words px-1';
+            label.textContent = entry.label;
+            tile.appendChild(label);
+
+            const tooltip = document.createElement('span');
+            tooltip.className = 'pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-[calc(100%+1.5rem)] whitespace-nowrap bg-white px-3 py-2 text-xs font-bold normal-case text-gray-800 shadow-lg group-hover:block';
+            tooltip.textContent = `${entry.value.toLocaleString('id-ID')} ${chartData.columns[1] || ''}`.trim();
+            tile.appendChild(tooltip);
+            treemap.appendChild(tile);
         });
+
+        if (!entries.length) {
+            const empty = document.createElement('p');
+            empty.className = 'flex h-full items-center justify-center text-sm text-gray-400';
+            empty.textContent = 'Belum ada nilai untuk ditampilkan.';
+            treemap.appendChild(empty);
+        }
+
+        grid.appendChild(treemap);
 
         if (bottomText) {
             const footer = document.createElement('p');
-            footer.className = 'md:col-span-2 text-center text-sm text-gray-500';
+            footer.className = 'mt-2 shrink-0 text-center text-sm text-gray-600';
             footer.textContent = bottomText;
             footer.style.textAlign = chartData.bottom_align || 'center';
             footer.style.fontSize = `${bottomFontSize}px`;

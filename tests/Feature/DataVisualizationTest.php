@@ -55,6 +55,11 @@ it('opens a separate add page from the table', function () {
         ->get('/cms/data-visualizations/add')
         ->assertOk()
         ->assertSee('Tambah Data &amp; Grafik', false)
+        ->assertSee('Line Chart')
+        ->assertSee('Grid of Area')
+        ->assertDontSee('Sankey / Alluvial')
+        ->assertDontSee('chart-check', false)
+        ->assertSee('viewBox="0 0 160 64"', false)
         ->assertSee('+ Kolom')
         ->assertSee('Preview');
 });
