@@ -1,7 +1,26 @@
 <div class="deforestory-square">
     @if ($picker)
         <div class="mb-6 border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
-            Pilih gambar untuk dimasukkan ke editor Tiptap. File selain gambar tetap dapat disimpan dan diunduh dari Reference, tetapi tidak dapat dimasukkan sebagai gambar Tiptap.
+            @if ($multiple)
+                @if ($pickerPurpose === 'before-after')
+                    Pilih tepat 2 gambar: gambar pertama sebagai Before dan gambar kedua sebagai After.
+                @else
+                    Pilih satu atau beberapa gambar untuk galeri GLightbox. Urutan galeri mengikuti urutan gambar yang dipilih, dan caption dapat disesuaikan sebelum dimasukkan.
+                @endif
+            @else
+                Pilih gambar untuk dimasukkan ke editor. File selain gambar tetap dapat disimpan dan diunduh dari Reference, tetapi tidak dapat dimasukkan sebagai gambar.
+            @endif
+        </div>
+    @endif
+
+    @if ($picker && $multiple)
+        <div data-reference-gallery-panel data-reference-selection-limit="{{ $selectionLimit }}" data-reference-selection-exact="{{ $pickerPurpose === 'before-after' ? 2 : 0 }}" hidden class="sticky top-4 z-30 mb-6 border border-[#376A64] bg-white p-4 shadow-lg">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <p class="text-sm font-semibold text-gray-900"><span data-reference-gallery-count>0</span> gambar dipilih</p>
+                <button type="button" data-reference-gallery-insert data-editor-key="{{ $editorKey }}" class="bg-[#376A64] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90">
+                    {{ $pickerPurpose === 'before-after' ? 'Masukkan Before/After' : 'Masukkan Galeri ke Editor' }}
+                </button>
+            </div>
         </div>
     @endif
 
@@ -101,7 +120,29 @@
                         @endif
                     </div>
 
-                    @if ($picker && $isImage)
+                    @if ($picker && $multiple && $isImage)
+                        <div>
+                            <label class="mb-1.5 block text-xs font-semibold text-gray-700" for="gallery-caption-{{ $item->id }}">Caption galeri</label>
+                            <input
+                                id="gallery-caption-{{ $item->id }}"
+                                type="text"
+                                value="{{ $item->alt_text ?: $item->title }}"
+                                data-reference-gallery-caption
+                                data-reference-id="{{ $item->id }}"
+                                class="w-full border border-gray-300 px-3 py-2 text-xs outline-none focus:border-[#376A64]"
+                            >
+                        </div>
+                        <button
+                            type="button"
+                            data-reference-gallery-toggle
+                            data-reference-id="{{ $item->id }}"
+                            data-image-url="{{ $fileUrl }}"
+                            data-image-title="{{ $item->title }}"
+                            data-image-alt="{{ $item->alt_text }}"
+                            aria-pressed="false"
+                            class="w-full bg-[#376A64] px-3 py-2 text-xs font-semibold text-white hover:opacity-90"
+                        >Tambah ke Galeri</button>
+                    @elseif ($picker && $isImage)
                         <button
                             type="button"
                             data-tiptap-reference-select
@@ -110,7 +151,7 @@
                             data-image-title="{{ $item->title }}"
                             data-image-alt="{{ $item->alt_text }}"
                             class="w-full bg-[#376A64] px-3 py-2 text-xs font-semibold text-white hover:opacity-90"
-                        >Pilih untuk Tiptap</button>
+                        >Pilih untuk Editor</button>
                     @elseif ($picker)
                         <div class="border border-amber-200 bg-amber-50 px-3 py-2 text-center text-xs text-amber-700">File ini bukan gambar</div>
                     @endif

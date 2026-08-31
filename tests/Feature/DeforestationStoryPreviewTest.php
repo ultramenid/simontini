@@ -114,6 +114,25 @@ it('renders the hero image description below the detail image', function () {
         ->assertDontSee('Foto udara hutan, sumber Auriga Nusantara.');
 });
 
+it('renders custom GLightbox image markup in the story detail', function () {
+    $imageUrl = 'https://stg.simontini.id/storage/references/lightbox-story.jpg';
+    $story = createDeforestationStory([
+        'content_type' => 'custom',
+        'content_id' => '<div style="width: 100%; margin: 24px 0;"><a class="glightbox2 gbox" href="'.$imageUrl.'" data-glightbox="description: Dokumentasi deforestasi"><img src="'.$imageUrl.'" alt="Dokumentasi deforestasi" style="cursor: zoom-in;"></a></div>',
+        'status' => 'publish',
+    ]);
+
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertSee('class="glightbox2 gbox"', false)
+        ->assertSee('data-glightbox="description: Dokumentasi deforestasi"', false)
+        ->assertSee('href="'.$imageUrl.'"', false);
+});
+
 it('rejects preview URLs without a valid signature', function () {
     $this->get(route('deforestation.preview.index', ['locale' => 'id']))
         ->assertForbidden();

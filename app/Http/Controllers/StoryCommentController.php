@@ -37,7 +37,7 @@ class StoryCommentController extends Controller
             'cf-turnstile-response' => ['required', 'string', 'max:2048'],
         ]);
 
-        if (! $turnstile->verify($validated['cf-turnstile-response'], $request->ip())) {
+        if (! $turnstile->verify($validated['cf-turnstile-response'], 'comment', $request->ip())) {
             throw ValidationException::withMessages([
                 'cf-turnstile-response' => $locale === 'en'
                     ? 'Security verification failed. Please try again.'

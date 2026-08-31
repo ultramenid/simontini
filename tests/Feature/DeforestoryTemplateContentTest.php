@@ -63,3 +63,38 @@ it('stores both hero image descriptions from the CMS form', function () {
         ->and($story->image_description_en)
         ->toBe('Aerial forest photo, source Auriga Nusantara.');
 });
+
+it('keeps bilingual content editors without floating language markers', function () {
+    $view = file_get_contents(resource_path('views/livewire/deforestory-add.blade.php'));
+
+    expect($view)
+        ->toContain('data-content-editor-language="id"')
+        ->toContain('data-content-editor-language="en"')
+        ->not->toContain('data-content-editor-jump=')
+        ->not->toContain('content-language-switcher');
+});
+
+it('uses selectable cards for the TinyMCE Data and Grafik picker', function () {
+    $script = file_get_contents(resource_path('js/app.js'));
+
+    expect($script)
+        ->toContain("modal.dataset.visualizationCardPicker = ''")
+        ->toContain('card.dataset.visualizationCard = String(item.id)')
+        ->toContain("badge.textContent = 'Dipilih'")
+        ->toContain("width: 'min(1400px, 100%)'")
+        ->toContain("? 'repeat(4, minmax(0, 1fr))'")
+        ->toContain("? 'repeat(2, minmax(0, 1fr))'")
+        ->toContain("height: 'min(540px, calc(100vh - 250px))'")
+        ->toContain('const visualizationsPerPage = 8')
+        ->toContain('renderVisualizationPage')
+        ->toContain('Menampilkan ${firstIndex + 1}–${lastIndex} dari ${cards.length} data')
+        ->toContain("createPageButton('‹'")
+        ->toContain("createPageButton('›'")
+        ->toContain("width: '960px'")
+        ->toContain('const scale = preview.clientWidth / 960')
+        ->toContain("outline: 'none'")
+        ->toContain("iframeWindow.addEventListener('keydown', onPickerKeydown, true)")
+        ->toContain("if (event.key !== 'Escape') return")
+        ->toContain("insertButton.textContent = 'Masukkan Grafik'")
+        ->not->toContain("name: 'visualizationId'");
+});

@@ -23,6 +23,7 @@
         data-tinymce-wrapper
         data-tinymce-picker-id="{{ $wireModel }}"
         data-tinymce-reference-page-url="{{ route('cms.reference', ['picker' => 1, 'editor' => $wireModel]) }}"
+        data-tinymce-visualization-options-url="{{ route('cms.data-visualizations.options') }}"
     >
         <div wire:ignore>
             <textarea data-tinymce-editor>{{ $value }}</textarea>

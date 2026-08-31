@@ -45,9 +45,41 @@ class DashboardController extends Controller
         $title = 'Reference Images - Simontini';
         $nav = 'reference';
         $picker = $request->boolean('picker');
+        $multiple = $request->boolean('multiple');
+        $selectionLimit = max(0, $request->integer('limit'));
+        $pickerPurpose = $request->string('purpose')->toString();
         $editorKey = $request->string('editor')->toString();
+        $modal = $request->boolean('modal');
 
-        return view('backends.reference', compact('title', 'nav', 'picker', 'editorKey'));
+        return view('backends.reference', compact('title', 'nav', 'picker', 'multiple', 'selectionLimit', 'pickerPurpose', 'editorKey', 'modal'));
+    }
+
+    public function dataVisualizations()
+    {
+        $title = 'Data & Grafik - Simontini';
+        $nav = 'data-visualizations';
+
+        return view('backends.data-visualizations', compact('title', 'nav'));
+    }
+
+    public function addDataVisualization()
+    {
+        $title = 'Tambah Data & Grafik - Simontini';
+        $nav = 'data-visualizations';
+        $visualizationId = null;
+
+        return view('backends.data-visualization-form', compact('title', 'nav', 'visualizationId'));
+    }
+
+    public function editDataVisualization(int $id)
+    {
+        abort_unless(DB::table('data_visualizations')->where('id', $id)->exists(), 404);
+
+        $title = 'Edit Data & Grafik - Simontini';
+        $nav = 'data-visualizations';
+        $visualizationId = $id;
+
+        return view('backends.data-visualization-form', compact('title', 'nav', 'visualizationId'));
     }
 
     public function downloadReference(int $id)

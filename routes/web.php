@@ -3,6 +3,7 @@
 use App\Http\Controllers\CmsCommentController;
 use App\Http\Controllers\CmsSubscriberController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataVisualizationController;
 use App\Http\Controllers\DeforestationStoryController;
 use App\Http\Controllers\DeforestationStorySubscriptionController;
 use App\Http\Controllers\DownloadController;
@@ -20,6 +21,13 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
 Route::redirect('/', '/id/status-deforestasi-di-indonesia-2025');
+
+Route::get('/data-visualizations/{id}', [DataVisualizationController::class, 'show'])
+    ->whereNumber('id')
+    ->name('data-visualizations.show');
+Route::get('/embed/data-visualizations/{id}', [DataVisualizationController::class, 'embed'])
+    ->whereNumber('id')
+    ->name('data-visualizations.embed');
 
 Route::get('/sitemap.xml', function () {
 
@@ -136,6 +144,13 @@ Route::middleware([checkSession::class])->group(function () {
         ->whereNumber('id')
         ->name('cms.deforestory.edit');
     Route::get('/cms/reference', [DashboardController::class, 'reference'])->name('cms.reference');
+    Route::get('/cms/data-visualizations', [DashboardController::class, 'dataVisualizations'])->name('cms.data-visualizations');
+    Route::get('/cms/data-visualizations/add', [DashboardController::class, 'addDataVisualization'])->name('cms.data-visualizations.add');
+    Route::get('/cms/data-visualizations/{id}/edit', [DashboardController::class, 'editDataVisualization'])
+        ->whereNumber('id')
+        ->name('cms.data-visualizations.edit');
+    Route::get('/cms/data-visualizations/options', [DataVisualizationController::class, 'options'])
+        ->name('cms.data-visualizations.options');
     Route::get('/cms/reference/{id}/download', [DashboardController::class, 'downloadReference'])
         ->whereNumber('id')
         ->name('cms.reference.download');

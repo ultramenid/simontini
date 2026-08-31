@@ -23,11 +23,20 @@ class ReferenceIndex extends Component
 
     public bool $picker = false;
 
+    public bool $multiple = false;
+
+    public int $selectionLimit = 0;
+
+    public string $pickerPurpose = '';
+
     public string $editorKey = '';
 
-    public function mount(bool $picker = false, string $editorKey = ''): void
+    public function mount(bool $picker = false, bool $multiple = false, int $selectionLimit = 0, string $pickerPurpose = '', string $editorKey = ''): void
     {
         $this->picker = $picker;
+        $this->multiple = $multiple;
+        $this->selectionLimit = max(0, $selectionLimit);
+        $this->pickerPurpose = $pickerPurpose;
         $this->editorKey = $editorKey;
     }
 
