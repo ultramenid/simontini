@@ -119,12 +119,8 @@ class DeforestoryIndex extends Component
 
         DB::table('deforestory')->where('id', $id)->delete();
 
-        if ($item?->image_id) {
-            Storage::disk('public')->delete($item->image_id);
-        }
-
-        if ($item?->image_en) {
-            Storage::disk('public')->delete($item->image_en);
+        foreach (array_unique(array_filter([$item?->image_id, $item?->image_en])) as $media) {
+            Storage::disk('public')->delete($media);
         }
 
         $this->resetPage();

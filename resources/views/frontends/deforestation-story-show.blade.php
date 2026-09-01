@@ -20,7 +20,7 @@
             : route($metaRoute, $metaParameters);
         $metaImage = asset('assets/meta-image-2025.jpg');
 
-        if ($story->localized_image) {
+        if ($story->localized_image && ! ($story->localized_media_is_video ?? false)) {
             $metaImage = \Illuminate\Support\Str::startsWith($story->localized_image, ['http://', 'https://'])
                 ? $story->localized_image
                 : url(\Illuminate\Support\Facades\Storage::url($story->localized_image));
@@ -77,7 +77,11 @@
             @if ($story->localized_image)
                 <figure class="mx-auto max-w-[1200px] px-5 pt-8 sm:px-8 sm:pt-10 lg:px-12">
                     <div class="aspect-[16/9] overflow-hidden bg-[#e8e8e8]">
-                        <img src="{{ Storage::url($story->localized_image) }}" alt="{{ $story->localized_title }}" class="h-full w-full object-cover" fetchpriority="high">
+                        @if ($story->localized_media_is_video ?? false)
+                            <video src="{{ Storage::url($story->localized_image) }}" autoplay loop muted playsinline preload="metadata" class="h-full w-full object-cover" aria-label="{{ $story->localized_title }}"></video>
+                        @else
+                            <img src="{{ Storage::url($story->localized_image) }}" alt="{{ $story->localized_title }}" class="h-full w-full object-cover" fetchpriority="high">
+                        @endif
                     </div>
                     @if (filled($story->localized_image_description))
                         <figcaption class="pt-1 text-left text-[14px] font-normal leading-[1.6] text-[#1a1a1a]/80">

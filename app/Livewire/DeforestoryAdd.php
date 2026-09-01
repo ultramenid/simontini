@@ -83,8 +83,8 @@ class DeforestoryAdd extends Component
     protected function rules(): array
     {
         return [
-            'image_id' => ['nullable', 'image', 'max:3072'],
-            'image_en' => ['nullable', 'image', 'max:3072'],
+            'image_id' => ['nullable', 'file', 'mimes:jpg,jpeg,png,webp,mp4,mov,webm', 'max:51200'],
+            'image_en' => ['nullable', 'file', 'mimes:jpg,jpeg,png,webp,mp4,mov,webm', 'max:51200'],
             'image_description_id' => ['nullable', 'string'],
             'image_description_en' => ['nullable', 'string'],
             'title_id' => ['required', 'string', 'max:255'],

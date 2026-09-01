@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Mail\NewDeforestationStoryPublished;
+use App\Support\DeforestationStoryMedia;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\DB;
@@ -81,7 +82,7 @@ class SendNewDeforestationStoryEmail implements ShouldQueue
 
     private function publicImageUrl(?string $image): ?string
     {
-        if (blank($image)) {
+        if (blank($image) || DeforestationStoryMedia::isVideo($image)) {
             return null;
         }
 

@@ -99,7 +99,11 @@
                         <div class="grid grid-cols-[120px_minmax(480px,1fr)_110px_140px] items-start gap-5 px-5 py-5 text-sm text-gray-700 transition hover:bg-gray-50">
                             <div class="h-20 w-28 overflow-hidden rounded-lg border border-gray-200 bg-gray-100">
                                 @if ($item->image_id)
-                                    <img src="{{ Storage::url($item->image_id) }}" alt="{{ $item->title_id }}" class="h-full w-full object-cover">
+                                    @if (\App\Support\DeforestationStoryMedia::isVideo($item->image_id))
+                                        <video src="{{ Storage::url($item->image_id) }}" muted playsinline preload="metadata" class="h-full w-full object-cover"></video>
+                                    @else
+                                        <img src="{{ Storage::url($item->image_id) }}" alt="{{ $item->title_id }}" class="h-full w-full object-cover">
+                                    @endif
                                 @else
                                     <div class="flex h-full w-full flex-col items-center justify-center text-gray-400">
                                         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">

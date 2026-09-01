@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\DeforestationStoryMedia;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -190,6 +191,7 @@ class DeforestationStoryController extends Controller
         $story->localized_description = $locale === 'en' ? $story->desrkirpsi_en : $story->desrkirpsi_id;
         $story->localized_content = $locale === 'en' ? $story->content_en : $story->content_id;
         $story->localized_image = $locale === 'en' && $story->image_en ? $story->image_en : $story->image_id;
+        $story->localized_media_is_video = DeforestationStoryMedia::isVideo($story->localized_image);
         $story->localized_image_description = $locale === 'en'
             ? $story->image_description_en
             : $story->image_description_id;
