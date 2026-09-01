@@ -113,6 +113,20 @@ it('applies custom settings to the numeric chart axis', function () {
         ->toContain('{ x: categoryScale, y: valueScale }');
 });
 
+it('keeps chart text responsive and preserves its selected alignment', function () {
+    $script = file_get_contents(resource_path('js/app.js'));
+
+    expect($script)
+        ->toContain('isNarrowChart')
+        ->toContain('wrapChartText')
+        ->toContain('responsiveTopFontSize')
+        ->toContain('responsiveBottomFontSize')
+        ->toContain('text: responsiveTopText')
+        ->toContain('text: responsiveBottomText')
+        ->toContain('align: titleAlignment')
+        ->toContain('align: footerAlignment');
+});
+
 it('stores letters numbers and empty cells in the same table', function () {
     Livewire::test(DataVisualizationForm::class)
         ->set('title', 'Data Campuran')

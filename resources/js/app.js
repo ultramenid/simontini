@@ -76,6 +76,42 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
             .filter(Number.isFinite))].sort((first, second) => first - second)
         : [];
     const showValueAxisLine = chartData.show_value_axis_line !== false;
+    const chartWidth = chartContainer?.clientWidth || canvas.clientWidth || 0;
+    const isNarrowChart = chartWidth > 0 && chartWidth < 640;
+    const responsiveTopFontSize = isNarrowChart ? Math.min(topFontSize, 18) : topFontSize;
+    const responsiveBottomFontSize = isNarrowChart ? Math.min(bottomFontSize, 12) : bottomFontSize;
+    const wrapChartText = (text, fontSize, fontWeight, fontFamily, fontStyle) => {
+        if (!isNarrowChart || !text) return text;
+
+        const context = canvas.getContext('2d');
+        if (!context) return text;
+
+        const words = text.split(/\s+/).filter(Boolean);
+        const lines = [];
+        let currentLine = '';
+        const maximumLineWidth = Math.max(160, chartWidth - 56);
+
+        context.save();
+        context.font = `${fontStyle} ${fontWeight} ${fontSize}px ${fontFamily}`;
+
+        words.forEach((word) => {
+            const candidate = currentLine ? `${currentLine} ${word}` : word;
+
+            if (currentLine && context.measureText(candidate).width > maximumLineWidth) {
+                lines.push(currentLine);
+                currentLine = word;
+            } else {
+                currentLine = candidate;
+            }
+        });
+
+        if (currentLine) lines.push(currentLine);
+        context.restore();
+
+        return lines.length > 1 ? lines : text;
+    };
+    const responsiveTopText = wrapChartText(topText, responsiveTopFontSize, topFontWeight, topFontFamily, topFontStyle);
+    const responsiveBottomText = wrapChartText(bottomText, responsiveBottomFontSize, bottomFontWeight, bottomFontFamily, bottomFontStyle);
 
     if (type === 'area-grid') {
         canvas.style.display = 'none';
@@ -88,7 +124,7 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
             heading.className = 'mb-3 shrink-0 text-center text-lg font-semibold text-gray-900';
             heading.textContent = topText;
             heading.style.textAlign = chartData.top_align || 'center';
-            heading.style.fontSize = `${topFontSize}px`;
+            heading.style.fontSize = `${responsiveTopFontSize}px`;
             heading.style.fontWeight = topFontWeight;
             heading.style.fontFamily = topFontFamily;
             heading.style.fontStyle = topFontStyle;
@@ -182,7 +218,7 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
             footer.className = 'mt-2 shrink-0 text-center text-sm text-gray-600';
             footer.textContent = bottomText;
             footer.style.textAlign = chartData.bottom_align || 'center';
-            footer.style.fontSize = `${bottomFontSize}px`;
+            footer.style.fontSize = `${responsiveBottomFontSize}px`;
             footer.style.fontWeight = bottomFontWeight;
             footer.style.fontFamily = bottomFontFamily;
             footer.style.fontStyle = bottomFontStyle;
@@ -221,8 +257,8 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
                 maintainAspectRatio: false,
                 plugins: {
                     legend: { display: false },
-                    title: { display: Boolean(topText), text: topText, position: 'top', align: titleAlignment, color: '#000000', font: { family: topFontFamily, size: topFontSize, weight: topFontWeight, style: topFontStyle } },
-                    subtitle: { display: Boolean(bottomText), text: bottomText, position: 'bottom', align: footerAlignment, color: '#6b7280', font: { family: bottomFontFamily, size: bottomFontSize, weight: bottomFontWeight, style: bottomFontStyle } },
+                    title: { display: Boolean(topText), text: responsiveTopText, position: 'top', align: titleAlignment, color: '#000000', font: { family: topFontFamily, size: responsiveTopFontSize, weight: topFontWeight, style: topFontStyle } },
+                    subtitle: { display: Boolean(bottomText), text: responsiveBottomText, position: 'bottom', align: footerAlignment, color: '#6b7280', font: { family: bottomFontFamily, size: responsiveBottomFontSize, weight: bottomFontWeight, style: bottomFontStyle } },
                 },
             },
         });
@@ -294,8 +330,8 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
             layout: { padding: { left: 4, right: 12, bottom: 4 } },
             plugins: {
                 legend: { display: showLegend, position: legendPosition },
-                title: { display: Boolean(topText), text: topText, position: 'top', align: titleAlignment, color: '#000000', font: { family: topFontFamily, size: topFontSize, weight: topFontWeight, style: topFontStyle } },
-                subtitle: { display: Boolean(bottomText), text: bottomText, position: 'bottom', align: footerAlignment, color: '#6b7280', font: { family: bottomFontFamily, size: bottomFontSize, weight: bottomFontWeight, style: bottomFontStyle } },
+                title: { display: Boolean(topText), text: responsiveTopText, position: 'top', align: titleAlignment, color: '#000000', font: { family: topFontFamily, size: responsiveTopFontSize, weight: topFontWeight, style: topFontStyle } },
+                subtitle: { display: Boolean(bottomText), text: responsiveBottomText, position: 'bottom', align: footerAlignment, color: '#6b7280', font: { family: bottomFontFamily, size: responsiveBottomFontSize, weight: bottomFontWeight, style: bottomFontStyle } },
                 tooltip: { mode: isCircular ? 'nearest' : 'index', intersect: isCircular },
             },
             indexAxis: type === 'bar' ? 'y' : 'x',
