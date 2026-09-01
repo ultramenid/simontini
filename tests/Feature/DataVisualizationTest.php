@@ -235,7 +235,13 @@ it('provides spreadsheet drag selection and clipboard controls', function () {
         ->toContain('data-spreadsheet-cell')
         ->and($script)
         ->toContain('spreadsheetCellsInSelection')
+        ->toContain('clearSpreadsheetSelection')
+        ->toContain('clearSpreadsheetCellValues')
+        ->toContain('isEditingSingleSpreadsheetCell')
         ->toContain("document.addEventListener('pointermove'")
+        ->toContain("document.addEventListener('focusin'")
+        ->toContain("['Backspace', 'Delete'].includes(event.key)")
+        ->toContain('isTabularPaste')
         ->toContain("['c', 'x'].includes(shortcut)")
         ->toContain("document.addEventListener('paste'");
 });

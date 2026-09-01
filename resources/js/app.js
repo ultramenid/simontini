@@ -292,6 +292,34 @@ const spreadsheetCellsInSelection = () => {
     });
 };
 
+const clearSpreadsheetSelection = () => {
+    spreadsheetSelection.root?.querySelectorAll('[data-spreadsheet-cell]').forEach((cell) => {
+        cell.classList.remove('is-selected', 'is-selection-start');
+    });
+
+    spreadsheetSelection.root = null;
+    spreadsheetSelection.start = null;
+    spreadsheetSelection.end = null;
+    spreadsheetSelection.dragging = false;
+    spreadsheetSelection.moved = false;
+};
+
+const clearSpreadsheetCellValues = () => {
+    spreadsheetCellsInSelection().forEach((cell) => {
+        const input = cell.querySelector('input');
+        if (!input) return;
+
+        input.value = '';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+};
+
+const isEditingSingleSpreadsheetCell = (target, cells = spreadsheetCellsInSelection()) => {
+    const input = target?.closest?.('[data-spreadsheet-cell] input');
+
+    return cells.length === 1 && Boolean(input) && cells[0].contains(input);
+};
+
 const paintSpreadsheetSelection = () => {
     if (!spreadsheetSelection.root) return;
 
@@ -307,15 +335,24 @@ document.addEventListener('pointerdown', (event) => {
 
     const cell = event.target.closest?.('[data-spreadsheet-cell]');
     const root = cell?.closest?.('[data-spreadsheet]');
-    if (!cell || !root) return;
+    if (!cell || !root) {
+        clearSpreadsheetSelection();
 
-    event.preventDefault();
+        return;
+    }
+
     spreadsheetSelection.root = root;
     spreadsheetSelection.start = cell;
     spreadsheetSelection.end = cell;
     spreadsheetSelection.dragging = true;
     spreadsheetSelection.moved = false;
     paintSpreadsheetSelection();
+});
+
+document.addEventListener('focusin', (event) => {
+    if (!spreadsheetSelection.root || spreadsheetSelection.root.contains(event.target)) return;
+
+    clearSpreadsheetSelection();
 });
 
 document.addEventListener('pointermove', (event) => {
@@ -325,6 +362,7 @@ document.addEventListener('pointermove', (event) => {
     const cell = pointedElement?.closest?.('[data-spreadsheet-cell]');
     if (!cell || !spreadsheetSelection.root.contains(cell) || cell === spreadsheetSelection.end) return;
 
+    event.preventDefault();
     spreadsheetSelection.end = cell;
     spreadsheetSelection.moved = true;
     paintSpreadsheetSelection();
@@ -334,19 +372,29 @@ document.addEventListener('pointerup', () => {
     if (!spreadsheetSelection.dragging) return;
 
     spreadsheetSelection.dragging = false;
-    if (!spreadsheetSelection.moved) {
-        const input = spreadsheetSelection.start?.querySelector('input');
-        input?.focus();
-        input?.select();
-    }
 });
 
 document.addEventListener('keydown', async (event) => {
+    if (spreadsheetSelection.root && !spreadsheetSelection.root.isConnected) {
+        clearSpreadsheetSelection();
+    }
+
+    const cells = spreadsheetCellsInSelection();
+
+    if (['Backspace', 'Delete'].includes(event.key) && cells.length) {
+        if (isEditingSingleSpreadsheetCell(event.target, cells)) return;
+
+        event.preventDefault();
+        clearSpreadsheetCellValues();
+
+        return;
+    }
+
     const shortcut = event.key.toLowerCase();
     if (!(event.ctrlKey || event.metaKey) || !['c', 'x'].includes(shortcut)) return;
 
-    const cells = spreadsheetCellsInSelection();
     if (!cells.length || !spreadsheetSelection.root) return;
+    if (isEditingSingleSpreadsheetCell(event.target, cells)) return;
 
     const start = spreadsheetCoordinates(spreadsheetSelection.start);
     const end = spreadsheetCoordinates(spreadsheetSelection.end);
@@ -369,21 +417,23 @@ document.addEventListener('keydown', async (event) => {
     await navigator.clipboard?.writeText(values.join('\n'));
 
     if (shortcut === 'x') {
-        cells.forEach((cell) => {
-            const input = cell.querySelector('input');
-            if (!input) return;
-
-            input.value = '';
-            input.dispatchEvent(new Event('input', { bubbles: true }));
-        });
+        clearSpreadsheetCellValues();
     }
 });
 
 document.addEventListener('paste', (event) => {
+    if (spreadsheetSelection.root && !spreadsheetSelection.root.isConnected) {
+        clearSpreadsheetSelection();
+    }
+
     if (!spreadsheetSelection.root || !spreadsheetSelection.start) return;
 
     const text = event.clipboardData?.getData('text/plain');
     if (!text) return;
+
+    const cells = spreadsheetCellsInSelection();
+    const isTabularPaste = /[\t\r\n]/.test(text);
+    if (!isTabularPaste && isEditingSingleSpreadsheetCell(event.target, cells)) return;
 
     const start = spreadsheetCoordinates(spreadsheetSelection.start);
     const pastedRows = text.replace(/\r/g, '').split('\n').filter((row, index, rows) => row !== '' || index < rows.length - 1);
