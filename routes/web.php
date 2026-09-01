@@ -112,6 +112,10 @@ Route::prefix('{locale}')
             ->group(function () {
                 Route::get('/deforestory', [DeforestationStoryController::class, 'previewIndex'])
                     ->name('deforestation.preview.index');
+                Route::post('/deforestory/{id}/{slug}/unlock', [DeforestationStoryController::class, 'unlockPreview'])
+                    ->whereNumber('id')
+                    ->middleware('throttle:10,1')
+                    ->name('deforestation.preview.unlock');
                 Route::get('/deforestory/{id}/{slug}', [DeforestationStoryController::class, 'previewShow'])
                     ->whereNumber('id')
                     ->name('deforestation.preview.show');

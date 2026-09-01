@@ -39,6 +39,51 @@
         </div>
     @endif
 
+    <form wire:submit="saveGlobalPreviewPassword" class="mb-6 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-end">
+            <div class="flex-1">
+                <div class="flex items-center gap-2">
+                    <h2 class="text-sm font-bold text-gray-900">Password Global Preview</h2>
+                    <span class="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide {{ $hasGlobalPreviewPassword ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-800' }}">
+                        {{ $hasGlobalPreviewPassword ? 'Sudah diatur' : 'Belum diatur' }}
+                    </span>
+                </div>
+                <p class="mt-1 text-xs leading-5 text-gray-500">Satu password ini digunakan untuk membuka semua artikel Deforestory yang dikunci. Mengganti password akan membatalkan akses pengunjung sebelumnya.</p>
+
+                @if ($hasGlobalPreviewPassword)
+                    <div class="mt-3 flex max-w-md items-center gap-2">
+                        @if ($revealedGlobalPreviewPassword === null)
+                            <button type="button" wire:click="revealGlobalPreviewPassword" class="inline-flex items-center gap-2 rounded-lg border border-[#376A64] bg-white px-3 py-2 text-xs font-semibold text-[#376A64] hover:bg-[#eef5f4]">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12s3.75-6.75 9.75-6.75S21.75 12 21.75 12 18 18.75 12 18.75 2.25 12 2.25 12Z"/><circle cx="12" cy="12" r="2.75"/></svg>
+                                Lihat Password
+                            </button>
+                        @else
+                            <input type="text" readonly value="{{ $revealedGlobalPreviewPassword }}" class="min-w-0 flex-1 rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800">
+                            <button type="button" wire:click="hideGlobalPreviewPassword" class="rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50">Sembunyikan</button>
+                        @endif
+                    </div>
+                @endif
+            </div>
+
+            <div class="grid w-full gap-3 sm:grid-cols-2 lg:max-w-2xl">
+                <div>
+                    <label class="mb-1.5 block text-xs font-semibold text-gray-700">{{ $hasGlobalPreviewPassword ? 'Password baru' : 'Password' }}</label>
+                    <input type="password" wire:model="globalPreviewPassword" autocomplete="new-password" placeholder="Minimal 6 karakter" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
+                    @error('globalPreviewPassword') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                </div>
+                <div>
+                    <label class="mb-1.5 block text-xs font-semibold text-gray-700">Konfirmasi password</label>
+                    <input type="password" wire:model="globalPreviewPassword_confirmation" autocomplete="new-password" placeholder="Ulangi password" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
+                </div>
+            </div>
+
+            <button type="submit" class="inline-flex shrink-0 items-center justify-center rounded-lg bg-[#376A64] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 disabled:cursor-wait disabled:opacity-60" wire:loading.attr="disabled" wire:target="saveGlobalPreviewPassword">
+                <span wire:loading.remove wire:target="saveGlobalPreviewPassword">{{ $hasGlobalPreviewPassword ? 'Ganti Password' : 'Simpan Password' }}</span>
+                <span wire:loading wire:target="saveGlobalPreviewPassword">Menyimpan...</span>
+            </button>
+        </div>
+    </form>
+
     <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
         <div class="overflow-x-auto">
             <div class="min-w-[900px]">
@@ -54,7 +99,11 @@
                         <div class="grid grid-cols-[120px_minmax(480px,1fr)_110px_140px] items-start gap-5 px-5 py-5 text-sm text-gray-700 transition hover:bg-gray-50">
                             <div class="h-20 w-28 overflow-hidden rounded-lg border border-gray-200 bg-gray-100">
                                 @if ($item->image_id)
-                                    <img src="{{ Storage::url($item->image_id) }}" alt="{{ $item->title_id }}" class="h-full w-full object-cover">
+                                    @if (\App\Support\DeforestationStoryMedia::isVideo($item->image_id))
+                                        <video src="{{ Storage::url($item->image_id) }}" muted playsinline preload="metadata" class="h-full w-full object-cover"></video>
+                                    @else
+                                        <img src="{{ Storage::url($item->image_id) }}" alt="{{ $item->title_id }}" class="h-full w-full object-cover">
+                                    @endif
                                 @else
                                     <div class="flex h-full w-full flex-col items-center justify-center text-gray-400">
                                         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -68,6 +117,12 @@
                             <div class="min-w-0 space-y-3">
                                 <div>
                                     <p class="font-bold leading-5 text-gray-900">{{ $item->title_id }}</p>
+                                    @if ($item->is_locked ?? false)
+                                        <span class="mt-2 inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-amber-800">
+                                            <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0110 0v2a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2Zm8-2v2H7V6a3 3 0 116 0Z" clip-rule="evenodd" /></svg>
+                                            Preview dikunci
+                                        </span>
+                                    @endif
                                 </div>
 
                                 <div>

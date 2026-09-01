@@ -32,28 +32,66 @@
 
             <div class="grid grid-cols-1 gap-5">
                 <div>
-                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Gambar Indonesia</label>
+                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Indonesia <span class="text-red-500">*</span></label>
+                    <input type="text" wire:model="title_id" placeholder="Masukkan judul Bahasa Indonesia" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
+                    @error('title_id') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                </div>
+
+                <div>
+                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Inggris <span class="text-red-500">*</span></label>
+                    <input type="text" wire:model="title_en" placeholder="Enter the English title" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
+                    @error('title_en') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                </div>
+
+                <div>
+                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Media Indonesia</label>
                     <div class="rounded-xl border border-dashed border-gray-300 bg-gray-50 p-4">
                         <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
                             <div class="flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-white sm:w-52">
                                 @if ($image_id)
-                                    <img src="{{ $image_id->temporaryUrl() }}" alt="Preview gambar Indonesia" class="h-full w-full object-cover">
+                                    @if (str_starts_with((string) $image_id->getMimeType(), 'video/'))
+                                        <video src="{{ $image_id->temporaryUrl() }}" controls preload="metadata" class="h-full w-full object-cover"></video>
+                                    @else
+                                        <img src="{{ $image_id->temporaryUrl() }}" alt="Preview media Indonesia" class="h-full w-full object-cover">
+                                    @endif
                                 @elseif ($currentImageId)
-                                    <img src="{{ Storage::url($currentImageId) }}" alt="Gambar Indonesia saat ini" class="h-full w-full object-cover">
+                                    @if (\App\Support\DeforestationStoryMedia::isVideo($currentImageId))
+                                        <video src="{{ Storage::url($currentImageId) }}" controls preload="metadata" class="h-full w-full object-cover"></video>
+                                    @else
+                                        <img src="{{ Storage::url($currentImageId) }}" alt="Media Indonesia saat ini" class="h-full w-full object-cover">
+                                    @endif
                                 @else
                                     <div class="text-center text-gray-400">
                                         <svg class="mx-auto h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Z" />
                                         </svg>
-                                        <p class="mt-1 text-xs">Belum ada gambar</p>
+                                        <p class="mt-1 text-xs">Belum ada media</p>
                                     </div>
                                 @endif
                             </div>
 
-                            <div class="flex-1">
-                                <input type="file" wire:model="image_id" accept="image/jpeg,image/png,image/webp" class="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#376A64] file:px-4 file:py-2.5 file:text-sm file:font-semibold file:text-white hover:file:opacity-90">
-                                <p class="mt-2 text-xs text-gray-500">JPG, PNG, atau WebP. Maksimal 3 MB.</p>
-                                <p wire:loading wire:target="image_id" class="mt-1 text-xs font-medium text-[#376A64]">Mengunggah gambar Indonesia...</p>
+                            <div class="flex-1" x-data="{ uploading: false, progress: 0 }">
+                                <input
+                                    type="file"
+                                    wire:model="image_id"
+                                    accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,video/webm"
+                                    x-on:livewire-upload-start="uploading = true; progress = 0"
+                                    x-on:livewire-upload-finish="uploading = false; progress = 100"
+                                    x-on:livewire-upload-error="uploading = false; progress = 0"
+                                    x-on:livewire-upload-cancel="uploading = false; progress = 0"
+                                    x-on:livewire-upload-progress="progress = $event.detail.progress"
+                                    class="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#376A64] file:px-4 file:py-2.5 file:text-sm file:font-semibold file:text-white hover:file:opacity-90"
+                                >
+                                <p class="mt-2 text-xs text-gray-500">JPG, PNG, WebP, MP4, MOV, atau WebM. Maksimal 50 MB.</p>
+                                <div x-show="uploading" x-cloak class="mt-3" role="status" aria-live="polite">
+                                    <div class="mb-1.5 flex items-center justify-between text-xs font-semibold text-[#376A64]">
+                                        <span>Mengunggah media Indonesia...</span>
+                                        <span x-text="`${progress}%`"></span>
+                                    </div>
+                                    <div class="h-2 overflow-hidden rounded-full bg-[#dbe8e6]">
+                                        <div class="h-full rounded-full bg-[#376A64] transition-[width] duration-200" x-bind:style="`width: ${progress}%`"></div>
+                                    </div>
+                                </div>
                                 @error('image_id') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
                             </div>
                         </div>
@@ -61,28 +99,54 @@
                 </div>
 
                 <div>
-                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Gambar Inggris</label>
+                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Media Inggris</label>
                     <div class="rounded-xl border border-dashed border-gray-300 bg-gray-50 p-4">
                         <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
                             <div class="flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-white sm:w-52">
                                 @if ($image_en)
-                                    <img src="{{ $image_en->temporaryUrl() }}" alt="Preview gambar Inggris" class="h-full w-full object-cover">
+                                    @if (str_starts_with((string) $image_en->getMimeType(), 'video/'))
+                                        <video src="{{ $image_en->temporaryUrl() }}" controls preload="metadata" class="h-full w-full object-cover"></video>
+                                    @else
+                                        <img src="{{ $image_en->temporaryUrl() }}" alt="Preview media Inggris" class="h-full w-full object-cover">
+                                    @endif
                                 @elseif ($currentImageEn)
-                                    <img src="{{ Storage::url($currentImageEn) }}" alt="Gambar Inggris saat ini" class="h-full w-full object-cover">
+                                    @if (\App\Support\DeforestationStoryMedia::isVideo($currentImageEn))
+                                        <video src="{{ Storage::url($currentImageEn) }}" controls preload="metadata" class="h-full w-full object-cover"></video>
+                                    @else
+                                        <img src="{{ Storage::url($currentImageEn) }}" alt="Media Inggris saat ini" class="h-full w-full object-cover">
+                                    @endif
                                 @else
                                     <div class="text-center text-gray-400">
                                         <svg class="mx-auto h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Z" />
                                         </svg>
-                                        <p class="mt-1 text-xs">Belum ada gambar</p>
+                                        <p class="mt-1 text-xs">Belum ada media</p>
                                     </div>
                                 @endif
                             </div>
 
-                            <div class="flex-1">
-                                <input type="file" wire:model="image_en" accept="image/jpeg,image/png,image/webp" class="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#376A64] file:px-4 file:py-2.5 file:text-sm file:font-semibold file:text-white hover:file:opacity-90">
-                                <p class="mt-2 text-xs text-gray-500">JPG, PNG, atau WebP. Maksimal 3 MB.</p>
-                                <p wire:loading wire:target="image_en" class="mt-1 text-xs font-medium text-[#376A64]">Mengunggah gambar Inggris...</p>
+                            <div class="flex-1" x-data="{ uploading: false, progress: 0 }">
+                                <input
+                                    type="file"
+                                    wire:model="image_en"
+                                    accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,video/webm"
+                                    x-on:livewire-upload-start="uploading = true; progress = 0"
+                                    x-on:livewire-upload-finish="uploading = false; progress = 100"
+                                    x-on:livewire-upload-error="uploading = false; progress = 0"
+                                    x-on:livewire-upload-cancel="uploading = false; progress = 0"
+                                    x-on:livewire-upload-progress="progress = $event.detail.progress"
+                                    class="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#376A64] file:px-4 file:py-2.5 file:text-sm file:font-semibold file:text-white hover:file:opacity-90"
+                                >
+                                <p class="mt-2 text-xs text-gray-500">JPG, PNG, WebP, MP4, MOV, atau WebM. Maksimal 50 MB.</p>
+                                <div x-show="uploading" x-cloak class="mt-3" role="status" aria-live="polite">
+                                    <div class="mb-1.5 flex items-center justify-between text-xs font-semibold text-[#376A64]">
+                                        <span>Mengunggah media Inggris...</span>
+                                        <span x-text="`${progress}%`"></span>
+                                    </div>
+                                    <div class="h-2 overflow-hidden rounded-full bg-[#dbe8e6]">
+                                        <div class="h-full rounded-full bg-[#376A64] transition-[width] duration-200" x-bind:style="`width: ${progress}%`"></div>
+                                    </div>
+                                </div>
                                 @error('image_en') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
                             </div>
                         </div>
@@ -104,18 +168,6 @@
                 </div>
 
                 <div>
-                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Indonesia <span class="text-red-500">*</span></label>
-                    <input type="text" wire:model="title_id" placeholder="Masukkan judul Bahasa Indonesia" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
-                    @error('title_id') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
-                </div>
-
-                <div>
-                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Inggris <span class="text-red-500">*</span></label>
-                    <input type="text" wire:model="title_en" placeholder="Enter the English title" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
-                    @error('title_en') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
-                </div>
-
-                <div>
                     <label class="mb-1.5 block text-sm font-semibold text-gray-700">Tanggal <span class="text-red-500">*</span></label>
                     <input type="date" wire:model="date" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
                     @error('date') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
@@ -128,6 +180,17 @@
                         <option value="publish">Publish — sudah dipublikasikan</option>
                     </select>
                     @error('status') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                </div>
+
+                <div class="rounded-xl border border-gray-200 bg-gray-50 p-5">
+                    <label class="flex cursor-pointer items-start gap-3">
+                        <input type="checkbox" wire:model.live="is_locked" class="mt-1 rounded border-gray-300 text-[#376A64] focus:ring-[#376A64]">
+                        <span>
+                            <strong class="block text-sm text-gray-900">Kunci preview artikel</strong>
+                            <span class="mt-1 block text-xs leading-5 text-gray-500">Jika aktif, pengunjung harus memasukkan satu password global Deforestory untuk membuka artikel dari halaman preview. Password global diatur pada halaman daftar Deforestory. Pengguna yang sedang login CMS tetap dapat membukanya langsung.</span>
+                        </span>
+                    </label>
+                    @error('is_locked') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
                 </div>
             </div>
         </section>
@@ -245,11 +308,12 @@
             <p class="text-xs text-gray-500"><span class="font-semibold text-red-500">*</span> Semua kolom wajib diisi.</p>
             <div class="flex gap-3">
                 <a href="{{ route('cms.deforestory') }}" class="inline-flex flex-1 items-center justify-center rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 sm:flex-none">Batal</a>
-                <button type="submit" class="inline-flex flex-1 items-center justify-center gap-2 rounded-lg px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 disabled:cursor-wait disabled:opacity-60 sm:flex-none" style="background-color: #376A64; color: #ffffff;" wire:loading.attr="disabled" wire:target="save">
-                    <svg wire:loading.remove wire:target="save" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <button type="submit" class="inline-flex flex-1 items-center justify-center gap-2 rounded-lg px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 disabled:cursor-wait disabled:opacity-60 sm:flex-none" style="background-color: #376A64; color: #ffffff;" wire:loading.attr="disabled" wire:target="save,image_id,image_en">
+                    <svg wire:loading.remove wire:target="save,image_id,image_en" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M3 3a2 2 0 012-2h8.586A2 2 0 0115 1.586L18.414 5A2 2 0 0119 6.414V17a2 2 0 01-2 2H3a2 2 0 01-2-2V3a2 2 0 012-2zm3 0v5h8V3H6zm8 9H6v5h8v-5z" />
                     </svg>
-                    <span wire:loading.remove wire:target="save">{{ $deforestoryId ? 'Perbarui Data' : 'Simpan Data' }}</span>
+                    <span wire:loading.remove wire:target="save,image_id,image_en">{{ $deforestoryId ? 'Perbarui Data' : 'Simpan Data' }}</span>
+                    <span wire:loading wire:target="image_id,image_en">Menunggu upload...</span>
                     <span wire:loading wire:target="save">Menyimpan...</span>
                 </button>
             </div>
