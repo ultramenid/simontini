@@ -5,6 +5,7 @@
             basic: true,
             typography: true,
             legend: true,
+            axis: true,
             workspace: true
         }
     }"
@@ -243,6 +244,50 @@
                 </select>
                 @error('legend_position') <p class="mt-1 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
             </div>
+
+            @if (in_array($chart_type, ['line', 'area', 'bar', 'column'], true))
+                <button type="button" x-on:click="sections.axis = !sections.axis" class="mt-3 flex w-full items-center justify-between gap-4 border-t border-gray-200 pt-6 text-left md:col-span-2" x-bind:aria-expanded="sections.axis">
+                    <span>
+                        <span class="block text-xs font-bold uppercase tracking-[0.14em] text-[#376A64]">Skala Sumbu Nilai</span>
+                        <span class="mt-1 block text-sm font-normal text-gray-500">Tentukan sendiri jumlah baris dan nilai angka yang tampil pada sumbu.</span>
+                    </span>
+                    <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center border border-gray-200 bg-gray-50 text-gray-500 transition hover:border-[#376A64] hover:text-[#376A64]" x-bind:class="sections.axis ? 'rotate-180' : ''">
+                        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg>
+                    </span>
+                </button>
+
+                <div x-show="sections.axis" x-transition.opacity.duration.150ms class="border border-gray-200 bg-gray-50/70 p-4 md:col-span-2">
+                    <div class="grid gap-4 md:grid-cols-2">
+                        <div>
+                            <label class="mb-1.5 block text-sm font-semibold text-gray-700">Jumlah Baris Angka</label>
+                            <input type="number" min="2" max="20" wire:model.live.debounce.300ms="value_axis_tick_count" placeholder="Otomatis" class="w-full border border-gray-300 bg-white px-3.5 py-2.5 text-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
+                            <p class="mt-1 text-xs text-gray-500">Isi 2–20 baris. Kosongkan untuk skala otomatis.</p>
+                            @error('value_axis_tick_count') <p class="mt-1 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                        </div>
+
+                        <div>
+                            <label class="mb-1.5 block text-sm font-semibold text-gray-700">Garis Sumbu Nilai</label>
+                            <label class="flex min-h-[42px] items-center gap-3 border border-gray-300 bg-white px-3.5 py-2 text-sm text-gray-700">
+                                <input type="checkbox" wire:model.live="show_value_axis_line" class="h-4 w-4 border-gray-300 text-[#376A64] focus:ring-[#376A64]">
+                                Tampilkan garis sumbu
+                            </label>
+                            <p class="mt-1 text-xs text-gray-500">Matikan untuk menyembunyikan garis vertikal di sisi angka.</p>
+                        </div>
+                    </div>
+
+                    @if (filled($value_axis_tick_count) && count($value_axis_ticks))
+                        <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+                            @foreach ($value_axis_ticks as $tickIndex => $tickValue)
+                                <div wire:key="value-axis-tick-{{ $tickIndex }}">
+                                    <label class="mb-1.5 block text-xs font-semibold text-gray-600">Baris {{ $tickIndex + 1 }}</label>
+                                    <input type="number" step="any" wire:model.live.debounce.300ms="value_axis_ticks.{{ $tickIndex }}" placeholder="Nilai" class="w-full border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/10">
+                                    @error("value_axis_ticks.$tickIndex") <p class="mt-1 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+            @endif
 
             <button type="button" x-on:click="sections.workspace = !sections.workspace" class="mt-3 flex w-full items-center justify-between gap-4 border-t border-gray-200 pt-6 text-left md:col-span-2" x-bind:aria-expanded="sections.workspace">
                 <span>

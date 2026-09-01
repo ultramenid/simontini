@@ -43,6 +43,12 @@ class DataVisualizationForm extends Component
 
     public string $legend_position = 'bottom';
 
+    public $value_axis_tick_count = null;
+
+    public array $value_axis_ticks = [];
+
+    public bool $show_value_axis_line = true;
+
     public array $columns = ['Kategori', 'Nilai'];
 
     public array $rows = [
@@ -84,6 +90,9 @@ class DataVisualizationForm extends Component
         $this->bottom_italic = (bool) ($chartData['bottom_italic'] ?? false);
         $this->show_legend = (bool) ($chartData['show_legend'] ?? true);
         $this->legend_position = $chartData['legend_position'] ?? 'bottom';
+        $this->value_axis_ticks = array_values($chartData['value_axis_ticks'] ?? []);
+        $this->value_axis_tick_count = $this->value_axis_ticks === [] ? null : count($this->value_axis_ticks);
+        $this->show_value_axis_line = (bool) ($chartData['show_value_axis_line'] ?? true);
         $this->is_active = (bool) $item->is_active;
     }
 
@@ -107,11 +116,19 @@ class DataVisualizationForm extends Component
             'bottom_italic' => ['boolean'],
             'show_legend' => ['boolean'],
             'legend_position' => ['required', 'in:top,bottom'],
+            'value_axis_tick_count' => ['nullable', 'integer', 'min:2', 'max:20'],
+            'value_axis_ticks' => ['array'],
+            'show_value_axis_line' => ['boolean'],
             'columns' => ['required', 'array', 'min:2', 'max:10'],
             'columns.*' => ['nullable', 'string', 'max:100'],
             'rows' => ['required', 'array', 'min:1', 'max:100'],
             'is_active' => ['boolean'],
         ];
+
+        if (filled($this->value_axis_tick_count)) {
+            $rules['value_axis_ticks'] = ['required', 'array', 'size:'.(int) $this->value_axis_tick_count];
+            $rules['value_axis_ticks.*'] = ['required', 'numeric'];
+        }
 
         foreach ($this->rows as $rowIndex => $row) {
             $rules["rows.{$rowIndex}"] = ['array', 'size:'.count($this->columns)];
@@ -142,6 +159,9 @@ class DataVisualizationForm extends Component
             'bottom_italic' => 'italic teks bawah',
             'show_legend' => 'legend',
             'legend_position' => 'posisi legend',
+            'value_axis_tick_count' => 'jumlah baris angka',
+            'value_axis_ticks.*' => 'nilai baris sumbu',
+            'show_value_axis_line' => 'garis sumbu nilai',
             'columns.*' => 'nama kolom',
             'rows.*.*' => 'isi tabel',
             'is_active' => 'status',
@@ -259,6 +279,36 @@ class DataVisualizationForm extends Component
         $this->preview();
     }
 
+    public function updatedValueAxisTickCount($value): void
+    {
+        if (! is_numeric($value)) {
+            $this->value_axis_ticks = [];
+            $this->preview();
+
+            return;
+        }
+
+        $count = max(2, min(20, (int) $value));
+        $ticks = array_slice(array_values($this->value_axis_ticks), 0, $count);
+
+        while (count($ticks) < $count) {
+            $ticks[] = '';
+        }
+
+        $this->value_axis_ticks = $ticks;
+        $this->preview();
+    }
+
+    public function updatedValueAxisTicks(): void
+    {
+        $this->preview();
+    }
+
+    public function updatedShowValueAxisLine(): void
+    {
+        $this->preview();
+    }
+
     public function removeColumn(int $index): void
     {
         if ($index === 0 || count($this->columns) <= 2 || ! array_key_exists($index, $this->columns)) {
@@ -311,6 +361,8 @@ class DataVisualizationForm extends Component
                 'bottom_italic' => $this->bottom_italic,
                 'show_legend' => $this->show_legend,
                 'legend_position' => $this->legend_position,
+                'value_axis_ticks' => array_values($this->value_axis_ticks),
+                'show_value_axis_line' => $this->show_value_axis_line,
             ],
         );
     }
@@ -318,6 +370,18 @@ class DataVisualizationForm extends Component
     public function save()
     {
         $validated = $this->validate();
+        $valueAxisTicks = filled($validated['value_axis_tick_count'])
+            ? array_map(fn ($value) => (float) $value, array_values($validated['value_axis_ticks']))
+            : [];
+
+        foreach ($valueAxisTicks as $index => $value) {
+            if ($index > 0 && $value <= $valueAxisTicks[$index - 1]) {
+                $this->addError("value_axis_ticks.{$index}", 'Nilai harus lebih besar dari baris sebelumnya.');
+
+                return;
+            }
+        }
+
         $now = now();
         $values = [
             'title' => $validated['title'],
@@ -341,6 +405,8 @@ class DataVisualizationForm extends Component
                 'bottom_italic' => $validated['bottom_italic'],
                 'show_legend' => $validated['show_legend'],
                 'legend_position' => $validated['legend_position'],
+                'value_axis_ticks' => $valueAxisTicks,
+                'show_value_axis_line' => $validated['show_value_axis_line'],
             ]),
             'embed_url' => null,
             'source_url' => null,
