@@ -26,7 +26,7 @@
             </div>
 
             @unless ($deforestoryIndex ?? false)
-                <div class="py-2 hover:border-b hover:border-simontini @if($nav == 'deforestory') border-b border-simontini @endif">
+                <div class="py-2 hover:border-b hover:border-simontini @if($nav == 'deforestation-story') border-b border-simontini @endif">
                     <a href="{{ route('deforestation.index', ['locale' => app()->getLocale()]) }}" class="font-normal">DEFORESTORY</a>
                 </div>
             @endunless
