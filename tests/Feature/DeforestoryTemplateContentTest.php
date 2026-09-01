@@ -74,6 +74,13 @@ it('keeps bilingual content editors without floating language markers', function
         ->not->toContain('content-language-switcher');
 });
 
+it('places both story titles before the image upload fields', function () {
+    $view = file_get_contents(resource_path('views/livewire/deforestory-add.blade.php'));
+
+    expect(strpos($view, 'Judul Indonesia'))->toBeLessThan(strpos($view, 'Gambar Indonesia'))
+        ->and(strpos($view, 'Judul Inggris'))->toBeLessThan(strpos($view, 'Gambar Indonesia'));
+});
+
 it('uses selectable cards for the TinyMCE Data and Grafik picker', function () {
     $script = file_get_contents(resource_path('js/app.js'));
 

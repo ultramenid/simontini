@@ -47,6 +47,8 @@ class DeforestoryAdd extends Component
 
     public string $status = 'draft';
 
+    public bool $is_locked = false;
+
     public function mount(?int $deforestoryId = null): void
     {
         $this->deforestoryId = $deforestoryId;
@@ -71,6 +73,7 @@ class DeforestoryAdd extends Component
         $this->content_id = $item->content_id;
         $this->content_en = $item->content_en;
         $this->status = $item->status;
+        $this->is_locked = (bool) ($item->is_locked ?? false);
         $this->currentImageId = $item->image_id;
         $this->currentImageEn = $item->image_en;
         $this->image_description_id = $item->image_description_id ?? '';
@@ -93,14 +96,14 @@ class DeforestoryAdd extends Component
             'content_id' => ['required', 'string'],
             'content_en' => ['required', 'string'],
             'status' => ['required', Rule::in(['publish', 'draft'])],
+            'is_locked' => ['boolean'],
         ];
     }
 
     public function save(
         DeforestationStoryNotificationDispatcher $notifications,
         DeforestationStoryWebhookDispatcher $webhooks,
-    )
-    {
+    ) {
         $validated = $this->validate();
         unset($validated['image_id'], $validated['image_en']);
         $validated['slug'] = $this->uniqueSlug($this->title_id, $this->deforestoryId);

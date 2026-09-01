@@ -32,6 +32,18 @@
 
             <div class="grid grid-cols-1 gap-5">
                 <div>
+                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Indonesia <span class="text-red-500">*</span></label>
+                    <input type="text" wire:model="title_id" placeholder="Masukkan judul Bahasa Indonesia" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
+                    @error('title_id') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                </div>
+
+                <div>
+                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Inggris <span class="text-red-500">*</span></label>
+                    <input type="text" wire:model="title_en" placeholder="Enter the English title" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
+                    @error('title_en') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                </div>
+
+                <div>
                     <label class="mb-1.5 block text-sm font-semibold text-gray-700">Gambar Indonesia</label>
                     <div class="rounded-xl border border-dashed border-gray-300 bg-gray-50 p-4">
                         <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -104,18 +116,6 @@
                 </div>
 
                 <div>
-                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Indonesia <span class="text-red-500">*</span></label>
-                    <input type="text" wire:model="title_id" placeholder="Masukkan judul Bahasa Indonesia" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
-                    @error('title_id') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
-                </div>
-
-                <div>
-                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Inggris <span class="text-red-500">*</span></label>
-                    <input type="text" wire:model="title_en" placeholder="Enter the English title" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
-                    @error('title_en') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
-                </div>
-
-                <div>
                     <label class="mb-1.5 block text-sm font-semibold text-gray-700">Tanggal <span class="text-red-500">*</span></label>
                     <input type="date" wire:model="date" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
                     @error('date') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
@@ -128,6 +128,17 @@
                         <option value="publish">Publish — sudah dipublikasikan</option>
                     </select>
                     @error('status') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                </div>
+
+                <div class="rounded-xl border border-gray-200 bg-gray-50 p-5">
+                    <label class="flex cursor-pointer items-start gap-3">
+                        <input type="checkbox" wire:model.live="is_locked" class="mt-1 rounded border-gray-300 text-[#376A64] focus:ring-[#376A64]">
+                        <span>
+                            <strong class="block text-sm text-gray-900">Kunci preview artikel</strong>
+                            <span class="mt-1 block text-xs leading-5 text-gray-500">Jika aktif, pengunjung harus memasukkan satu password global Deforestory untuk membuka artikel dari halaman preview. Password global diatur pada halaman daftar Deforestory. Pengguna yang sedang login CMS tetap dapat membukanya langsung.</span>
+                        </span>
+                    </label>
+                    @error('is_locked') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
                 </div>
             </div>
         </section>

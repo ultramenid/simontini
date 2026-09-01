@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\URL;
 
 uses(DatabaseTransactions::class);
@@ -33,6 +34,14 @@ function createDeforestationStory(array $overrides = []): object
 function temporaryDeforestationPreviewUrl(string $routeName, array $parameters): string
 {
     return URL::temporarySignedRoute($routeName, now()->addHour(), $parameters);
+}
+
+function setGlobalDeforestationPreviewPassword(string $password): void
+{
+    DB::table('deforestory_preview_settings')->updateOrInsert(
+        ['id' => 1],
+        ['password_hash' => Hash::make($password), 'updated_at' => now()],
+    );
 }
 
 it('only displays published stories on the public list', function () {
@@ -167,6 +176,158 @@ it('allows guests to open a signed preview link', function () {
         ->assertOk()
         ->assertSee('Draft Tautan Aman')
         ->assertSee('MODE PREVIEW');
+});
+
+it('asks for the article password before opening a locked preview', function () {
+    setGlobalDeforestationPreviewPassword('password-global');
+    $story = createDeforestationStory([
+        'title_id' => 'Draft Preview Terkunci',
+        'content_id' => '<p>Konten yang harus dilindungi.</p>',
+        'is_locked' => true,
+    ]);
+    $previewUrl = temporaryDeforestationPreviewUrl('deforestation.preview.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]);
+
+    $this->get($previewUrl)
+        ->assertOk()
+        ->assertSee('Password artikel')
+        ->assertSee('Draft Preview Terkunci')
+        ->assertDontSee('Konten yang harus dilindungi.');
+});
+
+it('unlocks every locked article after the global password is accepted', function () {
+    setGlobalDeforestationPreviewPassword('password-global');
+    $firstStory = createDeforestationStory([
+        'title_id' => 'Artikel Pertama',
+        'content_id' => '<p>Isi artikel pertama.</p>',
+        'is_locked' => true,
+    ]);
+    $secondStory = createDeforestationStory([
+        'title_id' => 'Artikel Kedua',
+        'content_id' => '<p>Isi artikel kedua.</p>',
+        'is_locked' => true,
+    ]);
+    $firstPreviewUrl = temporaryDeforestationPreviewUrl('deforestation.preview.show', [
+        'locale' => 'id',
+        'id' => $firstStory->id,
+        'slug' => $firstStory->slug,
+    ]);
+    $firstUnlockUrl = temporaryDeforestationPreviewUrl('deforestation.preview.unlock', [
+        'locale' => 'id',
+        'id' => $firstStory->id,
+        'slug' => $firstStory->slug,
+    ]);
+    $secondPreviewUrl = temporaryDeforestationPreviewUrl('deforestation.preview.show', [
+        'locale' => 'id',
+        'id' => $secondStory->id,
+        'slug' => $secondStory->slug,
+    ]);
+
+    $this->from($firstPreviewUrl)
+        ->post($firstUnlockUrl, ['password' => 'password-global'])
+        ->assertRedirect();
+
+    $this->get($firstPreviewUrl)
+        ->assertOk()
+        ->assertSee('Isi artikel pertama.');
+
+    $this->get($secondPreviewUrl)
+        ->assertOk()
+        ->assertSee('Isi artikel kedua.')
+        ->assertDontSee('Password artikel');
+});
+
+it('rejects an incorrect preview password', function () {
+    setGlobalDeforestationPreviewPassword('password-benar');
+    $story = createDeforestationStory([
+        'is_locked' => true,
+    ]);
+    $previewUrl = temporaryDeforestationPreviewUrl('deforestation.preview.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]);
+    $unlockUrl = temporaryDeforestationPreviewUrl('deforestation.preview.unlock', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]);
+
+    $this->from($previewUrl)
+        ->post($unlockUrl, ['password' => 'password-salah'])
+        ->assertRedirect($previewUrl)
+        ->assertSessionHasErrors('password');
+
+    $this->get($previewUrl)
+        ->assertOk()
+        ->assertSee('Password artikel')
+        ->assertDontSee('Konten cerita Indonesia.');
+});
+
+it('revokes an unlocked preview session when the global password changes', function () {
+    setGlobalDeforestationPreviewPassword('password-lama');
+    $story = createDeforestationStory([
+        'content_id' => '<p>Konten sesi global.</p>',
+        'is_locked' => true,
+    ]);
+    $previewUrl = temporaryDeforestationPreviewUrl('deforestation.preview.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]);
+    $unlockUrl = temporaryDeforestationPreviewUrl('deforestation.preview.unlock', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]);
+
+    $this->from($previewUrl)
+        ->post($unlockUrl, ['password' => 'password-lama'])
+        ->assertRedirect();
+
+    $this->get($previewUrl)->assertSee('Konten sesi global.');
+
+    setGlobalDeforestationPreviewPassword('password-baru');
+
+    $this->get($previewUrl)
+        ->assertSee('Password artikel')
+        ->assertDontSee('Konten sesi global.');
+});
+
+it('allows a logged in CMS user to open a locked preview without a password', function () {
+    $story = createDeforestationStory([
+        'content_id' => '<p>Konten untuk pengguna CMS.</p>',
+        'is_locked' => true,
+    ]);
+
+    $this->withSession(['id' => 123])
+        ->get(temporaryDeforestationPreviewUrl('deforestation.preview.show', [
+            'locale' => 'id',
+            'id' => $story->id,
+            'slug' => $story->slug,
+        ]))
+        ->assertOk()
+        ->assertSee('Konten untuk pengguna CMS.')
+        ->assertDontSee('Password artikel');
+});
+
+it('keeps published stories publicly accessible when only their preview is locked', function () {
+    $story = createDeforestationStory([
+        'status' => 'publish',
+        'is_locked' => true,
+    ]);
+
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertSee('Konten cerita Indonesia.')
+        ->assertDontSee('Password artikel');
 });
 
 it('allows a signed preview index to display drafts with noindex metadata', function () {
