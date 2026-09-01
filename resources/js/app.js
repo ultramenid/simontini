@@ -53,6 +53,7 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
     const series = chartData.columns.slice(1);
     const isCircular = type === 'pie' || type === 'doughnut';
     const isLine = type === 'line' || type === 'area';
+    const isBarChart = type === 'bar' || type === 'column';
     const topText = String(chartData.top_text || '').trim();
     const bottomText = String(chartData.bottom_text || '').trim();
     const titleAlignment = { left: 'start', center: 'center', right: 'end' }[chartData.top_align] || 'center';
@@ -68,6 +69,13 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
     const showLegend = chartData.show_legend !== false;
     const legendPosition = chartData.legend_position === 'top' ? 'top' : 'bottom';
     const compactPreview = chartData.compact_preview === true;
+    const valueAxisTicks = Array.isArray(chartData.value_axis_ticks)
+        ? [...new Set(chartData.value_axis_ticks
+            .filter((value) => value !== null && value !== undefined && value !== '')
+            .map(Number)
+            .filter(Number.isFinite))].sort((first, second) => first - second)
+        : [];
+    const showValueAxisLine = chartData.show_value_axis_line !== false;
 
     if (type === 'area-grid') {
         canvas.style.display = 'none';
@@ -237,7 +245,45 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
             pointRadius: isLine ? 3 : 0,
             tension: 0.25,
             fill: type === 'area',
+            ...(isBarChart ? {
+                barPercentage: 0.72,
+                categoryPercentage: 0.72,
+                maxBarThickness: 100,
+                borderRadius: 0,
+                borderSkipped: false,
+            } : {}),
         }));
+
+    const categoryScale = {
+        grid: { display: false },
+        border: { display: true, color: '#111827', width: 1 },
+        ticks: {
+            color: '#111827',
+            padding: compactPreview ? 4 : 12,
+            autoSkip: true,
+            maxRotation: 0,
+            ...(compactPreview ? { maxTicksLimit: 5, font: { size: 9 } } : { font: { size: 13 } }),
+        },
+    };
+    const valueScale = {
+        beginAtZero: valueAxisTicks.length < 2,
+        grid: { color: '#D1D5DB', lineWidth: 1, drawTicks: false },
+        border: { display: showValueAxisLine, color: '#111827', width: 1 },
+        ...(valueAxisTicks.length >= 2 ? {
+            min: valueAxisTicks[0],
+            max: valueAxisTicks[valueAxisTicks.length - 1],
+            afterBuildTicks: (scale) => {
+                scale.ticks = valueAxisTicks.map((value) => ({ value }));
+            },
+        } : {}),
+        ticks: {
+            color: '#111827',
+            padding: compactPreview ? 4 : 10,
+            callback: (value) => Number(value).toLocaleString('id-ID'),
+            ...(valueAxisTicks.length >= 2 ? { autoSkip: false } : {}),
+            ...(compactPreview ? { maxTicksLimit: 4, font: { size: 9 } } : { font: { size: 13 } }),
+        },
+    };
 
     new Chart(canvas, {
         type: type === 'line' || type === 'area' ? 'line' : type === 'bar' || type === 'column' ? 'bar' : type,
@@ -245,6 +291,7 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            layout: { padding: { left: 4, right: 12, bottom: 4 } },
             plugins: {
                 legend: { display: showLegend, position: legendPosition },
                 title: { display: Boolean(topText), text: topText, position: 'top', align: titleAlignment, color: '#000000', font: { family: topFontFamily, size: topFontSize, weight: topFontWeight, style: topFontStyle } },
@@ -252,10 +299,11 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
                 tooltip: { mode: isCircular ? 'nearest' : 'index', intersect: isCircular },
             },
             indexAxis: type === 'bar' ? 'y' : 'x',
-            scales: isCircular ? {} : {
-                x: { grid: { display: false }, ticks: compactPreview ? { autoSkip: true, maxTicksLimit: 5, maxRotation: 0, font: { size: 9 } } : {} },
-                y: { beginAtZero: true, ticks: compactPreview ? { maxTicksLimit: 4, font: { size: 9 } } : {} },
-            },
+            scales: isCircular
+                ? {}
+                : type === 'bar'
+                    ? { x: valueScale, y: categoryScale }
+                    : { x: categoryScale, y: valueScale },
         },
     });
 };

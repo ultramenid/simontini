@@ -60,6 +60,10 @@ it('opens a separate add page from the table', function () {
         ->assertDontSee('Sankey / Alluvial')
         ->assertDontSee('chart-check', false)
         ->assertSee('viewBox="0 0 160 64"', false)
+        ->assertSee('Skala Sumbu Nilai')
+        ->assertSee('Jumlah Baris Angka')
+        ->assertSee('Garis Sumbu Nilai')
+        ->assertSee('Tampilkan garis sumbu')
         ->assertSee('+ Kolom')
         ->assertSee('Preview');
 });
@@ -71,6 +75,42 @@ it('requires a title but allows mixed and empty table cells', function () {
         ->call('save')
         ->assertHasErrors(['title' => 'required'])
         ->assertHasNoErrors(['columns.0', 'rows.0.0', 'rows.0.1', 'rows.1.1']);
+});
+
+it('validates custom value axis settings', function () {
+    Livewire::test(DataVisualizationForm::class)
+        ->set('title', 'Grafik dengan Sumbu Kustom')
+        ->set('value_axis_tick_count', 5)
+        ->set('value_axis_ticks', [0, 1000, 900, 2000, 2500])
+        ->call('save')
+        ->assertHasErrors(['value_axis_ticks.2']);
+});
+
+it('generates the requested number of custom axis rows', function () {
+    Livewire::test(DataVisualizationForm::class)
+        ->set('value_axis_tick_count', 5)
+        ->assertSet('value_axis_ticks', ['', '', '', '', ''])
+        ->assertSee('Baris 1')
+        ->assertSee('Baris 5');
+});
+
+it('applies custom settings to the numeric chart axis', function () {
+    $script = file_get_contents(resource_path('js/app.js'));
+
+    expect($script)
+        ->toContain('valueAxisTicks')
+        ->toContain('showValueAxisLine')
+        ->toContain('border: { display: showValueAxisLine')
+        ->toContain('afterBuildTicks')
+        ->toContain('scale.ticks = valueAxisTicks.map')
+        ->toContain('barPercentage: 0.72')
+        ->toContain('categoryPercentage: 0.72')
+        ->toContain('maxBarThickness: 100')
+        ->toContain('borderRadius: 0')
+        ->toContain("toLocaleString('id-ID')")
+        ->toContain("type === 'bar'")
+        ->toContain('{ x: valueScale, y: categoryScale }')
+        ->toContain('{ x: categoryScale, y: valueScale }');
 });
 
 it('stores letters numbers and empty cells in the same table', function () {
@@ -104,6 +144,9 @@ it('stores optional top bottom text and legend settings', function () {
         ->set('bottom_italic', true)
         ->set('show_legend', false)
         ->set('legend_position', 'top')
+        ->set('value_axis_tick_count', 5)
+        ->set('value_axis_ticks', [0, 1000, 1500, 2000, 2500])
+        ->set('show_value_axis_line', false)
         ->set('columns', ['Bulan', 'Hektare'])
         ->set('rows', [['Januari', '220']])
         ->call('save')
@@ -126,7 +169,9 @@ it('stores optional top bottom text and legend settings', function () {
         ->bottom_font_family->toBe('Arial')
         ->bottom_italic->toBeTrue()
         ->show_legend->toBeFalse()
-        ->legend_position->toBe('top');
+        ->legend_position->toBe('top')
+        ->value_axis_ticks->toBe([0, 1000, 1500, 2000, 2500])
+        ->show_value_axis_line->toBeFalse();
 });
 
 it('creates a chart from table data', function () {
@@ -162,12 +207,17 @@ it('dispatches current text and legend settings to preview', function () {
         ->set('bottom_text', 'Catatan Bawah')
         ->set('show_legend', false)
         ->set('legend_position', 'top')
+        ->set('value_axis_tick_count', 5)
+        ->set('value_axis_ticks', [0, 1000, 1500, 2000, 2500])
+        ->set('show_value_axis_line', false)
         ->call('preview')
         ->assertDispatched('data-visualization-preview', function ($name, $params) {
             return $params['chartData']['top_text'] === 'Judul Atas'
                 && $params['chartData']['bottom_text'] === 'Catatan Bawah'
                 && $params['chartData']['show_legend'] === false
-                && $params['chartData']['legend_position'] === 'top';
+                && $params['chartData']['legend_position'] === 'top'
+                && $params['chartData']['value_axis_ticks'] === [0, 1000, 1500, 2000, 2500]
+                && $params['chartData']['show_value_axis_line'] === false;
         });
 });
 
@@ -176,6 +226,12 @@ it('updates chart appearance in realtime when a setting changes', function () {
         ->set('show_legend', false)
         ->assertDispatched('data-visualization-preview')
         ->set('legend_position', 'top')
+        ->assertDispatched('data-visualization-preview')
+        ->set('value_axis_tick_count', 5)
+        ->assertDispatched('data-visualization-preview')
+        ->set('value_axis_ticks', [0, 1000, 1500, 2000, 2500])
+        ->assertDispatched('data-visualization-preview')
+        ->set('show_value_axis_line', false)
         ->assertDispatched('data-visualization-preview')
         ->set('top_text', 'Judul Realtime')
         ->assertDispatched('data-visualization-preview')

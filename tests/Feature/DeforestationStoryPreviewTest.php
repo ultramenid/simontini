@@ -45,6 +45,24 @@ it('only displays published stories on the public list', function () {
         ->assertDontSee($draft->title_id);
 });
 
+it('marks the deforestory navigation as active on list and detail pages', function () {
+    $story = createDeforestationStory(['status' => 'publish']);
+    $activeNavigation = '/class="py-2 hover:border-b hover:border-simontini\s+border-b border-simontini\s*">\s*<a[^>]*>DEFORESTORY<\/a>/';
+
+    $listResponse = $this->get(route('deforestation.index', ['locale' => 'id']))
+        ->assertOk();
+
+    expect($listResponse->getContent())->toMatch($activeNavigation);
+
+    $detailResponse = $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))->assertOk();
+
+    expect($detailResponse->getContent())->toMatch($activeNavigation);
+});
+
 it('displays every published story without pagination', function () {
     $stories = collect(range(1, 13))->map(fn (int $number) => createDeforestationStory([
         'title_id' => "Cerita Tanpa Pagination {$number}",
