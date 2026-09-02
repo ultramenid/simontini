@@ -622,6 +622,7 @@ const initializeTinyMceEditors = () => {
         const input = wrapper.querySelector('[data-tinymce-input]');
         if (!editorElement || !input) return;
 
+        const isCaptionEditor = wrapper.dataset.tinymcePreset === 'caption';
         const referenceStorageKey = `simontini-tiptap-selection:${wrapper.dataset.tinymcePickerId}`;
         let lastReferenceSelection = 0;
         let referenceInsertionMode = 'image';
@@ -645,12 +646,14 @@ const initializeTinyMceEditors = () => {
             remove_script_host: false,
             skin: false,
             content_css: false,
-            height: 560,
-            min_height: 360,
+            height: isCaptionEditor ? 220 : 560,
+            min_height: isCaptionEditor ? 180 : 360,
             resize: true,
-            menubar: 'file edit view insert format tools table help',
+            menubar: isCaptionEditor ? false : 'file edit view insert format tools table help',
             plugins: 'advlist anchor autolink charmap code codesample fullscreen image link lists media preview searchreplace table visualblocks wordcount',
-            toolbar: 'undo redo | blocks fontsize | addImage addLightbox addBeforeAfter addDataVisualization addVideo addBorderMerah addStopper | bold italic underline strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media table | code codesample removeformat | fullscreen preview',
+            toolbar: isCaptionEditor
+                ? 'undo redo | fontsize | bold italic underline | alignleft aligncenter alignright | link removeformat | code'
+                : 'undo redo | blocks fontsize | addImage addLightbox addBeforeAfter addDataVisualization addVideo addBorderMerah addStopper | bold italic underline strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media table | code codesample removeformat | fullscreen preview',
             toolbar_sticky: true,
             promotion: false,
             branding: false,
@@ -661,8 +664,10 @@ const initializeTinyMceEditors = () => {
             verify_html: false,
             entity_encoding: 'raw',
             sandbox_iframes: false,
-            font_size_formats: '8pt 10pt 12pt 14pt 16pt 18pt 24pt 30pt 36pt 48pt',
-            content_style: `body { font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; padding: 16px; } img, video, iframe { max-width: 100%; } .story-content-gallery { display: flex; width: 100%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; } .story-content-gallery > .story-content-figure { flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: start; } .story-before-after-figure, .story-before-after, .story-before-after img { -webkit-user-drag: none; user-select: none; } .story-before-after { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #e5e7eb; user-select: none; } .story-before-after-after { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 0 0 var(--before-after-position)); } .story-before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; } .story-before-after-handle { position: absolute; top: 50%; left: var(--before-after-position); z-index: 2; display: flex; width: 52px; height: 52px; align-items: center; justify-content: center; border: 3px solid #fff; border-radius: 9999px; background: rgba(0,0,0,.55); color: #fff; font-size: 22px; transform: translate(-50%, -50%); pointer-events: none; } .story-before-after-label, .story-before-after-caption { display: none !important; } .story-before-after-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; cursor: ew-resize; opacity: 0; } .story-data-visualization { width: 100%; margin: 24px 0; } .story-data-visualization iframe { display: block; width: 100%; height: 100%; pointer-events: none; }`,
+            font_size_formats: isCaptionEditor
+                ? '10px 11px 12px 14px 16px 18px 20px 24px'
+                : '8pt 10pt 12pt 14pt 16pt 18pt 24pt 30pt 36pt 48pt',
+            content_style: `body { font-family: Arial, sans-serif; font-size: ${isCaptionEditor ? '12px' : '16px'}; line-height: 1.7; padding: 16px; } img, video, iframe { max-width: 100%; } .story-content-gallery { display: flex; width: 100%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; } .story-content-gallery > .story-content-figure { flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: start; } .story-before-after-figure, .story-before-after, .story-before-after img { -webkit-user-drag: none; user-select: none; } .story-before-after { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #e5e7eb; user-select: none; } .story-before-after-after { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 0 0 var(--before-after-position)); } .story-before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; } .story-before-after-handle { position: absolute; top: 50%; left: var(--before-after-position); z-index: 2; display: flex; width: 52px; height: 52px; align-items: center; justify-content: center; border: 3px solid #fff; border-radius: 9999px; background: rgba(0,0,0,.55); color: #fff; font-size: 22px; transform: translate(-50%, -50%); pointer-events: none; } .story-before-after-label, .story-before-after-caption { display: none !important; } .story-before-after-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; cursor: ew-resize; opacity: 0; } .story-data-visualization { width: 100%; margin: 24px 0; } .story-data-visualization iframe { display: block; width: 100%; height: 100%; pointer-events: none; }`,
             setup(editor) {
                 const atomicBlockSelector = '.story-lightbox-gallery, .story-before-after-figure, .story-data-visualization';
                 const normalizeInlineStoppers = () => {

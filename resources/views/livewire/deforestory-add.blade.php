@@ -153,19 +153,21 @@
                     </div>
                 </div>
 
-                <div>
-                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Deskripsi Hero Image Indonesia</label>
-                    <textarea wire:model="image_description_id" rows="3" placeholder="Tulis caption, sumber, atau kredit hero image Indonesia" class="w-full resize-y rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15"></textarea>
-                    <p class="mt-1.5 text-xs text-gray-500">Ditampilkan di bawah hero image pada halaman detail Indonesia.</p>
-                    @error('image_description_id') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
-                </div>
+                <x-tinymce-editor
+                    wire:model="image_description_id"
+                    :value="$image_description_id"
+                    label="Deskripsi Hero Image Indonesia"
+                    hint="Ditampilkan di bawah hero image pada halaman detail Indonesia."
+                    preset="caption"
+                />
 
-                <div>
-                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Deskripsi Hero Image Inggris</label>
-                    <textarea wire:model="image_description_en" rows="3" placeholder="Write the English hero image caption, source, or credit" class="w-full resize-y rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15"></textarea>
-                    <p class="mt-1.5 text-xs text-gray-500">Ditampilkan di bawah hero image pada halaman detail Inggris.</p>
-                    @error('image_description_en') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
-                </div>
+                <x-tinymce-editor
+                    wire:model="image_description_en"
+                    :value="$image_description_en"
+                    label="Deskripsi Hero Image Inggris"
+                    hint="Ditampilkan di bawah hero image pada halaman detail Inggris."
+                    preset="caption"
+                />
 
                 <div>
                     <label class="mb-1.5 block text-sm font-semibold text-gray-700">Tanggal <span class="text-red-500">*</span></label>

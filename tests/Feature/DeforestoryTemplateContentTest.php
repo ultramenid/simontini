@@ -84,6 +84,27 @@ it('places both story titles before the image upload fields', function () {
         ->and(strpos($view, 'Judul Inggris'))->toBeLessThan(strpos($view, 'Media Indonesia'));
 });
 
+it('uses compact TinyMCE editors for both hero image descriptions', function () {
+    $view = file_get_contents(resource_path('views/livewire/deforestory-add.blade.php'));
+    $component = file_get_contents(resource_path('views/components/tinymce-editor.blade.php'));
+    $script = file_get_contents(resource_path('js/app.js'));
+
+    expect($view)
+        ->toContain('wire:model="image_description_id"')
+        ->toContain('wire:model="image_description_en"')
+        ->toContain('preset="caption"')
+        ->not->toContain('<textarea wire:model="image_description_id"')
+        ->not->toContain('<textarea wire:model="image_description_en"')
+        ->and($component)
+        ->toContain('data-tinymce-preset="{{ $preset }}"')
+        ->and($script)
+        ->toContain("wrapper.dataset.tinymcePreset === 'caption'")
+        ->toContain('height: isCaptionEditor ? 220 : 560')
+        ->toContain("? 'undo redo | fontsize | bold italic underline")
+        ->toContain("? '10px 11px 12px 14px 16px 18px 20px 24px'")
+        ->toContain("font-size: \${isCaptionEditor ? '12px' : '16px'}");
+});
+
 it('accepts and stores a Deforestory video smaller than fifty megabytes', function () {
     Storage::fake('public');
     $video = UploadedFile::fake()->create('hero-deforestory.mp4', 49 * 1024, 'video/mp4');

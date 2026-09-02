@@ -134,6 +134,10 @@
   font-size: 12px !important;
 }
 
+.hero-image-caption p {
+  margin: 0;
+}
+
 .story-gallery-shell {
   position: relative;
   margin: 2.5rem 0;
