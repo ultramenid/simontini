@@ -136,6 +136,7 @@ it('renders the hero image description below the detail image', function () {
         'slug' => $story->slug,
     ]))
         ->assertOk()
+        ->assertSee('text-[12px] font-normal leading-[1.6] text-black', false)
         ->assertSee('Foto udara hutan, sumber Auriga Nusantara.');
 
     $this->get(route('deforestation.show', [

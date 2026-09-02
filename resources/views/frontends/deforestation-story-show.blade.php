@@ -84,7 +84,7 @@
                         @endif
                     </div>
                     @if (filled($story->localized_image_description))
-                        <figcaption class="pt-1 text-left text-[14px] font-normal leading-[1.6] text-[#1a1a1a]/80">
+                        <figcaption class="pt-1 text-left text-[12px] font-normal leading-[1.6] text-black">
                             {{ $story->localized_image_description }}
                         </figcaption>
                     @endif
