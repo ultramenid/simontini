@@ -181,3 +181,35 @@ it('uses selectable cards for the TinyMCE Data and Grafik picker', function () {
         ->toContain("insertButton.textContent = 'Masukkan Grafik'")
         ->not->toContain("name: 'visualizationId'");
 });
+
+it('provides an inline red stopper at the current TinyMCE cursor position', function () {
+    $script = file_get_contents(resource_path('js/app.js'));
+    $styles = file_get_contents(resource_path('css/app.css'));
+
+    expect($script)
+        ->toContain('addBorderMerah addStopper')
+        ->toContain("text: '+ Stopper'")
+        ->toContain('data-story-inline-stopper="true"')
+        ->toContain('margin-left:1px')
+        ->not->toContain("insertContent('&nbsp;<span class=\"story-inline-stopper\"")
+        ->toContain('vertical-align:middle')
+        ->toContain("replace(/[\\u00a0 ]+$/, '')")
+        ->toContain('normalizeInlineStoppers();')
+        ->toContain('editor.undoManager.transact')
+        ->and($styles)
+        ->toContain('.public-story-content .story-inline-stopper')
+        ->toContain('background: #ff0000 !important');
+});
+
+it('uses twelve pixel descriptions for story images and GLightbox', function () {
+    $script = file_get_contents(resource_path('js/app.js'));
+    $styles = file_get_contents(resource_path('css/app.css'));
+
+    expect($script)
+        ->not->toContain('story-content-caption" style="margin: 4px 0 0; padding: 0; color: #000; font-size: 14px')
+        ->toContain('story-content-caption" style="margin: 4px 0 0; padding: 0; color: #000; font-size: 12px')
+        ->and($styles)
+        ->toContain('font-size: .75rem !important;')
+        ->toContain('.glightbox-container .gslide-desc')
+        ->toContain('font-size: 12px !important;');
+});

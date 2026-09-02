@@ -72,6 +72,13 @@ it('marks the deforestory navigation as active on list and detail pages', functi
     expect($detailResponse->getContent())->toMatch($activeNavigation);
 });
 
+it('keeps the mobile navigation above story media while scrolling', function () {
+    $mobileNavigation = file_get_contents(resource_path('views/partials/topbarMobile.blade.php'));
+
+    expect($mobileNavigation)
+        ->toContain('sticky top-0 isolate z-[1000] bg-simontini');
+});
+
 it('displays every published story without pagination', function () {
     $stories = collect(range(1, 13))->map(fn (int $number) => createDeforestationStory([
         'title_id' => "Cerita Tanpa Pagination {$number}",
@@ -129,6 +136,7 @@ it('renders the hero image description below the detail image', function () {
         'slug' => $story->slug,
     ]))
         ->assertOk()
+        ->assertSee('text-[12px] font-normal leading-[1.6] text-black', false)
         ->assertSee('Foto udara hutan, sumber Auriga Nusantara.');
 
     $this->get(route('deforestation.show', [
@@ -357,13 +365,17 @@ it('keeps published stories publicly accessible when only their preview is locke
 });
 
 it('allows a signed preview index to display drafts with noindex metadata', function () {
-    $story = createDeforestationStory(['title_id' => 'Draft Rahasia']);
+    $story = createDeforestationStory([
+        'title_id' => 'Draft Rahasia',
+        'is_locked' => true,
+    ]);
 
     $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.index', ['locale' => 'id']))
         ->assertOk()
         ->assertSee('Draft Rahasia')
         ->assertSee('<meta name="robots" content="noindex, nofollow">', false)
-        ->assertSee('MODE PREVIEW');
+        ->assertSee('MODE PREVIEW')
+        ->assertDontSee('Dilindungi password');
 
     $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.show', [
         'locale' => 'id',

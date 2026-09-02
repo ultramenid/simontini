@@ -1,5 +1,5 @@
 <!-- {{-- nav mobile --}} -->
-<header class="bg-simontini sticky top-0 z-20">
+<header class="sticky top-0 isolate z-[1000] bg-simontini">
     <div x-data="{ open: false }" class="px-4 py-3 bg-auriga-biru z-10 sm:hidden block">
         <div class="flex justify-between items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white " viewBox="0 0 20 20" fill="currentColor" @click="open = true">

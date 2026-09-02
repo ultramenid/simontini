@@ -100,6 +100,16 @@
   margin-top: 1.75rem;
 }
 
+.public-story-content .story-inline-stopper {
+  display: inline-block !important;
+  width: .7em !important;
+  height: .7em !important;
+  margin-left: 1px !important;
+  background: #ff0000 !important;
+  vertical-align: middle;
+  line-height: 1;
+}
+
 .public-story-content .story-content-figure {
   margin: 2.5rem 0;
 }
@@ -115,9 +125,13 @@
 
 .public-story-content .story-content-caption {
   margin-top: .75rem;
-  color: #7a6e60;
-  font-size: .6875rem;
+  color: #000;
+  font-size: .75rem !important;
   line-height: 1.25rem;
+}
+
+.glightbox-container .gslide-desc {
+  font-size: 12px !important;
 }
 
 .story-gallery-shell {

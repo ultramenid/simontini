@@ -1,11 +1,25 @@
 <div class="deforestory-square">
-    <div class="mb-6 flex items-center justify-between gap-4">
+    <div class="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
             <h1 class="text-2xl font-semibold text-gray-900">Deforestory</h1>
             <p class="mt-1 text-sm text-gray-500">Kelola daftar konten deforestory.</p>
         </div>
 
-        <div class="flex shrink-0 flex-wrap items-center justify-end gap-3">
+        <div class="flex flex-wrap items-center gap-3 lg:justify-end">
+            <div class="relative w-full sm:w-72">
+                <svg class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7" />
+                    <path stroke-linecap="round" d="m16.5 16.5 4 4" />
+                </svg>
+                <input
+                    type="search"
+                    wire:model.live.debounce.300ms="search"
+                    placeholder="Cari judul Deforestory..."
+                    aria-label="Cari judul Deforestory"
+                    class="w-full rounded-md border border-gray-300 bg-white py-2 pl-9 pr-3 text-sm text-gray-700 shadow-sm outline-none transition placeholder:text-gray-400 focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15"
+                >
+            </div>
+
             <a
                 href="{{ URL::temporarySignedRoute('deforestation.preview.index', now()->addDays(7), ['locale' => 'id']) }}"
                 target="_blank"
@@ -34,7 +48,13 @@
     </div>
 
     @if (session('success'))
-        <div class="mb-6 rounded-md border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
+        <div
+            x-data="{ visible: true }"
+            x-init="setTimeout(() => visible = false, 5000)"
+            x-show="visible"
+            x-transition.opacity.duration.300ms
+            class="mb-6 rounded-md border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700"
+        >
             {{ session('success') }}
         </div>
     @endif
@@ -51,21 +71,26 @@
                 <p class="mt-1 text-xs leading-5 text-gray-500">Satu password ini digunakan untuk membuka semua artikel Deforestory yang dikunci. Mengganti password akan membatalkan akses pengunjung sebelumnya.</p>
 
                 @if ($hasGlobalPreviewPassword)
-                    <div class="mt-3 flex max-w-md items-center gap-2">
+                    <div class="mt-3 grid max-w-md grid-cols-[minmax(0,1fr)_8rem] items-center gap-2">
+                        <input
+                            type="text"
+                            readonly
+                            value="{{ $revealedGlobalPreviewPassword ?? '••••••••' }}"
+                            aria-label="{{ $revealedGlobalPreviewPassword === null ? 'Password disembunyikan' : 'Password global preview' }}"
+                            class="min-w-0 rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800"
+                        >
                         @if ($revealedGlobalPreviewPassword === null)
-                            <button type="button" wire:click="revealGlobalPreviewPassword" class="inline-flex items-center gap-2 rounded-lg border border-[#376A64] bg-white px-3 py-2 text-xs font-semibold text-[#376A64] hover:bg-[#eef5f4]">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12s3.75-6.75 9.75-6.75S21.75 12 21.75 12 18 18.75 12 18.75 2.25 12 2.25 12Z"/><circle cx="12" cy="12" r="2.75"/></svg>
+                            <button type="button" wire:click="revealGlobalPreviewPassword" class="inline-flex w-32 items-center justify-center rounded-lg border border-[#376A64] bg-white px-3 py-2 text-xs font-semibold text-[#376A64] hover:bg-[#eef5f4]">
                                 Lihat Password
                             </button>
                         @else
-                            <input type="text" readonly value="{{ $revealedGlobalPreviewPassword }}" class="min-w-0 flex-1 rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800">
-                            <button type="button" wire:click="hideGlobalPreviewPassword" class="rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50">Sembunyikan</button>
+                            <button type="button" wire:click="hideGlobalPreviewPassword" class="inline-flex w-32 items-center justify-center rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50">Sembunyikan</button>
                         @endif
                     </div>
                 @endif
             </div>
 
-            <div class="grid w-full gap-3 sm:grid-cols-2 lg:max-w-2xl">
+            <div class="grid w-full gap-3 sm:grid-cols-2 lg:w-[480px] lg:flex-none">
                 <div>
                     <label class="mb-1.5 block text-xs font-semibold text-gray-700">{{ $hasGlobalPreviewPassword ? 'Password baru' : 'Password' }}</label>
                     <input type="password" wire:model="globalPreviewPassword" autocomplete="new-password" placeholder="Minimal 6 karakter" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
@@ -142,6 +167,10 @@
                                 <a href="{{ URL::temporarySignedRoute('deforestation.preview.show', now()->addDays(7), ['locale' => 'id', 'id' => $item->id, 'slug' => $item->slug]) }}" target="_blank" rel="noopener" class="w-full rounded-md border border-blue-200 bg-blue-50 px-3 py-1.5 text-center text-xs font-semibold text-blue-700 hover:bg-blue-100">Preview</a>
 
                                 <a href="{{ route('cms.deforestory.edit', $item->id) }}" class="w-full rounded-md border border-gray-300 bg-white px-3 py-1.5 text-center text-xs font-semibold text-gray-700 hover:bg-gray-100">Edit</a>
+
+                                <button type="button" wire:click="toggleLock({{ $item->id }})" class="w-full rounded-md border px-3 py-1.5 text-xs font-semibold {{ ($item->is_locked ?? false) ? 'border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-100' : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-100' }}">
+                                    {{ ($item->is_locked ?? false) ? 'Buka Kunci' : 'Kunci Preview' }}
+                                </button>
 
                                 <button type="button" wire:click="toggleStatus({{ $item->id }})" class="w-full rounded-md px-3 py-1.5 text-xs font-semibold text-white hover:opacity-90" style="background-color: {{ $item->status === 'publish' ? '#d97706' : '#376A64' }};">
                                     {{ $item->status === 'publish' ? 'Jadikan Draft' : 'Publish' }}

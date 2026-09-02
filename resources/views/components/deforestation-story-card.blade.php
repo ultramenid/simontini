@@ -27,12 +27,6 @@
                 <div class="flex h-full items-center justify-center text-sm text-gray-400">No image</div>
             @endif
 
-            @if ($isPreview && ($story->is_locked ?? false))
-                <span class="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/70 text-white shadow-lg" title="{{ $locale === 'en' ? 'Password protected' : 'Dilindungi password' }}">
-                    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0110 0v2a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2Zm8-2v2H7V6a3 3 0 116 0Z" clip-rule="evenodd" /></svg>
-                    <span class="sr-only">{{ $locale === 'en' ? 'Password protected' : 'Dilindungi password' }}</span>
-                </span>
-            @endif
         </div>
 
         <div class="pt-5">

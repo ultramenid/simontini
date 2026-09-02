@@ -78,8 +78,12 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
     const showValueAxisLine = chartData.show_value_axis_line !== false;
     const chartWidth = chartContainer?.clientWidth || canvas.clientWidth || 0;
     const isNarrowChart = chartWidth > 0 && chartWidth < 640;
-    const responsiveTopFontSize = isNarrowChart ? Math.min(topFontSize, 18) : topFontSize;
-    const responsiveBottomFontSize = isNarrowChart ? Math.min(bottomFontSize, 12) : bottomFontSize;
+    const responsiveTopFontSize = isNarrowChart ? Math.min(topFontSize, 14) : topFontSize;
+    const responsiveBottomFontSize = isNarrowChart ? Math.min(bottomFontSize, 10) : bottomFontSize;
+    const responsiveAxisFontSize = isNarrowChart ? 10 : (compactPreview ? 9 : 13);
+    const responsiveAxisPadding = isNarrowChart ? 6 : (compactPreview ? 4 : 12);
+    const responsiveValueAxisPadding = isNarrowChart ? 6 : (compactPreview ? 4 : 10);
+    const responsiveMaxBarThickness = isNarrowChart ? 72 : 100;
     const wrapChartText = (text, fontSize, fontWeight, fontFamily, fontStyle) => {
         if (!isNarrowChart || !text) return text;
 
@@ -284,7 +288,7 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
             ...(isBarChart ? {
                 barPercentage: 0.72,
                 categoryPercentage: 0.72,
-                maxBarThickness: 100,
+                maxBarThickness: responsiveMaxBarThickness,
                 borderRadius: 0,
                 borderSkipped: false,
             } : {}),
@@ -295,10 +299,11 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
         border: { display: true, color: '#111827', width: 1 },
         ticks: {
             color: '#111827',
-            padding: compactPreview ? 4 : 12,
+            padding: responsiveAxisPadding,
             autoSkip: true,
             maxRotation: 0,
-            ...(compactPreview ? { maxTicksLimit: 5, font: { size: 9 } } : { font: { size: 13 } }),
+            ...(compactPreview ? { maxTicksLimit: 5 } : {}),
+            font: { size: responsiveAxisFontSize },
         },
     };
     const valueScale = {
@@ -314,10 +319,11 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
         } : {}),
         ticks: {
             color: '#111827',
-            padding: compactPreview ? 4 : 10,
+            padding: responsiveValueAxisPadding,
             callback: (value) => Number(value).toLocaleString('id-ID'),
             ...(valueAxisTicks.length >= 2 ? { autoSkip: false } : {}),
-            ...(compactPreview ? { maxTicksLimit: 4, font: { size: 9 } } : { font: { size: 13 } }),
+            ...(compactPreview ? { maxTicksLimit: 4 } : {}),
+            font: { size: responsiveAxisFontSize },
         },
     };
 
@@ -327,7 +333,7 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            layout: { padding: { left: 4, right: 12, bottom: 4 } },
+            layout: { padding: { left: isNarrowChart ? 0 : 4, right: isNarrowChart ? 6 : 12, bottom: isNarrowChart ? 0 : 4 } },
             plugins: {
                 legend: { display: showLegend, position: legendPosition },
                 title: { display: Boolean(topText), text: responsiveTopText, position: 'top', align: titleAlignment, color: '#000000', font: { family: topFontFamily, size: responsiveTopFontSize, weight: topFontWeight, style: topFontStyle } },
@@ -644,7 +650,7 @@ const initializeTinyMceEditors = () => {
             resize: true,
             menubar: 'file edit view insert format tools table help',
             plugins: 'advlist anchor autolink charmap code codesample fullscreen image link lists media preview searchreplace table visualblocks wordcount',
-            toolbar: 'undo redo | blocks fontsize | addImage addLightbox addBeforeAfter addDataVisualization addVideo addBorderMerah | bold italic underline strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media table | code codesample removeformat | fullscreen preview',
+            toolbar: 'undo redo | blocks fontsize | addImage addLightbox addBeforeAfter addDataVisualization addVideo addBorderMerah addStopper | bold italic underline strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media table | code codesample removeformat | fullscreen preview',
             toolbar_sticky: true,
             promotion: false,
             branding: false,
@@ -659,6 +665,20 @@ const initializeTinyMceEditors = () => {
             content_style: `body { font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; padding: 16px; } img, video, iframe { max-width: 100%; } .story-content-gallery { display: flex; width: 100%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; } .story-content-gallery > .story-content-figure { flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: start; } .story-before-after-figure, .story-before-after, .story-before-after img { -webkit-user-drag: none; user-select: none; } .story-before-after { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #e5e7eb; user-select: none; } .story-before-after-after { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 0 0 var(--before-after-position)); } .story-before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; } .story-before-after-handle { position: absolute; top: 50%; left: var(--before-after-position); z-index: 2; display: flex; width: 52px; height: 52px; align-items: center; justify-content: center; border: 3px solid #fff; border-radius: 9999px; background: rgba(0,0,0,.55); color: #fff; font-size: 22px; transform: translate(-50%, -50%); pointer-events: none; } .story-before-after-label, .story-before-after-caption { display: none !important; } .story-before-after-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; cursor: ew-resize; opacity: 0; } .story-data-visualization { width: 100%; margin: 24px 0; } .story-data-visualization iframe { display: block; width: 100%; height: 100%; pointer-events: none; }`,
             setup(editor) {
                 const atomicBlockSelector = '.story-lightbox-gallery, .story-before-after-figure, .story-data-visualization';
+                const normalizeInlineStoppers = () => {
+                    editor.getBody()?.querySelectorAll('.story-inline-stopper').forEach((stopper) => {
+                        const previousNode = stopper.previousSibling;
+                        if (previousNode?.nodeType === 3) {
+                            previousNode.textContent = previousNode.textContent.replace(/[\u00a0 ]+$/, '');
+                        }
+
+                        stopper.style.width = '.7em';
+                        stopper.style.height = '.7em';
+                        stopper.style.marginLeft = '1px';
+                        stopper.style.background = '#FF0000';
+                        stopper.style.verticalAlign = 'middle';
+                    });
+                };
 
                 const closeReferencePickerModal = (resetMode = true) => {
                     if (!referencePickerModal) return;
@@ -895,7 +915,7 @@ const initializeTinyMceEditors = () => {
                     const imageTitle = editor.dom.encode(image.title || '');
                     const imageDescription = editor.dom.encode(image.caption || image.alt_text || image.title || '');
 
-                    return `<figure class="story-content-figure" style="width: 100%; margin: 0; padding: 0; box-sizing: border-box;"><a class="glightbox2 gbox" href="${imageUrl}" data-gallery="${galleryId}" data-glightbox="description: ${imageDescription}" style="display: block; width: 100%; aspect-ratio: 16 / 9; margin: 0; padding: 0; overflow: hidden;"><img src="${imageUrl}" alt="${imageDescription}" title="${imageTitle}" style="display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; margin: 0; padding: 0; object-fit: cover; object-position: center; cursor: zoom-in;"></a>${imageDescription ? `<figcaption class="story-content-caption" style="margin: 4px 0 0; padding: 0; color: #000; font-size: 14px; font-weight: 400; line-height: 1.5;">${imageDescription}</figcaption>` : ''}</figure>`;
+                    return `<figure class="story-content-figure" style="width: 100%; margin: 0; padding: 0; box-sizing: border-box;"><a class="glightbox2 gbox" href="${imageUrl}" data-gallery="${galleryId}" data-glightbox="description: ${imageDescription}" style="display: block; width: 100%; aspect-ratio: 16 / 9; margin: 0; padding: 0; overflow: hidden;"><img src="${imageUrl}" alt="${imageDescription}" title="${imageTitle}" style="display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; margin: 0; padding: 0; object-fit: cover; object-position: center; cursor: zoom-in;"></a>${imageDescription ? `<figcaption class="story-content-caption" style="margin: 4px 0 0; padding: 0; color: #000; font-size: 12px; font-weight: 400; line-height: 1.5;">${imageDescription}</figcaption>` : ''}</figure>`;
                 }).join('');
 
                 const insertReferenceImage = (payload) => {
@@ -993,7 +1013,7 @@ const initializeTinyMceEditors = () => {
                         const imageTitle = editor.dom.encode(image.title || '');
                         const imageDescription = editor.dom.encode(image.alt_text || image.title || '');
                         editor.insertContent(
-                            `<figure class="media-caption story-single-image-figure" style="width: 100%; margin: 24px 0; padding: 0; box-sizing: border-box;"><div class="story-single-image" style="display: block; width: 100%; aspect-ratio: 16 / 9; margin: 0; padding: 0; overflow: hidden; background: #e5e7eb;"><img src="${imageUrl}" alt="${imageDescription}" title="${imageTitle}" style="display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; margin: 0; padding: 0; object-fit: cover; object-position: center;"></div>${imageDescription ? `<figcaption class="media-caption-text story-content-caption" style="margin: 4px 0 0; padding: 0; color: #000; font-size: 14px; font-weight: 400; line-height: 1.5;">${imageDescription}</figcaption>` : ''}</figure>`,
+                            `<figure class="media-caption story-single-image-figure" style="width: 100%; margin: 24px 0; padding: 0; box-sizing: border-box;"><div class="story-single-image" style="display: block; width: 100%; aspect-ratio: 16 / 9; margin: 0; padding: 0; overflow: hidden; background: #e5e7eb;"><img src="${imageUrl}" alt="${imageDescription}" title="${imageTitle}" style="display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; margin: 0; padding: 0; object-fit: cover; object-position: center;"></div>${imageDescription ? `<figcaption class="media-caption-text story-content-caption" style="margin: 4px 0 0; padding: 0; color: #000; font-size: 12px; font-weight: 400; line-height: 1.5;">${imageDescription}</figcaption>` : ''}</figure>`,
                         );
                     }
 
@@ -1141,7 +1161,7 @@ const initializeTinyMceEditors = () => {
                                 if (description) {
                                     const caption = currentCaption || editor.getDoc().createElement('figcaption');
                                     caption.className = 'story-content-caption';
-                                    caption.style.cssText = 'margin: 4px 0 0; padding: 0; color: #000; font-size: 14px; font-weight: 400; line-height: 1.5;';
+                                    caption.style.cssText = 'margin: 4px 0 0; padding: 0; color: #000; font-size: 12px; font-weight: 400; line-height: 1.5;';
                                     caption.textContent = description;
                                     if (!currentCaption) galleryFigure.append(caption);
                                 } else {
@@ -1870,8 +1890,20 @@ const initializeTinyMceEditors = () => {
                     text: '+ Border',
                     onAction: () => editor.insertContent("<div style='border:1px solid red;padding:20px;'>Konten</div>"),
                 });
+                editor.ui.registry.addButton('addStopper', {
+                    text: '+ Stopper',
+                    tooltip: 'Tambahkan kotak merah di ujung kalimat',
+                    onAction: () => {
+                        editor.focus();
+                        editor.undoManager.transact(() => {
+                            editor.insertContent('<span class="story-inline-stopper" data-story-inline-stopper="true" contenteditable="false" aria-hidden="true" style="display:inline-block;width:.7em;height:.7em;margin-left:1px;background:#FF0000;vertical-align:middle;line-height:1;">&nbsp;</span>');
+                        });
+                        editor.nodeChanged();
+                    },
+                });
                 editor.on('init', () => {
                     editor.setContent(input.value || editorElement.value || '');
+                    normalizeInlineStoppers();
                     normalizeAtomicStoryBlocks();
                     installBeforeAfterPointerControls();
                     wrapper.tinyMceEditor = editor;
