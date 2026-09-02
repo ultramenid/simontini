@@ -24,6 +24,8 @@ class DeforestoryIndex extends Component
 
     public ?string $revealedGlobalPreviewPassword = null;
 
+    public string $search = '';
+
     public function mount(): void
     {
         $this->hasGlobalPreviewPassword = filled(
@@ -79,6 +81,11 @@ class DeforestoryIndex extends Component
         $this->revealedGlobalPreviewPassword = null;
     }
 
+    public function updatedSearch(): void
+    {
+        $this->resetPage();
+    }
+
     public function toggleStatus(
         int $id,
         DeforestationStoryNotificationDispatcher $notifications,
@@ -111,6 +118,30 @@ class DeforestoryIndex extends Component
             : 'Data berhasil dijadikan draft.');
     }
 
+    public function toggleLock(int $id): void
+    {
+        $item = DB::table('deforestory')
+            ->select(['id', 'is_locked'])
+            ->find($id);
+
+        if ($item === null) {
+            return;
+        }
+
+        $isLocked = ! (bool) $item->is_locked;
+
+        DB::table('deforestory')
+            ->where('id', $id)
+            ->update([
+                'is_locked' => $isLocked,
+                'updated_at' => now(),
+            ]);
+
+        session()->flash('success', $isLocked
+            ? 'Preview artikel berhasil dikunci.'
+            : 'Kunci preview artikel berhasil dibuka.');
+    }
+
     public function delete(int $id): void
     {
         $item = DB::table('deforestory')
@@ -129,7 +160,15 @@ class DeforestoryIndex extends Component
 
     public function render()
     {
+        $search = mb_strtolower(trim($this->search));
+
         $items = DB::table('deforestory')
+            ->when($search !== '', function ($query) use ($search): void {
+                $query->where(function ($query) use ($search): void {
+                    $query->whereRaw('LOWER(title_id) LIKE ?', ["%{$search}%"])
+                        ->orWhereRaw('LOWER(title_en) LIKE ?', ["%{$search}%"]);
+                });
+            })
             ->orderByDesc('date')
             ->orderByDesc('id')
             ->paginate(10);

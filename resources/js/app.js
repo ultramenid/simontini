@@ -78,8 +78,12 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
     const showValueAxisLine = chartData.show_value_axis_line !== false;
     const chartWidth = chartContainer?.clientWidth || canvas.clientWidth || 0;
     const isNarrowChart = chartWidth > 0 && chartWidth < 640;
-    const responsiveTopFontSize = isNarrowChart ? Math.min(topFontSize, 18) : topFontSize;
-    const responsiveBottomFontSize = isNarrowChart ? Math.min(bottomFontSize, 12) : bottomFontSize;
+    const responsiveTopFontSize = isNarrowChart ? Math.min(topFontSize, 14) : topFontSize;
+    const responsiveBottomFontSize = isNarrowChart ? Math.min(bottomFontSize, 10) : bottomFontSize;
+    const responsiveAxisFontSize = isNarrowChart ? 10 : (compactPreview ? 9 : 13);
+    const responsiveAxisPadding = isNarrowChart ? 6 : (compactPreview ? 4 : 12);
+    const responsiveValueAxisPadding = isNarrowChart ? 6 : (compactPreview ? 4 : 10);
+    const responsiveMaxBarThickness = isNarrowChart ? 72 : 100;
     const wrapChartText = (text, fontSize, fontWeight, fontFamily, fontStyle) => {
         if (!isNarrowChart || !text) return text;
 
@@ -284,7 +288,7 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
             ...(isBarChart ? {
                 barPercentage: 0.72,
                 categoryPercentage: 0.72,
-                maxBarThickness: 100,
+                maxBarThickness: responsiveMaxBarThickness,
                 borderRadius: 0,
                 borderSkipped: false,
             } : {}),
@@ -295,10 +299,11 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
         border: { display: true, color: '#111827', width: 1 },
         ticks: {
             color: '#111827',
-            padding: compactPreview ? 4 : 12,
+            padding: responsiveAxisPadding,
             autoSkip: true,
             maxRotation: 0,
-            ...(compactPreview ? { maxTicksLimit: 5, font: { size: 9 } } : { font: { size: 13 } }),
+            ...(compactPreview ? { maxTicksLimit: 5 } : {}),
+            font: { size: responsiveAxisFontSize },
         },
     };
     const valueScale = {
@@ -314,10 +319,11 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
         } : {}),
         ticks: {
             color: '#111827',
-            padding: compactPreview ? 4 : 10,
+            padding: responsiveValueAxisPadding,
             callback: (value) => Number(value).toLocaleString('id-ID'),
             ...(valueAxisTicks.length >= 2 ? { autoSkip: false } : {}),
-            ...(compactPreview ? { maxTicksLimit: 4, font: { size: 9 } } : { font: { size: 13 } }),
+            ...(compactPreview ? { maxTicksLimit: 4 } : {}),
+            font: { size: responsiveAxisFontSize },
         },
     };
 
@@ -327,7 +333,7 @@ window.renderDataVisualizationChart = (canvas, type, chartData) => {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            layout: { padding: { left: 4, right: 12, bottom: 4 } },
+            layout: { padding: { left: isNarrowChart ? 0 : 4, right: isNarrowChart ? 6 : 12, bottom: isNarrowChart ? 0 : 4 } },
             plugins: {
                 legend: { display: showLegend, position: legendPosition },
                 title: { display: Boolean(topText), text: responsiveTopText, position: 'top', align: titleAlignment, color: '#000000', font: { family: topFontFamily, size: responsiveTopFontSize, weight: topFontWeight, style: topFontStyle } },
@@ -644,7 +650,7 @@ const initializeTinyMceEditors = () => {
             resize: true,
             menubar: 'file edit view insert format tools table help',
             plugins: 'advlist anchor autolink charmap code codesample fullscreen image link lists media preview searchreplace table visualblocks wordcount',
-            toolbar: 'undo redo | blocks fontsize | addImage addLightbox addBeforeAfter addDataVisualization addVideo addBorderMerah | bold italic underline strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media table | code codesample removeformat | fullscreen preview',
+            toolbar: 'undo redo | blocks fontsize | addImage addLightbox addBeforeAfter addDataVisualization addVideo addBorderMerah addStopper | bold italic underline strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media table | code codesample removeformat | fullscreen preview',
             toolbar_sticky: true,
             promotion: false,
             branding: false,
@@ -1869,6 +1875,17 @@ const initializeTinyMceEditors = () => {
                 editor.ui.registry.addButton('addBorderMerah', {
                     text: '+ Border',
                     onAction: () => editor.insertContent("<div style='border:1px solid red;padding:20px;'>Konten</div>"),
+                });
+                editor.ui.registry.addButton('addStopper', {
+                    text: '+ Stopper',
+                    tooltip: 'Tambahkan kotak merah di ujung kalimat',
+                    onAction: () => {
+                        editor.focus();
+                        editor.undoManager.transact(() => {
+                            editor.insertContent('&nbsp;<span class="story-inline-stopper" data-story-inline-stopper="true" contenteditable="false" aria-hidden="true" style="display:inline-block;width:.7em;height:.7em;margin-left:.1em;background:#FF0000;vertical-align:middle;line-height:1;">&nbsp;</span>');
+                        });
+                        editor.nodeChanged();
+                    },
                 });
                 editor.on('init', () => {
                     editor.setContent(input.value || editorElement.value || '');

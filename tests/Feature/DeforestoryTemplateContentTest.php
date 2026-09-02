@@ -181,3 +181,18 @@ it('uses selectable cards for the TinyMCE Data and Grafik picker', function () {
         ->toContain("insertButton.textContent = 'Masukkan Grafik'")
         ->not->toContain("name: 'visualizationId'");
 });
+
+it('provides an inline red stopper at the current TinyMCE cursor position', function () {
+    $script = file_get_contents(resource_path('js/app.js'));
+    $styles = file_get_contents(resource_path('css/app.css'));
+
+    expect($script)
+        ->toContain('addBorderMerah addStopper')
+        ->toContain("text: '+ Stopper'")
+        ->toContain('data-story-inline-stopper="true"')
+        ->toContain('vertical-align:middle')
+        ->toContain('editor.undoManager.transact')
+        ->and($styles)
+        ->toContain('.public-story-content .story-inline-stopper')
+        ->toContain('background: #ff0000 !important');
+});
