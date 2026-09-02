@@ -125,7 +125,7 @@ it('renders social sharing metadata from the published story', function () {
 it('renders the hero image description below the detail image', function () {
     $story = createDeforestationStory([
         'image_id' => 'deforestory/id/hero.jpg',
-        'image_description_id' => 'Foto udara hutan, sumber Auriga Nusantara.',
+        'image_description_id' => '<p><strong>Foto udara hutan</strong>, sumber Auriga Nusantara.</p>',
         'image_description_en' => 'Aerial forest photo, source Auriga Nusantara.',
         'status' => 'publish',
     ]);
@@ -137,7 +137,7 @@ it('renders the hero image description below the detail image', function () {
     ]))
         ->assertOk()
         ->assertSee('text-[12px] font-normal leading-[1.6] text-black', false)
-        ->assertSee('Foto udara hutan, sumber Auriga Nusantara.');
+        ->assertSee('<p><strong>Foto udara hutan</strong>, sumber Auriga Nusantara.</p>', false);
 
     $this->get(route('deforestation.show', [
         'locale' => 'en',

@@ -1,6 +1,7 @@
 @props([
     'label',
     'hint' => null,
+    'preset' => 'content',
     'value' => '',
 ])
 
@@ -22,6 +23,7 @@
     <div
         data-tinymce-wrapper
         data-tinymce-picker-id="{{ $wireModel }}"
+        data-tinymce-preset="{{ $preset }}"
         data-tinymce-reference-page-url="{{ route('cms.reference', ['picker' => 1, 'editor' => $wireModel]) }}"
         data-tinymce-visualization-options-url="{{ route('cms.data-visualizations.options') }}"
     >
