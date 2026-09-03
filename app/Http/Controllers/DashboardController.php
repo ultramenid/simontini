@@ -95,4 +95,22 @@ class DashboardController extends Controller
             $file->original_name ?: basename($file->image_path)
         );
     }
+
+    public function previewReference(int $id)
+    {
+        $file = DB::table('reference_images')->find($id);
+        abort_if($file === null, 404);
+        $mimeType = $file->mime_type ?: '';
+        abort_unless(str_starts_with($mimeType, 'video/') || $mimeType === 'application/pdf', 404);
+
+        $disk = $file->disk ?: 'public';
+        abort_unless(Storage::disk($disk)->exists($file->image_path), 404);
+
+        return Storage::disk($disk)->response(
+            $file->image_path,
+            $file->original_name ?: basename($file->image_path),
+            ['Content-Type' => $mimeType],
+            'inline'
+        );
+    }
 }

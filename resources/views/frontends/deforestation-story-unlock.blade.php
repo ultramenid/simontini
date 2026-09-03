@@ -29,7 +29,20 @@
                     : 'Masukkan password khusus artikel ini untuk melanjutkan.' }}
             </p>
 
-            <form method="POST" action="{{ $unlockUrl }}" class="mt-8 text-left">
+            <form
+                method="POST"
+                action="{{ $unlockUrl }}"
+                x-data="{
+                    submitting: false,
+                    startLoader() {
+                        if (this.submitting) return;
+                        this.submitting = true;
+                    },
+                }"
+                x-on:submit.prevent="startLoader()"
+                x-on:deforestory-loader-finished.window="if (submitting) $el.submit()"
+                class="mt-8 text-left"
+            >
                 @csrf
                 <label for="preview-password" class="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-[#1a1a1a]">
                     {{ $locale === 'en' ? 'Story password' : 'Password artikel' }}
@@ -49,9 +62,13 @@
                     <p id="preview-password-error" class="mt-2 text-xs font-semibold text-red-600">{{ $message }}</p>
                 @enderror
 
-                <button type="submit" class="mt-5 w-full rounded-lg bg-[#376A64] px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#2d5954]">
+                <button type="submit" x-bind:disabled="submitting" class="mt-5 w-full rounded-lg bg-[#376A64] px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#2d5954] disabled:cursor-wait disabled:opacity-70">
                     {{ $locale === 'en' ? 'Open story' : 'Buka artikel' }}
                 </button>
+
+                <template x-if="submitting">
+                    <x-deforestation-preview-loader />
+                </template>
             </form>
 
             <a href="{{ $previewIndexUrl }}" class="mt-6 inline-flex text-xs font-semibold text-[#376A64] underline decoration-[#376A64]/40 underline-offset-4 hover:decoration-[#376A64]">

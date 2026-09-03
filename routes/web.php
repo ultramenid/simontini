@@ -158,6 +158,9 @@ Route::middleware([checkSession::class])->group(function () {
     Route::get('/cms/reference/{id}/download', [DashboardController::class, 'downloadReference'])
         ->whereNumber('id')
         ->name('cms.reference.download');
+    Route::get('/cms/reference/{id}/preview', [DashboardController::class, 'previewReference'])
+        ->whereNumber('id')
+        ->name('cms.reference.preview');
     Route::get('/cms/comments', [CmsCommentController::class, 'index'])->name('cms.comments');
     Route::patch('/cms/comments/{id}/{status}', [CmsCommentController::class, 'status'])
         ->whereNumber('id')
