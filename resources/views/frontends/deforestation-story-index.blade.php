@@ -25,7 +25,7 @@
                 <p class="mx-auto mt-4 max-w-3xl px-4 text-xs leading-6 sm:text-base sm:leading-7">
                     {{ $locale === 'en'
                         ? 'Simontini data is open and publicly accessible under the Creative Commons CC-BY-SA license, subject to its terms of use.'
-                        : 'Cerita ringkas kasus-kasus deforestasi Indonesia. Mengkombinasi analisis data sekunder dengan pengamatan lapangan oleh Auriga Nusantara dan atau mitra. Kasus-kasus yang tampil di laman ini terbuka untuk ditindaklanjuti dengan laporan investigasi yang akan ditampilkan tersendiri di tempat terpisah. Demi terhentinya deforestasi.' }}
+                        : 'Cerita ringkas kasus-kasus deforestasi Indonesia. Mengkombinasi pengamatan lapangan --oleh Auriga Nusantara dan atau mitra-- dengan analisis data sekunder. Kasus-kasus yang tampil di laman ini terbuka untuk ditindaklanjuti dengan laporan investigasi yang akan ditampilkan tersendiri di tempat terpisah. Demi terhentinya deforestasi.' }}
                 </p>
                 <button data-subscribe-open type="button" x-on:click="subscribed = false; subscriptionEmail = ''; subscribeOpen = true" class="mt-7 rounded-lg bg-white px-8 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#376A64] shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f0e8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" aria-haspopup="dialog">
                     Subscribe

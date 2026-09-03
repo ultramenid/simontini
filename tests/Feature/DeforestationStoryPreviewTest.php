@@ -54,6 +54,21 @@ it('only displays published stories on the public list', function () {
         ->assertDontSee($draft->title_id);
 });
 
+it('renders the requested Indonesian Deforestory introduction', function () {
+    $this->get(route('deforestation.index', ['locale' => 'id']))
+        ->assertOk()
+        ->assertSee('Cerita ringkas kasus-kasus deforestasi Indonesia.')
+        ->assertSee('Mengkombinasi pengamatan lapangan --oleh Auriga Nusantara dan atau mitra-- dengan analisis data sekunder.')
+        ->assertSee('Kasus-kasus yang tampil di laman ini terbuka untuk ditindaklanjuti dengan laporan investigasi yang akan ditampilkan tersendiri di tempat terpisah.')
+        ->assertSee('Demi terhentinya deforestasi.')
+        ->assertDontSee('Setiap artikel membuka ruang interaksi dengan pembaca')
+        ->assertDontSee('Data dalam Simontini bersifat terbuka');
+
+    $this->get(route('deforestation.index', ['locale' => 'en']))
+        ->assertOk()
+        ->assertSee('Simontini data is open and publicly accessible');
+});
+
 it('marks the deforestory navigation as active on list and detail pages', function () {
     $story = createDeforestationStory(['status' => 'publish']);
     $activeNavigation = '/class="py-2 hover:border-b hover:border-simontini\s+border-b border-simontini\s*">\s*<a[^>]*>DEFORESTORY<\/a>/';
@@ -229,6 +244,13 @@ it('asks for the article password before opening a locked preview', function () 
         ->assertOk()
         ->assertSee('Password artikel')
         ->assertSee('Draft Preview Terkunci')
+        ->assertSee('x-on:submit.prevent="startLoader($el)"', false)
+        ->assertSee('aria-label="Deforestory"', false)
+        ->assertSee('deforestory-loader-letter', false)
+        ->assertSee("letters: Array(11).fill('A')", false)
+        ->assertSee("const target = Array.from('Deforestory')", false)
+        ->assertSee('x-text="letters[10]">A</span>', false)
+        ->assertSee('Membuka artikel...')
         ->assertDontSee('Konten yang harus dilindungi.');
 });
 
@@ -345,7 +367,25 @@ it('allows a logged in CMS user to open a locked preview without a password', fu
         ]))
         ->assertOk()
         ->assertSee('Konten untuk pengguna CMS.')
+        ->assertSee('data-deforestory-reload-loader', false)
+        ->assertSee('x-init="startReloadLoader()"', false)
+        ->assertSee('Memuat artikel terkunci...')
         ->assertDontSee('Password artikel');
+});
+
+it('only renders the reload animation for a locked preview article', function () {
+    $story = createDeforestationStory([
+        'is_locked' => false,
+    ]);
+
+    $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertDontSee('data-deforestory-reload-loader', false)
+        ->assertDontSee('Memuat artikel terkunci...');
 });
 
 it('keeps published stories publicly accessible when only their preview is locked', function () {

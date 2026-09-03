@@ -57,6 +57,171 @@ it('uploads a non-image reference file to private storage', function () {
     Storage::disk('local')->assertExists($file->image_path);
 });
 
+it('accepts GIF video PDF and Word reference files up to fifty megabytes', function (string $name, string $mimeType, string $expectedDisk) {
+    Storage::fake($expectedDisk);
+
+    Livewire::test(ReferenceIndex::class)
+        ->set('image', UploadedFile::fake()->create($name, 100, $mimeType))
+        ->set('title', 'Reference '.$name)
+        ->set('alt_text', 'Deskripsi '.$name)
+        ->call('save')
+        ->assertHasNoErrors();
+
+    $file = DB::table('reference_images')->where('original_name', $name)->first();
+
+    expect($file)
+        ->not->toBeNull()
+        ->and($file->disk)->toBe($expectedDisk)
+        ->and($file->mime_type)->toBe($mimeType);
+
+    Storage::disk($expectedDisk)->assertExists($file->image_path);
+})->with([
+    'GIF' => ['animasi.gif', 'image/gif', 'public'],
+    'MP4' => ['video.mp4', 'video/mp4', 'local'],
+    'PDF' => ['laporan.pdf', 'application/pdf', 'local'],
+    'DOC' => ['dokumen.doc', 'application/msword', 'local'],
+    'DOCX' => ['dokumen.docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'local'],
+]);
+
+it('rejects unsupported reference formats and files larger than fifty megabytes', function () {
+    Livewire::test(ReferenceIndex::class)
+        ->set('image', UploadedFile::fake()->create('program.exe', 100, 'application/octet-stream'))
+        ->set('title', 'Program')
+        ->set('alt_text', 'File tidak didukung')
+        ->call('save')
+        ->assertHasErrors(['image']);
+
+    Livewire::test(ReferenceIndex::class)
+        ->set('image', UploadedFile::fake()->create('video-besar.mp4', (50 * 1024) + 1, 'video/mp4'))
+        ->set('title', 'Video Besar')
+        ->set('alt_text', 'Video lebih dari batas')
+        ->call('save')
+        ->assertHasErrors(['image']);
+});
+
+it('shows the supported Reference formats and fifty megabyte limit', function () {
+    $view = file_get_contents(resource_path('views/livewire/reference-index.blade.php'));
+
+    expect($view)
+        ->toContain('accept=".jpg,.jpeg,.png,.webp,.gif,.mp4,.mov,.webm,.pdf,.doc,.docx')
+        ->toContain('JPG, PNG, WebP, GIF, MP4, MOV, WebM, PDF, DOC, atau DOCX.')
+        ->toContain('Maksimal 50 MB per file.');
+});
+
+it('shows upload progress and replaces the temporary preview when another file is selected', function () {
+    $view = file_get_contents(resource_path('views/livewire/reference-index.blade.php'));
+
+    expect($view)
+        ->toContain('x-on:livewire-upload-start="startUpload()"')
+        ->toContain('x-on:livewire-upload-finish="finishUpload()"')
+        ->toContain('x-on:livewire-upload-progress="progress = $event.detail.progress"')
+        ->toContain('Mengunggah dan menyiapkan preview...')
+        ->toContain('Upload selesai, menampilkan preview...')
+        ->toContain('this.progress = 100;')
+        ->toContain('}, 700);')
+        ->toContain('x-transition:leave="transition ease-in duration-300"')
+        ->toContain('x-bind:style="`width: ${progress}%`"')
+        ->toContain('x-show="!uploading"')
+        ->toContain('wire:key="reference-preview-{{ md5($image->getFilename()) }}"')
+        ->toContain('x-bind:disabled="uploading"');
+});
+
+it('allows Livewire to generate temporary GIF video and PDF previews', function () {
+    expect(config('livewire.temporary_file_upload.preview_mimes'))
+        ->toContain('gif')
+        ->toContain('mp4')
+        ->toContain('mov')
+        ->toContain('webm')
+        ->toContain('pdf');
+});
+
+it('renders temporary and saved video previews in Reference', function () {
+    Storage::fake('local');
+    Storage::disk('local')->put('reference-files/video.mp4', 'fake-video-content');
+
+    $id = DB::table('reference_images')->insertGetId([
+        'title' => 'Video Hutan',
+        'alt_text' => 'Video kondisi hutan',
+        'image_path' => 'reference-files/video.mp4',
+        'disk' => 'local',
+        'original_name' => 'video.mp4',
+        'mime_type' => 'video/mp4',
+        'file_size' => 18,
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    $this->withSession(['id' => 1])
+        ->get('/cms/reference')
+        ->assertOk()
+        ->assertSee('<video', false)
+        ->assertSee(route('cms.reference.preview', $id), false)
+        ->assertSee('controls', false)
+        ->assertSee('preload="metadata"', false);
+
+    $view = file_get_contents(resource_path('views/livewire/reference-index.blade.php'));
+
+    expect($view)
+        ->toContain('$image->temporaryUrl() }}" controls preload="metadata"')
+        ->toContain("str_starts_with(\$image->getMimeType() ?: '', 'video/')");
+});
+
+it('streams a private Reference video inline for an authenticated preview', function () {
+    Storage::fake('local');
+    Storage::disk('local')->put('reference-files/video-preview.mp4', 'fake-video-content');
+
+    $id = DB::table('reference_images')->insertGetId([
+        'title' => 'Video Preview',
+        'alt_text' => 'Preview video hutan',
+        'image_path' => 'reference-files/video-preview.mp4',
+        'disk' => 'local',
+        'original_name' => 'video-preview.mp4',
+        'mime_type' => 'video/mp4',
+        'file_size' => 18,
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    $this->withSession(['id' => 1])
+        ->get(route('cms.reference.preview', $id))
+        ->assertOk()
+        ->assertHeader('content-type', 'video/mp4')
+        ->assertHeader('content-disposition', 'inline; filename=video-preview.mp4');
+});
+
+it('renders and streams a private PDF preview', function () {
+    Storage::fake('local');
+    Storage::disk('local')->put('reference-files/laporan-preview.pdf', '%PDF-fake-content');
+
+    $id = DB::table('reference_images')->insertGetId([
+        'title' => 'Laporan Preview',
+        'alt_text' => 'Preview laporan PDF',
+        'image_path' => 'reference-files/laporan-preview.pdf',
+        'disk' => 'local',
+        'original_name' => 'laporan-preview.pdf',
+        'mime_type' => 'application/pdf',
+        'file_size' => 18,
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    $this->withSession(['id' => 1])
+        ->get('/cms/reference')
+        ->assertOk()
+        ->assertSee('<iframe', false)
+        ->assertSee(route('cms.reference.preview', $id), false);
+
+    $this->withSession(['id' => 1])
+        ->get(route('cms.reference.preview', $id))
+        ->assertOk()
+        ->assertHeader('content-type', 'application/pdf')
+        ->assertHeader('content-disposition', 'inline; filename=laporan-preview.pdf');
+
+    $view = file_get_contents(resource_path('views/livewire/reference-index.blade.php'));
+
+    expect($view)->toContain('$image->temporaryUrl() }}" title="Preview PDF"');
+});
+
 it('renders a Tiptap selection button for the requested editor', function () {
     Storage::fake('public');
 

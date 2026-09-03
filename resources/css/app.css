@@ -36,6 +36,43 @@
   display: none !important;
 }
 
+@keyframes deforestory-loader-slot {
+  0% { opacity: .35; transform: translateY(-.3em); }
+  50% { opacity: 1; transform: translateY(.3em); }
+  100% { opacity: .35; transform: translateY(-.3em); }
+}
+
+@keyframes deforestory-loader-settle {
+  0% { opacity: .5; transform: translateY(-.45em) scale(.9); }
+  70% { opacity: 1; transform: translateY(.08em) scale(1.08); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.deforestory-loader-letter {
+  display: inline-block;
+  color: #a8bfbb;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: center;
+  animation: deforestory-loader-slot .22s ease-in-out infinite;
+  will-change: color, opacity, transform;
+}
+
+.deforestory-loader-letter.is-settled {
+  color: #376a64;
+  animation: deforestory-loader-settle .28s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deforestory-loader-letter {
+    animation: none;
+    color: #376a64;
+    opacity: 1;
+  }
+}
+
 @keyframes subscription-success-pop {
   0% {
     opacity: 0;

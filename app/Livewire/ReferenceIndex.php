@@ -43,7 +43,12 @@ class ReferenceIndex extends Component
     protected function rules(): array
     {
         return [
-            'image' => ['required', 'file', 'max:10240'],
+            'image' => [
+                'required',
+                'file',
+                'mimes:jpg,jpeg,png,webp,gif,mp4,mov,webm,pdf,doc,docx',
+                'max:51200',
+            ],
             'title' => ['required', 'string', 'max:255'],
             'alt_text' => ['required', 'string', 'max:255'],
         ];
