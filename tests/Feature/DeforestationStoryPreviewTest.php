@@ -354,7 +354,8 @@ it('revokes an unlocked preview session when the global password changes', funct
         ->assertDontSee('Konten sesi global.');
 });
 
-it('allows a logged in CMS user to open a locked preview without a password', function () {
+it('still asks a logged in CMS user for the password on a locked preview', function () {
+    setGlobalDeforestationPreviewPassword('password-global');
     $story = createDeforestationStory([
         'content_id' => '<p>Konten untuk pengguna CMS.</p>',
         'is_locked' => true,
@@ -367,14 +368,9 @@ it('allows a logged in CMS user to open a locked preview without a password', fu
             'slug' => $story->slug,
         ]))
         ->assertOk()
-        ->assertSee('Konten untuk pengguna CMS.')
-        ->assertSee('data-deforestory-reload-loader', false)
+        ->assertSee('Password artikel')
         ->assertSee('data-deforestory-hero-loader', false)
-        ->assertSee('deforestory-hero-loader-title', false)
-        ->assertSee('assets/loader/loader.jpg', false)
-        ->assertDontSee('x-init="startReloadLoader()"')
-        ->assertDontSee('Memuat artikel terkunci...')
-        ->assertDontSee('Password artikel');
+        ->assertDontSee('Konten untuk pengguna CMS.');
 });
 
 it('only renders the reload animation for a locked preview article', function () {
@@ -415,10 +411,12 @@ it('uses the public loader image for locked preview text and background', functi
         ->assertDontSee('deforestoryHeroTextFill()');
 });
 
-it('keeps published stories publicly accessible when only their preview is locked', function () {
+it('requires a password for locked stories on the public page as well', function () {
+    setGlobalDeforestationPreviewPassword('password-global');
     $story = createDeforestationStory([
         'status' => 'publish',
         'is_locked' => true,
+        'content_id' => '<p>Konten publik terkunci.</p>',
     ]);
 
     $this->get(route('deforestation.show', [
@@ -427,8 +425,8 @@ it('keeps published stories publicly accessible when only their preview is locke
         'slug' => $story->slug,
     ]))
         ->assertOk()
-        ->assertSee('Konten cerita Indonesia.')
-        ->assertDontSee('Password artikel');
+        ->assertSee('Password artikel')
+        ->assertDontSee('Konten publik terkunci.');
 });
 
 it('shows a lock badge on the preview index for locked Deforestory items only', function () {

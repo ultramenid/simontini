@@ -30,7 +30,8 @@
             @if ($isPreview && ($story->is_locked ?? false))
                 <span
                     data-preview-lock
-                    class="absolute right-2.5 top-2.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-[#376A64] shadow-sm"
+                    class="absolute right-2 top-2 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full text-white shadow"
+                    style="background-color: #376A64"
                     title="{{ $locale === 'en' ? 'Protected preview' : 'Preview dikunci' }}"
                     aria-label="{{ $locale === 'en' ? 'Protected preview' : 'Preview dikunci' }}"
                 >

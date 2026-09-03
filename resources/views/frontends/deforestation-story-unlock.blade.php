@@ -9,7 +9,9 @@
     @include('partials.topbarPC')
     @include('partials.topbarMobile')
 
-    <x-deforestation-preview-banner />
+    @if ($isPreview ?? false)
+        <x-deforestation-preview-banner />
+    @endif
 
     <main class="flex min-h-[70vh] items-center justify-center bg-[#f7f8f8] px-5 py-16 sm:px-8">
         <section class="w-full max-w-lg border border-[#d8e1df] bg-white px-6 py-10 text-center shadow-sm sm:px-10 sm:py-12">
@@ -37,10 +39,10 @@
                     startLoader() {
                         if (this.submitting) return;
                         this.submitting = true;
+                        this.$nextTick(() => this.$el.submit());
                     },
                 }"
                 x-on:submit.prevent="startLoader()"
-                x-on:deforestory-loader-finished.window="if (submitting) $el.submit()"
                 class="mt-8 text-left"
             >
                 @csrf

@@ -89,6 +89,10 @@ Route::prefix('{locale}')
         Route::get('/deforestory/{id}/{slug}', [DeforestationStoryController::class, 'show'])
             ->whereNumber('id')
             ->name('deforestation.show');
+        Route::post('/deforestory/{id}/{slug}/unlock', [DeforestationStoryController::class, 'unlock'])
+            ->whereNumber('id')
+            ->middleware('throttle:10,1')
+            ->name('deforestation.unlock');
         Route::post('/deforestory/subscribe', [DeforestationStorySubscriptionController::class, 'storeAll'])
             ->middleware('throttle:10,1')
             ->name('deforestation.subscribe.all');

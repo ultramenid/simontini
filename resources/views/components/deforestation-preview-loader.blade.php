@@ -14,7 +14,7 @@
                 phase: 'hold',
                 init() {
                     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                    const holdMs = reduced ? 150 : 900;
+                    const holdMs = reduced ? 50 : 150;
                     const openMs = reduced ? 200 : 2000;
 
                     setTimeout(() => {
