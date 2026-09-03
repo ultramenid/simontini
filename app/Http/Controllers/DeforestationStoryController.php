@@ -36,19 +36,24 @@ class DeforestationStoryController extends Controller
         return $this->renderDetail($locale, $id, $slug, true);
     }
 
+    public function unlock(Request $request, string $locale, int $id, string $slug): RedirectResponse
+    {
+        return $this->completeUnlock($request, $locale, $id, $slug, false);
+    }
+
     public function unlockPreview(Request $request, string $locale, int $id, string $slug): RedirectResponse
+    {
+        return $this->completeUnlock($request, $locale, $id, $slug, true);
+    }
+
+    private function completeUnlock(Request $request, string $locale, int $id, string $slug, bool $isPreview): RedirectResponse
     {
         $story = DB::table('deforestory')->where('id', $id)->first();
         abort_if($story === null || ! hash_equals((string) $story->slug, $slug), 404);
         $passwordHash = $this->globalPreviewPasswordHash();
+        $detailUrl = $this->storyDetailUrl($locale, $story, $isPreview);
 
-        $detailUrl = $this->temporaryPreviewRoute('deforestation.preview.show', [
-            'locale' => $locale,
-            'id' => $story->id,
-            'slug' => $story->slug,
-        ]);
-
-        if (! $story->is_locked || $this->hasPreviewAccess($request, $passwordHash)) {
+        if (! $this->storyIsLocked($story) || $this->hasPreviewAccess($request, $passwordHash)) {
             return redirect()->to($detailUrl);
         }
 
@@ -146,7 +151,7 @@ class DeforestationStoryController extends Controller
             return redirect()->route('deforestation.show', $routeParameters);
         }
 
-        if ($isPreview && $story->is_locked && ! $this->hasPreviewAccess(request(), $this->globalPreviewPasswordHash())) {
+        if ($this->storyIsLocked($story) && ! $this->hasPreviewAccess(request(), $this->globalPreviewPasswordHash())) {
             $story = $this->localizeStory($story, $locale);
 
             return view('frontends.deforestation-story-unlock', [
@@ -157,14 +162,23 @@ class DeforestationStoryController extends Controller
                 'nav' => 'deforestation-story',
                 'locale' => $locale,
                 'story' => $story,
-                'unlockUrl' => $this->temporaryPreviewRoute('deforestation.preview.unlock', [
-                    'locale' => $locale,
-                    'id' => $story->id,
-                    'slug' => $story->slug,
-                ]),
-                'previewIndexUrl' => $this->temporaryPreviewRoute('deforestation.preview.index', [
-                    'locale' => $locale,
-                ]),
+                'isPreview' => $isPreview,
+                'unlockUrl' => $isPreview
+                    ? $this->temporaryPreviewRoute('deforestation.preview.unlock', [
+                        'locale' => $locale,
+                        'id' => $story->id,
+                        'slug' => $story->slug,
+                    ])
+                    : route('deforestation.unlock', [
+                        'locale' => $locale,
+                        'id' => $story->id,
+                        'slug' => $story->slug,
+                    ]),
+                'previewIndexUrl' => $isPreview
+                    ? $this->temporaryPreviewRoute('deforestation.preview.index', [
+                        'locale' => $locale,
+                    ])
+                    : route('deforestation.index', ['locale' => $locale]),
             ]);
         }
 
@@ -199,12 +213,36 @@ class DeforestationStoryController extends Controller
         return $story;
     }
 
-    private function hasPreviewAccess(Request $request, ?string $passwordHash): bool
+    private function storyIsLocked(object $story): bool
     {
-        if ($request->session()->has('id')) {
-            return true;
+        $value = $story->is_locked ?? false;
+
+        if (is_bool($value)) {
+            return $value;
         }
 
+        if (is_int($value) || is_float($value)) {
+            return (int) $value === 1;
+        }
+
+        return in_array(strtolower(trim((string) $value)), ['1', 'true', 'yes', 'on'], true);
+    }
+
+    private function storyDetailUrl(string $locale, object $story, bool $isPreview): string
+    {
+        $parameters = [
+            'locale' => $locale,
+            'id' => $story->id,
+            'slug' => $story->slug,
+        ];
+
+        return $isPreview
+            ? $this->temporaryPreviewRoute('deforestation.preview.show', $parameters)
+            : route('deforestation.show', $parameters);
+    }
+
+    private function hasPreviewAccess(Request $request, ?string $passwordHash): bool
+    {
         if (! filled($passwordHash)) {
             return false;
         }
