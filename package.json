@@ -14,16 +14,16 @@
         "vite": "^7.0"
     },
     "dependencies": {
-        "@tiptap/core": "^3.29.2",
-        "@tiptap/extension-code-block-lowlight": "^3.29.2",
-        "@tiptap/extension-color": "^3.29.2",
-        "@tiptap/extension-highlight": "^3.29.2",
-        "@tiptap/extension-image": "^3.29.2",
-        "@tiptap/extension-placeholder": "^3.29.2",
-        "@tiptap/extension-table": "^3.29.2",
-        "@tiptap/extension-text-align": "^3.29.2",
-        "@tiptap/extension-text-style": "^3.29.2",
-        "@tiptap/starter-kit": "^3.29.2",
+        "@tiptap/core": "^3.31.0",
+        "@tiptap/extension-code-block-lowlight": "^3.31.0",
+        "@tiptap/extension-color": "^3.31.0",
+        "@tiptap/extension-highlight": "^3.31.0",
+        "@tiptap/extension-image": "^3.31.0",
+        "@tiptap/extension-placeholder": "^3.31.0",
+        "@tiptap/extension-table": "^3.31.0",
+        "@tiptap/extension-text-align": "^3.31.0",
+        "@tiptap/extension-text-style": "^3.31.0",
+        "@tiptap/starter-kit": "^3.31.0",
         "chart.js": "^4.5.1",
         "chartjs-chart-sankey": "^0.14.4",
         "glightbox": "^3.3.1",
@@ -33,5 +33,9 @@
     },
     "overrides": {
         "esbuild": "^0.28.1"
+    },
+    "allowScripts": {
+        "esbuild@0.28.1": true,
+        "fsevents@2.3.3": true
     }
 }
