@@ -89,6 +89,10 @@ Route::prefix('{locale}')
         Route::get('/deforestory/{id}/{slug}', [DeforestationStoryController::class, 'show'])
             ->whereNumber('id')
             ->name('deforestation.show');
+        Route::post('/deforestory/{id}/{slug}/unlock', [DeforestationStoryController::class, 'unlock'])
+            ->whereNumber('id')
+            ->middleware('throttle:10,1')
+            ->name('deforestation.unlock');
         Route::post('/deforestory/subscribe', [DeforestationStorySubscriptionController::class, 'storeAll'])
             ->middleware('throttle:10,1')
             ->name('deforestation.subscribe.all');
@@ -158,6 +162,9 @@ Route::middleware([checkSession::class])->group(function () {
     Route::get('/cms/reference/{id}/download', [DashboardController::class, 'downloadReference'])
         ->whereNumber('id')
         ->name('cms.reference.download');
+    Route::get('/cms/reference/{id}/preview', [DashboardController::class, 'previewReference'])
+        ->whereNumber('id')
+        ->name('cms.reference.preview');
     Route::get('/cms/comments', [CmsCommentController::class, 'index'])->name('cms.comments');
     Route::patch('/cms/comments/{id}/{status}', [CmsCommentController::class, 'status'])
         ->whereNumber('id')

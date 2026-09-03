@@ -9,7 +9,9 @@
     @include('partials.topbarPC')
     @include('partials.topbarMobile')
 
-    <x-deforestation-preview-banner />
+    @if ($isPreview ?? false)
+        <x-deforestation-preview-banner />
+    @endif
 
     <main class="flex min-h-[70vh] items-center justify-center bg-[#f7f8f8] px-5 py-16 sm:px-8">
         <section class="w-full max-w-lg border border-[#d8e1df] bg-white px-6 py-10 text-center shadow-sm sm:px-10 sm:py-12">
@@ -29,7 +31,20 @@
                     : 'Masukkan password khusus artikel ini untuk melanjutkan.' }}
             </p>
 
-            <form method="POST" action="{{ $unlockUrl }}" class="mt-8 text-left">
+            <form
+                method="POST"
+                action="{{ $unlockUrl }}"
+                x-data="{
+                    submitting: false,
+                    startLoader() {
+                        if (this.submitting) return;
+                        this.submitting = true;
+                        this.$nextTick(() => this.$el.submit());
+                    },
+                }"
+                x-on:submit.prevent="startLoader()"
+                class="mt-8 text-left"
+            >
                 @csrf
                 <label for="preview-password" class="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-[#1a1a1a]">
                     {{ $locale === 'en' ? 'Story password' : 'Password artikel' }}
@@ -49,9 +64,13 @@
                     <p id="preview-password-error" class="mt-2 text-xs font-semibold text-red-600">{{ $message }}</p>
                 @enderror
 
-                <button type="submit" class="mt-5 w-full rounded-lg bg-[#376A64] px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#2d5954]">
+                <button type="submit" x-bind:disabled="submitting" class="mt-5 w-full rounded-lg bg-[#376A64] px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#2d5954] disabled:cursor-wait disabled:opacity-70">
                     {{ $locale === 'en' ? 'Open story' : 'Buka artikel' }}
                 </button>
+
+                <template x-if="submitting">
+                    <x-deforestation-preview-loader />
+                </template>
             </form>
 
             <a href="{{ $previewIndexUrl }}" class="mt-6 inline-flex text-xs font-semibold text-[#376A64] underline decoration-[#376A64]/40 underline-offset-4 hover:decoration-[#376A64]">

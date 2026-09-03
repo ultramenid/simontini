@@ -58,6 +58,16 @@
         <x-deforestation-preview-banner />
     @endif
 
+    @if ($isPreview && ($story->is_locked ?? false))
+        <x-deforestation-preview-loader
+            data-deforestory-reload-loader
+            x-data="{ visible: true }"
+            x-on:deforestory-loader-finished.window="visible = false"
+            x-show="visible"
+            x-cloak
+        />
+    @endif
+
     <main
         class="pb-24"
         x-data="{ subscribeOpen: false, subscribed: false, subscriptionEmail: '' }"

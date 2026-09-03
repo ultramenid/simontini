@@ -27,7 +27,7 @@
     <div class="mb-6 flex items-center justify-between gap-4">
         <div>
             <h1 class="text-2xl font-semibold text-gray-900">Reference Files</h1>
-            <p class="mt-1 text-sm text-gray-500">Simpan dan kelola gambar, dokumen, arsip, audio, video, dan jenis file lainnya.</p>
+            <p class="mt-1 text-sm text-gray-500">Simpan dan kelola gambar, GIF, video, PDF, serta dokumen Word.</p>
         </div>
 
         <button type="button" wire:click="toggleForm" class="inline-flex shrink-0 items-center gap-2 border border-transparent px-4 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90" style="background-color: #376A64; color: #ffffff;">
@@ -45,23 +45,101 @@
     @endif
 
     @if ($showForm)
-        <form wire:submit="save" class="mb-7 border border-gray-200 bg-white p-6 shadow-sm">
+        <form
+            wire:submit="save"
+            x-data="{
+                uploading: false,
+                progress: 0,
+                finishTimer: null,
+                startUpload() {
+                    clearTimeout(this.finishTimer);
+                    this.progress = 0;
+                    this.uploading = true;
+                },
+                finishUpload() {
+                    this.progress = 100;
+                    clearTimeout(this.finishTimer);
+                    this.finishTimer = setTimeout(() => {
+                        this.uploading = false;
+                    }, 700);
+                },
+                stopUpload() {
+                    clearTimeout(this.finishTimer);
+                    this.uploading = false;
+                    this.progress = 0;
+                },
+            }"
+            class="mb-7 border border-gray-200 bg-white p-6 shadow-sm"
+        >
             <div class="space-y-5">
                 <div>
                     <label class="mb-1.5 block text-sm font-semibold text-gray-700">File <span class="text-red-500">*</span></label>
-                    <input type="file" wire:model="image" class="block w-full border border-gray-300 bg-white p-2 text-sm text-gray-600 file:mr-4 file:border-0 file:bg-[#376A64] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white">
-                    <p class="mt-2 text-xs text-gray-500">Semua jenis file dapat diunggah. Maksimal 10 MB per file.</p>
-                    <p wire:loading wire:target="image" class="mt-1 text-xs font-medium text-[#376A64]">Mengunggah file...</p>
+                    <input
+                        type="file"
+                        wire:model="image"
+                        accept=".jpg,.jpeg,.png,.webp,.gif,.mp4,.mov,.webm,.pdf,.doc,.docx,image/jpeg,image/png,image/webp,image/gif,video/mp4,video/quicktime,video/webm,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        x-on:livewire-upload-start="startUpload()"
+                        x-on:livewire-upload-finish="finishUpload()"
+                        x-on:livewire-upload-error="stopUpload()"
+                        x-on:livewire-upload-cancel="stopUpload()"
+                        x-on:livewire-upload-progress="progress = $event.detail.progress"
+                        class="block w-full border border-gray-300 bg-white p-2 text-sm text-gray-600 file:mr-4 file:border-0 file:bg-[#376A64] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white"
+                    >
+                    <p class="mt-2 text-xs text-gray-500">JPG, PNG, WebP, GIF, MP4, MOV, WebM, PDF, DOC, atau DOCX. Maksimal 50 MB per file.</p>
                     @error('image') <p class="mt-1 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
                 </div>
 
-                @if ($image && str_starts_with($image->getMimeType() ?: '', 'image/'))
-                    <img src="{{ $image->temporaryUrl() }}" alt="Preview" class="max-h-72 w-full border border-gray-200 object-contain">
-                @elseif ($image)
-                    <div class="border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-600">
-                        File dipilih: <span class="font-semibold text-gray-900">{{ $image->getClientOriginalName() }}</span>
+                <div
+                    x-show="uploading"
+                    x-cloak
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 -translate-y-1"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 -translate-y-1"
+                    class="border border-[#b9cfcb] bg-[#f3f8f7] px-5 py-6"
+                    role="status"
+                    aria-live="polite"
+                >
+                    <div class="flex items-center gap-3 text-sm font-semibold text-[#376A64]">
+                        <svg x-show="progress < 100" class="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-90" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                        </svg>
+                        <svg x-show="progress >= 100" x-cloak class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6"></path>
+                        </svg>
+                        <span x-text="progress >= 100 ? 'Upload selesai, menampilkan preview...' : 'Mengunggah dan menyiapkan preview...'"></span>
+                        <span class="ml-auto" x-text="`${progress}%`"></span>
                     </div>
-                @endif
+                    <div class="mt-3 h-2 overflow-hidden bg-[#dbe8e6]">
+                        <div class="h-full bg-[#376A64] transition-[width] duration-200" x-bind:style="`width: ${progress}%`"></div>
+                    </div>
+                </div>
+
+                <div
+                    x-show="!uploading"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-1"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                >
+                    @if ($image)
+                        <div wire:key="reference-preview-{{ md5($image->getFilename()) }}">
+                            @if (str_starts_with($image->getMimeType() ?: '', 'image/'))
+                                <img src="{{ $image->temporaryUrl() }}" alt="Preview" class="max-h-72 w-full border border-gray-200 object-contain">
+                            @elseif (str_starts_with($image->getMimeType() ?: '', 'video/'))
+                                <video src="{{ $image->temporaryUrl() }}" controls preload="metadata" class="max-h-72 w-full border border-gray-200 bg-black object-contain"></video>
+                            @elseif (($image->getMimeType() ?: '') === 'application/pdf')
+                                <iframe src="{{ $image->temporaryUrl() }}" title="Preview PDF" class="h-72 w-full border border-gray-200 bg-white"></iframe>
+                            @else
+                                <div class="border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-600">
+                                    File dipilih: <span class="font-semibold text-gray-900">{{ $image->getClientOriginalName() }}</span>
+                                </div>
+                            @endif
+                        </div>
+                    @endif
+                </div>
 
                 <div>
                     <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul <span class="text-red-500">*</span></label>
@@ -76,7 +154,7 @@
                 </div>
 
                 <div class="flex justify-end">
-                    <button type="submit" wire:loading.attr="disabled" wire:target="save" class="px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-60" style="background-color: #376A64; color: #ffffff;">
+                    <button type="submit" x-bind:disabled="uploading" wire:loading.attr="disabled" wire:target="save,image" class="px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 disabled:cursor-wait disabled:opacity-60" style="background-color: #376A64; color: #ffffff;">
                         <span wire:loading.remove wire:target="save">Simpan File</span>
                         <span wire:loading wire:target="save">Menyimpan...</span>
                     </button>
@@ -89,9 +167,12 @@
         @forelse ($items as $item)
             @php
                 $isImage = str_starts_with($item->mime_type ?: 'image/', 'image/');
+                $isVideo = str_starts_with($item->mime_type ?: '', 'video/');
+                $isPdf = ($item->mime_type ?: '') === 'application/pdf';
                 $fileUrl = ($item->disk ?: 'public') === 'public'
                     ? url(Storage::url($item->image_path))
                     : route('cms.reference.download', $item->id);
+                $previewUrl = ($isVideo || $isPdf) ? route('cms.reference.preview', $item->id) : null;
                 $downloadUrl = route('cms.reference.download', $item->id);
                 $fileName = $item->original_name ?: basename($item->image_path);
                 $extension = strtoupper(pathinfo($fileName, PATHINFO_EXTENSION) ?: 'FILE');
@@ -100,6 +181,10 @@
                 <div class="flex h-52 items-center justify-center overflow-hidden bg-gray-100">
                     @if ($isImage)
                         <img src="{{ $fileUrl }}" alt="{{ $item->alt_text ?: $item->title ?: 'Reference image' }}" class="h-full w-full object-cover">
+                    @elseif ($isVideo)
+                        <video src="{{ $previewUrl }}" controls preload="metadata" class="h-full w-full bg-black object-contain" aria-label="{{ $item->alt_text ?: $item->title ?: 'Reference video' }}"></video>
+                    @elseif ($isPdf)
+                        <iframe src="{{ $previewUrl }}" title="{{ $item->alt_text ?: $item->title ?: 'Reference PDF' }}" class="h-full w-full bg-white"></iframe>
                     @else
                         <div class="text-center">
                             <svg class="mx-auto h-16 w-16 text-[#376A64]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">

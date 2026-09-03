@@ -36,6 +36,76 @@
   display: none !important;
 }
 
+.deforestory-loader-bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 0 0 0 150vmax #fff;
+  transform: translate(-50%, -50%);
+  will-change: width, height;
+}
+
+.deforestory-loader-bg.is-opening {
+  animation: deforestory-loader-hole 2s cubic-bezier(0.33, 0, 0.2, 1) forwards;
+}
+
+.deforestory-hero-loader-title {
+  margin: 0;
+  background-color: #376A64;
+  background-image: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #376A64;
+  font-size: clamp(3.75rem, 16vw, 9.5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+  text-align: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.deforestory-hero-loader-title.is-opening {
+  animation: deforestory-loader-text-out 2s cubic-bezier(0.33, 0, 0.2, 1) forwards;
+}
+
+@keyframes deforestory-loader-hole {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 300vmax;
+    height: 300vmax;
+  }
+}
+
+@keyframes deforestory-loader-text-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deforestory-loader-bg.is-opening,
+  .deforestory-hero-loader-title.is-opening {
+    animation-duration: 0.2s;
+  }
+}
+
 @keyframes subscription-success-pop {
   0% {
     opacity: 0;
