@@ -34,55 +34,13 @@
                 action="{{ $unlockUrl }}"
                 x-data="{
                     submitting: false,
-                    letters: Array(11).fill('A'),
-                    settled: Array(11).fill(false),
-                    spinTimer: null,
-                    startLoader(form) {
+                    startLoader() {
                         if (this.submitting) return;
-
                         this.submitting = true;
-                        this.letters = Array(11).fill('A');
-                        this.settled = Array(11).fill(false);
-
-                        const target = Array.from('Deforestory');
-                        const alphabet = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-                        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-                        if (reducedMotion) {
-                            this.letters = target;
-                            this.settled = Array(11).fill(true);
-                            setTimeout(() => form.submit(), 250);
-                            return;
-                        }
-
-                        let tick = 0;
-                        this.spinTimer = setInterval(() => {
-                            tick += 1;
-                            this.letters = this.letters.map((letter, index) => (
-                                this.settled[index] ? letter : alphabet[(tick + (index * 3)) % alphabet.length]
-                            ));
-                        }, 55);
-
-                        target.forEach((letter, index) => {
-                            setTimeout(() => {
-                                const nextLetters = [...this.letters];
-                                const nextSettled = [...this.settled];
-                                nextLetters[index] = letter;
-                                nextSettled[index] = true;
-                                this.letters = nextLetters;
-                                this.settled = nextSettled;
-                            }, 320 + (index * 80));
-                        });
-
-                        setTimeout(() => {
-                            clearInterval(this.spinTimer);
-                            this.letters = target;
-                            this.settled = Array(11).fill(true);
-                            setTimeout(() => form.submit(), 250);
-                        }, 1250);
                     },
                 }"
-                x-on:submit.prevent="startLoader($el)"
+                x-on:submit.prevent="startLoader()"
+                x-on:deforestory-loader-finished.window="if (submitting) $el.submit()"
                 class="mt-8 text-left"
             >
                 @csrf
@@ -108,36 +66,9 @@
                     {{ $locale === 'en' ? 'Open story' : 'Buka artikel' }}
                 </button>
 
-                <div
-                    x-show="submitting"
-                    x-cloak
-                    x-transition:enter="transition ease-out duration-200"
-                    x-transition:enter-start="opacity-0"
-                    x-transition:enter-end="opacity-100"
-                    class="fixed inset-0 z-[9999] flex items-center justify-center bg-white/95 px-6 backdrop-blur-sm"
-                    role="status"
-                    aria-live="assertive"
-                    aria-label="Deforestory"
-                >
-                    <div class="text-center">
-                        <div class="flex items-end justify-center" aria-hidden="true">
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[0] }" x-text="letters[0]">A</span>
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[1] }" x-text="letters[1]">A</span>
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[2] }" x-text="letters[2]">A</span>
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[3] }" x-text="letters[3]">A</span>
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[4] }" x-text="letters[4]">A</span>
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[5] }" x-text="letters[5]">A</span>
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[6] }" x-text="letters[6]">A</span>
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[7] }" x-text="letters[7]">A</span>
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[8] }" x-text="letters[8]">A</span>
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[9] }" x-text="letters[9]">A</span>
-                            <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[10] }" x-text="letters[10]">A</span>
-                        </div>
-                        <p class="mt-4 text-xs font-semibold tracking-[0.12em] text-[#376A64]">
-                            {{ $locale === 'en' ? 'Opening story...' : 'Membuka artikel...' }}
-                        </p>
-                    </div>
-                </div>
+                <template x-if="submitting">
+                    <x-deforestation-preview-loader />
+                </template>
             </form>
 
             <a href="{{ $previewIndexUrl }}" class="mt-6 inline-flex text-xs font-semibold text-[#376A64] underline decoration-[#376A64]/40 underline-offset-4 hover:decoration-[#376A64]">

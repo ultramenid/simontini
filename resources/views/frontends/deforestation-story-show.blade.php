@@ -59,74 +59,13 @@
     @endif
 
     @if ($isPreview && ($story->is_locked ?? false))
-        <div
+        <x-deforestation-preview-loader
             data-deforestory-reload-loader
-            x-data="{
-                visible: true,
-                letters: Array(11).fill('A'),
-                settled: Array(11).fill(false),
-                spinTimer: null,
-                startReloadLoader() {
-                    const target = Array.from('Deforestory');
-                    const alphabet = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-                    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-                    if (reducedMotion) {
-                        this.letters = target;
-                        this.settled = Array(11).fill(true);
-                        setTimeout(() => { this.visible = false; }, 350);
-                        return;
-                    }
-
-                    let tick = 0;
-                    this.spinTimer = setInterval(() => {
-                        tick += 1;
-                        this.letters = this.letters.map((letter, index) => (
-                            this.settled[index] ? letter : alphabet[(tick + (index * 3)) % alphabet.length]
-                        ));
-                    }, 55);
-
-                    target.forEach((letter, index) => {
-                        setTimeout(() => {
-                            const nextLetters = [...this.letters];
-                            const nextSettled = [...this.settled];
-                            nextLetters[index] = letter;
-                            nextSettled[index] = true;
-                            this.letters = nextLetters;
-                            this.settled = nextSettled;
-                        }, 320 + (index * 80));
-                    });
-
-                    setTimeout(() => {
-                        clearInterval(this.spinTimer);
-                        this.letters = target;
-                        this.settled = Array(11).fill(true);
-                        setTimeout(() => { this.visible = false; }, 350);
-                    }, 1250);
-                },
-            }"
-            x-init="startReloadLoader()"
+            x-data="{ visible: true }"
+            x-on:deforestory-loader-finished.window="visible = false"
             x-show="visible"
             x-cloak
-            x-transition:leave="transition ease-in duration-300"
-            x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"
-            class="fixed inset-0 z-[9999] flex items-center justify-center bg-white/95 px-6 backdrop-blur-sm"
-            role="status"
-            aria-live="polite"
-            aria-label="Deforestory"
-        >
-            <div class="text-center">
-                <div class="flex items-end justify-center" aria-hidden="true">
-                    <template x-for="(letter, index) in letters" x-bind:key="index">
-                        <span class="deforestory-loader-letter" x-bind:class="{ 'is-settled': settled[index] }" x-text="letter"></span>
-                    </template>
-                </div>
-                <p class="mt-4 text-xs font-semibold tracking-[0.12em] text-[#376A64]">
-                    {{ $locale === 'en' ? 'Loading protected story...' : 'Memuat artikel terkunci...' }}
-                </p>
-            </div>
-        </div>
+        />
     @endif
 
     <main

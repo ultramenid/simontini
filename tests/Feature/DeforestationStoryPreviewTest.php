@@ -244,13 +244,14 @@ it('asks for the article password before opening a locked preview', function () 
         ->assertOk()
         ->assertSee('Password artikel')
         ->assertSee('Draft Preview Terkunci')
-        ->assertSee('x-on:submit.prevent="startLoader($el)"', false)
-        ->assertSee('aria-label="Deforestory"', false)
-        ->assertSee('deforestory-loader-letter', false)
-        ->assertSee("letters: Array(11).fill('A')", false)
-        ->assertSee("const target = Array.from('Deforestory')", false)
-        ->assertSee('x-text="letters[10]">A</span>', false)
-        ->assertSee('Membuka artikel...')
+        ->assertSee('x-on:submit.prevent="startLoader()"', false)
+        ->assertSee('data-deforestory-hero-loader', false)
+        ->assertSee('deforestory-hero-loader-title', false)
+        ->assertSee('assets/loader/loader.jpg', false)
+        ->assertSee('bg-white', false)
+        ->assertDontSee('deforestory-loader-letter')
+        ->assertDontSee("letters: Array(11).fill('A')")
+        ->assertDontSee('Membuka artikel...')
         ->assertDontSee('Konten yang harus dilindungi.');
 });
 
@@ -368,8 +369,11 @@ it('allows a logged in CMS user to open a locked preview without a password', fu
         ->assertOk()
         ->assertSee('Konten untuk pengguna CMS.')
         ->assertSee('data-deforestory-reload-loader', false)
-        ->assertSee('x-init="startReloadLoader()"', false)
-        ->assertSee('Memuat artikel terkunci...')
+        ->assertSee('data-deforestory-hero-loader', false)
+        ->assertSee('deforestory-hero-loader-title', false)
+        ->assertSee('assets/loader/loader.jpg', false)
+        ->assertDontSee('x-init="startReloadLoader()"')
+        ->assertDontSee('Memuat artikel terkunci...')
         ->assertDontSee('Password artikel');
 });
 
@@ -385,7 +389,30 @@ it('only renders the reload animation for a locked preview article', function ()
     ]))
         ->assertOk()
         ->assertDontSee('data-deforestory-reload-loader', false)
+        ->assertDontSee('data-deforestory-hero-loader', false)
         ->assertDontSee('Memuat artikel terkunci...');
+});
+
+it('uses the public loader image for locked preview text and background', function () {
+    $story = createDeforestationStory([
+        'image_id' => 'deforestory/id/hero-preview.jpg',
+        'is_locked' => true,
+    ]);
+
+    $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertSee('data-deforestory-loader-image="loader.jpg"', false)
+        ->assertSee('assets/loader/loader.jpg', false)
+        ->assertSee('deforestoryLoaderReveal()', false)
+        ->assertSee('deforestory-loader-bg', false)
+        ->assertSee('bg-white', false)
+        ->assertDontSee('hero-preview.jpg')
+        ->assertDontSee('<canvas', false)
+        ->assertDontSee('deforestoryHeroTextFill()');
 });
 
 it('keeps published stories publicly accessible when only their preview is locked', function () {
@@ -402,6 +429,32 @@ it('keeps published stories publicly accessible when only their preview is locke
         ->assertOk()
         ->assertSee('Konten cerita Indonesia.')
         ->assertDontSee('Password artikel');
+});
+
+it('shows a lock badge on the preview index for locked Deforestory items only', function () {
+    $locked = createDeforestationStory([
+        'title_id' => 'Cerita Terkunci',
+        'is_locked' => true,
+    ]);
+    $open = createDeforestationStory([
+        'title_id' => 'Cerita Terbuka',
+        'is_locked' => false,
+    ]);
+
+    $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.index', ['locale' => 'id']))
+        ->assertOk()
+        ->assertSee('Cerita Terkunci')
+        ->assertSee('Cerita Terbuka')
+        ->assertSee('data-preview-lock', false)
+        ->assertSee('Preview dikunci');
+
+    $this->get(route('deforestation.index', ['locale' => 'id']))
+        ->assertOk()
+        ->assertDontSee('data-preview-lock', false)
+        ->assertDontSee('Preview dikunci');
+
+    expect($locked->is_locked)->toBeTruthy();
+    expect($open->is_locked)->toBeFalsy();
 });
 
 it('allows a signed preview index to display drafts with noindex metadata', function () {
