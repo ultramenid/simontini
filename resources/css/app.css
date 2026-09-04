@@ -171,13 +171,18 @@
 }
 
 .public-story-content .story-inline-stopper {
+  position: relative !important;
+  top: 1px !important;
   display: inline-block !important;
-  width: .7em !important;
-  height: .7em !important;
+  flex: 0 0 8px;
+  width: 8px !important;
+  height: 8px !important;
   margin-left: 1px !important;
-  background: #ff0000 !important;
+  border-radius: 0 !important;
+  background: #d71920 !important;
   vertical-align: middle;
-  line-height: 1;
+  font-size: 0;
+  line-height: 0;
 }
 
 .public-story-content .story-content-figure {

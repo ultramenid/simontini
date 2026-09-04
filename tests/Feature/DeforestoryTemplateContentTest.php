@@ -213,13 +213,18 @@ it('provides an inline red stopper at the current TinyMCE cursor position', func
         ->toContain('data-story-inline-stopper="true"')
         ->toContain('margin-left:1px')
         ->not->toContain("insertContent('&nbsp;<span class=\"story-inline-stopper\"")
+        ->toContain('position:relative;top:1px')
         ->toContain('vertical-align:middle')
+        ->toContain('width:8px;height:8px')
+        ->toContain('background:#d71920')
         ->toContain("replace(/[\\u00a0 ]+$/, '')")
         ->toContain('normalizeInlineStoppers();')
         ->toContain('editor.undoManager.transact')
         ->and($styles)
         ->toContain('.public-story-content .story-inline-stopper')
-        ->toContain('background: #ff0000 !important');
+        ->toContain('width: 8px !important;')
+        ->toContain('height: 8px !important;')
+        ->toContain('background: #d71920 !important');
 });
 
 it('uses twelve pixel descriptions for story images and GLightbox', function () {

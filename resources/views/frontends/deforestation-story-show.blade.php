@@ -108,10 +108,10 @@
 
                 <div class="mt-12 border border-[#d8e1df] bg-[#f8fbfa] px-6 py-8 text-center">
                     <p class="text-lg font-black tracking-[-0.025em] text-[#1a1a1a] sm:text-xl">
-                        {{ $locale === 'en' ? 'Follow this story’s progress' : 'Ikuti perkembangan story ini' }}
+                        {{ $locale === 'en' ? 'Follow the latest developments in this story' : 'Ikuti perkembangan story ini' }}
                     </p>
                     <p class="mx-auto mt-2 max-w-md text-sm leading-6 text-[#7a6e60]">
-                        {{ $locale === 'en' ? 'Get an email notification whenever a new update is published.' : 'Dapatkan pemberitahuan melalui email setiap kali ada pembaruan terbaru.' }}
+                        {{ $locale === 'en' ? 'Receive email notifications of the latest updates.' : 'Dapatkan pemberitahuan melalui email setiap kali ada pembaruan terbaru.' }}
                     </p>
                     <button type="button" x-on:click="subscribed = false; subscriptionEmail = ''; subscribeOpen = true" class="mt-5 shrink-0 bg-[#376A64] px-6 py-3 text-[10px] font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#2d5954]">
                         Subscribe
