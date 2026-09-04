@@ -667,7 +667,7 @@ const initializeTinyMceEditors = () => {
             font_size_formats: isCaptionEditor
                 ? '10px 11px 12px 14px 16px 18px 20px 24px'
                 : '8pt 10pt 12pt 14pt 16pt 18pt 24pt 30pt 36pt 48pt',
-            content_style: `body { font-family: Arial, sans-serif; font-size: ${isCaptionEditor ? '12px' : '16px'}; line-height: 1.7; padding: 16px; } img, video, iframe { max-width: 100%; } .story-content-gallery { display: flex; width: 100%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; } .story-content-gallery > .story-content-figure { flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: start; } .story-before-after-figure, .story-before-after, .story-before-after img { -webkit-user-drag: none; user-select: none; } .story-before-after { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #e5e7eb; user-select: none; } .story-before-after-after { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 0 0 var(--before-after-position)); } .story-before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; } .story-before-after-handle { position: absolute; top: 50%; left: var(--before-after-position); z-index: 2; display: flex; width: 52px; height: 52px; align-items: center; justify-content: center; border: 3px solid #fff; border-radius: 9999px; background: rgba(0,0,0,.55); color: #fff; font-size: 22px; transform: translate(-50%, -50%); pointer-events: none; } .story-before-after-label, .story-before-after-caption { display: none !important; } .story-before-after-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; cursor: ew-resize; opacity: 0; } .story-data-visualization { width: 100%; margin: 24px 0; } .story-data-visualization iframe { display: block; width: 100%; height: 100%; pointer-events: none; }`,
+            content_style: `body { font-family: Arial, sans-serif; font-size: ${isCaptionEditor ? '12px' : '16px'}; line-height: 1.7; padding: 16px; } img, video, iframe { max-width: 100%; } .story-inline-stopper { position: relative; top: 1px; display: inline-block; flex: 0 0 8px; width: 8px; height: 8px; margin-left: 1px; border-radius: 0; background: #d71920; vertical-align: middle; font-size: 0; line-height: 0; } .story-content-gallery { display: flex; width: 100%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; } .story-content-gallery > .story-content-figure { flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: start; } .story-before-after-figure, .story-before-after, .story-before-after img { -webkit-user-drag: none; user-select: none; } .story-before-after { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #e5e7eb; user-select: none; } .story-before-after-after { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 0 0 var(--before-after-position)); } .story-before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; } .story-before-after-handle { position: absolute; top: 50%; left: var(--before-after-position); z-index: 2; display: flex; width: 52px; height: 52px; align-items: center; justify-content: center; border: 3px solid #fff; border-radius: 9999px; background: rgba(0,0,0,.55); color: #fff; font-size: 22px; transform: translate(-50%, -50%); pointer-events: none; } .story-before-after-label, .story-before-after-caption { display: none !important; } .story-before-after-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; cursor: ew-resize; opacity: 0; } .story-data-visualization { width: 100%; margin: 24px 0; } .story-data-visualization iframe { display: block; width: 100%; height: 100%; pointer-events: none; }`,
             setup(editor) {
                 const atomicBlockSelector = '.story-lightbox-gallery, .story-before-after-figure, .story-data-visualization';
                 const normalizeInlineStoppers = () => {
@@ -677,11 +677,18 @@ const initializeTinyMceEditors = () => {
                             previousNode.textContent = previousNode.textContent.replace(/[\u00a0 ]+$/, '');
                         }
 
-                        stopper.style.width = '.7em';
-                        stopper.style.height = '.7em';
+                        stopper.style.position = 'relative';
+                        stopper.style.top = '1px';
+                        stopper.style.display = 'inline-block';
+                        stopper.style.flex = '0 0 8px';
+                        stopper.style.width = '8px';
+                        stopper.style.height = '8px';
                         stopper.style.marginLeft = '1px';
-                        stopper.style.background = '#FF0000';
+                        stopper.style.borderRadius = '0';
+                        stopper.style.background = '#d71920';
                         stopper.style.verticalAlign = 'middle';
+                        stopper.style.fontSize = '0';
+                        stopper.style.lineHeight = '0';
                     });
                 };
 
@@ -1901,7 +1908,7 @@ const initializeTinyMceEditors = () => {
                     onAction: () => {
                         editor.focus();
                         editor.undoManager.transact(() => {
-                            editor.insertContent('<span class="story-inline-stopper" data-story-inline-stopper="true" contenteditable="false" aria-hidden="true" style="display:inline-block;width:.7em;height:.7em;margin-left:1px;background:#FF0000;vertical-align:middle;line-height:1;">&nbsp;</span>');
+                            editor.insertContent('<span class="story-inline-stopper" data-story-inline-stopper="true" contenteditable="false" aria-hidden="true" style="position:relative;top:1px;display:inline-block;flex:0 0 8px;width:8px;height:8px;margin-left:1px;border-radius:0;background:#d71920;vertical-align:middle;font-size:0;line-height:0;">&nbsp;</span>');
                         });
                         editor.nodeChanged();
                     },
