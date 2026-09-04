@@ -203,6 +203,37 @@ it('uses selectable cards for the TinyMCE Data and Grafik picker', function () {
         ->not->toContain("name: 'visualizationId'");
 });
 
+it('rewrites stored TinyMCE stoppers to the brand square on the public story page', function () {
+    $oldStopper = '<span class="story-inline-stopper" data-story-inline-stopper="true" contenteditable="false" aria-hidden="true" style="display: inline-block; width: .7em; height: .7em; margin-left: 1px; background: #FF0000; vertical-align: middle; line-height: 1;">&nbsp;</span>';
+
+    $id = DB::table('deforestory')->insertGetId([
+        'title_id' => 'Cerita Stopper Lama',
+        'title_en' => 'Old Stopper Story',
+        'slug' => 'cerita-stopper-lama-'.uniqid(),
+        'desrkirpsi_id' => 'Deskripsi cerita stopper.',
+        'desrkirpsi_en' => 'Stopper story description.',
+        'date' => '2026-09-04',
+        'content_id' => '<p>hektare'.$oldStopper.'</p>',
+        'content_en' => '<p>hectares'.$oldStopper.'</p>',
+        'status' => 'publish',
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+    $story = DB::table('deforestory')->find($id);
+
+    $this->get(route('deforestation.show', [
+        'locale' => 'id',
+        'id' => $story->id,
+        'slug' => $story->slug,
+    ]))
+        ->assertOk()
+        ->assertSee('hektare', false)
+        ->assertSee('width:8px;height:8px', false)
+        ->assertSee('background:#d71920', false)
+        ->assertDontSee('width: .7em', false)
+        ->assertDontSee('background: #FF0000', false);
+});
+
 it('provides an inline red stopper at the current TinyMCE cursor position', function () {
     $script = file_get_contents(resource_path('js/app.js'));
     $styles = file_get_contents(resource_path('css/app.css'));

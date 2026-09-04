@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Services\DeforestationStoryNotificationDispatcher;
 use App\Services\DeforestationStoryWebhookDispatcher;
+use App\Support\DeforestationStoryStopper;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -106,6 +107,8 @@ class DeforestoryAdd extends Component
     ) {
         $validated = $this->validate();
         unset($validated['image_id'], $validated['image_en']);
+        $validated['content_id'] = DeforestationStoryStopper::normalizeHtml($validated['content_id']);
+        $validated['content_en'] = DeforestationStoryStopper::normalizeHtml($validated['content_en']);
         $validated['slug'] = $this->uniqueSlug($this->title_id, $this->deforestoryId);
 
         if ($this->image_id) {
