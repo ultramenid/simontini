@@ -94,7 +94,7 @@
                         @endif
                     </div>
                     @if (filled($story->localized_image_description))
-                        <figcaption class="hero-image-caption pt-1 text-left text-[12px] font-normal leading-[1.6] text-black">
+                        <figcaption class="hero-image-caption pt-1 text-left text-[12px] font-normal leading-[1.6] text-gray-800">
                             {!! $story->localized_image_description !!}
                         </figcaption>
                     @endif

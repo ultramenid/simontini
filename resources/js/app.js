@@ -667,7 +667,7 @@ const initializeTinyMceEditors = () => {
             font_size_formats: isCaptionEditor
                 ? '10px 11px 12px 14px 16px 18px 20px 24px'
                 : '8pt 10pt 12pt 14pt 16pt 18pt 24pt 30pt 36pt 48pt',
-            content_style: `body { font-family: Arial, sans-serif; font-size: ${isCaptionEditor ? '12px' : '16px'}; line-height: 1.7; padding: 16px; } img, video, iframe { max-width: 100%; } .story-inline-stopper { position: relative; top: 1px; display: inline-block; flex: 0 0 8px; width: 8px; height: 8px; margin-left: 1px; border-radius: 0; background: #d71920; vertical-align: middle; font-size: 0; line-height: 0; } .story-content-gallery { display: flex; width: 100%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; } .story-content-gallery > .story-content-figure { flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: start; } .story-before-after-figure, .story-before-after, .story-before-after img { -webkit-user-drag: none; user-select: none; } .story-before-after { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #e5e7eb; user-select: none; } .story-before-after-after { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 0 0 var(--before-after-position)); } .story-before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; } .story-before-after-handle { position: absolute; top: 50%; left: var(--before-after-position); z-index: 2; display: flex; width: 52px; height: 52px; align-items: center; justify-content: center; border: 3px solid #fff; border-radius: 9999px; background: rgba(0,0,0,.55); color: #fff; font-size: 22px; transform: translate(-50%, -50%); pointer-events: none; } .story-before-after-label, .story-before-after-caption { display: none !important; } .story-before-after-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; cursor: ew-resize; opacity: 0; } .story-data-visualization { width: 100%; margin: 24px 0; } .story-data-visualization iframe { display: block; width: 100%; height: 100%; pointer-events: none; }`,
+            content_style: `body { font-family: Arial, sans-serif; font-size: ${isCaptionEditor ? '12px' : '16px'}; line-height: 1.7; padding: 16px; } img, video, iframe { max-width: 100%; } .story-inline-stopper { position: relative; top: 1px; display: inline-block; flex: 0 0 8px; width: 8px; height: 8px; margin-left: 1px; border-radius: 0; background: #d71920; vertical-align: middle; font-size: 0; line-height: 0; } .story-content-gallery { display: flex; width: 100%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; } .story-content-gallery > .story-content-figure { flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: start; } .story-before-after-figure, .story-before-after, .story-before-after img { -webkit-user-drag: none; user-select: none; } .story-before-after { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #e5e7eb; user-select: none; } .story-before-after-after { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 0 0 var(--before-after-position)); } .story-before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; } .story-before-after-handle { position: absolute; top: 50%; left: var(--before-after-position); z-index: 2; display: flex; width: 52px; height: 52px; align-items: center; justify-content: center; border: 3px solid #fff; border-radius: 9999px; background: rgba(0,0,0,.55); color: #fff; font-size: 22px; transform: translate(-50%, -50%); pointer-events: none; } .story-before-after-label { display: none !important; } .story-before-after-caption { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 4px 0 0; padding: 0; color: #000; font-size: 12px; font-weight: 400; line-height: 1.5; } .story-before-after-caption strong { font-weight: 700; } .story-before-after-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; cursor: ew-resize; opacity: 0; } .story-data-visualization { width: 100%; margin: 24px 0; } .story-data-visualization iframe { display: block; width: 100%; height: 100%; pointer-events: none; }`,
             setup(editor) {
                 const atomicBlockSelector = '.story-lightbox-gallery, .story-before-after-figure, .story-data-visualization';
                 const normalizeInlineStoppers = () => {
@@ -911,7 +911,8 @@ const initializeTinyMceEditors = () => {
                             block.querySelectorAll('img, [data-before-after-range]').forEach((element) => {
                                 element.setAttribute('draggable', 'false');
                             });
-                            block.querySelectorAll('.story-before-after-label, .story-before-after-caption').forEach((element) => element.remove());
+                            block.querySelectorAll('.story-before-after-label').forEach((element) => element.remove());
+                            syncBeforeAfterCaption(block);
                         }
 
                         if (!block.nextElementSibling) {
@@ -929,6 +930,57 @@ const initializeTinyMceEditors = () => {
 
                     return `<figure class="story-content-figure" style="width: 100%; margin: 0; padding: 0; box-sizing: border-box;"><a class="glightbox2 gbox" href="${imageUrl}" data-gallery="${galleryId}" data-glightbox="description: ${imageDescription}" style="display: block; width: 100%; aspect-ratio: 16 / 9; margin: 0; padding: 0; overflow: hidden;"><img src="${imageUrl}" alt="${imageDescription}" title="${imageTitle}" style="display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; margin: 0; padding: 0; object-fit: cover; object-position: center; cursor: zoom-in;"></a>${imageDescription ? `<figcaption class="story-content-caption" style="margin: 4px 0 0; padding: 0; color: #000; font-size: 12px; font-weight: 400; line-height: 1.5;">${imageDescription}</figcaption>` : ''}</figure>`;
                 }).join('');
+
+                const beforeAfterCaptionHtmlToText = (html) => {
+                    const template = document.createElement('template');
+                    template.innerHTML = html || '';
+                    return template.content.textContent?.replace(/\s+/g, ' ').trim() || '';
+                };
+
+                const sanitizeBeforeAfterCaptionHtml = (html) => {
+                    const template = document.createElement('template');
+                    template.innerHTML = html || '';
+                    template.content.querySelectorAll('script, style, iframe, object, embed').forEach((element) => element.remove());
+                    template.content.querySelectorAll('*').forEach((element) => {
+                        Array.from(element.attributes).forEach((attribute) => {
+                            if (/^on/i.test(attribute.name)) element.removeAttribute(attribute.name);
+                        });
+                    });
+
+                    return template.innerHTML.trim();
+                };
+
+                const createBeforeAfterCaptionHtml = (description) => {
+                    const captionHtml = sanitizeBeforeAfterCaptionHtml(description || '');
+
+                    return captionHtml ? captionHtml : '';
+                };
+
+                const syncBeforeAfterCaption = (figure, nextCaption = null) => {
+                    const currentCaption = figure.querySelector('.story-before-after-caption');
+                    const description = nextCaption !== null
+                        ? nextCaption
+                        : currentCaption?.innerHTML?.trim()
+                        || figure.getAttribute('data-before-after-caption')
+                        || figure.querySelector('.story-before-after-image--before')?.getAttribute('alt')
+                        || figure.querySelector('.story-before-after-image--after')?.getAttribute('alt')
+                        || '';
+                    const captionHtml = createBeforeAfterCaptionHtml(description);
+                    const captionText = beforeAfterCaptionHtmlToText(captionHtml);
+
+                    if (!captionHtml) {
+                        figure.removeAttribute('data-before-after-caption');
+                        currentCaption?.remove();
+                        return;
+                    }
+
+                    figure.setAttribute('data-before-after-caption', captionText);
+                    const caption = currentCaption || editor.getDoc().createElement('figcaption');
+                    caption.className = 'story-before-after-caption';
+                    caption.style.cssText = 'display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 4px 0 0; padding: 0; color: #000; font-size: 12px; font-weight: 400; line-height: 1.5;';
+                    caption.innerHTML = captionHtml;
+                    if (!currentCaption) figure.append(caption);
+                };
 
                 const insertReferenceImage = (payload) => {
                     if (
@@ -954,6 +1006,7 @@ const initializeTinyMceEditors = () => {
                         editor.undoManager.transact(() => {
                             editor.dom.setAttrib(targetImage, 'src', replacement.url);
                             editor.dom.setAttrib(targetImage, 'alt', description);
+                            syncBeforeAfterCaption(targetFigure);
                         });
                         editor.nodeChanged();
                         editor.dispatch('change');
@@ -970,10 +1023,14 @@ const initializeTinyMceEditors = () => {
                         const afterImage = selectedImages[1];
                         const beforeUrl = editor.dom.encode(beforeImage.url);
                         const afterUrl = editor.dom.encode(afterImage.url);
-                        const beforeDescription = editor.dom.encode(beforeImage.caption || beforeImage.alt_text || beforeImage.title || 'Before');
-                        const afterDescription = editor.dom.encode(afterImage.caption || afterImage.alt_text || afterImage.title || 'After');
+                        const beforeDescriptionRaw = beforeImage.caption || beforeImage.alt_text || beforeImage.title || 'Before';
+                        const afterDescriptionRaw = afterImage.caption || afterImage.alt_text || afterImage.title || 'After';
+                        const beforeDescription = editor.dom.encode(beforeDescriptionRaw);
+                        const afterDescription = editor.dom.encode(afterDescriptionRaw);
 
-                        insertAtomicContent(`<figure class="story-before-after-figure" contenteditable="false" data-mce-contenteditable="false" draggable="false" style="width: 100%; margin: 24px 0; padding: 0;"><div class="story-before-after" data-story-before-after style="--before-after-position: 50%; position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden;"><img class="story-before-after-image story-before-after-image--before" src="${beforeUrl}" alt="${beforeDescription}" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover;"><div class="story-before-after-after" data-before-after-after style="position: absolute; inset: 0; clip-path: inset(0 0 0 var(--before-after-position));"><img class="story-before-after-image story-before-after-image--after" src="${afterUrl}" alt="${afterDescription}" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover;"></div><span class="story-before-after-divider" aria-hidden="true"></span><span class="story-before-after-handle" aria-hidden="true">&#8596;</span><input class="story-before-after-range" data-before-after-range type="range" min="0" max="100" value="50" draggable="false" aria-label="Geser perbandingan gambar Before dan After"></div></figure>`);
+                        const captionDescription = beforeDescriptionRaw || afterDescriptionRaw;
+
+                        insertAtomicContent(`<figure class="story-before-after-figure" data-before-after-caption="${editor.dom.encode(captionDescription)}" contenteditable="false" data-mce-contenteditable="false" draggable="false" style="width: 100%; margin: 24px 0; padding: 0;"><div class="story-before-after" data-story-before-after style="--before-after-position: 50%; position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden;"><img class="story-before-after-image story-before-after-image--before" src="${beforeUrl}" alt="${beforeDescription}" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover;"><div class="story-before-after-after" data-before-after-after style="position: absolute; inset: 0; clip-path: inset(0 0 0 var(--before-after-position));"><img class="story-before-after-image story-before-after-image--after" src="${afterUrl}" alt="${afterDescription}" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover;"></div><span class="story-before-after-divider" aria-hidden="true"></span><span class="story-before-after-handle" aria-hidden="true">&#8596;</span><input class="story-before-after-range" data-before-after-range type="range" min="0" max="100" value="50" draggable="false" aria-label="Geser perbandingan gambar Before dan After"></div><figcaption class="story-before-after-caption" style="display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 4px 0 0; padding: 0; color: #000; font-size: 12px; font-weight: 400; line-height: 1.5;">${createBeforeAfterCaptionHtml(captionDescription)}</figcaption></figure>`);
                     } else if (referenceInsertionMode === 'append-lightbox' && lightboxGalleryToAppend?.isConnected) {
                         const galleryToRefresh = lightboxGalleryToAppend;
                         const galleryId = lightboxGalleryToAppend.getAttribute('data-story-lightbox-gallery')
@@ -1136,17 +1193,81 @@ const initializeTinyMceEditors = () => {
                     const pageScrollPosition = { x: window.scrollX, y: window.scrollY };
                     const dialogId = `lightbox-order-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
                     let pendingFigures = [...galleryFigures];
+                    const captionEditorIds = new Set();
+                    const captionHtmlToText = (html) => {
+                        const template = document.createElement('template');
+                        template.innerHTML = html || '';
+                        return template.content.textContent?.replace(/\s+/g, ' ').trim() || '';
+                    };
+                    const sanitizeCaptionHtml = (html) => {
+                        const template = document.createElement('template');
+                        template.innerHTML = html || '';
+                        template.content.querySelectorAll('script, style, iframe, object, embed').forEach((element) => element.remove());
+                        template.content.querySelectorAll('*').forEach((element) => {
+                            Array.from(element.attributes).forEach((attribute) => {
+                                if (/^on/i.test(attribute.name)) element.removeAttribute(attribute.name);
+                            });
+                        });
+
+                        return template.innerHTML.trim();
+                    };
                     const pendingCaptions = new Map(galleryFigures.map((galleryFigure) => [
                         galleryFigure,
-                        galleryFigure.querySelector('figcaption')?.textContent?.trim() || '',
+                        galleryFigure.querySelector('figcaption')?.innerHTML?.trim() || '',
                     ]));
                     const thumbnailItems = galleryFigures.map((galleryFigure, index) => {
                         const thumbnail = galleryFigure.querySelector('img');
                         const thumbnailUrl = editor.dom.encode(thumbnail?.getAttribute('src') || '');
-                        const itemCaption = editor.dom.encode(pendingCaptions.get(galleryFigure) || '');
+                        const itemCaption = sanitizeCaptionHtml(pendingCaptions.get(galleryFigure) || '');
+                        const captionEditorId = `${dialogId}-caption-${index}`;
+                        const captionToolbarId = `${captionEditorId}-toolbar`;
+                        captionEditorIds.add(captionEditorId);
 
-                        return `<div data-lightbox-order-item data-figure-index="${index}" style="min-width: 0; overflow: visible; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; padding: 12px;"><div style="display: flex; min-width: 0; align-items: center; gap: 10px;"><button type="button" draggable="true" data-lightbox-drag-handle title="Tarik untuk mengubah urutan" aria-label="Tarik gambar ke-${index + 1}" style="display: flex; width: 34px; height: 52px; flex: 0 0 34px; align-items: center; justify-content: center; border: 0; border-radius: 5px; background: #111827; color: #fff; font-size: 18px; line-height: 1; cursor: grab;">&#8942;&#8942;</button><img src="${thumbnailUrl}" alt="" style="display: block; width: 120px; height: 68px; flex: 0 0 120px; border-radius: 4px; object-fit: cover; pointer-events: none;"><div data-lightbox-order-label style="min-width: 0; flex: 1; color: #1f2937; font-size: 13px; font-weight: 700;">Gambar ke-${index + 1}</div><button type="button" data-lightbox-replace data-figure-index="${index}" style="border: 1px solid #376a64; border-radius: 5px; background: #fff; padding: 7px 11px; color: #376a64; font-size: 12px; font-weight: 700; cursor: pointer;">Ganti</button><button type="button" data-lightbox-remove data-figure-index="${index}" style="border: 1px solid #dc2626; border-radius: 5px; background: #fff; padding: 7px 11px; color: #dc2626; font-size: 12px; font-weight: 700; cursor: pointer;">Hapus</button></div><label style="display: block; margin-top: 10px; color: #4b5563; font-size: 12px; font-weight: 600;">Deskripsi gambar</label><textarea rows="2" data-lightbox-caption data-figure-index="${index}" placeholder="Tulis deskripsi gambar" style="display: block; width: 100%; min-height: 64px; margin: 5px 0 3px; box-sizing: border-box; resize: vertical; border: 1px solid #cbd5e1; border-radius: 5px; padding: 9px 10px; color: #1f2937; font-family: inherit; font-size: 13px; line-height: 1.45; outline: none;">${itemCaption}</textarea></div>`;
+                        return `<div data-lightbox-order-item data-figure-index="${index}" style="min-width: 0; overflow: visible; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; padding: 12px;"><div style="display: flex; min-width: 0; align-items: center; gap: 10px;"><button type="button" draggable="true" data-lightbox-drag-handle title="Tarik untuk mengubah urutan" aria-label="Tarik gambar ke-${index + 1}" style="display: flex; width: 34px; height: 52px; flex: 0 0 34px; align-items: center; justify-content: center; border: 0; border-radius: 5px; background: #111827; color: #fff; font-size: 18px; line-height: 1; cursor: grab;">&#8942;&#8942;</button><img src="${thumbnailUrl}" alt="" style="display: block; width: 120px; height: 68px; flex: 0 0 120px; border-radius: 4px; object-fit: cover; pointer-events: none;"><div data-lightbox-order-label style="min-width: 0; flex: 1; color: #1f2937; font-size: 13px; font-weight: 700;">Gambar ke-${index + 1}</div><button type="button" data-lightbox-replace data-figure-index="${index}" style="border: 1px solid #376a64; border-radius: 5px; background: #fff; padding: 7px 11px; color: #376a64; font-size: 12px; font-weight: 700; cursor: pointer;">Ganti</button><button type="button" data-lightbox-remove data-figure-index="${index}" style="border: 1px solid #dc2626; border-radius: 5px; background: #fff; padding: 7px 11px; color: #dc2626; font-size: 12px; font-weight: 700; cursor: pointer;">Hapus</button></div><label for="${captionEditorId}" style="display: block; margin-top: 10px; color: #4b5563; font-size: 12px; font-weight: 600;">Deskripsi gambar</label><div id="${captionToolbarId}" data-lightbox-caption-toolbar data-caption-editor-target="${captionEditorId}" style="display: flex; flex-wrap: wrap; gap: 4px; margin: 5px 0 0; border: 1px solid #cbd5e1; border-bottom: 0; border-radius: 5px 5px 0 0; background: #f8fafc; padding: 6px;"><button type="button" data-lightbox-caption-command="Bold" style="min-width: 30px; border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 800; cursor: pointer;">B</button><button type="button" data-lightbox-caption-command="Italic" style="min-width: 30px; border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-style: italic; font-weight: 700; cursor: pointer;">I</button><button type="button" data-lightbox-caption-command="Underline" style="min-width: 30px; border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; text-decoration: underline; cursor: pointer;">U</button><button type="button" data-lightbox-caption-command="InsertUnorderedList" style="border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">• List</button><button type="button" data-lightbox-caption-command="InsertOrderedList" style="border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">1. List</button><button type="button" data-lightbox-caption-command="mceLink" style="border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">Link</button><button type="button" data-lightbox-caption-command="Unlink" style="border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">Unlink</button><button type="button" data-lightbox-caption-command="RemoveFormat" style="border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">Clear</button></div><div id="${captionEditorId}" contenteditable="true" data-lightbox-caption data-figure-index="${index}" data-placeholder="Tulis deskripsi gambar" style="display: block; width: 100%; min-height: 82px; margin: 0 0 3px; box-sizing: border-box; overflow-y: auto; border: 1px solid #cbd5e1; border-radius: 0 0 5px 5px; padding: 9px 10px; color: #1f2937; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; outline: none;">${itemCaption}</div></div>`;
                     }).join('');
+
+                    const syncCaptionEditorsToPending = () => {
+                        captionEditorIds.forEach((captionEditorId) => {
+                            const captionInput = document.getElementById(captionEditorId);
+                            const captionFigure = galleryFigures[Number(captionInput?.dataset.figureIndex)];
+                            const captionEditor = tinymce.get(captionEditorId);
+                            if (captionFigure) pendingCaptions.set(captionFigure, sanitizeCaptionHtml(captionEditor?.getContent() || captionInput?.innerHTML || ''));
+                        });
+                    };
+
+                    const destroyCaptionEditors = () => {
+                        captionEditorIds.forEach((captionEditorId) => tinymce.get(captionEditorId)?.remove());
+                    };
+
+                    const initializeCaptionEditors = () => {
+                        captionEditorIds.forEach((captionEditorId) => {
+                            if (!document.getElementById(captionEditorId) || tinymce.get(captionEditorId)) return;
+                            const captionInput = document.getElementById(captionEditorId);
+                            const captionToolbarId = `${captionEditorId}-toolbar`;
+
+                            tinymce.init({
+                                target: captionInput,
+                                inline: true,
+                                menubar: false,
+                                statusbar: false,
+                                branding: false,
+                                plugins: 'autolink link lists',
+                                toolbar: false,
+                                toolbar_mode: 'wrap',
+                                content_style: 'body { font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; padding: 8px 10px; color: #1f2937; } p { margin: 0 0 6px; }',
+                                setup(captionEditor) {
+                                    captionEditor.on('init', () => {
+                                        captionInput.style.minHeight = '82px';
+                                    });
+                                    captionEditor.on('change input keyup undo redo', () => {
+                                        const captionInput = document.getElementById(captionEditorId);
+                                        const captionFigure = galleryFigures[Number(captionInput?.dataset.figureIndex)];
+                                        if (captionFigure) pendingCaptions.set(captionFigure, sanitizeCaptionHtml(captionEditor.getContent()));
+                                    });
+                                },
+                            });
+                        });
+                    };
 
                     const applyPendingOrder = () => {
                         galleryFigures
@@ -1161,20 +1282,22 @@ const initializeTinyMceEditors = () => {
 
                     const applyImageDetails = () => {
                         editor.undoManager.transact(() => {
+                            syncCaptionEditorsToPending();
                             pendingFigures.forEach((galleryFigure) => {
                                 const currentImage = galleryFigure.querySelector('img');
                                 const currentAnchor = galleryFigure.querySelector('a.glightbox2');
                                 const currentCaption = galleryFigure.querySelector('figcaption');
-                                const description = pendingCaptions.get(galleryFigure) || '';
+                                const descriptionHtml = sanitizeCaptionHtml(pendingCaptions.get(galleryFigure) || '');
+                                const description = captionHtmlToText(descriptionHtml);
 
                                 editor.dom.setAttrib(currentImage, 'alt', description);
                                 editor.dom.setAttrib(currentAnchor, 'data-glightbox', `description: ${description}`);
 
-                                if (description) {
+                                if (descriptionHtml) {
                                     const caption = currentCaption || editor.getDoc().createElement('figcaption');
                                     caption.className = 'story-content-caption';
                                     caption.style.cssText = 'margin: 4px 0 0; padding: 0; color: #000; font-size: 12px; font-weight: 400; line-height: 1.5;';
-                                    caption.textContent = description;
+                                    caption.innerHTML = descriptionHtml;
                                     if (!currentCaption) galleryFigure.append(caption);
                                 } else {
                                     currentCaption?.remove();
@@ -1222,6 +1345,7 @@ const initializeTinyMceEditors = () => {
                             api.close();
                         },
                         onClose() {
+                            destroyCaptionEditors();
                             dialogClosed = true;
                             escapeEventTargets.forEach((target) => {
                                 if (closeOnEscape) {
@@ -1263,6 +1387,7 @@ const initializeTinyMceEditors = () => {
                     dialogElement = currentDialogWrap?.querySelector('.tox-dialog');
                     closeOnOutside = (event) => {
                         if (dialogElement?.contains(event.target)) return;
+                        if (event.target?.closest?.('.tox-tinymce-aux, .tox-menu, .tox-pop, .tox-dialog')) return;
                         dialogApi.close();
                     };
                     document.addEventListener('pointerdown', closeOnOutside, true);
@@ -1270,6 +1395,7 @@ const initializeTinyMceEditors = () => {
                     window.setTimeout(() => {
                         const orderContainer = document.querySelector(`[data-lightbox-order="${dialogId}"]`);
                         if (!orderContainer) return;
+                        initializeCaptionEditors();
 
                         let draggedItem = null;
 
@@ -1294,6 +1420,21 @@ const initializeTinyMceEditors = () => {
                         });
 
                         orderContainer.addEventListener('click', (event) => {
+                            const captionCommandButton = event.target.closest('[data-lightbox-caption-command]');
+                            if (captionCommandButton) {
+                                event.preventDefault();
+                                const toolbar = captionCommandButton.closest('[data-lightbox-caption-toolbar]');
+                                const captionEditor = tinymce.get(toolbar?.dataset.captionEditorTarget);
+                                if (!captionEditor) return;
+
+                                captionEditor.focus();
+                                captionEditor.execCommand(captionCommandButton.dataset.lightboxCaptionCommand);
+                                const captionInput = document.getElementById(toolbar.dataset.captionEditorTarget);
+                                const captionFigure = galleryFigures[Number(captionInput?.dataset.figureIndex)];
+                                if (captionFigure) pendingCaptions.set(captionFigure, sanitizeCaptionHtml(captionEditor.getContent()));
+                                return;
+                            }
+
                             const replaceButton = event.target.closest('[data-lightbox-replace]');
                             if (replaceButton) {
                                 const targetFigure = galleryFigures[Number(replaceButton.dataset.figureIndex)];
@@ -1315,9 +1456,15 @@ const initializeTinyMceEditors = () => {
                             }
 
                             const targetFigure = galleryFigures[Number(removeButton.dataset.figureIndex)];
+                            const targetItem = removeButton.closest('[data-lightbox-order-item]');
+                            const targetCaptionEditorId = targetItem?.querySelector('[data-lightbox-caption]')?.id;
+                            if (targetCaptionEditorId) {
+                                tinymce.get(targetCaptionEditorId)?.remove();
+                                captionEditorIds.delete(targetCaptionEditorId);
+                            }
                             pendingFigures = pendingFigures.filter((galleryFigure) => galleryFigure !== targetFigure);
                             pendingCaptions.delete(targetFigure);
-                            removeButton.closest('[data-lightbox-order-item]')?.remove();
+                            targetItem?.remove();
                             syncPendingFigures();
                         });
 
@@ -1368,19 +1515,70 @@ const initializeTinyMceEditors = () => {
                     const editorScrollPosition = { x: editorWindow.scrollX, y: editorWindow.scrollY };
                     const pageScrollPosition = { x: window.scrollX, y: window.scrollY };
                     const dialogId = `before-after-manager-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+                    const captionEditorId = `${dialogId}-caption`;
+                    const captionToolbarId = `${captionEditorId}-toolbar`;
                     let beforeDescription = beforeImage.getAttribute('alt') || '';
                     let afterDescription = afterImage.getAttribute('alt') || '';
+                    let captionDescription = figure.querySelector('.story-before-after-caption')?.innerHTML?.trim()
+                        || figure.getAttribute('data-before-after-caption')
+                        || beforeDescription
+                        || afterDescription
+                        || '';
+
+                    const syncBeforeAfterCaptionEditor = () => {
+                        const captionEditor = tinymce.get(captionEditorId);
+                        const captionInput = document.getElementById(captionEditorId);
+                        captionDescription = sanitizeBeforeAfterCaptionHtml(captionEditor?.getContent() || captionInput?.innerHTML || captionDescription || '');
+                    };
+
+                    const destroyBeforeAfterCaptionEditor = () => {
+                        tinymce.get(captionEditorId)?.remove();
+                    };
+
+                    const initializeBeforeAfterCaptionEditor = () => {
+                        const captionInput = document.getElementById(captionEditorId);
+                        if (!captionInput || tinymce.get(captionEditorId)) return;
+
+                        tinymce.init({
+                            target: captionInput,
+                            inline: true,
+                            menubar: false,
+                            statusbar: false,
+                            branding: false,
+                            plugins: 'autolink link lists',
+                            toolbar: false,
+                            toolbar_mode: 'wrap',
+                            content_style: 'body { font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; padding: 8px 10px; color: #1f2937; } p { margin: 0 0 6px; }',
+                            setup(captionEditor) {
+                                captionEditor.on('init', () => {
+                                    captionInput.style.minHeight = '82px';
+                                });
+                                captionEditor.on('change input keyup undo redo', () => {
+                                    captionDescription = sanitizeBeforeAfterCaptionHtml(captionEditor.getContent());
+                                });
+                            },
+                        });
+                    };
 
                     const applyDetails = () => {
+                        syncBeforeAfterCaptionEditor();
                         editor.undoManager.transact(() => {
                             editor.dom.setAttrib(beforeImage, 'alt', beforeDescription);
                             editor.dom.setAttrib(afterImage, 'alt', afterDescription);
+                            const captionText = beforeAfterCaptionHtmlToText(captionDescription);
+                            if (captionText) {
+                                editor.dom.setAttrib(figure, 'data-before-after-caption', captionText);
+                            } else {
+                                figure.removeAttribute('data-before-after-caption');
+                            }
+                            syncBeforeAfterCaption(figure, captionDescription);
                         });
                         editor.nodeChanged();
                         editor.dispatch('change');
                     };
 
-                    const rowHtml = (side, image, description) => `<div style="border: 1px solid #d1d5db; border-radius: 7px; background: #fff; padding: 12px;"><div style="display: flex; align-items: center; gap: 12px;"><img data-before-after-preview="${side}" src="${editor.dom.encode(image.getAttribute('src') || '')}" alt="" style="display: block; width: 150px; height: 84px; flex: 0 0 150px; border-radius: 5px; object-fit: cover;"><strong style="flex: 1; color: #1f2937; font-size: 14px;">${side === 'before' ? 'Before' : 'After'}</strong><button type="button" data-before-after-replace="${side}" style="border: 1px solid #376a64; border-radius: 5px; background: #fff; padding: 8px 13px; color: #376a64; font-size: 12px; font-weight: 700; cursor: pointer;">Ganti Gambar</button></div><label style="display: block; margin-top: 10px; color: #4b5563; font-size: 12px; font-weight: 600;">Deskripsi ${side === 'before' ? 'Before' : 'After'}</label><textarea rows="2" data-before-after-description="${side}" style="display: block; width: 100%; min-height: 64px; margin-top: 5px; box-sizing: border-box; resize: vertical; border: 1px solid #cbd5e1; border-radius: 5px; padding: 9px 10px; font-family: inherit; font-size: 13px; line-height: 1.45;">${editor.dom.encode(description)}</textarea></div>`;
+                    const rowHtml = (side, image) => `<div style="border: 1px solid #d1d5db; border-radius: 7px; background: #fff; padding: 12px;"><div style="display: flex; align-items: center; gap: 12px;"><img data-before-after-preview="${side}" src="${editor.dom.encode(image.getAttribute('src') || '')}" alt="" style="display: block; width: 150px; height: 84px; flex: 0 0 150px; border-radius: 5px; object-fit: cover;"><strong style="flex: 1; color: #1f2937; font-size: 14px;">${side === 'before' ? 'Before' : 'After'}</strong><button type="button" data-before-after-replace="${side}" style="border: 1px solid #376a64; border-radius: 5px; background: #fff; padding: 8px 13px; color: #376a64; font-size: 12px; font-weight: 700; cursor: pointer;">Ganti Gambar</button></div></div>`;
+                    const captionRowHtml = () => `<div style="border: 1px solid #d1d5db; border-radius: 7px; background: #fff; padding: 12px;"><label for="${captionEditorId}" style="display: block; color: #4b5563; font-size: 12px; font-weight: 600;">Deskripsi gambar</label><div id="${captionToolbarId}" data-before-after-caption-toolbar data-caption-editor-target="${captionEditorId}" style="display: flex; flex-wrap: wrap; gap: 4px; margin: 5px 0 0; border: 1px solid #cbd5e1; border-bottom: 0; border-radius: 5px 5px 0 0; background: #f8fafc; padding: 6px;"><button type="button" data-before-after-caption-command="Bold" style="min-width: 30px; border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 800; cursor: pointer;">B</button><button type="button" data-before-after-caption-command="Italic" style="min-width: 30px; border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-style: italic; font-weight: 700; cursor: pointer;">I</button><button type="button" data-before-after-caption-command="Underline" style="min-width: 30px; border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; text-decoration: underline; cursor: pointer;">U</button><button type="button" data-before-after-caption-command="InsertUnorderedList" style="border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">• List</button><button type="button" data-before-after-caption-command="InsertOrderedList" style="border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">1. List</button><button type="button" data-before-after-caption-command="mceLink" style="border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">Link</button><button type="button" data-before-after-caption-command="Unlink" style="border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">Unlink</button><button type="button" data-before-after-caption-command="RemoveFormat" style="border: 1px solid #cbd5e1; background: #fff; padding: 4px 8px; font-size: 12px; font-weight: 700; cursor: pointer;">Clear</button></div><div id="${captionEditorId}" contenteditable="true" data-before-after-caption-input data-placeholder="Tulis deskripsi gambar" style="display: block; width: 100%; min-height: 82px; margin: 0 0 3px; box-sizing: border-box; overflow-y: auto; border: 1px solid #cbd5e1; border-radius: 0 0 5px 5px; padding: 9px 10px; color: #1f2937; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; outline: none;">${sanitizeBeforeAfterCaptionHtml(captionDescription)}</div><p style="margin: 6px 0 0; color: #6b7280; font-size: 11px; line-height: 1.4;">Teks ini tampil di bawah gambar Before/After ukuran 12px.</p></div>`;
 
                     let closeOnEscape = null;
                     let closeOnOutside = null;
@@ -1395,7 +1593,7 @@ const initializeTinyMceEditors = () => {
                             type: 'panel',
                             items: [{
                                 type: 'htmlpanel',
-                                html: `<div data-before-after-manager="${dialogId}" style="display: flex; max-height: 510px; flex-direction: column; gap: 10px; overflow-y: auto; padding: 2px 7px 8px 2px;">${rowHtml('before', beforeImage, beforeDescription)}${rowHtml('after', afterImage, afterDescription)}</div>`,
+                                html: `<div data-before-after-manager="${dialogId}" style="display: flex; max-height: 510px; flex-direction: column; gap: 10px; overflow-y: auto; padding: 2px 7px 8px 2px;">${rowHtml('before', beforeImage)}${rowHtml('after', afterImage)}${captionRowHtml()}</div>`,
                             }],
                         },
                         buttons: [
@@ -1414,6 +1612,7 @@ const initializeTinyMceEditors = () => {
                                 editor.dom.setAttrib(beforeImage, 'alt', afterImage.getAttribute('alt'));
                                 editor.dom.setAttrib(afterImage, 'src', beforeSrc);
                                 editor.dom.setAttrib(afterImage, 'alt', beforeAlt);
+                                syncBeforeAfterCaption(figure);
                             });
                             const previousBeforeDescription = beforeDescription;
                             beforeDescription = afterDescription;
@@ -1422,12 +1621,8 @@ const initializeTinyMceEditors = () => {
                             const manager = document.querySelector(`[data-before-after-manager="${dialogId}"]`);
                             const beforePreview = manager?.querySelector('[data-before-after-preview="before"]');
                             const afterPreview = manager?.querySelector('[data-before-after-preview="after"]');
-                            const beforeField = manager?.querySelector('[data-before-after-description="before"]');
-                            const afterField = manager?.querySelector('[data-before-after-description="after"]');
                             if (beforePreview) beforePreview.src = beforeImage.getAttribute('src') || '';
                             if (afterPreview) afterPreview.src = afterImage.getAttribute('src') || '';
-                            if (beforeField) beforeField.value = beforeDescription;
-                            if (afterField) afterField.value = afterDescription;
 
                             editor.dispatch('change');
                         },
@@ -1436,6 +1631,7 @@ const initializeTinyMceEditors = () => {
                             api.close();
                         },
                         onClose() {
+                            destroyBeforeAfterCaptionEditor();
                             dialogClosed = true;
                             escapeEventTargets.forEach((target) => {
                                 if (closeOnEscape) {
@@ -1472,6 +1668,7 @@ const initializeTinyMceEditors = () => {
                     dialogElement = currentDialogWrap?.querySelector('.tox-dialog');
                     closeOnOutside = (event) => {
                         if (dialogElement?.contains(event.target)) return;
+                        if (event.target?.closest?.('.tox-tinymce-aux, .tox-menu, .tox-pop, .tox-dialog')) return;
                         dialogApi.close();
                     };
                     document.addEventListener('pointerdown', closeOnOutside, true);
@@ -1479,15 +1676,28 @@ const initializeTinyMceEditors = () => {
                     window.setTimeout(() => {
                         const manager = document.querySelector(`[data-before-after-manager="${dialogId}"]`);
                         if (!manager) return;
+                        initializeBeforeAfterCaptionEditor();
 
                         manager.addEventListener('input', (event) => {
-                            const field = event.target.closest('[data-before-after-description]');
+                            const field = event.target.closest('[data-before-after-caption-input]');
                             if (!field) return;
-                            if (field.dataset.beforeAfterDescription === 'before') beforeDescription = field.value;
-                            else afterDescription = field.value;
+                            captionDescription = sanitizeBeforeAfterCaptionHtml(field.innerHTML);
                         });
 
                         manager.addEventListener('click', (event) => {
+                            const captionCommandButton = event.target.closest('[data-before-after-caption-command]');
+                            if (captionCommandButton) {
+                                event.preventDefault();
+                                const toolbar = captionCommandButton.closest('[data-before-after-caption-toolbar]');
+                                const captionEditor = tinymce.get(toolbar?.dataset.captionEditorTarget);
+                                if (!captionEditor) return;
+
+                                captionEditor.focus();
+                                captionEditor.execCommand(captionCommandButton.dataset.beforeAfterCaptionCommand);
+                                captionDescription = sanitizeBeforeAfterCaptionHtml(captionEditor.getContent());
+                                return;
+                            }
+
                             const replaceButton = event.target.closest('[data-before-after-replace]');
                             if (!replaceButton) return;
 
