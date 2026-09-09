@@ -82,6 +82,13 @@
         commentLength: 0,
         turnstilePassed: false,
         quickWidgetId: null,
+        updateVisibility() {
+            const section = this.$el.closest('#comments');
+            const composer = section?.querySelector('[data-main-comment-composer]');
+            this.visible = !!section && !!composer
+                && composer.getBoundingClientRect().bottom < 80
+                && section.getBoundingClientRect().bottom > 100;
+        },
         renderQuickTurnstile() {
             const renderWidget = () => {
                 if (!this.expanded || this.quickWidgetId !== null) return;
@@ -108,21 +115,9 @@
             this.renderQuickTurnstile();
         }
     }"
-    x-init="
-        const section = $el.closest('#comments');
-        const composer = section?.querySelector('[data-main-comment-composer]');
-        const updateVisibility = () => {
-            if (!section || !composer) return;
-            visible = composer.getBoundingClientRect().bottom < 80 && section.getBoundingClientRect().bottom > 100;
-        };
-        updateVisibility();
-        window.addEventListener('scroll', updateVisibility, { passive: true });
-        window.addEventListener('resize', updateVisibility);
-        $cleanup(() => {
-            window.removeEventListener('scroll', updateVisibility);
-            window.removeEventListener('resize', updateVisibility);
-        });
-    "
+    x-init="updateVisibility()"
+    x-on:scroll.window.passive="updateVisibility()"
+    x-on:resize.window="updateVisibility()"
     x-on:quick-comment-turnstile-success.window="turnstilePassed = true"
     x-on:quick-comment-turnstile-expired.window="turnstilePassed = false"
     x-on:comment-submitted.window="if ($event.detail.quick) { turnstilePassed = false; quickWidgetId = null; expanded = false }"
