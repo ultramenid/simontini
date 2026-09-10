@@ -38,6 +38,255 @@ import { Flow, SankeyController } from 'chartjs-chart-sankey';
 Chart.register(SankeyController, Flow);
 
 const visualizationColors = ['#376A64', '#D95C4F', '#E3A72F', '#5A7FB8', '#8A63A9', '#4F9D69', '#C96B9B', '#7C6F64', '#22A6B3'];
+const inlineCaptionSelectionRanges = new WeakMap();
+
+const getInlineCaptionShortcutCommand = (event) => {
+    if ((!event.metaKey && !event.ctrlKey) || event.altKey) return null;
+
+    const shortcutKey = event.key.toLowerCase();
+    if (shortcutKey === 'b') return 'Bold';
+    if (shortcutKey === 'i') return 'Italic';
+    if (shortcutKey === 'u') return 'Underline';
+
+    return null;
+};
+
+const isInlineCaptionRangeInside = (editableElement, range) => {
+    if (!editableElement || !range) return false;
+
+    const startElement = range.startContainer.nodeType === window.Node.ELEMENT_NODE
+        ? range.startContainer
+        : range.startContainer.parentElement;
+    const endElement = range.endContainer.nodeType === window.Node.ELEMENT_NODE
+        ? range.endContainer
+        : range.endContainer.parentElement;
+
+    return !!startElement
+        && !!endElement
+        && (editableElement === startElement || editableElement.contains(startElement))
+        && (editableElement === endElement || editableElement.contains(endElement));
+};
+
+const saveInlineCaptionSelection = (editableElement) => {
+    const selection = window.getSelection();
+    if (!selection?.rangeCount) return;
+
+    const range = selection.getRangeAt(0);
+    if (range.collapsed || !isInlineCaptionRangeInside(editableElement, range)) return;
+
+    inlineCaptionSelectionRanges.set(editableElement, range.cloneRange());
+};
+
+const applyInlineCaptionCommand = (editableElement, command, preferredRange = null) => {
+    if (!editableElement || !command) return false;
+
+    const selection = window.getSelection();
+    const currentRange = selection?.rangeCount ? selection.getRangeAt(0).cloneRange() : null;
+    const selectedRange = isInlineCaptionRangeInside(editableElement, currentRange)
+        ? currentRange
+        : (isInlineCaptionRangeInside(editableElement, preferredRange) ? preferredRange.cloneRange() : null);
+    const commandMap = {
+        Bold: 'bold',
+        Italic: 'italic',
+        Underline: 'underline',
+        InsertUnorderedList: 'insertUnorderedList',
+        InsertOrderedList: 'insertOrderedList',
+        Unlink: 'unlink',
+        RemoveFormat: 'removeFormat',
+    };
+
+    const restoreSelection = () => {
+        editableElement.focus({ preventScroll: true });
+        if (!selectedRange || !selection) return;
+
+        selection.removeAllRanges();
+        selection.addRange(selectedRange);
+    };
+
+    restoreSelection();
+
+    const getElementFromNode = (node) => {
+        if (!node) return null;
+        return node.nodeType === window.Node.ELEMENT_NODE ? node : node.parentElement;
+    };
+    const hasFormat = (element, formatCommand) => {
+        if (!element || element === editableElement) return false;
+
+        const tagName = element.tagName?.toLowerCase();
+        const inlineStyle = element.getAttribute('style') || '';
+
+        if (formatCommand === 'Bold') {
+            return tagName === 'strong'
+                || tagName === 'b'
+                || /font-weight\s*:\s*(bold|[6-9]00|700)/i.test(inlineStyle);
+        }
+
+        if (formatCommand === 'Italic') {
+            return tagName === 'em'
+                || tagName === 'i'
+                || /font-style\s*:\s*italic/i.test(inlineStyle);
+        }
+
+        if (formatCommand === 'Underline') {
+            return tagName === 'u'
+                || /text-decoration(?:-line)?\s*:[^;]*underline/i.test(inlineStyle);
+        }
+
+        return false;
+    };
+    const getClosestFormatWrapper = (range, formatCommand) => {
+        const getClosestFromNode = (node) => {
+            let element = getElementFromNode(node);
+
+            while (element && element !== editableElement) {
+                if (hasFormat(element, formatCommand)) return element;
+                element = element.parentElement;
+            }
+
+            return null;
+        };
+        const startWrapper = getClosestFromNode(range.startContainer);
+        const endWrapper = getClosestFromNode(range.endContainer);
+        if (startWrapper && startWrapper === endWrapper) return startWrapper;
+
+        let element = getElementFromNode(range.commonAncestorContainer);
+
+        while (element && element !== editableElement) {
+            if (hasFormat(element, formatCommand)) return element;
+            element = element.parentElement;
+        }
+
+        return null;
+    };
+    const unwrapFormatWrapper = (wrapperElement) => {
+        const firstChild = wrapperElement.firstChild;
+        const lastChild = wrapperElement.lastChild;
+        if (!firstChild || !lastChild) {
+            wrapperElement.remove();
+            return true;
+        }
+
+        const nextRange = document.createRange();
+        const parent = wrapperElement.parentNode;
+        while (wrapperElement.firstChild) {
+            parent.insertBefore(wrapperElement.firstChild, wrapperElement);
+        }
+        nextRange.setStartBefore(firstChild);
+        nextRange.setEndAfter(lastChild);
+        wrapperElement.remove();
+        selection.removeAllRanges();
+        selection.addRange(nextRange);
+        inlineCaptionSelectionRanges.set(editableElement, nextRange.cloneRange());
+        return true;
+    };
+
+    const selectionIsInsideEditable = selectedRange
+        && !selectedRange.collapsed
+        && (editableElement === selectedRange.commonAncestorContainer || editableElement.contains(selectedRange.commonAncestorContainer));
+    const richTextWrappers = {
+        Bold: {
+            tagName: 'strong',
+            styles: { fontWeight: '700' },
+        },
+        Italic: {
+            tagName: 'em',
+            styles: { fontStyle: 'italic' },
+        },
+        Underline: {
+            tagName: 'span',
+            styles: { textDecoration: 'underline' },
+        },
+    };
+
+    if (selectionIsInsideEditable && richTextWrappers[command]) {
+        const existingFormatWrapper = getClosestFormatWrapper(selectedRange, command);
+        if (existingFormatWrapper) return unwrapFormatWrapper(existingFormatWrapper);
+
+        const wrapperConfig = richTextWrappers[command];
+        const wrapperElement = document.createElement(wrapperConfig.tagName);
+        Object.assign(wrapperElement.style, wrapperConfig.styles);
+        wrapperElement.append(selectedRange.extractContents());
+        selectedRange.insertNode(wrapperElement);
+
+        const nextRange = document.createRange();
+        nextRange.selectNodeContents(wrapperElement);
+        selection.removeAllRanges();
+        selection.addRange(nextRange);
+        inlineCaptionSelectionRanges.set(editableElement, nextRange.cloneRange());
+        return true;
+    }
+
+    if (command === 'mceLink') {
+        const url = window.prompt('Masukkan URL link');
+        if (!url) return false;
+
+        restoreSelection();
+        document.execCommand('createLink', false, url);
+        return true;
+    }
+
+    const nativeCommand = commandMap[command];
+    if (!nativeCommand) return false;
+
+    document.execCommand(nativeCommand, false, null);
+    return true;
+};
+
+const applyTinyMceCaptionCommand = (captionEditor, editableElement, command, preferredRange = null) => {
+    if (!captionEditor) return applyInlineCaptionCommand(editableElement, command, preferredRange);
+
+    captionEditor.focus();
+
+    const formatterMap = {
+        Bold: 'bold',
+        Italic: 'italic',
+        Underline: 'underline',
+    };
+
+    if (formatterMap[command]) {
+        captionEditor.formatter.toggle(formatterMap[command]);
+        captionEditor.dispatch('change');
+        return true;
+    }
+
+    if (command === 'mceLink') {
+        captionEditor.execCommand('mceLink');
+        captionEditor.dispatch('change');
+        return true;
+    }
+
+    captionEditor.execCommand(command);
+    captionEditor.dispatch('change');
+    return true;
+};
+
+const registerTinyMceCaptionShortcuts = (captionEditor, syncCaption) => {
+    const runShortcutCommand = (command) => {
+        captionEditor.focus();
+        captionEditor.formatter.toggle(command);
+        syncCaption?.();
+        captionEditor.dispatch('change');
+    };
+
+    captionEditor.on('keydown', (event) => {
+        const originalEvent = event.originalEvent || event;
+        const shortcutCommand = getInlineCaptionShortcutCommand(originalEvent);
+        const formatterCommand = {
+            Bold: 'bold',
+            Italic: 'italic',
+            Underline: 'underline',
+        }[shortcutCommand];
+        if (!formatterCommand) return;
+
+        originalEvent.preventDefault?.();
+        originalEvent.stopPropagation?.();
+        originalEvent.stopImmediatePropagation?.();
+        event.preventDefault?.();
+        event.stopPropagation?.();
+        event.stopImmediatePropagation?.();
+        runShortcutCommand(formatterCommand);
+    });
+};
 
 window.renderDataVisualizationChart = (canvas, type, chartData) => {
     if (!canvas || !chartData?.columns || !chartData?.rows) return;
@@ -1241,31 +1490,10 @@ const initializeTinyMceEditors = () => {
 
                     const initializeCaptionEditors = () => {
                         captionEditorIds.forEach((captionEditorId) => {
-                            if (!document.getElementById(captionEditorId) || tinymce.get(captionEditorId)) return;
                             const captionInput = document.getElementById(captionEditorId);
-                            const captionToolbarId = `${captionEditorId}-toolbar`;
+                            if (!captionInput) return;
 
-                            tinymce.init({
-                                target: captionInput,
-                                inline: true,
-                                menubar: false,
-                                statusbar: false,
-                                branding: false,
-                                plugins: 'autolink link lists',
-                                toolbar: false,
-                                toolbar_mode: 'wrap',
-                                content_style: 'body { font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; padding: 8px 10px; color: #1f2937; } p { margin: 0 0 6px; }',
-                                setup(captionEditor) {
-                                    captionEditor.on('init', () => {
-                                        captionInput.style.minHeight = '82px';
-                                    });
-                                    captionEditor.on('change input keyup undo redo', () => {
-                                        const captionInput = document.getElementById(captionEditorId);
-                                        const captionFigure = galleryFigures[Number(captionInput?.dataset.figureIndex)];
-                                        if (captionFigure) pendingCaptions.set(captionFigure, sanitizeCaptionHtml(captionEditor.getContent()));
-                                    });
-                                },
-                            });
+                            captionInput.style.minHeight = '160px';
                         });
                     };
 
@@ -1415,23 +1643,52 @@ const initializeTinyMceEditors = () => {
                             const captionInput = event.target.closest('[data-lightbox-caption]');
                             if (!captionInput) return;
 
+                            saveInlineCaptionSelection(captionInput);
                             const captionFigure = galleryFigures[Number(captionInput.dataset.figureIndex)];
-                            if (captionFigure) pendingCaptions.set(captionFigure, captionInput.value);
+                            if (captionFigure) pendingCaptions.set(captionFigure, sanitizeCaptionHtml(captionInput.innerHTML));
+                        });
+
+                        ['mouseup', 'keyup'].forEach((eventName) => {
+                            orderContainer.addEventListener(eventName, (event) => {
+                                const captionInput = event.target.closest('[data-lightbox-caption]');
+                                if (captionInput) saveInlineCaptionSelection(captionInput);
+                            });
+                        });
+
+                        orderContainer.addEventListener('keydown', (event) => {
+                            const captionInput = event.target.closest('[data-lightbox-caption]');
+                            const shortcutCommand = getInlineCaptionShortcutCommand(event);
+                            if (!captionInput || !shortcutCommand) return;
+
+                            event.preventDefault();
+                            saveInlineCaptionSelection(captionInput);
+                            const captionEditor = tinymce.get(captionInput.id);
+                            applyTinyMceCaptionCommand(captionEditor, captionInput, shortcutCommand, inlineCaptionSelectionRanges.get(captionInput));
+                            const captionFigure = galleryFigures[Number(captionInput.dataset.figureIndex)];
+                            if (captionFigure) pendingCaptions.set(captionFigure, sanitizeCaptionHtml(captionEditor?.getContent() || captionInput.innerHTML));
+                        });
+
+                        orderContainer.addEventListener('mousedown', (event) => {
+                            const captionCommandButton = event.target.closest('[data-lightbox-caption-command]');
+                            if (!captionCommandButton) return;
+
+                            event.preventDefault();
+                            event.stopPropagation();
+
+                            const toolbar = captionCommandButton.closest('[data-lightbox-caption-toolbar]');
+                            const captionInput = document.getElementById(toolbar?.dataset.captionEditorTarget);
+                            if (!captionInput) return;
+
+                            const captionEditor = tinymce.get(captionInput.id);
+                            applyTinyMceCaptionCommand(captionEditor, captionInput, captionCommandButton.dataset.lightboxCaptionCommand, inlineCaptionSelectionRanges.get(captionInput));
+                            const captionFigure = galleryFigures[Number(captionInput.dataset.figureIndex)];
+                            if (captionFigure) pendingCaptions.set(captionFigure, sanitizeCaptionHtml(captionEditor?.getContent() || captionInput.innerHTML));
                         });
 
                         orderContainer.addEventListener('click', (event) => {
                             const captionCommandButton = event.target.closest('[data-lightbox-caption-command]');
                             if (captionCommandButton) {
                                 event.preventDefault();
-                                const toolbar = captionCommandButton.closest('[data-lightbox-caption-toolbar]');
-                                const captionEditor = tinymce.get(toolbar?.dataset.captionEditorTarget);
-                                if (!captionEditor) return;
-
-                                captionEditor.focus();
-                                captionEditor.execCommand(captionCommandButton.dataset.lightboxCaptionCommand);
-                                const captionInput = document.getElementById(toolbar.dataset.captionEditorTarget);
-                                const captionFigure = galleryFigures[Number(captionInput?.dataset.figureIndex)];
-                                if (captionFigure) pendingCaptions.set(captionFigure, sanitizeCaptionHtml(captionEditor.getContent()));
                                 return;
                             }
 
@@ -1537,27 +1794,9 @@ const initializeTinyMceEditors = () => {
 
                     const initializeBeforeAfterCaptionEditor = () => {
                         const captionInput = document.getElementById(captionEditorId);
-                        if (!captionInput || tinymce.get(captionEditorId)) return;
+                        if (!captionInput) return;
 
-                        tinymce.init({
-                            target: captionInput,
-                            inline: true,
-                            menubar: false,
-                            statusbar: false,
-                            branding: false,
-                            plugins: 'autolink link lists',
-                            toolbar: false,
-                            toolbar_mode: 'wrap',
-                            content_style: 'body { font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; padding: 8px 10px; color: #1f2937; } p { margin: 0 0 6px; }',
-                            setup(captionEditor) {
-                                captionEditor.on('init', () => {
-                                    captionInput.style.minHeight = '82px';
-                                });
-                                captionEditor.on('change input keyup undo redo', () => {
-                                    captionDescription = sanitizeBeforeAfterCaptionHtml(captionEditor.getContent());
-                                });
-                            },
-                        });
+                        captionInput.style.minHeight = '160px';
                     };
 
                     const applyDetails = () => {
@@ -1681,20 +1920,49 @@ const initializeTinyMceEditors = () => {
                         manager.addEventListener('input', (event) => {
                             const field = event.target.closest('[data-before-after-caption-input]');
                             if (!field) return;
+                            saveInlineCaptionSelection(field);
                             captionDescription = sanitizeBeforeAfterCaptionHtml(field.innerHTML);
+                        });
+
+                        ['mouseup', 'keyup'].forEach((eventName) => {
+                            manager.addEventListener(eventName, (event) => {
+                                const captionInput = event.target.closest('[data-before-after-caption-input]');
+                                if (captionInput) saveInlineCaptionSelection(captionInput);
+                            });
+                        });
+
+                        manager.addEventListener('keydown', (event) => {
+                            const captionInput = event.target.closest('[data-before-after-caption-input]');
+                            const shortcutCommand = getInlineCaptionShortcutCommand(event);
+                            if (!captionInput || !shortcutCommand) return;
+
+                            event.preventDefault();
+                            saveInlineCaptionSelection(captionInput);
+                            const captionEditor = tinymce.get(captionInput.id);
+                            applyTinyMceCaptionCommand(captionEditor, captionInput, shortcutCommand, inlineCaptionSelectionRanges.get(captionInput));
+                            captionDescription = sanitizeBeforeAfterCaptionHtml(captionEditor?.getContent() || captionInput.innerHTML);
+                        });
+
+                        manager.addEventListener('mousedown', (event) => {
+                            const captionCommandButton = event.target.closest('[data-before-after-caption-command]');
+                            if (!captionCommandButton) return;
+
+                            event.preventDefault();
+                            event.stopPropagation();
+
+                            const toolbar = captionCommandButton.closest('[data-before-after-caption-toolbar]');
+                            const captionInput = document.getElementById(toolbar?.dataset.captionEditorTarget);
+                            if (!captionInput) return;
+
+                            const captionEditor = tinymce.get(captionInput.id);
+                            applyTinyMceCaptionCommand(captionEditor, captionInput, captionCommandButton.dataset.beforeAfterCaptionCommand, inlineCaptionSelectionRanges.get(captionInput));
+                            captionDescription = sanitizeBeforeAfterCaptionHtml(captionEditor?.getContent() || captionInput.innerHTML);
                         });
 
                         manager.addEventListener('click', (event) => {
                             const captionCommandButton = event.target.closest('[data-before-after-caption-command]');
                             if (captionCommandButton) {
                                 event.preventDefault();
-                                const toolbar = captionCommandButton.closest('[data-before-after-caption-toolbar]');
-                                const captionEditor = tinymce.get(toolbar?.dataset.captionEditorTarget);
-                                if (!captionEditor) return;
-
-                                captionEditor.focus();
-                                captionEditor.execCommand(captionCommandButton.dataset.beforeAfterCaptionCommand);
-                                captionDescription = sanitizeBeforeAfterCaptionHtml(captionEditor.getContent());
                                 return;
                             }
 
