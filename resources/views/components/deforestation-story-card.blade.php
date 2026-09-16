@@ -41,6 +41,9 @@
         </div>
 
         <div class="pt-5">
+            @if (filled($story->localized_meta ?? null))
+                <p data-card-category class="mb-1 font-medium leading-tight text-black" style="font-size: {{ $story->localized_meta_font_size ?? 14 }}px;">{{ $story->localized_meta }}</p>
+            @endif
             <h3 data-card-title class="story-title text-[16px] font-bold leading-[1.2] tracking-[-0.025em]">{{ $story->localized_title }}</h3>
             <p data-card-description class="story-description mt-3 text-[12px] font-normal leading-[1.6] text-black">{{ \Illuminate\Support\Str::limit(strip_tags($story->localized_description), 147) }}</p>
         </div>
