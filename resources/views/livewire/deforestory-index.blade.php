@@ -141,6 +141,15 @@
 
                             <div class="min-w-0 space-y-3">
                                 <div>
+                                    @php
+                                        $itemMeta = collect([
+                                            $item->category_id ?? $item->category ?? null,
+                                            $item->region_id ?? $item->region ?? null,
+                                        ])->filter(fn ($value) => filled($value))->join(' | ');
+                                    @endphp
+                                    @if (filled($itemMeta))
+                                        <p class="mb-1 text-xs font-bold uppercase tracking-[0.12em] text-[#d60d2e]">{{ $itemMeta }}</p>
+                                    @endif
                                     <p class="font-bold leading-5 text-gray-900">{{ $item->title_id }}</p>
                                     @if ($item->is_locked ?? false)
                                         <span class="mt-2 inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-amber-800">

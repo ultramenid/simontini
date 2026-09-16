@@ -31,6 +31,13 @@ class DeforestoryApiController extends Controller
                 'image_en',
                 'title_id',
                 'title_en',
+                'category',
+                'category_id',
+                'category_en',
+                'region',
+                'region_id',
+                'region_en',
+                'meta_font_size',
                 'slug',
                 'desrkirpsi_id',
                 'desrkirpsi_en',
@@ -52,6 +59,13 @@ class DeforestoryApiController extends Controller
         $validated = $request->validate([
             'title_id' => ['required', 'string', 'max:255'],
             'title_en' => ['required', 'string', 'max:255'],
+            'category' => ['nullable', 'string', 'max:100'],
+            'category_id' => ['nullable', 'string', 'max:100'],
+            'category_en' => ['nullable', 'string', 'max:100'],
+            'region' => ['nullable', 'string', 'max:100'],
+            'region_id' => ['nullable', 'string', 'max:100'],
+            'region_en' => ['nullable', 'string', 'max:100'],
+            'meta_font_size' => ['nullable', 'integer', 'min:10', 'max:28'],
             'desrkirpsi_id' => ['required', 'string'],
             'desrkirpsi_en' => ['required', 'string'],
             'date' => ['required', 'date'],
@@ -59,6 +73,27 @@ class DeforestoryApiController extends Controller
             'content_en' => ['required', 'string'],
             'status' => ['required', Rule::in(['publish', 'draft'])],
         ]);
+        $validated['category'] = blank($validated['category'] ?? null)
+            ? null
+            : trim($validated['category']);
+        $validated['category_id'] = blank($validated['category_id'] ?? null)
+            ? $validated['category']
+            : trim($validated['category_id']);
+        $validated['category_en'] = blank($validated['category_en'] ?? null)
+            ? $validated['category']
+            : trim($validated['category_en']);
+        $validated['category'] = $validated['category_id'];
+        $validated['region'] = blank($validated['region'] ?? null)
+            ? null
+            : trim($validated['region']);
+        $validated['region_id'] = blank($validated['region_id'] ?? null)
+            ? $validated['region']
+            : trim($validated['region_id']);
+        $validated['region_en'] = blank($validated['region_en'] ?? null)
+            ? $validated['region']
+            : trim($validated['region_en']);
+        $validated['region'] = $validated['region_id'];
+        $validated['meta_font_size'] = $validated['meta_font_size'] ?? 14;
 
         $id = DB::table('deforestory')->insertGetId([
             ...$validated,
@@ -90,6 +125,13 @@ class DeforestoryApiController extends Controller
             'external_id' => ['required', 'string', 'max:255'],
             'title_id' => ['required', 'string', 'max:255'],
             'title_en' => ['required', 'string', 'max:255'],
+            'category' => ['sometimes', 'nullable', 'string', 'max:100'],
+            'category_id' => ['sometimes', 'nullable', 'string', 'max:100'],
+            'category_en' => ['sometimes', 'nullable', 'string', 'max:100'],
+            'region' => ['sometimes', 'nullable', 'string', 'max:100'],
+            'region_id' => ['sometimes', 'nullable', 'string', 'max:100'],
+            'region_en' => ['sometimes', 'nullable', 'string', 'max:100'],
+            'meta_font_size' => ['sometimes', 'nullable', 'integer', 'min:10', 'max:28'],
             'desrkirpsi_id' => ['required', 'string'],
             'desrkirpsi_en' => ['required', 'string'],
             'date' => ['required', 'date'],
@@ -97,6 +139,63 @@ class DeforestoryApiController extends Controller
             'content_en' => ['required', 'string'],
             'status' => ['required', Rule::in(['publish', 'draft'])],
         ]);
+        if (array_key_exists('category', $validated)) {
+            $validated['category'] = blank($validated['category'])
+                ? null
+                : trim($validated['category']);
+        }
+        if (array_key_exists('category_id', $validated)) {
+            $validated['category_id'] = blank($validated['category_id'])
+                ? null
+                : trim($validated['category_id']);
+        }
+        if (array_key_exists('category_en', $validated)) {
+            $validated['category_en'] = blank($validated['category_en'])
+                ? null
+                : trim($validated['category_en']);
+        }
+
+        if (! array_key_exists('category_id', $validated) && array_key_exists('category', $validated)) {
+            $validated['category_id'] = $validated['category'];
+        }
+
+        if (! array_key_exists('category_en', $validated) && array_key_exists('category', $validated)) {
+            $validated['category_en'] = $validated['category'];
+        }
+
+        if (array_key_exists('category_id', $validated)) {
+            $validated['category'] = $validated['category_id'];
+        }
+        if (array_key_exists('region', $validated)) {
+            $validated['region'] = blank($validated['region'])
+                ? null
+                : trim($validated['region']);
+        }
+        if (array_key_exists('region_id', $validated)) {
+            $validated['region_id'] = blank($validated['region_id'])
+                ? null
+                : trim($validated['region_id']);
+        }
+        if (array_key_exists('region_en', $validated)) {
+            $validated['region_en'] = blank($validated['region_en'])
+                ? null
+                : trim($validated['region_en']);
+        }
+
+        if (! array_key_exists('region_id', $validated) && array_key_exists('region', $validated)) {
+            $validated['region_id'] = $validated['region'];
+        }
+
+        if (! array_key_exists('region_en', $validated) && array_key_exists('region', $validated)) {
+            $validated['region_en'] = $validated['region'];
+        }
+
+        if (array_key_exists('region_id', $validated)) {
+            $validated['region'] = $validated['region_id'];
+        }
+        if (array_key_exists('meta_font_size', $validated) && $validated['meta_font_size'] === null) {
+            $validated['meta_font_size'] = 14;
+        }
 
         $existing = DB::table('deforestory')
             ->where('external_id', $validated['external_id'])
@@ -118,6 +217,28 @@ class DeforestoryApiController extends Controller
             ),
             'updated_at' => now(),
         ];
+
+        if (array_key_exists('category', $validated)) {
+            $values['category'] = $validated['category'];
+        }
+        if (array_key_exists('category_id', $validated)) {
+            $values['category_id'] = $validated['category_id'];
+        }
+        if (array_key_exists('category_en', $validated)) {
+            $values['category_en'] = $validated['category_en'];
+        }
+        if (array_key_exists('region', $validated)) {
+            $values['region'] = $validated['region'];
+        }
+        if (array_key_exists('region_id', $validated)) {
+            $values['region_id'] = $validated['region_id'];
+        }
+        if (array_key_exists('region_en', $validated)) {
+            $values['region_en'] = $validated['region_en'];
+        }
+        if (array_key_exists('meta_font_size', $validated)) {
+            $values['meta_font_size'] = $validated['meta_font_size'];
+        }
 
         if (! $exists) {
             $values['uuid'] = (string) Str::uuid();

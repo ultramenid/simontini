@@ -43,6 +43,257 @@
                     @error('title_en') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
                 </div>
 
+                <div
+                    x-data="{
+                        open: false,
+                        selected: @entangle('category_pair').live,
+                        labels: @js(collect($categoryOptions)->mapWithKeys(fn ($categoryOption) => [$categoryOption['key'] => $categoryOption['id'].' / '.$categoryOption['en']])->all()),
+                        selectedLabel() {
+                            if (this.selected === '__custom__') return '+ Tambah kategori baru';
+                            return this.labels[this.selected] || 'None (kosong)';
+                        },
+                        choose(value) {
+                            this.selected = value;
+                            this.open = false;
+                        },
+                    }"
+                    class="space-y-4"
+                >
+                    <div>
+                        <label class="mb-1.5 block text-sm font-semibold text-gray-700">Kategori artikel</label>
+                        <div class="relative" x-on:keydown.escape.window="open = false" x-on:click.outside="open = false">
+                            <button
+                                type="button"
+                                x-on:click="open = ! open"
+                                class="flex w-full items-center justify-between gap-3 rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-left text-sm shadow-sm outline-none transition hover:border-[#376A64]/70 focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15"
+                                :class="selected ? 'text-gray-900' : 'text-gray-400'"
+                                aria-haspopup="listbox"
+                                :aria-expanded="open.toString()"
+                            >
+                                <span class="truncate" x-text="selectedLabel()"></span>
+                                <svg class="h-4 w-4 shrink-0 text-gray-500 transition" :class="open ? 'rotate-180' : ''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.22 7.22a.75.75 0 011.06 0L10 10.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.22 8.28a.75.75 0 010-1.06Z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+
+                            <div
+                                x-cloak
+                                x-show="open"
+                                x-transition.origin.top.left
+                                class="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-50 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-xl ring-1 ring-black/5"
+                                role="listbox"
+                            >
+                                <button
+                                    type="button"
+                                    x-on:click="choose('')"
+                                    class="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium transition hover:bg-[#f1f7f5]"
+                                    :class="selected === '' ? 'bg-[#eef6f4] text-[#376A64]' : 'text-gray-500'"
+                                    role="option"
+                                >
+                                    <span>None (kosong)</span>
+                                    <svg x-show="selected === ''" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.25 7.25a1 1 0 01-1.414 0l-3.25-3.25a1 1 0 111.414-1.414l2.543 2.543 6.543-6.543a1 1 0 011.414 0Z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                @foreach ($categoryOptions as $categoryOption)
+                                    <button
+                                        type="button"
+                                        x-on:click="choose(@js($categoryOption['key']))"
+                                        class="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold transition hover:bg-[#f1f7f5]"
+                                        :class="selected === @js($categoryOption['key']) ? 'bg-[#eef6f4] text-[#376A64]' : 'text-gray-800'"
+                                        role="option"
+                                    >
+                                        <span>{{ $categoryOption['id'] }} / {{ $categoryOption['en'] }}</span>
+                                        <svg x-show="selected === @js($categoryOption['key'])" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.25 7.25a1 1 0 01-1.414 0l-3.25-3.25a1 1 0 111.414-1.414l2.543 2.543 6.543-6.543a1 1 0 011.414 0Z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                @endforeach
+                                <button
+                                    type="button"
+                                    x-on:click="choose('__custom__')"
+                                    class="flex w-full items-center justify-between border-t border-gray-100 px-4 py-3 text-left text-sm font-bold text-[#376A64] transition hover:bg-[#f1f7f5]"
+                                    :class="selected === '__custom__' ? 'bg-[#eef6f4]' : ''"
+                                    role="option"
+                                >
+                                    <span>+ Tambah kategori baru</span>
+                                    <svg x-show="selected === '__custom__'" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.25 7.25a1 1 0 01-1.414 0l-3.25-3.25a1 1 0 111.414-1.414l2.543 2.543 6.543-6.543a1 1 0 011.414 0Z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        @error('category_pair') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                    </div>
+
+                    <div
+                        x-cloak
+                        x-show="selected === '__custom__'"
+                        x-transition.opacity
+                        class="grid grid-cols-1 gap-4 md:grid-cols-2"
+                    >
+                        <div>
+                            <label class="mb-1.5 block text-xs font-semibold text-gray-600">Label Indonesia</label>
+                            <input
+                                type="text"
+                                wire:model="category_id_custom"
+                                maxlength="100"
+                                placeholder="Contoh: Sawit"
+                                class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15"
+                            >
+                            @error('category_id_custom') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                        </div>
+
+                        <div>
+                            <label class="mb-1.5 block text-xs font-semibold text-gray-600">Label Inggris</label>
+                            <input
+                                type="text"
+                                wire:model="category_en_custom"
+                                maxlength="100"
+                                placeholder="Example: Palm Oil"
+                                class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15"
+                            >
+                            @error('category_en_custom') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-gray-500">Opsional. Satu pilihan kategori berisi pasangan label Indonesia dan Inggris, misalnya Sawit / Palm Oil.</p>
+                </div>
+
+                <div
+                    x-data="{
+                        open: false,
+                        selected: @entangle('region_pair').live,
+                        labels: @js(collect($regionOptions)->mapWithKeys(fn ($regionOption) => [$regionOption['key'] => $regionOption['id'].' / '.$regionOption['en']])->all()),
+                        selectedLabel() {
+                            if (this.selected === '__custom__') return '+ Tambah daerah baru';
+                            return this.labels[this.selected] || 'None (kosong)';
+                        },
+                        choose(value) {
+                            this.selected = value;
+                            this.open = false;
+                        },
+                    }"
+                    class="space-y-4"
+                >
+                    <div>
+                        <label class="mb-1.5 block text-sm font-semibold text-gray-700">Daerah artikel</label>
+                        <div class="relative" x-on:keydown.escape.window="open = false" x-on:click.outside="open = false">
+                            <button
+                                type="button"
+                                x-on:click="open = ! open"
+                                class="flex w-full items-center justify-between gap-3 rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-left text-sm shadow-sm outline-none transition hover:border-[#376A64]/70 focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15"
+                                :class="selected ? 'text-gray-900' : 'text-gray-400'"
+                                aria-haspopup="listbox"
+                                :aria-expanded="open.toString()"
+                            >
+                                <span class="truncate" x-text="selectedLabel()"></span>
+                                <svg class="h-4 w-4 shrink-0 text-gray-500 transition" :class="open ? 'rotate-180' : ''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.22 7.22a.75.75 0 011.06 0L10 10.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.22 8.28a.75.75 0 010-1.06Z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+
+                            <div
+                                x-cloak
+                                x-show="open"
+                                x-transition.origin.top.left
+                                class="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-50 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-xl ring-1 ring-black/5"
+                                role="listbox"
+                            >
+                                <button
+                                    type="button"
+                                    x-on:click="choose('')"
+                                    class="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium transition hover:bg-[#f1f7f5]"
+                                    :class="selected === '' ? 'bg-[#eef6f4] text-[#376A64]' : 'text-gray-500'"
+                                    role="option"
+                                >
+                                    <span>None (kosong)</span>
+                                    <svg x-show="selected === ''" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.25 7.25a1 1 0 01-1.414 0l-3.25-3.25a1 1 0 111.414-1.414l2.543 2.543 6.543-6.543a1 1 0 011.414 0Z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                @foreach ($regionOptions as $regionOption)
+                                    <button
+                                        type="button"
+                                        x-on:click="choose(@js($regionOption['key']))"
+                                        class="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold transition hover:bg-[#f1f7f5]"
+                                        :class="selected === @js($regionOption['key']) ? 'bg-[#eef6f4] text-[#376A64]' : 'text-gray-800'"
+                                        role="option"
+                                    >
+                                        <span>{{ $regionOption['id'] }} / {{ $regionOption['en'] }}</span>
+                                        <svg x-show="selected === @js($regionOption['key'])" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.25 7.25a1 1 0 01-1.414 0l-3.25-3.25a1 1 0 111.414-1.414l2.543 2.543 6.543-6.543a1 1 0 011.414 0Z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                @endforeach
+                                <button
+                                    type="button"
+                                    x-on:click="choose('__custom__')"
+                                    class="flex w-full items-center justify-between border-t border-gray-100 px-4 py-3 text-left text-sm font-bold text-[#376A64] transition hover:bg-[#f1f7f5]"
+                                    :class="selected === '__custom__' ? 'bg-[#eef6f4]' : ''"
+                                    role="option"
+                                >
+                                    <span>+ Tambah daerah baru</span>
+                                    <svg x-show="selected === '__custom__'" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.25 7.25a1 1 0 01-1.414 0l-3.25-3.25a1 1 0 111.414-1.414l2.543 2.543 6.543-6.543a1 1 0 011.414 0Z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        @error('region_pair') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                    </div>
+
+                    <div
+                        x-cloak
+                        x-show="selected === '__custom__'"
+                        x-transition.opacity
+                        class="grid grid-cols-1 gap-4 md:grid-cols-2"
+                    >
+                        <div>
+                            <label class="mb-1.5 block text-xs font-semibold text-gray-600">Nama daerah Indonesia</label>
+                            <input
+                                type="text"
+                                wire:model="region_id_custom"
+                                maxlength="100"
+                                placeholder="Contoh: Gorontalo"
+                                class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15"
+                            >
+                            @error('region_id_custom') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                        </div>
+
+                        <div>
+                            <label class="mb-1.5 block text-xs font-semibold text-gray-600">Nama daerah Inggris</label>
+                            <input
+                                type="text"
+                                wire:model="region_en_custom"
+                                maxlength="100"
+                                placeholder="Example: Gorontalo"
+                                class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15"
+                            >
+                            @error('region_en_custom') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-gray-500">Opsional. Daerah akan tampil di kartu publik setelah kategori, misalnya Biomassa | Gorontalo.</p>
+                </div>
+
+                <div class="max-w-xs">
+                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Ukuran teks kategori/daerah</label>
+                    <div class="flex overflow-hidden rounded-lg border border-gray-300 bg-white shadow-sm focus-within:border-[#376A64] focus-within:ring-2 focus-within:ring-[#376A64]/15">
+                        <input
+                            type="number"
+                            wire:model="meta_font_size"
+                            min="10"
+                            max="28"
+                            step="1"
+                            class="w-full border-0 px-3.5 py-2.5 text-sm outline-none focus:ring-0"
+                        >
+                        <span class="inline-flex items-center border-l border-gray-200 bg-gray-50 px-3 text-sm font-semibold text-gray-500">px</span>
+                    </div>
+                    <p class="mt-1.5 text-xs text-gray-500">Sementara untuk revisi visual. Default 14px; nanti bisa dihapus kalau ukuran sudah final.</p>
+                    @error('meta_font_size') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                </div>
+
                 <div>
                     <label class="mb-1.5 block text-sm font-semibold text-gray-700">Media Indonesia</label>
                     <div class="rounded-xl border border-dashed border-gray-300 bg-gray-50 p-4">

@@ -34,6 +34,32 @@ class DeforestoryAdd extends Component
 
     public string $title_en = '';
 
+    public string $category = '';
+
+    public string $category_pair = '';
+
+    public string $category_id = '';
+
+    public string $category_en = '';
+
+    public string $category_id_custom = '';
+
+    public string $category_en_custom = '';
+
+    public string $region = '';
+
+    public string $region_pair = '';
+
+    public string $region_id = '';
+
+    public string $region_en = '';
+
+    public string $region_id_custom = '';
+
+    public string $region_en_custom = '';
+
+    public int $meta_font_size = 14;
+
     public string $desrkirpsi_id = '';
 
     public string $desrkirpsi_en = '';
@@ -67,6 +93,15 @@ class DeforestoryAdd extends Component
 
         $this->title_id = $item->title_id;
         $this->title_en = $item->title_en;
+        $this->category = $item->category ?? '';
+        $this->category_id = $item->category_id ?? $item->category ?? '';
+        $this->category_en = $item->category_en ?? $item->category ?? '';
+        $this->category_pair = $this->categoryPairKey($this->category_id, $this->category_en);
+        $this->region = $item->region ?? '';
+        $this->region_id = $item->region_id ?? $item->region ?? '';
+        $this->region_en = $item->region_en ?? $item->region ?? '';
+        $this->region_pair = $this->pairKey($this->region_id, $this->region_en);
+        $this->meta_font_size = (int) ($item->meta_font_size ?? 14);
         $this->desrkirpsi_id = $item->desrkirpsi_id;
         $this->desrkirpsi_en = $item->desrkirpsi_en;
         $this->content_type = $item->content_type ?? 'template';
@@ -90,6 +125,17 @@ class DeforestoryAdd extends Component
             'image_description_en' => ['nullable', 'string'],
             'title_id' => ['required', 'string', 'max:255'],
             'title_en' => ['required', 'string', 'max:255'],
+            'category_pair' => ['nullable', 'string', 'max:500'],
+            'category_id' => ['nullable', 'string', 'max:100'],
+            'category_en' => ['nullable', 'string', 'max:100'],
+            'category_id_custom' => ['nullable', 'string', 'max:100'],
+            'category_en_custom' => ['nullable', 'string', 'max:100'],
+            'region_pair' => ['nullable', 'string', 'max:500'],
+            'region_id' => ['nullable', 'string', 'max:100'],
+            'region_en' => ['nullable', 'string', 'max:100'],
+            'region_id_custom' => ['nullable', 'string', 'max:100'],
+            'region_en_custom' => ['nullable', 'string', 'max:100'],
+            'meta_font_size' => ['required', 'integer', 'min:10', 'max:28'],
             'desrkirpsi_id' => ['required', 'string', 'max:150'],
             'desrkirpsi_en' => ['required', 'string', 'max:150'],
             'content_type' => ['required', Rule::in(['template', 'custom'])],
@@ -107,6 +153,43 @@ class DeforestoryAdd extends Component
     ) {
         $validated = $this->validate();
         unset($validated['image_id'], $validated['image_en']);
+        if (($validated['category_pair'] ?? null) === '__custom__') {
+            $categoryId = $validated['category_id_custom'] ?? null;
+            $categoryEn = $validated['category_en_custom'] ?? null;
+        } elseif (filled($validated['category_pair'] ?? null)) {
+            [$categoryId, $categoryEn] = $this->parseCategoryPairKey($validated['category_pair']);
+        } else {
+            $categoryId = null;
+            $categoryEn = null;
+        }
+        unset($validated['category_pair'], $validated['category_id_custom'], $validated['category_en_custom']);
+
+        $validated['category_id'] = blank($categoryId)
+            ? null
+            : trim($categoryId);
+        $validated['category_en'] = blank($categoryEn)
+            ? null
+            : trim($categoryEn);
+        $validated['category'] = $validated['category_id'];
+
+        if (($validated['region_pair'] ?? null) === '__custom__') {
+            $regionId = $validated['region_id_custom'] ?? null;
+            $regionEn = $validated['region_en_custom'] ?? null;
+        } elseif (filled($validated['region_pair'] ?? null)) {
+            [$regionId, $regionEn] = $this->parsePairKey($validated['region_pair']);
+        } else {
+            $regionId = null;
+            $regionEn = null;
+        }
+        unset($validated['region_pair'], $validated['region_id_custom'], $validated['region_en_custom']);
+
+        $validated['region_id'] = blank($regionId)
+            ? null
+            : trim($regionId);
+        $validated['region_en'] = blank($regionEn)
+            ? null
+            : trim($regionEn);
+        $validated['region'] = $validated['region_id'];
         $validated['content_id'] = DeforestationStoryStopper::normalizeHtml($validated['content_id']);
         $validated['content_en'] = DeforestationStoryStopper::normalizeHtml($validated['content_en']);
         $validated['slug'] = $this->uniqueSlug($this->title_id, $this->deforestoryId);
@@ -171,7 +254,121 @@ class DeforestoryAdd extends Component
 
     public function render()
     {
-        return view('livewire.deforestory-add');
+        return view('livewire.deforestory-add', [
+            'categoryOptions' => $this->categoryOptions(),
+            'regionOptions' => $this->regionOptions(),
+        ]);
+    }
+
+    private function categoryOptions(): array
+    {
+        $fallback = [
+            ['id' => 'Sawit', 'en' => 'Palm Oil'],
+            ['id' => 'Food Estate', 'en' => 'Food Estate'],
+            ['id' => 'Taman Nasional Kutai', 'en' => 'Kutai National Park'],
+            ['id' => 'Logging', 'en' => 'Logging'],
+            ['id' => 'Tambang', 'en' => 'Mining'],
+            ['id' => 'Biomassa', 'en' => 'Biomass'],
+        ];
+
+        $existing = DB::table('deforestory')
+            ->select(['category', 'category_id', 'category_en'])
+            ->where(function ($query): void {
+                $query->whereNotNull('category_id')
+                    ->orWhereNotNull('category_en')
+                    ->orWhereNotNull('category');
+            })
+            ->get()
+            ->map(fn ($story): array => [
+                'id' => trim((string) ($story->category_id ?: $story->category ?: '')),
+                'en' => trim((string) ($story->category_en ?: $story->category ?: '')),
+            ])
+            ->filter(fn (array $category): bool => filled($category['id']) || filled($category['en']))
+            ->all();
+
+        return collect([...$existing, ...$fallback])
+            ->map(function (array $category): array {
+                $category['id'] = trim((string) ($category['id'] ?? ''));
+                $category['en'] = trim((string) ($category['en'] ?? ''));
+                $category['key'] = $this->pairKey($category['id'], $category['en']);
+
+                return $category;
+            })
+            ->unique('key')
+            ->sortBy('id')
+            ->values()
+            ->all();
+    }
+
+    private function categoryPairKey(?string $categoryId, ?string $categoryEn): string
+    {
+        return $this->pairKey($categoryId, $categoryEn);
+    }
+
+    private function parseCategoryPairKey(string $key): array
+    {
+        return $this->parsePairKey($key);
+    }
+
+    private function regionOptions(): array
+    {
+        $fallback = [
+            ['id' => 'Gorontalo', 'en' => 'Gorontalo'],
+            ['id' => 'Papua Barat Daya', 'en' => 'Southwest Papua'],
+            ['id' => 'Kalimantan Timur', 'en' => 'East Kalimantan'],
+            ['id' => 'Sulawesi Tengah', 'en' => 'Central Sulawesi'],
+            ['id' => 'Maluku Utara', 'en' => 'North Maluku'],
+        ];
+
+        $existing = DB::table('deforestory')
+            ->select(['region', 'region_id', 'region_en'])
+            ->where(function ($query): void {
+                $query->whereNotNull('region_id')
+                    ->orWhereNotNull('region_en')
+                    ->orWhereNotNull('region');
+            })
+            ->get()
+            ->map(fn ($story): array => [
+                'id' => trim((string) ($story->region_id ?: $story->region ?: '')),
+                'en' => trim((string) ($story->region_en ?: $story->region ?: '')),
+            ])
+            ->filter(fn (array $region): bool => filled($region['id']) || filled($region['en']))
+            ->all();
+
+        return collect([...$existing, ...$fallback])
+            ->map(function (array $region): array {
+                $region['id'] = trim((string) ($region['id'] ?? ''));
+                $region['en'] = trim((string) ($region['en'] ?? ''));
+                $region['key'] = $this->pairKey($region['id'], $region['en']);
+
+                return $region;
+            })
+            ->unique('key')
+            ->sortBy('id')
+            ->values()
+            ->all();
+    }
+
+    private function pairKey(?string $id, ?string $en): string
+    {
+        return base64_encode(json_encode([
+            'id' => $id ?? '',
+            'en' => $en ?? '',
+        ], JSON_THROW_ON_ERROR));
+    }
+
+    private function parsePairKey(string $key): array
+    {
+        $decoded = json_decode(base64_decode($key, true) ?: '', true);
+
+        if (! is_array($decoded)) {
+            return [null, null];
+        }
+
+        return [
+            $decoded['id'] ?? null,
+            $decoded['en'] ?? null,
+        ];
     }
 
     public function updatedContentType(string $contentType): void

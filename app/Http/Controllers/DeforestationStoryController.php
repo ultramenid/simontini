@@ -203,6 +203,17 @@ class DeforestationStoryController extends Controller
     private function localizeStory(object $story, string $locale): object
     {
         $story->localized_title = $locale === 'en' ? $story->title_en : $story->title_id;
+        $story->localized_category = $locale === 'en'
+            ? ($story->category_en ?? $story->category ?? null)
+            : ($story->category_id ?? $story->category ?? null);
+        $story->localized_region = $locale === 'en'
+            ? ($story->region_en ?? $story->region ?? null)
+            : ($story->region_id ?? $story->region ?? null);
+        $story->localized_meta = collect([
+            $story->localized_category,
+            $story->localized_region,
+        ])->filter(fn ($value) => filled($value))->join(' | ');
+        $story->localized_meta_font_size = min(max((int) ($story->meta_font_size ?? 14), 10), 28);
         $story->localized_description = $locale === 'en' ? $story->desrkirpsi_en : $story->desrkirpsi_id;
         $story->localized_content = DeforestationStoryStopper::normalizeHtml(
             $locale === 'en' ? $story->content_en : $story->content_id,

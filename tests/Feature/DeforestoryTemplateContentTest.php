@@ -67,6 +67,191 @@ it('stores both hero image descriptions from the CMS form', function () {
         ->toBe('Aerial forest photo, source Auriga Nusantara.');
 });
 
+it('stores the optional Deforestory article category from the CMS form', function () {
+    Livewire::test(DeforestoryAdd::class)
+        ->set('title_id', 'Story Berkategori Sawit')
+        ->set('title_en', 'Palm Category Story')
+        ->set('category_pair', '__custom__')
+        ->set('category_id_custom', 'Sawit')
+        ->set('category_en_custom', 'Palm Oil')
+        ->set('desrkirpsi_id', 'Ringkasan story berkategori.')
+        ->set('desrkirpsi_en', 'Categorized story summary.')
+        ->set('date', '2026-09-16')
+        ->set('status', 'draft')
+        ->call('save')
+        ->assertHasNoErrors();
+
+    $story = DB::table('deforestory')
+        ->where('title_id', 'Story Berkategori Sawit')
+        ->first();
+
+    expect($story->category)
+        ->toBe('Sawit')
+        ->and($story->category_id)
+        ->toBe('Sawit')
+        ->and($story->category_en)
+        ->toBe('Palm Oil');
+});
+
+it('shows existing Deforestory categories as selectable CMS options', function () {
+    DB::table('deforestory')->insert([
+        'title_id' => 'Story Kategori Pilihan',
+        'title_en' => 'Selectable Category Story',
+        'category' => 'Logging',
+        'category_id' => 'Logging',
+        'category_en' => 'Logging EN',
+        'region' => 'Gorontalo',
+        'region_id' => 'Gorontalo',
+        'region_en' => 'Gorontalo',
+        'slug' => 'story-kategori-pilihan-'.uniqid(),
+        'desrkirpsi_id' => 'Deskripsi kategori pilihan.',
+        'desrkirpsi_en' => 'Selectable category description.',
+        'date' => '2026-09-16',
+        'content_id' => '<p>Konten.</p>',
+        'content_en' => '<p>Content.</p>',
+        'status' => 'draft',
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    Livewire::test(DeforestoryAdd::class)
+        ->assertSee('Sawit / Palm Oil')
+        ->assertSee('Logging')
+        ->assertSee('Logging EN')
+        ->assertSee('Gorontalo / Gorontalo');
+});
+
+it('stores Deforestory category and region pairs from linked CMS dropdowns', function () {
+    $categoryPair = base64_encode(json_encode([
+        'id' => 'Sawit',
+        'en' => 'Palm Oil',
+    ], JSON_THROW_ON_ERROR));
+    $regionPair = base64_encode(json_encode([
+        'id' => 'Papua Barat Daya',
+        'en' => 'Southwest Papua',
+    ], JSON_THROW_ON_ERROR));
+
+    Livewire::test(DeforestoryAdd::class)
+        ->set('title_id', 'Story Kategori Terkait')
+        ->set('title_en', 'Linked Category Story')
+        ->set('category_pair', $categoryPair)
+        ->set('region_pair', $regionPair)
+        ->set('meta_font_size', 18)
+        ->set('desrkirpsi_id', 'Ringkasan kategori terkait.')
+        ->set('desrkirpsi_en', 'Linked category summary.')
+        ->set('date', '2026-09-16')
+        ->set('status', 'draft')
+        ->call('save')
+        ->assertHasNoErrors();
+
+    $story = DB::table('deforestory')
+        ->where('title_id', 'Story Kategori Terkait')
+        ->first();
+
+    expect($story->category)
+        ->toBe('Sawit')
+        ->and($story->category_id)
+        ->toBe('Sawit')
+        ->and($story->category_en)
+        ->toBe('Palm Oil')
+        ->and($story->region)
+        ->toBe('Papua Barat Daya')
+        ->and($story->region_id)
+        ->toBe('Papua Barat Daya')
+        ->and($story->region_en)
+        ->toBe('Southwest Papua')
+        ->and($story->meta_font_size)
+        ->toBe(18);
+});
+
+it('clears existing Deforestory category and region when None is selected', function () {
+    $storyId = DB::table('deforestory')->insertGetId([
+        'title_id' => 'Story Metadata Lama',
+        'title_en' => 'Old Metadata Story',
+        'category' => 'mangrove',
+        'category_id' => 'mangrove',
+        'category_en' => 'mangrove',
+        'region' => 'Kalimantan Timur',
+        'region_id' => 'Kalimantan Timur',
+        'region_en' => 'East Kalimantan',
+        'slug' => 'story-metadata-lama-'.uniqid(),
+        'desrkirpsi_id' => 'Deskripsi metadata lama.',
+        'desrkirpsi_en' => 'Old metadata description.',
+        'date' => '2026-09-16',
+        'content_id' => '<p>Konten.</p>',
+        'content_en' => '<p>Content.</p>',
+        'status' => 'draft',
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    Livewire::test(DeforestoryAdd::class, ['deforestoryId' => $storyId])
+        ->set('category_pair', '')
+        ->set('region_pair', '')
+        ->call('save')
+        ->assertHasNoErrors();
+
+    $story = DB::table('deforestory')->find($storyId);
+
+    expect($story->category)
+        ->toBeNull()
+        ->and($story->category_id)
+        ->toBeNull()
+        ->and($story->category_en)
+        ->toBeNull()
+        ->and($story->region)
+        ->toBeNull()
+        ->and($story->region_id)
+        ->toBeNull()
+        ->and($story->region_en)
+        ->toBeNull();
+});
+
+it('renders Deforestory categories on public story cards when available', function () {
+    $storyId = DB::table('deforestory')->insertGetId([
+        'title_id' => 'Cerita Kategori Tambang',
+        'title_en' => 'Mining Category Story',
+        'category' => 'Tambang',
+        'category_id' => 'Tambang',
+        'category_en' => 'Mining',
+        'region' => 'Gorontalo',
+        'region_id' => 'Gorontalo',
+        'region_en' => 'Gorontalo',
+        'meta_font_size' => 18,
+        'slug' => 'cerita-kategori-tambang-'.uniqid(),
+        'desrkirpsi_id' => 'Deskripsi kartu kategori.',
+        'desrkirpsi_en' => 'Category card description.',
+        'date' => '2026-09-16',
+        'content_id' => '<p>Konten kategori.</p>',
+        'content_en' => '<p>Category content.</p>',
+        'status' => 'publish',
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    $story = DB::table('deforestory')->find($storyId);
+
+    $this->get(route('deforestation.index', ['locale' => 'id']))
+        ->assertOk()
+        ->assertSee('Tambang | Gorontalo')
+        ->assertSee('font-size: 18px;', false)
+        ->assertSee('Cerita Kategori Tambang');
+
+    $this->get(route('deforestation.index', ['locale' => 'en']))
+        ->assertOk()
+        ->assertSee('Mining | Gorontalo')
+        ->assertSee('Mining Category Story');
+
+    expect($story->category)
+        ->toBe('Tambang')
+        ->and($story->category_id)
+        ->toBe('Tambang')
+        ->and($story->category_en)
+        ->toBe('Mining')
+        ->and($story->region_id)
+        ->toBe('Gorontalo');
+});
+
 it('keeps bilingual content editors without floating language markers', function () {
     $view = file_get_contents(resource_path('views/livewire/deforestory-add.blade.php'));
 
