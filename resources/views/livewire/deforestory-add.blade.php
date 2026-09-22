@@ -47,6 +47,21 @@
                     x-data="{
                         open: false,
                         selected: @entangle('category_pair').live,
+                        deleteKey: '',
+                        deleteLabel: '',
+                        deleting: false,
+                        showCategoryMessage: true,
+                        categoryMessageTimer: null,
+                        async confirmCategoryDelete() {
+                            if (this.deleting) return;
+                            this.deleting = true;
+                            try {
+                                await this.$wire.deleteCategory(this.deleteKey);
+                                this.$refs.categoryDeleteDialog.close();
+                            } finally {
+                                this.deleting = false;
+                            }
+                        },
                         labels: @js(collect($categoryOptions)->mapWithKeys(fn ($categoryOption) => [$categoryOption['key'] => $categoryOption['id'].' / '.$categoryOption['en']])->all()),
                         selectedLabel() {
                             if (this.selected === '__custom__') return '+ Tambah kategori baru';
@@ -57,6 +72,8 @@
                             this.open = false;
                         },
                     }"
+                    x-on:deforestory-category-saved.window="clearTimeout(categoryMessageTimer); showCategoryMessage = true; labels[$event.detail.key] = $event.detail.label; selected = $event.detail.key; open = false"
+                    x-on:deforestory-category-deleted.window="clearTimeout(categoryMessageTimer); showCategoryMessage = true; categoryMessageTimer = setTimeout(() => { showCategoryMessage = false }, 2000)"
                     class="space-y-4"
                 >
                     <div>
@@ -96,6 +113,7 @@
                                     </svg>
                                 </button>
                                 @foreach ($categoryOptions as $categoryOption)
+                                    <div class="flex items-center" wire:key="category-option-{{ md5($categoryOption['key']) }}">
                                     <button
                                         type="button"
                                         x-on:click="choose(@js($categoryOption['key']))"
@@ -104,10 +122,13 @@
                                         role="option"
                                     >
                                         <span>{{ $categoryOption['id'] }} / {{ $categoryOption['en'] }}</span>
+                                        <span class="text-xs text-gray-500">{{ $categoryOption['count'] }} Deforestory</span>
                                         <svg x-show="selected === @js($categoryOption['key'])" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                             <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.25 7.25a1 1 0 01-1.414 0l-3.25-3.25a1 1 0 111.414-1.414l2.543 2.543 6.543-6.543a1 1 0 011.414 0Z" clip-rule="evenodd" />
                                         </svg>
                                     </button>
+                                    <button type="button" x-on:click="deleteKey = @js($categoryOption['key']); deleteLabel = @js($categoryOption['id'].' / '.$categoryOption['en']); open = false; $refs.categoryDeleteDialog.showModal()" class="px-4 py-3 text-xs font-semibold text-red-600" aria-label="Hapus kategori {{ $categoryOption['id'] }}">Hapus</button>
+                                    </div>
                                 @endforeach
                                 <button
                                     type="button"
@@ -157,6 +178,24 @@
                         </div>
                     </div>
 
+                    <div x-cloak x-show="selected === '__custom__'">
+                        <button type="button" wire:click="saveCategory" wire:loading.attr="disabled" wire:target="saveCategory" class="rounded-lg px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-60" style="background-color: #376A64; color: #ffffff;">
+                            <span wire:loading.remove wire:target="saveCategory">Simpan Kategori</span>
+                            <span wire:loading wire:target="saveCategory">Menyimpan...</span>
+                        </button>
+                    </div>
+                    @if ($categorySaveMessage)
+                        <p x-show="showCategoryMessage" role="status" class="text-xs text-[#376A64]">{{ $categorySaveMessage }}</p>
+                    @endif
+                    <dialog x-ref="categoryDeleteDialog" wire:ignore.self aria-labelledby="category-delete-title" aria-describedby="category-delete-description" class="m-auto w-full max-w-md rounded-xl border border-gray-200 bg-white p-6 shadow-xl backdrop:bg-black/50" x-on:cancel="if (deleting) $event.preventDefault()" x-on:click="if ($event.target === $el && !deleting) $el.close()">
+                        <h3 id="category-delete-title" class="text-lg font-semibold text-gray-900">Yakin hapus kategori ini?</h3>
+                        <p class="mt-3 font-semibold text-gray-800" x-text="deleteLabel"></p>
+                        <p id="category-delete-description" class="mt-2 text-sm text-gray-500">Kategori akan dihapus dari daftar pilihan. Kategori yang masih dipakai artikel tidak dapat dihapus.</p>
+                        <div class="mt-6 flex justify-end gap-3">
+                            <button type="button" autofocus x-on:click="$refs.categoryDeleteDialog.close()" :disabled="deleting" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 disabled:opacity-60">Batal</button>
+                            <button type="button" x-on:click="confirmCategoryDelete()" :disabled="deleting" class="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white disabled:opacity-60" x-text="deleting ? 'Menghapus...' : 'Ya, Hapus'"></button>
+                        </div>
+                    </dialog>
                     <p class="text-xs text-gray-500">Opsional. Satu pilihan kategori berisi pasangan label Indonesia dan Inggris, misalnya Sawit / Palm Oil.</p>
                 </div>
 
@@ -164,6 +203,16 @@
                     x-data="{
                         open: false,
                         selected: @entangle('region_pair').live,
+                        deleteKey: '', deleteLabel: '', deleting: false,
+                        showMessage: true, messageTimer: null,
+                        async confirmDelete() {
+                            if (this.deleting) return;
+                            this.deleting = true;
+                            try {
+                                await this.$wire.deleteRegion(this.deleteKey);
+                                this.$refs.regionDeleteDialog.close();
+                            } finally { this.deleting = false; }
+                        },
                         labels: @js(collect($regionOptions)->mapWithKeys(fn ($regionOption) => [$regionOption['key'] => $regionOption['id'].' / '.$regionOption['en']])->all()),
                         selectedLabel() {
                             if (this.selected === '__custom__') return '+ Tambah daerah baru';
@@ -178,6 +227,7 @@
                 >
                     <div>
                         <label class="mb-1.5 block text-sm font-semibold text-gray-700">Daerah artikel</label>
+                        <span x-on:deforestory-region-saved.window="clearTimeout(messageTimer); showMessage = true; labels[$event.detail.key] = $event.detail.label; selected = $event.detail.key; open = false" x-on:deforestory-region-deleted.window="clearTimeout(messageTimer); showMessage = true; messageTimer = setTimeout(() => { showMessage = false }, 2000)"></span>
                         <div class="relative" x-on:keydown.escape.window="open = false" x-on:click.outside="open = false">
                             <button
                                 type="button"
@@ -213,6 +263,7 @@
                                     </svg>
                                 </button>
                                 @foreach ($regionOptions as $regionOption)
+                                    <div class="flex items-center" wire:key="region-option-{{ md5($regionOption['key']) }}">
                                     <button
                                         type="button"
                                         x-on:click="choose(@js($regionOption['key']))"
@@ -221,10 +272,13 @@
                                         role="option"
                                     >
                                         <span>{{ $regionOption['id'] }} / {{ $regionOption['en'] }}</span>
+                                        <span class="text-xs text-gray-500">{{ $regionOption['count'] }} Deforestory</span>
                                         <svg x-show="selected === @js($regionOption['key'])" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                             <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.25 7.25a1 1 0 01-1.414 0l-3.25-3.25a1 1 0 111.414-1.414l2.543 2.543 6.543-6.543a1 1 0 011.414 0Z" clip-rule="evenodd" />
                                         </svg>
                                     </button>
+                                    <button type="button" x-on:click="deleteKey = @js($regionOption['key']); deleteLabel = @js($regionOption['id'].' / '.$regionOption['en']); open = false; $refs.regionDeleteDialog.showModal()" class="px-4 py-3 text-xs font-semibold text-red-600">Hapus</button>
+                                    </div>
                                 @endforeach
                                 <button
                                     type="button"
@@ -275,6 +329,24 @@
                     </div>
 
                     <p class="text-xs text-gray-500">Opsional. Daerah akan tampil di kartu publik setelah kategori, misalnya Biomassa | Gorontalo.</p>
+                    <div x-cloak x-show="selected === '__custom__'">
+                        <button type="button" wire:click="saveRegion" wire:loading.attr="disabled" wire:target="saveRegion" class="rounded-lg px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-60" style="background-color: #376A64; color: #ffffff;">
+                            <span wire:loading.remove wire:target="saveRegion">Simpan Daerah</span>
+                            <span wire:loading wire:target="saveRegion">Menyimpan...</span>
+                        </button>
+                    </div>
+                    @if ($regionSaveMessage)
+                        <p x-show="showMessage" role="status" class="text-xs text-[#376A64]">{{ $regionSaveMessage }}</p>
+                    @endif
+                    <dialog x-ref="regionDeleteDialog" wire:ignore.self aria-labelledby="region-delete-title" class="m-auto w-full max-w-md rounded-xl border border-gray-200 bg-white p-6 shadow-xl backdrop:bg-black/50" x-on:cancel="if (deleting) $event.preventDefault()" x-on:click="if ($event.target === $el && !deleting) $el.close()">
+                        <h3 id="region-delete-title" class="text-lg font-semibold text-gray-900">Yakin hapus daerah ini?</h3>
+                        <p class="mt-3 font-semibold text-gray-800" x-text="deleteLabel"></p>
+                        <p class="mt-2 text-sm text-gray-500">Daerah yang masih dipakai artikel tidak dapat dihapus.</p>
+                        <div class="mt-6 flex justify-end gap-3">
+                            <button type="button" autofocus x-on:click="$refs.regionDeleteDialog.close()" :disabled="deleting" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700">Batal</button>
+                            <button type="button" x-on:click="confirmDelete()" :disabled="deleting" class="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white disabled:opacity-60" x-text="deleting ? 'Menghapus...' : 'Ya, Hapus'"></button>
+                        </div>
+                    </dialog>
                 </div>
 
                 <div class="max-w-xs">
@@ -555,6 +627,15 @@
                     </div>
                 @endif
             </div>
+        </section>
+
+        <section class="space-y-6 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div>
+                <h2 class="text-lg font-semibold text-gray-900">Footer artikel</h2>
+                <p class="mt-1 text-sm text-gray-500">Opsional. Tambahkan kredit penulis, olah data, verifikasi, desain, sitasi, dan copyright. Tampil di bawah konten dan rata tengah secara default. Kosongkan untuk menyembunyikannya.</p>
+            </div>
+            <x-tinymce-editor wire:model="footer_id" :value="$footer_id" label="Footer Indonesia" hint="Gunakan bold untuk nama peran dan judul sitasi. Atur paragraf, tautan, serta perataan sesuai kebutuhan." />
+            <x-tinymce-editor wire:model="footer_en" :value="$footer_en" label="Footer Inggris" hint="Credits, citation, and copyright for the English article." />
         </section>
 
         <div class="sticky bottom-4 z-10 flex flex-col-reverse gap-3 rounded-2xl border border-gray-200 bg-white/95 p-4 shadow-lg backdrop-blur sm:flex-row sm:items-center sm:justify-between">

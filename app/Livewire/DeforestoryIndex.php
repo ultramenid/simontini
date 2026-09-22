@@ -26,8 +26,24 @@ class DeforestoryIndex extends Component
 
     public string $search = '';
 
+    public bool $categoryClickable = true;
+
+    public bool $regionClickable = true;
+
+    public function toggleMetadataLink(string $field): void
+    {
+        abort_unless(in_array($field, ['category', 'region'], true), 422);
+        $column = $field.'_clickable';
+        $enabled = ! (bool) (DB::table('deforestory_display_settings')->where('id', 1)->value($column) ?? true);
+        DB::table('deforestory_display_settings')->updateOrInsert(['id' => 1], [$column => $enabled]);
+        $this->{$field.'Clickable'} = $enabled;
+    }
+
     public function mount(): void
     {
+        $display = DB::table('deforestory_display_settings')->where('id', 1)->first();
+        $this->categoryClickable = (bool) ($display->category_clickable ?? true);
+        $this->regionClickable = (bool) ($display->region_clickable ?? true);
         $this->hasGlobalPreviewPassword = filled(
             DB::table('deforestory_preview_settings')->where('id', 1)->value('password_hash'),
         );

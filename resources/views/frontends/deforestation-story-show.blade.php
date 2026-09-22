@@ -106,6 +106,12 @@
                     {!! $story->localized_content !!}
                 </div>
 
+                @if (filled(trim(html_entity_decode(strip_tags($story->localized_footer ?? ''), ENT_QUOTES | ENT_HTML5, 'UTF-8'), " \t\n\r\0\x0B\xc2\xa0")))
+                    <div data-story-footer class="article-copy mt-10 bg-white pt-6 text-center text-[14px] leading-[1.8] text-black">
+                        {!! $story->localized_footer !!}
+                    </div>
+                @endif
+
                 <div class="mt-12 border border-[#d8e1df] bg-[#f8fbfa] px-6 py-8 text-center">
                     <p class="text-lg font-black tracking-[-0.025em] text-[#1a1a1a] sm:text-xl">
                         {{ $locale === 'en' ? 'Follow the latest developments in this story' : 'Ikuti perkembangan story ini' }}

@@ -96,6 +96,9 @@ class DeforestationStoryController extends Controller
 
     private function renderIndex(string $locale, bool $isPreview): View
     {
+        $display = DB::table('deforestory_display_settings')->where('id', 1)->first();
+        $categoryClickable = (bool) ($display->category_clickable ?? true);
+        $regionClickable = (bool) ($display->region_clickable ?? true);
         $query = DB::table('deforestory')
             ->orderByDesc('date')
             ->orderByDesc('id');
@@ -103,6 +106,26 @@ class DeforestationStoryController extends Controller
         if (! $isPreview) {
             $query->where('status', 'publish');
         }
+
+        $filters = request()->validate([
+            'category' => ['nullable', 'string', 'max:100'],
+            'region' => ['nullable', 'string', 'max:100'],
+        ]);
+        foreach (['category', 'region'] as $field) {
+            if (! ($field === 'category' ? $categoryClickable : $regionClickable)) {
+                unset($filters[$field]);
+                continue;
+            }
+            if (filled($filters[$field] ?? null)) {
+                $column = $field.($locale === 'en' ? '_en' : '_id');
+                $query->whereRaw("COALESCE({$column}, {$field}) = ?", [$filters[$field]]);
+            }
+        }
+        $indexParameters = ['locale' => $locale];
+        $resetUrl = $isPreview
+            ? URL::temporarySignedRoute('deforestation.preview.index',
+                Carbon::createFromTimestamp(request()->integer('expires')), $indexParameters)
+            : route('deforestation.index', $indexParameters);
 
         $stories = $query->get();
         $this->localizeStories($stories, $locale);
@@ -119,6 +142,10 @@ class DeforestationStoryController extends Controller
             'locale' => $locale,
             'stories' => $stories,
             'storyGroups' => $storyGroups,
+            'filters' => $filters,
+            'categoryClickable' => $categoryClickable,
+            'regionClickable' => $regionClickable,
+            'resetUrl' => $resetUrl,
             'isPreview' => $isPreview,
         ]);
     }
@@ -215,6 +242,7 @@ class DeforestationStoryController extends Controller
         ])->filter(fn ($value) => filled($value))->join(' | ');
         $story->localized_meta_font_size = min(max((int) ($story->meta_font_size ?? 14), 10), 28);
         $story->localized_description = $locale === 'en' ? $story->desrkirpsi_en : $story->desrkirpsi_id;
+        $story->localized_footer = $locale === 'en' ? ($story->footer_en ?? '') : ($story->footer_id ?? '');
         $story->localized_content = DeforestationStoryStopper::normalizeHtml(
             $locale === 'en' ? $story->content_en : $story->content_id,
         );

@@ -40,6 +40,48 @@ Chart.register(SankeyController, Flow);
 const visualizationColors = ['#376A64', '#D95C4F', '#E3A72F', '#5A7FB8', '#8A63A9', '#4F9D69', '#C96B9B', '#7C6F64', '#22A6B3'];
 const inlineCaptionSelectionRanges = new WeakMap();
 
+// Keep meaningful emphasis, but let the caption editor supply typography.
+const normalizeCaptionPaste = (html) => {
+    const template = document.createElement('template');
+    template.innerHTML = html || '';
+    template.content.querySelectorAll('script, style, iframe, object, embed, link, meta').forEach((node) => node.remove());
+    template.content.querySelectorAll('*').forEach((element) => {
+        const style = element.style;
+        const emphasis = [];
+        if (style.fontWeight === 'bold' || Number.parseInt(style.fontWeight, 10) >= 600) emphasis.push('strong');
+        if (['italic', 'oblique'].includes(style.fontStyle)) emphasis.push('em');
+        if ((style.textDecorationLine || style.textDecoration).includes('underline')) emphasis.push('u');
+        emphasis.forEach((tag) => {
+            const wrapper = document.createElement(tag);
+            wrapper.append(...element.childNodes);
+            element.append(wrapper);
+        });
+        Array.from(element.attributes).forEach(({ name }) => {
+            if (name !== 'href' && name !== 'title') element.removeAttribute(name);
+        });
+        if (element.hasAttribute('href') && !/^(https?:|mailto:|\/|#)/i.test(element.getAttribute('href').trim())) element.removeAttribute('href');
+        if (/^(FONT|H[1-6])$/.test(element.tagName)) {
+            const replacement = document.createElement(element.tagName === 'FONT' ? 'span' : 'p');
+            replacement.append(...element.childNodes);
+            element.replaceWith(replacement);
+        }
+    });
+    return template.innerHTML.trim();
+};
+
+document.addEventListener('paste', (event) => {
+    const field = event.target.closest?.('[data-lightbox-caption], [data-before-after-caption-input]');
+    if (!field || !event.clipboardData) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const html = event.clipboardData.getData('text/html');
+    const plain = document.createElement('div');
+    plain.textContent = event.clipboardData.getData('text/plain');
+    const normalized = normalizeCaptionPaste(html || plain.innerHTML.replace(/\r?\n/g, '<br>'));
+    field.ownerDocument.execCommand('insertHTML', false, normalized);
+    field.dispatchEvent(new Event('input', { bubbles: true }));
+}, true);
+
 const getInlineCaptionShortcutCommand = (event) => {
     if ((!event.metaKey && !event.ctrlKey) || event.altKey) return null;
 
@@ -916,7 +958,7 @@ const initializeTinyMceEditors = () => {
             font_size_formats: isCaptionEditor
                 ? '10px 11px 12px 14px 16px 18px 20px 24px'
                 : '8pt 10pt 12pt 14pt 16pt 18pt 24pt 30pt 36pt 48pt',
-            content_style: `body { font-family: Arial, sans-serif; font-size: ${isCaptionEditor ? '12px' : '16px'}; line-height: 1.7; padding: 16px; } img, video, iframe { max-width: 100%; } .story-inline-stopper { position: relative; top: 1px; display: inline-block; flex: 0 0 8px; width: 8px; height: 8px; margin-left: 1px; border-radius: 0; background: #d71920; vertical-align: middle; font-size: 0; line-height: 0; } .story-content-gallery { display: flex; width: 100%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; } .story-content-gallery > .story-content-figure { flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: start; } .story-before-after-figure, .story-before-after, .story-before-after img { -webkit-user-drag: none; user-select: none; } .story-before-after { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #e5e7eb; user-select: none; } .story-before-after-after { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 0 0 var(--before-after-position)); } .story-before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; } .story-before-after-handle { position: absolute; top: 50%; left: var(--before-after-position); z-index: 2; display: flex; width: 52px; height: 52px; align-items: center; justify-content: center; border: 3px solid #fff; border-radius: 9999px; background: rgba(0,0,0,.55); color: #fff; font-size: 22px; transform: translate(-50%, -50%); pointer-events: none; } .story-before-after-label { display: none !important; } .story-before-after-caption { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 4px 0 0; padding: 0; color: #000; font-size: 12px; font-weight: 400; line-height: 1.5; } .story-before-after-caption strong { font-weight: 700; } .story-before-after-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; cursor: ew-resize; opacity: 0; } .story-data-visualization { width: 100%; margin: 24px 0; } .story-data-visualization iframe { display: block; width: 100%; height: 100%; pointer-events: none; }`,
+            content_style: `body { font-family: Arial, sans-serif; font-size: ${isCaptionEditor ? '12px' : '16px'}; line-height: 1.7; padding: 16px; } img, video, iframe { max-width: 100%; } .story-inline-stopper { position: relative; top: 1px; display: inline-block; flex: 0 0 8px; width: 8px; height: 8px; margin-left: 1px; border-radius: 0; background: #d71920; vertical-align: middle; font-size: 0; line-height: 0; } .story-lightbox-gallery { margin: 0 !important; } .story-content-gallery { display: flex; width: 100%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; } .story-content-gallery > .story-content-figure { flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: start; } .story-before-after-figure, .story-before-after, .story-before-after img { -webkit-user-drag: none; user-select: none; } .story-before-after { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #e5e7eb; user-select: none; } .story-before-after-after { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 0 0 var(--before-after-position)); } .story-before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; } .story-before-after-handle { position: absolute; top: 50%; left: var(--before-after-position); z-index: 2; display: flex; width: 52px; height: 52px; align-items: center; justify-content: center; border: 3px solid #fff; border-radius: 9999px; background: rgba(0,0,0,.55); color: #fff; font-size: 22px; transform: translate(-50%, -50%); pointer-events: none; } .story-before-after-label { display: none !important; } .story-before-after-caption { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 4px 0 0; padding: 0; color: #000; font-size: 12px; font-weight: 400; line-height: 1.5; } .story-before-after-caption strong { font-weight: 700; } .story-before-after-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; cursor: ew-resize; opacity: 0; } .story-data-visualization { width: 100%; margin: 24px 0; } .story-data-visualization iframe { display: block; width: 100%; height: 100%; pointer-events: none; }`,
             setup(editor) {
                 const atomicBlockSelector = '.story-lightbox-gallery, .story-before-after-figure, .story-data-visualization';
                 const normalizeInlineStoppers = () => {
@@ -1187,6 +1229,7 @@ const initializeTinyMceEditors = () => {
                 };
 
                 const sanitizeBeforeAfterCaptionHtml = (html) => {
+                    html = normalizeCaptionPaste(html);
                     const template = document.createElement('template');
                     template.innerHTML = html || '';
                     template.content.querySelectorAll('script, style, iframe, object, embed').forEach((element) => element.remove());
@@ -1324,7 +1367,7 @@ const initializeTinyMceEditors = () => {
                         const galleryId = `story-gallery-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
                         const galleryItems = createLightboxGalleryItems(selectedImages, galleryId);
 
-                        insertAtomicContent(`<div class="story-content-gallery story-lightbox-gallery" data-story-gallery data-story-lightbox-gallery="${galleryId}" contenteditable="false" data-mce-contenteditable="false" style="width: 100%; margin: 24px 0; padding: 0; box-sizing: border-box;">${galleryItems}</div>`);
+                        insertAtomicContent(`<div class="story-content-gallery story-lightbox-gallery" data-story-gallery data-story-lightbox-gallery="${galleryId}" contenteditable="false" data-mce-contenteditable="false" style="width: 100%; margin: 0; padding: 0; box-sizing: border-box;">${galleryItems}</div>`);
                     } else {
                         const image = selectedImages[0];
                         const imageUrl = editor.dom.encode(image.url);
@@ -1449,6 +1492,7 @@ const initializeTinyMceEditors = () => {
                         return template.content.textContent?.replace(/\s+/g, ' ').trim() || '';
                     };
                     const sanitizeCaptionHtml = (html) => {
+                        html = normalizeCaptionPaste(html);
                         const template = document.createElement('template');
                         template.innerHTML = html || '';
                         template.content.querySelectorAll('script, style, iframe, object, embed').forEach((element) => element.remove());
@@ -2529,6 +2573,9 @@ const initializePublicStoryGalleries = () => {
             : 'story-gallery-shell';
         gallery.before(shell);
         shell.append(gallery);
+        // Keep spacing on the shell, and let the active slide determine height.
+        gallery.style.marginTop = '0';
+        gallery.style.marginBottom = '0';
 
         previous.type = 'button';
         previous.className = 'story-gallery-button story-gallery-button--previous';
@@ -2551,8 +2598,13 @@ const initializePublicStoryGalleries = () => {
         gallery.querySelectorAll('img').forEach((image) => image.setAttribute('draggable', 'false'));
 
         const updateControls = () => {
-            const slideWidth = gallery.clientWidth || 1;
-            activeIndex = Math.max(0, Math.min(slides.length - 1, Math.round(gallery.scrollLeft / slideWidth)));
+            activeIndex = slides.reduce((nearest, slide, index) => {
+                const distance = Math.abs(slide.offsetLeft - slides[0].offsetLeft - gallery.scrollLeft);
+                const nearestDistance = Math.abs(slides[nearest].offsetLeft - slides[0].offsetLeft - gallery.scrollLeft);
+                return distance < nearestDistance ? index : nearest;
+            }, 0);
+            const height = slides[activeIndex].getBoundingClientRect().height;
+            if (height > 0) gallery.style.height = `${height}px`;
             previous.disabled = activeIndex === 0;
             next.disabled = activeIndex === slides.length - 1;
             counter.textContent = `${activeIndex + 1} / ${slides.length}`;
@@ -2602,6 +2654,15 @@ const initializePublicStoryGalleries = () => {
         gallery.addEventListener('pointerup', stopDragging);
         gallery.addEventListener('pointercancel', stopDragging);
 
+        // Captions reflow on resize and images/fonts can finish loading later.
+        const slideObserver = new ResizeObserver(() => {
+            if (!gallery.isConnected) {
+                slideObserver.disconnect();
+                return;
+            }
+            updateControls();
+        });
+        slides.forEach((slide) => slideObserver.observe(slide));
         updateControls();
     });
 };

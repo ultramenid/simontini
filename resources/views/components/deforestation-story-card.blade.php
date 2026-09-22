@@ -1,4 +1,4 @@
-@props(['story', 'locale', 'isPreview' => false])
+@props(['story', 'locale', 'isPreview' => false, 'categoryClickable' => true, 'regionClickable' => true])
 
 @php
     $detailRoute = $isPreview ? 'deforestation.preview.show' : 'deforestation.show';
@@ -12,6 +12,13 @@
             $detailParameters,
         )
         : route($detailRoute, $detailParameters);
+    $filterUrl = function ($field, $value) use ($locale, $isPreview) {
+        $parameters = ['locale' => $locale, $field => $value];
+        return ($isPreview
+            ? URL::temporarySignedRoute('deforestation.preview.index',
+                \Carbon\Carbon::createFromTimestamp(request()->integer('expires')), $parameters)
+            : route('deforestation.index', $parameters)).'#publikasi';
+    };
 @endphp
 
 <article class="story-card relative">
@@ -40,12 +47,32 @@
             @endif
         </div>
 
+    </a>
         <div class="pt-5">
             @if (filled($story->localized_meta ?? null))
-                <p data-card-category class="mb-1 font-medium leading-tight text-black" style="font-size: {{ $story->localized_meta_font_size ?? 14 }}px;">{{ $story->localized_meta }}</p>
+                <p data-card-category class="mb-1 font-medium leading-tight text-black" style="font-size: {{ $story->localized_meta_font_size ?? 14 }}px;">
+                    @if (filled($story->localized_category ?? null))
+                        @if ($categoryClickable)
+                            <a data-category-link href="{{ $filterUrl('category', $story->localized_category) }}" class="hover:underline focus-visible:underline">{{ $story->localized_category }}</a>
+                        @else
+                            <span>{{ $story->localized_category }}</span>
+                        @endif
+                    @endif
+                    @if (filled($story->localized_category ?? null) && filled($story->localized_region ?? null))
+                        <span aria-hidden="true"> | </span>
+                    @endif
+                    @if (filled($story->localized_region ?? null))
+                        @if ($regionClickable)
+                            <a data-region-link href="{{ $filterUrl('region', $story->localized_region) }}" class="hover:underline focus-visible:underline">{{ $story->localized_region }}</a>
+                        @else
+                            <span>{{ $story->localized_region }}</span>
+                        @endif
+                    @endif
+                </p>
             @endif
+            <a href="{{ $detailUrl }}" class="block focus-visible:underline">
             <h3 data-card-title class="story-title text-[16px] font-bold leading-[1.2] tracking-[-0.025em]">{{ $story->localized_title }}</h3>
             <p data-card-description class="story-description mt-3 text-[12px] font-normal leading-[1.6] text-black">{{ \Illuminate\Support\Str::limit(strip_tags($story->localized_description), 147) }}</p>
+            </a>
         </div>
-    </a>
 </article>
