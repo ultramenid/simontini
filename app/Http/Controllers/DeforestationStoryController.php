@@ -230,6 +230,8 @@ class DeforestationStoryController extends Controller
     private function localizeStory(object $story, string $locale): object
     {
         $story->localized_title = $locale === 'en' ? $story->title_en : $story->title_id;
+        $indexTitle = $locale === 'en' ? ($story->index_title_en ?? '') : ($story->index_title_id ?? '');
+        $story->localized_index_title = filled($indexTitle) ? $indexTitle : $story->localized_title;
         $story->localized_category = $locale === 'en'
             ? ($story->category_en ?? $story->category ?? null)
             : ($story->category_id ?? $story->category ?? null);

@@ -31,14 +31,22 @@
             </div>
 
             <div class="grid grid-cols-1 gap-5">
+                @foreach (['id' => 'Indonesia', 'en' => 'Inggris'] as $language => $languageLabel)
+                    <div>
+                        <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Index {{ $languageLabel }}</label>
+                        <input type="text" wire:model="index_title_{{ $language }}" maxlength="255" placeholder="Judul untuk kartu daftar artikel" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
+                        <p class="mt-1 text-xs text-gray-500">Opsional. Jika kosong, menggunakan judul artikel {{ $languageLabel }}.</p>
+                        @error('index_title_'.$language) <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
+                    </div>
+                @endforeach
                 <div>
-                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Indonesia <span class="text-red-500">*</span></label>
+                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Artikel Indonesia <span class="text-red-500">*</span></label>
                     <input type="text" wire:model="title_id" placeholder="Masukkan judul Bahasa Indonesia" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
                     @error('title_id') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
                 </div>
 
                 <div>
-                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Inggris <span class="text-red-500">*</span></label>
+                    <label class="mb-1.5 block text-sm font-semibold text-gray-700">Judul Artikel Inggris <span class="text-red-500">*</span></label>
                     <input type="text" wire:model="title_en" placeholder="Enter the English title" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
                     @error('title_en') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
                 </div>
