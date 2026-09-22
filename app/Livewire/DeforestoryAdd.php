@@ -34,6 +34,10 @@ class DeforestoryAdd extends Component
 
     public string $title_en = '';
 
+    public string $index_title_id = '';
+
+    public string $index_title_en = '';
+
     public string $category = '';
 
     public string $category_pair = '';
@@ -101,6 +105,8 @@ class DeforestoryAdd extends Component
 
         $this->title_id = $item->title_id;
         $this->title_en = $item->title_en;
+        $this->index_title_id = $item->index_title_id ?? '';
+        $this->index_title_en = $item->index_title_en ?? '';
         $this->category = $item->category ?? '';
         $this->category_id = $item->category_id ?? $item->category ?? '';
         $this->category_en = $item->category_en ?? $item->category ?? '';
@@ -135,6 +141,8 @@ class DeforestoryAdd extends Component
             'image_description_en' => ['nullable', 'string'],
             'title_id' => ['required', 'string', 'max:255'],
             'title_en' => ['required', 'string', 'max:255'],
+            'index_title_id' => ['nullable', 'string', 'max:255'],
+            'index_title_en' => ['nullable', 'string', 'max:255'],
             'category_pair' => ['nullable', 'string', 'max:500'],
             'category_id' => ['nullable', 'string', 'max:100'],
             'category_en' => ['nullable', 'string', 'max:100'],

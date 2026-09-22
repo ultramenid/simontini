@@ -71,7 +71,7 @@
                 </p>
             @endif
             <a href="{{ $detailUrl }}" class="block focus-visible:underline">
-            <h3 data-card-title class="story-title text-[16px] font-bold leading-[1.2] tracking-[-0.025em]">{{ $story->localized_title }}</h3>
+            <h3 data-card-title class="story-title text-[16px] font-bold leading-[1.2] tracking-[-0.025em]">{{ $story->localized_index_title ?? $story->localized_title }}</h3>
             <p data-card-description class="story-description mt-3 text-[12px] font-normal leading-[1.6] text-black">{{ \Illuminate\Support\Str::limit(strip_tags($story->localized_description), 147) }}</p>
             </a>
         </div>

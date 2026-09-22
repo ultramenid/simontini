@@ -10,6 +10,23 @@ use Livewire\Livewire;
 
 uses(DatabaseTransactions::class);
 
+it('stores separate index titles while preserving article titles on detail pages', function () {
+    Livewire::test(DeforestoryAdd::class)
+        ->set('title_id', 'Judul detail uji terpisah')->set('title_en', 'Separate detail title')
+        ->set('index_title_id', 'Judul kartu uji')->set('index_title_en', 'Test card title')
+        ->set('desrkirpsi_id', 'Ringkasan')->set('desrkirpsi_en', 'Summary')
+        ->call('save')->assertHasNoErrors();
+    $story = DB::table('deforestory')->where('title_id', 'Judul detail uji terpisah')->first();
+    DB::table('deforestory')->where('id', $story->id)->update(['status' => 'publish']);
+    Livewire::test(DeforestoryAdd::class, ['deforestoryId' => $story->id])->assertSet('index_title_id', 'Judul kartu uji')->assertSet('index_title_en', 'Test card title');
+    foreach (['id' => ['Judul kartu uji', 'Judul detail uji terpisah'], 'en' => ['Test card title', 'Separate detail title']] as $locale => [$index, $detail]) {
+        $this->get(route('deforestation.index', ['locale' => $locale]))->assertOk()->assertSee($index);
+        $this->get(route('deforestation.show', ['locale' => $locale, 'id' => $story->id, 'slug' => $story->slug]))->assertOk()->assertSee($detail)->assertDontSee($index);
+    }
+    DB::table('deforestory')->where('id', $story->id)->update(['index_title_id' => null]);
+    $this->get(route('deforestation.index', ['locale' => 'id']))->assertOk()->assertSee('Judul detail uji terpisah');
+});
+
 it('saves bilingual article footers and allows clearing them on edit', function () {
     Livewire::test(DeforestoryAdd::class)
         ->set('title_id', 'Footer test ID')->set('title_en', 'Footer test EN')

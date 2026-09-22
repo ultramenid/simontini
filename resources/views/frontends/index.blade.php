@@ -149,6 +149,7 @@
             <div class="border-b border-white sm:flex hidden justify-center gap-12 py-4">
                 <a class="text-white font-light">ABOUT</a>
                 <a class="text-white font-light">INSIGHT</a>
+                <a href="{{ route('deforestation.index', ['locale' => app()->getLocale()]) }}" class="text-white font-light">DEFORESTORY</a>
                 <a class="text-white font-light">MAP & DATA</a>
                 <a class="text-white font-light">DOWNLOAD</a>
             </div>
