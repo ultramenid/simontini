@@ -7,6 +7,37 @@ use Illuminate\Support\Facades\URL;
 
 uses(DatabaseTransactions::class);
 
+it('renders the localized footer on public and preview articles and hides empty footers', function () {
+    $story = createDeforestationStory(['status' => 'publish', 'footer_id' => '<p><strong>PENULIS</strong> Footer ID</p>', 'footer_en' => '<p><em>AUTHOR</em> Footer EN</p>']);
+    foreach (['id' => 'Footer ID', 'en' => 'Footer EN'] as $locale => $text) {
+        $parameters = ['locale' => $locale, 'id' => $story->id, 'slug' => $story->slug];
+        $this->get(route('deforestation.show', $parameters))->assertOk()->assertSee('data-story-footer', false)->assertSee($text);
+        $this->get(URL::temporarySignedRoute('deforestation.preview.show', now()->addHour(), $parameters))->assertOk()->assertSee($text);
+    }
+    DB::table('deforestory')->where('id', $story->id)->update(['footer_id' => '<p>&nbsp;</p>']);
+    $this->get(route('deforestation.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $story->slug]))->assertOk()->assertDontSee('data-story-footer', false);
+});
+
+it('persists independent metadata click switches and renders plain labels when disabled', function () {
+    DB::table('deforestory_display_settings')->updateOrInsert(['id' => 1], ['category_clickable' => true, 'region_clickable' => true]);
+    createDeforestationStory(['status' => 'publish', 'category_id' => 'Kategori toggle', 'category_en' => 'Toggle category', 'region_id' => 'Daerah toggle', 'region_en' => 'Toggle region']);
+    $cms = \Livewire\Livewire::test(\App\Livewire\DeforestoryIndex::class)
+        ->call('toggleMetadataLink', 'category')->assertSet('categoryClickable', false);
+    foreach (['id', 'en'] as $locale) {
+        $this->get(route('deforestation.index', ['locale' => $locale]))->assertOk()
+            ->assertDontSee('data-category-link', false)->assertSee('data-region-link', false);
+    }
+    $cms->call('toggleMetadataLink', 'region')->assertSet('regionClickable', false);
+    \Livewire\Livewire::test(\App\Livewire\DeforestoryIndex::class)->assertSet('categoryClickable', false)->assertSet('regionClickable', false);
+    $this->get(route('deforestation.index', ['locale' => 'id', 'category' => 'unmatched', 'region' => 'unmatched']))
+        ->assertOk()->assertSee('Kategori toggle')->assertSee('Daerah toggle')
+        ->assertDontSee('data-category-link', false)->assertDontSee('data-region-link', false);
+    $this->get(URL::temporarySignedRoute('deforestation.preview.index', now()->addHour(), ['locale' => 'en']))
+        ->assertOk()->assertSee('Toggle category')->assertDontSee('data-category-link', false)->assertDontSee('data-region-link', false);
+    $cms->call('toggleMetadataLink', 'category')->call('toggleMetadataLink', 'region');
+    $this->get(route('deforestation.index', ['locale' => 'id']))->assertSee('data-category-link', false)->assertSee('data-region-link', false);
+});
+
 function createDeforestationStory(array $overrides = []): object
 {
     $values = [
@@ -522,4 +553,30 @@ it('does not expose draft stories through the public API', function () {
         ->assertOk()
         ->assertJsonMissing(['id' => $draft->id])
         ->assertJsonFragment(['id' => $published->id]);
+});
+
+it('filters story categories and regions through separately signed preview links', function () {
+    $story = createDeforestationStory(['title_id' => 'Filter Target', 'category_id' => 'Kategori Unik', 'region_id' => 'Daerah Unik']);
+    $sameCategory = createDeforestationStory(['title_id' => 'Filter Category Match', 'category_id' => 'Kategori Unik', 'region_id' => 'Daerah Lain']);
+    $sameRegion = createDeforestationStory(['title_id' => 'Filter Region Match', 'category_id' => 'Kategori Lain', 'region_id' => 'Daerah Unik']);
+    $response = $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.index', ['locale' => 'id']))->assertOk();
+    $document = new DOMDocument();
+    @$document->loadHTML($response->getContent());
+    $xpath = new DOMXPath($document);
+    $categoryUrl = $xpath->query('//a[@data-category-link and normalize-space(.)="Kategori Unik"]')->item(0)->getAttribute('href');
+    $regionUrl = $xpath->query('//a[@data-region-link and normalize-space(.)="Daerah Unik"]')->item(0)->getAttribute('href');
+    expect($xpath->query('//a//a')->length)->toBe(0);
+    $this->get($categoryUrl)->assertOk()->assertSee($story->title_id)->assertSee($sameCategory->title_id)->assertDontSee($sameRegion->title_id)->assertSee('Lihat semua artikel');
+    $this->get($regionUrl)->assertOk()->assertSee($story->title_id)->assertSee($sameRegion->title_id)->assertDontSee($sameCategory->title_id);
+    $this->get(str_replace('Kategori%20Unik', 'Kategori%20Lain', $categoryUrl))->assertForbidden();
+});
+
+it('filters public localized metadata while excluding drafts', function () {
+    $published = createDeforestationStory(['title_en' => 'Public Filter Match', 'status' => 'publish', 'category_en' => 'Unique Category', 'region_en' => 'Unique Region']);
+    $draft = createDeforestationStory(['title_en' => 'Hidden Filter Draft', 'category_en' => 'Unique Category', 'region_en' => 'Unique Region']);
+    $other = createDeforestationStory(['title_en' => 'Other Filter Story', 'status' => 'publish', 'category_en' => 'Other Category', 'region_en' => 'Other Region']);
+    foreach (['category' => 'Unique Category', 'region' => 'Unique Region'] as $field => $value) {
+        $this->get(route('deforestation.index', ['locale' => 'en', $field => $value]))->assertOk()->assertSee($published->title_en)->assertDontSee($draft->title_en)->assertDontSee($other->title_en);
+    }
+    $this->get(route('deforestation.index', ['locale' => 'en', 'category' => 'Unknown category']))->assertOk()->assertSee('No deforestation stories are available yet.');
 });

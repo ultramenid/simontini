@@ -215,7 +215,12 @@
 
 .story-gallery-shell {
   position: relative;
-  margin: 2.5rem 0;
+  margin: 24px 0;
+}
+
+.story-gallery-shell > .story-content-gallery {
+  align-items: flex-start;
+  overflow-y: hidden;
 }
 
 .story-content-gallery {

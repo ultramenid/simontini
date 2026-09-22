@@ -10,6 +10,90 @@ use Livewire\Livewire;
 
 uses(DatabaseTransactions::class);
 
+it('saves bilingual article footers and allows clearing them on edit', function () {
+    Livewire::test(DeforestoryAdd::class)
+        ->set('title_id', 'Footer test ID')->set('title_en', 'Footer test EN')
+        ->set('desrkirpsi_id', 'Ringkasan')->set('desrkirpsi_en', 'Summary')
+        ->set('footer_id', '<p><strong>PENULIS</strong> Nama</p>')
+        ->set('footer_en', '<p><em>AUTHOR</em> Name</p>')
+        ->call('save')->assertHasNoErrors();
+    $story = DB::table('deforestory')->where('title_id', 'Footer test ID')->first();
+    expect($story->footer_id)->toBe('<p><strong>PENULIS</strong> Nama</p>');
+    Livewire::test(DeforestoryAdd::class, ['deforestoryId' => $story->id])
+        ->assertSet('footer_en', '<p><em>AUTHOR</em> Name</p>')
+        ->set('footer_id', '')->call('save')->assertHasNoErrors();
+    expect(DB::table('deforestory')->where('id', $story->id)->value('footer_id'))->toBe('');
+});
+
+it('saves and removes an independent bilingual region without creating an article', function () {
+    $count = DB::table('deforestory')->count();
+    $key = base64_encode(json_encode(['id' => 'Daerah uji mandiri', 'en' => 'Independent test region']));
+    $component = Livewire::test(DeforestoryAdd::class)
+        ->set('region_id_custom', 'Daerah uji mandiri')
+        ->set('region_en_custom', 'Independent test region')
+        ->call('saveRegion')->assertHasNoErrors()->assertSet('region_pair', $key);
+    Livewire::test(DeforestoryAdd::class)->assertViewHas('regionOptions', fn ($options) => collect($options)->firstWhere('key', $key)['count'] === 0);
+    $component->call('deleteRegion', $key)->assertHasNoErrors()->assertSet('region_pair', '')->assertDispatched('deforestory-region-deleted');
+    Livewire::test(DeforestoryAdd::class)->assertViewHas('regionOptions', fn ($options) => ! collect($options)->contains('key', $key));
+    expect(DB::table('deforestory')->count())->toBe($count);
+});
+
+it('removes an unused category persistently and clears its selection', function () {
+    $key = base64_encode(json_encode(['id' => 'Kategori hapus uji', 'en' => 'Delete test category']));
+    Livewire::test(DeforestoryAdd::class)
+        ->set('category_id_custom', 'Kategori hapus uji')
+        ->set('category_en_custom', 'Delete test category')
+        ->call('saveCategory')
+        ->call('deleteCategory', $key)
+        ->assertSet('category_pair', '')
+        ->assertHasNoErrors();
+    Livewire::test(DeforestoryAdd::class)->assertViewHas('categoryOptions', fn ($options) => ! collect($options)->contains('key', $key));
+    expect(DB::table('deforestory_categories')->where('pair_hash', hash('sha256', $key))->value('deleted_at'))->not->toBeNull();
+});
+
+it('counts category usage and prevents deletion of a category used by an article', function () {
+    $key = base64_encode(json_encode(['id' => 'Kategori terpakai uji', 'en' => 'Used test category']));
+    Livewire::test(DeforestoryAdd::class)
+        ->set('title_id', 'Artikel penggunaan kategori uji')
+        ->set('title_en', 'Category usage test article')
+        ->set('desrkirpsi_id', 'Ringkasan')
+        ->set('desrkirpsi_en', 'Summary')
+        ->set('category_pair', $key)
+        ->call('save')->assertHasNoErrors();
+    Livewire::test(DeforestoryAdd::class)
+        ->assertViewHas('categoryOptions', fn ($options) => collect($options)->firstWhere('key', $key)['count'] === 1)
+        ->call('deleteCategory', $key)
+        ->assertHasErrors('category_pair');
+    expect(DB::table('deforestory')->where('title_id', 'Artikel penggunaan kategori uji')->value('category_id'))->toBe('Kategori terpakai uji');
+});
+
+it('saves a bilingual category independently and makes it available to another article form', function () {
+    $count = DB::table('deforestory')->count();
+    $key = base64_encode(json_encode(['id' => 'Kategori mandiri uji', 'en' => 'Standalone test category']));
+    $component = Livewire::test(DeforestoryAdd::class)
+        ->set('category_pair', '__custom__')
+        ->set('category_id_custom', ' Kategori mandiri uji ')
+        ->set('category_en_custom', ' Standalone test category ')
+        ->call('saveCategory')
+        ->assertHasNoErrors()
+        ->assertSet('category_pair', $key)
+        ->assertDispatched('deforestory-category-saved');
+
+    expect(DB::table('deforestory')->count())->toBe($count);
+    $component->set('category_id_custom', 'Kategori mandiri uji')
+        ->set('category_en_custom', 'Standalone test category')
+        ->call('saveCategory')->assertHasNoErrors();
+    expect(DB::table('deforestory_categories')->where('pair_hash', hash('sha256', $key))->count())->toBe(1);
+    Livewire::test(DeforestoryAdd::class)->assertSee('Kategori mandiri uji / Standalone test category');
+});
+
+it('requires both category translations for independent saving', function () {
+    Livewire::test(DeforestoryAdd::class)
+        ->set('category_id_custom', '   ')
+        ->call('saveCategory')
+        ->assertHasErrors(['category_id_custom' => 'required', 'category_en_custom' => 'required']);
+});
+
 it('provides a bilingual default Tiptap template with three images and the requested paragraph order', function () {
     $component = new DeforestoryAdd;
 
@@ -233,13 +317,13 @@ it('renders Deforestory categories on public story cards when available', functi
 
     $this->get(route('deforestation.index', ['locale' => 'id']))
         ->assertOk()
-        ->assertSee('Tambang | Gorontalo')
+        ->assertSeeInOrder(['Tambang', ' | ', 'Gorontalo'])
         ->assertSee('font-size: 18px;', false)
         ->assertSee('Cerita Kategori Tambang');
 
     $this->get(route('deforestation.index', ['locale' => 'en']))
         ->assertOk()
-        ->assertSee('Mining | Gorontalo')
+        ->assertSeeInOrder(['Mining', ' | ', 'Gorontalo'])
         ->assertSee('Mining Category Story');
 
     expect($story->category)

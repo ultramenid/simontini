@@ -70,13 +70,26 @@
     <main>
         <section id="publikasi" class="scroll-mt-24">
             <div class="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+                @if (filled($filters['category'] ?? null) || filled($filters['region'] ?? null))
+                    <div class="mb-8 flex flex-wrap items-center gap-4">
+                        <h2 class="text-xl font-bold text-[#376A64]">
+                            @if (filled($filters['category'] ?? null))
+                                {{ $locale === 'en' ? 'Category' : 'Kategori' }}: {{ $filters['category'] }}
+                            @endif
+                            @if (filled($filters['region'] ?? null))
+                                {{ $locale === 'en' ? 'Region' : 'Daerah' }}: {{ $filters['region'] }}
+                            @endif
+                        </h2>
+                        <a data-reset-filter href="{{ $resetUrl }}#publikasi" class="text-sm underline">{{ $locale === 'en' ? 'View all stories' : 'Lihat semua artikel' }}</a>
+                    </div>
+                @endif
                 <div class="space-y-24 sm:space-y-28">
                     @forelse ($storyGroups as $month => $monthStories)
                     <section class="scroll-mt-40">
                         <h2 class="mb-8 text-2xl font-bold leading-relaxed tracking-[-0.05em] text-[#376A64] sm:text-3xl">{{ $month }}</h2>
                         <div class="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 xl:grid-cols-4 xl:gap-x-7">
                             @foreach ($monthStories as $story)
-                                <x-deforestation-story-card :story="$story" :locale="$locale" :is-preview="$isPreview" />
+                                <x-deforestation-story-card :story="$story" :locale="$locale" :is-preview="$isPreview" :category-clickable="$categoryClickable" :region-clickable="$regionClickable" />
                             @endforeach
                         </div>
                     </section>

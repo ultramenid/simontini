@@ -46,6 +46,8 @@ class DeforestoryAdd extends Component
 
     public string $category_en_custom = '';
 
+    public string $categorySaveMessage = '';
+
     public string $region = '';
 
     public string $region_pair = '';
@@ -57,6 +59,8 @@ class DeforestoryAdd extends Component
     public string $region_id_custom = '';
 
     public string $region_en_custom = '';
+
+    public string $regionSaveMessage = '';
 
     public int $meta_font_size = 14;
 
@@ -71,6 +75,10 @@ class DeforestoryAdd extends Component
     public string $content_id = '';
 
     public string $content_en = '';
+
+    public string $footer_id = '';
+
+    public string $footer_en = '';
 
     public string $status = 'draft';
 
@@ -108,6 +116,8 @@ class DeforestoryAdd extends Component
         $this->date = $item->date;
         $this->content_id = $item->content_id;
         $this->content_en = $item->content_en;
+        $this->footer_id = $item->footer_id ?? '';
+        $this->footer_en = $item->footer_en ?? '';
         $this->status = $item->status;
         $this->is_locked = (bool) ($item->is_locked ?? false);
         $this->currentImageId = $item->image_id;
@@ -142,6 +152,8 @@ class DeforestoryAdd extends Component
             'date' => ['required', 'date'],
             'content_id' => ['required', 'string'],
             'content_en' => ['required', 'string'],
+            'footer_id' => ['nullable', 'string'],
+            'footer_en' => ['nullable', 'string'],
             'status' => ['required', Rule::in(['publish', 'draft'])],
             'is_locked' => ['boolean'],
         ];
@@ -252,6 +264,107 @@ class DeforestoryAdd extends Component
         return $this->redirectRoute('cms.deforestory', navigate: true);
     }
 
+    public function saveCategory(): void
+    {
+        $this->categorySaveMessage = '';
+        $this->category_id_custom = trim($this->category_id_custom);
+        $this->category_en_custom = trim($this->category_en_custom);
+        $labels = $this->validate([
+            'category_id_custom' => ['required', 'string', 'max:100'],
+            'category_en_custom' => ['required', 'string', 'max:100'],
+        ]);
+
+        $id = $labels['category_id_custom'];
+        $en = $labels['category_en_custom'];
+        $key = $this->pairKey($id, $en);
+        DB::table('deforestory_categories')->insertOrIgnore([
+            'label_id' => $id,
+            'label_en' => $en,
+            'pair_hash' => hash('sha256', $key),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('deforestory_categories')->where('pair_hash', hash('sha256', $key))
+            ->update(['deleted_at' => null]);
+
+        $this->category_id = $id;
+        $this->category_en = $en;
+        $this->category_pair = $key;
+        $this->categorySaveMessage = 'Kategori tersimpan dan dipilih. Simpan artikel untuk menerapkannya.';
+        $this->dispatch('deforestory-category-saved', key: $key, label: $id.' / '.$en);
+        $this->reset('category_id_custom', 'category_en_custom');
+    }
+
+    public function deleteCategory(string $key): void
+    {
+        $this->resetErrorBag('category_pair');
+        $category = collect($this->categoryOptions())->firstWhere('key', $key);
+        if (! $category) {
+            return;
+        }
+        if ($category['count'] > 0) {
+            $this->addError('category_pair', 'Kategori masih digunakan oleh '.$category['count'].' artikel Deforestory. Ubah kategori artikel tersebut terlebih dahulu.');
+            return;
+        }
+
+        DB::table('deforestory_categories')->updateOrInsert(
+            ['pair_hash' => hash('sha256', $key)],
+            ['label_id' => $category['id'], 'label_en' => $category['en'],
+                'deleted_at' => now(), 'updated_at' => now()],
+        );
+        if ($this->category_pair === $key) {
+            $this->reset('category_pair', 'category_id', 'category_en', 'category');
+        }
+        $this->categorySaveMessage = 'Kategori dihapus. Artikel Deforestory tetap tersimpan.';
+        $this->dispatch('deforestory-category-deleted');
+    }
+
+    public function saveRegion(): void
+    {
+        $this->regionSaveMessage = '';
+        $this->region_id_custom = trim($this->region_id_custom);
+        $this->region_en_custom = trim($this->region_en_custom);
+        $this->validate([
+            'region_id_custom' => ['required', 'string', 'max:100'],
+            'region_en_custom' => ['required', 'string', 'max:100'],
+        ]);
+        $id = $this->region_id_custom;
+        $en = $this->region_en_custom;
+        $key = $this->pairKey($id, $en);
+        DB::table('deforestory_regions')->insertOrIgnore([
+            'label_id' => $id, 'label_en' => $en, 'pair_hash' => hash('sha256', $key),
+            'created_at' => now(), 'updated_at' => now(),
+        ]);
+        DB::table('deforestory_regions')->where('pair_hash', hash('sha256', $key))->update(['deleted_at' => null]);
+        $this->region_id = $id;
+        $this->region_en = $en;
+        $this->region_pair = $key;
+        $this->regionSaveMessage = 'Daerah tersimpan dan dipilih. Simpan artikel untuk menerapkannya.';
+        $this->dispatch('deforestory-region-saved', key: $key, label: $id.' / '.$en);
+        $this->reset('region_id_custom', 'region_en_custom');
+    }
+
+    public function deleteRegion(string $key): void
+    {
+        $this->resetErrorBag('region_pair');
+        $region = collect($this->regionOptions())->firstWhere('key', $key);
+        if (! $region) return;
+        if ($region['count'] > 0) {
+            $this->addError('region_pair', 'Daerah masih digunakan oleh '.$region['count'].' artikel Deforestory. Ubah daerah artikel tersebut terlebih dahulu.');
+            return;
+        }
+        DB::table('deforestory_regions')->updateOrInsert(
+            ['pair_hash' => hash('sha256', $key)],
+            ['label_id' => $region['id'], 'label_en' => $region['en'], 'deleted_at' => now(), 'updated_at' => now()],
+        );
+        if ($this->region_pair === $key) {
+            $this->reset('region_pair', 'region_id', 'region_en', 'region');
+        }
+        $this->regionSaveMessage = 'Daerah dihapus. Artikel Deforestory tetap tersimpan.';
+        $this->dispatch('deforestory-region-deleted');
+    }
+
     public function render()
     {
         return view('livewire.deforestory-add', [
@@ -286,15 +399,24 @@ class DeforestoryAdd extends Component
             ->filter(fn (array $category): bool => filled($category['id']) || filled($category['en']))
             ->all();
 
-        return collect([...$existing, ...$fallback])
-            ->map(function (array $category): array {
+        $registry = DB::table('deforestory_categories')->get();
+        $deleted = $registry->whereNotNull('deleted_at')->pluck('pair_hash')->all();
+        $counts = collect($existing)->countBy(fn (array $category) => $this->pairKey($category['id'], $category['en']));
+        $saved = $registry->whereNull('deleted_at')
+            ->map(fn ($category): array => ['id' => $category->label_id, 'en' => $category->label_en])
+            ->all();
+
+        return collect([...$saved, ...$existing, ...$fallback])
+            ->map(function (array $category) use ($counts): array {
                 $category['id'] = trim((string) ($category['id'] ?? ''));
                 $category['en'] = trim((string) ($category['en'] ?? ''));
                 $category['key'] = $this->pairKey($category['id'], $category['en']);
+                $category['count'] = $counts->get($category['key'], 0);
 
                 return $category;
             })
             ->unique('key')
+            ->filter(fn (array $category): bool => $category['count'] > 0 || ! in_array(hash('sha256', $category['key']), $deleted, true))
             ->sortBy('id')
             ->values()
             ->all();
@@ -335,15 +457,22 @@ class DeforestoryAdd extends Component
             ->filter(fn (array $region): bool => filled($region['id']) || filled($region['en']))
             ->all();
 
-        return collect([...$existing, ...$fallback])
-            ->map(function (array $region): array {
+        $registry = DB::table('deforestory_regions')->get();
+        $deleted = $registry->whereNotNull('deleted_at')->pluck('pair_hash')->all();
+        $counts = collect($existing)->countBy(fn (array $region) => $this->pairKey($region['id'], $region['en']));
+        $saved = $registry->whereNull('deleted_at')->map(fn ($region): array => ['id' => $region->label_id, 'en' => $region->label_en])->all();
+
+        return collect([...$saved, ...$existing, ...$fallback])
+            ->map(function (array $region) use ($counts): array {
                 $region['id'] = trim((string) ($region['id'] ?? ''));
                 $region['en'] = trim((string) ($region['en'] ?? ''));
                 $region['key'] = $this->pairKey($region['id'], $region['en']);
+                $region['count'] = $counts->get($region['key'], 0);
 
                 return $region;
             })
             ->unique('key')
+            ->filter(fn (array $region): bool => $region['count'] > 0 || ! in_array(hash('sha256', $region['key']), $deleted, true))
             ->sortBy('id')
             ->values()
             ->all();

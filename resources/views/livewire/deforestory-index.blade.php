@@ -47,6 +47,30 @@
         </div>
     </div>
 
+    <section x-data="{ expanded: false }" class="mb-6 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+        <button type="button" x-on:click="expanded = !expanded" :aria-expanded="expanded.toString()" aria-controls="metadata-settings-panel" class="flex w-full items-center justify-between gap-3 text-left">
+            <span class="text-sm font-semibold text-gray-900">Klik kategori dan daerah</span>
+            <span class="text-xs font-semibold text-[#376A64]" x-text="expanded ? '− Minimize' : '+ Tampilkan'"></span>
+        </button>
+        <div id="metadata-settings-panel" x-cloak x-show="expanded" x-collapse.duration.300ms>
+        <p class="mt-1 text-sm text-gray-500">Berlaku untuk semua kartu di halaman publik dan preview. Saat OFF, label tetap tampil sebagai teks. Perubahan langsung tersimpan.</p>
+        <div class="mt-4 flex flex-wrap gap-4">
+            @foreach (['category' => 'Kategori', 'region' => 'Daerah'] as $field => $label)
+                @php
+                    $enabled = $field === 'category' ? $categoryClickable : $regionClickable;
+                @endphp
+                <button type="button" role="switch" aria-checked="{{ $enabled ? 'true' : 'false' }}" aria-label="Klik {{ $label }}" wire:click="toggleMetadataLink('{{ $field }}')" wire:loading.attr="disabled" wire:target="toggleMetadataLink" class="inline-flex items-center gap-3 px-2 py-2 text-sm font-semibold disabled:opacity-60">
+                    <span>{{ $label }}</span>
+                    <span aria-hidden="true" style="display: inline-block; position: relative; width: 44px; height: 24px; border-radius: 999px !important; background-color: {{ $enabled ? '#376A64' : '#9ca3af' }};">
+                        <span style="position: absolute; top: 3px; left: {{ $enabled ? '23px' : '3px' }}; width: 18px; height: 18px; border-radius: 999px !important; background: white;"></span>
+                    </span>
+                    <span class="text-xs text-gray-500">{{ $enabled ? 'ON' : 'OFF' }}</span>
+                </button>
+            @endforeach
+        </div>
+        </div>
+    </section>
+
     @if (session('success'))
         <div
             x-data="{ visible: true }"
@@ -59,15 +83,17 @@
         </div>
     @endif
 
-    <form wire:submit="saveGlobalPreviewPassword" class="mb-6 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-        <div class="flex flex-col gap-5 lg:flex-row lg:items-end">
+    <form x-data="{ expanded: false }" wire:submit="saveGlobalPreviewPassword" class="mb-6 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+        <button type="button" x-on:click="expanded = !expanded" :aria-expanded="expanded.toString()" aria-controls="preview-password-panel" class="flex w-full items-center justify-between gap-3 text-left">
+            <span class="flex flex-wrap items-center gap-2">
+                <span class="text-sm font-bold text-gray-900">Password Global Preview</span>
+                <span class="text-xs text-gray-500">{{ $hasGlobalPreviewPassword ? 'Sudah diatur' : 'Belum diatur' }}</span>
+            </span>
+            <span class="text-xs font-semibold text-[#376A64]" x-text="expanded ? '− Minimize' : '+ Tampilkan'"></span>
+        </button>
+        <div id="preview-password-panel" x-cloak x-show="expanded" x-collapse.duration.300ms>
+        <div class="pt-4 flex flex-col gap-5 lg:flex-row lg:items-end">
             <div class="flex-1">
-                <div class="flex items-center gap-2">
-                    <h2 class="text-sm font-bold text-gray-900">Password Global Preview</h2>
-                    <span class="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide {{ $hasGlobalPreviewPassword ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-800' }}">
-                        {{ $hasGlobalPreviewPassword ? 'Sudah diatur' : 'Belum diatur' }}
-                    </span>
-                </div>
                 <p class="mt-1 text-xs leading-5 text-gray-500">Satu password ini digunakan untuk membuka semua artikel Deforestory yang dikunci. Mengganti password akan membatalkan akses pengunjung sebelumnya.</p>
 
                 @if ($hasGlobalPreviewPassword)
@@ -106,6 +132,7 @@
                 <span wire:loading.remove wire:target="saveGlobalPreviewPassword">{{ $hasGlobalPreviewPassword ? 'Ganti Password' : 'Simpan Password' }}</span>
                 <span wire:loading wire:target="saveGlobalPreviewPassword">Menyimpan...</span>
             </button>
+        </div>
         </div>
     </form>
 
