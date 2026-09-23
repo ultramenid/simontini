@@ -43,7 +43,7 @@ it('rejects weak passwords and creates a user with a hashed strong password', fu
         ->set('email', 'Editor@Simontini.test')
         ->set('roleId', config('cms.role_ids.editor'));
 
-    foreach (['short1!A', 'alllowercase123!', 'NoNumbersHere!!', 'NoSymbols12345', 'Str0ng!Passw0rd'] as $i => $password) {
+    foreach (['Sh0rt!A', 'alllowercase123!', 'NoNumbersHere!!', 'NoSymbols12345', 'Str0ng!Passw0rd'] as $i => $password) {
         $component->set('password', $password)->set('password_confirmation', $i === 4 ? 'different' : $password)
             ->call('save')->assertHasErrors('password');
     }

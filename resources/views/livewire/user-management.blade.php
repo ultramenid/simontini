@@ -57,7 +57,7 @@
                      get checks() {
                          const pw = this.pw;
                          return [
-                             ['Minimal 12 karakter', pw.length >= 12],
+                             ['Minimal 8 karakter', pw.length >= 8],
                              ['Huruf kecil (a-z)', /\p{Ll}/u.test(pw)],
                              ['Huruf besar (A-Z)', /\p{Lu}/u.test(pw)],
                              ['Angka (0-9)', /\p{N}/u.test(pw)],

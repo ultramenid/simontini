@@ -46,7 +46,7 @@ class UserManagement extends Component
 
     public static function passwordRule(): Password
     {
-        return Password::min(12)->max(128)->letters()->mixedCase()->numbers()->symbols();
+        return Password::min(8)->max(128)->letters()->mixedCase()->numbers()->symbols();
     }
 
     protected function rules(): array
