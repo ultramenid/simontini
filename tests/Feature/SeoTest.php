@@ -141,3 +141,16 @@ it('serves a scaled-down copy of large story photos and keeps small ones as they
         ->and(\App\Support\DeforestationStoryMedia::displayImageUrl('deforestory/id/small.jpg', 800))
         ->toBe('https://simontini.id/storage/deforestory/id/small.jpg');
 });
+
+it('builds llms.txt from published stories on each request', function () {
+    DB::table('deforestory')->delete();
+    $story = seoStory(['status' => 'publish', 'title_id' => 'Hutan & Sawit', 'desrkirpsi_en' => "Line one\n<b>bold</b>"]);
+    seoStory(['title_id' => 'Draft rahasia']);
+
+    $this->get('/llms.txt')
+        ->assertOk()
+        ->assertHeader('Content-Type', 'text/plain; charset=UTF-8')
+        ->assertSee('- [Hutan & Sawit]('.route('deforestation.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $story->slug]).')', false)
+        ->assertSee('Line one bold', false)
+        ->assertDontSee('Draft rahasia');
+});

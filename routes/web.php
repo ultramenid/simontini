@@ -18,6 +18,7 @@ use App\Http\Middleware\hasSession;
 use App\Http\Middleware\setLanguage;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SitemapController;
+use Illuminate\Support\Facades\DB;
 
 Route::redirect('/', '/id');
 
@@ -29,6 +30,17 @@ Route::get('/embed/data-visualizations/{id}', [DataVisualizationController::clas
     ->name('data-visualizations.embed');
 
 Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
+
+// Built from the database on each request, so new stories appear without a deploy.
+Route::get('/llms.txt', fn () => response()
+    ->view('seo.llms', [
+        'stories' => DB::table('deforestory')
+            ->where('status', 'publish')
+            ->where(fn ($query) => $query->where('is_locked', false)->orWhereNull('is_locked'))
+            ->orderByDesc('date')
+            ->get(['id', 'slug', 'date', 'title_id', 'desrkirpsi_id', 'desrkirpsi_en']),
+    ])
+    ->header('Content-Type', 'text/plain; charset=UTF-8'))->name('llms');
 // stadi 2024
 Route::get('/id/status-deforestasi-indonesia-2024', [InsightContoller::class, 'stadi2024'])->name('stadi2024');
 Route::get('/en/status-of-deforestation-in-indonesia-2024', [InsightContoller::class, 'stadi2024EN'])->name('stadi2024EN');
