@@ -33,21 +33,21 @@ class InsightContoller extends Controller
         return view('frontends.stadi2024', $this->report(self::STADI_2024, 'id',
             'Status Deforestasi Indonesia 2024 - Simontini',
             'Tahun lalu Auriga merilis data deforestasi 2023 pada Maret. Mulai tahun ini, deforestasi tahunan akan dirilis setiap Januari.',
-            '2025-01'));
+            '2025-01', asset('assets/stadi2024/meta-insight-2024.jpg')));
     }
 
     public function stadi2024EN(){
         return view('frontends.stadi2024EN', $this->report(self::STADI_2024, 'en',
             'Status of Deforestation in Indonesia 2024 - Simontini',
             'Auriga released deforestation data for 2023 in March last year. Commencing this year, it will release annual deforestation data each January.',
-            '2025-01'));
+            '2025-01', asset('assets/stadi2024/meta-insight-2024.jpg')));
     }
 
     public function stadi2024JP(){
         return view('frontends.stadi2024JP', $this->report(self::STADI_2024, 'ja',
             'インドネシアにおける2024年の森林破壊の現状 - Simontini',
             'Auriga released deforestation data for 2023 in March last year. Commencing this year, it will release annual deforestation data each January.',
-            '2025-01'));
+            '2025-01', asset('assets/stadi2024/meta-insight-2024.jpg')));
     }
 
     public function stadi2025(){
@@ -63,8 +63,9 @@ class InsightContoller extends Controller
     }
 
     /** Meta for an annual STADI report: language alternates plus Article structured data. */
-    private function report(array $paths, string $language, string $title, string $description, ?string $published = null): array
+    private function report(array $paths, string $language, string $title, string $description, ?string $published = null, ?string $image = null): array
     {
+        $image ??= asset('assets/meta-image-2025.jpg');
         $alternates = array_map(fn ($path) => url($path), $paths);
 
         return [
@@ -72,13 +73,14 @@ class InsightContoller extends Controller
             'description' => $description,
             'alternates' => $alternates,
             'ogType' => 'article',
+            'metaImage' => $image,
             'structuredData' => array_filter([
                 '@type' => 'Article',
                 'headline' => str($title)->beforeLast(' - Simontini')->toString(),
                 'description' => $description,
                 'inLanguage' => $language,
                 'url' => $alternates[$language],
-                'image' => [asset('assets/meta-image-2025.jpg')],
+                'image' => [$image],
                 'datePublished' => $published,
                 'author' => config('seo.organization'),
                 'publisher' => config('seo.organization'),

@@ -265,6 +265,25 @@ it('shares a small 1200x630 crop of the story image on detail and list pages', f
         ->assertSee($metaTag, false);
 });
 
+it('shares a random published story image on the list page, skipping drafts and videos', function () {
+    DB::table('deforestory')->delete();
+    createDeforestationStory(['image_id' => 'https://cdn.test/draft.jpg']);
+    createDeforestationStory(['image_id' => 'https://cdn.test/clip.mp4', 'status' => 'publish']);
+    $fallback = '<meta property="og:image" content="'.asset('assets/meta-image-2025.jpg').'">';
+
+    $this->get(route('deforestation.index', ['locale' => 'id']))->assertOk()->assertSee($fallback, false);
+
+    createDeforestationStory(['image_id' => 'https://cdn.test/a.jpg', 'status' => 'publish']);
+    createDeforestationStory(['image_id' => 'https://cdn.test/b.jpg', 'status' => 'publish']);
+    $seen = collect(range(1, 20))->map(function () {
+        preg_match('/og:image" content="([^"]+)"/', $this->get(route('deforestation.index', ['locale' => 'id', 'category' => 'none']))->getContent(), $match);
+
+        return $match[1];
+    })->unique()->sort()->values()->all();
+
+    expect($seen)->toBe(['https://cdn.test/a.jpg', 'https://cdn.test/b.jpg']);
+});
+
 it('renders the hero image description below the detail image', function () {
     $story = createDeforestationStory([
         'image_id' => 'deforestory/id/hero.jpg',

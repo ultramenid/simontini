@@ -35,14 +35,14 @@
 
 <div id="parallax1" class="xl:hidden block md:h-screen h-[350px] overflow-hidden parallaxParent">
     <video autoplay loop muted playsinline class="h-[200%] relative top-[-130%] w-full object-cover">
-        <source src="https://simontini.id/assets/stadi2024/hero-1.MP4" type="video/mp4"> Your browser does not support the video tag.
+        <source src="/assets/stadi2024/hero-1.MP4" type="video/mp4"> Your browser does not support the video tag.
     </video>
 </div>
 
 
 <div id="parallax2" class="xl:block hidden h-screen overflow-hidden parallaxParent">
     <video autoplay loop muted playsinline class="h-[200%] relative top-[-130%] w-full object-center">
-        <source src="https://simontini.id/assets/stadi2024/hero-1.MP4" type="video/mp4"> Your browser does not support the video tag.
+        <source src="/assets/stadi2024/hero-1.MP4" type="video/mp4"> Your browser does not support the video tag.
     </video>
 </div>
 
@@ -73,8 +73,8 @@
     </div>
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative">
-    <a href="https://simontini.id/assets/stadi2024/raden-1-2.jpg" class="glightbox1 z-20" data-glightbox=" description: An aerial photo shows a cleared natural forest in the PT Anugerah Langkat Makmur concession. This photo was taken in February 2024.">
-        <img src="https://simontini.id/assets/stadi2024/raden-1-2.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out" />
+    <a href="/assets/stadi2024/raden-1-2.jpg" class="glightbox1 z-20" data-glightbox=" description: An aerial photo shows a cleared natural forest in the PT Anugerah Langkat Makmur concession. This photo was taken in February 2024.">
+        <img src="/assets/stadi2024/raden-1-2.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out" />
         <p class=" text-xs mt-2">An aerial photo shows a cleared natural forest in the PT Anugerah Langkat Makmur concession in Mandailing Natal of North Sumatra Province. photo: February 2024, ©Auriga Nusantara.</p>
     </a>
 </div>
@@ -210,8 +210,8 @@
 </div>
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative">
-    <a href="https://simontini.id/assets/stadi2024/raden-2.jpg" class="glightbox2 mt-4" data-glightbox=" description: Auriga Nusantara's monitoring team verified the presence of natural forest logging in PT Kayan Kaltara Coal's concession. This photo was taken in December 2024.">
-        <img src="https://simontini.id/assets/stadi2024/raden-2.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out" />
+    <a href="/assets/stadi2024/raden-2.jpg" class="glightbox2 mt-4" data-glightbox=" description: Auriga Nusantara's monitoring team verified the presence of natural forest logging in PT Kayan Kaltara Coal's concession. This photo was taken in December 2024.">
+        <img src="/assets/stadi2024/raden-2.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out" />
         <p class=" text-xs mt-2">Auriga Nusantara's monitoring team verified the presence of natural forest logging in PT Kayan Kaltara Coal's concession. This photo was taken in December 2024.</p>
     </a>
 
@@ -225,8 +225,8 @@
     </div>
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative">
-    <a href="https://simontini.id/assets/stadi2024/Stadi20242.jpg" class="glightbox3 mt-4">
-        <img src="https://simontini.id/assets/stadi2024/Stadi20242.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-10 hover:brightness-50 transition duration-300 ease-in-out" />
+    <a href="/assets/stadi2024/Stadi20242.jpg" class="glightbox3 mt-4">
+        <img src="/assets/stadi2024/Stadi20242.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-10 hover:brightness-50 transition duration-300 ease-in-out" />
     </a>
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative mt-6">
@@ -432,8 +432,8 @@
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative">
 
-    <a href="https://simontini.id/assets/stadi2024/Stadi20245.jpg" class="glightbox4 mt-4">
-        <img src="https://simontini.id/assets/stadi2024/Stadi20245.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-10 hover:brightness-50 transition duration-300 ease-in-out" />
+    <a href="/assets/stadi2024/Stadi20245.jpg" class="glightbox4 mt-4">
+        <img src="/assets/stadi2024/Stadi20245.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-10 hover:brightness-50 transition duration-300 ease-in-out" />
     </a>
     {{-- table-4 --}}
     <h3 class="text-simontini mt-6 font-bold mb-2">TOP TEN DEFORESTATION IN LOGGING CONCESSIONS (HPH/PBPH HHK-HA)</h3>
@@ -745,8 +745,8 @@
     <p class="mt-12 leading-relaxed">The majority of natural forest lost in Indonesia in 2024 constituted habitat for rare and protected species. The table/figure below shows the area of deforestation in habitats for iconic megafauna (flagship species) protected by regulations in Indonesia.</p>
 </div>
 <div class="max-w-5xl mx-auto px-4 z-20 relative">
-    <a href="https://simontini.id/assets/stadi2024/Stadi202411.jpg" class="glightbox5 mt-4">
-        <img src="https://simontini.id/assets/stadi2024/Stadi202411.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out" />
+    <a href="/assets/stadi2024/Stadi202411.jpg" class="glightbox5 mt-4">
+        <img src="/assets/stadi2024/Stadi202411.jpg" alt="Simontini - stadi 2024" class="w-full h-full mt-4 hover:brightness-50 transition duration-300 ease-in-out" />
     </a>
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
@@ -774,29 +774,29 @@
 <div x-data="{ currentSlide: 0, totalSlides: 4 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
     <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/1-biomassa-mhl.jpg" class="glightbox6 mt-4 gbox" data-glightbox=" description: Deforestation for biomass plantation within PT. Malinau Hijau Lestari’s concession in North Kalimantan. It might potentially legal due since the area has been released by the Ministry of Environment and Forestry and converted from forest area into Non-Forest Area. Photo: May 2024 ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/1-biomassa-mhl.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/1-biomassa-mhl.jpg" class="glightbox6 mt-4 gbox" data-glightbox=" description: Deforestation for biomass plantation within PT. Malinau Hijau Lestari’s concession in North Kalimantan. It might potentially legal due since the area has been released by the Ministry of Environment and Forestry and converted from forest area into Non-Forest Area. Photo: May 2024 ©AurigaNusantara">
+                <img src="/assets/stadi2024/1-biomassa-mhl.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation for biomass plantation within PT. Malinau Hijau Lestari’s concession in North Kalimantan. It might potentially legal due since the area has been released by the Ministry of Environment and Forestry and converted from forest area into Non-Forest Area. Photo: May 2024 ©AurigaNusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/1-biomassa-gorontalo.jpg" class="glightbox6 mt-4 gbox" data-glightbox="description: Deforestation of biomass plantation by PT. Banyan Tumbuh Lestari and PT. Inti Global Laksana in Gorontalo. It might potentially legal since the natural forest has been released by the Ministry of Environment and Forestry for palm oil expansion by both companies. However, ground truthing shows it was not palm oil but biomass plantation sourced by PT. Biomasa Jaya Abadi located within one of the company concession. Photo: May 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/1-biomassa-gorontalo.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/1-biomassa-gorontalo.jpg" class="glightbox6 mt-4 gbox" data-glightbox="description: Deforestation of biomass plantation by PT. Banyan Tumbuh Lestari and PT. Inti Global Laksana in Gorontalo. It might potentially legal since the natural forest has been released by the Ministry of Environment and Forestry for palm oil expansion by both companies. However, ground truthing shows it was not palm oil but biomass plantation sourced by PT. Biomasa Jaya Abadi located within one of the company concession. Photo: May 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/1-biomassa-gorontalo.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation of biomass plantation by PT. Banyan Tumbuh Lestari and PT. Inti Global Laksana in Gorontalo. It might potentially legal since the natural forest has been released by the Ministry of Environment and Forestry for palm oil expansion by both companies. However, ground truthing shows it was not palm oil but biomass plantation sourced by PT. Biomasa Jaya Abadi located within one of the company concession. Photo: May 2024, ©AurigaNusantara
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/1-imip.jpg" class="glightbox6 mt-4 gbox" data-glightbox=" description: Deforestation for mining and nickel industrial park Indonesia Morowali Industrial Park in Central Sulawesi. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/1-imip.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/1-imip.jpg" class="glightbox6 mt-4 gbox" data-glightbox=" description: Deforestation for mining and nickel industrial park Indonesia Morowali Industrial Park in Central Sulawesi. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/1-imip.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation for mining and nickel industrial park Indonesia Morowali Industrial Park in Central Sulawesi. Photo: December 2024, ©AurigaNusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/merauke-food-estate.jpg" class="glightbox6 mt-4 gbox" data-glightbox=" description: Deforestasi for food estate development in Merauke of South Papua. Photo: September 2024, ©Tempo">
-                <img src="https://simontini.id/assets/stadi2024/merauke-food-estate.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/merauke-food-estate.jpg" class="glightbox6 mt-4 gbox" data-glightbox=" description: Deforestasi for food estate development in Merauke of South Papua. Photo: September 2024, ©Tempo">
+                <img src="/assets/stadi2024/merauke-food-estate.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestasi for food estate development in Merauke of South Papua. Photo: September 2024, ©Tempo</p>
         </div>
@@ -934,35 +934,35 @@
 <div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
     <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/2-meranti-laksana.jpg" class="glightbox7 mt-4 gbox" data-glightbox=" description: Deforestation for timber plantation within PT. Meranti Laksana in West Kalimantan. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/2-meranti-laksana.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/2-meranti-laksana.jpg" class="glightbox7 mt-4 gbox" data-glightbox=" description: Deforestation for timber plantation within PT. Meranti Laksana in West Kalimantan. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/2-meranti-laksana.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation for timber plantation within PT. Meranti Laksana in West Kalimantan. Photo: December 2024, ©AurigaNusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/2-berau-prima-nusantara.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Deforestation within coal mining concession of PT. Berau Prima Nusantara in North Kalimantan. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/2-berau-prima-nusantara.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/2-berau-prima-nusantara.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Deforestation within coal mining concession of PT. Berau Prima Nusantara in North Kalimantan. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/2-berau-prima-nusantara.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation within coal mining concession of PT. Berau Prima Nusantara in North Kalimantan. Photo: December 2024, ©AurigaNusantara
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/2-kurnisa-sejahtera.jpg" class="glightbox7 mt-4 gbox" data-glightbox=" description: Deforestation within coal mining concession of PT. Kurnia Sejahtera in North Kalimantan. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/2-kurnisa-sejahtera.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/2-kurnisa-sejahtera.jpg" class="glightbox7 mt-4 gbox" data-glightbox=" description: Deforestation within coal mining concession of PT. Kurnia Sejahtera in North Kalimantan. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/2-kurnisa-sejahtera.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation within coal mining concession of PT. Kurnia Sejahtera in North Kalimantan. Photo: December 2024, ©AurigaNusantara </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/2-kayan-kaltara-coal.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description:  Deforestation within coal mining concession of PT. Kayan Kaltara Coal in North Kalimantan. Photo: December 2024 ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/2-kayan-kaltara-coal.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/2-kayan-kaltara-coal.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description:  Deforestation within coal mining concession of PT. Kayan Kaltara Coal in North Kalimantan. Photo: December 2024 ©AurigaNusantara">
+                <img src="/assets/stadi2024/2-kayan-kaltara-coal.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4"> Deforestation within coal mining concession of PT. Kayan Kaltara Coal in North Kalimantan. Photo: December 2024 ©AurigaNusantara        </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/2-phoenix-mill.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Giant pulp paper of PT. Phoenix Resources International in Tarakan Regency of North Kalimantan. Based on it raw material fulfilment data, the factory has been operating since 2024 by sourcing from concessions which deforested natural forest.">
-                <img src="https://simontini.id/assets/stadi2024/2-phoenix-mill.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/2-phoenix-mill.jpg" class="glightbox7 mt-4 gbox" data-glightbox="description: Giant pulp paper of PT. Phoenix Resources International in Tarakan Regency of North Kalimantan. Based on it raw material fulfilment data, the factory has been operating since 2024 by sourcing from concessions which deforested natural forest.">
+                <img src="/assets/stadi2024/2-phoenix-mill.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Giant pulp paper of PT. Phoenix Resources International in Tarakan Regency of North Kalimantan. Based on it raw material fulfilment data, the factory has been operating since 2024 by sourcing from concessions which deforested natural forest.</p>
         </div>
@@ -1012,38 +1012,38 @@
 <div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
     <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/3-mayawana.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: In 2024, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the timber plantation of PT. Mayawana Persada in West Kalimantan. Up to December 2024, the company continuously deforested the remaining natural forest within its concession. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/3-mayawana.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/3-mayawana.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: In 2024, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the timber plantation of PT. Mayawana Persada in West Kalimantan. Up to December 2024, the company continuously deforested the remaining natural forest within its concession. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/3-mayawana.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 In 2024, civil society coalition of Auriga Nusantara, Environmental Paper Network, Rainforest Action Network, Woods & Wayside International and Greenpeace International exposed the massive deforestation within the timber plantation of PT. Mayawana Persada in West Kalimantan. Up to December 2024, the company continuously deforested the remaining natural forest within its concession. Photo: December 2024, ©AurigaNusantara
                 </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/3-lahan-cakrawala.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforestation for timber plantation within the concession of PT. Lahan Cakrawala in West Kalimantan. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/3-lahan-cakrawala.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/3-lahan-cakrawala.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforestation for timber plantation within the concession of PT. Lahan Cakrawala in West Kalimantan. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/3-lahan-cakrawala.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top rounded-lg hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation for timber plantation within the concession of PT. Lahan Cakrawala in West Kalimantan. Photo: December 2024, ©AurigaNusantara
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/mayawana-maret.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Excavators are clearing natural forest in PT Mayawana Persada's timber plantation concession in West Kalimantan. Photo: March 2024 ©Auriga Nusantara">
-                <img src="https://simontini.id/assets/stadi2024/mayawana-maret.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/mayawana-maret.jpg" class="glightbox21 mt-4 gbox" data-glightbox=" description: Excavators are clearing natural forest in PT Mayawana Persada's timber plantation concession in West Kalimantan. Photo: March 2024 ©Auriga Nusantara">
+                <img src="/assets/stadi2024/mayawana-maret.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Excavators are clearing natural forest in PT Mayawana Persada's timber plantation concession in West Kalimantan. Photo: March 2024 ©Auriga Nusantara </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforesting natural forest for biomass plantation within the PT. Jaya Bumi Paser in East Kalimantan. Photo: May 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/3-jaya-bumi-paser.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/3-jaya-bumi-paser.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Deforesting natural forest for biomass plantation within the PT. Jaya Bumi Paser in East Kalimantan. Photo: May 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/3-jaya-bumi-paser.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforesting natural forest for biomass plantation within the PT. Jaya Bumi Paser in East Kalimantan. Photo: May 2024, ©AurigaNusantara
                 </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/3-babugus.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Natural forest cutting for road line of biomass plantation development within the concession of PT. Babugus Wahana Lestari in Central Kalimantan. Photo: August 2024 ©AurigaNusantara/Earthsight">
-                <img src="https://simontini.id/assets/stadi2024/3-babugus.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/3-babugus.jpg" class="glightbox21 mt-4 gbox" data-glightbox="description: Natural forest cutting for road line of biomass plantation development within the concession of PT. Babugus Wahana Lestari in Central Kalimantan. Photo: August 2024 ©AurigaNusantara/Earthsight">
+                <img src="/assets/stadi2024/3-babugus.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Natural forest cutting for road line of biomass plantation development within the concession of PT. Babugus Wahana Lestari in Central Kalimantan. Photo: August 2024 ©AurigaNusantara/Earthsight</p>
         </div>
@@ -1084,35 +1084,35 @@
 <div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
     <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/4-subussalam.jpg" class="glightbox20 mt-4 gbox" data-glightbox=" description: Deforestation for palm oil expansion. Ground truthing found no legal permit for palm oil plantation neighbouring to palm oil estate of PT. Laot Bangko and PT. Indo Sawit Perkasa in Subussalam Regency of Aceh. Photo: February 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/4-subussalam.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/4-subussalam.jpg" class="glightbox20 mt-4 gbox" data-glightbox=" description: Deforestation for palm oil expansion. Ground truthing found no legal permit for palm oil plantation neighbouring to palm oil estate of PT. Laot Bangko and PT. Indo Sawit Perkasa in Subussalam Regency of Aceh. Photo: February 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/4-subussalam.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation for palm oil expansion. Ground truthing found no legal permit for palm oil plantation neighbouring to palm oil estate of PT. Laot Bangko and PT. Indo Sawit Perkasa in Subussalam Regency of Aceh. Photo: February 2024, ©AurigaNusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/4-anugerah-langkat-makmur.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestation for palm oil expansion within the concession of PT. Anugerah Langkah Makmur in Mandailing Natal Regency of North Sumatera. Photo: February 2024, ©AurigaNusantara/Konsorsium Pembaruan Agraria">
-                <img src="https://simontini.id/assets/stadi2024/4-anugerah-langkat-makmur.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/4-anugerah-langkat-makmur.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestation for palm oil expansion within the concession of PT. Anugerah Langkah Makmur in Mandailing Natal Regency of North Sumatera. Photo: February 2024, ©AurigaNusantara/Konsorsium Pembaruan Agraria">
+                <img src="/assets/stadi2024/4-anugerah-langkat-makmur.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4 ">
                 Deforestation for palm oil expansion within the concession of PT. Anugerah Langkah Makmur in Mandailing Natal Regency of North Sumatera. Photo: February 2024, ©AurigaNusantara/Konsorsium Pembaruan Agraria
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/4-DRT.jpg" class="glightbox20 mt-4 gbox" data-glightbox=" description: Location within the logging concession of PT. Diamond Raya Timber in Riau. However, local testimonies and ground truthing exposed that the deforestation was for palm oil expansion. Ground truthing in February 2024 exposed similar case also found within the concession of PT. Anugerah Pratama Inspirasi in Bengkulu. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/4-DRT.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/4-DRT.jpg" class="glightbox20 mt-4 gbox" data-glightbox=" description: Location within the logging concession of PT. Diamond Raya Timber in Riau. However, local testimonies and ground truthing exposed that the deforestation was for palm oil expansion. Ground truthing in February 2024 exposed similar case also found within the concession of PT. Anugerah Pratama Inspirasi in Bengkulu. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/4-DRT.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Location within the logging concession of PT. Diamond Raya Timber in Riau. However, local testimonies and ground truthing exposed that the deforestation was for palm oil expansion. Ground truthing in February 2024 exposed similar case also found within the concession of PT. Anugerah Pratama Inspirasi in Bengkulu. Photo: December 2024, ©AurigaNusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/hph-bentara-arga-timber.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestation inside PT Bentara Arga Timber’s logging concession in Bengkulu. The locals’ testimonies and ground-truth’s documentation indicated the deforestation are for oil palm plantations. Photo: February 2024, ©Auriga Nusantara">
-                <img src="https://simontini.id/assets/stadi2024/hph-bentara-arga-timber.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/hph-bentara-arga-timber.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestation inside PT Bentara Arga Timber’s logging concession in Bengkulu. The locals’ testimonies and ground-truth’s documentation indicated the deforestation are for oil palm plantations. Photo: February 2024, ©Auriga Nusantara">
+                <img src="/assets/stadi2024/hph-bentara-arga-timber.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation inside PT Bentara Arga Timber’s logging concession in Bengkulu. The locals’ testimonies and ground-truth’s documentation indicated the deforestation are for oil palm plantations. Photo: February 2024, ©Auriga Nusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/4-pulau-lau-kalsel.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestation for palm oil expansion within the concession of PT. Bersama Sejahtera Sakti in Pulau Laut, Kotabaru Regency, South Kalimantan. Photo: May 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/4-pulau-lau-kalsel.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/4-pulau-lau-kalsel.jpg" class="glightbox20 mt-4 gbox" data-glightbox="description: Deforestation for palm oil expansion within the concession of PT. Bersama Sejahtera Sakti in Pulau Laut, Kotabaru Regency, South Kalimantan. Photo: May 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/4-pulau-lau-kalsel.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation for palm oil expansion within the concession of PT. Bersama Sejahtera Sakti in Pulau Laut, Kotabaru Regency, South Kalimantan. Photo: May 2024, ©AurigaNusantara</p>
         </div>
@@ -1166,23 +1166,23 @@
 <div x-data="{ currentSlide: 0, totalSlides: 3 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
     <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/5-bintang-delapan.jpg" class="glightbox8 mt-4 gbox" data-glightbox=" description: Deforestation within nickel mining concession of PT. Bintang Delapan Mineral in Central Sulawesi. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/5-bintang-delapan.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/5-bintang-delapan.jpg" class="glightbox8 mt-4 gbox" data-glightbox=" description: Deforestation within nickel mining concession of PT. Bintang Delapan Mineral in Central Sulawesi. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/5-bintang-delapan.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation within nickel mining concession of PT. Bintang Delapan Mineral in Central Sulawesi. Photo: December 2024, ©AurigaNusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/5-hengjaya.jpg" class="glightbox8 mt-4 gbox" data-glightbox="description: Deforestation within nickel mining concession of PT. Hengjaya Mineralindo in Morowali Regency, Central Sulawesi. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/5-hengjaya.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/5-hengjaya.jpg" class="glightbox8 mt-4 gbox" data-glightbox="description: Deforestation within nickel mining concession of PT. Hengjaya Mineralindo in Morowali Regency, Central Sulawesi. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/5-hengjaya.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation within nickel mining concession of PT. Hengjaya Mineralindo in Morowali Regency, Central Sulawesi. Photo: December 2024, ©AurigaNusantara
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/5-surya-cahaya-mineral.jpg" class="glightbox8 mt-4 gbox" data-glightbox="description: Road towards existing mining location within the nickel concession of PT. Surya Cahaya Mineral in North Konawe Regency, Southeast Sulawesi. At glance in background shows an open area caused by deforestation for nickel mining within the company concession. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/5-surya-cahaya-mineral.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/5-surya-cahaya-mineral.jpg" class="glightbox8 mt-4 gbox" data-glightbox="description: Road towards existing mining location within the nickel concession of PT. Surya Cahaya Mineral in North Konawe Regency, Southeast Sulawesi. At glance in background shows an open area caused by deforestation for nickel mining within the company concession. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/5-surya-cahaya-mineral.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Road towards existing mining location within the nickel concession of PT. Surya Cahaya Mineral in North Konawe Regency, Southeast Sulawesi. At glance in background shows an open area caused by deforestation for nickel mining within the company concession. Photo: December 2024, ©AurigaNusantara </p>
         </div>
@@ -1283,37 +1283,37 @@
 <div x-data="{ currentSlide: 0, totalSlides: 5 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
     <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/6-gag-nikel.jpg" class="glightbox9 mt-4 gbox" data-glightbox=" description:  Deforestation by nickel mine of PT. Gag Nickel in small island Gag in Raja Ampat Regency of Southwest Papua. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/6-gag-nikel.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/6-gag-nikel.jpg" class="glightbox9 mt-4 gbox" data-glightbox=" description:  Deforestation by nickel mine of PT. Gag Nickel in small island Gag in Raja Ampat Regency of Southwest Papua. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/6-gag-nikel.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation by nickel mine of PT. Gag Nickel in small island Gag in Raja Ampat Regency of Southwest Papua. Photo: December 2024, ©AurigaNusantara</p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/6-pt-ksm.jpg" class="glightbox9 mt-4 gbox" data-glightbox="description: Deforestation of nickel mining by PT. Kawei Sejahtera Mining is small island Kawei in Raja Ampat Regency of Southwest Papua. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/6-pt-ksm.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/6-pt-ksm.jpg" class="glightbox9 mt-4 gbox" data-glightbox="description: Deforestation of nickel mining by PT. Kawei Sejahtera Mining is small island Kawei in Raja Ampat Regency of Southwest Papua. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/6-pt-ksm.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation of nickel mining by PT. Kawei Sejahtera Mining is small island Kawei in Raja Ampat Regency of Southwest Papua. Photo: December 2024, ©AurigaNusantara
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/6-pt-ksp.jpg" class="glightbox9 mt-4 gbox" data-glightbox=" description: Deforestation by nickel mining activity of PT. Anugerah Surya Pratama in small island Manuram, Raja Ampat Regency of Southwest Papua. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/6-pt-ksp.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/6-pt-ksp.jpg" class="glightbox9 mt-4 gbox" data-glightbox=" description: Deforestation by nickel mining activity of PT. Anugerah Surya Pratama in small island Manuram, Raja Ampat Regency of Southwest Papua. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/6-pt-ksp.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Deforestation by nickel mining activity of PT. Anugerah Surya Pratama in small island Manuram, Raja Ampat Regency of Southwest Papua. Photo: December 2024, ©AurigaNusantara
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/6-batang-pele.jpg" class="glightbox9 mt-4 gbox" data-glightbox="description: In small island of Batang Pele in Raja Ampat Regency of Southwest Papua, a permit has been released for nickel mining of PT. Mulya Raymond Perkasa. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/6-batang-pele.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/6-batang-pele.jpg" class="glightbox9 mt-4 gbox" data-glightbox="description: In small island of Batang Pele in Raja Ampat Regency of Southwest Papua, a permit has been released for nickel mining of PT. Mulya Raymond Perkasa. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/6-batang-pele.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">In small island of Batang Pele in Raja Ampat Regency of Southwest Papua, a permit has been released for nickel mining of PT. Mulya Raymond Perkasa. Photo: December 2024, ©AurigaNusantara
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/6-imm-sarmi.jpeg" class="glightbox9 mt-4 gbox" data-glightbox="description: Lake and natural forest are threaten with extinction since a permit on the area has been released for PT. Iriana Mutiara Mining. Photo: December 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/6-imm-sarmi.jpeg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/6-imm-sarmi.jpeg" class="glightbox9 mt-4 gbox" data-glightbox="description: Lake and natural forest are threaten with extinction since a permit on the area has been released for PT. Iriana Mutiara Mining. Photo: December 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/6-imm-sarmi.jpeg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">Lake and natural forest are threaten with extinction since a permit on the area has been released for PT. Iriana Mutiara Mining. Photo: December 2024, ©AurigaNusantara</p>
         </div>
@@ -1431,16 +1431,16 @@
 <div x-data="{ currentSlide: 0, totalSlides: 2 }" @touchstart="startX = $event.touches[0].clientX" @touchmove="handleTouchMove($event)" class="relative bg-gray-100 pb-4 mt-12 max-w-5xl mx-auto z-20 overflow-hidden">
     <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/7-rawa-singkil.jpg" class="glightbox10 mt-4 gbox" data-glightbox="description: Deforestation for palm oil expansion within the Wildlife Reserve in Rawa Singkil of Aceh. Photo: February 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/7-rawa-singkil.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/7-rawa-singkil.jpg" class="glightbox10 mt-4 gbox" data-glightbox="description: Deforestation for palm oil expansion within the Wildlife Reserve in Rawa Singkil of Aceh. Photo: February 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/7-rawa-singkil.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation for palm oil expansion within the Wildlife Reserve in Rawa Singkil of Aceh. Photo: February 2024, ©AurigaNusantara
             </p>
         </div>
         <div class="swiper-slide w-full flex-shrink-0">
-            <a href="https://simontini.id/assets/stadi2024/7-tesso-nilo.jpg" class="glightbox10 mt-4 gbox" data-glightbox=" description: Deforestation for palm oil expansion within the Tesso Nilo National Park in Riau. Photo: February 2024, ©AurigaNusantara">
-                <img src="https://simontini.id/assets/stadi2024/7-tesso-nilo.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
+            <a href="/assets/stadi2024/7-tesso-nilo.jpg" class="glightbox10 mt-4 gbox" data-glightbox=" description: Deforestation for palm oil expansion within the Tesso Nilo National Park in Riau. Photo: February 2024, ©AurigaNusantara">
+                <img src="/assets/stadi2024/7-tesso-nilo.jpg" alt="Simontini - stadi 2024" class="sm:h-[60vh] h-[40vh] w-full object-cover object-top  hover:brightness-50 transition duration-300 ease-in-out" />
             </a>
             <p class=" text-black font-light sm:text-sm text-xs mt-2 text-left  leading-relaxed px-4">
                 Deforestation for palm oil expansion within the Tesso Nilo National Park in Riau. Photo: February 2024, ©AurigaNusantara</p>

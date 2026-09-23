@@ -14,14 +14,6 @@
     @endif
     <meta name="description" content="{{ $description }}">
 
-    @php
-        $coverStory = $stories->getCollection()->first(fn ($story) => $story->localized_image && ! $story->localized_media_is_video);
-        $metaImage = $coverStory
-            ? (\Illuminate\Support\Str::startsWith($coverStory->localized_image, ['http://', 'https://'])
-                ? $coverStory->localized_image
-                : \App\Support\DeforestationStoryMedia::shareImageUrl($coverStory->localized_image))
-            : asset('assets/meta-image-2025.jpg');
-    @endphp
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SIMONTINI">
     <meta property="og:locale" content="{{ $locale === 'en' ? 'en_US' : 'id_ID' }}">

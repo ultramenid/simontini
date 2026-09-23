@@ -145,6 +145,20 @@ class DeforestationStoryController extends Controller
                 : route('deforestation.index', $parameters)).'#publikasi';
         };
 
+        // Share image: a random published story's hero image, so the list preview varies.
+        $coverImage = DB::table('deforestory')
+            ->where('status', 'publish')
+            ->get(['image_id', 'image_en'])
+            ->map(fn ($story) => $locale === 'en' && $story->image_en ? $story->image_en : $story->image_id)
+            ->filter(fn ($image) => filled($image) && ! DeforestationStoryMedia::isVideo($image))
+            ->shuffle()
+            ->first();
+        $metaImage = match (true) {
+            $coverImage === null => asset('assets/meta-image-2025.jpg'),
+            str_starts_with($coverImage, 'http://'), str_starts_with($coverImage, 'https://') => $coverImage,
+            default => DeforestationStoryMedia::shareImageUrl($coverImage),
+        };
+
         $storyGroups = $stories->getCollection()->groupBy(
             fn ($story) => Carbon::parse($story->date)->locale($locale)->translatedFormat('F Y'),
         );
@@ -158,6 +172,7 @@ class DeforestationStoryController extends Controller
             'locale' => $locale,
             'stories' => $stories,
             'storyGroups' => $storyGroups,
+            'metaImage' => $metaImage,
             'filters' => $filters,
             'categoryClickable' => $categoryClickable,
             'regionClickable' => $regionClickable,
