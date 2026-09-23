@@ -13,15 +13,11 @@ class DashboardController extends Controller
         $title = 'Dashboard - Simontini';
         $nav = 'dashboard';
 
-        $stories = DB::table('deforestory')
-            ->selectRaw("COUNT(*) as total, SUM(status = 'publish') as published, SUM(status = 'draft') as drafts, SUM(is_locked = 1) as locked")
-            ->first();
-
         $stats = [
-            'stories' => (int) $stories->total,
-            'published' => (int) $stories->published,
-            'drafts' => (int) $stories->drafts,
-            'locked' => (int) $stories->locked,
+            'stories' => DB::table('deforestory')->count(),
+            'published' => DB::table('deforestory')->where('status', 'publish')->count(),
+            'drafts' => DB::table('deforestory')->where('status', 'draft')->count(),
+            'locked' => DB::table('deforestory')->where('is_locked', true)->count(),
             'comments' => DB::table('story_comments')->count(),
             'hiddenComments' => DB::table('story_comments')->where('status', 'hidden')->count(),
             'subscribers' => DB::table('deforestation_story_subscriptions')->where('status', 'active')->count(),
