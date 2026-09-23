@@ -1,4 +1,12 @@
-<div class="deforestory-square">
+<div class="deforestory-square" x-data="{
+    dialog: null,
+    ask(options) { this.dialog = options },
+    run() {
+        const d = this.dialog;
+        this.dialog = null;
+        d.url ? window.location.href = d.url : this.$wire[d.method](d.id);
+    },
+}" x-on:keydown.escape.window="dialog = null">
     <div class="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
             <h1 class="text-2xl font-semibold text-gray-900">Deforestory</h1>
@@ -202,17 +210,28 @@
                             <div class="flex flex-col gap-2">
                                 <a href="{{ URL::temporarySignedRoute('deforestation.preview.show', now()->addDays(7), ['locale' => 'id', 'id' => $item->id, 'slug' => $item->slug]) }}" target="_blank" rel="noopener" class="w-full rounded-md border border-blue-200 bg-blue-50 px-3 py-1.5 text-center text-xs font-semibold text-blue-700 hover:bg-blue-100">Preview</a>
 
-                                <a href="{{ route('cms.deforestory.edit', $item->id) }}" class="w-full rounded-md border border-gray-300 bg-white px-3 py-1.5 text-center text-xs font-semibold text-gray-700 hover:bg-gray-100">Edit</a>
+                                @php
+                                    $locked = $item->is_locked ?? false;
+                                    $published = $item->status === 'publish';
+                                    $quotedTitle = '"'.$item->title_id.'"';
+                                    $dialogs = [
+                                        'edit' => ['url' => route('cms.deforestory.edit', $item->id), 'title' => 'Edit Deforestory?', 'message' => "Buka halaman edit untuk {$quotedTitle}?", 'label' => 'Edit', 'tone' => 'primary'],
+                                        'lock' => ['method' => 'toggleLock', 'id' => $item->id, 'title' => $locked ? 'Buka kunci preview?' : 'Kunci preview?', 'message' => $locked ? "Preview {$quotedTitle} akan bisa dibuka tanpa password." : "Preview {$quotedTitle} akan membutuhkan password untuk dibuka.", 'label' => $locked ? 'Buka Kunci' : 'Kunci Preview', 'tone' => 'warning'],
+                                        'status' => ['method' => 'toggleStatus', 'id' => $item->id, 'title' => $published ? 'Jadikan draft?' : 'Publish Deforestory?', 'message' => $published ? "{$quotedTitle} akan disembunyikan dari halaman publik." : "{$quotedTitle} akan tampil di halaman publik.", 'label' => $published ? 'Jadikan Draft' : 'Publish', 'tone' => $published ? 'warning' : 'primary'],
+                                        'delete' => ['method' => 'delete', 'id' => $item->id, 'title' => 'Hapus Deforestory?', 'message' => "{$quotedTitle} akan dihapus permanen dan tidak bisa dikembalikan.", 'label' => 'Hapus', 'tone' => 'danger'],
+                                    ];
+                                @endphp
+                                <button type="button" x-on:click="ask({{ Js::from($dialogs['edit']) }})" class="w-full rounded-md border border-gray-300 bg-white px-3 py-1.5 text-center text-xs font-semibold text-gray-700 hover:bg-gray-100">Edit</button>
 
-                                <button type="button" wire:click="toggleLock({{ $item->id }})" class="w-full rounded-md border px-3 py-1.5 text-xs font-semibold {{ ($item->is_locked ?? false) ? 'border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-100' : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-100' }}">
-                                    {{ ($item->is_locked ?? false) ? 'Buka Kunci' : 'Kunci Preview' }}
+                                <button type="button" x-on:click="ask({{ Js::from($dialogs['lock']) }})" class="w-full rounded-md border px-3 py-1.5 text-xs font-semibold {{ $locked ? 'border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-100' : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-100' }}">
+                                    {{ $locked ? 'Buka Kunci' : 'Kunci Preview' }}
                                 </button>
 
-                                <button type="button" wire:click="toggleStatus({{ $item->id }})" class="w-full rounded-md px-3 py-1.5 text-xs font-semibold text-white hover:opacity-90" style="background-color: {{ $item->status === 'publish' ? '#d97706' : '#376A64' }};">
-                                    {{ $item->status === 'publish' ? 'Jadikan Draft' : 'Publish' }}
+                                <button type="button" x-on:click="ask({{ Js::from($dialogs['status']) }})" class="w-full rounded-md px-3 py-1.5 text-xs font-semibold text-white hover:opacity-90" style="background-color: {{ $published ? '#d97706' : '#376A64' }};">
+                                    {{ $published ? 'Jadikan Draft' : 'Publish' }}
                                 </button>
 
-                                <button type="button" wire:click="delete({{ $item->id }})" wire:confirm="Yakin ingin menghapus data ini?" class="w-full rounded-md border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-700 hover:bg-red-100">Hapus</button>
+                                <button type="button" x-on:click="ask({{ Js::from($dialogs['delete']) }})" class="w-full rounded-md border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-700 hover:bg-red-100">Hapus</button>
                             </div>
                         </div>
                     @empty
@@ -229,6 +248,19 @@
                 {{ $items->links() }}
             </div>
         @endif
+    </div>
+
+    <div x-cloak x-show="dialog" x-transition.opacity class="fixed inset-0 z-[110] flex items-center justify-center bg-black/50 p-4" x-on:click.self="dialog = null">
+        <div class="w-full max-w-md rounded-xl bg-white p-6 shadow-2xl" role="alertdialog" aria-modal="true" aria-labelledby="deforestory-dialog-title">
+            <h2 id="deforestory-dialog-title" class="text-lg font-semibold text-gray-900" x-text="dialog?.title"></h2>
+            <p class="mt-2 break-words text-sm leading-6 text-gray-600" x-text="dialog?.message"></p>
+            <div class="mt-6 flex justify-end gap-2">
+                <button type="button" x-on:click="dialog = null" class="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Batal</button>
+                <button type="button" x-on:click="run()" x-effect="dialog && $nextTick(() => $el.focus())" x-text="dialog?.label"
+                    class="rounded-md px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+                    :class="{ 'bg-[#376A64]': dialog?.tone === 'primary', 'bg-amber-600': dialog?.tone === 'warning', 'bg-red-600': dialog?.tone === 'danger' }"></button>
+            </div>
+        </div>
     </div>
 
     <x-scroll-to-top />
