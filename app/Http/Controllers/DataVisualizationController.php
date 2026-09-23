@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class DataVisualizationController extends Controller
 {
@@ -46,6 +47,24 @@ class DataVisualizationController extends Controller
         $chartData = json_decode($visualization->chart_data ?? '', true);
         abort_unless(is_array($chartData), 404);
 
-        return view('frontends.data-visualization', compact('visualization', 'chartData', 'embed'));
+        $description = $this->describe($visualization, $chartData);
+
+        return view('frontends.data-visualization', compact('visualization', 'chartData', 'embed', 'description'));
+    }
+
+    /** Meta description: the saved description, or a one-line summary of the data points. */
+    private function describe(object $visualization, array $chartData): string
+    {
+        if (filled($visualization->description ?? null)) {
+            return Str::limit(strip_tags($visualization->description), 160);
+        }
+
+        $unit = $chartData['columns'][1] ?? '';
+        $points = collect($chartData['rows'] ?? [])
+            ->filter(fn ($row) => is_array($row) && isset($row[0], $row[1]))
+            ->map(fn ($row) => $row[0].' '.$row[1])
+            ->join(', ');
+
+        return Str::limit(trim($visualization->title.'. '.($points ? "{$unit}: {$points}." : '')), 160);
     }
 }

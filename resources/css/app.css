@@ -3320,3 +3320,43 @@ img.img-loading {
     overflow: hidden;
 }
 
+
+/* Chart data tables (readable numbers for crawlers, AI engines and screen readers). */
+.chart-data {
+    margin: -8px 0 24px;
+    font-size: 14px;
+}
+.chart-data summary {
+    cursor: pointer;
+    color: #376A64;
+    font-weight: 600;
+}
+.chart-data-table {
+    width: 100%;
+    margin-top: 12px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.chart-data-table caption {
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: 600;
+}
+.chart-data-table th,
+.chart-data-table td {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 6px 8px;
+    text-align: left;
+}
+.chart-data-table thead th {
+    border-bottom-color: #376A64;
+}
+.chart-data-table td {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+.chart-data-source {
+    margin-top: 8px;
+    color: #6b7280;
+    font-size: 12px;
+}

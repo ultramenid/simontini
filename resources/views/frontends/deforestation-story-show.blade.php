@@ -99,7 +99,13 @@
     >
         <article>
             <header class="mx-auto max-w-[720px] px-5 pt-10 text-center sm:px-8 sm:pt-14">
-                <h1 class="mx-auto mb-[42px] max-w-[720px] text-center text-[40px] font-bold leading-[1.28] text-black">{{ $story->localized_title }}</h1>
+                <h1 class="mx-auto mb-4 max-w-[720px] text-center text-[40px] font-bold leading-[1.28] text-black">{{ $story->localized_title }}</h1>
+
+                @php $publishedAt = \Carbon\Carbon::parse($story->date)->locale($locale); @endphp
+                <p data-story-byline class="mb-[42px] text-sm text-gray-600">
+                    Auriga Nusantara &middot;
+                    <time datetime="{{ $publishedAt->toDateString() }}">{{ $publishedAt->translatedFormat('j F Y') }}</time>
+                </p>
 
                 @if (filled($story->localized_description))
                     <p class="mx-auto max-w-[720px] text-[20px] leading-[1.7] text-black">
@@ -127,7 +133,7 @@
 
             <div class="mx-auto max-w-[720px] px-5 pt-10 sm:px-8 sm:pt-14">
                 <div class="article-copy public-story-content text-[15px] leading-[1.85] text-gray-800 sm:text-[17px]">
-                    {!! $story->localized_content !!}
+                    {!! \App\Support\StoryChartTables::append($story->localized_content, $locale) !!}
                 </div>
 
                 @if (filled(trim(html_entity_decode(strip_tags($story->localized_footer ?? ''), ENT_QUOTES | ENT_HTML5, 'UTF-8'), " \t\n\r\0\x0B\xc2\xa0")))

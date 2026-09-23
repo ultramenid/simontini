@@ -90,3 +90,33 @@ it('lists pages, reports and open published stories in the sitemap', function ()
 it('lets crawlers fetch uploaded images', function () {
     expect(file_get_contents(public_path('robots.txt')))->not->toContain('Disallow: /storage');
 });
+
+it('prints chart data as a table on chart pages and under charts in stories', function () {
+    $chartId = DB::table('data_visualizations')->insertGetId([
+        'title' => 'Deforestasi Bulanan', 'provider' => 'internal', 'chart_type' => 'column', 'embed_url' => '', 'is_active' => true,
+        'chart_data' => json_encode(['columns' => ['Bulan', 'Hektare'], 'rows' => [['Jan', '1701'], ['Feb', '357']], 'bottom_text' => 'Sumber: Simontini']),
+        'created_at' => now(), 'updated_at' => now(),
+    ]);
+
+    $this->get(route('data-visualizations.show', $chartId))
+        ->assertOk()
+        ->assertSee('<th scope="row">Jan</th>', false)
+        ->assertSee('<td>1701</td>', false)
+        ->assertSee('<meta name="description" content="Deforestasi Bulanan. Hektare: Jan 1701, Feb 357.">', false)
+        ->assertSee('<link rel="canonical"', false);
+
+    $this->get(route('data-visualizations.embed', $chartId))->assertOk()->assertSee('<td>357</td>', false);
+
+    $story = seoStory([
+        'status' => 'publish',
+        'date' => '2026-04-23',
+        'content_id' => '<figure class="story-data-visualization"><iframe src="https://simontini.id/embed/data-visualizations/'.$chartId.'"></iframe></figure>',
+    ]);
+
+    $this->get(route('deforestation.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $story->slug]))
+        ->assertOk()
+        ->assertSee('</figure><details class="chart-data story-chart-data">', false)
+        ->assertSee('Lihat data grafik')
+        ->assertSee('<td>1701</td>', false)
+        ->assertSee('<time datetime="2026-04-23">23 April 2026</time>', false);
+});
