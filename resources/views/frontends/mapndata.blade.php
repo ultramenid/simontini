@@ -22,6 +22,7 @@
             <a href="{{ route('index', app()->getLocale()) }}" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">home</a>
             <a href="#" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">about</a>
             <a href="{{ route('insight', app()->getLocale()) }}" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">insight</a>
+            <a href="{{ route('deforestation.index', ['locale' => app()->getLocale()]) }}" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">deforestory</a>
             <a href="{{ route('downloads', app()->getLocale()) }}" class="whitespace-nowrap text-xs font-medium uppercase cursor-pointer py-1">downloads</a>
         </div>
         <div class="py-6 flex flex-col gap-2" x-data="{open:'open2', test:[]}" >
