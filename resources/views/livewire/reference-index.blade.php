@@ -170,7 +170,7 @@
                 $isVideo = str_starts_with($item->mime_type ?: '', 'video/');
                 $isPdf = ($item->mime_type ?: '') === 'application/pdf';
                 $fileUrl = ($item->disk ?: 'public') === 'public'
-                    ? url(Storage::url($item->image_path))
+                    ? Storage::disk('public')->url($item->image_path)
                     : route('cms.reference.download', $item->id);
                 $previewUrl = ($isVideo || $isPdf) ? route('cms.reference.preview', $item->id) : null;
                 $downloadUrl = route('cms.reference.download', $item->id);

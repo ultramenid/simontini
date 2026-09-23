@@ -46,8 +46,8 @@ class SendDeforestationStoryWebhook implements ShouldQueue
             $story = array_merge($story, [
                 'uuid' => $currentStory->uuid,
                 'slug' => $currentStory->slug,
-                'image_id' => filled($currentStory->image_id) ? url(Storage::url($currentStory->image_id)) : null,
-                'image_en' => filled($currentStory->image_en) ? url(Storage::url($currentStory->image_en)) : null,
+                'image_id' => filled($currentStory->image_id) ? Storage::disk('public')->url($currentStory->image_id) : null,
+                'image_en' => filled($currentStory->image_en) ? Storage::disk('public')->url($currentStory->image_en) : null,
                 'title_id' => $currentStory->title_id,
                 'title_en' => $currentStory->title_en,
                 'desrkirpsi_id' => $currentStory->desrkirpsi_id,

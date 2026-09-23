@@ -88,6 +88,6 @@ class DeforestationStoryWebhookDispatcher
 
     private function publicFileUrl(?string $path): ?string
     {
-        return filled($path) ? url(Storage::url($path)) : null;
+        return filled($path) ? Storage::disk('public')->url($path) : null;
     }
 }

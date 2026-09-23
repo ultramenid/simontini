@@ -3300,3 +3300,22 @@ img.img-loading {
 @media (prefers-reduced-motion: reduce) {
     img.img-loading { animation: none; }
 }
+
+/* Chart Data & Grafik di artikel. StoryHtmlSanitizer membuang style inline pada figure/iframe,
+   jadi ukurannya diatur di sini (juga memperbaiki artikel yang sudah tersimpan). */
+.story-data-visualization {
+    display: block;
+    width: 100%;
+    margin: 24px 0;
+    padding: 0;
+}
+
+.story-data-visualization iframe {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    overflow: hidden;
+}

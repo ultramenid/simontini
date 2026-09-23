@@ -223,7 +223,8 @@ it('renders and streams a private PDF preview', function () {
 });
 
 it('renders a Tiptap selection button for the requested editor', function () {
-    Storage::fake('public');
+    // URL gambar untuk editor selalu memakai APP_URL, bukan host tempat CMS dibuka.
+    Storage::fake('public', ['url' => 'https://simontini.id/storage']);
 
     DB::table('reference_images')->insert([
         'title' => 'Hutan Pilihan',
@@ -238,7 +239,8 @@ it('renders a Tiptap selection button for the requested editor', function () {
         ->assertOk()
         ->assertSee('data-tiptap-reference-select', false)
         ->assertSee('data-editor-key="content_id"', false)
-        ->assertSee('https://stg.simontini.id/storage/references/forest.jpg', false)
+        ->assertSee('https://simontini.id/storage/references/forest.jpg', false)
+        ->assertDontSee('https://stg.simontini.id/storage', false)
         ->assertSee('Pilih untuk Editor');
 });
 

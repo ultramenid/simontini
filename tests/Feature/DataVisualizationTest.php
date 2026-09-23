@@ -392,6 +392,12 @@ it('provides active visualization options for the TinyMCE picker', function () {
         ->assertJsonPath('data.0.embed_url', route('data-visualizations.embed', $activeId))
         ->assertJsonMissing(['title' => 'Grafik Draft']);
 
+    // Embed URL tersimpan di artikel, jadi harus memakai APP_URL walau CMS dibuka dari host lain.
+    config(['app.url' => 'https://simontini.id']);
+    $this->withSession(['id' => 1])
+        ->getJson('https://stg.simontini.id/cms/data-visualizations/options')
+        ->assertJsonPath('data.0.embed_url', "https://simontini.id/embed/data-visualizations/{$activeId}");
+
     $view = file_get_contents(resource_path('views/components/tinymce-editor.blade.php'));
     $script = file_get_contents(resource_path('js/app.js'));
 

@@ -121,7 +121,7 @@
                                     @if ($item->is_active)
                                         <button
                                             type="button"
-                                            x-on:click="shareTitle = @js($item->title); publicUrl = @js(route('data-visualizations.show', $item->id)); embedUrl = @js(route('data-visualizations.embed', $item->id)); copied = ''; shareOpen = true"
+                                            x-on:click="shareTitle = @js($item->title); publicUrl = @js(rtrim(config('app.url'), '/').route('data-visualizations.show', $item->id, false)); embedUrl = @js(rtrim(config('app.url'), '/').route('data-visualizations.embed', $item->id, false)); copied = ''; shareOpen = true"
                                             class="border border-[#376A64] bg-[#376A64] px-3 py-2 text-xs font-semibold text-white hover:opacity-90"
                                         >Bagikan</button>
                                     @endif
@@ -195,7 +195,7 @@
                         @if ($item->is_active)
                             <button
                                 type="button"
-                                x-on:click="shareTitle = @js($item->title); publicUrl = @js(route('data-visualizations.show', $item->id)); embedUrl = @js(route('data-visualizations.embed', $item->id)); copied = ''; shareOpen = true"
+                                x-on:click="shareTitle = @js($item->title); publicUrl = @js(rtrim(config('app.url'), '/').route('data-visualizations.show', $item->id, false)); embedUrl = @js(rtrim(config('app.url'), '/').route('data-visualizations.embed', $item->id, false)); copied = ''; shareOpen = true"
                                 class="border border-[#376A64] bg-[#376A64] px-3 py-2 text-center text-xs font-semibold text-white hover:opacity-90"
                             >Bagikan</button>
                         @else

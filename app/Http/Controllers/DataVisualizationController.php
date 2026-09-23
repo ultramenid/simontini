@@ -17,7 +17,8 @@ class DataVisualizationController extends Controller
                 'id' => $item->id,
                 'title' => $item->title,
                 'chart_type' => $item->chart_type,
-                'embed_url' => route('data-visualizations.embed', $item->id),
+                // APP_URL, bukan host request: URL ini tersimpan di konten artikel.
+                'embed_url' => rtrim(config('app.url'), '/').route('data-visualizations.embed', $item->id, false),
             ]);
 
         return response()->json(['data' => $items]);
