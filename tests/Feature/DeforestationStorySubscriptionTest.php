@@ -414,3 +414,30 @@ it('does not email subscribers when the same story is republished', function () 
         ->not->toBeNull();
     Bus::assertDispatchedAfterResponse(SendNewDeforestationStoryEmail::class, $firstQueued);
 });
+
+it('paginates the CMS subscriber list twenty five per page', function () {
+    DB::table('deforestation_story_subscriptions')->delete();
+
+    DB::table('deforestation_story_subscriptions')->insert(collect(range(1, 26))->map(fn (int $number) => [
+        'deforestory_id' => null,
+        'name' => "Subscriber {$number}",
+        'email' => "subscriber-page-{$number}@simontini.test",
+        'locale' => 'id',
+        'status' => 'active',
+        'unsubscribe_token' => bin2hex(random_bytes(16)),
+        'created_at' => now()->addMinutes($number),
+        'updated_at' => now(),
+    ])->all());
+
+    $this->withSession(['id' => 1])
+        ->get(route('cms.subscribers'))
+        ->assertOk()
+        ->assertSee('26 dari 26 subscriber')
+        ->assertSee('subscriber-page-26@simontini.test')
+        ->assertDontSee('subscriber-page-1@simontini.test')
+        ->assertSee(route('cms.subscribers', ['page' => 2]), false);
+
+    $this->withSession(['id' => 1])
+        ->get(route('cms.subscribers', ['page' => 2]))
+        ->assertSee('subscriber-page-1@simontini.test');
+});

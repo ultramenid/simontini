@@ -33,9 +33,9 @@ class CmsCommentController extends Controller
         $comments = $commentsQuery
             ->orderByRaw("CASE comments.status WHEN 'hidden' THEN 1 ELSE 0 END")
             ->orderByDesc('comments.created_at')
-            ->limit(250)
-            ->get()
-            ->map(fn (object $comment): array => (array) $comment);
+            ->paginate(25)
+            ->withQueryString()
+            ->through(fn (object $comment): array => (array) $comment);
 
         $stories = DB::table('deforestory as stories')
             ->leftJoin('story_comments as comments', 'comments.story_id', '=', 'stories.id')

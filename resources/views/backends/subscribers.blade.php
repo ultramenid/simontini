@@ -11,7 +11,7 @@
                 <p class="mt-1 text-sm text-gray-500">Lihat seluruh subscriber atau pilih satu Deforestory.</p>
             </div>
             <span class="border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-600">
-                {{ $subscribers->count() }} dari {{ $totalSubscribers }} subscriber
+                {{ $subscribers->total() }} dari {{ $totalSubscribers }} subscriber
             </span>
         </div>
 
@@ -67,5 +67,7 @@
                 @endforelse
             </div>
         </div>
+
+        <div class="mt-6">{{ $subscribers->links() }}</div>
     </main>
 @endsection

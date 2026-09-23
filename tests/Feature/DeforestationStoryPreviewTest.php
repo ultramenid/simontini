@@ -125,17 +125,52 @@ it('keeps the mobile navigation above story media while scrolling', function () 
         ->toContain('sticky top-0 isolate z-[1000] bg-simontini');
 });
 
-it('displays every published story without pagination', function () {
-    $stories = collect(range(1, 13))->map(fn (int $number) => createDeforestationStory([
-        'title_id' => "Cerita Tanpa Pagination {$number}",
+it('paginates the public story list twelve per page and keeps filters in page links', function () {
+    DB::table('deforestory')->delete();
+
+    collect(range(1, 13))->each(fn (int $number) => createDeforestationStory([
+        'title_id' => sprintf('Cerita Halaman %02d', $number),
+        'category_id' => 'Sawit',
+        'date' => sprintf('2030-01-%02d', $number),
         'status' => 'publish',
     ]));
 
     $this->get(route('deforestation.index', ['locale' => 'id']))
         ->assertOk()
-        ->assertSee($stories->first()->title_id)
-        ->assertSee($stories->last()->title_id)
-        ->assertDontSee('Showing 1 to');
+        ->assertSee('Cerita Halaman 13')
+        ->assertSee('Cerita Halaman 02')
+        ->assertDontSee('Cerita Halaman 01')
+        ->assertSee('Halaman 1 dari 2')
+        ->assertDontSee('data-page-previous', false)
+        ->assertSee(route('deforestation.index', ['locale' => 'id', 'page' => 2]), false);
+
+    $this->get(route('deforestation.index', ['locale' => 'id', 'page' => 2]))
+        ->assertOk()
+        ->assertSee('Cerita Halaman 01')
+        ->assertDontSee('Cerita Halaman 02')
+        ->assertDontSee('data-page-next', false);
+
+    $this->get(route('deforestation.index', ['locale' => 'id', 'category' => 'Sawit']))
+        ->assertSee(e(route('deforestation.index', ['locale' => 'id', 'category' => 'Sawit', 'page' => 2])), false);
+});
+
+it('signs page links on the preview story list', function () {
+    DB::table('deforestory')->delete();
+
+    collect(range(1, 13))->each(fn (int $number) => createDeforestationStory([
+        'title_id' => sprintf('Preview Halaman %02d', $number),
+        'date' => sprintf('2030-01-%02d', $number),
+    ]));
+
+    $html = $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.index', ['locale' => 'id']))
+        ->assertOk()
+        ->getContent();
+
+    preg_match('/data-page-next href="([^"]+)"/', $html, $match);
+
+    $this->get(html_entity_decode($match[1]))
+        ->assertOk()
+        ->assertSee('Preview Halaman 01');
 });
 
 it('returns 404 when a draft story is opened publicly', function () {

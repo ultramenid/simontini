@@ -127,9 +127,25 @@ class DeforestationStoryController extends Controller
                 Carbon::createFromTimestamp(request()->integer('expires')), $indexParameters)
             : route('deforestation.index', $indexParameters);
 
-        $stories = $query->get();
-        $this->localizeStories($stories, $locale);
-        $storyGroups = $stories->groupBy(
+        // Hanya kolom yang dipakai kartu; konten/footer (longtext) tidak perlu di daftar.
+        $stories = $query->paginate(12, [
+            'id', 'slug', 'date', 'status', 'is_locked', 'meta_font_size', 'image_id', 'image_en',
+            'title_id', 'title_en', 'index_title_id', 'index_title_en', 'desrkirpsi_id', 'desrkirpsi_en',
+            'category', 'category_id', 'category_en', 'region', 'region_id', 'region_en',
+        ]);
+        $this->localizeStories($stories->getCollection(), $locale);
+
+        // Preview memakai URL bertanda tangan, jadi tiap halaman butuh signature sendiri.
+        $pageUrl = function (int $page) use ($isPreview, $indexParameters, $filters) {
+            $parameters = $indexParameters + array_filter($filters) + ($page > 1 ? ['page' => $page] : []);
+
+            return ($isPreview
+                ? URL::temporarySignedRoute('deforestation.preview.index',
+                    Carbon::createFromTimestamp(request()->integer('expires')), $parameters)
+                : route('deforestation.index', $parameters)).'#publikasi';
+        };
+
+        $storyGroups = $stories->getCollection()->groupBy(
             fn ($story) => Carbon::parse($story->date)->locale($locale)->translatedFormat('F Y'),
         );
 
@@ -147,6 +163,8 @@ class DeforestationStoryController extends Controller
             'regionClickable' => $regionClickable,
             'resetUrl' => $resetUrl,
             'isPreview' => $isPreview,
+            'previousPageUrl' => $stories->onFirstPage() ? null : $pageUrl($stories->currentPage() - 1),
+            'nextPageUrl' => $stories->hasMorePages() ? $pageUrl($stories->currentPage() + 1) : null,
         ]);
     }
 
@@ -245,14 +263,15 @@ class DeforestationStoryController extends Controller
         $story->localized_meta_font_size = min(max((int) ($story->meta_font_size ?? 14), 10), 28);
         $story->localized_description = $locale === 'en' ? $story->desrkirpsi_en : $story->desrkirpsi_id;
         $story->localized_footer = $locale === 'en' ? ($story->footer_en ?? '') : ($story->footer_id ?? '');
+        // Daftar tidak memilih kolom konten, jadi nilainya bisa tidak ada.
         $story->localized_content = DeforestationStoryStopper::normalizeHtml(
-            $locale === 'en' ? $story->content_en : $story->content_id,
+            $locale === 'en' ? ($story->content_en ?? null) : ($story->content_id ?? null),
         );
         $story->localized_image = $locale === 'en' && $story->image_en ? $story->image_en : $story->image_id;
         $story->localized_media_is_video = DeforestationStoryMedia::isVideo($story->localized_image);
         $story->localized_image_description = $locale === 'en'
-            ? $story->image_description_en
-            : $story->image_description_id;
+            ? ($story->image_description_en ?? null)
+            : ($story->image_description_id ?? null);
 
         return $story;
     }

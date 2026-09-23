@@ -37,7 +37,8 @@ class CmsSubscriberController extends Controller
         $subscribers = $subscribersQuery
             ->orderByRaw("CASE subscriptions.status WHEN 'active' THEN 0 ELSE 1 END")
             ->orderByDesc('subscriptions.created_at')
-            ->get();
+            ->paginate(25)
+            ->withQueryString();
 
         $stories = DB::table('deforestory as stories')
             ->leftJoin('deforestation_story_subscriptions as subscriptions', 'subscriptions.deforestory_id', '=', 'stories.id')

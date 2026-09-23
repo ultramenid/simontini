@@ -99,6 +99,22 @@
                         </div>
                     @endforelse
                 </div>
+
+                @if ($stories->lastPage() > 1)
+                    <nav class="mt-20 flex items-center justify-between gap-4 border-t border-gray-200 pt-8" aria-label="{{ $locale === 'en' ? 'Story pages' : 'Halaman artikel' }}">
+                        @if ($previousPageUrl)
+                            <a data-page-previous href="{{ $previousPageUrl }}" rel="prev" class="rounded-full border border-[#376A64] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[#376A64] transition hover:bg-[#376A64] hover:text-white">&larr; {{ $locale === 'en' ? 'Newer' : 'Lebih baru' }}</a>
+                        @else
+                            <span></span>
+                        @endif
+                        <span class="text-sm text-gray-500">{{ $locale === 'en' ? 'Page' : 'Halaman' }} {{ $stories->currentPage() }} {{ $locale === 'en' ? 'of' : 'dari' }} {{ $stories->lastPage() }}</span>
+                        @if ($nextPageUrl)
+                            <a data-page-next href="{{ $nextPageUrl }}" rel="next" class="rounded-full border border-[#376A64] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[#376A64] transition hover:bg-[#376A64] hover:text-white">{{ $locale === 'en' ? 'Older' : 'Lebih lama' }} &rarr;</a>
+                        @else
+                            <span></span>
+                        @endif
+                    </nav>
+                @endif
             </div>
         </section>
     </main>

@@ -11,7 +11,7 @@
                 <p class="mt-1 text-sm text-gray-500">Lihat semua komentar atau pilih satu Deforestory.</p>
             </div>
             <span class="border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-600">
-                {{ $comments->count() }} dari {{ $totalComments }} komentar
+                {{ $comments->total() }} dari {{ $totalComments }} komentar
             </span>
         </div>
 
@@ -106,5 +106,7 @@
                 <div class="border border-dashed border-gray-300 bg-white p-12 text-center text-sm text-gray-500">Belum ada komentar.</div>
             @endforelse
         </div>
+
+        <div class="mt-6">{{ $comments->links() }}</div>
     </main>
 @endsection

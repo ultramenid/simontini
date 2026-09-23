@@ -7,6 +7,8 @@ export default {
         "./resources/**/*.js",
         "./resources/**/*.vue",
         './vendor/masmerise/livewire-toaster/resources/views/*.blade.php',
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './vendor/livewire/livewire/src/Features/SupportPagination/views/*.blade.php',
     ],
   theme: {
     extend: {
