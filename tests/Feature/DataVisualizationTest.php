@@ -334,19 +334,23 @@ it('publishes active visualizations as public and embed pages', function () {
         'updated_at' => now(),
     ]);
 
-    $this->get(route('data-visualizations.show', $id))
+    $publicPage = $this->get(route('data-visualizations.show', $id))
         ->assertOk()
         ->assertSee('Grafik Publik Simontini')
         ->assertDontSee('Data &amp; Grafik Simontini', false)
-        ->assertDontSee('Deskripsi grafik publik.')
+        ->assertSee('<meta name="description" content="Deskripsi grafik publik.">', false)
         ->assertDontSee('Diperbarui')
         ->assertSee('published-data-visualization', false);
 
-    $this->get(route('data-visualizations.embed', $id))
+    // The description is only used for meta tags in <head>, never shown on the page.
+    expect(str($publicPage->getContent())->after('<body')->toString())->not->toContain('Deskripsi grafik publik.');
+
+    $embed = $this->get(route('data-visualizations.embed', $id))
         ->assertOk()
         ->assertSee('published-data-visualization', false)
-        ->assertSee('h-full overflow-hidden', false)
-        ->assertDontSee('Deskripsi grafik publik.');
+        ->assertSee('h-full overflow-hidden', false);
+
+    expect(str($embed->getContent())->after('<body')->toString())->not->toContain('Deskripsi grafik publik.');
 });
 
 it('does not publish inactive visualizations', function () {

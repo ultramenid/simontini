@@ -28,7 +28,7 @@
                 @if ($story->localized_media_is_video ?? false)
                     <video src="{{ Storage::url($story->localized_image) }}" muted playsinline preload="metadata" class="h-full w-full object-cover"></video>
                 @else
-                    <img src="{{ Storage::url($story->localized_image) }}" alt="{{ $story->localized_title }}" class="h-full w-full object-cover" loading="lazy" decoding="async">
+                    <img src="{{ \App\Support\DeforestationStoryMedia::displayImageUrl($story->localized_image, 800) }}" alt="{{ $story->localized_title }}" class="h-full w-full object-cover" loading="lazy" decoding="async">
                 @endif
             @else
                 <div class="flex h-full items-center justify-center text-sm text-gray-400">No image</div>

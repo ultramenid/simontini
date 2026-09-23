@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 uses(DatabaseTransactions::class);
 
@@ -119,4 +120,24 @@ it('prints chart data as a table on chart pages and under charts in stories', fu
         ->assertSee('Lihat data grafik')
         ->assertSee('<td>1701</td>', false)
         ->assertSee('<time datetime="2026-04-23">23 April 2026</time>', false);
+});
+
+it('serves a scaled-down copy of large story photos and keeps small ones as they are', function () {
+    Storage::fake('public', ['url' => 'https://simontini.id/storage']);
+    $noise = imagecreatetruecolor(3000, 2000);
+    for ($i = 0; $i < 20000; $i++) {
+        imagesetpixel($noise, random_int(0, 2999), random_int(0, 1999), random_int(0, 0xFFFFFF));
+    }
+    ob_start();
+    imagejpeg($noise, null, 100);
+    Storage::disk('public')->put('deforestory/id/big.jpg', ob_get_clean());
+    Storage::disk('public')->put('deforestory/id/small.jpg', 'tiny');
+
+    $url = \App\Support\DeforestationStoryMedia::displayImageUrl('deforestory/id/big.jpg', 800);
+    $copy = 'resized/800/'.md5('deforestory/id/big.jpg').'.jpg';
+
+    expect($url)->toBe('https://simontini.id/storage/'.$copy)
+        ->and(array_slice(getimagesize(Storage::disk('public')->path($copy)), 0, 2))->toBe([800, 533])
+        ->and(\App\Support\DeforestationStoryMedia::displayImageUrl('deforestory/id/small.jpg', 800))
+        ->toBe('https://simontini.id/storage/deforestory/id/small.jpg');
 });

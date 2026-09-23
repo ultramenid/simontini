@@ -12,6 +12,12 @@ final class DeforestationStoryMedia
 
     private const SHARE_HEIGHT = 630;
 
+    // Originals at or under this size are served as they are.
+    private const DISPLAY_MAX_BYTES = 400 * 1024;
+
+    // ponytail: copies are made on first view; cap per request so a cold list page stays fast.
+    // Remaining images fall back to the original and get their copy on a later view.
+    private const GENERATIONS_PER_REQUEST = 4;
 
     public static function isVideo(?string $path): bool
     {
@@ -31,11 +37,56 @@ final class DeforestationStoryMedia
      */
     public static function shareImageUrl(string $path): string
     {
+        return self::cachedJpeg($path, 'share/'.md5($path).'.jpg', function (int $width, int $height) {
+            $scale = max(self::SHARE_WIDTH / $width, self::SHARE_HEIGHT / $height);
+            $cropWidth = (int) round(self::SHARE_WIDTH / $scale);
+            $cropHeight = (int) round(self::SHARE_HEIGHT / $scale);
+
+            return [self::SHARE_WIDTH, self::SHARE_HEIGHT,
+                intdiv($width - $cropWidth, 2), intdiv($height - $cropHeight, 2), $cropWidth, $cropHeight];
+        }, limited: false);
+    }
+
+    /**
+     * Uploaded story photos are often several MB. Pages show a copy scaled down to $maxWidth
+     * (aspect ratio kept); the original stays untouched for the lightbox and downloads.
+     */
+    public static function displayImageUrl(string $path, int $maxWidth): string
+    {
         $disk = Storage::disk('public');
-        $target = 'share/'.md5($path).'.jpg';
+
+        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
+            return $path;
+        }
+
+        if (! $disk->exists($path) || $disk->size($path) <= self::DISPLAY_MAX_BYTES) {
+            return $disk->url($path);
+        }
+
+        return self::cachedJpeg($path, "resized/{$maxWidth}/".md5($path).'.jpg', function (int $width, int $height) use ($maxWidth) {
+            $targetWidth = min($width, $maxWidth);
+
+            return [$targetWidth, (int) round($height * $targetWidth / $width), 0, 0, $width, $height];
+        });
+    }
+
+    /**
+     * Returns the URL of $target, creating it from $path on first use. $geometry receives the
+     * source size and returns [targetW, targetH, srcX, srcY, srcW, srcH]. Any failure falls
+     * back to the original file.
+     */
+    private static function cachedJpeg(string $path, string $target, callable $geometry, bool $limited = true): string
+    {
+        $disk = Storage::disk('public');
 
         if ($disk->exists($target)) {
             return $disk->url($target);
+        }
+
+        $generated = request()->attributes->get('story_media_generated', 0);
+
+        if ($limited && $generated >= self::GENERATIONS_PER_REQUEST) {
+            return $disk->url($path);
         }
 
         try {
@@ -56,23 +107,18 @@ final class DeforestationStoryMedia
                 return $disk->url($path);
             }
 
-            [$width, $height] = $info;
-            $scale = max(self::SHARE_WIDTH / $width, self::SHARE_HEIGHT / $height);
-            $cropWidth = (int) round(self::SHARE_WIDTH / $scale);
-            $cropHeight = (int) round(self::SHARE_HEIGHT / $scale);
+            [$targetWidth, $targetHeight, $srcX, $srcY, $srcWidth, $srcHeight] = $geometry($info[0], $info[1]);
 
-            $canvas = imagecreatetruecolor(self::SHARE_WIDTH, self::SHARE_HEIGHT);
+            $canvas = imagecreatetruecolor($targetWidth, $targetHeight);
             imagefill($canvas, 0, 0, imagecolorallocate($canvas, 255, 255, 255));
-            imagecopyresampled(
-                $canvas, $source, 0, 0,
-                intdiv($width - $cropWidth, 2), intdiv($height - $cropHeight, 2),
-                self::SHARE_WIDTH, self::SHARE_HEIGHT, $cropWidth, $cropHeight,
-            );
+            imagecopyresampled($canvas, $source, 0, 0, $srcX, $srcY, $targetWidth, $targetHeight, $srcWidth, $srcHeight);
 
-            $disk->makeDirectory('share');
+            $disk->makeDirectory(dirname($target));
+            imageinterlace($canvas, true);
             imagejpeg($canvas, $disk->path($target), 82);
             imagedestroy($source);
             imagedestroy($canvas);
+            request()->attributes->set('story_media_generated', $generated + 1);
         } catch (\Throwable) {
             return $disk->url($path);
         }

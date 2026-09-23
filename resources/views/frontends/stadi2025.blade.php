@@ -20,7 +20,7 @@
         class="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-[52px] px-[5vw]  backdrop-blur-md border-b border-[#e2d8cc]">
         <div
             class="nav-brand flex items-center gap-1.5 uppercase tracking-[0.18em] text-[#8b2a1a] text-[.65rem] font-semibold">
-            <a href="{{ url('/id') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt=""
+            <a href="{{ url('/id') }}"><img src="{{ asset('assets/images/logo1.png') }}" alt="SIMONTINI"
                     class="h-8"></a>
         </div>
         <div class="nav-actions">
@@ -1299,7 +1299,7 @@
 
                     <!-- IMAGE -->
                     <div class="relative" x-ref="mainImg">
-                        <img :src="images[active].src" @click="GLightbox({
+                        <img :src="images[active].src" :alt="(images[active].desc || '').replace(/<[^>]+>/g, '')" @click="GLightbox({
                                 elements: images.map(img => ({
                                     href: img.src,
                                     description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
@@ -1435,7 +1435,7 @@
 
                     <!-- IMAGE -->
                     <div class="relative" x-ref="mainImg">
-                        <img :src="images[active].src" @click="GLightbox({
+                        <img :src="images[active].src" :alt="(images[active].desc || '').replace(/<[^>]+>/g, '')" @click="GLightbox({
                                                                                     elements: images.map(img => ({
                                                                                         href: img.src,
                                                                                         description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
@@ -1591,7 +1591,7 @@
 
                     <!-- IMAGE -->
                     <div class="relative" x-ref="mainImg">
-                        <img :src="images[active].src" @click="GLightbox({
+                        <img :src="images[active].src" :alt="(images[active].desc || '').replace(/<[^>]+>/g, '')" @click="GLightbox({
                                                                                 elements: images.map(img => ({
                                                                                     href: img.src,
                                                                                     description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
@@ -1722,7 +1722,7 @@
 
                     <!-- IMAGE -->
                     <div class="relative" x-ref="mainImg">
-                        <img :src="images[active].src" @click="GLightbox({
+                        <img :src="images[active].src" :alt="(images[active].desc || '').replace(/<[^>]+>/g, '')" @click="GLightbox({
                                                                                 elements: images.map(img => ({
                                                                                     href: img.src,
                                                                                     description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
@@ -1839,7 +1839,7 @@
 
                     <!-- IMAGE -->
                     <div class="relative" x-ref="mainImg">
-                        <img :src="images[active].src" @click="GLightbox({
+                        <img :src="images[active].src" :alt="(images[active].desc || '').replace(/<[^>]+>/g, '')" @click="GLightbox({
                                                                             elements: images.map(img => ({
                                                                                 href: img.src,
                                                                                 description: img.desc + (img.cc ? '<br><br>' + img.cc: '')
@@ -2002,7 +2002,7 @@
 
                         <!-- GAMBAR -->
                         <div class="relative">
-                          <img :src="item.src" @click="openLightbox(index)"
+                          <img :src="item.src" :alt="(item.desc || '').replace(/<[^>]+>/g, '')" @click="openLightbox(index)"
                             class="w-full object-contain h-[220px] sm:h-[60vh] cursor-pointer" />
                           <!-- PREV -->
                           <button @click="currentSlide--" x-show="currentSlide > 0"
@@ -2167,7 +2167,7 @@
 
                                     <!-- GAMBAR -->
                                     <div class="relative">
-                                        <img :src="item.src" @click="openLightbox(index)"
+                                        <img :src="item.src" :alt="(item.desc || '').replace(/<[^>]+>/g, '')" @click="openLightbox(index)"
                                         class="w-full object-contain h-auto sm:h-[60vh] cursor-pointer" />
 
                                         <!-- CAPTION -->
@@ -2272,7 +2272,7 @@
 
                                         <!-- GAMBAR -->
                                         <div class="relative">
-                                            <img :src="item.src" @click="openLightbox(index)"
+                                            <img :src="item.src" :alt="(item.desc || '').replace(/<[^>]+>/g, '')" @click="openLightbox(index)"
                                             class="w-full object-cover cursor-pointer max-h-[60vh]" />
 
 

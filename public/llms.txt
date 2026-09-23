@@ -1,0 +1,26 @@
+# Simontini
+
+> Simontini (Sistem Informasi Tutupan dan Izin di Indonesia) is an open data platform by Auriga Nusantara on deforestation, land cover and concession licenses (HGU, IUP, PBPH, forest estate) across Indonesia. Content is available in Indonesian (/id) and English (/en).
+
+## Reports
+
+- [Status of Deforestation in Indonesia 2025](https://simontini.id/en/status-of-deforestation-in-indonesia-2025): annual deforestation report with national figures, methodology and policy recommendations
+- [Status Deforestasi di Indonesia 2025](https://simontini.id/id/status-deforestasi-di-indonesia-2025): Indonesian edition
+- [Status of Deforestation in Indonesia 2024](https://simontini.id/en/status-of-deforestation-in-indonesia-2024): annual deforestation report for 2024
+- [Status Deforestasi Indonesia 2024](https://simontini.id/id/status-deforestasi-indonesia-2024): Indonesian edition
+
+## Deforestory
+
+- [Deforestory](https://simontini.id/en/deforestory): short case stories on deforestation in specific concessions and regions, combining secondary data analysis with ground truthing
+- [Deforestory (ID)](https://simontini.id/id/deforestory): Indonesian edition
+
+## Data
+
+- [Map & Data](https://simontini.id/en/mapndata): interactive map of land cover, deforestation and license layers
+- [Downloads](https://simontini.id/en/download): downloadable spatial data and report files
+- [Insight](https://simontini.id/en/insight): index of analysis articles
+
+## Optional
+
+- [Sitemap](https://simontini.id/sitemap.xml): every public page, report and story with language alternates
+- [Auriga Nusantara](https://auriga.or.id): the organization behind Simontini

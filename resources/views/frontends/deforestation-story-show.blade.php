@@ -120,7 +120,7 @@
                         @if ($story->localized_media_is_video ?? false)
                             <video src="{{ Storage::url($story->localized_image) }}" autoplay loop muted playsinline preload="metadata" class="h-full w-full object-cover" aria-label="{{ $story->localized_title }}"></video>
                         @else
-                            <img src="{{ Storage::url($story->localized_image) }}" alt="{{ $story->localized_title }}" class="h-full w-full object-cover" fetchpriority="high">
+                            <img src="{{ \App\Support\DeforestationStoryMedia::displayImageUrl($story->localized_image, 1600) }}" alt="{{ $story->localized_title }}" class="h-full w-full object-cover" fetchpriority="high">
                         @endif
                     </div>
                     @if (filled($story->localized_image_description))
