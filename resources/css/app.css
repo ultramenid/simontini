@@ -3278,3 +3278,25 @@ footer {
     font-size: 0.72rem !important;
   }
 }
+
+/* Skeleton saat gambar masih dimuat; class dipasang/dilepas oleh app.js. */
+img.img-loading {
+    color: transparent;
+    background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 37%, #e5e7eb 63%) 0 0 / 400% 100%;
+    animation: img-skeleton 1.4s ease-in-out infinite;
+}
+
+/* Gambar konten artikel tingginya 0 sebelum termuat; beri ruang agar skeleton terlihat. */
+.public-story-content img.img-loading {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+@keyframes img-skeleton {
+    from { background-position: 100% 0; }
+    to { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    img.img-loading { animation: none; }
+}

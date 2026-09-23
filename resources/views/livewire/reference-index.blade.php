@@ -180,7 +180,7 @@
             <article class="border border-gray-200 bg-white shadow-sm">
                 <div class="flex h-52 items-center justify-center overflow-hidden bg-gray-100">
                     @if ($isImage)
-                        <img src="{{ $fileUrl }}" alt="{{ $item->alt_text ?: $item->title ?: 'Reference image' }}" class="h-full w-full object-cover">
+                        <img src="{{ $fileUrl }}" alt="{{ $item->alt_text ?: $item->title ?: 'Reference image' }}" class="h-full w-full object-cover" loading="lazy" decoding="async">
                     @elseif ($isVideo)
                         <video src="{{ $previewUrl }}" controls preload="metadata" class="h-full w-full bg-black object-contain" aria-label="{{ $item->alt_text ?: $item->title ?: 'Reference video' }}"></video>
                     @elseif ($isPdf)

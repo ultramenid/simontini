@@ -3559,3 +3559,35 @@ document.addEventListener('click', (event) => {
         window.setTimeout(() => panel.querySelector('[name="display_name"]')?.focus(), 50);
     }
 });
+
+// Skeleton loading: gambar yang belum selesai dimuat diberi class .img-loading (lihat app.css).
+// Tambahkan data-no-skeleton pada <img> untuk mengecualikan.
+const trackImageLoading = (img) => {
+    if (img.complete || img.hasAttribute('data-no-skeleton')) {
+        img.classList.remove('img-loading');
+        return;
+    }
+
+    img.classList.add('img-loading');
+    const done = () => img.classList.remove('img-loading');
+    img.addEventListener('load', done, { once: true });
+    img.addEventListener('error', done, { once: true });
+};
+
+document.querySelectorAll('img').forEach(trackImageLoading);
+
+// Livewire/Alpine menambah gambar atau mengganti src setelah halaman dimuat.
+new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes') {
+            trackImageLoading(mutation.target);
+            return;
+        }
+
+        mutation.addedNodes.forEach((node) => {
+            if (node.nodeType !== window.Node.ELEMENT_NODE) return;
+            if (node.tagName === 'IMG') trackImageLoading(node);
+            node.querySelectorAll?.('img').forEach(trackImageLoading);
+        });
+    });
+}).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });

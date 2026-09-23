@@ -154,7 +154,7 @@
                                     @if (\App\Support\DeforestationStoryMedia::isVideo($item->image_id))
                                         <video src="{{ Storage::url($item->image_id) }}" muted playsinline preload="metadata" class="h-full w-full object-cover"></video>
                                     @else
-                                        <img src="{{ Storage::url($item->image_id) }}" alt="{{ $item->title_id }}" class="h-full w-full object-cover">
+                                        <img src="{{ Storage::url($item->image_id) }}" alt="{{ $item->title_id }}" class="h-full w-full object-cover" loading="lazy" decoding="async">
                                     @endif
                                 @else
                                     <div class="flex h-full w-full flex-col items-center justify-center text-gray-400">
