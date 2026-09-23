@@ -154,6 +154,17 @@ it('paginates the public story list twelve per page and keeps filters in page li
         ->assertSee(e(route('deforestation.index', ['locale' => 'id', 'category' => 'Sawit', 'page' => 2])), false);
 });
 
+it('shows month headings only when there are at least two stories', function () {
+    DB::table('deforestory')->delete();
+    $monthHeading = 'class="mb-8 text-2xl font-bold';
+
+    createDeforestationStory(['status' => 'publish']);
+    $this->get(route('deforestation.index', ['locale' => 'id']))->assertDontSee($monthHeading, false);
+
+    createDeforestationStory(['status' => 'publish']);
+    $this->get(route('deforestation.index', ['locale' => 'id']))->assertSee($monthHeading, false);
+});
+
 it('signs page links on the preview story list', function () {
     DB::table('deforestory')->delete();
 

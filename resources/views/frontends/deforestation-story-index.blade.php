@@ -86,7 +86,9 @@
                 <div class="space-y-24 sm:space-y-28">
                     @forelse ($storyGroups as $month => $monthStories)
                     <section class="scroll-mt-40">
+                        @if ($stories->total() >= 2)
                         <h2 class="mb-8 text-2xl font-bold leading-relaxed tracking-[-0.05em] text-[#376A64] sm:text-3xl">{{ $month }}</h2>
+                        @endif
                         <div class="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 xl:grid-cols-4 xl:gap-x-7">
                             @foreach ($monthStories as $story)
                                 <x-deforestation-story-card :story="$story" :locale="$locale" :is-preview="$isPreview" :category-clickable="$categoryClickable" :region-clickable="$regionClickable" />
