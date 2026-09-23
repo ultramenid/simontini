@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
-Route::redirect('/', '/id/status-deforestasi-di-indonesia-2025');
+Route::redirect('/', '/id');
 
 Route::get('/data-visualizations/{id}', [DataVisualizationController::class, 'show'])
     ->whereNumber('id')
