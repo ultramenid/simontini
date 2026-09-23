@@ -24,7 +24,7 @@
                 <h1 class="text-3xl font-black tracking-wide sm:text-6xl">Deforestory</h1>
                 <p class="mx-auto mt-4 max-w-3xl px-4 text-xs leading-6 sm:text-base sm:leading-7">
                     {{ $locale === 'en'
-                        ? 'Stories summarizing deforestation cases in Indonesia. Combining analyses of secondary data and ground truthing by Auriga Nusantara and/or partners, cases appearing on this page are open for follow-up with investigative reports, which will be displayed individually in separate places. For the sake of halting deforestation.'
+                        ? 'Stories summarizing deforestation cases in Indonesia. Combining analyses of secondary data and ground truthing by Auriga Nusantara and/or partners. Cases appearing on this page are open for follow-up with investigative reports, which will be displayed individually in separate places. For the sake of halting deforestation.'
                         : 'Cerita ringkas kasus-kasus deforestasi Indonesia. Mengkombinasi analisis data sekunder dengan pengamatan lapangan oleh Auriga Nusantara dan atau mitra. Kasus-kasus yang tampil di laman ini terbuka untuk ditindaklanjuti dengan laporan investigasi yang akan ditampilkan tersendiri di tempat terpisah. Demi terhentinya deforestasi.' }}
                 </p>
                 <button data-subscribe-open type="button" x-on:click="subscribed = false; subscriptionEmail = ''; subscribeOpen = true" class="mt-7 rounded-lg bg-white px-8 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#376A64] shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f0e8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" aria-haspopup="dialog">
@@ -103,23 +103,6 @@
         </section>
     </main>
 
-    <div class="bg-simontini">
-        <div class="max-w-5xl mx-auto px-4 py-4">
-            <div class="border-b border-white sm:flex hidden justify-center gap-12 py-4">
-                <a class="text-white font-light">ABOUT</a>
-                <a class="text-white font-light">INSIGHT</a>
-                <a href="{{ route('deforestation.index', ['locale' => $locale]) }}" class="text-white font-light">DEFORESTORY</a>
-                <a class="text-white font-light">MAP & DATA</a>
-                <a class="text-white font-light">DOWNLOAD</a>
-            </div>
-            <div class="flex justify-center gap-2 py-4 text-sm">
-                <a class="text-white font-light">@ 2024</a>
-                <a class="text-white font-light">|</a>
-                <a class="text-white font-light">Simontini</a>
-                <a class="text-white font-light">|</a>
-                <a class="text-white font-light">Auriga Nusantara</a>
-            </div>
-        </div>
-    </div>
+    @include('partials.footer')
 
 @endsection

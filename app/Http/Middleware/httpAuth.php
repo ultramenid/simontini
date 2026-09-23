@@ -15,10 +15,15 @@ class httpAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = $request->getUser();
-        $password = $request->getPassword();
+        $expectedUser = (string) config('cms.basic_auth.user');
+        $expectedPassword = (string) config('cms.basic_auth.password');
+        $user = (string) $request->getUser();
+        $password = (string) $request->getPassword();
 
-        if ($user !== 'Auriga' || $password !== 'S.T.A.D.I.2025') {
+        // Gagal tertutup: tanpa kredensial di env, halaman tidak bisa dibuka.
+        if ($expectedUser === '' || $expectedPassword === ''
+            || ! hash_equals($expectedUser, $user)
+            || ! hash_equals($expectedPassword, $password)) {
             return response('Unauthorized', 401, [
                 'WWW-Authenticate' => 'Basic realm="Restricted Area"',
             ]);

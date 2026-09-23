@@ -6,17 +6,22 @@ use App\Services\CommentHtmlSanitizer;
 use App\Services\PasopatiReportClient;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Livewire\Attributes\Locked;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
 class DeforestationStoryInteractions extends Component
 {
+    #[Locked]
     public int $storyId;
 
+    #[Locked]
     public string $storyUuid;
 
+    #[Locked]
     public string $locale;
 
+    #[Locked]
     public bool $isPreview = false;
 
     public array $updateItems = [];

@@ -78,4 +78,5 @@
             </a>
         </section>
     </main>
+    @include('partials.footer')
 @endsection

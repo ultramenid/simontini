@@ -13,7 +13,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MapndataController;
 use App\Http\Controllers\StadiController;
 use App\Http\Controllers\StoryCommentController;
-use App\Http\Middleware\checkSession;
+use App\Http\Middleware\AuthenticateCmsSession;
 use App\Http\Middleware\hasSession;
 use App\Http\Middleware\setLanguage;
 use Illuminate\Support\Facades\Route;
@@ -127,9 +127,7 @@ Route::prefix('{locale}')
     });
 
 // stadi 2025
-Route::middleware('httpauth')->group(function () {});
-
-Route::middleware('httpauth')->group(function () {
+Route::middleware(['httpauth', 'throttle:10,1'])->group(function () {
     Route::get('/penjelasan-data-stadi-2025', [InsightContoller::class, 'penjelasan'])->name('penjelasan-data-stadi-2025');
 });
 
@@ -144,7 +142,7 @@ Route::middleware([setLanguage::class])->group(function () {
     });
 });
 
-Route::middleware([checkSession::class])->group(function () {
+Route::middleware([AuthenticateCmsSession::class, 'role:admin'])->group(function () {
     Route::get('/cms/dashboard', [DashboardController::class, 'index']);
     Route::get('/cms/deforestory', [DashboardController::class, 'deforestory'])->name('cms.deforestory');
     Route::get('/cms/deforestory/add', [DashboardController::class, 'addDeforestory'])->name('cms.deforestory.add');
@@ -170,6 +168,7 @@ Route::middleware([checkSession::class])->group(function () {
         ->whereNumber('id')
         ->name('cms.comments.status');
     Route::get('/cms/subscribers', [CmsSubscriberController::class, 'index'])->name('cms.subscribers');
+    Route::get('/cms/users', [DashboardController::class, 'users'])->name('cms.users');
 
 });
 

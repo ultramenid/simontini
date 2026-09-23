@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Services\DeforestationStoryNotificationDispatcher;
 use App\Services\DeforestationStoryWebhookDispatcher;
+use App\Services\StoryHtmlSanitizer;
 use App\Support\DeforestationStoryStopper;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -210,6 +211,14 @@ class DeforestoryAdd extends Component
             ? null
             : trim($regionEn);
         $validated['region'] = $validated['region_id'];
+
+        // Sanitasi HTML di sisi server — sanitizer JS di editor mudah dilewati
+        // dengan mem-posting langsung ke endpoint Livewire.
+        $storySanitizer = app(StoryHtmlSanitizer::class);
+        foreach (['content_id', 'content_en', 'footer_id', 'footer_en', 'image_description_id', 'image_description_en'] as $htmlField) {
+            $validated[$htmlField] = $storySanitizer->sanitize($validated[$htmlField] ?? '');
+        }
+
         $validated['content_id'] = DeforestationStoryStopper::normalizeHtml($validated['content_id']);
         $validated['content_en'] = DeforestationStoryStopper::normalizeHtml($validated['content_en']);
         $validated['slug'] = $this->uniqueSlug($this->title_id, $this->deforestoryId);

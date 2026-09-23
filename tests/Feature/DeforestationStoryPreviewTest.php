@@ -392,7 +392,7 @@ it('still asks a logged in CMS user for the password on a locked preview', funct
         'is_locked' => true,
     ]);
 
-    $this->withSession(['id' => 123])
+    $this->withSession(['id' => 1])
         ->get(temporaryDeforestationPreviewUrl('deforestation.preview.show', [
             'locale' => 'id',
             'id' => $story->id,

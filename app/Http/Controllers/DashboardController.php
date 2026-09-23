@@ -13,7 +13,44 @@ class DashboardController extends Controller
         $title = 'Dashboard - Simontini';
         $nav = 'dashboard';
 
-        return view('backends.dashboard', compact('title', 'nav'));
+        $stories = DB::table('deforestory')
+            ->selectRaw("COUNT(*) as total, SUM(status = 'publish') as published, SUM(status = 'draft') as drafts, SUM(is_locked = 1) as locked")
+            ->first();
+
+        $stats = [
+            'stories' => (int) $stories->total,
+            'published' => (int) $stories->published,
+            'drafts' => (int) $stories->drafts,
+            'locked' => (int) $stories->locked,
+            'comments' => DB::table('story_comments')->count(),
+            'hiddenComments' => DB::table('story_comments')->where('status', 'hidden')->count(),
+            'subscribers' => DB::table('deforestation_story_subscriptions')->where('status', 'active')->count(),
+            'visualizations' => DB::table('data_visualizations')->where('is_active', true)->count(),
+            'references' => DB::table('reference_images')->count(),
+        ];
+
+        $recentStories = DB::table('deforestory')
+            ->select(['id', 'title_id', 'status', 'is_locked', 'updated_at'])
+            ->orderByDesc('updated_at')
+            ->limit(5)
+            ->get();
+
+        $recentComments = DB::table('story_comments as comments')
+            ->join('deforestory as stories', 'stories.id', '=', 'comments.story_id')
+            ->select(['comments.user_name', 'comments.comment', 'comments.status', 'comments.created_at', 'stories.title_id as story_title'])
+            ->orderByDesc('comments.created_at')
+            ->limit(5)
+            ->get();
+
+        return view('backends.dashboard', compact('title', 'nav', 'stats', 'recentStories', 'recentComments'));
+    }
+
+    public function users()
+    {
+        $title = 'User - Simontini';
+        $nav = 'users';
+
+        return view('backends.users', compact('title', 'nav'));
     }
 
     public function deforestory()

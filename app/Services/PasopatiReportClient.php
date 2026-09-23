@@ -61,6 +61,7 @@ class PasopatiReportClient
                     $targetUrl = $locale === 'en'
                         ? ($item['target_url_en'] ?? $item['target_url_id'] ?? $item['target_url'] ?? '#')
                         : ($item['target_url_id'] ?? $item['target_url_en'] ?? $item['target_url'] ?? '#');
+                    $targetUrl = $this->safeExternalUrl($targetUrl);
 
                     return (object) [
                         'id' => $item['external_id'] ?? $item['uuid'] ?? substr(hash('sha256', json_encode($item)), 0, 16),
@@ -106,9 +107,22 @@ class PasopatiReportClient
         return trim((string) preg_replace('/\s+/u', ' ', $text));
     }
 
+    // Hanya tautan http/https yang boleh dirender sebagai href;
+    // scheme lain (mis. javascript:) ditolak.
+    private function safeExternalUrl(mixed $value): string
+    {
+        $url = trim((string) $value);
+
+        if (in_array(parse_url($url, PHP_URL_SCHEME), ['http', 'https'], true)) {
+            return $url;
+        }
+
+        return '#';
+    }
+
     private function resolveImageUrl(mixed $providedImage, string $targetUrl): ?string
     {
-        if (filter_var($providedImage, FILTER_VALIDATE_URL)) {
+        if (in_array(parse_url((string) $providedImage, PHP_URL_SCHEME), ['http', 'https'], true)) {
             return (string) $providedImage;
         }
 
@@ -126,7 +140,12 @@ class PasopatiReportClient
             now()->addDay(),
             function () use ($targetUrl): ?string {
                 try {
-                    $html = Http::timeout(5)->retry(1, 100, throw: false)->get($targetUrl)->body();
+                    // Tanpa mengikuti redirect: host terpin hanya berlaku
+                    // untuk URL pertama, bukan tujuan redirect 30x.
+                    $html = Http::timeout(5)->retry(1, 100, throw: false)
+                        ->withoutRedirecting()
+                        ->get($targetUrl)
+                        ->body();
 
                     if ($html === '') {
                         return null;

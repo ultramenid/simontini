@@ -46,12 +46,6 @@ return [
         'api_token' => env('CLOUDFLARE_D1_API_TOKEN'),
     ],
 
-    'google' => [
-        'client_id' => env('GOOGLE_CLIENT_ID'),
-        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => env('GOOGLE_REDIRECT_URI'),
-    ],
-
     'turnstile' => [
         'site_key' => env('TURNSTILE_SITE_KEY'),
         'secret_key' => env('TURNSTILE_SECRET', env('TURNSTILE_SECRET_KEY')),

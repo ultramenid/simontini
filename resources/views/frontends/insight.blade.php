@@ -36,4 +36,5 @@
             <p class="sm:text-sm text-xs mt-4">{{__('Tahun lalu Auriga merilis data deforestasi 2023 pada Maret. Mulai tahun ini, deforestasi tahunan akan dirilis setiap Januari.')}}</p>
         </div>
     </div>
+    @include('partials.footer')
 @endsection
