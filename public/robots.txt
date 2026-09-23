@@ -1,12 +1,9 @@
 User-agent: *
-
 Allow: /
 
 # block halaman sensitif
-Disallow: /admin
+Disallow: /cms/
 Disallow: /login
-Disallow: /storage
-Disallow: /vendor
 
 # sitemap
 Sitemap: https://simontini.id/sitemap.xml

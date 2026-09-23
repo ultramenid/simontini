@@ -1,4 +1,4 @@
-@extends('layouts.stadiLayout') @section('meta') @include('partials.insightMeta') @endsection @section('content')
+@extends('layouts.stadiLayout') @section('meta') @include('partials.indexMeta') @endsection @section('content')
 
 
 <!-- topbar -->
@@ -29,7 +29,7 @@
 
 
 <div class="fixed z-10 md:bottom-56 bottom-2/3 md:left-[16%] left-5 md:w-[34%] w-[90%]" id="stickyText">
-    <a class="md:text-5xl text-2xl text-white font-bold">Status of Deforestation in Indonesia 2024</a>
+    <h1 class="md:text-5xl text-2xl text-white font-bold">Status of Deforestation in Indonesia 2024</h1>
 </div>
 
 
@@ -59,7 +59,7 @@
         <p class=" md:text-xl text-base mt-2 italic text-center max-w-1xl">Auriga released deforestation data for 2023 in March last year. Commencing this year, it will release annual deforestation data each January.</p>
     </div>
     <div id="pendahuluan" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini block">INTRODUCTION</h1>
+        <h2 class="text-3xl font-bold mt-12 text-simontini block">INTRODUCTION</h2>
         <p class="mt-6 leading-relaxed">Despite appearing reluctant – when viewed in light of some statements from state officials, the refusal to use certain terms, the tinkering with definitions of forests, and the various policies still providing room to exploit them – the Government
             of Indonesia is basically striving to curb deforestation in the country. Moratoria on new licenses for primary forests and peatlands, and FOLU Net Sink 2030 are examples of such efforts.</p>
         <p class="mt-4 leading-relaxed">However, periodic annual deforestation data for Indonesia has yet to be available, with the exception of data published by Global Forest Watch in collaboration with the University of Maryland and the World Resources Institute. To date, deforestation
@@ -80,7 +80,7 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="metodologi" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini">METHODOLOGY</h1>
+        <h2 class="text-3xl font-bold mt-12 text-simontini">METHODOLOGY</h2>
         <p class="mt-6 leading-relaxed">The deforestation referred to in this study is the loss of natural forest cover, and does not count loss in timber plantations and/or plantation forests. Natural forest is a vegetative association dominated by naturally occurring woody growth.
             Therefore, this natural forest terminology covers both primary and secondary forests.</p>
         <p class="mt-4 leading-relaxed">
@@ -91,7 +91,7 @@
         </p>
         <p class="mt-4 leading-relaxed">
             Deforestation data for 2024 was generated through three stages as follows: {{-- tahap-1 --}}
-            <h1 class="leading-relaxed mt-4"><b>1. Detection of suspected deforestation: </b> Suspected deforestation was obtained using two approaches:</h1>
+            <p class="leading-relaxed mt-4"><b>1. Detection of suspected deforestation: </b> Suspected deforestation was obtained using two approaches:</p>
             <ul class="list-[lower-alpha] pl-12">
                 <ul class="list-[lower-alpha] pl-12">
                     <li class="leading-relaxed mt-4">Monthly deforestation alerts: Suspected monthly deforestation was established by using monthly deforestation alerts developed by the University of Maryland. These alerts were overlaid on MapBiomas Indonesia forest cover data for 2023
@@ -218,7 +218,7 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="deforestasi2024" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini">DEFORESTATION IN 2024</h1>
+        <h2 class="text-3xl font-bold mt-12 text-simontini">DEFORESTATION IN 2024</h2>
         <p class="mt-6 leading-relaxed">
             Indonesian deforestation in 2024 was identified to be 261.575 ha; an increase of 4,191 ha on the previous year, which was recorded at <a href="https://simontini.id/presentation/Deforestasi_Indonesia-2023-paparan.pdf" target="_blank" class="underline text-simontini">257.384</a>            ha. Deforestation occurred in all regions of Indonesia, with increases in Kalimantan and Sumatra, and decreases in Sulawesi, Papua, the Moluccas, Java, and Bali and Nusa Tenggara.
         </p>
@@ -751,7 +751,7 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="diskusi" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-20 text-simontini">DISCUSSION</h1> {{-- diskusi-1 --}}
+        <h2 class="text-3xl font-bold mt-20 text-simontini">DISCUSSION</h2> {{-- diskusi-1 --}}
         <h2 class="font-bold mt-8">1. Legal deforestation as the greatest threat</h2>
         <div id="diskusi-1" class="pl-5">
             <p class="mt-4 leading-relaxed">Essentially, Indonesia’s legal system does not prohibit deforestation, because as long as the government issues a license, the license holder is basically able to carry out deforestation. Since the passing of the Omnibus Law, government projects
@@ -1469,7 +1469,7 @@
 
         <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
             <div id="rekomendasi" class="pt-[45px] -mt-[45px]">
-                <h1 class="text-3xl font-bold mt-12 text-simontini">RECOMMENDATIONS</h1>
+                <h2 class="text-3xl font-bold mt-12 text-simontini">RECOMMENDATIONS</h2>
                 <p class="mt-6 leading-relaxed">
                     Currently, legal protection for natural forest in Indonesia only applies to natural forests inside conservation areas, as the conversion of forest cover and/or landscapes within them is prohibited. Of a total 22.4 million ha of conservation areas in Indonesia,
                     17.3 million ha constitute natural forest cover.

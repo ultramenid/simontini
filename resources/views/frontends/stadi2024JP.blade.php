@@ -1,7 +1,7 @@
 @extends('layouts.stadiLayout')
 
 @section('meta')
-@include('partials.insightMeta')
+@include('partials.indexMeta')
 @endsection
 
 
@@ -35,7 +35,7 @@
 
 
 <div class="fixed z-10 md:bottom-56 bottom-2/3 md:left-[16%] left-5 md:w-[34%] w-[90%]" id="stickyText">
-    <a class="md:text-5xl text-2xl text-white font-bold">インドネシアにおける2024年の森林破壊の現状</a>
+    <h1 class="md:text-5xl text-2xl text-white font-bold">インドネシアにおける2024年の森林破壊の現状</h1>
 </div>
 
 
@@ -65,7 +65,7 @@
         <p class=" md:text-xl text-base mt-2 italic text-center max-w-1xl">Auriga released deforestation data for 2023 in March last year. Commencing this year, it will release annual deforestation data each January.</p>
     </div> --}}
     <div id="pendahuluan" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini block">はじめに</h1>
+        <h2 class="text-3xl font-bold mt-12 text-simontini block">はじめに</h2>
         <p class="mt-6 leading-relaxed">ー部の政府関係者の発言を見る限り、機微に触れるような用語を避けたり、森林の定義を弄んだり、森林を搾取する余地を残す政策をおこなうなど、依然、消極さがうかがえるものの、インドネシア政府は基本的に国内の森林減少を抑制しようとしています。原生林と泥炭地の新規許可のモラトリアムやFOLU Net Sink 2030（森林・土地利用分野からの温室効果ガス排出を2030年までにゼロにすることを目標とするインドネシア政府による計画）は、そのような取り組みの例です。</p>
         <p class="mt-4 leading-relaxed">しかしながら、メリーランド大学および世界資源研究所と協力してGlobal Forest Watchが発表したデータを除き、インドネシアの定期的な年次森林減少データはまだ利用できません。これまで、インドネシア政府が林業省（旧・環境林業省）を通じて発表してきた森林減少データは、7月から翌年6月までの期間を対象としているため、年次とはみなせず、12か月間をカバーしているものの2年にわたる月次ベースのデータを参照しています。この12か月間の森林減少データは2012年から発表されており、それ以前には8回（2012年、2009年、2006年、2003年、2003年、2000年、1996年、1990年）発表されています。しかし、インドネシア政府は森林減少に関する統計データのみを発表し、地図は添付されていないため、独立した検証や市民の参画が困難です。</p>
         <p class="mt-4 leading-relaxed">
@@ -81,7 +81,7 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="metodologi" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini">方法論</h1>
+        <h2 class="text-3xl font-bold mt-12 text-simontini">方法論</h2>
         <p class="mt-6 leading-relaxed">本レポートで言及される森林破壊（Deforestation）とは、天然林被覆の喪失を指し、産業植林やプランテーションの喪失は含まれていません。天然林（Natural Forest）とは、自然に発生した植物（Woody Growth）が優占する植生群集です。したがって、天然林という用語は原生林（Primary Forest）と二次林（Secondary Forest）の両方を含みます。</p>
         <p class="mt-4 leading-relaxed">
             産業植林は、10年以内に定期的に収穫される木材で満たされた地域であり、プランテーションは10年未満で収穫されない木材で満たされた地域です。
@@ -90,7 +90,7 @@
         </p>
         <p class="mt-4 leading-relaxed">
             2024年の森林破壊データは、以下に示す3つの段階を通じて作成されています。 {{-- tahap-1 --}}
-            <h1 class="leading-relaxed mt-4"><b>1. 森林破壊の疑いのある地域の特定 </b>：以下の2つのアプローチを用いて森林破壊の疑いのある地域が得られています。 </h1>
+            <p class="leading-relaxed mt-4"><b>1. 森林破壊の疑いのある地域の特定 </b>：以下の2つのアプローチを用いて森林破壊の疑いのある地域が得られています。 </p>
             <ul class="list-[lower-alpha] pl-12">
                 <ul class="list-[lower-alpha] pl-12">
                     <li class="leading-relaxed mt-4">月毎の森林破壊アラート：月次単位の森林破壊の疑いは、メリーランド大学が開発した月毎の森林破壊アラートを用いて特定されました。これらのアラートは、2023年の「<a href="https://mapbiomas.id" class="underline text-simontini">MapBiomas Indonesia</a>」の森林被覆データ（近日中に公開予定）と重ね合わせ、森林被覆外に発生したアラートを除外しました。森林被覆内に位置するアラートは半径1.5キロメートルにバッファリングが拡大され、「スコープエリア」と呼ばれます。その後、雲被りによる見えない領域を取り除き、2024年の月ごとに得られたこれらのスコープエリアを森林破壊と見なし、2023年12月末時点の森林被覆との変化を分類しました。分類結果はさらに時間的および空間的にフィルタリングされ、森林破壊の発生を確実にし、最小マッピング単位である0.25ヘクタール未満の領域を除外しました。
@@ -209,7 +209,7 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="deforestasi2024" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini">2024年の森林破壊</h1>
+        <h2 class="text-3xl font-bold mt-12 text-simontini">2024年の森林破壊</h2>
         <p class="mt-6 leading-relaxed">
             2024年、インドネシアの森林破壊は261,575ヘクタールと確認され、前年の257,384ヘクタールから4,191ヘクタール増加しました。森林破壊はインドネシアのすべての地域で発生し、カリマンタンとスマトラで増加し、スラウェシ、パプア、マルク諸島、ジャワ、バリ、ヌサトゥンガラでは減少しています。
         </p>
@@ -740,7 +740,7 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="diskusi" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-20 text-simontini">ディスカッション</h1> {{-- diskusi-1 --}}
+        <h2 class="text-3xl font-bold mt-20 text-simontini">ディスカッション</h2> {{-- diskusi-1 --}}
         <h2 class="font-bold mt-8">1. 合法的な森林破壊が最大の脅威</h2>
         <div id="diskusi-1" class="pl-5">
             <p class="mt-4 leading-relaxed">インドネシアの法制度は、基本的に森林伐採を禁止していません。政府がライセンスを発行する限り、ライセンス保有者は基本的に森林伐採を行うことができます。雇用創出オムニバス法の成立以降、政府プロジェクトは既存の天然林を自由に皆伐することができます。</p>
@@ -1428,7 +1428,7 @@
 
         <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
             <div id="rekomendasi" class="pt-[45px] -mt-[45px]">
-                <h1 class="text-3xl font-bold mt-12 text-simontini">提言</h1>
+                <h2 class="text-3xl font-bold mt-12 text-simontini">提言</h2>
                 <p class="mt-6 leading-relaxed">
                     現在、インドネシアの天然林に対する法的保護は、保全地域内の天然林にのみ適用されています。なぜなら、これらの地域では森林被覆やランドスケープの転換が禁止されているからです。インドネシアの保全地域の総面積2,240万ヘクタールのうち、1,730万ヘクタールが天然林被覆となっています。
                 </p>

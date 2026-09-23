@@ -1,7 +1,7 @@
 @extends('layouts.stadi2025')
 
 @section('meta')
-    @include('partials.insightMeta2025')
+    @include('partials.indexMeta')
 @endsection
 
 @section('content')

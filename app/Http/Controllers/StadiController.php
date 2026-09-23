@@ -11,6 +11,7 @@ class StadiController extends Controller
         $title = 'Stadi 2025 - Simontini';
         $description = 'Stadi 2025 - Simontini';
         $nav = 'stadi';
-        return view('frontends.stadi.stadi2025', compact('title', 'description', 'nav' ));
+        $noindex = true; // draft copy of the published STADI 2025 report
+        return view('frontends.stadi.stadi2025', compact('title', 'description', 'nav', 'noindex'));
     }
 }

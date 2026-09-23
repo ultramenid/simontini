@@ -8,16 +8,29 @@ class IndexController extends Controller
 {
     public function getDescription(){
         if(app()->getLocale() == 'id'){
-            return 'Menyajikan data, informasi, dan analisis tutupan lahan dan izin di Indonesia.';
+            return 'Simontini oleh Auriga Nusantara menyajikan data, peta, dan analisis terbuka tentang deforestasi, tutupan lahan, serta izin konsesi di Indonesia.';
         }else{
-            return 'Presenting data, information and analyses of land cover and licenses in Indonesia.';
+            return 'Simontini by Auriga Nusantara presents open data, maps and analysis of deforestation, land cover and concession licenses across Indonesia.';
         }
     }
     public function index(){
-        $title = 'Simontini - Homepage';
+        $title = app()->getLocale() === 'en'
+            ? 'Simontini - Deforestation, Land Cover & License Data for Indonesia'
+            : 'Simontini - Data Deforestasi, Tutupan Lahan & Izin di Indonesia';
         $description = $this->getDescription();
         $nav = 'index';
-        return view('frontends.index', compact('title', 'nav', 'description'));
+        $structuredData = [
+            [
+                '@type' => 'WebSite',
+                'name' => 'Simontini',
+                'alternateName' => 'Sistem Informasi Tutupan dan Izin di Indonesia',
+                'url' => url('/'),
+                'inLanguage' => ['id', 'en'],
+                'publisher' => config('seo.organization'),
+            ],
+            config('seo.organization'),
+        ];
+        return view('frontends.index', compact('title', 'nav', 'description', 'structuredData'));
     }
 
 }

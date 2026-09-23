@@ -1,7 +1,7 @@
 @extends('layouts.stadiLayout')
 
 @section('meta')
-    @include('partials.insightMeta')
+    @include('partials.indexMeta')
 @endsection
 
 @section('content')
@@ -34,7 +34,7 @@
 </div>
 <!-- Single Sticky Text -->
 <div class="fixed z-10 md:bottom-56 bottom-2/3 md:left-[16%] left-5 md:w-[30%] w-[90%]" id="stickyText">
-    <a class="md:text-5xl text-2xl text-white font-bold">Status Deforestasi Indonesia 2024</a>
+    <h1 class="md:text-5xl text-2xl text-white font-bold">Status Deforestasi Indonesia 2024</h1>
 
 </div>
 
@@ -68,7 +68,7 @@
     </div>
 
     <div id="pendahuluan" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini block">PENDAHULUAN</h1>
+        <h2 class="text-3xl font-bold mt-12 text-simontini block">PENDAHULUAN</h2>
         <p class="mt-6 leading-relaxed">Meski cenderung enggan–terlihat dari berbagai pernyataan penyelenggara negara, penolakan penggunaan terma, utak-atik definisi hutan, berbagai kebijakan yang masih membuka ruang–Pemerintah Indonesia pada dasarnya berupaya menekan deforestasi di
             Indonesia. Moratorium izin baru di hutan primer dan gambut dan FOLU Net Sink 2030 adalah contoh upaya tersebut.</p>
         <p class="mt-4 leading-relaxed">Namun demikian, data deforestasi tahunan Indonesia sejauh ini belum tersedia secara berkala, kecuali yang dipublikasi oleh Global Forest Watch kolaborasi Universitas Maryland dan World Resources Institute. Data deforestasi yang dirilis Pemerintah
@@ -89,7 +89,7 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="metodologi" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini">METODOLOGI</h1>
+        <h2 class="text-3xl font-bold mt-12 text-simontini">METODOLOGI</h2>
         <p class="mt-6 leading-relaxed">Deforestasi yang dimaksud dalam kajian ini adalah hilangnya tutupan hutan alam, sehingga tidak menghitung kehilangan pada kebun kayu dan/atau hutan tanaman. Hutan alam merupakan asosiasi vegetasi yang didominasi tumbuhan berkayu yang tumbuh secara
             alami. Dengan demikian, hutan alam dalam terminologi ini mencakup baik hutan sekunder maupun hutan primer.</p>
         <p class="mt-4 leading-relaxed">Kebun kayu sendiri merupakan hamparan yang berisi tanaman berkayu yang dipanen secara periodik dalam rentang di bawah 10 tahun, sementara hutan tanaman adalah hamparan berisi tanaman berkayu namun tidak ditebang secara periodik di bawah 10 tahun.</p>
@@ -98,7 +98,7 @@
         </p>
         <p class="mt-4 leading-relaxed">
             Deforestasi 2024 ini dihasilkan melalui tiga tahapan berikut: {{-- tahap-1 --}}
-            <h1 class="leading-relaxed mt-4"> <b>1. Deteksi dugaan deforestasi.</b> Dugaan deforestasi diperoleh dengan dua pendekatan:</h1>
+            <p class="leading-relaxed mt-4"> <b>1. Deteksi dugaan deforestasi.</b> Dugaan deforestasi diperoleh dengan dua pendekatan:</p>
             <ul class="list-[lower-alpha] pl-12">
                 <li class="leading-relaxed mt-4"><i>Deforestation alert</i> bulanan. Dugaan deforestasi bulanan ini dibangun dengan memanfaatkan alert deforestasi bulanan yang dikembangkan University of Maryland. <i>Alert</i> tersebut ditampalkan (<i>overlay</i>) dengan tutupan hutan
                     2023 MapBiomas Indonesia (yang akan dirilis dalam waktu dekat) sehingga terbuang alert di luar tutupan hutan (<i>false)</i>. Alert yang berada dalam tutupan hutan (<i>true</i>) kemudian diperluas (di-<i>buffer</i>) radius 1,5 kilometer
@@ -224,7 +224,7 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
     <div id="deforestasi2024" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-12 text-simontini">DEFORESTASI 2024</h1>
+        <h2 class="text-3xl font-bold mt-12 text-simontini">DEFORESTASI 2024</h2>
         <p class="mt-6 leading-relaxed">
             Deforestasi Indonesia pada 2024 teridentifikasi seluas 261.575 hektare, meningkat 4.191 hektare dari deforestasi tahun sebelumnya yang tercatat seluas <a href="https://simontini.id/presentation/Deforestasi_Indonesia-2023-paparan.pdf" target="_blank"
             class="underline text-simontini">257.384</a> hektare. Deforestasi terjadi di seluruh pulau besar di Indonesia. Peningkatan deforestasi terjadi di Kalimantan dan Sumatera, sementara deforestasi di Sulawesi, Papua, Kepulauan Maluku, Jawa, Bali,
@@ -762,7 +762,7 @@
 <div class="max-w-2xl mx-auto px-4 mb-4 z-20 relative">
 
     <div id="diskusi" class="pt-[45px] -mt-[45px]">
-        <h1 class="text-3xl font-bold mt-20 text-simontini">DISKUSI</h1> {{-- diskusi-1--}}
+        <h2 class="text-3xl font-bold mt-20 text-simontini">DISKUSI</h2> {{-- diskusi-1--}}
         <h2 class="font-bold mt-6">1. Deforestasi legal sebagai ancaman terbesar</h2>
         <div id="diskusi-1" class="pl-5 ">
             <p class="mt-4 leading-relaxed">Sistem dan detail hukum Indonesia pada dasarnya tidak melarang deforestasi karena sepanjang pemerintah menerbitkan izin maka pada dasarnya pemilik izin dapat melakukan deforestasi. Sejak diberlakukannya Omnibus Law, proyek pemerintah dapat
@@ -1489,7 +1489,7 @@
 
 
             <div id="rekomendasi" class="pt-[45px] -mt-[45px]">
-                <h1 class="text-3xl font-bold mt-12 text-simontini">REKOMENDASI</h1>
+                <h2 class="text-3xl font-bold mt-12 text-simontini">REKOMENDASI</h2>
                 <p class="mt-6 leading-relaxed">
                     Saat ini, perlindungan hukum terhadap hutan alam di Indonesia hanya terdapat pada hutan-hutan alam yang berada di kawasan konservasi, karena perbuatan mengkonversi tutupan dan/atau bentang alam tidak diperbolehkan dilakukan di dalamnya. Dari total 22,4
                     juta hektare kawasan konservasi di Indonesia, 17,3 juta hektare berupa tutupan hutan alam.

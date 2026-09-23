@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<h1 class="sr-only">{{ __('Peta & Data Tutupan Lahan dan Izin di Indonesia') }}</h1>
 <div class="sm:flex hidden" x-data=" {legend:true}">
     @include('partials.legend')
     <div id="map" class="w-9/12 h-screen ">

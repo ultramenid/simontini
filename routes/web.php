@@ -17,8 +17,7 @@ use App\Http\Middleware\AuthenticateCmsSession;
 use App\Http\Middleware\hasSession;
 use App\Http\Middleware\setLanguage;
 use Illuminate\Support\Facades\Route;
-use Spatie\Sitemap\Sitemap;
-use Spatie\Sitemap\Tags\Url;
+use App\Http\Controllers\SitemapController;
 
 Route::redirect('/', '/id');
 
@@ -29,49 +28,7 @@ Route::get('/embed/data-visualizations/{id}', [DataVisualizationController::clas
     ->whereNumber('id')
     ->name('data-visualizations.embed');
 
-Route::get('/sitemap.xml', function () {
-
-    $sitemap = Sitemap::create()
-        ->add(
-            Url::create('/')
-                ->setLastModificationDate(now())
-        )
-        ->add(
-            Url::create('/id')
-                ->setLastModificationDate(now())
-        )
-        ->add(
-            Url::create('/en')
-                ->setLastModificationDate(now())
-        )
-        ->add(
-            Url::create('/id/insight')
-                ->setLastModificationDate(now())
-        )
-        ->add(
-            Url::create('/en/insight')
-                ->setLastModificationDate(now())
-        )
-        ->add(
-            Url::create('/id/download')
-                ->setLastModificationDate(now())
-        )
-        ->add(
-            Url::create('/en/download')
-                ->setLastModificationDate(now())
-        )
-        ->add(
-            Url::create('/id/mapndata')
-                ->setLastModificationDate(now())
-        )
-        ->add(
-            Url::create('/en/mapndata')
-                ->setLastModificationDate(now())
-        );
-
-    return response($sitemap->render(), 200)
-        ->header('Content-Type', 'text/xml');
-});
+Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
 // stadi 2024
 Route::get('/id/status-deforestasi-indonesia-2024', [InsightContoller::class, 'stadi2024'])->name('stadi2024');
 Route::get('/en/status-of-deforestation-in-indonesia-2024', [InsightContoller::class, 'stadi2024EN'])->name('stadi2024EN');
@@ -132,7 +89,7 @@ Route::middleware(['httpauth', 'throttle:10,1'])->group(function () {
 });
 
 Route::middleware([setLanguage::class])->group(function () {
-    Route::group(['prefix' => '{lang}'], function () {
+    Route::group(['prefix' => '{lang}', 'where' => ['lang' => 'id|en']], function () {
         Route::get('/', [IndexController::class, 'index'])->name('index');
         Route::get('/mapndata', [MapndataController::class, 'index'])->name('mapndata');
         Route::get('/download', [DownloadController::class, 'index'])->name('downloads');

@@ -14,7 +14,7 @@
 
             <img src="{{ asset('assets/simontini-wave-icon.png') }}" alt="Simontini" class="sm:h-[55vh] h-44 sm:-ml-56 -ml-32">
             <div class="sm:w-4/12 w-full flex flex-col gap-6 px-4 mt-24">
-                <a class="text-white sm:text-4xl text-2xl font-bold ">{{__('SISTEM INFORMASI TUTUPAN DAN IZIN DI INDONESIA')}}</a>
+                <p class="text-white sm:text-4xl text-2xl font-bold ">{{__('SISTEM INFORMASI TUTUPAN DAN IZIN DI INDONESIA')}}</p>
                 {{-- <p class="text-white">Menyajikan data, informasi, dan analisis tutupan lahan dan izin di Indonesia.</p> --}}
             </div>
         </div>
@@ -23,7 +23,7 @@
     {{-- section 1 --}}
     <section class="max-w-4xl mx-auto mt-12 px-4">
         <div class="flex justify-center flex-col gap-6  items-center">
-            <h2 class="text-4xl text-center font-bold text-simontini">SIMONTINI</h2>
+            <h1 class="text-4xl text-center font-bold text-simontini">SIMONTINI</h1>
             <p class="sm:w-8/12 w-full text-center text-xl">{{__('Menyajikan data, informasi, dan analisis tutupan lahan dan izin di Indonesia.')}}</p>
         </div>
 
@@ -62,20 +62,20 @@
                 <img src="assets/elemen-light.png" alt="auriga nusantara" class="z-10">
             </div> --}}
             <div class="sm:col-span-3 col-span-1">
-                <img src="https://i.ytimg.com/vi/avXNUj9EgEI/hq720.jpg" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                <img src="https://i.ytimg.com/vi/avXNUj9EgEI/hq720.jpg" alt="{{ __('Rilis data Deforestasi Indonesia') }} 2024" class="w-full sm:h-96 h-full object-cover z-20">
             </div>
             <div class="px-4 sm:col-span-2 col-span-1">
 
-                <h1 class=" sm:text-3xl text-xl font-bold text-simontini">
+                <h2 class=" sm:text-3xl text-xl font-bold text-simontini">
                     @if (App::getLocale() == 'en')
-                        <p href="https://youtu.be/avXNUj9EgEI?si=gRV0rh-LQN1MF3-D" class="text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</p>
+                        <span class="block text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</span>
                         <a href="https://youtu.be/avXNUj9EgEI?si=gRV0rh-LQN1MF3-D" >{{__('Deforestasi Indonesia')}} 2024</a>
                     @else
-                        <p href="https://youtu.be/GLXnYIbkzHo?si=d05fjQ0z2pSoFGNS" class="text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</p>
+                        <span class="block text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</span>
                         <a href="https://youtu.be/GLXnYIbkzHo?si=d05fjQ0z2pSoFGNS" >{{__('Deforestasi Indonesia')}} 2024</a>
                     @endif
 
-                </h1>
+                </h2>
                 <div class=" mt-5 text-simontini">
 
                     <a  class="font-bold">{{__('Januari')}} 2025</a><span> | </span><a>{{__('Deforestasi Indonesia pada 2024 teridentifikasi seluas 261.575 hektare, meningkat 4.191 hetare dari deforestasi tahun sebelumnya yang tercatat seluas 257.384 hektare.')}}</a>
@@ -89,14 +89,14 @@
                 <img src="assets/elemen-light.png" alt="auriga nusantara" class="z-10">
             </div> --}}
             <div class="sm:col-span-3 col-span-1">
-                <img src="https://i.ytimg.com/vi/bz_nxXMTgeU/maxresdefault.jpg" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                <img src="https://i.ytimg.com/vi/bz_nxXMTgeU/maxresdefault.jpg" alt="{{ __('Rilis data Deforestasi Indonesia') }} 2023" class="w-full sm:h-96 h-full object-cover z-20">
             </div>
             <div class="px-4 sm:col-span-2 col-span-1">
 
-                <h1 class=" sm:text-3xl text-xl font-bold text-simontini">
-                    <p href="https://www.youtube.com/live/bz_nxXMTgeU?si=CfwYK2h0pZZ3bguJ" class="text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</p>
+                <h2 class=" sm:text-3xl text-xl font-bold text-simontini">
+                    <span class="block text-sm text-rilisdata font-light">{{__('RILIS DATA')}}</span>
                     <a href="https://www.youtube.com/live/bz_nxXMTgeU?si=CfwYK2h0pZZ3bguJ" >{{__('Deforestasi Indonesia')}} 2023</a>
-                </h1>
+                </h2>
                 <div class=" mt-5 text-simontini">
                     <a  class="font-bold">{{__('Maret')}} 2024</a><span> | </span><a> {{__('Deforestasi di konsesi kebun kayu Mayawana Persada, Kalimantan Barat, mematikan asa tiadanya deforestasi di Indonesia pada 2023.')}}
                     </a>
