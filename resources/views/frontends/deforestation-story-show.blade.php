@@ -23,7 +23,7 @@
         if ($story->localized_image && ! ($story->localized_media_is_video ?? false)) {
             $metaImage = \Illuminate\Support\Str::startsWith($story->localized_image, ['http://', 'https://'])
                 ? $story->localized_image
-                : url(\Illuminate\Support\Facades\Storage::url($story->localized_image));
+                : \App\Support\DeforestationStoryMedia::shareImageUrl($story->localized_image);
         }
     @endphp
 
@@ -31,6 +31,10 @@
         <meta name="robots" content="noindex, nofollow">
     @else
         <link rel="canonical" href="{{ $metaUrl }}">
+        @foreach (['id', 'en'] as $alternateLocale)
+            <link rel="alternate" hreflang="{{ $alternateLocale }}" href="{{ route('deforestation.show', ['locale' => $alternateLocale, 'id' => $story->id, 'slug' => $story->slug]) }}">
+        @endforeach
+        <link rel="alternate" hreflang="x-default" href="{{ route('deforestation.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $story->slug]) }}">
     @endif
     <meta name="description" content="{{ $metaDescription }}">
 
@@ -45,9 +49,29 @@
     <meta property="article:published_time" content="{{ \Carbon\Carbon::parse($story->date)->toIso8601String() }}">
 
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AURIGA_ID">
     <meta name="twitter:title" content="{{ $metaTitle }}">
     <meta name="twitter:description" content="{{ $metaDescription }}">
     <meta name="twitter:image" content="{{ $metaImage }}">
+
+    @unless ($isPreview)
+        @php
+            $structuredData = [
+                '@context' => 'https://schema.org',
+                '@type' => 'Article',
+                'headline' => \Illuminate\Support\Str::limit($metaTitle, 110, ''),
+                'description' => $metaDescription,
+                'image' => [$metaImage],
+                'datePublished' => \Carbon\Carbon::parse($story->date)->toIso8601String(),
+                'dateModified' => \Carbon\Carbon::parse($story->updated_at ?? $story->date)->toIso8601String(),
+                'inLanguage' => $locale === 'en' ? 'en' : 'id',
+                'mainEntityOfPage' => $metaUrl,
+                'author' => ['@type' => 'Organization', 'name' => 'Auriga Nusantara', 'url' => 'https://auriga.or.id'],
+                'publisher' => ['@type' => 'Organization', 'name' => 'SIMONTINI', 'logo' => ['@type' => 'ImageObject', 'url' => asset('assets/logo.png')]],
+            ];
+        @endphp
+        <script type="application/ld+json">@json($structuredData)</script>
+    @endunless
 @endsection
 
 @section('content')

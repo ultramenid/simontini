@@ -152,8 +152,8 @@ class DeforestationStoryController extends Controller
         return view('frontends.deforestation-story-index', [
             'title' => $locale === 'en' ? 'Deforestation Story - Simontini' : 'Cerita Deforestasi - Simontini',
             'description' => $locale === 'en'
-                ? 'Stories and analysis about deforestation in Indonesia.'
-                : 'Cerita dan analisis mengenai deforestasi di Indonesia.',
+                ? 'Short stories on deforestation cases in Indonesia by Auriga Nusantara and partners, combining secondary data analysis with ground truthing.'
+                : 'Cerita ringkas kasus-kasus deforestasi Indonesia oleh Auriga Nusantara dan mitra, memadukan analisis data sekunder dengan pengamatan lapangan.',
             'nav' => 'deforestation-story',
             'locale' => $locale,
             'stories' => $stories,

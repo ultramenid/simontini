@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 
 uses(DatabaseTransactions::class);
@@ -212,6 +213,56 @@ it('renders social sharing metadata from the published story', function () {
         ->assertSee('<meta property="og:description" content="Deskripsi metadata untuk pratinjau tautan.">', false)
         ->assertSee('<meta property="og:image"', false)
         ->assertSee('<meta name="twitter:card" content="summary_large_image">', false);
+});
+
+it('renders hreflang alternates and Article structured data for search engines', function () {
+    DB::table('deforestory')->delete();
+    $story = createDeforestationStory(['title_id' => 'Judul </script> SEO', 'status' => 'publish']);
+    $show = fn (string $locale) => route('deforestation.show', ['locale' => $locale, 'id' => $story->id, 'slug' => $story->slug]);
+
+    $html = $this->get($show('id'))
+        ->assertOk()
+        ->assertSee('<link rel="alternate" hreflang="en" href="'.$show('en').'">', false)
+        ->assertSee('<link rel="alternate" hreflang="x-default" href="'.$show('id').'">', false)
+        ->assertSee('<meta name="twitter:site" content="@AURIGA_ID">', false)
+        ->getContent();
+
+    preg_match('#<script type="application/ld\+json">(.*?)</script>#s', $html, $jsonLd);
+    expect(json_decode($jsonLd[1], true))
+        ->toMatchArray(['@type' => 'Article', 'headline' => 'Judul </script> SEO', 'mainEntityOfPage' => $show('id')]);
+
+    $this->get(route('deforestation.index', ['locale' => 'en', 'category' => 'Sawit']))
+        ->assertOk()
+        ->assertSee('<link rel="canonical" href="'.route('deforestation.index', ['locale' => 'en']).'">', false)
+        ->assertSee('<link rel="alternate" hreflang="id" href="'.route('deforestation.index', ['locale' => 'id']).'">', false);
+
+    $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $story->slug]))
+        ->assertOk()
+        ->assertDontSee('application/ld+json', false)
+        ->assertDontSee('hreflang', false);
+});
+
+it('shares a small 1200x630 crop of the story image on detail and list pages', function () {
+    Storage::fake('public', ['url' => 'https://simontini.id/storage']);
+    $canvas = imagecreatetruecolor(3000, 2000);
+    ob_start();
+    imagejpeg($canvas);
+    Storage::disk('public')->put('deforestory/id/hero.jpg', ob_get_clean());
+
+    DB::table('deforestory')->delete();
+    $story = createDeforestationStory(['image_id' => 'deforestory/id/hero.jpg', 'status' => 'publish']);
+    $shareImage = 'share/'.md5('deforestory/id/hero.jpg').'.jpg';
+    $metaTag = '<meta property="og:image" content="https://simontini.id/storage/'.$shareImage.'">';
+
+    $this->get(route('deforestation.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $story->slug]))
+        ->assertOk()
+        ->assertSee($metaTag, false);
+
+    expect(array_slice(getimagesize(Storage::disk('public')->path($shareImage)), 0, 2))->toBe([1200, 630]);
+
+    $this->get(route('deforestation.index', ['locale' => 'id']))
+        ->assertOk()
+        ->assertSee($metaTag, false);
 });
 
 it('renders the hero image description below the detail image', function () {

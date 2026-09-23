@@ -3,8 +3,38 @@
 @section('meta')
     @if ($isPreview)
         <meta name="robots" content="noindex, nofollow">
+    @else
+        {{-- Filtered lists point to the unfiltered list; later pages keep their own page number. --}}
+        @php $pageParameter = $stories->currentPage() > 1 ? ['page' => $stories->currentPage()] : []; @endphp
+        <link rel="canonical" href="{{ route('deforestation.index', ['locale' => $locale] + $pageParameter) }}">
+        @foreach (['id', 'en'] as $alternateLocale)
+            <link rel="alternate" hreflang="{{ $alternateLocale }}" href="{{ route('deforestation.index', ['locale' => $alternateLocale] + $pageParameter) }}">
+        @endforeach
+        <link rel="alternate" hreflang="x-default" href="{{ route('deforestation.index', ['locale' => 'id'] + $pageParameter) }}">
     @endif
     <meta name="description" content="{{ $description }}">
+
+    @php
+        $coverStory = $stories->getCollection()->first(fn ($story) => $story->localized_image && ! $story->localized_media_is_video);
+        $metaImage = $coverStory
+            ? (\Illuminate\Support\Str::startsWith($coverStory->localized_image, ['http://', 'https://'])
+                ? $coverStory->localized_image
+                : \App\Support\DeforestationStoryMedia::shareImageUrl($coverStory->localized_image))
+            : asset('assets/meta-image-2025.jpg');
+    @endphp
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SIMONTINI">
+    <meta property="og:locale" content="{{ $locale === 'en' ? 'en_US' : 'id_ID' }}">
+    <meta property="og:title" content="Deforestory - SIMONTINI">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:url" content="{{ route('deforestation.index', ['locale' => $locale]) }}">
+    <meta property="og:image" content="{{ $metaImage }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AURIGA_ID">
+    <meta name="twitter:title" content="Deforestory - SIMONTINI">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ $metaImage }}">
 @endsection
 
 @section('content')
