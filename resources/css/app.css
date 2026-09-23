@@ -3320,25 +3320,3 @@ img.img-loading {
     overflow: hidden;
 }
 
-/* Pagination (Laravel + Livewire vendor views) in brand colors; overrides their OS dark-mode styles. */
-nav[aria-label="Pagination Navigation"] a,
-nav[aria-label="Pagination Navigation"] span > span {
-    background-color: #fff;
-    border-color: #cfdcda;
-    color: #376A64;
-}
-nav[aria-label="Pagination Navigation"] a:hover {
-    background-color: #e5efed;
-    color: #2d5954;
-}
-nav[aria-label="Pagination Navigation"] span[aria-current="page"] > span {
-    background-color: #376A64;
-    border-color: #376A64;
-    color: #fff;
-}
-nav[aria-label="Pagination Navigation"] span[aria-disabled="true"] > span {
-    color: #9bb5b1;
-}
-nav[aria-label="Pagination Navigation"] p {
-    color: #6b7280;
-}
