@@ -712,3 +712,13 @@ it('hides the story date in the byline when the global date setting is off', fun
     $this->get($url)->assertOk()->assertDontSee('<time datetime="2025-03-14">', false)->assertDontSee('data-story-byline', false);
     \Livewire\Livewire::test(\App\Livewire\DeforestoryIndex::class)->assertSet('dateVisible', false)->assertSee('Settings');
 });
+
+it('shows the white Simontini loader with the story title on the story page', function () {
+    $story = createDeforestationStory(['status' => 'publish', 'title_id' => 'Judul Loader Uji']);
+
+    $this->get(route('deforestation.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $story->slug]))
+        ->assertOk()
+        ->assertSee('<div id="site-loader" class="site-loader--story"', false)
+        ->assertSee('assets/logo-simontinus-loader.webp', false)
+        ->assertSee('<div class="loader-sub">Judul Loader Uji</div>', false);
+});
