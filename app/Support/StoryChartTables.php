@@ -12,9 +12,9 @@ final class StoryChartTables
 
     /**
      * Charts are drawn on a canvas inside an iframe, so their numbers are invisible to
-     * crawlers and screen readers. Append each chart's data as a collapsible table.
+     * crawlers and screen readers. Append each chart's data as a visually hidden table.
      */
-    public static function append(string $html, string $locale): string
+    public static function append(string $html): string
     {
         if (! preg_match_all(self::EMBED_ID, $html, $matches)) {
             return $html;
@@ -26,7 +26,7 @@ final class StoryChartTables
             ->get(['id', 'title', 'chart_data'])
             ->keyBy('id');
 
-        return preg_replace_callback(self::CHART_FIGURE, function (array $figure) use ($charts, $locale) {
+        return preg_replace_callback(self::CHART_FIGURE, function (array $figure) use ($charts) {
             $chart = preg_match(self::EMBED_ID, $figure[0], $id) ? $charts->get((int) $id[1]) : null;
             $chartData = $chart ? json_decode($chart->chart_data ?? '', true) : null;
 
@@ -37,7 +37,6 @@ final class StoryChartTables
             return $figure[0].view('partials.story-chart-data', [
                 'title' => $chart->title,
                 'chartData' => $chartData,
-                'summary' => $locale === 'en' ? 'View chart data' : 'Lihat data grafik',
             ])->render();
         }, $html) ?? $html;
     }

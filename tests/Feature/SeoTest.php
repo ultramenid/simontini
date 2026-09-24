@@ -116,8 +116,8 @@ it('prints chart data as a table on chart pages and under charts in stories', fu
 
     $this->get(route('deforestation.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $story->slug]))
         ->assertOk()
-        ->assertSee('</figure><details class="chart-data story-chart-data">', false)
-        ->assertSee('Lihat data grafik')
+        ->assertSee('</figure><div class="story-chart-data sr-only">', false)
+        ->assertDontSee('Lihat data grafik')
         ->assertSee('<td>1701</td>', false)
         ->assertSee('<time datetime="2026-04-23">23 April 2026</time>', false);
 });

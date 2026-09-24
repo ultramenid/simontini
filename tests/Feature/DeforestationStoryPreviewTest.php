@@ -702,13 +702,13 @@ it('hides the story date in the byline when the global date setting is off', fun
     $story = createDeforestationStory(['status' => 'publish', 'date' => '2025-03-14']);
     $url = route('deforestation.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $story->slug]);
 
-    $this->get($url)->assertOk()->assertSee('<time datetime="2025-03-14">', false);
+    $this->get($url)->assertOk()->assertSee('<time datetime="2025-03-14">', false)->assertDontSee('Auriga Nusantara &middot;', false);
 
     \Livewire\Livewire::test(\App\Livewire\DeforestoryIndex::class)
         ->assertSet('dateVisible', true)
         ->call('toggleMetadataLink', 'date')
         ->assertSet('dateVisible', false);
 
-    $this->get($url)->assertOk()->assertDontSee('<time datetime="2025-03-14">', false)->assertSee('Auriga Nusantara');
+    $this->get($url)->assertOk()->assertDontSee('<time datetime="2025-03-14">', false)->assertDontSee('data-story-byline', false);
     \Livewire\Livewire::test(\App\Livewire\DeforestoryIndex::class)->assertSet('dateVisible', false)->assertSee('Settings');
 });

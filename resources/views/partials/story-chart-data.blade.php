@@ -1,4 +1,3 @@
-<details class="chart-data story-chart-data">
-    <summary>{{ $summary }}</summary>
+<div class="story-chart-data sr-only">
     @include('partials.chart-data-table')
-</details>
+</div>
