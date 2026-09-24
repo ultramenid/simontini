@@ -905,6 +905,40 @@ const storyGalleryTemplate = `
     </div>
 `;
 
+// Raw HTML mode: the textarea value is stored as-is, so hand-written formatting survives.
+const installTinyMceSourceMode = (wrapper, editor, input, onLeave) => {
+    const sourceEditor = wrapper.querySelector('[data-tinymce-source]');
+    const sourceToggle = wrapper.parentElement?.querySelector('[data-tinymce-source-toggle]');
+    if (!sourceEditor || !sourceToggle) return;
+
+    sourceToggle.onclick = (event) => {
+        event.preventDefault();
+        const enabled = !wrapper.tinyMceSourceMode;
+        wrapper.tinyMceSourceMode = enabled;
+        sourceToggle.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+        editor.getContainer().classList.toggle('hidden', enabled);
+        sourceEditor.classList.toggle('hidden', !enabled);
+
+        if (enabled) {
+            sourceEditor.value = input.value;
+            sourceEditor.focus();
+            return;
+        }
+
+        editor.setContent(sourceEditor.value || '');
+        editor.undoManager.clear();
+        wrapper.tinyMceSyncedValue = input.value;
+        onLeave();
+    };
+
+    sourceEditor.oninput = () => {
+        input.value = sourceEditor.value;
+        wrapper.tinyMceSyncedValue = input.value;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+    };
+};
+
 const initializeTinyMceEditors = () => {
     document.querySelectorAll('[data-tinymce-wrapper]').forEach((wrapper) => {
         if (wrapper.dataset.tinymceInitialized === 'true') return;
@@ -2442,9 +2476,18 @@ const initializeTinyMceEditors = () => {
                     normalizeAtomicStoryBlocks();
                     installBeforeAfterPointerControls();
                     wrapper.tinyMceEditor = editor;
+                    wrapper.tinyMceSyncedValue = input.value;
+                    installTinyMceSourceMode(wrapper, editor, input, () => { editedInVisualMode = false; });
                 });
-                editor.on('change input undo redo blur', () => {
+                // getContent() re-serializes the HTML and drops the formatting typed in
+                // HTML mode, so only write back after a real edit in the visual editor.
+                let editedInVisualMode = false;
+                editor.on('change input undo redo blur', (event) => {
+                    if (event.type !== 'blur') editedInVisualMode = true;
+                    if (!editedInVisualMode || wrapper.tinyMceSourceMode) return;
+
                     input.value = editor.getContent();
+                    wrapper.tinyMceSyncedValue = input.value;
                     input.dispatchEvent(new Event('input', { bubbles: true }));
                     input.dispatchEvent(new Event('change', { bubbles: true }));
                 });
@@ -2538,7 +2581,14 @@ const syncContentEditorsFromInputs = () => {
         const editor = wrapper.tinyMceEditor;
         if (!input || !editor) return;
 
-        if (editor.getContent() !== input.value) editor.setContent(input.value || '');
+        // Compare with what the editor last loaded/wrote, not getContent(): the stored raw
+        // HTML never equals TinyMCE's re-serialized output and would reset the editor on every morph.
+        if (input.value === wrapper.tinyMceSyncedValue) return;
+
+        editor.setContent(input.value || '');
+        wrapper.tinyMceSyncedValue = input.value;
+        const sourceEditor = wrapper.querySelector('[data-tinymce-source]');
+        if (sourceEditor && wrapper.tinyMceSourceMode) sourceEditor.value = input.value;
     });
 };
 
