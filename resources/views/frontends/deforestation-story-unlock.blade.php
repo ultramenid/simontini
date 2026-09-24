@@ -6,6 +6,8 @@
 @endsection
 
 @section('content')
+    <x-story-loader :title="$story->localized_title" :locale="$locale" />
+
     @include('partials.topbarPC')
     @include('partials.topbarMobile')
 
@@ -69,7 +71,7 @@
                 </button>
 
                 <template x-if="submitting">
-                    <x-deforestation-preview-loader />
+                    <x-story-loader :title="$story->localized_title" :locale="$locale" :hide-on-load="false" />
                 </template>
             </form>
 

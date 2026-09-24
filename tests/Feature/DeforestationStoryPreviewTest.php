@@ -392,12 +392,8 @@ it('asks for the article password before opening a locked preview', function () 
         ->assertSee('Password artikel')
         ->assertSee('Draft Preview Terkunci')
         ->assertSee('x-on:submit.prevent="startLoader()"', false)
-        ->assertSee('data-deforestory-hero-loader', false)
-        ->assertSee('deforestory-hero-loader-title', false)
-        ->assertSee('assets/loader/loader.jpg', false)
-        ->assertSee('bg-white', false)
-        ->assertDontSee('deforestory-loader-letter')
-        ->assertDontSee("letters: Array(11).fill('A')")
+        ->assertSee('<div id="site-loader" class="site-loader--story"', false)
+        ->assertSee('<div class="loader-sub">Draft Preview Terkunci</div>', false)
         ->assertDontSee('Membuka artikel...')
         ->assertDontSee('Konten yang harus dilindungi.');
 });
@@ -516,46 +512,8 @@ it('still asks a logged in CMS user for the password on a locked preview', funct
         ]))
         ->assertOk()
         ->assertSee('Password artikel')
-        ->assertSee('data-deforestory-hero-loader', false)
+        ->assertSee('site-loader--story', false)
         ->assertDontSee('Konten untuk pengguna CMS.');
-});
-
-it('only renders the reload animation for a locked preview article', function () {
-    $story = createDeforestationStory([
-        'is_locked' => false,
-    ]);
-
-    $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.show', [
-        'locale' => 'id',
-        'id' => $story->id,
-        'slug' => $story->slug,
-    ]))
-        ->assertOk()
-        ->assertDontSee('data-deforestory-reload-loader', false)
-        ->assertDontSee('data-deforestory-hero-loader', false)
-        ->assertDontSee('Memuat artikel terkunci...');
-});
-
-it('uses the public loader image for locked preview text and background', function () {
-    $story = createDeforestationStory([
-        'image_id' => 'deforestory/id/hero-preview.jpg',
-        'is_locked' => true,
-    ]);
-
-    $this->get(temporaryDeforestationPreviewUrl('deforestation.preview.show', [
-        'locale' => 'id',
-        'id' => $story->id,
-        'slug' => $story->slug,
-    ]))
-        ->assertOk()
-        ->assertSee('data-deforestory-loader-image="loader.jpg"', false)
-        ->assertSee('assets/loader/loader.jpg', false)
-        ->assertSee('deforestoryLoaderReveal()', false)
-        ->assertSee('deforestory-loader-bg', false)
-        ->assertSee('bg-white', false)
-        ->assertDontSee('hero-preview.jpg')
-        ->assertDontSee('<canvas', false)
-        ->assertDontSee('deforestoryHeroTextFill()');
 });
 
 it('requires a password for locked stories on the public page as well', function () {
