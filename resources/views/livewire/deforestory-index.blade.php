@@ -57,17 +57,17 @@
 
     <section x-data="{ expanded: false }" class="mb-6 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
         <button type="button" x-on:click="expanded = !expanded" :aria-expanded="expanded.toString()" aria-controls="metadata-settings-panel" class="flex w-full items-center justify-between gap-3 text-left">
-            <span class="text-sm font-semibold text-gray-900">Klik kategori dan daerah</span>
+            <span class="text-sm font-semibold text-gray-900">Settings</span>
             <span class="text-xs font-semibold text-[#376A64]" x-text="expanded ? '− Minimize' : '+ Tampilkan'"></span>
         </button>
         <div id="metadata-settings-panel" x-cloak x-show="expanded" x-collapse.duration.300ms>
-        <p class="mt-1 text-sm text-gray-500">Berlaku untuk semua kartu di halaman publik dan preview. Saat OFF, label tetap tampil sebagai teks. Perubahan langsung tersimpan.</p>
+        <p class="mt-1 text-sm text-gray-500">Berlaku untuk semua artikel di halaman publik dan preview. Kategori dan Daerah: saat OFF, label tetap tampil sebagai teks tanpa tautan. Tanggal: saat OFF, tanggal tidak tampil di halaman artikel. Perubahan langsung tersimpan.</p>
         <div class="mt-4 flex flex-wrap gap-4">
-            @foreach (['category' => 'Kategori', 'region' => 'Daerah'] as $field => $label)
+            @foreach (['category' => 'Kategori', 'region' => 'Daerah', 'date' => 'Tanggal'] as $field => $label)
                 @php
-                    $enabled = $field === 'category' ? $categoryClickable : $regionClickable;
+                    $enabled = ['category' => $categoryClickable, 'region' => $regionClickable, 'date' => $dateVisible][$field];
                 @endphp
-                <button type="button" role="switch" aria-checked="{{ $enabled ? 'true' : 'false' }}" aria-label="Klik {{ $label }}" wire:click="toggleMetadataLink('{{ $field }}')" wire:loading.attr="disabled" wire:target="toggleMetadataLink" class="inline-flex items-center gap-3 px-2 py-2 text-sm font-semibold disabled:opacity-60">
+                <button type="button" role="switch" aria-checked="{{ $enabled ? 'true' : 'false' }}" aria-label="{{ $field === 'date' ? 'Tampilkan' : 'Klik' }} {{ $label }}" wire:click="toggleMetadataLink('{{ $field }}')" wire:loading.attr="disabled" wire:target="toggleMetadataLink" class="inline-flex items-center gap-3 px-2 py-2 text-sm font-semibold disabled:opacity-60">
                     <span>{{ $label }}</span>
                     <span aria-hidden="true" style="display: inline-block; position: relative; width: 44px; height: 24px; border-radius: 999px !important; background-color: {{ $enabled ? '#376A64' : '#9ca3af' }};">
                         <span style="position: absolute; top: 3px; left: {{ $enabled ? '23px' : '3px' }}; width: 18px; height: 18px; border-radius: 999px !important; background: white;"></span>

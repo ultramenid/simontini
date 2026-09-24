@@ -252,6 +252,7 @@ class DeforestationStoryController extends Controller
             'locale' => $locale,
             'story' => $story,
             'isPreview' => $isPreview,
+            'dateVisible' => (bool) (DB::table('deforestory_display_settings')->where('id', 1)->value('date_visible') ?? true),
         ]);
     }
 

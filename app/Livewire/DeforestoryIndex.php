@@ -30,13 +30,21 @@ class DeforestoryIndex extends Component
 
     public bool $regionClickable = true;
 
+    public bool $dateVisible = true;
+
+    private const DISPLAY_SETTINGS = [
+        'category' => ['category_clickable', 'categoryClickable'],
+        'region' => ['region_clickable', 'regionClickable'],
+        'date' => ['date_visible', 'dateVisible'],
+    ];
+
     public function toggleMetadataLink(string $field): void
     {
-        abort_unless(in_array($field, ['category', 'region'], true), 422);
-        $column = $field.'_clickable';
+        abort_unless(isset(self::DISPLAY_SETTINGS[$field]), 422);
+        [$column, $property] = self::DISPLAY_SETTINGS[$field];
         $enabled = ! (bool) (DB::table('deforestory_display_settings')->where('id', 1)->value($column) ?? true);
         DB::table('deforestory_display_settings')->updateOrInsert(['id' => 1], [$column => $enabled]);
-        $this->{$field.'Clickable'} = $enabled;
+        $this->{$property} = $enabled;
     }
 
     public function mount(): void
@@ -44,6 +52,7 @@ class DeforestoryIndex extends Component
         $display = DB::table('deforestory_display_settings')->where('id', 1)->first();
         $this->categoryClickable = (bool) ($display->category_clickable ?? true);
         $this->regionClickable = (bool) ($display->region_clickable ?? true);
+        $this->dateVisible = (bool) ($display->date_visible ?? true);
         $this->hasGlobalPreviewPassword = filled(
             DB::table('deforestory_preview_settings')->where('id', 1)->value('password_hash'),
         );

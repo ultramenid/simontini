@@ -104,7 +104,7 @@
                 @php $publishedAt = \Carbon\Carbon::parse($story->date)->locale($locale); @endphp
                 <p data-story-byline class="mb-[42px] text-sm text-gray-600">
                     Auriga Nusantara
-                    @if ($story->show_date ?? true)
+                    @if ($dateVisible)
                         &middot; <time datetime="{{ $publishedAt->toDateString() }}">{{ $publishedAt->translatedFormat('j F Y') }}</time>
                     @endif
                 </p>

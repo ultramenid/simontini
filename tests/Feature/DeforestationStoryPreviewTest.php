@@ -697,19 +697,18 @@ it('filters public localized metadata while excluding drafts', function () {
     $this->get(route('deforestation.index', ['locale' => 'en', 'category' => 'Unknown category']))->assertOk()->assertSee('No deforestation stories are available yet.');
 });
 
-it('shows the story date in the byline only when show_date is enabled', function () {
+it('hides the story date in the byline when the global date setting is off', function () {
+    DB::table('deforestory_display_settings')->updateOrInsert(['id' => 1], ['date_visible' => true]);
     $story = createDeforestationStory(['status' => 'publish', 'date' => '2025-03-14']);
     $url = route('deforestation.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $story->slug]);
 
     $this->get($url)->assertOk()->assertSee('<time datetime="2025-03-14">', false);
 
-    \Livewire\Livewire::test(\App\Livewire\DeforestoryAdd::class, ['deforestoryId' => $story->id])
-        ->assertSet('show_date', true)
-        ->set('show_date', false)
-        ->call('save')
-        ->assertHasNoErrors();
+    \Livewire\Livewire::test(\App\Livewire\DeforestoryIndex::class)
+        ->assertSet('dateVisible', true)
+        ->call('toggleMetadataLink', 'date')
+        ->assertSet('dateVisible', false);
 
-    $saved = DB::table('deforestory')->where('id', $story->id)->first();
-    expect((bool) $saved->show_date)->toBeFalse();
-    $this->get(route('deforestation.show', ['locale' => 'id', 'id' => $story->id, 'slug' => $saved->slug]))->assertOk()->assertDontSee('<time datetime="2025-03-14">', false)->assertSee('Auriga Nusantara');
+    $this->get($url)->assertOk()->assertDontSee('<time datetime="2025-03-14">', false)->assertSee('Auriga Nusantara');
+    \Livewire\Livewire::test(\App\Livewire\DeforestoryIndex::class)->assertSet('dateVisible', false)->assertSee('Settings');
 });

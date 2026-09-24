@@ -504,10 +504,6 @@
                     <label class="mb-1.5 block text-sm font-semibold text-gray-700">Tanggal <span class="text-red-500">*</span></label>
                     <input type="date" wire:model="date" class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm shadow-sm outline-none transition focus:border-[#376A64] focus:ring-2 focus:ring-[#376A64]/15">
                     @error('date') <p class="mt-1.5 text-xs font-medium text-red-600">{{ $message }}</p> @enderror
-                    <label class="mt-2.5 flex cursor-pointer items-center gap-2 text-sm text-gray-700">
-                        <input type="checkbox" wire:model="show_date" class="rounded border-gray-300 text-[#376A64] focus:ring-[#376A64]">
-                        Tampilkan tanggal di halaman artikel
-                    </label>
                 </div>
 
                 <div>
