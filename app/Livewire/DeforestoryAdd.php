@@ -77,6 +77,8 @@ class DeforestoryAdd extends Component
 
     public string $date = '';
 
+    public bool $show_date = true;
+
     public string $content_id = '';
 
     public string $content_en = '';
@@ -121,6 +123,7 @@ class DeforestoryAdd extends Component
         $this->desrkirpsi_en = $item->desrkirpsi_en;
         $this->content_type = $item->content_type ?? 'template';
         $this->date = $item->date;
+        $this->show_date = (bool) ($item->show_date ?? true);
         $this->content_id = $item->content_id;
         $this->content_en = $item->content_en;
         $this->footer_id = $item->footer_id ?? '';
@@ -159,6 +162,7 @@ class DeforestoryAdd extends Component
             'desrkirpsi_en' => ['required', 'string', 'max:150'],
             'content_type' => ['required', Rule::in(['template', 'custom'])],
             'date' => ['required', 'date'],
+            'show_date' => ['boolean'],
             'content_id' => ['required', 'string'],
             'content_en' => ['required', 'string'],
             'footer_id' => ['nullable', 'string'],
