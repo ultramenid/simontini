@@ -2923,6 +2923,34 @@ document.addEventListener('click', (event) => {
     }
 });
 
+// Retries once with a fresh token when the session expired while the page was open.
+const postForm = async (form) => {
+    const send = () => fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        credentials: 'same-origin',
+        headers: {
+            Accept: 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
+        },
+    });
+
+    const response = await send();
+    if (response.status !== 419) return response;
+
+    const tokenResponse = await fetch('/csrf-token', {
+        credentials: 'same-origin',
+        headers: { Accept: 'application/json' },
+    });
+    if (!tokenResponse.ok) return response;
+
+    const { token } = await tokenResponse.json();
+    document.querySelectorAll('input[name="_token"]').forEach((input) => { input.value = token; });
+    document.querySelector('meta[name="csrf-token"]')?.setAttribute('content', token);
+
+    return send();
+};
+
 document.addEventListener('submit', async (event) => {
     const form = event.target.closest('[data-comment-ajax-form]');
     if (!form) return;
@@ -2937,15 +2965,7 @@ document.addEventListener('submit', async (event) => {
     if (submitButton) submitButton.disabled = true;
 
     try {
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            credentials: 'same-origin',
-            headers: {
-                Accept: 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-            },
-        });
+        const response = await postForm(form);
         const payload = await response.json().catch(() => ({}));
 
         if (!response.ok) {
@@ -3019,15 +3039,7 @@ document.addEventListener('submit', async (event) => {
 
     try {
         const subscribedEmail = form.querySelector('[name="email"]')?.value || '';
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            credentials: 'same-origin',
-            headers: {
-                Accept: 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-            },
-        });
+        const response = await postForm(form);
         const payload = await response.json().catch(() => ({}));
 
         if (!response.ok) {

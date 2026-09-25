@@ -31,6 +31,10 @@ Route::get('/embed/data-visualizations/{id}', [DataVisualizationController::clas
 
 Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
 
+// Lets long-open pages recover from an expired session instead of failing with 419.
+Route::get('/csrf-token', fn () => response()->json(['token' => csrf_token()])
+    ->header('Cache-Control', 'no-store'))->name('csrf.token');
+
 // Built from the database on each request, so new stories appear without a deploy.
 Route::get('/llms.txt', fn () => response()
     ->view('seo.llms', [
