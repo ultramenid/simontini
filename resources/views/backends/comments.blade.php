@@ -99,6 +99,7 @@
                             @else
                                 <form method="POST" action="{{ route('cms.comments.status', ['id' => $comment['id'], 'status' => 'approved']) }}">@csrf @method('PATCH')<button class="bg-green-700 px-3 py-2 text-xs font-bold text-white hover:bg-green-800">Tampilkan</button></form>
                             @endif
+                            <form method="POST" action="{{ route('cms.comments.destroy', $comment['id']) }}" onsubmit="return confirm('Hapus komentar ini secara permanen? Balasan di bawahnya juga akan terhapus.')">@csrf @method('DELETE')<button class="bg-red-700 px-3 py-2 text-xs font-bold text-white hover:bg-red-800">Hapus</button></form>
                         </div>
                     </div>
                 </article>

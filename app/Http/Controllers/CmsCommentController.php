@@ -98,4 +98,12 @@ class CmsCommentController extends Controller
 
         return back()->with('message', 'Status komentar berhasil diperbarui.');
     }
+
+    public function destroy(int $id): RedirectResponse
+    {
+        // Replies are removed with their parent by the parent_id cascadeOnDelete constraint.
+        abort_unless(DB::table('story_comments')->where('id', $id)->delete(), 404);
+
+        return back()->with('message', 'Komentar berhasil dihapus.');
+    }
 }
