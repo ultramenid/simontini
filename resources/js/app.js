@@ -2951,6 +2951,25 @@ const postForm = async (form) => {
     return send();
 };
 
+// Turnstile tokens are single-use and expire after 300s, so every submit attempt
+// (success or failure) needs a fresh challenge before the next one.
+const resetCommentTurnstile = (form, parentId) => {
+    window.dispatchEvent(parentId
+        ? new CustomEvent('reply-turnstile-expired', { detail: { id: Number(parentId) } })
+        : new CustomEvent(form.matches('[data-quick-comment-form]')
+            ? 'quick-comment-turnstile-expired'
+            : 'comment-turnstile-expired'));
+
+    const turnstileWidget = form.querySelector('.cf-turnstile, [data-quick-turnstile]');
+    if (window.turnstile && turnstileWidget) {
+        try {
+            window.turnstile.reset(turnstileWidget);
+        } catch (error) {
+            // A fresh challenge will be rendered on the next interaction.
+        }
+    }
+};
+
 document.addEventListener('submit', async (event) => {
     const form = event.target.closest('[data-comment-ajax-form]');
     if (!form) return;
@@ -2988,30 +3007,17 @@ document.addEventListener('submit', async (event) => {
 
         if (parentId) {
             form.closest('[data-comment-reply-panel]')?.classList.add('hidden');
-            window.dispatchEvent(new CustomEvent('reply-turnstile-expired', {
-                detail: { id: Number(parentId) },
-            }));
             window.setTimeout(updateCommentThreadLines, 50);
         } else {
             const quick = form.matches('[data-quick-comment-form]');
             if (quick) form.reset();
             window.dispatchEvent(new CustomEvent('comment-submitted', { detail: { quick } }));
-            window.dispatchEvent(new CustomEvent(quick
-                ? 'quick-comment-turnstile-expired'
-                : 'comment-turnstile-expired'));
         }
 
-        const turnstileWidget = form.querySelector('.cf-turnstile');
-        if (window.turnstile && turnstileWidget) {
-            try {
-                window.turnstile.reset(turnstileWidget);
-            } catch (error) {
-                // A fresh challenge will be rendered on the next interaction.
-            }
-        }
-
+        resetCommentTurnstile(form, parentId);
         window.Livewire?.dispatch('comment-created', { commentId: Number(payload.comment_id) });
     } catch (error) {
+        resetCommentTurnstile(form, parentId);
         if (feedback) {
             feedback.textContent = error instanceof Error ? error.message : 'Komentar belum dapat dikirim.';
             feedback.className = 'mt-6 border-l-4 border-[#bc4a3c] bg-red-50 px-5 py-4 text-sm font-semibold text-red-800';

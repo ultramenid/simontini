@@ -120,7 +120,7 @@
     x-on:resize.window="updateVisibility()"
     x-on:quick-comment-turnstile-success.window="turnstilePassed = true"
     x-on:quick-comment-turnstile-expired.window="turnstilePassed = false"
-    x-on:comment-submitted.window="if ($event.detail.quick) { turnstilePassed = false; quickWidgetId = null; expanded = false }"
+    x-on:comment-submitted.window="if ($event.detail.quick) { turnstilePassed = false; expanded = false }"
     x-on:comment-editor-updated="commentText = $event.detail.html; commentLength = $event.detail.textLength"
     x-on:click.outside="if (expanded) expanded = false"
     x-on:keydown.escape.window="if (expanded) expanded = false"
