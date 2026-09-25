@@ -43,6 +43,9 @@ class CommentHtmlSanitizer
 
     public function plainText(string $sanitizedHtml): string
     {
-        return trim(preg_replace('/\s+/u', ' ', html_entity_decode(strip_tags($sanitizedHtml))) ?? '');
+        // Keep a space between blocks so "<p>a</p><p>b</p>" reads "a b", not "ab".
+        $spaced = preg_replace('/<\/(p|li|blockquote|h[1-6])>|<br\s*\/?>/i', '$0 ', $sanitizedHtml) ?? $sanitizedHtml;
+
+        return trim(preg_replace('/\s+/u', ' ', html_entity_decode(strip_tags($spaced))) ?? '');
     }
 }

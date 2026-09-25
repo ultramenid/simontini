@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\CommentHtmlSanitizer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -36,7 +37,11 @@ class DashboardController extends Controller
             ->select(['comments.user_name', 'comments.comment', 'comments.status', 'comments.created_at', 'stories.title_id as story_title'])
             ->orderByDesc('comments.created_at')
             ->limit(5)
-            ->get();
+            ->get()
+            ->each(function (object $comment): void {
+                $sanitizer = app(CommentHtmlSanitizer::class);
+                $comment->comment = $sanitizer->plainText($sanitizer->sanitize($comment->comment));
+            });
 
         return view('backends.dashboard', compact('title', 'nav', 'stats', 'recentStories', 'recentComments'));
     }

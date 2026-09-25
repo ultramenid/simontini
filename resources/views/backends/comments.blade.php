@@ -89,7 +89,7 @@
                                 @endif
                                 <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wide {{ $comment['status'] === 'approved' ? 'bg-green-100 text-green-800' : 'bg-gray-200 text-gray-700' }}">{{ $comment['status'] === 'approved' ? 'Tampil' : 'Hidden' }}</span>
                             </div>
-                            <p class="mt-3 whitespace-pre-line break-words text-sm leading-6 text-gray-700">{{ $comment['comment'] }}</p>
+                            <div class="mt-3 break-words text-sm leading-6 text-gray-700 [&_a]:text-simontini [&_a]:underline [&_ol]:my-2 [&_ol]:list-decimal [&_ol]:pl-5 [&_p+p]:mt-2 [&_strong]:font-bold [&_ul]:my-2 [&_ul]:list-disc [&_ul]:pl-5">{!! $comment['safe_comment'] !!}</div>
                             <p class="mt-3 text-xs text-gray-400">{{ $comment['user_email'] }} · {{ $comment['created_at'] }}</p>
                         </div>
 

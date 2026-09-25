@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\CommentHtmlSanitizer;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class CmsCommentController extends Controller
 {
-    public function index(Request $request): View
+    public function index(Request $request, CommentHtmlSanitizer $sanitizer): View
     {
         $requestedStoryId = $request->integer('story_id');
         $selectedStoryId = $requestedStoryId > 0
@@ -35,7 +36,10 @@ class CmsCommentController extends Controller
             ->orderByDesc('comments.created_at')
             ->paginate(25)
             ->withQueryString()
-            ->through(fn (object $comment): array => (array) $comment);
+            ->through(fn (object $comment): array => [
+                ...(array) $comment,
+                'safe_comment' => $sanitizer->sanitize($comment->comment),
+            ]);
 
         $stories = DB::table('deforestory as stories')
             ->leftJoin('story_comments as comments', 'comments.story_id', '=', 'stories.id')
