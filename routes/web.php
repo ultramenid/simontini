@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CmsCommentController;
+use App\Http\Controllers\CmsPasskeyController;
 use App\Http\Controllers\CmsSubscriberController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataVisualizationController;
@@ -148,9 +149,26 @@ Route::middleware([AuthenticateCmsSession::class, 'role:admin'])->group(function
 
 });
 
+// Pengaturan akun: setiap user aktif mengelola akunnya sendiri (tidak terbatas admin).
+Route::middleware([AuthenticateCmsSession::class])->group(function () {
+    Route::get('/cms/settings', [DashboardController::class, 'settings'])->name('cms.settings');
+    Route::middleware('throttle:6,1')->group(function () {
+        Route::post('/cms/settings/passkeys/options', [CmsPasskeyController::class, 'registrationOptions'])
+            ->name('cms.passkeys.registration-options');
+        Route::post('/cms/settings/passkeys', [CmsPasskeyController::class, 'store'])
+            ->name('cms.passkeys.store');
+    });
+});
+
 // redirect to dashboard if user has session to dashboard
 Route::middleware([hasSession::class])->group(function () {
     Route::get('/cms/login', [LoginController::class, 'index'])->name('login');
+    Route::middleware('throttle:10,1')->group(function () {
+        Route::get('/cms/passkeys/login/options', [CmsPasskeyController::class, 'loginOptions'])
+            ->name('cms.passkeys.login-options');
+        Route::post('/cms/passkeys/login', [CmsPasskeyController::class, 'login'])
+            ->name('cms.passkeys.login');
+    });
 });
 
 // url to logout session

@@ -31,6 +31,15 @@
                 </svg>
             </button>
 
+            <div data-passkey-login-wrap hidden class="mt-4 text-left" wire:ignore>
+                <div class="mb-4 flex items-center gap-3 text-xs text-gray-400"><span class="h-px flex-1 bg-gray-200"></span>atau<span class="h-px flex-1 bg-gray-200"></span></div>
+                <button type="button" data-passkey-login class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-gray-900 px-4 py-2 text-sm font-medium text-gray-900 transition hover:bg-gray-900 hover:text-white disabled:cursor-not-allowed disabled:opacity-50">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/></svg>
+                    Masuk dengan biometrik
+                </button>
+                <p data-passkey-message class="mt-2 text-xs text-red-600" aria-live="polite"></p>
+            </div>
+
             <p class="text-xs text-center mt-4 "><a data-turbolinks="false"  href="{{ url('/') }}" >Continue to site. . </a></p>
         </div>
 

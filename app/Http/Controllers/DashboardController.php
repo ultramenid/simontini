@@ -54,6 +54,14 @@ class DashboardController extends Controller
         return view('backends.users', compact('title', 'nav'));
     }
 
+    public function settings()
+    {
+        $title = 'Pengaturan - Simontini';
+        $nav = 'settings';
+
+        return view('backends.settings', compact('title', 'nav'));
+    }
+
     public function deforestory()
     {
         $title = 'Deforestory - Simontini';

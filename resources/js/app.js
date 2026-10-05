@@ -1,4 +1,5 @@
 import './bootstrap';
+import './passkeys';
 import '../../vendor/masmerise/livewire-toaster/resources/js';
 import { Editor, Node } from '@tiptap/core';
 import StarterKit from '@tiptap/starter-kit';

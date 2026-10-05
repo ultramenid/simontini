@@ -8,6 +8,7 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Passkeys\Passkeys;
 use Livewire\Livewire;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,7 +18,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Rute bawaan laravel/passkeys memakai Auth guard Laravel, sedangkan CMS ini
+        // memakai sesi sendiri (session('id')). Rute passkey didaftarkan di routes/web.php.
+        Passkeys::ignoreRoutes();
     }
 
     /**
