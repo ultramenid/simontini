@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Services\DeforestationStoryNotificationDispatcher;
 use App\Services\DeforestationStoryWebhookDispatcher;
 use App\Services\StoryHtmlSanitizer;
+use App\Support\DeforestationStoryMedia;
 use App\Support\DeforestationStoryStopper;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -227,7 +228,7 @@ class DeforestoryAdd extends Component
             $validated['image_id'] = $this->image_id->store('deforestory/id', 'public');
 
             if ($this->currentImageId) {
-                Storage::disk('public')->delete($this->currentImageId);
+                Storage::disk('public')->delete([$this->currentImageId, DeforestationStoryMedia::posterPath($this->currentImageId)]);
             }
         }
 
@@ -235,7 +236,15 @@ class DeforestoryAdd extends Component
             $validated['image_en'] = $this->image_en->store('deforestory/en', 'public');
 
             if ($this->currentImageEn) {
-                Storage::disk('public')->delete($this->currentImageEn);
+                Storage::disk('public')->delete([$this->currentImageEn, DeforestationStoryMedia::posterPath($this->currentImageEn)]);
+            }
+        }
+
+        // Also covers videos uploaded before posters existed: re-saving the story creates one.
+        foreach ([$validated['image_id'] ?? $this->currentImageId, $validated['image_en'] ?? $this->currentImageEn] as $media) {
+            if (DeforestationStoryMedia::isVideo($media) && ! Str::startsWith($media, ['http://', 'https://'])
+                && ! Storage::disk('public')->exists(DeforestationStoryMedia::posterPath($media))) {
+                DeforestationStoryMedia::makeVideoPoster($media);
             }
         }
 
@@ -322,6 +331,7 @@ class DeforestoryAdd extends Component
         }
         if ($category['count'] > 0) {
             $this->addError('category_pair', 'Kategori masih digunakan oleh '.$category['count'].' artikel Deforestory. Ubah kategori artikel tersebut terlebih dahulu.');
+
             return;
         }
 
@@ -366,9 +376,12 @@ class DeforestoryAdd extends Component
     {
         $this->resetErrorBag('region_pair');
         $region = collect($this->regionOptions())->firstWhere('key', $key);
-        if (! $region) return;
+        if (! $region) {
+            return;
+        }
         if ($region['count'] > 0) {
             $this->addError('region_pair', 'Daerah masih digunakan oleh '.$region['count'].' artikel Deforestory. Ubah daerah artikel tersebut terlebih dahulu.');
+
             return;
         }
         DB::table('deforestory_regions')->updateOrInsert(

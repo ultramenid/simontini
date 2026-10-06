@@ -2,6 +2,8 @@
 
 namespace App\Support;
 
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Process;
 use Illuminate\Support\Facades\Storage;
 
 final class DeforestationStoryMedia
@@ -29,6 +31,47 @@ final class DeforestationStoryMedia
         $extension = strtolower(pathinfo($urlPath, PATHINFO_EXTENSION));
 
         return in_array($extension, self::VIDEO_EXTENSIONS, true);
+    }
+
+    // Videos can't be og:image, so a still frame is saved next to the video on submit.
+    public static function posterPath(string $path): string
+    {
+        return preg_replace('/\.[^.\/]+$/', '', $path).'.poster.jpg';
+    }
+
+    // Needs ffmpeg on the server; without it the story keeps the default meta image.
+    public static function makeVideoPoster(string $path): void
+    {
+        $disk = Storage::disk('public');
+        $result = Process::timeout(60)->run([
+            'ffmpeg', '-y', '-i', $disk->path($path), '-vf', 'thumbnail', '-frames:v', '1', $disk->path(self::posterPath($path)),
+        ]);
+
+        if ($result->failed()) {
+            Log::warning('Video poster generation failed', ['path' => $path, 'error' => $result->errorOutput()]);
+        }
+    }
+
+    // og:image URL for a story's hero media, or null when there is nothing usable.
+    public static function metaImageUrl(?string $path): ?string
+    {
+        if (blank($path)) {
+            return null;
+        }
+
+        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
+            return self::isVideo($path) ? null : $path;
+        }
+
+        if (self::isVideo($path)) {
+            $path = self::posterPath($path);
+
+            if (! Storage::disk('public')->exists($path)) {
+                return null;
+            }
+        }
+
+        return self::shareImageUrl($path);
     }
 
     /**

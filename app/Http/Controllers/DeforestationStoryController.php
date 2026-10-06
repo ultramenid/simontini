@@ -12,6 +12,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\ValidationException;
 
@@ -114,6 +115,7 @@ class DeforestationStoryController extends Controller
         foreach (['category', 'region'] as $field) {
             if (! ($field === 'category' ? $categoryClickable : $regionClickable)) {
                 unset($filters[$field]);
+
                 continue;
             }
             if (filled($filters[$field] ?? null)) {
@@ -150,14 +152,11 @@ class DeforestationStoryController extends Controller
             ->where('status', 'publish')
             ->get(['image_id', 'image_en'])
             ->map(fn ($story) => $locale === 'en' && $story->image_en ? $story->image_en : $story->image_id)
-            ->filter(fn ($image) => filled($image) && ! DeforestationStoryMedia::isVideo($image))
+            ->filter(fn ($image) => filled($image) && (! DeforestationStoryMedia::isVideo($image)
+                || Storage::disk('public')->exists(DeforestationStoryMedia::posterPath($image))))
             ->shuffle()
             ->first();
-        $metaImage = match (true) {
-            $coverImage === null => asset('assets/meta-image-2025.jpg'),
-            str_starts_with($coverImage, 'http://'), str_starts_with($coverImage, 'https://') => $coverImage,
-            default => DeforestationStoryMedia::shareImageUrl($coverImage),
-        };
+        $metaImage = DeforestationStoryMedia::metaImageUrl($coverImage) ?? asset('assets/meta-image-2025.jpg');
 
         $storyGroups = $stories->getCollection()->groupBy(
             fn ($story) => Carbon::parse($story->date)->locale($locale)->translatedFormat('F Y'),

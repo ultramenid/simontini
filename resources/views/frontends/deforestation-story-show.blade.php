@@ -18,13 +18,7 @@
                 $metaParameters,
             )
             : route($metaRoute, $metaParameters);
-        $metaImage = asset('assets/meta-image-2025.jpg');
-
-        if ($story->localized_image && ! ($story->localized_media_is_video ?? false)) {
-            $metaImage = \Illuminate\Support\Str::startsWith($story->localized_image, ['http://', 'https://'])
-                ? $story->localized_image
-                : \App\Support\DeforestationStoryMedia::shareImageUrl($story->localized_image);
-        }
+        $metaImage = \App\Support\DeforestationStoryMedia::metaImageUrl($story->localized_image) ?? asset('assets/meta-image-2025.jpg');
     @endphp
 
     @if ($isPreview)
